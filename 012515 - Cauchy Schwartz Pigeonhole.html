@@ -96,7 +96,31 @@ Geometrically, using the Cauchy-Schwartz inequality always signifies looking for
 > 
 > [China Math Olympiad](http://math.stackexchange.com/questions/1075250/how-prove-this-complex-inequality-with-same-as-2014-china-cmo-cauchy-schwarz-i) 2014 
 
-Does Cauchy-Schwartz inequality give us enough information to solve this problem?
+Does Cauchy-Schwartz inequality give us enough information to solve this problem?  The poser of the question first thinks about using Lagrange's identity:
+
+$$ (\mathbf{a} \cdot \mathbf{a})(\mathbf{b} \cdot \mathbf{b}) - (\mathbf{a} \cdot \mathbf{b})^2 
+= (\mathbf{a} \wedge \mathbf{a})\cdot (\mathbf{a} \wedge \mathbf{a}) $$
+
+If you don't like the wedge product, there is a cross product for vectors in **3** or **7** dimensions:
+
+$$ |\mathbf{a} \times \mathbf{b}|^2 = \left| \begin{array}{cc}  \mathbf{a} \cdot \mathbf{a}&\mathbf{b} \cdot \mathbf{a} \\\\ 
+\mathbf{a} \cdot \mathbf{b}& \mathbf{b} \cdot \mathbf{b} \end{array} \right| 
+=  (\mathbf{a} \cdot \mathbf{a})(\mathbf{b} \cdot \mathbf{b}) - (\mathbf{a} \cdot \mathbf{b})^2 $$
+
+Here $\mathbf{a}, \mathbf{b} \in \mathbb{R}^3$ or $\mathbf{R}^7$.  On the one hand, these can generalize involving the **quaternions**
+or [**octonions**](https://en.wikipedia.org/wiki/Seven-dimensional_cross_product).  On the other hand, we can generlize this to the [Cauchy-Binet](https://en.wikipedia.org/wiki/Binet%E2%80%93Cauchy_identity) identity, involving determinants of matrices.
+
+If these were real numbers, the Cauchy-Schwartz inequality returns a different lower bound:
+
+$$ (|z_1| + \dots + |z_n|) \left( \frac{1}{|z_1|} + \dots + \frac{1}{|z_n|} \right) \geq n^2 $$
+
+We don't consider any of the cancellation between the $z$ or the $\frac{1}{z}$.  The correct observable involves creating a
+vector from the real parts:
+
+$$ \left(\mathrm{Re}(z_1), \dots, \mathrm{Re}(z_n) \right) \text{ and }
+ \left(\mathrm{Re}(\tfrac{1}{z_1}), \dots, \mathrm{Re}(\tfrac{1}{z_n}) \right) $$
+
+This is a rather strange triangle to consider with vertices $z, \frac{1}{z}, z + \frac{1}{z}$ for $z \in \mathbb{C}$ with the extra information that $z$ is close to $1$: $|z - 1| &lt; r$.
 
 ### [2]() - What is the Pigeonhole Principle
 
