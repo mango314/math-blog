@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>John's Paranoid Ranting</title>
+
+<style type="text/css">
+#content {width: 60%; float: left; text-align: justify; padding-left: 5%;}
+
+blockquote{ background-color: #BE7E66;}
+</style>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<!-- <script type="text/javascript"
+  src="MathJax-2.3-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> -->
+
+
+</head>
+
+<xmp theme="spruce" style="display:none;">
+
+
+# Cauchy Schwarz vs Pigeonhole
+
+### [1]() - What is Cauchy-Schwartz?
+
+Math textbooks agree the Cauchy-Schwartz inequality is very useful.  One version of it says:
+
+$$ (a_1^2 + a_2^2 + a_3^2)^{1/2}(b_1^2 + b_2^2 + b_3^2)^{1/2} \geq a_1 b_1 + a_2 b_2 + a_3 b_3$$
+
+This inequality can be written very succintly using vectors in 3D space.
+
+$$ || \vec{a}||  \; ||\vec{b} || \geq a \cdot b $$
+
+In fact, it didn't really atter how many dimensions we were dealing with, as long as we have
+an *inner product space*.  Usually the inner product is just the dot product of vectors, but we 
+can have many other inner products:
+
+$$ \int_a^b f(x)^2 dx \int_a^b g(x) dx \geq \int_a^b f(x) g(x) dx $$
+
+This is the Cauchy Schwartz inequality, where the "vectors" are functions $f:[a,b] \to \mathbb{R}$.  Identifying
+the correct choice of vectors or inner product is an art, and they appear randomly and unannounced in math papers.
+
+---
+
+Since there is no index **All Examples of Cauchy-Schwartz** inequality, I found myself taking random 
+books hoping they had an example, and reading through all the proofs to see if it was mentioned.
+The result was unilluminating, since I was so fried from scanning the pages to actually read an absorb them.
+I found several examples and it was always the same... the use of Cauchy-Schwartz was clear, just as in the book.
+What was *not* clear, was how the two observables were constructed or how they moved the proof forward.
+
+I noticed that books on **measure theory** tend to make clever **partitions** and estimate each partition separately.
+Cauchy-Schwartz inequality necessarily involves inner product spaces and the most natural context for that
+is Fourier series and generalizations.
+
+I don't know many *instances* or *patterns* to when the Cauchy Schwartz inequality is used... I don't even know how to ask such a question.  Maybe "Favorte example of Cauchy Schwartz inequality?" or ask meta.MathOverflow to refine this question.
+
+---
+
+Let's **prove** the Cauchy Schwartz inequality in two ways.
+
+> \#1 **Law of Cosines**
+> 
+> For any triangle, the law of cosines says $ (a+b)^2 = a^2 + b^2 + 2 |a| \, |b| \cos \theta$ and yet the inner product formula says
+$$|a+b|^2 = (a+b)\cdot (a+b) = |a|^2 + |b|^2 - 2(a\cdot b)$$  This is a positive number
+and we oppose the law of cosines and the definition of inner product $$2|a|\, |b| \cos \theta = (a+b)^2 - ( a^2 + b^2) = 2 |a \cdot b| $$
+If you are afraid the Law of Cosines only works in two dimensons, just remember any Euclidean triangle has to lie in some 2D plane!
+
+Geometric inequalities?
+
+> \#2 **Distance from point to line**
+>
+> Which point on the line $\vec{a} + t \vec{b}$ is closes to the origin?  Let's compute the norm
+> $$ |\vec{a} + t \vec{b}|^2 = |a|^2 + 2 t (\vec{a} \cdot \vec{b}) + t^2 \vec{b}\cdot \vec{b}$$
+> This is always a positive number, and it's a quadratic function.  So the discriminant is positive.
+> That discriminant is $4 \times \big( |\vec{a}| |\vec{b}| - (\vec{a} \cdot \vec{b})\big) \geq 0$. 
+
+Yet another geometric interpretation.  What's going on here?  For reasons we can't explain this is a fundamental inequality, but we observe
+the Law of Cosines is playing a huge role.
+
+**What are the inequalities good for, outside of inequalities?** I can't give you an answer to that.  Even relating one branch of math to another I have trouble asking, what is this stuff good for?
+
+Geometrically, using the Cauchy-Schwartz inequality always signifies looking for correlations.  Taking two vectors and ignoring the angle between them.  If we knew the angle $\theta$ between two vectors, maybe we could get better estimates?
+
+> Let $z_1, \dots, z_n$ be vectors with $|z - 1| &lt; r$.  Then 
+> $$ |z_1 + \dots + z_n| \, \left|\frac{1}{z_1} + \dots \frac{1}{z_n} \right|  \geq n^2(1 -r^2)$$
+> 
+> [China Math Olympiad](http://math.stackexchange.com/questions/1075250/how-prove-this-complex-inequality-with-same-as-2014-china-cmo-cauchy-schwarz-i) 2014 
+
+Does Cauchy-Schwartz inequality give us enough information to solve this problem?
+
+### [2]() - What is the Pigeonhole Principle
+
+The Pigeonhole principle says given $m+1$ objects in $m$ slots, two of them must have been put into the same slot.  This statement is written so abstractly, it's hard to decide when to use or what conclusions to gain.
+
+Example \#1 comes from number theory, and we might call it **Dirichlet's Pigeonhole Principle**.
+
+> Consider the $N+2$ numbers, $0<  \{ \alpha \}, \{2 \alpha \} ,\dots,  \{ n \alpha \}  &lt; 1$.  These are our "pigeons" and the $N+1$ "slots" are intervals of the form $[ \tfrac{k}{N+1}, \tfrac{k+1}{N+1}]$.  Therefore, $$|| n \alpha || <  \frac{1}{N+1}$$
+for some $0 \leq n \leq N$. 
+
+Dirichlet's approximation theorem can be generalized to vectors, to numbers fields and even beyond that, to **homogenous spaces**.  It is believe the Dirichlet unit theorem.  Searching on MathOverflow seems to give a version of the paper by Artin and Whaples.
+
+I want to know why there aren't too many applications of pigeonhole principle to *enumerative combinatorics* or any combinatorics at all.  That subject seems to be focused on clever bijections, generating functions and inclusion-exclusion and other methods.  Instead, these inequalities are used in *extremal combinatorics* where the sets are hard to describe or imagine.
+
+### [3]() - Poincare Recurrence
+
+In light of some cryptic remarks on MathOverflow, we try to understand better why the Cauchy Schwartz inequality and the Pigeonhole Princple are two sides of the same coin.  Initially they look completely different.  How can
+
+$$ (x^2 + y^2 + z^2)^{1/2}(a^2 + b^2 + c^2)^{1/2} \geq ax + by + cz$$
+
+be the same as painting 4 boxes with three colors, two of them being the same? 
+&#91;
+[1](http://mathoverflow.net/questions/582/cauchy-schwarz-and-pigeonhole),
+[2](http://tcs.nju.edu.cn/wiki/index.php/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6\_%28Fall\_2011%29/Extremal\_graph\_theory), [3](https://terrytao.wordpress.com/2014/06/05/when-is-correlation-transitive/) &#93;.
+
+
+---
+
+*Out in the open wisdom calls aloud, she raises her voice in the public square;* Proverbs 1:20
+
+</xmp>
+
+
+<script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
+
+<!-- <script src="strapdown/v/0.2/strapdown.js"></script> -->
+
+</html>
