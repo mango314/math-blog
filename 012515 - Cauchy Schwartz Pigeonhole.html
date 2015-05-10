@@ -7,7 +7,9 @@
 <style type="text/css">
 #content {width: 60%; float: left; text-align: justify; padding-left: 5%;}
 
-blockquote{ background-color: #BE7E66; padding: 1%;}
+blockquote{ background-color: #EDA749; padding: 1%}
+
+
 </style>
 
 <script type="text/x-mathjax-config">
@@ -15,19 +17,24 @@ MathJax.Hub.Config({
   tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
 });
 </script>
-<script type="text/javascript"
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-
 <!-- <script type="text/javascript"
-  src="MathJax-2.3-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script> -->
+
+<script type="text/javascript"
+  src="MathJax-2.3-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
 
 </head>
 
 <xmp theme="spruce" style="display:none;">
 
+<style type="text/css">
+
+blockquote a { color: #BA5215;}
+
+</style>
 
 # Cauchy Schwarz vs Pigeonhole
 
@@ -146,6 +153,37 @@ be the same as painting 4 boxes with three colors, two of them being the same?
 [1](http://mathoverflow.net/questions/582/cauchy-schwarz-and-pigeonhole),
 [2](http://tcs.nju.edu.cn/wiki/index.php/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6\_%28Fall\_2011%29/Extremal\_graph\_theory), [3](https://terrytao.wordpress.com/2014/06/05/when-is-correlation-transitive/) &#93;.
 
+[**Poincare's Recurrence Theorem**](https://terrytao.wordpress.com/2008/01/30/254a-lecture-8-the-mean-ergodic-theorem/) states:
+
+> Let $(X, \mathcal{X}, \mu, T)$ be a measure preserving dynamical system, and let $E \subseteq X$ be a subset of positive measure.
+Then $$ \limsup_{n \to \infty} \mu(E \cap T^n E) \geq \mu(E)^2 $$
+In paricular $E \cap T^nE$ has positive measure for infinitely many positive $n$.
+
+A dynamical system describes any process over time that can be described in a predictible fashion.
+*Entropy* of that dynamical system might have to do with our inability to predict the initial condition,
+and then we have to gauge how far down the evolution are system has changed.
+
+For example $T: x \mapsto 2x \mod 1$ multiplies a number by $2$ and takes the part after the decimal.  
+If we are wrong with our initial condition, it will only take a few steps before are system state is unpredictible.
+How unpredictible?  We will learn 1 bit of information every step the system evolves.
+
+> Any time we have a measure we can write out the step function supported on $E$
+> $$   \int 1_E \\, d\mu =   \mu(E)  $$  
+> 
+> This is like saying "if  I had a nickel for every time I steped on $E$, blah blah".  Since $T$ is measure preserving, we can instead 
+get a nickel for every time we step on $T^n E$ for any integer $n > 0$.
+> $$   \int 1_{T^n E} \\, d\mu =   \mu(E)  $$  
+>
+> We can add up all these inequalities to get another true equality.
+> $$ \int \sum\_{n=1}^N 1\_{T^n E} \, d\mu  = N \mu(E) $$
+
+
+We don't know very much about the function $f = \sum 1_{T^n E}$ except that it's integral over all space is $N \mu(E)$.
+If we steped on both $E \cap T(E)$ then $f \geq 2$. 
+
+> The Cauchy-Schwartz inequality says, instead of squaring the outside, we can square the inside and get a larger number:
+> $$   \int \sum\_{n=1}^N \left(1\_{T^n E}\right)^2 \, d\mu   \geq  \left( \int \sum\_{n=1}^N 1\_{T^n E} \, d\mu \right)^2 =  N^2 \mu(E)^2  $$ 
+> 
 
 ---
 
@@ -154,8 +192,8 @@ be the same as painting 4 boxes with three colors, two of them being the same?
 </xmp>
 
 
-<script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
+<!-- <script src="http://strapdownjs.com/v/0.2/strapdown.js"></script> -->
 
-<!-- <script src="strapdown/v/0.2/strapdown.js"></script> -->
+<script src="strapdown/v/0.2/strapdown.js"></script>
 
 </html>
