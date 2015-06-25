@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<link rel="shortcut icon" href="tiles.png" type="image/png"/>
+
+<head>
+<title>John's Paranoid Ranting</title>
+
+<style type="text/css">
+#content {width: 60%; float: left; text-align: justify; padding-left: 5%;}
+
+blockquote{ background-color: #EDA749; padding: 1%}
+
+
+</style>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+</head>
+
+<xmp theme="spruce" style="display:none;">
+
+<style type="text/css">
+
+blockquote a { color: #BA5215;}
+
+</style>
+
+Trying understand the spectral theorem.  We have some compact operator $A$ acting on a Hilbert space $\mathcal{H}$, then it has eigenvalues $\{ \lambda _i \}_{i \in \mathbb{Z}} $ and eigenvectors $\{ |\phi _i \rangle\}_{i \in \mathbb{Z}} $.  Then using the spectral theorem I am inclined to write:
+
+$$ A = \sum_{n \in \mathbb{Z}} \lambda_n |\phi _n \rangle \langle \phi_n | $$
+
+A simple choice could be the Laplacian, let $\mathcal{H} = L^2 (S^1)$ and $A = \frac{d^2}{d\theta^2}$,  then $\lambda_n = n^2$ and $\langle \theta | \phi_n \rangle = e^{in\theta}$.
+
+$$ \frac{d^2}{d\theta^2} 
+=   \sum_{n \in \mathbb{Z}} n^2 | \phi_n \rangle  \langle \phi_n |  $$
+
+There is something horribly wrong with this, because in fact my choice of $A$ is not-compact and $n^2 \not \to 0$.
+
+---
+
+If we can Fourier expand the dirac delta function using the theory of distributions can we also Fourier expand the derivative?
+
+$$ \delta''(\theta) = \sum_{n \in \mathbb{Z}} n^2 e^{in\theta}$$
+
+The meaning of the Dirac delta is somewhat delicate, but we can still plot, here $|n| < 10$.
+
+![enter image description here][1]
+
+Although this was intended to be a discussion of the zeta function, we have generated an evaluated a number of interesting zeta functions.  I believe we have the equality as operators on the Hilbert Space $L^2 (S^1)$
+
+$$ \int_0^\theta d\theta_1\, \int_0^{\theta_1} d\theta_2
+=   \sum_{n \in \mathbb{Z}} n^{-2} | \phi_n \rangle  \langle \phi_n |  $$
+
+Unfortunately, I don't know how to avoid using dummy variables for iterated integrals.  Then $\zeta(2)$ is the trace of this operator in some sense.
+
+Lastly there is a Kernel $\mathsf{K}(\theta_1, \theta_2)$ which is supported on $0 < \theta_1 + \theta_2 < 2\pi$.  It's unclear to me why the square defined by this kernel defined by a polygon (using the convolution twist of multiplication, a cocyle), should encode as much information as the Laplacian.
+
+What are the matrix elements of this kernel
+
+$$ \langle n_1 | \mathsf{K} | n_2 \rangle = \int_0^1 d\theta_1 \int_0^{\theta_1} d\theta_2 \; e^{2\pi i (n_1 \theta_1 - n_2 \theta_2)} $$
+
+---
+
+Stephen Hawking probably knew all of this already.  Also some notes on spectral theory https://people.math.ethz.ch/~kowalski/spectral-theory.pdf
+
+
+
+  [1]: http://i.stack.imgur.com/AwHng.png
+
+</xmp>
+
+
+<script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
+
+</html>
