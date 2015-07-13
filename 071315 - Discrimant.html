@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<link rel="shortcut icon" href="tiles.png" type="image/png"/>
+
+<head>
+<title>John's Makes Sense</title>
+
+<style type="text/css">
+#content {width: 60%; float: left; text-align: justify; padding-left: 5%;}
+
+blockquote{ background-color: #EDA749; padding: 1%}
+
+
+</style>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+</head>
+
+<xmp theme="spruce" style="display:none;">
+
+<style type="text/css">
+
+blockquote a { color: #BA5215;}
+
+</style>
+
+# Discrimants of Cubic
+
+For a quadratic $a x^2 + bx + c = 0$ the discriminant $b^2 - 4ac$ contains  information about the roots.
+
+Then if we have a $2\times 2$ matrix $A$, the eigenvalues must satisfy $x^2 - \mathrm{tr}(A) x + \det(A) = 0$, so the discriminant would be: $\bbox[2px,border:2px solid #DD8888]{\mathrm{tr}(A)^2 - 4\det A}$
+
+---
+
+For a cubic polynomial $ax^3 + bx^2 + cx + d = 0$ there is a really complicated discrimant formula $b^2 c^2 -4ac^3 -4b^3 d-27a^2 d^2+18abcd$
+
+If this polynomial is the characteristic polynomial of a matrix $A$, does the formula (in terms of $A$) get any simpler?
+
+---
+
+If $a = 1, b= 0$ then $x^3 + cx + d = 0$ would have discriminant $-108\big (c/3)^3 + (d/2)^2\big) $
+
+If  $\mathrm{tr}(A) = 0$ the characteristic eq is $\bbox[2px,border:2px solid #8888DD]{x^3 - \left[ \mathrm{tr}(A^2) - \mathrm{tr}(A)^2 \right] x- \det(A) = 0}$ <br>I can't force a matrix to be traceless, but I can take the eigenvalues of $A - \mathrm{tr}(A)$.
+
+</xmp>
+
+
+<script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
+
+</html>
