@@ -1,0 +1,68 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, tabto, amssymb}
+\title{Furstenberg Topology}
+\usepackage{xcolor}
+\usepackage[a4paper, total={6.5in, 10in}]{geometry}
+\usepackage{framed}
+\usepackage{tgadventor}
+\colorlet{shadecolor}{red!10}
+\author{John Mangual}
+\date{}
+
+\definecolor{green}{HTML}{BED46D}
+\definecolor{blue}{HTML}{7A6BED}
+
+\begin{document}
+{\fontfamily{lmss}\selectfont
+
+\maketitle
+
+\section{Infinitude of Primes in Various Domains}
+
+%I always found it strange how many theorems I have learned simply to forget them.  Or how many proofs I plow through - religiously checking each step - without attempting to find any logic.  Why am I learning mathematics then? It would not be fair to generalize this to my readers, who learn things more carefully.  In my case, let's go way back to the beginning to what is called Elementary Number Theory.
+
+In 1955, Harry Furstenberg gave a topological proof of the infinitude of prime numbers in $\mathbb{Z}$. A collection of open sets $\mathcal{B}$ is a \textbf{basis}\footnote{Allen Hatcher \textbf{Notes on Introductory Point-Set Topology} http://bit.ly/1MxYoHI} for a topology on $\mathbb{Z}$ if every open set is a union of open sets in $\mathcal{B}$. In our case every open set is the union of arithmetic sequences in $\mathbb{Z}$ 
+$$\mathcal{B} = \{ a\mathbb{Z} + b: a \neq 0, b \in \mathbb{Z}\}$$
+\noindent \textbf{Ex} {\color{green}Show this space is normal}.   Every arithmetic progression is closed as well as open since:
+$$ \mathbb{Z} = \big( a\mathbb{Z} + b_0 \big) \cup \bigcup_{0 \leq b\neq b_0 < a} \big( a\mathbb{Z} + b \big)$$
+So the union of a finite number of arithmetic progressions is closed. Furstenburg asks about the set:
+$$  \bigcup_p A_p  = \mathbb{Z} \backslash \{-1,1 \}$$
+The LHS is the finite union of closed sets, but $\{ -1,1\}$ is not open (it only has 2 points).  So there must be infinitely many primes. \newline
+
+\noindent I guess that's a proof... normality means here compact and Hausdorff.  In the case of Furstenberg topology:
+\begin{itemize}
+	\item \textbf{Compact} that any partition of $\mathbb{Z}$ into arithmetic sequences, can be pared down to a union of finitely many arithmetic sequences.  
+	\item \textbf{Hausdorff} Any two numbers $x,y$ are elements of disjoint arithmetic sequences.  How about $\big(a\mathbb{Z} + x\big) \cup \big( a\mathbb{Z} + y \big) = \varnothing$ not $a$ does not divide $y-x$.
+\end{itemize}
+The result says that $\mathbb{Z} \backslash \{ -1,1\}$ cannot be covered by finitely many arithmetic sequences. \newline 
+
+\noindent How to generalize to $\mathbb{Z}[i]$?  Nearly all the steps are the same except we choose a different set.
+$$  \bigcup_p A_p  = \mathbb{Z} \backslash \{1,i,-1,-i \}$$
+So now we have shown there are infinitely many primes in $\mathbb{Z}[i]$.  For any ring of integers $\mathcal{O}_K$ the story could be the same. \newline
+
+\noindent What about primes in arithemetic sequences in $\mathbb{Z}$?  It could be that Furstenberg topology still works here.  Instead we take the \textbf{subspace} topology.  For $A \subset \mathbb{Z}$ there is $O'$ is open in $\mathcal{B}_A$ if $O'= O \cap A$ for some open set in $\mathcal{B}$.  The Furstenberg topology relative to an arithmetic sequence $ a \mathbb{Z} + b$ is just the Furstenberg topology itself resticted to that arithemtic sequence, since 
+$$ \big(a \mathbb{Z} + b \big) \cap \big(c \mathbb{Z} + d \big) = \varnothing \text{ or } b + \mathrm{lcm}(a,c) \mathbb{Z} $$
+What if there are finintely many primes in this arithmetic sequence?  There still might be finintely many prime outside of this sequence, so:
+
+$$ \mathbb{Z} \backslash \bigcup_{p \notin A } A_p =  \prod_{p \in A} p^\mathbb{N}$$
+Unfortunately, this remainder has \textit{natural density} $0$ and cannot be an open set.
+
+\begin{thebibliography}{9}
+\bibitem{HW} 
+G. H. Hardy , Edward M. Wright.
+\textit{An Introduction to the Theory of Numbers}. 
+Oxford University Press; 2008.
+ 
+\bibitem{F}
+Harry Furstenberg.  \textit{On the Infinitude of Primes} American Mathematical Monthly, 62, (1955), 353.
+
+\bibitem{M}
+Idris Mercer.  \textit{On Furstenberg's Proof of the
+Infinitude of Primes} American Mathematical Monthly 116: 355-356
+ 
+ 
+
+\end{thebibliography}
+}
+\end{document}

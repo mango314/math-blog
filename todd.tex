@@ -1,0 +1,108 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, tabto, amssymb}
+\title{Approximating $\sum$ with $\int$ in 2 Dimensions}
+\usepackage{xcolor}
+\usepackage[a4paper, total={6.5in, 10in}]{geometry}
+\usepackage{framed}
+\usepackage{tgadventor}
+\colorlet{shadecolor}{red!10}
+\author{John Mangual}
+\date{}
+
+\definecolor{green}{HTML}{BED46D}
+\definecolor{blue}{HTML}{7A6BED}
+
+\begin{document}
+{\fontfamily{lmss}\selectfont
+
+\maketitle
+
+\section{Euler-Maclaurin}
+
+What is the 2-dimensional version of the Euler-Maclaurin formula?
+
+$$ \tfrac{1}{4}[f(0,0)+f(1,0)+f(1,1)+f(1,0)]  \approx \int_0^1  f(x,y)\,dx \, dy$$
+
+\noindent This integral is sort of correct, but what is more accurate?  After lots of scratchwork I came up with a complicated formula:
+
+\begin{eqnarray*} \sum_{a}^b \sum_{c}^d f(m,n) &=& \int_a^b \int_c^d f(x,y)\, dx\, dy  \\
+&-& \frac{1}{2} \Bigg[ \int_a^b \Big[ f(x,d) - f(x,c) \Big] dx + \int_c^d \Big[ f(b,y) - f(a,y) \Big] dy\Bigg] \\
+&+& \frac{1}{4} \left[ f(a,c) - f(a,d) - f(b,c) + f(b,d) \right] \end{eqnarray*}
+
+\noindent It is so complicated I don't even know if it works.  I would like to estimate the factorial function over complex numbers:
+
+$$ (M+iN)!_{\mathbb{Z}[i]} = M! N! \prod_{m \geq 1, n \geq 1}^{M,N} (m+in) $$
+
+\noindent Not even sure this is such a great definition of factorial over Gaussian integers.  When in doubt, we can consult Manjul Bhargava's definition of S-factorial (originally over $\mathbb{Z}$) \cite{B}. \newline
+
+\noindent There are two ways to validate the above formula.  One is to check that separation of variables works.  Let $f(m,n) = f_0(m) + f_1(n)$.
+
+$$ \sum_{a}^b \sum_{c}^d f(m,n) \approx \sum_{a}^b \sum_{c}^d \big[f_0(m) + f_1(n)\big]
+=  (d-c)\sum_{a}^b  f_0(m)
++  (b-a)\sum_{c}^d  f_1(n)$$
+
+\noindent The integral formula should have identical check.  The last line is worth a quick check:
+
+$$ f(a,c) - f(a,d) - f(b,c) + f(b,d) 
+= \big(f_0(a) + f_1(c)\big) 
+- \big(f_0(a) + f_1(d)\big) 
+- \big(f_0(b) + f_1(c)\big) 
++ \big(f_0(b) + f_1(d)\big) = 0  $$
+
+\noindent These corner terms play no input if there is separation of variables.  The middle term we can validate:
+
+$$ \int_a^b \Big[ f(x,d) - f(x,c) \Big] dx 
+=\int_a^b \Big[ \big(f_0(x) + f_1(d)\big)  -\big(f_0(x) + f_1(c)\big)  \Big] dx  = 
+(b-a) \Big[  f_1(d)  - f_1(c)  \Big]  
+ $$
+
+\noindent So our summation formula behaves correctly under separation of variables.
+
+\subsection{Another Derivation}
+
+Sadly I am still not 100\% sure so we are going to derive the 2-variable formula another way, simply by iterating the EM formula twice:
+
+\begin{eqnarray*} \sum_{a}^b \sum_{c}^d f(m,n) &\approx&
+ \sum_{a}^b \bigg[ \int_c^d f(m,y) \, dx + \frac{1}{2}\big[ f(m,d) - f(m,c) \big] \bigg] \\
+ &=&    \int_c^d \sum_{a}^b f(m,y) \, dx + \sum_{a}^b\frac{1}{2}\big[ f(m,d) - f(m,c) \big] \end{eqnarray*}
+ 
+\noindent Looks like we are recovering the previous steps as before:
+ 
+ $$ \sum_{a}^b\frac{1}{2}\big[ f(m,d) - f(m,c) \big] =  \frac{1}{2}\int_a^b \bigg[ f(x,d) - f(x,c) \bigg]\, dx + 
+\frac{1}{4} \bigg[ \big( f(b,d) - f(b,c)) - ( f(a,d) - f(a,c)\big)\bigg]
+$$
+
+\noindent Then summation in the integral can also be approximated using single-variable Euler-Maclaurin
+
+$$ \int_c^d \sum_{a}^b f(m,y) \, dy  
+ = \int_c^d \bigg( \int_a^b f(x,y) \, dx + \frac{1}{2} \bigg[ f(b,y) - f(a,y) \bigg] \bigg) \, dy $$
+
+\noindent Sorry for this sucky explanation.  After some introspection it should be clear the two formulas are the same.  These types of formulas were very usefulf or engineers or actuaries who deal with large tables of numbers.  These days even though a computer might do it for you in certain circumstances, it won't be the case if your information has not been digitized. \newline
+
+%I always found it strange how many theorems I have learned simply to forget them.  Or how many proofs I plow through - religiously checking each step - without attempting to find any logic.  Why am I learning mathematics then? It would not be fair to generalize this to my readers, who learn things more carefully.  In my case, let's go way back to the beginning to what is called Elementary Number Theory.
+
+\noindent Stirling's formula involves estimating the integral of $\log (x + iy)$ over a square.  Stokes theorem or Green's formula could play a role in such approximations.
+
+
+
+\begin{thebibliography}{9}
+\bibitem{HW} 
+Yael Karshon, Shlomo Sternberg, Jonathan Weitsman.
+\textit{Exact Euler Maclaurin formulas for simple lattice polytopes}.  \texttt{arXiv:math/0507572}
+ 
+\bibitem{F}
+Harry Furstenberg.  \textit{On the Infinitude of Primes} American Mathematical Monthly, 62, (1955), 353.
+
+\bibitem{B}
+Manjul Bhargava.  \textit{The Factorial Function and Generalizations} American Mathematical Monthly, Vol. 107, No. 9 (Nov., 2000), pp. 783-799
+ 
+\bibitem{S}
+JF Steffensen. \textit{Interpolation} Dover Publications,2006.  (Originally Williams and Wilkins, 1927).
+
+\bibitem{Sp}
+Michael Spivak \textit{Calculus on Manifolds} Westview Press, 1971.
+
+\end{thebibliography}
+}
+\end{document}
