@@ -1,0 +1,78 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, tabto, amssymb}
+\title{ Squarefree Numbers }
+\usepackage{xcolor}
+\usepackage[a4paper, total={6.5in, 10in}]{geometry}
+\usepackage{framed}
+\usepackage{tgadventor}
+\colorlet{shadecolor}{red!10}
+\author{John Mangual}
+\date{}
+
+\newcommand{\next}{\newline \newline \noindent}
+
+\newcommand{\icol}[1]{% inline column vector
+  \left(\begin{smallmatrix}#1\end{smallmatrix}\right)%
+}
+
+\newcommand{\irow}[1]{% inline row vector
+  \begin{smallmatrix}(#1)\end{smallmatrix}%
+}
+
+\definecolor{green}{HTML}{BED46D}
+\definecolor{blue}{HTML}{7A6BED}
+\usepackage{hyperref}
+
+\begin{document}
+{\fontfamily{lmss}\selectfont
+
+\maketitle
+
+\section{ Orbits of Group Actions}
+
+As  \cite{EMMV} indicates, number theory problems can often be turned into statements about group actions.  \newline
+
+\noindent \textbf{Ex}: The odds of two numbers being relatively prime is $\frac{6}{\pi^2}$.  How to express this as a problem in group theory? 
+\next It is related to the action of $GL(2, \mathbb{Z})$ on the integer lattice $\mathbb{Z}^2$.  The orbit of $\icol{0 \\ 0}$ is itself.  The orbit of $\icol{1 \\ 0}$ is all integer vectors with relatively prime coordinates\footnote{Brian Conrad \textbf{Group Actions} \url{http://www.math.uconn.edu/~kconrad/blurbs/grouptheory/gpaction.pdf}}.
+
+$$ GL(2, \mathbb{Z})\begin{pmatrix}1 \\ 0 \end{pmatrix} = \left\{ \begin{pmatrix}a \\ b \end{pmatrix}: (a,b)=1 \right\} $$
+
+\noindent Visual inspection of the set $\{ (a,b) = 1\} \subset \mathbb{Z}^2$ does not ``look" symmetric.  In fact\cite{BH2}:
+
+\begin{itemize}
+\item $\mathbb{Z}^2 = \bigcup_{m \in \mathbb{N}_0} \{ (a,b) = m\}$ disjoint union of $GL(2, \mathbb{Z})$ invariant sets.
+\item $\{ (a,b) = 1 \}$ contains holes of arbitrary size $\rho > 0$ which repeat as some copy of $\icol{a\\b}\mathbb{Z}^2 + \icol{c\\d}0$.
+\item The different set $\{ (a,b) = 1 \} - \{ (a,b) = 1 \} = \mathbb{Z}^2$ is the entire lattice plane.
+\item The natural density is $\frac{6}{\pi^2}$ despite no obvious rotation symmetry.
+\end{itemize}
+
+\noindent That paper will develop the dynamical system related to the relatively prime integers.  \next
+\textbf{Ex} Solutions to $x^2 + y^2 + z^2 = n$ do have group theory interpretation, but only with much difficulty. \cite{EMV}  The trouble is, we can multiply complex numbers sure $(a+bi)(c+di) = (ac-bd) + i(ad+bc)$, there is no multiplily triples of numbers $(x,y,z)$. \next
+\textbf{Ex} In a separate note we tackle the diophantine equation $x^2 + y^2 + z^2 = 3 xyz$.  For example, one solution is $(x,y,z) = (1,1,1)$.  We can generate more solutions by replacing $z \leftrightarrow 3xy - z$, leading to the solution $(1,1,2)$. \next
+\textbf{Ex} Pythagorean triples $x^2 + y^2 = z^2$ have an $\mathrm{SL}(2,\mathbb{Z})$ group structure.  \cite{K}
+
+\begin{thebibliography}{9}
+\bibitem{EMMV} 
+Manfred Einsiedler, Grigory Margulis, Amir Mohammadi, Akshay Venkatesh.
+\textit{Effective Equidistribution and Property $\tau$}.  \texttt{arXiv:1503.05884}
+ 
+\bibitem{F}
+Harry Furstenberg.  \textit{On the Infinitude of Primes} American Mathematical Monthly, 62, (1955), 353.
+
+\bibitem{BH1}
+Michael Baake, Christian Huck.  \textit{Dynamical properties of $k$-free lattice points} \texttt{ arXiv:1402.2202}
+
+\bibitem{BH2}
+Michael Baake, Christian Huck.  \textit{Ergodic properties of visible lattice points} \texttt{arXiv:1501.01198}
+
+\bibitem{EMV} Jordan S. Ellenberg, Philippe Michel, Akshay Venkatesh. \textit{Linnik's ergodic method and the distribution of integer points on spheres} \texttt{arXiv:1001.0897}
+
+\bibitem{BGS} Jean Bourgain, Alex Gamburd, Peter Sarnak \textit{Markoff Triples and Strong Approximation} \texttt{}
+
+\bibitem{K} Alex Kontorovich \textit{Levels of Distribution and the Affine Sieve} \texttt{arXiv:1406.1375}
+
+
+\end{thebibliography}
+}
+\end{document}
