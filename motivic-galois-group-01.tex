@@ -73,9 +73,37 @@ incoming/.style={thick,draw=blue, postaction={decorate},
 
 \end{tikzpicture}
 
-\noindent Two massive particles $m_1, m_2 \neq 0$ and one masslesss particle $m_3 = 0$.  Momentum conservation says $m_1 + m_2 = 0$.  {\color{orange}Why are mass and momentum identified?}?{\color{orange}?}? \newline
+\noindent Two massive particles $m_1, m_2 \neq 0$ and one masslesss particle $m_3 = 0$.  Momentum conservation says $q_1 + q_2 + q_3 = 0$.  {\color{orange}Why are mass and momentum identified?}?{\color{orange}?}? \newline
 
-\noindent \texttt{Over 90 minutes of lecture remain...}
+\begin{tikzpicture}[node distance=1cm and 1.5cm]
+
+\draw[incoming] (-1,2) node [left] {$q_1$} -- (0,0);
+\draw[incoming] ( 0,2) node [left] {$q_2$} -- (0,0);
+\draw[incoming] (2,2) node [right] {$q_n$} -- (0,0);
+\node at (1,2) {$...$};
+
+\draw[incoming] ( 5,2) node [right] {$q_1 + q_2 + \dots + q_n$} -- (5,0);
+
+
+\end{tikzpicture}
+
+\noindent As a short hand usually replace several incoming arrow with a single arrow representing the sum of momenta. \newline
+
+\noindent View Feynman amplitude $I_G(m,q)$ as a function (\textbf{multi-valued} depending on choice of covering space, \textbf{infinite} possibly everywhere) function of affine variety 
+
+$$\mathcal{M}_G^V = \left\{ (m,q) : \begin{array}{lc|lc} m_e \in \mathbb{A}^1 \backslash \{0\} & e \notin V_m & q_i \in \mathbb{A}^1 \backslash \{0\}  &  i \notin V_q \\ m_e = 0 & e \in V_m & q_i=0 & i \in V_q \end{array} \right\} \cap \left\{ \sum q_i = 0 \right\} $$
+
+\noindent The \textbf{Euclidean Region}  is $\mathcal{M}_G^V(\mathbb{R})$.
+
+\subsection{Feynman Amplitudes}
+
+1960's presentation using \textbf{graph polynomials}.  \newline \newline
+
+\noindent A \textbf{spanning $k$-tree} $T = T_1 \cup T_2 \cup \dots \cup T_n \subseteq G$ is a subgraph with $k$ connected components $T_i$ such that $V_G = \dot{\bigcup} V_{T_i}$ to each $e \in E_g$ we associate ``Schwinger parameter"... \newline
+
+\noindent \textbf{Kirkhoff Polynomial} $\psi_G$ "1st Symanzik" polynomial
+$$ \psi_G = \sum_{T \subseteq G} \prod_{e \in T} \alpha_e $$
+%\noindent \texttt{Over 90 minutes of lecture remain...}
 
 
 \begin{thebibliography}{9}
@@ -87,6 +115,8 @@ Francis Brown. \textit{Irrationality proofs for zeta values, moduli spaces and d
 
 \bibitem{B3}
 Francis Brown. \textit{Modular forms in Quantum Field Theory}  \texttt{arXiv:1304.5342}
+
+\bibitem{GR} Chris Godsil, Gordon Royle.  \textbf{Algebraic Graph Theory} (Graduate Texts in Mathematics 207)  Springer, 2001.
 
 \end{thebibliography}
 }
