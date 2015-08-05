@@ -1,0 +1,93 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, tabto, amssymb}
+\title{Numbers and Entropy}
+\usepackage{xcolor}
+\usepackage[a4paper, total={6.5in, 10in}]{geometry}
+\usepackage{framed}
+\usepackage{tgadventor}
+\usepackage{feynmf}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{decorations.markings}
+\colorlet{shadecolor}{red!10}
+\author{John Mangual}
+\date{}
+
+\definecolor{green}{HTML}{BED46D}
+\definecolor{blue}{HTML}{7A6BED}
+
+\usepackage{hyperref}
+
+\begin{document}
+{\fontfamily{lmss}\selectfont
+
+\maketitle
+
+\section{Motive Galois Group}
+
+Goal: To define and study a Galois Theory of Feynman Amplitudes. 
+
+\begin{itemize}
+\item Broadhurst-Kreimer (1995) found multi-$\zeta$ values as amplitudes of massless $\phi^4$ theory.
+\item Deligne-Ihara-Drinfield (1989) Motivic Galois Group, $MT(\mathbb{Z})$
+\item Cartier (1998) Is there a "cosmic" Galois Group.
+\item Kontsevich (1998) Counting points over finite fields.
+\item Connes-Marcolli (2004) {\color{gray}{Cosmic Galois Group related to renormalization}}.
+\item Belkale-Brosner (2003) Graph hypersurfaces of general type.  Physically unrealistic counterexamples.
+\item Bloch-Enault-Kreimer (2006) Defined motive on "primitive" graphs.
+\item co-workers: Dorin, Panzer, Schentz, Yates.  {\color{blue}{Exist amplitudes which are \textbf{not} multiple-zeta values.  \textbf{not all} multiple zeta values appear as amplitudes.}}
+\end{itemize}
+
+\noindent \textbf{NB} motives play no role.  Retrieve as special cases, the ``symbol" of an amplitude.  Renormalization group (Connes-Kreimer Hopf algebra).  Hidden recursive structure on amplitudes; contraints.
+
+\subsection{Feynman Graphs}
+
+Scalar QFT in Euclidean space, $\mathbb{R}^d$.  A \textbf{Feynman graph} is a connected graph.
+
+$$ G = (V, E_G, E_G^{ext}) $$
+
+\noindent Vertices, internal Edges and external half-Edges.  ``kinematic" data.
+\begin{itemize}
+\item A particle mass $m_e: E_G \to \mathbb{R}$
+\item Incoming momentum $q: E_G^{ext} \to \mathbb{R}^d$
+\item Conservation of momentum $\displaystyle \sum_{E_G^{ext}} q_i = 0$.  Draw massive edges as \textbf{thickened} lines.
+\end{itemize}
+
+\noindent \textbf{Ex} 
+
+\tikzset{
+incoming/.style={thick,draw=blue, postaction={decorate},
+    decoration={markings,mark=at position .5 with {\arrow[blue]{triangle 45}}}}
+ }
+
+\begin{tikzpicture}[node distance=1cm and 1.5cm]
+
+\draw[incoming] (0,0) node [left] {$q_2$} -- (1,0);
+\draw[incoming] (4,2.5) node [right] {$q_1$} -- (3, 2) ;
+\draw[incoming] (4,-2.5)node [right] {$q_3$} -- (3,-2) ;
+\draw[line width=0.1cm, black] (1,0) -- (3,2) node [midway,fill=white,color=blue,text=white] {$1$};
+\draw[line width=0.1cm, black] (3,2) -- (3,-2)node [midway,fill=white,color=blue,text=white] {$2$};
+\draw (3,-2) -- (1,0) node [midway,fill=white,color=green,text=white] {$3$};
+
+\end{tikzpicture}
+
+\noindent Two massive particles $m_1, m_2 \neq 0$ and one masslesss particle $m_3 = 0$.  Momentum conservation says $m_1 + m_2 = 0$.  {\color{orange}Why are mass and momentum identified?}?{\color{orange}?}? \newline
+
+\noindent \texttt{Over 90 minutes of lecture remain...}
+
+
+\begin{thebibliography}{9}
+
+\bibitem{B1} Francis Brown.  Iterated Integrals in Quantum Field Theory.  \url{http://www.ihes.fr/~brown/ColombiaNotes7.pdf}
+ 
+\bibitem{B2}
+Francis Brown. \textit{Irrationality proofs for zeta values, moduli spaces and dinner parties}  \texttt{ arXiv:1412.6508}
+
+\bibitem{B3}
+Francis Brown. \textit{Modular forms in Quantum Field Theory}  \texttt{arXiv:1304.5342}
+
+\end{thebibliography}
+}
+\end{document}
