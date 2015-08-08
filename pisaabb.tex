@@ -1,0 +1,80 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, tabto, amssymb}
+\title{Numbers and Entropy}
+\usepackage{xcolor}
+\usepackage[a4paper, total={6.5in, 10in}]{geometry}
+\usepackage{framed}
+\usepackage{tgadventor}
+\colorlet{shadecolor}{red!10}
+\author{John Mangual}
+\date{}
+
+\definecolor{green}{HTML}{BED46D}
+\definecolor{blue}{HTML}{7A6BED}
+\usepackage{hyperref}
+
+\begin{document}
+{\fontfamily{lmss}\selectfont
+
+\maketitle
+
+
+
+\noindent Fermat\footnote{\textbf{Efficiently finding two squares which sum to a prime} \tabto{9cm} http://math.stackexchange.com/q/5877/4997} showed that any $p = a^2 + b^2$ has a solution for $p$ prime and integers $a,b$ iff $p = 4k+1$.  Primes can be arbitrarily large, how do we find $(a,b)$? \newline
+
+\noindent \textbf{Algorithm \#1 } 
+\begin{itemize}
+\item Let $x$ be quadratic non-residue and set $z=x^{\frac{p-1}{4}} + i $
+\item Then $a + ib = \mathrm{gcd}(x^{\frac{p-1}{4}} + i ,p)$
+\end{itemize}
+
+\noindent \textbf{Algorithm \#2 } 
+\begin{itemize}
+\item Let $(\frac{a}{p})$ be the Legendre symbol\footnote{\textbf{Explicit formula for Fermat's $4k+1$ theorem} \tabto{9cm} http://math.stackexchange.com/a/74299/4997}.
+\item $a = \sum_{0 \leq x < p} (\frac{x^3 - x}{p})$
+\end{itemize}
+
+\noindent \textbf{Algorithm \#3 } 
+Let $c = \sqrt{-1} \mod p$ and $\mathrm{gcd}(p, i-c) = a+bi$ then $p = a^2 + b^2$. 
+\begin{itemize}
+\item Somehow need to compute $\sqrt{-1}$ (maybe theory of Pell's eq)
+\item need GCD algorithm in $\mathbb{Z}[i]$.
+\end{itemize}
+
+\noindent \textbf{Algorithm \#4 }
+\begin{itemize}
+\item Find $z^2 = -1 \mod p$.
+\item Take Euclidean algorithm of $(z,p) $ until $x,y < \sqrt{p}$
+\end{itemize}
+
+\noindent \textbf{Algorithm \#5 }
+\begin{itemize}
+\item Find $x = \frac{1}{2}\binom{2k}{k} \mod p$ and let  $y = x \cdot (2k)! \mod p$
+\item {\color{gray} Why are $x,y < \frac{p}{2}$ ?} Gauss showed $x^2 + y^2 = p$ (that is not a congruence).
+\end{itemize}
+
+\section{Prime Number Theorem}
+
+What happens to these algorithms as $p \to \infty$ ? No freaking idea.
+
+
+
+\begin{thebibliography}{9}
+
+\bibitem{BK}
+Jean Bourgain, Alex Kontorovich. \newline \textit{Beyond Expansion II: Low-Lying Fundamental Geodesics}   \texttt{arXiv:1406.1366} \newline
+\textit{Beyond Expansion II: Traces of Thin Semigroups} \texttt{arXiv:1310.7190}
+
+\bibitem{K}
+Dubi Kelmer. \textit{Quadratic irrationals and linking numbers of modular knots}  \texttt{arXiv:1205.2230}
+ 
+\bibitem{AS}
+Menny Aka, Uri Shapira. \textit{On the evolution of continued fractions in a fixed quadratic field}  \texttt{arXiv:1201.1280}
+
+\bibitem{M}
+Curtis McMullen \textit{Uniformly Diophantine numbers in a fixed real quadratic field } \url{http://www.math.harvard.edu/~ctm/papers/home/text/papers/cf/cf.pdf}
+
+\end{thebibliography}
+}
+\end{document}
