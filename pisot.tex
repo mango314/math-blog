@@ -1,0 +1,96 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, tabto, amssymb}
+\title{Notes: Monoids of Pisot Matrices}
+\usepackage{xcolor}
+\usepackage[a4paper, total={6.5in, 10in}]{geometry}
+\usepackage{framed}
+\usepackage{tgadventor}
+\colorlet{shadecolor}{red!10}
+\author{John Mangual}
+\date{}
+
+\definecolor{green}{HTML}{BED46D}
+\definecolor{blue}{HTML}{7A6BED}
+
+\begin{document}
+{\fontfamily{lmss}\selectfont
+
+\maketitle
+
+\section{Fully Subtractive Continued Fractions}
+
+Avila and Delecroix find \textbf{monoids} of $3\times 3$ matrices such that the eigenvalues are $\textbf{pisot}$, in other words $|\lambda_1| > 1 > |\lambda_2|, |\lambda_3| > 0$.  The roots of $x^3 = x + 1$ are examples of such a number.  $x = 1.32471795\dots$
+
+The monoid is related to the \textbf{fully subtractive continued fraction algorithm} for 3 numbers.  Starting from 3 matrices:
+$$ 
+A = \left(\begin{array}{ccc} 1 & 0 & 0 \\ 1 & 1 & 0 \\ 1 & 0 & 1\end{array}\right)\hspace{0.25in}
+B = \left(\begin{array}{ccc} 1 & 1 & 0 \\ 0 & 1 & 0 \\ 0 & 1 & 1\end{array}\right)\hspace{0.25in}
+C = \left(\begin{array}{ccc} 1 & 0 & 1 \\ 0 & 1 & 1 \\ 0 & 0 & 1\end{array}\right) 
+$$
+The Pisot monoid is the regular language in $\{A,B,C\}^*$ which contains each of the letters $A,B,C$. In fact\footnote{http://cs.stackexchange.com/a/45187/3131}:
+
+$$\textbf{Pisot} = \{ w: |w|_A \geq 1 \}  \cap \{ w: |w|_B \geq 1 \}\cap\{ w: |w|_C \geq 1 \}$$
+where $|w|_A$ counts the instances of $A$ in the language $\{A,B,C\}^*$.  This monoid condition is very naturel since it insures all the matrix entries are $\geq 0$:
+
+$$ ABC = 
+ \left(\begin{array}{ccc} 1 & 1 & 2 \\ 1 & 2 & 3 \\ 1 & 2 & 4\end{array}\right) 
+ $$
+Numerical computation returns characteristic polynomial $x^3 -7x^2+5x-1 $ with eigenvalues $x = \boxed{6.222}$ and $x= \boxed{0.389 \pm 0.0974\,i} $  The largest eigenvalue is the Pisot number and it's always real, and now we have a whole monoid\footnote{\textbf{Monoid} is also a term in Category Theory and Functional Programming.} of them.
+
+\subsection{Constructing the Eigenvalues by Hand}
+
+If was very instructive for me to do the computations by hand (and I wasn't near a computer at the time).  At moments, jumping through all sorts of hoops to get an estimate.  For starters how do we get the characteristic polynomial of a $3 \times 3$ matrix?  For a $2 \times 2$:
+
+$$ x^2 - \textrm{tr}(A)x +  \textrm{det} (A) = 0$$
+There is a formula for the larger matrices.  I think it's the last chance we get:
+$$ x^3 - \mathrm{tr}(A)x^2 - \big[\mathrm{tr}(A^2) - \mathrm{tr}(A)^2\big]x - \det(A) = 0$$
+\subsection{Minmax}
+
+In order to prove this very broad statement about eigenvalues, Avila and Delecroix observe the matrices $A,B,C$ preserve the \textbf{cone} determined by the triangle inequalties.
+$$ x + y > z \text{ and } y + z > x \text{ and } z + x > y$$
+The triangle inequalities determine a cone in $\mathbb{R}P^2$ (since we can multiply $x,y,z$ by the same number, dialing the triangle.  The transformation $A$ gives another triangle.
+$$ x + (x+y) > (x+z)\text{ and } (x+y) + (x+z) > x \text{ and } (x+z) + x > (x+y)$$
+In this new triangle $(x, x+y, x+z)$ the first coordinate is always the smallest. \newline
+
+\noindent If we set $x+y+z=1$, the set of triangles is itself an equalateral triangle which can be divided into 4 pieces.  The maps $A,B,C$ map the big triangle to each of the 3 corners.  The limit set of this iterated funciton system is called the \textbf{Sierpinski Gasket}, which the authors of \cite{AD} may have found too obvious to mention.  The set of points not in $\{A,B\}^*\cup \{B,C\}^*\cup\{C,A\}^*$ form the \textbf{interior} of the gasket. \newline
+
+\noindent The triangle represents the set of possible largest eigenvectors of $$X \in \{ A,B,C\}^* \backslash \Big( \{A,B\}^*\cup \{B,C\}^*\cup\{C,A\}^* \Big) $$
+If we multiply enough matrices together, the cone gets narrower and narrower converging to a single ray.  This is the basis of \textbf{power iteration} eigenvalue method.   \newline
+
+\noindent For any cone we can define an $L^\infty$ norm:
+
+$$ || A^T||_\Lambda = \underset{v \in \mathbb{P}(\Lambda) }{\mathrm{sup}} \;
+\underset{\substack {  ||z||\leq 1  \\ z \perp v }}{\mathrm{max}} \;||A^T z||$$
+This unusual matrix norm has its origins in Perron Frobenius theory.  If we have any information about the first eigenvector, we would like to know the second eigenvalue:
+
+$$ \lambda_2 \leq \underset{x \in v^\perp \backslash \{0\} }{\mathrm{sup}} \; \frac{||A x||}{||x||} $$
+more importantly we can to check that $|\lambda_2| \leq 1$. Knowing that dominant eigenvector $v = (x,y,z)$ satisfies the triangle inequality, shomewhow we have to show $||A x|| < ||x|| $ for $x \perp v$.
+
+\subsection{Gershgorin Circles}
+
+I think Avila's proof is crazy!  Let's try proving instead with Gershgorin circles!
+
+
+\begin{thebibliography}{9}
+\bibitem{HW} 
+G. H. Hardy , Edward M. Wright.
+\textit{An Introduction to the Theory of Numbers}. 
+Oxford University Press; 2008.
+ 
+\bibitem{F}
+Harry Furstenberg.  \textit{On the Infinitude of Primes} American Mathematical Monthly, 62, (1955), 353.
+
+\bibitem{M}
+Idris Mercer.  \textit{On Furstenberg's Proof of the
+Infinitude of Primes} American Mathematical Monthly 116: 355-356
+
+\bibitem{AD}
+Artur Avila, Vincent Delecroix. \textit{Some monoids of Pisot matrices}
+\texttt{arXiv:1506.03692}
+ 
+ 
+
+\end{thebibliography}
+}
+\end{document}
