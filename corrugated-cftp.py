@@ -1,3 +1,7 @@
+# Exact sampling of corrugated surfaces
+# Sergio Caracciolo, Enrico Rinaldi, Andrea Sportiello
+# http://front.math.ucdavis.edu/0810.2660
+
 import numpy as np
 
 L = 10
