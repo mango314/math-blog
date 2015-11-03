@@ -1,0 +1,75 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, tabto, amssymb}
+\title{Contact homology and virtual fundamental cycles}
+\usepackage{xcolor}
+\usepackage[a4paper, total={6.5in, 10in}]{geometry}
+\usepackage{framed}
+\usepackage{tgadventor}
+\colorlet{shadecolor}{red!10}
+\author{John Pardon - Lectures @ IHES}
+\date{}
+
+\definecolor{green}{HTML}{BED46D}
+\definecolor{blue}{HTML}{7A6BED}
+\usepackage{hyperref}
+
+\begin{document}
+{\fontfamily{lmss}\selectfont
+
+\maketitle
+
+\begin{abstract}
+These notes are related to the IHES course "Contact homology and virtual fundamental cycles" given by John Pardon in Fall of 2015.  Basically I copy the blackboards and add my own comments.  These are not meant to be authoritative, or even very accurate.  The hope is over the course of time, to give my own twist on the discussion.
+\end{abstract}
+
+\section{Lecture \#1}
+ 
+
+\begin{itemize}
+\item $Y^{2n-1}$ be odd-dimension manifold.
+\item $\xi^{2n-2} \subseteq TY$ be a \textbf{hyperplane field} $\longleftrightarrow$ $\lambda$ with $\xi = \mathrm{ker} \lambda$
+\begin{itemize}
+\item $\xi$ defines a foliation (is integrable) iff $d\lambda|_\xi = 0$
+\item $\xi$ defines a contact structure (is maximally non-integrable) 
+iff $d\lambda|_\xi$ is non-degenerate, i.e. $\lambda \wedge (d\lambda)^{n-1} \neq 0$.
+\end{itemize}
+\end{itemize}
+
+\noindent \textbf{Example}  $(\mathbb{R}^{2n+1} = \mathbb{R}_{r,\theta}^n \times \mathbb{R}_z, \xi_{\text{std}} = \mathrm{ker}(dz + \sum r_i^2 d\theta_i)) $ or $(\mathbb{R}^3, \xi_{\text{twist}} = \mathrm{ker}( \cos r \; dz + \sin r \; r d\theta) $  Bannequin's theorem says says in 3-dimensions, the standard contact structure is \textbf{not} equivalent to the overtwisted one. \newline
+
+\noindent \textbf{Darboux Theorem} $(Y, \xi)$ is locally isomorphic to $(\mathbb{R}^{2n-1}, \xi_\text{std})$.  
+\begin{itemize}
+	\item All contact structures look locally the same. 
+	\item Riemanninan metric have many local (diffeomorphism) invariants e.g. curvature. 
+\end{itemize}
+
+\noindent \textbf{Gray's Theorem} $(Y, \xi)$ is locally isomorphic to $(\mathbb{R}^{2n-1}, \xi_\text{std})$.  
+\begin{itemize}
+	\item All contact structures look locally the same. 
+	\item Riemanninan metric have many local (diffeomorphism) invariants e.g. curvature. 
+\end{itemize}
+
+\section{Integrable Systems} 
+
+\textbf{Theorem}\cite{BKK} The space of supersymmetric vacua of the 3d $\mathcal{N}=2^*$ $T[U(n)]$ quiver theory on $\mathbb{R}^2 \times S^1$ describes the phase space of $n$-particle trigonometric Ruijsenaars-Scheider system. \newline
+
+\noindent abc
+
+\section{Approximate Groups}
+
+
+
+\begin{thebibliography}{9}
+
+
+\bibitem{KS}
+Peter Koroteev, Antonio Sciarappa. \textit{Quantum Hydrodynamics from Large-n Supersymmetric Gauge Theories}  \texttt{arXiv:1510.00972}
+
+\bibitem{BKK}
+Mathew Bullimore, Hee-Cheol Kim, Peter Koroteev. \textit{Defects and Quantum Seiberg-Witten Geometry}  \texttt{arXiv:1412.6081}
+
+
+\end{thebibliography}
+}
+\end{document}
