@@ -1,0 +1,101 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, tabto, amssymb}
+\title{Contact homology and virtual fundamental cycles}
+\usepackage{xcolor}
+\usepackage[a4paper, total={6.5in, 10in}]{geometry}
+\usepackage{framed}
+\usepackage{tgadventor}
+\colorlet{shadecolor}{red!10}
+\author{John Pardon - Lectures @ IHES}
+\date{}
+
+\definecolor{green}{HTML}{BED46D}
+\definecolor{blue}{HTML}{7A6BED}
+\usepackage{hyperref}
+\usepackage{bookmark}
+
+\begin{document}
+
+{\fontfamily{lmss}\selectfont
+
+\maketitle
+
+\begin{abstract}
+These notes are related to the IHES course "Contact homology and virtual fundamental cycles" given by John Pardon in Fall of 2015.  Basically I copy the blackboards and add my own comments.  These are not meant to be authoritative, or even very accurate.  In fact, they are quite advanced and test the limits of my understanding. Experts should look at \cite{P}, instead. The hope is over the course of time, to give my own twist on the discussion.
+\end{abstract}
+
+\section{Lecture \#1 }
+
+
+\subsection{(Very Short) Review of Contact Geometry}
+
+\begin{itemize}
+\item $Y^{2n-1}$ be odd-dimension manifold.
+\item $\xi^{2n-2} \subseteq TY$ be a \textbf{hyperplane field} $\longleftrightarrow$ $\lambda$ with $\xi = \mathrm{ker} \lambda$
+\begin{itemize}
+\item $\xi$ defines a foliation (is integrable) iff $d\lambda|_\xi = 0$
+\item $\xi$ defines a contact structure (is maximally non-integrable) 
+iff $d\lambda|_\xi$ is non-degenerate, i.e. $\lambda \wedge (d\lambda)^{n-1} \neq 0$.
+\end{itemize}
+\end{itemize}
+
+\noindent \textbf{Example}  $(\mathbb{R}^{2n+1} = \mathbb{R}_{r,\theta}^n \times \mathbb{R}_z, \xi_{\text{std}} = \mathrm{ker}(dz + \sum r_i^2 d\theta_i)) $ or $(\mathbb{R}^3, \xi_{\text{twist}} = \mathrm{ker}( \cos r \; dz + \sin r \; r d\theta) $  Bannequin's theorem says says in 3-dimensions, the standard contact structure is \textbf{not} equivalent to the overtwisted one. \newline
+
+\noindent \textbf{Darboux Theorem} $(Y, \xi)$ is locally isomorphic to $(\mathbb{R}^{2n-1}, \xi_\text{std})$.  
+\begin{itemize}
+	\item All contact structures look locally the same. 
+	\item Riemanninan metric have many local (diffeomorphism) invariants e.g. curvature. 
+\end{itemize}
+
+\noindent \textbf{Darboux Theorem} $(Y, \xi)$ is locally isomorphic to $(\mathbb{R}^{2n-1}, \xi_\text{std})$.  
+\begin{itemize}
+	\item All contact structures look locally the same. 
+	\item Riemanninan metric have many local (diffeomorphism) invariants e.g. curvature. 
+\end{itemize}
+
+\noindent \textbf{Gray's Theorem} For any $(Y, \xi_t)$ of contact structures, $\exists$ isotopy $\phi_t: Y \to Y$ so that $\xi_t = \phi_t^\ast \circ \xi_0$
+\begin{itemize}
+	\item The moduli space of contact structures is \textbf{discrete}.  We can \textit{count}  them.
+	\item $Y$ should be compact or we contradict Bannequin theorem. 
+	\item Gray's theorem is false for foliations: no isotopy can achieve a deformation of foliations.  E.g. look at the mapping cylinder of $f:t \mapsto t + \alpha$ for $t \in S^1$ and $\alpha \in \mathbb{R}^1$.
+\end{itemize}
+
+\noindent \textbf{Gromov} Let $Y^{2n-1}$ be open, then we have a homotopy equivalence.
+$$ \{ \xi \subseteq TY | \text{contact} \}  \leftrightarrow \{ \xi \subseteq TY | \text{almost complex structure} \} $$
+This is the case for open manifolds.
+
+\noindent \textbf{Eliashberg 1989, Borman Eliashberg-Murphy 2014} \newline
+Let $Y^{2n-1}$ be closed, then we have a homotopy equivalence.
+$$ \{ \xi \subseteq TY | \text{contact} \}= \{ \text{tight}\} \cup  \{ \text{overtwisted}\} \longleftrightarrow \{ \xi \subseteq TY | \text{almost complex structure on }\xi \} $$
+This is a homotopy equivalence on the set of overtwisted complex structures.
+\begin{itemize}
+	\item .
+	\item .
+\end{itemize}
+
+\noindent \textbf{Open Question} Does every irreducible 3-manifold have a tight contact structure? E.g. Poincare homology sphere: $\Sigma (2,3,5) \# \overline{\Sigma (2,3,5)}$ does not.  \newline
+
+\noindent \textbf{Colin-Shiru-Honda 2009} 
+\begin{itemize}
+	\item Any irreducible, atoroidal 3-manifold admits finitely many tight contact structures.
+	\item For any 3-manifold, finintely many homotopy classes of plane fields from contact structures is finite.
+\end{itemize}
+
+\subsection{Symplectic Geometry}
+
+Let $X^{2n}$ be a manifold.  2-form $\omega$ is \textit{symplectic} iff $d\omega = 0$ (closed), and $\omega$ is non-denerate.
+\begin{itemize}
+	\item .
+	\item .
+\end{itemize}
+
+\begin{thebibliography}{9}
+
+
+\bibitem{KS}
+John Pardon. \textit{Contact homology and virtual fundamental cycles}  \texttt{arXiv:1508.03873}
+
+
+\end{thebibliography}}
+\end{document}
