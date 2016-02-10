@@ -1,4 +1,10 @@
 # Brun "fully subtractive" Euclidean Algorithm
+#
+# Viggo Brun observes you can get "periodic" continued fraction -- with pattern that repeats itself.  He uses his special method to tune a piano
+# 
+# http://mathoverflow.net/questions/176999/bruns-algorithm
+# 
+# http://jolivet.org/timo/docs/Brun_algo.pdf
 
 import numpy as np
 
