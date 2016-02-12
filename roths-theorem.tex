@@ -1,0 +1,89 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+
+\usepackage{lmodern}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{url}
+\usepackage[margin=1in]{geometry}
+\usepackage{xcolor}
+\newcommand{\ket}[1]{| #1 \rangle }
+\newcommand{\braket}[2]{ \langle #1 | #2 \rangle}
+\newcommand{\bra}[1]{ \langle #1 | }
+\newcommand{\off}[1]{}
+
+
+\title{\textbf{ Roth's Theorem}}
+\author{John D Mangual}
+\date{}
+\begin{document}
+
+{ \fontfamily{qag}\selectfont
+
+\maketitle
+
+\section{ \fontfamily{qag} \selectfont \dots }
+
+\textbf{Roth's Theorem} 
+
+\section{ \fontfamily{qag} \selectfont Poincare Recurrence }
+
+The idea should be that point-wise ergodic theorem is an extension of Poincare recurrence, which is an extension of the Pigeon-hole principle.  \newline
+
+\fbox{
+\parbox{6in}{\textbf{von Neumann ergodic theorem} Let $(X, \mathcal{B}, \mu,T)$ be a measure-preserving system, and let $P_T$ denote the orthogonal projection to the closed subspace
+$$ \{ g \in L_\mu^2:  U_T g = g \} \subseteq L^2_\mu $$ 
+Then for any $f \in L_\mu^2$
+$$ \frac{1}{N} \sum_{n=0}^{N-1} U_T^n f \longrightarrow_{ L^2_\mu} P_T f $$}
+} \vspace{0.125in} \newline 
+None of these proofs are very illuminating 'til we observe specific $T$, $X$, $\mathcal{B}$, $\mu$ and $f$. \newline
+
+\fbox{
+\parbox{6in}{\textbf{Proof \#1} The spectral theorem says a unitary operator $U: H \to H$ can be expressed as $U = \int_{S^1} \lambda \, d\mu(\lambda)$, since unitary operators have eigenvalues in the unit circle $S^1 = \{ z: |z| = 1  \}  $.  Then 
+$$ \frac{1}{N}\sum_{n=0}^{N-1} U^n  \ket{v} = \left[ \int_{S^1} \frac{1}{N} \sum_{n=0}^{N-1} \lambda^n \, d\mu(\lambda) \right] \ket{v}$$
+for any $\ket{v} \in H$.  By geometric series and dominated convergence:
+$$ \left[ \mu(\{ 1\} ) + \int_{S^1\backslash \{ 1\} } {\color{lightgray}{\frac{1}{N}\frac{\lambda^N - 1}{\lambda - 1} }}\, d\mu(\lambda) \right] \ket{v}
+\to \mu(\{1\}) \ket{v}$$ 
+The RHS is the projection $P_T \ket{v} \in H^U$ to the subspace with eigenvalue $1$. \hfill $\square$
+}
+} \vspace{0.125in} \newline 
+Two proofs involving pre-compactness and the Banach-Alaoglu theorem I will skip. \newline
+A ``slick" geometric proof of Riesz is enough for me. \newline \newline
+\fbox{
+\parbox{6in}{\textbf{Proof \#1} The proof argues that $\{U_T g - g: g \in L^2_\mu \}^\perp = \{U_T g  = g: g \in L^2_\mu \}$ \checkmark \newline \newline 
+\parbox{2.75in}{If $U_T f = f$ then by unitarity $$ \braket{f}{U_T g - g} = \braket{U_T f}{U_T g} - \braket{f}{ g} = 0 $$ }\hfill\vrule{}
+\parbox{2.75in}{If $\braket{f}{U_T g - g} \equiv 0$ so that $f$ is perpendcular to all ``noise" then 
+$$\braket{U_T g}{f} =  \braket{ g}{U_T^\ast f} = \braket{g}{f} $$ for all states $g \in L_\mu^2$.  That means $U_T^* f = f$ and  $U_T f = f$.} \newline \newline
+We have shown the Hilbert space of states $L^2_\mu$ splits in two parts.  
+$$ L^2_\mu =  \{U_T g  = g: g \in L^2_\mu \} \oplus \overline{\{U_T g - g: g \in L^2_\mu \}}  $$
+Given any unitary unitary operator, any function splits into a signal and a noise: $f = P_T f + h$.  The claim is the noise averages out to $0$ in the $L^2_\mu$ norm. \newline \newline This is obvious by telescoping sum if $h = U_T g - g$.
+$$ \big| \big| \frac{1}{N}\sum_{n=0}^{N-1} U_T^n (U_T g - g)\big|\big|_2  = 
+\frac{1}{N}\big| \big| U_T g - g\big|\big|_2 = 0 $$
+The noise is in the closure.  $h = \lim(U_T g_i - g_i) $  The same argument before has two steps:
+$$ 
+\big| \big| \frac{1}{N}\sum_{n=0}^{N-1} U_T^n  h\big|\big|_2
+\leq \underbrace{\big| \big| \frac{1}{N}\sum_{n=0}^{N-1} U_T^n  (h - h_i)\big|\big|_2}_{ < \epsilon}
++ \underbrace{\big| \big| \frac{1}{N}\sum_{n=0}^{N-1} U_T^n  h_i \big|\big|_2}_{< \epsilon}
+ < 2 \epsilon$$
+ The noise converges in the $L^2_\mu$ norm, as $N \to \infty$ and $i \to \infty$.
+ \hfill $\square$
+}
+}
+\newline \newline The space of noise $\overline{\{U_T g - g: g \in L^2_\mu \}}$ has many interesting effects that get averages away in the $L^2_\mu$ limit, but we still see them pointwise.  It was very instructive to see the ergodic averages $\frac{1}{N}\sum f$ convergence.  Away from a measure 0 set the convergence is pointwise, but that difference is dramatic.
+ 
+
+\section{ \fontfamily{qag} \selectfont Physics}
+We do not discuss matrix integrals at this time.
+
+\begin{thebibliography}{9}
+
+\bibitem{BP} Enrico Bombieri, Alfred J. van der Poorten.  \textbf{Continued Fractions of Algebraic Numbers} 1995.
+
+\bibitem{LT} S. Lang and H. Trotter, \textbf{Continued fractions for some algebraic numbers}, J. Reine Angew. Math. 255 (1972), 112-134. https://eudml.org/doc/151239
+
+\end{thebibliography}
+
+
+
+}
+
+\end{document}
