@@ -1,0 +1,215 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[landscape, margin=0.5in]{geometry}
+\usepackage{xcolor}
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{21}{18}
+
+\title{\textbf{ Sum of Four Squares via Geometry of Numbers }}
+\author{John D Mangual}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{25}{30}\selectfont
+
+\maketitle
+
+\noindent $$ n = a^2 + b^2 + c^2 + d^2 $$
+
+\noindent Every natural number can be written as the sum of four perfect squares.
+
+\newpage
+
+\noindent \textbf{Lemma} \newline \newline Let $m$ be an odd number then
+
+$$ a^2 + b^2 + 1 = 0 \mod m $$
+
+\noindent has a solution in integers $a,b \in \mathbb{Z}$.
+
+\newpage
+
+\noindent \textbf{Lemma} \newline \newline Let $p$ be an \textbf{prime} then
+
+$$ a^2 + b^2 + 1 = 0 \mod p $$
+
+\noindent has a solution in integers $a,b \in \mathbb{Z}$. \newline
+
+\noindent Set $\square = \{ x^2 : x \in \mathbb{Z}/p\mathbb{Z} \}$ and $-(\square + 1)$ each have $\frac{p+1}{2}$ elements \newline
+
+\noindent So these two sets overlap... this is \textbf{Pigeonhole Principle}.
+
+\newpage
+
+\noindent \textbf{Lemma} \newline \newline Let $p$ be an \textbf{prime} then
+
+$$ a^2 + b^2 + 1 = 0 \mod p^k $$
+
+\noindent has a solution in integers $a,b \in \mathbb{Z}$. \newline
+
+\noindent $\square = \{ x^2 : x \in \mathbb{Z}/p\mathbb{Z} \}$ and $-(\square + 1)$ each have $\frac{p+1}{2} \times p^{k-1}$ elements \newline
+
+\noindent So these two sets overlap... this is \textbf{Pigeonhole Principle}. \newline
+
+\noindent Alternatively.  If $a_0^2 + b_0^2 + 1 \equiv 0 \mod p^k$ then:
+
+$$ (a_0 + p^ka)^2  + (b_0 + p^kb)^2 + 1 \equiv(a_0^2 + b_0^2 + 1 ) + 2p^k (a_0 a + b_0 b) \equiv \mod p^{k+1}$$
+
+\noindent and we can solve a linear equation in $ \mod p$
+
+$$ a_0 a + b_0 b \equiv 0 \mod p$$
+
+\newpage
+
+\noindent \textbf{Lemma} \newline \newline Let $m = pq$ be an \textbf{odd number} with $p,q$ \textbf{relativly prime} then
+
+\begin{eqnarray*} 
+a^2 + b^2 + 1 &=& 0 \mod p \\
+a^2 + b^2 + 1 &=& 0 \mod q 
+\end{eqnarray*}
+
+\noindent has a solution in integers $a,b \in \mathbb{Z}$. \newline
+
+\noindent We can solve these equations individually, but using the \textbf{Chinese Remainder Theorem}  we can solve these equations at the same time! \newline
+
+\noindent This is \textbf{Pigeonhole Principle} since we are trying to solve the equation in $(a,b) \in \mathbb{Z} / p \mathbb{Z} \oplus \mathbb{Z} / q \mathbb{Z}$ and we need to find a solution that hits both.
+
+\newpage 
+
+\textbf{Solution Over the Integers}
+
+$$ 
+\left[\begin{array}{c} X \\ Y \\ Z \\ W \end{array} \right] = 
+\left[ \begin{array}{cc|cr} m & 0 & a & b \\
+0 & m & b & -a \\ \hline
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1  \end{array} \right] \left[\begin{array}{c} x \\ y \\ z \\ w \end{array} \right]$$
+
+The solutions $\mod m$ define a lattice inside $\mathbb{Z}^4$.  Notice that:
+$$ X^2 + Y^2 + Z^2 + W^2 \equiv 0 \mod m $$
+
+\newpage
+
+
+\textbf{Solution Over the Integers}
+
+$$ 
+\left[\begin{array}{c} X \\ Y \\ Z \\ W \end{array} \right] = 
+\left[ \begin{array}{cc|cr} m & 0 & a & b \\
+0 & m & b & -a \\ \hline
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1  \end{array} \right] \left[\begin{array}{c} x \\ y \\ z \\ w \end{array} \right]$$
+
+\noindent The solutions $\mod m$ define a lattice inside $\mathbb{Z}^4$.  We'd like:
+\begin{eqnarray*} X^2 + Y^2 + Z^2 + W^2 & \equiv &  0 \mod m  \\ 
+X^2 + Y^2 + Z^2 + W^2 & < &  2m  \end{eqnarray*}
+
+\noindent I can't visualize this 4D lattice very well... but we know 4D sphere geometry:
+
+$$ \mathrm{Vol}(|x| < 2m) = \frac{1}{2} \pi^2 (2m)^2  $$
+
+\noindent The unit volume of this lattice is the determinant of the matrix, which we conventiently defined to be $m^2$.  
+
+\newpage
+
+
+\textbf{Solution Over the Integers}
+
+$$ 
+\left[\begin{array}{c} X \\ Y \\ Z \\ W \end{array} \right] = 
+\left[ \begin{array}{cc|cr} m & 0 & a & b \\
+0 & m & b & -a \\ \hline
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1  \end{array} \right] \left[\begin{array}{c} x \\ y \\ z \\ w \end{array} \right]$$
+
+\noindent The solutions $\mod m$ define a lattice inside $\mathbb{Z}^4$.  We'd like:
+\begin{eqnarray*} 
+X^2 + Y^2 + Z^2 + W^2 & < &  2m  \end{eqnarray*}
+
+\noindent We know 4D sphere geometry and the unit volume of this lattice is the determinant of the matrix $m^2$ 
+$$ \mathrm{Vol}(|x| < 2m) = \frac{1}{2} \pi^2 (2m)^2  < 16 \times m^2  $$
+
+\noindent By \textbf{Minkowski's Theorem} there's a lattice point inside the sphere!
+
+$$ X^2 + Y^2 + Z^2 + W^2 = m $$
+
+\noindent Because $\boxed{\pi^2 > 8}$ we can ensure ourselves always one solution.
+
+\newpage
+
+\textbf{Even Numbers}  If $m = 2^k \; pq\dots r$ is even number, we can build more solutions via:
+
+$$ (X + Y)^2 + (X - Y)^2 + (Z + W)^2 + (Z - W)^2 = 2 \times (X^2 + Y^2 + Z^2 + W^2) $$
+
+\noindent and get more powers of $2$ if necessary:
+
+$$ \left[\begin{array}{c} x+y \\ x-y \\ \hline z+w \\ z-w \end{array} \right] = \left[\begin{array}{cr|cr} 
+1 & 1 & 0 & 0 \\
+1 & -1 & 0 & 0 \\ \hline
+0 & 0 & 1 & 1 \\
+0 & 0 & 1 & -1
+\end{array}\right] 
+\left[\begin{array}{c} x \\ y \\ \hline z \\ w \end{array} \right]$$
+
+\noindent If we multply by 4 the solution is even more clear since:
+
+$$ (2X)^2 + (2Y)^2 + (2Z)^2 + (2W)^2 = 4 \times (X^2 + Y^2 + Z^2 + W^2) $$
+
+$$ 
+\left[\begin{array}{cr} 
+1 & 1 \\
+1 & -1 \end{array}\right]^2 = \left[\begin{array}{cr} 
+2 & 0 \\
+0 & 2 \end{array}\right] $$ 
+
+\newpage
+
+\textbf{Solution Strategy Review: Hasse Principle}
+
+\begin{itemize}
+\item solve mod $p  > 2$
+\begin{itemize}
+	\item pigeonhole principle ( also solve mod $p^k$ )
+\end{itemize}
+\item combine mod $p$ and mod $q$ into solution mod $pq$ 
+\begin{itemize}
+	\item and all odd composite numbers $m$
+	\item this is Chinese Remainder Theorem
+\end{itemize}
+\item use mod $p$ solution to generate solution over $\mathbb{Z}$
+\begin{itemize}
+	\item This uses Minkowski's geometry of numbers
+\end{itemize}
+\end{itemize}
+
+\noindent In a way the shape $a^2 + b^2 + 1 = 0$ defines a circle of radius $\sqrt{-1}$ \newline
+
+\noindent We had to do Pigeonhole Principle (or Minkowski Theorem) on a region define on all moduli $p, q, r, \infty$ at once.  And if we have sufficient \textbf{volume} our equation had a solution for all $m$. \newline
+
+\newpage
+
+\textbf{Solution Strategy Review: Geometry of Numbers} \newline
+
+\noindent For each $m$, our algorithm solves  $X^2 + Y^2 + Z^2 + W^2 = m$
+
+$$ \frac{1}{\sqrt{m}} (X,Y,Z,W) \in S^3 $$
+
+We don't know much about this vector for any given $m$.  In which direction does it point?
+
+\newpage
+
+$$\left[\begin{tabular}{cccccccccc}
+\color{orange}{$\circ$} & \color{black}{$\circ$} & \color{black}{$\circ$} & \color{black}{$\circ$} & \color{orange}{$\circ$} & \color{black}{$\circ$} & \color{black}{$\circ$} & \color{black}{$\circ$} & \color{orange}{$\circ$} & \color{orange}{$\circ$}  \\
+\color{black}{$\circ$} & \color{black}{$\circ$} & \color{orange}{$\circ$} & \color{black}{$\circ$} & \color{black}{$\circ$} & \color{black}{$\circ$} & \color{orange}{$\circ$} & \color{black}{$\circ$} & \color{orange}{$\circ$} & \color{black}{$\circ$}  \\
+\color{orange}{$\circ$} & \color{black}{$\circ$} & \color{black}{$\circ$} & \color{black}{$\circ$} & \color{orange}{$\circ$} & \color{orange}{$\circ$} & \color{black}{$\circ$} & \color{orange}{$\circ$} & \color{orange}{$\circ$} & \color{black}{$\circ$}  \\
+\color{black}{$\circ$} & \color{black}{$\circ$} & \color{orange}{$\circ$} & \color{black}{$\circ$} & \color{black}{$\circ$} & \color{black}{$\circ$} & \color{orange}{$\circ$} & \color{black}{$\circ$} & \color{black}{$\circ$} & \color{black}{$\circ$}  \\
+\color{orange}{$\circ$} & \color{black}{$\circ$} & \color{black}{$\circ$} & \color{black}{$\circ$} & \color{orange}{$\circ$} & \color{orange}{$\circ$} & \color{black}{$\circ$} & \color{black}{$\circ$} & \color{orange}{$\circ$} & \color{orange}{$\circ$}  \\
+\color{orange}{$\circ$} & \color{black}{$\circ$} & \color{orange}{$\circ$} & \color{black}{$\circ$} & \color{orange}{$\circ$} & \color{black}{$\circ$} & \color{orange}{$\circ$} & \color{black}{$\circ$} & \color{black}{$\circ$} & \color{black}{$\circ$}  \\
+\color{orange}{$\circ$} & \color{black}{$\circ$} & \color{black}{$\circ$} & \color{orange}{$\circ$} & \color{orange}{$\circ$} & \color{black}{$\circ$} & \color{black}{$\circ$} & \color{black}{$\circ$} & \color{orange}{$\circ$} & \color{black}{$\circ$}  \\
+\color{black}{$\circ$} & \color{black}{$\circ$} & \color{orange}{$\circ$} & \color{black}{$\circ$} & \color{black}{$\circ$} & \color{orange}{$\circ$} & \color{orange}{$\circ$} & \color{black}{$\circ$} & \color{black}{$\circ$} & \color{black}{$\circ$}  \\
+\color{orange}{$\circ$} & \color{orange}{$\circ$} & \color{black}{$\circ$} & \color{black}{$\circ$} & \color{orange}{$\circ$} & \color{black}{$\circ$} & \color{black}{$\circ$} & \color{black}{$\circ$} & \color{orange}{$\circ$} & \color{black}{$\circ$}  \\
+\color{orange}{$\circ$} & \color{black}{$\circ$} & \color{orange}{$\circ$} & \color{black}{$\circ$} & \color{black}{$\circ$} & \color{black}{$\circ$} & \color{orange}{$\circ$} & \color{black}{$\circ$} & \color{orange}{$\circ$} & \color{orange}{$\circ$}  \\
+\end{tabular}\right]$$
+
+
+\end{document}
