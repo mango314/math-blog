@@ -23,6 +23,30 @@ $$ I^{\mathcal{N}=1^\ast}(N,N,n) =  \sum_{d| N} \sum_{l=1}^N \mathrm{gcd}(d,l ) 
 I was heckled on MathOverflow for posting such an elementary formula.  It's not mine, it's his.
 \newpage
 
+Perhaps the general formula can show us the pattern:
+$$  I^{\mathcal{N}=1^\ast}(N,m,n) = \frac{N}{m} \sum_{d|N} \sum_{l=1}^{\mathrm{gcd}(d,m)}
+\gcd\left( \gcd(d,m), n + \frac{ld}{\gcd(d,m)} \right)
+$$
+This formula is later shown to be equal to:
+$$  I^{\mathcal{N}=1^\ast}(N,m,n) = 
+ \sum_{d|N} \sum_{t=0}^{d-1} \gcd \left(N \frac{d}{m}, N \frac{m}{d}, N \left( \frac{t}{m} + \frac{m}{d} \right) \right)
+$$
+In order for this equation to make sense, I eventually found $m | N$ and $d | N$ - I hope I guessed correctly.  \newline \newline
+By \textbf{M\"{o}bius inversion} we should have:
+$$ \tiny \frac{N}{m}  \sum_{l=1}^{\mathrm{gcd}(d,m)}
+\gcd\left( \gcd(d,m), n + \frac{ld}{\gcd(d,m)} \right)
+= 
+ \sum_{t=0}^{d-1} \gcd \left(N \frac{d}{m}, N \frac{m}{d}, N \left( \frac{t}{m} + \frac{m}{d} \right) \right)$$
+These seem rather tedious to verify and their meaning unclear.
+
+\newpage
+
+A starting point could be the Bezout theorem that:
+$$ \gcd(a,b) = \min_{x,y \in \mathbb{Z}} |ax + by |$$
+Buried in the paper is his original statements about lattices when explain the appearance of \textbf{GCD} everywhere.
+
+\newpage
+
 \fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
 
 \begin{thebibliography}{}
