@@ -1,0 +1,46 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[landscape, margin=0.5in]{geometry}
+\usepackage{xcolor}
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{21}{18}
+
+\title{\textbf{ Some Interesting Formulas Involving the GCD }}
+\author{John D Mangual}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{25}{30}\selectfont
+
+\maketitle
+
+Sometimes, when I read a String Theory paper, I try to find a verifiable statement.  Here is one I found in a paper:
+
+$$ I^{\mathcal{N}=1^\ast}(N,1,0) = N \sum_{d| N} 1 = N \sigma_0(N) $$
+This number is called a \textbf{superconformal index} and it also equals: 
+$$ I^{\mathcal{N}=1^\ast}(N,N,n) =  \sum_{d| N} \sum_{l=1}^N \mathrm{gcd}(d,l ) $$
+I was heckled on MathOverflow for posting such an elementary formula.  It's not mine, it's his.
+\newpage
+
+\fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
+
+\begin{thebibliography}{}
+
+\item arXiv:1606.01022 The Arithmetic of Supersymmetric Vacua. Antoine Bourget, Jan Troost. physics.hep-th.
+
+
+
+\item arXiv:1511.03116 On the N=1* Gauge Theory on a Circle and Elliptic Integrable Systems. Antoine Bourget, Jan Troost. physics.hep-th.
+
+
+\item arXiv:1506.03222 Counting the Massive Vacua of N=1* Super Yang-Mills Theory. Antoine Bourget, Jan Troost. physics.hep-th.
+
+\item arXiv:1305.0318 Reading between the lines of four-dimensional gauge theories. Ofer Aharony, Nathan Seiberg, Yuji Tachikawa. WIS/03/13-APR-DPPA, UT-13-15, IPMU13-0081. physics.hep-th.
+
+
+
+\end{thebibliography}
+
+
+\end{document}
