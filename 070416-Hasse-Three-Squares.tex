@@ -65,6 +65,61 @@ Why is solving all congruences $n = a^2 + b^2 + c^2 \textrm{ mod }p$ enough?
 
 \newpage
 
+\noindent\textbf{How do we know the Hasse-Minkowski principle?  }
+\newline \newline
+The only case $a^2 + b^2 + c^2 - n \, d^2 = 0$ 
+\newline \newline
+Reading's Serre's \textit{Course on Arithmetic} we can solve in $\mathbb{Q}$
+\newline \newline
+Reduce 4 variables to 3...
+\newline \newline
+Why is solving all congruences $n = a^2 + b^2 + c^2 \textrm{ mod }p$ enough?
+
+
+\newpage
+
+\noindent\textbf{How do we know the Hasse-Minkowski principle?  }
+\newline \newline
+The only case $a^2 + b^2 + c^2 - n \, d^2 = 0$ 
+\newline \newline
+Serre's \textit{Course on Arithmetic} is written a little bit out of squence:
+\newline \newline
+Let $f = x^2 + y^2 + z^2 - n \, w^2 $ and we are solving\footnote{Sorry for the variable change, to make it look more like Serre.} $f = 0$ in $\mathbb{Q}$.
+\newline \newline
+For any prime\footnote{Think of $p = 12721$ or $ 32323$ or $70507$ or $94949$ etc.} $p \in P$ we can solve in $\mathbb{Q}_p$ two equations at once\footnote{Therefore $n = x^2 + y^2 + z^2$ solves both \textbf{sum of two squares} and \textbf{Pell's equation} simultaneously.}:
+$$x_p = x^2 + y^2 \text{ and }x_p = z^2 - n\, w^2 $$
+This can be writen in \textbf{Hilbert symbols} as a shorthand:
+$$(x, -ab)_p = (a,b)_v \text{ and }(x,-cd)_v=(c,d)_v $$
+Then, the field of fractions $\mathbb{Q}$ of the integers $\mathbb{Z}$ is exceedingly rich, and we can find a single $x \in \mathbb{Q}$ solving all these Hilbert equations at once, for all $p \in P$.
+
+\newpage
+
+\noindent\textbf{Merging solutions over $\mathbb{Q}_p$ to solutions over $\mathbb{Q}$  }
+\newline \newline
+\noindent There is a single $x \in \mathbb{Q}$ such that\footnote{Please excuse all the quantifiers here? You deserve an better explanation!  It's just that Serre is a genius.} for every prime $p \in P$
+$$a x_1^2 + b x_2^2 - x z^2 = 0 $$ 
+
+\noindent can be solved $(x_1, x_2, z) \in \mathbb{Q}_p^3$.  There is a single $(x_1, x_2, z) \in \mathbb{Q}$ 
+\newline \newline
+solving $(\ast)$ over the rational numbers.  Similarly for $x_3^2 - n x_4^2 - x w^2$
+\newline \newline
+Therefore we can solve $f = 0$ over $\mathbb{Q}$
+
+\newpage
+
+\noindent\textbf{Sweeping Information under the Rug  }
+\newline \newline
+In the process of doing our Hilbert symbol calculation we are likely to have used\footnote{After reading the much shorter 3-pages proof by Ankeny using \textbf{Geometry of Numbers} I decided to read this for context}:
+\begin{itemize}
+\item Dirichlet's prime number theorem in arithmetic sequences $|P \cap a (\mathbb{Z} + b)|=\infty$.
+\item Quadratic Reciprocity \hspace{0.75in}$(\frac{p}{q})(\frac{q}{p}) = (-1)^{\frac{p-1}{2}\cdot\frac{q-1}{2}}$
+\end{itemize} \vspace{12pt}
+I don't understand \textbf{diophanine approximation} or \textbf{unique factorization} well enough to understand all the Hilbert symbols used. 
+\newline \newline
+\textbf{Bonus problem} show there exists $x \in \mathbb{Z}$ such that Pell equation and sum of two squares can both be solved\footnote{There could be enough ``room" since we have both $x \in \mathbb{Z}$ and also $(x_1, x_2, x_3, x_4)\in \mathbb{Z}^4$ but can we satisfy constraints on $n$ for \textbf{all} primes $p \in P$ ?} (over $\mathbb{Z}$)
+$$ x_1^2 + x_2^2 = x \text{ and } -x_3^2 + n \, x_4^2 = x $$
+
+\newpage
 \fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
 
 \begin{thebibliography}{}
