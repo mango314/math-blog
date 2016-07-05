@@ -111,13 +111,30 @@ Therefore we can solve $f = 0$ over $\mathbb{Q}$
 \newline \newline
 In the process of doing our Hilbert symbol calculation we are likely to have used\footnote{After reading the much shorter 3-pages proof by Ankeny using \textbf{Geometry of Numbers} I decided to read this for context}:
 \begin{itemize}
-\item Dirichlet's prime number theorem in arithmetic sequences $|P \cap a (\mathbb{Z} + b)|=\infty$.
+\item Dirichlet's prime number theorem in arithmetic sequences $|P \cap (a \, \mathbb{Z} + b)|=\infty$.
 \item Quadratic Reciprocity \hspace{0.75in}$(\frac{p}{q})(\frac{q}{p}) = (-1)^{\frac{p-1}{2}\cdot\frac{q-1}{2}}$
 \end{itemize} \vspace{12pt}
 I don't understand \textbf{diophanine approximation} or \textbf{unique factorization} well enough to understand all the Hilbert symbols used. 
 \newline \newline
 \textbf{Bonus problem} show there exists $x \in \mathbb{Z}$ such that Pell equation and sum of two squares can both be solved\footnote{There could be enough ``room" since we have both $x \in \mathbb{Z}$ and also $(x_1, x_2, x_3, x_4)\in \mathbb{Z}^4$ but can we satisfy constraints on $n$ for \textbf{all} primes $p \in P$ ?} (over $\mathbb{Z}$)
 $$ x_1^2 + x_2^2 = x \text{ and } -x_3^2 + n \, x_4^2 = x $$
+
+\newpage
+
+\noindent\textbf{Strong Approxmtion}\footnote{Possibly, weak approximation...}
+\newline\newline
+Let $p,q$ be two prime numbers then $\mathbb{Z}/pq\mathbb{Z}\simeq 
+\mathbb{Z}/p\mathbb{Z}\oplus
+\mathbb{Z}/q\mathbb{Z}$
+\newline\newline
+It is also very reasonable that $\mathbb{Z}/m\mathbb{Z}\simeq 
+\mathbb{Z}/m_1\mathbb{Z}\oplus \dots \oplus
+\mathbb{Z}/m_k\mathbb{Z}$ as long as $m_1, \dots, m_k$ are pairwise relatively prime.
+\newline\newline
+Let $S$ be a finite subset of primes.  Then $\displaystyle \mathbb{Q}\to \prod_{p \in S} \mathbb{Q}_p$ is dense.  Something like this is sure to work when $S$ is infinite (or $S=P$), and this object will be called $\mathbb{A}$.
+\newline\newline
+$\mathbf{\ast}$ Let $a_i$ with $i \in I$ be some numbers.  Then we can solve $(a_i,x)_p = \varepsilon_{i,p}$ for any sequence\footnote{this notation is truly dreadful and unreadable.  And this statement is \textbf{false} as written.  If you multiply over all primes $(a_i,x)_p=1$.  Almost all of the spins $\varepsilon_{i,p}\equiv 1$.  
+These equations should be solvable for each prime $p$, $(a_i, x_p) = \varepsilon_{i,p}$.  Between these three we have used Dirichlet's theorem on primes in arithmetic progressions. } of spins $\varepsilon = \pm 1$.
 
 \newpage
 \fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
