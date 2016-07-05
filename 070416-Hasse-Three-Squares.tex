@@ -1,0 +1,79 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[landscape, margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{21}{18}
+
+\title{\textbf{ Sum of 3 Squares Theorem, Hasse Principle, Banach-Tarski Paradox }}
+\author{John D Mangual}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{25}{30}\selectfont
+
+\maketitle
+
+Scaling back, a much more ambitious project, we try to address three problems from number theory to measure theory:
+
+\begin{itemize}
+\item Lagrange showed $n = a^2 + b^2 + c^2$ iff $n \neq 4^a (8k+7)$
+\end{itemize}
+One quicky way to solve this eq is to solve in congruences:
+\begin{itemize}
+\item Solve equation in 2-adic numbers $n = a^2 + b^2 + c^2$ , so $n \not \equiv 0 \mod 4$
+\item Solve $n = a^2 + b^2 + c^2 \textrm{ mod } p$ for all $p > 2$
+\item Solve $n = a^2 + b^2 + c^2$ in $\mathbb{R}$ ( this just says $n > 0$ )
+\end{itemize}
+Hasse-Minkowski principle tells us this is sufficient, but why does Hasse-Minkowski principle work at all?
+
+\newpage
+
+\noindent\textbf{How do we know the Hasse-Minkowski principle?  }
+\newline \newline
+Case $n = a^2 + b^2 + c^2$ 
+\newline \newline
+Reading's Serre's \textit{Course on Arithmetic} we can solve in $\mathbb{Q}$:
+
+$$ a^2 + b^2 + c^2 - n \, d^2 = 0$$
+
+\noindent We are able to find an $x \neq 0$ in $\mathbb{Q}$ solving two quadratic eqs:
+
+$$ a^2 + b^2 = x = c^2 - n \, d^2 $$
+
+\noindent This works because $x \in \mathbb{Q}$ not just $ x \in \mathbb{Z}$, we'd better write
+
+$$ a^2 + b^2 - x\, e^2=  c^2 - n \, d^2 - x \, f^2 = 0$$
+
+\noindent Once we have solved for $x \in \mathbb{Q}$ we solve $(a,b,c), (d,e,f) \in \mathbb{Q}^3 $ \newline
+
+\noindent $\circ$ $\circ$ $\circ$ This is reduction from 4 variables to 3 variables  
+
+\newpage
+
+\noindent\textbf{How do we know the Hasse-Minkowski principle?  }
+\newline \newline
+The only case $a^2 + b^2 + c^2 - n \, d^2 = 0$ 
+\newline \newline
+Reading's Serre's \textit{Course on Arithmetic} we can solve in $\mathbb{Q}$
+\newline \newline
+Reduce 4 variables to 3...
+\newline \newline
+Why is solving all congruences $n = a^2 + b^2 + c^2 \textrm{ mod }p$ enough?
+
+\newpage
+
+\fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
+
+\begin{thebibliography}{}
+
+\item JP Serre \textbf{Course on Arithmetic} Springer-Verlag
+
+
+
+\end{thebibliography}
+
+
+\end{document}
