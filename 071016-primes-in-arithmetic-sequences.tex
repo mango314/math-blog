@@ -1,0 +1,64 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[landscape, margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{21}{18}
+
+\title{\textbf{ Primes in Arithmetic Sequences, Entropy, Hyperbolic 3-Manifolds }}
+\author{John D Mangual}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{25}{30}\selectfont
+
+\maketitle
+
+\noindent One way to show there are infinitely many primes is to show certain series diverges\footnote{I get bored just looking at such a series. ``Music of the primes" my foot!}.
+$$ \sum_{p \in \mathcal{P} }\frac{1}{p}
+= \frac{1}{2} + \frac{1}{3} 
++ \frac{1}{5} + \frac{1}{7}+ \frac{1}{11} + \dots = \infty $$
+By \textbf {\color{red}fundamental theorem of arithmetic} $n = p_1^{a_1}\dots p_n^{a_n}$ and then
+$$ \sum_{n=1}^\infty \frac{1}{n}= \prod_{p \in \mathcal{P}} ( 1 + \frac{1}{p} + \frac{1}{p^2} + \dots ) \asymp \mathrm{exp} \left[\sum_{p \in \mathcal{P}} \frac{1}{p} \right] = \infty$$
+Both of these sequences diverge. I left out a tiny bit of work.
+\newpage
+
+\noindent Another way is to consider the set of numbers not divisible by any prime\footnote{Always watch this words ``consider" and ``let" in mth papers.}, call it $A$.
+$$ \frac{1}{N}|A \cap \{ 1, \dots, N\}| = \frac{1}{N}|A_k \cap \{ 1, \dots, N\} | - O\left(\sum_{p > p_k} \frac{1}{p} \right)$$
+The density\footnote{By \textbf{\color{red}{fundamental theorem of arithmetic}}, $A = \{ 1\}$, which has density $0$.} of $A$ is $0$.  Here $A_k$ is the integers after crossing out multiples of the prime number $p_k$.
+$$ 0 = \prod_{p \in \mathcal{P}} \left( 1 - \frac{1}{p} \right) $$
+As we run over all primes, we cross out all natural numbers\footnote{I do not like arguing by contradiction.  In the future, it could matter which one I pick.  Here it seems to be a matter of style.  It is best we continue...}. \newline \newline
+\noindent There's not a whole lot more to say, but I thought this was a good test case.  Remember:
+$$ \sum \frac{1}{n} = 1 + \frac{1}{2} + \left( \frac{1}{3} + \frac{1}{4}\right)
++   \left( \frac{1}{5} + \frac{1}{6}
++ \frac{1}{7} + \frac{1}{8}\right) + \dots  = \infty $$
+\newpage
+
+\noindent I wonder if there are other starting points for the infinitude of primes:
+$$ 0 <  \frac{1}{5}< \frac{1}{4}<\frac{1}{3}< \frac{2}{5}<\frac{1}{2}< \frac{3}{5}<\frac{2}{3}< \frac{3}{4}< \frac{4}{5}< 1 $$
+No obvious contradiction here.  Maybe there are enough prime powers to fill up the number line\footnote{This is how I waste my day... with dead-end questions like these.}.
+\newline
+
+\noindent In order to prove Legendre's 3-squares theorem, we need to show every arithmetic sequence has infinitely many primes
+$$ \sum_{p \in \mathcal{P}_{a\mathbb{Z}+b}} \frac{1}{p}$$
+Even though the proof uses L-series, we can get away with just $L(1)$.  In fact we have written it.
+\newline \newline
+
+\newpage
+
+\fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
+
+\begin{thebibliography}{}
+
+\item JP Serre \textbf{Course on Arithmetic} Springer-Verlag
+
+\item Davenport \textbf{Multiplicative Number Theory} Springer-Verlag
+
+
+
+\end{thebibliography}
+
+
+\end{document}
