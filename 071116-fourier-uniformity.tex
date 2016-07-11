@@ -1,0 +1,96 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[landscape, margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{21}{18}
+
+
+\title{\textbf{ What is Fourier Uniformity? }}
+\author{John D Mangual}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{25}{30}\selectfont
+
+\maketitle
+
+\noindent I overheard that Fourier uniformity is a type of ``size for sets" along with cardinality and dimension.\footnote{http://mathoverflow.net/a/43549/1358 `` I have the vague feeling that ultimately, such notions of complexity should play as prominent a role in these sorts of combinatorial problems as existing notions of "size" for such sets, such as cardinality, dimension, or Fourier uniformity." - Terence Tao} There was a recent big hoop-lah about the {\color{green!80!black}{ \textbf{capset bound}}}.  \newline 
+
+Any subset $A \subseteq \mathbb{F}_3^n$ with no arithmetic subset has size $ < 2.756^n $ \newline
+
+\noindent These problems clearly related to coding theory - the kind use to store movies and music in files and pass data over the internet\footnote{ There is also result over $\mathbb{Z}_4$ that $A$ w/o 3-term arithmetic sequence should have size $4^{0.926\,n}$. \newline
+https://quomodocumque.wordpress.com/2016/05/12/croot-lev-pach-on-ap-free-sets-in-z4zn/}.  Or maybe information theory can learn from math 
+
+\newpage
+
+Let $A \subset \mathbb{F}^n$ \newline
+
+There is $V \leq \mathbb{F}^n$ with $\mathrm{codim} \ll \epsilon^{-1}$ and $x \in \mathbb{F}^n$ such that \newline 
+
+$A \approx x + V$
+\vspace{12pt}
+\hrule
+\vspace{12pt}
+The real definition of ``$\approx$" is not so user-friendly.  It says: \newline
+
+$A$ is $\epsilon$-uniform on the coset $x + V$ if $\displaystyle \sup_{r \notin V^\perp} |(1_A \mu_{x+V})\hat{}(r)| < \epsilon $ \newline
+
+Google-searching\footnote{https://terrytao.wordpress.com/2010/04/08/254b-notes-2-roths-theorem/} has turns the phrases \textbf{Fourier uniform} or \textbf{Fourier pseudorandom} or possibly \textbf{Fourier complexity}. \newline
+
+I also wonder where these subset $A \subset \mathbb{F}^n$ come from?  My guess is they are related to computer programs\footnote{When I buy shoes on eBay, I have no predicting of the selection or availablity or the price.  eBay has no prediction of where you are buying from - and share to ship it's products.}.  
+\newpage
+
+Hence, the title... \textbf{Fourier Uniformity... on Subspaces} \newline
+
+I have difficulty grasping the finer points of Fourier analysis over $\mathbb{R}$ or even $\mathbb{Z}$.  Finite field fourier anlysis was taught to me as one of the simplest cases\footnote{What could be simpler then $\mathbb{Z}_2$ ? }.   \newline
+
+Green and Sanders write about Fourier analysis in several dimensions -- in fact $n \to \infty$ dimensions.  \newline 
+
+Lastly, finite field's are not that simple, we could have $\mathbb{F}_{17}$ or $\mathbb{F}_{48112959837082048697}$ but the cases I think Sanders has in mind like:
+$$ (\mathbb{Z} / 2\mathbb{Z})^{10^8},
+(\mathbb{Z} / 3\mathbb{Z})^{10^7},
+(\mathbb{Z} / 4\mathbb{Z})^{10^6} $$
+Instead of infinity, let $n = 5$ be dimension of our space and $p = 101$. \newline
+
+What could be a reasonable choice of $A$?
+
+\newpage
+
+\textbf{Not genuinely random} \newline
+
+I got away in school (and occasionally in the real world) by approximating an unpredictable situation by a uniformly random situation\footnote{I did! I should!} \newline
+
+Now I am reading that unpredictible $\neq$ random.  \newline
+
+How much choice do I really have?  Baskin-Robbins only has 31 flavors.  If I don't want any of those... I am in trouble.  Where does choice come from? \newline
+
+In real life there is a mix of choices we can make, and decisions made for us.  How much choice did we have? 
+
+\newpage
+
+\textbf{On to math\footnote{Theories of choice and fair division occupy thousands of pages in the Economics and Political theory literature, and we will ignore them all! }} \newline
+
+Randomness extraction is an engineering term, and boolean functions are a highly theoretical way of looking at computer programs.  Green-Sander's theorem basically says \newline
+
+\textbf{\color{orange}{any computer program over a data stream is essentially a line (or hyperplane)}} \newline
+
+How many tasks does a computer program has... it basically does \textbf{one} thing and hopefully it's pretty good.
+\newpage
+
+\fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
+
+\begin{thebibliography}{}
+
+\item Fourier uniformity on subspaces \textbf{Fourier Uniformity on Subspaces} \texttt{arXiv:1510.08739}
+
+\item What does $\mathrm{codim} V \ll_\delta 1$ mean if codimension can only be $0$ or $1$? \texttt{http://math.stackexchange.com/q/1505341/4997}
+
+
+
+\end{thebibliography}
+
+
+\end{document}
