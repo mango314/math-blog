@@ -1,0 +1,90 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[landscape, margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{21}{18}
+
+\title{\textbf{ Double-Shuffle }}
+\author{John D Mangual}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{25}{30}\selectfont
+
+\maketitle
+
+\noindent Many people like the formula $\zeta(2) = \frac{\pi^2}{6}$ and so do I.  There are some graet notes by Robin Chapman that offer about 15 proofs of that result.
+$$ \lim_{N \to \infty} \frac{1}{N^2}
+\bigg\{ 1 \leq m, n < N : \mathrm{gcd}(m,n)=1
+\bigg\} = \prod_{n = 1}^\infty \left( 1 - \frac{1}{n^2} \right) = \frac{6}{\pi^2}  $$
+The classic ``application" is that the probability of two numbers being relatively prime is $\frac{6}{\pi^2}$ which is about two-thirds.  \newline 
+
+\noindent There is nothing \textit{round} about two numbers with no common factor.  So why is there a $\pi^2$ ?
+\newpage
+
+
+\noindent Another thing I liked to do is play dominoes\footnote{Coding these on my computer has been awfully difficuly.  Everytime I think very hard, I forget and it is just like the first time.}.  Here's an image of rectangle paved by dominoes randomly:\newline
+\includegraphics{/home/john/Documents/math/288px-Pavage_domino.png} \newline
+The number of such tilings is a trigonometric product:
+$$ \prod_{j=1}^{\frac{m}{2}} \prod_{k=1}^{\frac{n}{2}} \left( 4 \cos^2 \frac{\pi j}{m+1} + 
+4 \cos^2 \frac{mk}{n+1}\right) $$
+'Tis a bit of a miracle this number is even an integer\footnote{We are following the convention that we are iterating from $j = 1$ to $j = \frac{m}{2}$ (or possibly $\frac{m}{2} + 1$) and if $\frac{m}{2}$ is a fraction we just stop before.}.  
+\newpage
+
+This work of Kenyon and Wilson has a lot of pi in it.\newline
+\includegraphics[width=5in]{pi.png} \newline
+These are related to the appearances of \textbf{patterns}  in the dominos.  The frequences of these patterns are values in $\mathbb{Q}[\pi]$.
+\newpage
+
+\noindent Why do formulas like $\int$ tend to have $\pi$ in them? \newline
+
+\noindent There is a nice theory of Maxim Kontsevich and Don Zagier which talks about \textbf{periods} - which are values of integrals.  
+\begin{itemize}
+\item integrate
+\item a function
+\item over a space
+\item to get an answer
+\end{itemize}
+If that is too complicated.  We are always adding things.  \newline
+
+\noindent However it's very rare that we abstract what we are dealing with to reveal a simple problem at hand\footnote{There is just too much noise - uncertainty - that we can't account for.  Noise which just gets bigger and bigger until it swallows up our whole argument.  Real numbers are not pristine, they are filthy, living entities full of stuff.}.\newline
+
+\noindent What are the odds the train will be full?  Can I get a good deal at the supermarket this week?  Is my boyfriend cheating on me?
+
+\newpage
+
+\noindent There are two places that got me thinking about $\frac{\pi^2}{6}$ \newline
+\begin{itemize}
+\item The odds of two numbers being relatively prime
+\item The area of $e^x + e^{-x} = 1$ (it is also the area of a triangle)
+\end{itemize}
+
+\noindent The first has to do with \textbf{Siegel-Veech} constants and the second is related to ``amoebas" and \textbf{dominoes}. \newline \newline 
+
+\noindent The second case is clear since we look for patterns in the most boring case we can think of - dominos in a rectangle. \newline \newline 
+
+\noindent The first could have a variety of interpretations.  The $\mathrm{gcd}$ function, square-free numbers, rectangular billiards, and on and on\footnote{Conspicuously absent is the study of the zeta function itself.  The Riemann Hypothesis isn't playing a huge role here (nor should it).}.
+\newpage
+
+\noindent As I learned by Mikael Passare\dots
+
+
+\newpage
+
+\fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
+
+\begin{thebibliography}{}
+
+\item JP Serre \textbf{Course on Arithmetic} Springer-Verlag
+
+\item Davenport \textbf{Multiplicative Number Theory} Springer-Verlag
+
+
+
+\end{thebibliography}
+
+
+\end{document}
