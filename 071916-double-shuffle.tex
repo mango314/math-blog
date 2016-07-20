@@ -96,6 +96,26 @@ Thewe two regions have the same area:
 \item $ e^{-y} < 1 +  e^{-x}$
 \end{itemize}
 
+\newpage
+
+\noindent \textbf{Multiple Zeta Values} \newline
+
+\noindent The Drinfield-Zagier approach to multi-zeta values looks as such:
+$$\zeta(2) = \sum_{m \geq 2} \frac{1}{m^2} 
+= \int_{1 >  t_1 > t_2 > 0} 
+\frac{dt_1}{t_1} \; \frac{dt_2}{1 - t_2} 
+ $$
+This is an exercise in Freshman analysis - which was so long ago!
+$$ \dots = \int_0^1
+\frac{dt}{t} \; \log (1-t) 
+= \int_0^1
+\frac{dt}{t} \; \sum_{ n = 1}^\infty \frac{t^n}{n}
+= \sum_{ n = 1}^\infty \frac{1}{n^2}
+$$
+We still have to show $\zeta(2) = \frac{\pi^2}{6}$.  This is fine... but I have not made connection to the other two formula I just showed you\footnote{A link to 15 proofs. \texttt{http://empslocal.ex.ac.uk/people/staff/rjchapma/etc/zeta2.pdf}}. \newline
+
+\noindent  I have an idea. Let $t = e^{-x}$.  Then $dt = - e^{-x} \, dx = - t \, dx $ :
+$$ \dots = \int_0^\infty dx\,  \log \, ( 1 - e^{-x}) $$
 
 
 \newpage
@@ -107,6 +127,11 @@ Thewe two regions have the same area:
 \item JP Serre \textbf{Course on Arithmetic} Springer-Verlag
 
 \item Davenport \textbf{Multiplicative Number Theory} Springer-Verlag
+
+\item Kentaro Ihara, Masanobu Kaneko and Don Zagier \textbf{Derivation and double shuffle relations for multiple zeta values} 
+
+\item Maxim Kontsevich, Don Zagier \textbf{Periods}  
+\item Maxim Kontsevich \textbf{Exponential Integral} (Online Course) \texttt{https://youtu.be/tM25X6AI5dY}
 
 
 
