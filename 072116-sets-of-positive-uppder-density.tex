@@ -1,0 +1,101 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[landscape, margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{21}{18}
+
+\title{\textbf{ Roth's Theorem on Sequences }}
+\author{John D Mangual}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{25}{30}\selectfont
+
+\maketitle
+
+
+
+
+\newpage
+
+\begin{tabular}{rrrrrrrrrr}
+{\color{blue!80!white}{0}} & {\color{red!80!white}{1}} & {\color{red!80!white}{2}} & {\color{red!80!white}{3}} & {\color{blue!80!white}{4}} & {\color{red!80!white}{5}} & {\color{red!80!white}{6}} & {\color{red!80!white}{7}} & {\color{blue!80!white}{8}} & {\color{blue!80!white}{9}}\\ 
+{\color{red!80!white}{10}} & {\color{red!80!white}{11}} & {\color{blue!80!white}{12}} & {\color{red!80!white}{13}} & {\color{red!80!white}{14}} & {\color{red!80!white}{15}} & {\color{blue!80!white}{16}} & {\color{red!80!white}{17}} & {\color{blue!80!white}{18}} & {\color{red!80!white}{19}}\\ 
+{\color{blue!80!white}{20}} & {\color{red!80!white}{21}} & {\color{red!80!white}{22}} & {\color{red!80!white}{23}} & {\color{blue!80!white}{24}} & {\color{blue!80!white}{25}} & {\color{red!80!white}{26}} & {\color{blue!80!white}{27}} & {\color{blue!80!white}{28}} & {\color{red!80!white}{29}}\\ 
+{\color{red!80!white}{30}} & {\color{red!80!white}{31}} & {\color{blue!80!white}{32}} & {\color{red!80!white}{33}} & {\color{red!80!white}{34}} & {\color{red!80!white}{35}} & {\color{blue!80!white}{36}} & {\color{red!80!white}{37}} & {\color{red!80!white}{38}} & {\color{red!80!white}{39}}\\ 
+{\color{blue!80!white}{40}} & {\color{red!80!white}{41}} & {\color{red!80!white}{42}} & {\color{red!80!white}{43}} & {\color{blue!80!white}{44}} & {\color{blue!80!white}{45}} & {\color{red!80!white}{46}} & {\color{red!80!white}{47}} & {\color{blue!80!white}{48}} & {\color{blue!80!white}{49}}\\ 
+{\color{blue!80!white}{50}} & {\color{red!80!white}{51}} & {\color{blue!80!white}{52}} & {\color{red!80!white}{53}} & {\color{blue!80!white}{54}} & {\color{red!80!white}{55}} & {\color{blue!80!white}{56}} & {\color{red!80!white}{57}} & {\color{red!80!white}{58}} & {\color{red!80!white}{59}}\\ 
+{\color{blue!80!white}{60}} & {\color{red!80!white}{61}} & {\color{red!80!white}{62}} & {\color{blue!80!white}{63}} & {\color{blue!80!white}{64}} & {\color{red!80!white}{65}} & {\color{red!80!white}{66}} & {\color{red!80!white}{67}} & {\color{blue!80!white}{68}} & {\color{red!80!white}{69}}\\ 
+{\color{red!80!white}{70}} & {\color{red!80!white}{71}} & {\color{blue!80!white}{72}} & {\color{red!80!white}{73}} & {\color{red!80!white}{74}} & {\color{blue!80!white}{75}} & {\color{blue!80!white}{76}} & {\color{red!80!white}{77}} & {\color{red!80!white}{78}} & {\color{red!80!white}{79}}\\ 
+{\color{blue!80!white}{80}} & {\color{blue!80!white}{81}} & {\color{red!80!white}{82}} & {\color{red!80!white}{83}} & {\color{blue!80!white}{84}} & {\color{red!80!white}{85}} & {\color{red!80!white}{86}} & {\color{red!80!white}{87}} & {\color{blue!80!white}{88}} & {\color{red!80!white}{89}}\\ 
+{\color{blue!80!white}{90}} & {\color{red!80!white}{91}} & {\color{blue!80!white}{92}} & {\color{red!80!white}{93}} & {\color{red!80!white}{94}} & {\color{red!80!white}{95}} & {\color{blue!80!white}{96}} & {\color{red!80!white}{97}} & {\color{blue!80!white}{98}} & {\color{blue!80!white}{99}}\end{tabular} \newline \newline
+
+\noindent \textbf{Square-Free Numbers}
+No prime divisor is repeated twice.  \newline These have density about $2/3$ in the number line, $\mathbb{Z}$
+$$ 90 = 2 \times 3 \times 3 \times 5 $$
+is not a square-free number.  However the red number:
+$$ 85 = 5 \times 13 $$
+\newpage
+
+\noindent The classic exercise is to show the probability of a number being square-free is $\frac{\pi^2}{6}$
+
+$$ \mathbb{P}\big[ \min_{x,y \in \mathbb{Z}} |ax+by| = 1\big]
+= \prod_{p} \left( 1 - \frac{1}{p^2}\right)
+= \sum_{n > 0} \frac{1}{n^2} = \frac{\pi^2}{6} $$
+And we will need a proof of the last step to pipe into further work - when we actually try to solve Roth's Theorem. \newline \newline
+
+\noindent \textbf{Proof \# 15} Every natural number can be written as the sum of four squares (if you look hard enough).
+  $$ n = x^2 + y^2 + z^2 + t^2 $$
+This can be proven using geometry of numbers and the fact that $\pi^2 > 8$. \newline
+
+\noindent Let $r(n) = \# \{ (x,y,z,t): x^2 + y^2 + z^2 + t^2 = n \}$ be the number of solutions, which are scattered around the 3-sphere $S^3$.
+
+\newpage
+
+\noindent How many integer points are there {\color{black!90!white}\textbf{inside}} the 3-sphere?
+$$ R(n)=\{ (x,y,z,t): x^2 + y^2 + z^2 + t^2 \leq n \} \sim \frac{\pi}{2}\cdot N^2 $$
+using the formula for $r(n)$ we can find a formula for $R(n)$:
+$$ r(n) = 8 \sum_{m|n, 4 \not \div m} m$$
+This is really clumsy to omit 4's like this and I don't explain why:
+$$ 
+R(N) = 1 + \sum_{n=1}^n \sum_{m|n, 4 \not div m} m
+= 1 + 8 \left( \sum_{m \leq N} m \left[\frac{N}{m}\right] 
+-  \sum_{m \leq N} m \left[\frac{N}{4m}\right] \right)
+$$
+One can show that $\zeta(2)$ mysterious pops out of lattice point counting under a hyperbola:
+$$ \theta(x) = \sum_{mr \leq x} x = 
+\zeta(2) \cdot \frac{1}{2}x^2 + O(x \, \log x)$$
+
+\newpage
+
+\noindent Finally:
+$$ R(N) \sim \frac{\pi^2}{2} \, N^2 
+\sim 1 + 8 \big( \theta(N) - \theta(N/4) \big)
+\approx 4 \zeta(2) \left( N^2 - \frac{N^2}{4} \right)$$
+This is from a textbook ``Introduction to Number Theory" by Hua Look Keng, but I found it in Robin Chaptman's list of proofs of $\zeta(2)$. \newline
+
+\noindent The big questions to me here are why theta functions appear at all... since:
+$$ \theta(q)^4 = \left[ \sum q^{n^2} \right]^4 
+= \sum r(n) q^n $$
+By ommitting his derivation of the sum of 4 squares formula, we lose a big chance to get at the geometry of lattices and number theory. \newline
+
+\noindent Moving on\dots let's find other sequences of positive upper density!
+
+\newpage
+
+\fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
+
+\begin{thebibliography}{}
+
+\item JP Serre \textbf{Course on Arithmetic} Springer-Verlag
+
+
+
+
+\end{thebibliography}
+
+
+\end{document}
