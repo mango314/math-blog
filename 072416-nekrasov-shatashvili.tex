@@ -1,0 +1,111 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[landscape, margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{21}{18}
+
+\title{\textbf{Spin Chain Dualities}}
+\author{John D Mangual}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{25}{30}\selectfont
+
+\maketitle
+
+\noindent Two physicists at Perimeter Institute - Davide Gaiotto and Peter Koroteev - discuss promising ``dualities" between a spin chain and an integrable system.
+\begin{itemize}
+\item Twisted anisotropic XXZ spin chain
+\item Trigonometric Ruijsenaars-Schneider model
+\end{itemize}
+Here and there, I have read of a dynamical system that is ``integrable" or a spin-chain. \newline
+
+\noindent In fact, for a long time I thought these two terms were interchangeable.
+
+\newpage
+
+\noindent Here is some more information about this duality:
+\begin{itemize}
+\item $SU(L+1)$ XXZ spin chain
+\item $GL(Q)$ tRS model
+\end{itemize}
+What aspects of XXZ map to what aspects of tRS?
+\begin{itemize}
+\item impurities $\longleftrightarrow$ Eigenvalues of $M$
+\item twist $\longleftrightarrow$ Eigenvalues of $T$
+\item anisotropy $\longleftrightarrow$ Eigenvalue of $E$
+\end{itemize}
+I gleaned that tRS involves matrices which satisfy an eq:
+$$ MTM^{-1}T^{-1} = E$$
+\textbf{Does $Q = L+1$? } \newline
+
+\noindent I left out some important details about a quiver, the Bethe-Ansatz equations look to complicated to read\footnote{This is common in integrable systems... Unfortunately, does not mean ``easy to read" or ``intuitive".}.
+
+
+\newpage
+
+\noindent \textbf{What is Twisted Anisotropic XXZ Spin Chain over $SU(L+1)$?} \newline
+
+\noindent Gaiotto-Koroteev may have borrowed their interpretaton of spin chains from Nikita Nekrasov and Samson Shatashvili.  These authors write about a \textbf{gauge-Bethe correspondence} just like the one we are trying to figure out now. \newline
+
+\noindent The $SU(2)$ XXX spin chain\footnote{so I guess $L=1$ here\dots} describes a set of spins on a lattice of length $N$.  The Hilbert space is a tensor product:
+$$ \mathcal{H} = \mathbb{C}^2 \otimes \dots \otimes \mathbb{C}^2$$
+and $SU(2)$ acts as a representation on this space.
+$$ H = J \sum_{a=1}^L (S_a^x S_{a+1}^x + 
+S_a^y S_{a+1}^y + 
+S_a^z S_{a+1}^z )$$
+where $\vec{S}_a = \frac{i}{2}\vec{\sigma}_a$ are te Pauli spin matrices.
+
+
+\newpage
+
+\noindent The state of this system can only have one of $2^N$ outcomes, such as $| \uparrow \dots \uparrow \rangle, | \downarrow \dots \uparrow \rangle, | \downarrow \dots \downarrow \rangle \in \mathcal{H}$. \newline
+
+\noindent The boundary conditions are ``twisted" around the circle\dots
+$$ \vec{S}_{N+1} = e^{\frac{i}{2} \theta \sigma_3} \vec{S}_{1} e^{-\frac{i}{2} \theta \sigma_3}$$
+The \textbf{total amount of spin} $\vec{S} = \sum \vec{S}_a$ commutes with the Hamiltonian... this is a very fance way of saying \textbf{spin is conserved}. \newline
+
+\noindent This narrows down the dynamics a tiny bit since, even though there are $2^N$ possibilities for spin, we can put them into groups of $\binom{N}{M}$ spins for $M = 0, 1, \dots, N$.  \newline
+
+\noindent A \textbf{wavefunction} is a map $\psi: \mathbb{C}^{\otimes n} \to \mathbb{C}$ and we would like to find wavefunctions that are eigenvectors of $H$.
+
+\newpage
+
+\noindent Skipping very important work for now... the eigenspaces are related to the Bethe Ansatz equations:
+$$ \left( \frac{\lambda_j + \frac{i}{2}}{\lambda_j - \frac{i}{2}}\right)^L = e^{i\theta} \prod_{k \neq j} \frac{\lambda_j - \lambda_k + i}{\lambda_j - \lambda_k - i} $$
+Since I can't do these equations justice in a few sentences I am not going to motivate them at all\footnote{We should not the cameo appearances of the \textbf{Cauchy transform} and \textbf{algebraic invariant theory} since we are doing all these index manipulations!!!} - the \textit{inhomogeneous} XXX spin chain looks almst the same:
+$$ \prod_{a=1}^L
+\frac{\lambda_j - \nu_a + is_a}{\lambda_j   - \nu_a - is_a} = e^{i \theta}\prod_{k \neq j} \frac{\lambda_j - \lambda_k + i}{\lambda_j - \lambda_k - i}  $$
+There is the ``analytic" Bethe Ansatz and the ``algebraic" Bethe Ansatz\dots all of them are way too complicated.
+
+\newpage
+
+\noindent We are looking for XXZ spin chain over $SU(L+1)$ not just $SU(2)$.
+
+$$ H =  \sum_{a=1}^L ( J  \, S_a^x S_{a+1}^x + 
+J \, S_a^y S_{a+1}^y + J_z \,
+S_a^z S_{a+1}^z )$$
+One possiblity is to \textbf{embed} $\rho: SU(2) \to SU(L+1)$ and get a representation that way.  The representations of $SU(2)$ are indexed by the half-integers\footnote{a fact that I must review over and over} \newline
+
+\noindent Domenico Orlando and Susanne Reffert, elegantly show us how xxx$_{1/2}$ spin chain is related to the equivariant cohomology of the tangent bundle of the grassmanian.
+$$ H_\ast \big[T^\ast Gr(N, L)\big] $$
+
+\newpage
+\fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
+
+\begin{thebibliography}{}
+
+\item Davide Gaiotto, Peter Koroteev \textbf{On Three Dimensional Quiver Gauge Theories and Integrability} \texttt{arXiv:1304.0779}
+
+\item Domenico Orlando, Susanne Reffert \textbf{The Gauge-Bethe Correspondence and Geometric Representation Theory} \texttt{arXiv:1011.6120}
+
+
+\item Nikita A.Nekrasov, Samson L.Shatashvili \textbf{Supersymmetric vacua and Bethe ansatz} \texttt{arXiv:0901.4744}
+
+\end{thebibliography}
+
+
+\end{document}
