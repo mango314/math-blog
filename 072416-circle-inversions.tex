@@ -1,0 +1,61 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[landscape, margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{21}{18}
+
+\title{\textbf{ Getting Good at Inversions }}
+\author{John D Mangual}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{25}{30}\selectfont
+
+\maketitle
+
+\noindent My apologies in advance that I did not draw lots of pictures!
+$$ w = \frac{az+b}{cz+d} $$
+If $ad-bc \neq 0$ this map is invertible and maps circles to circles.
+$$ \left|\frac{z-p}{z-q}\right| = k $$
+represents a circle where $p$ and $q$ are \textbf{inverse} points\footnote{These terms from Eucldean Geometry deserve a lot of reflection! The goal of this note is to jot down one simple hard-to-find formula.}.
+
+\newpage
+
+\noindent Trouble is we don't know the radius and center.  The only book I could find with a formula is Titchmarsh's \textbf{Theory of Functions} which has a nice section on ``conformal" maps. 
+$$ \left| \frac{w - \frac{ap+b}{cp+d}}{w - \frac{aq+b}{cq+d}} \right| = k \left| \frac{cq + d}{cp + d} \right| $$
+The image of a circle under a fractional linear transformation\footnote{The image of a (very tiny) cirle under any conformal map is another circle.} is another circle. \newline
+
+\noindent A circle of radius $R$ centered at $p$ has $p$ and $\infty$ as inverse points.  Perhaps we can write $p$ and $q \gg 1 $ as the inverse points.
+$$ \left|\frac{z-p}{z/q-1}\right| = kq= R $$
+so additionally we could have $k \ll 1$.
+
+\newpage
+
+\noindent So what is the limit?  Setting $q = \infty = \frac{1}{0}$ we get:
+$$ \left| \frac{w - \frac{ap+b}{cp+d}}{w - \frac{a}{c}} \right| = R\left| \frac{1}{p + \frac{d}{c}} \right| $$
+This doesn't look right at all. \newline
+
+\noindent There is a circle for each $k \neq 1$
+$$ \left|\frac{z-p}{z-q}\right| = k $$
+The radius and center of the circle is:
+$$ \left|z - \frac{p - k^2 q}{1 - k^2} \right| = \frac{k}{|1 - k^2|} \; |p - q|$$
+
+\newpage
+
+\fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
+
+\begin{thebibliography}{}
+
+\item Davide Gaiotto, Peter Koroteev \textbf{On Three Dimensional Quiver Gauge Theories and Integrability} \texttt{arXiv:1304.0779}
+
+\item Titchmarsh \textbf{Theory of Functions} \texttt{https://archive.org/details/TheTheoryOfFunctions}
+
+
+
+\end{thebibliography}
+
+
+\end{document}
