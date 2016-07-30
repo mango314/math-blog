@@ -173,6 +173,23 @@ The perfect fit for $\sum_{n \leq x} \Lambda(n) \approx x$ ( close up around $n 
 
 \newpage
 
+\noindent In our case, the Laplace transform corresponds to something specific.  Or a Mellin transform since we are doing $\times$ not $+$ :
+$$  \sum \Lambda(n) \, n^{-s}= \int_1^\infty v^{-s} d \left[ \sum_{n \leq x} \Lambda(n) \right]$$
+The left hand side is $\frac{\zeta'(s)}{\zeta(s)} $ and the right side is a \textbf{Stieltjes integral} \newline
+
+\noindent Wiener-Ikehara theorem extends a single Laplace transform:
+$$ a(u)=e^u \to \hat{a}(s)=\int_0^\infty e^{-us}\, e^u \, du = \frac{1}{s-1} $$
+The pole at $s=1$ ``corresponds to" the distribution $e^u$ on $\mathbb{R}^-$.
+$$ \int_0^\infty f_+(u-x)e^{-\delta u} du
+= \int_{-T}^T \hat{f}_+(t) e(-tx) \frac{1}{\delta - 2\pi i t} dt$$
+We were told the mysterious $f_+$ kernel would only use specific wavelengths.  I guess I'm OK with that.
+
+\newpage
+
+\noindent 
+
+\newpage
+
 \fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
 
 \begin{thebibliography}{}
