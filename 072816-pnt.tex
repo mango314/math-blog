@@ -1,0 +1,171 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[landscape, margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{21}{18}
+
+\title{\textbf{ Wiener-Ikehara Tauberian Theorem }}
+\author{John D Mangual}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{25}{30}\selectfont
+
+\maketitle
+
+\noindent I found ``analytic number theory" or ``prime number theory" a frustrating subject.  The discussions are are lengthy and disorganized and seem to lead nowhere. \newline  
+
+\noindent Let's try to prove the Prime Number Theorem:
+$$ \frac{1}{x} \times \# \big\{ p \leq x:  p \text{ is prime}  \big\} = \frac{1}{\log x} $$
+The proof is like 40 pages and I lost track of everything.  The first step, there is always a prime between $n < p < 2n$ by close examination of $\binom{2n}{n}$ and the Euclidean algorithm\footnote{See Zagier's \textbf{The First 50 Million Prime Numbers} \texttt{http://people.mpim-bonn.mpg.de/zagier/files/doi/10.1007/BF03039306/fulltext.pdf}}.
+
+\newpage
+
+\noindent Then I found out about the Tauberian Theorems\footnote{} which prime to make the proof faster and more motivated.  What was Tauber's theorem anyway? \newline
+
+\noindent First, Abel's Theorem on when we can put $x =1$ in series. \newline
+
+\noindent Titchmarsh's \textbf{Theory of Functions} says\footnote{``Theory of Functions" is a fancy word for ``Complex Analyis" -- also the book of Knopp.} we can let $x \to 1$ often:
+$$ \lim_{x \to 1} \, \sum_{n=0}^\infty a_n x^n = 
+\sum_{n=0}^\infty a_n $$
+if the thing on RHS exists there is uniform convergence. \newline
+
+\noindent Textbook example is to show $\log 2 = 1 - \frac{1}{2} + \frac{1}{3} + \frac{1}{4}-\dots = \sum  \frac{(-1)^n}{n}$ proven by setting $x = 1$ in Taylor's formula or MacLaurin's:
+$$ \log (1+x) = x - \frac{1}{2}x^2 + \frac{1}{3} x^3 - \frac{1}{4}x^4 + \dots $$
+
+\newpage
+
+\noindent Tauber's thorem goes the other way.  If a series converges 
+$$ \sum_{n=0}^\infty a_n x^n \to s $$
+as $x \to 1$ we are concluding the same is true when $x = 1$.
+$$ \sum_{n=0}^\infty a_n \to s $$
+To reiterate\footnote{These are really loaded statements... it is as if series $\sum a_n x^n$ were a dime a dozen.  Plugging $x = 1$ is going to be the obvious move and suddenly we are going to get the wrong conclusion.  Doing it in reverse and generating examples off the topic of my head, from memory, is so much work.} we are comparing $x = 1$ with $x \to 1$ (or $x \to 1^-$). \newline
+
+\noindent The textbook says $\frac{1}{1+x} \to \frac{1}{1+1} = \frac{1}{2}$ but the Taylor expansion doesn't agree
+$$\frac{1}{1+x}  = \sum_{n=0}^\infty (- x)^n \to 1 - 1 + 1 - 1 + \dots =_? \frac{1}{2}$$
+In order to make these statements true we have thrown around the symbol ``=" to mean quite a few things\footnote{Using the Cesaro mean we could observe the partial sums are $1,0,1,0,1,0,\dots$ and split the difference at $\frac{1}{2}$.}. \newpage
+
+\noindent The Wiener-Ikehara Tauberian theorem is the culmination of numerious re-arrangement tricks with divergent series:
+\begin{quotation}
+\noindent Les s\'{e}ries divergentes sont en g\'{e}n\'{e}ral quelque chose de bien fatal et c'est une honte qu'on ose y fonder aucune d\'{e}monstration. \newline \newline
+Divergent series are in general something fatal, and it is a disgrace to base any proof on them \newline \newline
+The divergent series are the invention of the devil, and it is a shame to base on them any demonstration whatsoever
+\end{quotation}
+GH Hardy wrote a book on divergent series where he evaluates the plausibility of using them in ``rigorous calculations". \newline 
+
+\noindent \textbf{most calculations are quite sloppy and nobody really notices are cares}\footnote{In the 20th century, divergent series return with a vengeneance, charging straight for you hard and fast.  $1 + 1 + 1 + \dots = - \frac{1}{2}$ }
+
+\newpage
+
+\noindent \textbf{statement} \newline
+
+\noindent Suppose\footnote{Math language is so whimsical\dots we are letting this and supposing that... where does a function with such very specific properties come from?  It is going to come from the prime numbers\dots} that $a(u): [0, \infty) \to \mathbb{R}$ is non-negative and increasing and that
+$$ \hat{a}(s) = \int_0^\infty e^{-us}\, da(u) $$
+converges for all $s$ with $\sigma > 1$ and that 
+$$ \hat{a}(s) - \frac{c}{s-1} $$
+extends to a continuous function on the closed half-plane $\sigma \geq 1$.  Then as $x \to \infty$
+$$ \frac{1}{e^x}\int_0^x 1 \, da(u) = c + o(1) $$
+{\color{black!50!white}{\hrule}}
+\vspace{12pt}
+\noindent the measure $da(u)$ has a Laplace transform $\hat{a}(s)$ that diverges near $s=1$.  Now we compute the integeral of the constant function $\mathbf{1}$ and see how it behaves\footnote{I have re-written it slightly to make it look like an average. This is not looking like a statement on divergent series.  And besides why be so rigorous since most people don't care anyway?}
+
+
+\newpage
+
+\noindent I should also mention the Karamata Theorem -- which is also a Tauberian Theorem and leads to a proof of PNT -- but requires more inputs and more footwork on our own. \newline
+
+\noindent Wiener-Ikehara Tauberian theorem will simply return the Prime Number Theorem as a corollary (among many others).\newline
+
+\noindent The statement the Tauberian Theorem is due to Montgomery and Vaughan.  However, the Wiener in this article is Norbert Wiener the prodigy from MIT who helped formulate are modern language about stochastic processes. \newline
+
+\noindent Could it be that the primes are exhibiting white noise\footnote{A rather innocuous observation about the  density of primes took over a century to prove and  }?
+
+\newpage
+
+\noindent Suppose that $a_n \geq 0$ for all $n$ and $s = \sigma+i\tau$ with $\sigma \geq 1$:
+$$ \hat{a}(s) = \sum_{n=1}^\infty a_n n^{-s} = \frac{c}{s-1} + \big(\text{something continuous} \big) $$
+Then the average coefficient approaches a number:
+$$ \frac{1}{x}\sum_{n \leq x} a_n = c + o(1) $$
+In our case we set $a_n = \Lambda(n)$ the \textbf{Van Mangoldt function} which is:
+$$ \Lambda (n) = 
+\left\{ \begin{array}{cl}
+\log p & \text{ if }n = p^k \\
+0 & \text{ otherwise }
+\end{array}  \right. $$
+The statement shows the average value $\Lambda(n)$ is just $1$:
+$$ \frac{1}{x} \sum_{n \leq x} \Lambda(n) = 1 + o(1)$$
+
+
+\newpage
+
+\noindent \textbf{Strategy} we wish to argue that $\Lambda (n) \approx 1$ despite that being wildly not true. \begin{itemize}
+\item for large primes $p$ we have $\Lambda(n) = \log p \gg 1$
+\item $\Lambda(n)$ is often $0$.
+\item These two facts average out perfectly to $\Lambda \approx 1$.
+\end{itemize}
+Another statement with the M\"{o}bius function $\mu: \mathbb{N} \to \{ -1,0, 1\}$.
+$$ \mu(n) = \left\{
+\begin{array}{rl}
+0 & \text{ if }p^2 \text{ divides } n\\
+1 & \text{ if }n = p_1 \dots p_k \text{ with }k\text{ odd}\\ 
+-1 & \text{ if }n = p_1 \dots p_k \text{ with }k\text{ even}\\
+ \end{array}
+  \right\} $$
+Then we are trying to show $\mu(n) \approx 0$ even though 2/3 of the times it is $\pm 1$.
+$$ \frac{1}{x}\sum_{n \leq x} \mu(n) = 0 + o(1) $$
+Even though on average $\mu(n)$ is zero, there is obviously a lot of interesting behavior that happens quite often. 
+
+\newpage
+
+\noindent The main lemma involves the exponential funnction.  Let $E(x)$ be $e^x$ for negative numbers and $0$ for positive numbers. \newline
+
+\noindent For any $\epsilon > 0$, there are continuous functions $f_\pm (x)$ approximating the exponential function:
+\begin{itemize}
+\item $f_-(x) \leq e^x \leq f_+(x)$ for all $x  < 0$.
+\item $f_-(x) \leq 0 \leq f_+(x)$ \hspace{0.40em}for all $x  > 0$.
+\item $\hat{f}_\pm(t) = 0$ for $|t| \geq T$ Fourier transform has compact support
+\item The integrals are approximately $1$:
+
+
+$$1 - \epsilon < 
+\int_{-\infty}^\infty f_-(x) \, dx  <
+1  <  
+ \int_{-\infty}^\infty f_+(x) \, dx < 1 + \epsilon $$
+\end{itemize}
+
+\newpage
+
+\noindent \textbf{Charts!}  I need lots and lots of charts! Let: 
+$$ A(x) = \sum_{n \leq x} \Lambda(n) \approx x + o(x)$$
+The prime number theorem is the statement that $A(x) \approx x$ and the chat clearly shows as much. \newline
+
+\noindent the \textbf{proof} requires showing the studying the error and showing it's small enough, and the truth is $\Lambda(n) - 1$ as a lot of interseting behavior (over all scales) so it's quite hard to show on average it is zero. \newline
+
+\noindent These primes! What are these primes like???
+ 
+
+
+\newpage
+
+\fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
+
+\begin{thebibliography}{}
+
+\item Hugh Montgomery, Robert Vaughan \textbf{Multiplicative Number Theory: 1.  Classical Theorem} Cambridge, 2006.
+
+\item GH Hardy \textbf{Divergent Series}
+
+\item Titchmarsh \textbf{Theory of Functions} \texttt{https://archive.org/details/TheTheoryOfFunctions}
+
+\item Don Zagier \textbf{The First 50 Million Prime Numbers} New Mathematical Intelligencer 0 (1977) 1-19  \newline\texttt{http://people.mpim-bonn.mpg.de/zagier/files/doi/10.1007/BF03039306/fulltext.pdf}
+
+
+
+\end{thebibliography}
+
+
+\end{document}
+
