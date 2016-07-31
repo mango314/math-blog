@@ -174,7 +174,7 @@ The perfect fit for $\sum_{n \leq x} \Lambda(n) \approx x$ ( close up around $n 
 \newpage
 
 \noindent In our case, the Laplace transform corresponds to something specific.  Or a Mellin transform since we are doing $\times$ not $+$ :
-$$  \sum \Lambda(n) \, n^{-s}= \int_1^\infty v^{-s} d \left[ \sum_{n \leq x} \Lambda(n) \right]$$
+$$  \sum_{n \leq x} \Lambda(n) \, n^{-s}= \int_1^\infty v^{-s} d \left[ \sum_{n \leq x} \Lambda(n) \right]$$
 The left hand side is $\frac{\zeta'(s)}{\zeta(s)} $ and the right side is a \textbf{Stieltjes integral} \newline
 
 \noindent Wiener-Ikehara theorem extends a single Laplace transform:
@@ -186,7 +186,21 @@ We were told the mysterious $f_+$ kernel would only use specific wavelengths.  I
 
 \newpage
 
-\noindent 
+\noindent Why does this remainder term tend to zero what could it mean?
+$$ e^x \int_{-T}^T \hat{f}_+(t) \, e(-tx) \left[ \sum_{n =0}^\infty \Lambda(n) \, n^{-1 + 2\pi i t} - \frac{1}{2\pi i \, t} \right] \; dt \longrightarrow 0 $$
+This is the noisy part which, by the Riemann-Lebesgue lemma tends to zero.  \newline
+
+\noindent Whay does the Riemann-Lebesgue Lemma\footnote{We take from Katznelson \textbf{Harmonic Analysis}} say? It says:
+$$ g \in L^1(\mathbb{R}) \longrightarrow \lim_{|\xi|\to \infty}\hat{g}(\xi)=0$$
+No wonder Montgomery-Vaughan's proof is so short!  \newline
+
+\fontfamily{qag}\selectfont \fontsize{15}{10}\selectfont
+
+\noindent Wikipeia says rigorous treatments of steepest descent and stationary phase are based on Riemann-Lebesgue Lemma. Essentially the integral over high enough frequencies should be zero since $\sin x$ is half the time $+1$ and half the time $-1$.  This is the point of picking a function $f_(x)$ mimicking $e^x$, but whose Fourier coefficients $\hat{f}(t)$ stay within the range $-T < t < T$.
+
+\fontfamily{qag}\selectfont \fontsize{25}{30}\selectfont
+
+\noindent The magic function $f$ is a far from obvious mix of the \textbf{Fej\'{e}r kernel} and the lesser known Jackson Kernel.  There might be others.
 
 \newpage
 
