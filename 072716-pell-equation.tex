@@ -98,10 +98,74 @@ So far.  How are we going to generate an answer if none of these small numbers w
 \noindent Once we see that $ 0 < \sqrt{19} - 4 < 1 $, let's save ourselves some time by just multiplying by this number instead.
 $$ \sqrt{19} -4 = \frac{(\sqrt{19} -4)(\sqrt{19} +4)}{\sqrt{19} +4} = \frac{3}{\sqrt{19} +4} > \frac{1}{3}$$
 So if I multiply this number by $4$ I get a new solution slightly larger than $1$. 
-$$ 4(\sqrt{19} - 4)-1 = 4 \sqrt{19} - 17$$
+$$ 3(\sqrt{19} - 4)-1 = 3 \sqrt{19} - 13$$
 In fact $4^2 \times 19 - 17^2 = 15$ which is rather large but still less than $19$.\newline
 
-\noindent 
+\noindent Also, $3^2 \times 19 - 13^2 = 2$
+
+\newpage
+
+\noindent $ 1421^2 - 19 \times 326^2 = 3$ \newline
+
+\noindent $ 4^2 - 19 \times 1^2 = 3$ \newline
+
+\noindent Are these enough to solve Pell's equation?
+$$ \frac{1421 - 326\sqrt{19}}{4 - \sqrt{19}}\times \frac{4 + \sqrt{19}}{4 + \sqrt{19}}
+= \frac{\text{complicated number}}{-3} $$
+For some reason $3$ seems to be a common remainder for $\sqrt{19}$
+\begin{itemize}
+\item (1,4)
+\item (14,61)
+\item (326, 1421)
+\item (4759, 20744)
+\end{itemize}
+This algorithm is really slow since I am tediously\footnote{A more judicious use of Pigenhole uses \textbf{renormalization} but I think we have demonstrated that $p^2 - 19q^2 = 3 $ has infinitely many solutions.  Next we check for solutions which are give the same remainder upon division by 19.  These will divide into each other and return a solution to the Pell equation $p^2 - 19q^2 = 1$.} checking that
+$$ 0< \big| q \sqrt{19} - p \big| < \frac{1}{N} $$
+
+\newpage
+
+\noindent Really slow algorithm for solving Pell equation in some cases.  Solves $p^2 - 19q^2 = 3$ a lot.
+\vspace{6pt}
+\hrule
+
+\begin{verbatim}
+sol = []
+
+for N in 1 + np.arange(1000):
+
+    q = 1
+    while( q*np.sqrt(19) % 1 > 1.0/N):
+        q += 1
+    p = int(q*np.sqrt(19) // 1)
+    
+    if (q,p) not in sol:
+        sol += [(q,p)]
+        print q, p, q*q*19 - p*p
+\end{verbatim}
+
+\newpage
+
+\noindent Really slow algorithm for solving Pell equation in some cases.  Solves $p^2 - 19q^2 = 3$ a lot.
+\vspace{6pt}
+\hrule
+
+\begin{verbatim}
+   1     4   3
+   3    13   2
+  14    61   3
+  53   231  10
+  92   401  15
+ 131   571  18
+ 170   741  19
+ 209   911  18
+ 248  1081  15
+ 287  1251  10
+ 326  1421   3
+1017  4433   2
+\end{verbatim}
+\vspace{6pt}
+\hrule
+Algorithm gets really slow after that\dots Sorry!
 
 \newpage
 
@@ -121,11 +185,17 @@ In fact $4^2 \times 19 - 17^2 = 15$ which is rather large but still less than $1
 
 \newpage
 
+\includegraphics[width=5in]{cf-01.png}
+
+\newpage
+
 \fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
 
 \begin{thebibliography}{}
 
 \item Math.StackExchange \textbf{What is your favorite application of the Pigeonhole Principle?} \texttt{http://math.stackexchange.com/q/62565/4997}
+
+\item Serge Lang, Hale Trottr \textbf{Continued fractions for some algebraic numbers.} \texttt{https://eudml.org/doc/151239}
 
 
 
