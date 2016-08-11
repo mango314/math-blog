@@ -20,25 +20,51 @@
 
 % note AVOID THE WORDS 'Ratner Theorem' instead explain what it is
 
-\noindent The Verline Formula\footnote{I have seen Herman Verline or possibly Erik Verline at some point in my life.} is just some term I see in papers to make people sound smart.  What are these terms anyway?
+\noindent Let's try to discuss the Verlinde Formula without too much suspicion\footnote{One problem is an author will say two objects are the same, or the answer to some equation is a number of object without enough explanation.  These equivalences will be stated in casually and in passing as though the sky were blue or orange or whatever.  Or two object will be compared and I have \textbf{never} seen neither object in my life.  The statement is A=B and half the time is spent verifying ``obvious" properties of A and of B and, if we're lucky using their equality in a profitable way.}.  The first problem I have with ``generalized" Verlinde Formula is that I barely understood the original\footnote{Very few people knew Verlinde formula in the first place.  At Princeton I passed up Herman Verlinde to work with Michael Aizenman.  I tried to work with Elliot Lieb\dots they are busy and important guys.  On and on\dots}. \newline
+
+\noindent ``The Verlinde formula is a simple and elegant expression for the number of conforal blocks in a 2 rational CFT on a Riemann surface $\Sigma$\dots"
+$$ \dim \mathcal{H}\big( \Sigma_g; SU(2)_k \big) 
+= \left( \frac{k}{2}+1 \right)^{g-1}
+\sum_{j=1}^{k=1} \left( \sin \frac{\pi j}{k+2} \right)^{2-2g}
+$$
+At this moment all this equations says is the dimension of some object is the trigonometric series on the right.
+$$ \left( \frac{k}{2}+1 \right)^{g-1}
+\sum_{j=1}^{k=1} \left( \sin \frac{\pi j}{k+2} \right)^{2-2g} \in \mathbb{Z} $$
+Knowing just a tiny bit of Galois Theory, this is an element of $\mathbb{Q}(e^{2\pi i / n})$ and because we are evaluating the $\sin$ at all the angles $\frac{\pi j}{k+2}$, it is element of $\mathbb{Q}$. \newline
+
+\noindent So I'm always pleasantly surprised when it is an element of $\mathbb{Z}$
+$$ \dim \mathcal{H}\big( \Sigma_g; SU(2)_k \big)  \in \mathbb{Z} $$
+I don't know what is conformal block.  There are textbooks where I can find technical definition but after much reading have no idea.
+\newpage
+
+\noindent Back when Conformal Theory was a new -- maybe 1989 - here is what two physicists had to say about Rational CFT
+\begin{quotation}
+We review some recent results in two dimensional Rational Conformal Field Theory.  \textbf{We discuss these theories as a generalization of group theory.}  The relation to a three dimensional topological theory is explained and the particular example of Chern-Simons-Witten theory is analyzed in detail.  This study leads to a natural conjecture regarding the classification of all RCFT's.
+\end{quotation}
+As the abstract says, these notes emphasize analogy with Group Theory\footnote{I feel like I know group theory because I remember the axioms:
 \begin{itemize}
-\item $G$ simple and simply connected compact Lie group
-\item $M$ moduli space of semi-stable $G^\mathbb{C}$ bundles on $\Sigma$
-\item $\Sigma$ smooth algebraic curve over complex numbers
+\item $(G, \times)$ a set with binary operation
+\item $ g \times e = g = e \times g$ for all $g \in G$ (the identity)
+\item $ (g \times h )\times k = g \times (h \times k )$ (Associativity)
 \end{itemize}
-I am now totally lost.  
-
+The problem is these definitions were made by Emmy Noether or Emil Artin.  Originally there were two types of groups only: the permutations of $n$ letters (such as - 123, 132,213,231,312,321 ) or matrixes.  These are groups of symmetries or groups of \textbf{substitions}.  And these symmetries may not be at all obvious.)} but they start drawing braids and knots and surfaces and it gets crazy.
 \newpage
 
-\noindent OK.  I used to like this field a lot and somewhere I lost interest.  The starting point is \textbf{orthogonality of characters}. If $\psi, \chi$ are characters of a group then:
-$$ \frac{1}{|G|}\sum_{g \in \mathbb{G}} \chi(g) \psi(g) = \left\{ \begin{array}{cl} 1 & \text{if }\chi = \psi \\
-0 &\text{if }\chi \neq \psi
-\end{array} \right. $$
-Nobody was interested when I learned this formula.  Perhap's it's best I leave this topic.
+\noindent \textbf{Why look up Verlinde Formula} \newline
+
+\noindent Something like this formula appears in Witten's paper on the Jones polynomial:
+$$ Z(S^3) =  \sqrt{\frac{2}{k+2}} \; \sin \left( \frac{\pi}{k+2}\right) $$
+The partition function is a dimension of a Hilbert space:
+$$ Z(X \times S^1) = \mathrm{Tr}_\mathcal{H}(1) = \dim \mathcal{H} $$
+and if I set $G= SU(2)$ and $X$ to be surface of genus $g$ we should get the formula on the previous page\footnote{There is so much bull-crap going on here I am losing track.  How do you know to set $G$ and what is a good way to visualize the $SU(2)$ bundles and their singularities.  What is the definition of partition function any way and why is it a trace?  Does the metric on the surface $X$ matter?  (No it doesn't! )  On and on\dots} \newpage
+
+\noindent Another problem will be \textbf{localization} -- $Z(\cdot)$ is really a \textbf{path integral} or even a \textbf{functor} - as an integral over infinite dimensional space, how to we know that result has a finite answer?  \newline
+
+\noindent Witten will say two things are equal ``=" but this time let's read more critically. \newline
+
+\noindent So the Verlinde Formula could be one of numerous things, and it is often stated as the equivalence of two objects I am completely unfamiliar with\footnote{or no longer trust my intution with}.
 
 \newpage
-
-
 
 
 \fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
@@ -48,8 +74,15 @@ Nobody was interested when I learned this formula.  Perhap's it's best I leave t
 \item Jorgen Ellegaard Andersen, Sergei Gukov, Du Pei \textbf{The Verlinde formula for Higgs bundles} \texttt{arXiv:1608.01761
 }
 
+\item Sergei Gukov, Du Pei
+\textbf{Equivariant Verlinde formula from fivebranes and vortices}
+\texttt{arXiv:1501.01310}
 
+\item Gregory Moore, Nathan Seiberg. \textbf{Lectures on RCFT}
 
+\item Edward Witten \textbf{Quantum field theory and the Jones polynomial} \texttt{https://projecteuclid.org/euclid.cmp/1104178138}
+
+\item L. Alvarez-Gaum\'{e}, G. Sierra, C. Gomez \textbf{Topics in Conformal Field Theory}
 
 \end{thebibliography}
 
