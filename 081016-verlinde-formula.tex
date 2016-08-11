@@ -1,0 +1,147 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[landscape, margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{21}{18}
+
+\usepackage{tikz}
+
+\title{\textbf{ The Verlinde Formula }}
+\author{John D Mangual}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{25}{30}\selectfont
+
+\maketitle
+
+% note AVOID THE WORDS 'Ratner Theorem' instead explain what it is
+
+\noindent Let's try to discuss the Verlinde Formula without too much suspicion\footnote{One problem is an author will say two objects are the same, or the answer to some equation is a number of object without enough explanation.  These equivalences will be stated in casually and in passing as though the sky were blue or orange or whatever.  Or two object will be compared and I have \textbf{never} seen neither object in my life.  The statement is A=B and half the time is spent verifying ``obvious" properties of A and of B and, if we're lucky using their equality in a profitable way.}.  The first problem I have with ``generalized" Verlinde Formula is that I barely understood the original\footnote{Very few people knew Verlinde formula in the first place.  At Princeton I passed up Herman Verlinde to work with Michael Aizenman.  I tried to work with Elliot Lieb\dots they are busy and important guys.  On and on\dots}. \newline
+
+\noindent ``The Verlinde formula is a simple and elegant expression for the number of conformal blocks in a 2 rational CFT on a Riemann surface $\Sigma$\dots"
+$$ \dim \mathcal{H}\big( \Sigma_g; SU(2)_k \big) 
+= \left( \frac{k}{2}+1 \right)^{g-1}
+\sum_{j=1}^{k=1} \left( \sin \frac{\pi j}{k+2} \right)^{2-2g}
+$$
+At this moment all this equations says is the dimension of some object is the trigonometric series on the right.
+$$ \left( \frac{k}{2}+1 \right)^{g-1}
+\sum_{j=1}^{k=1} \left( \sin \frac{\pi j}{k+2} \right)^{2-2g} \in \mathbb{Z} $$
+Knowing just a tiny bit of Galois Theory, this is an element of $\mathbb{Q}(e^{2\pi i / n})$ and because we are evaluating the $\sin$ at all the angles $\frac{\pi j}{k+2}$, it is element of $\mathbb{Q}$. \newline
+
+\noindent So I'm always pleasantly surprised when it is an element of $\mathbb{Z}$
+$$ \dim \mathcal{H}\big( \Sigma_g; SU(2)_k \big)  \in \mathbb{Z} $$
+I don't know what is conformal block.  There are textbooks where I can find technical definition but after much reading have no idea.
+\newpage
+
+\noindent Back when Conformal Theory was a new -- maybe 1989 - here is what two physicists had to say about Rational CFT
+\begin{quotation}
+We review some recent results in two dimensional Rational Conformal Field Theory.  \textbf{We discuss these theories as a generalization of group theory.}  The relation to a three dimensional topological theory is explained and the particular example of Chern-Simons-Witten theory is analyzed in detail.  This study leads to a natural conjecture regarding the classification of all RCFT's.
+\end{quotation}
+As the abstract says, these notes emphasize analogy with Group Theory\footnote{I feel like I know group theory because I remember the axioms:
+\begin{itemize}
+\item $(G, \times)$ a set with binary operation
+\item $ g \times e = g = e \times g$ for all $g \in G$ (the identity)
+\item $ (g \times h )\times k = g \times (h \times k )$ (Associativity)
+\end{itemize}
+The problem is these definitions were made by Emmy Noether or Emil Artin.  Originally there were two types of groups only: the permutations of $n$ letters (such as - 123, 132,213,231,312,321 ) or matrixes.  These are groups of symmetries or groups of \textbf{substitions}.  And these symmetries may not be at all obvious.)} but they start drawing braids and knots and surfaces and it gets crazy.
+\newpage
+
+\noindent \textbf{Why look up Verlinde Formula} \newline
+
+\noindent Something like this formula appears in Witten's paper on the Jones polynomial:
+$$ Z(S^3) =  \sqrt{\frac{2}{k+2}} \; \sin \left( \frac{\pi}{k+2}\right) $$
+The partition function is a dimension of a Hilbert space:
+$$ Z(X \times S^1) = \mathrm{Tr}_\mathcal{H}(1) = \dim \mathcal{H} $$
+and if I set $G= SU(2)$ and $X$ to be surface of genus $g$ we should get the formula on the previous page\footnote{There is so much bull-crap going on here I am losing track.  How do you know to set $G$ and what is a good way to visualize the $SU(2)$ bundles and their singularities.  What is the definition of partition function any way and why is it a trace?  Does the metric on the surface $X$ matter?  (No it doesn't! )  On and on\dots} \newpage
+
+\noindent Another problem will be \textbf{localization} -- $Z(\cdot)$ is really a \textbf{path integral} or even a \textbf{functor} - as an integral over infinite dimensional space, how to we know that result has a finite answer?  \newline
+
+\noindent Witten will say two things are equal ``=" but this time let's read more critically. \newline
+
+\noindent So the Verlinde Formula could be one of numerous things, and it is often stated as the equivalence of two objects I am completely unfamiliar with\footnote{or no longer trust my intution with}. \newpage
+
+\noindent \textbf{Prior Work} there are two rather nice papers by Don Zagier and 
+Andrew Beauville:
+
+\begin{itemize}
+\item Don Zagier \textbf{Elementary Aspects of the
+Verlinde Formula and of the
+Harder-Narasimhan-Atiyah-Bott
+Formula}
+\item Arnaud Beauville \textbf{Conformal Blocks, Fusion Rules and the Verlinde Formula}
+\end{itemize}
+Indeed correct formulas are written that explain and generlize Verlinde's formulas.  \newline
+
+\noindent Let's figure it out for ourselves and see if we come up with the same answer\footnote{The advice was ``read the formula, cover the page and try to prove it on your own" and compare the results.  Usually quite startling!}
+\newpage
+
+\noindent The paper I would like to read is:
+\begin{itemize}
+\item  E. Verlinde, \textbf{Fusion rules and modular transformations in 2d conformal field theory},
+Nuclear Physics B300 (1988), 360-376.
+\end{itemize}
+
+\noindent He says two things off the bat:
+\begin{quotation}
+\noindent The modular transformation $S: \tau \to - \frac{1}{\tau}$ diagonalizes the fusion rules!
+\end{quotation}
+What fusion rules are these and how can they be diagonalized?  Verlinde's formula for the number of {\color{blue} generalized characters} $\stackrel{?}{=}$ \textbf{conformal blocks}?
+
+$$ \dim V_g = tr \left( \sum_{i=0}^{N-1} N_i^2 \right)^{g-1} = \sum_{n = 0}^{N-1} |S_{n0}|^{-2(g-1)}$$
+There is constant problem of deciding if two notations represent the same equation
+
+\newpage
+
+\noindent The confrmal field theory Witten and Gukov refer to is called \textbf{$SU(2)$ WZW model} however I found it very intersting to work out the even simpler conformal field theory called \textbf{$c=1$ rational gaussian model}. \newline
+
+
+\newpage
+
+\noindent \textbf{Rational Gaussian Model} \newline
+
+\noindent \textbf{$C=1$ conformal field theories on Riemann surfaces} \\
+Robbert Dijkgraaf, Erik Verlinde, and Herman Verlinde
+Comm. Math. Phys.
+Volume 115, Number 4 (1988), 649-690.
+\\ \\
+``Torus model" is free massless scalar field $\phi(z, \overline{z})$ compactified on the circle $\mathbb{R}/ 2\pi R \mathbb{Z}$ and the action should be:
+$$ S[\phi] = \frac{1}{2\pi}\int dz d\overline{z} \, \partial \phi \overline{\partial}\phi$$
+and we are told to look out for special values of $R$ -- some are equivalnt to Ising model or Potts model. \\ \\
+What is a \textbf{massless scalar field}?  The functional, $S[\phi]$ describes a massless particle - kinda you know doing something - and it has zero mass.
+
+\newpage
+
+\noindent \textbf{Rational Gaussian Model} \\
+
+\includegraphics[]{cft-01.png} \\
+Both torus theory and orbifold theory are parameterized by compactification radius $R$, but $R_{\textbf{orbifold}} = \sqrt{2}$ is ``equivalent" to $R_{\textbf{torus}} = \frac{1}{2} \sqrt{2}$ resulting in a T-shaped moduli space.
+
+\newpage
+
+
+\fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
+
+\begin{thebibliography}{}
+
+\item Jorgen Ellegaard Andersen, Sergei Gukov, Du Pei \textbf{The Verlinde formula for Higgs bundles} \texttt{arXiv:1608.01761
+}
+
+\item Sergei Gukov, Du Pei
+\textbf{Equivariant Verlinde formula from fivebranes and vortices}
+\texttt{arXiv:1501.01310}
+
+\item Gregory Moore, Nathan Seiberg. \textbf{Lectures on RCFT}
+
+\item Edward Witten \textbf{Quantum field theory and the Jones polynomial} \texttt{https://projecteuclid.org/euclid.cmp/1104178138}
+
+\item L. Alvarez-Gaum\'{e}, G. Sierra, C. Gomez \textbf{Topics in Conformal Field Theory}
+
+\end{thebibliography}
+
+
+\end{document}
+
