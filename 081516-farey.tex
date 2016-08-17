@@ -1,0 +1,169 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{21}{18}
+
+\usepackage{tikz}
+
+\title{\textbf{ Stumbling Across the Prime Number Theorem }}
+\author{John D Mangual}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{25}{30}\selectfont
+
+\maketitle
+
+\noindent A few weeks ago I read that ratios of prime numbers are dense in the real number line. \\ \\
+Using my script for primes I plotted a histogram of the values of $\frac{p}{q}$ for primes $0 < p < 2q < 1000$ (so there are about $10^6$ values in all).  \\ \\
+There seems to be a cutoff around $p = q$ and a long tail.
+
+\includegraphics[width=3.5in]{prime-01.png}
+
+\newpage
+
+\noindent What if we include all integers?  Our fractions have a nice flat line for $m < n$ and some type of curve for $n < m < 2n$. \\ \\
+The set is $\{ \frac{m}{n}: 0 < n <  1000 \text{ and } 0 < \frac{m}{n} < 2 \}$.
+
+\includegraphics[width=3.5in]{prime-02.png} \\
+We should hope for a perfectly even histogram on the interval $[0,1]$ since our set of integrs include all fraction.  \\ \\If we are lucky the fractions have density $1$ in the set of real numbers.
+$$ \overline{\mathbb{Q} \cap [0,1]} = [0,1] $$
+We save the analysis of these two curves for another time.  The density of fractions $\frac{p}{q}\approx \alpha $ is equivalent to the \textbf{prime number theorem}.
+
+
+\newpage
+
+\noindent Restricting only to reduced fractions, $\frac{a}{b}$ relatively prime numbers have a perfectly even density
+$$ \mathcal{F}=\big\{ \frac{a}{b}: 0 < a < 2b, \;\text{gcd}(a,b)=1 \big\} $$
+These are the \textbf{Farey Fractions} - obviously these should have uniform density in the real number line $\mathbb{R}$ since they represent every fraction once and without repeat.
+
+\includegraphics[width=4in]{ratio-02.png} \\
+The Farey Fractions become uniformly even when the denominator is not too large:
+$$ \sum_{0 \leq \frac{a}{b}< 1} e^{2\pi i \, m\frac{a}{b}} \ll \sqrt{N}$$
+If we prove the cancellation is faster, it is equivalent to showing the \textbf{prime number theorem}.
+
+\newpage
+
+\noindent \textbf{Ramanujan's Sum}.  If $p$ is prime:
+$$ \sum_{0 \leq \frac{a}{q} < 1} e\left( h \, \frac{a}{q} \right) = \sum_{ c | (h,q)} c\,  \mu \left(\frac{q}{c}\right)$$
+If $h=1$ there is only one term on the right hand side:
+$$ \sum_{0 \leq \frac{a}{q} < 1} e\left(  \, \frac{a}{q} \right) = \mu(q)$$
+Here is the identity linking Ramanujan's sum to the Mobius averages:
+$$ \sum_1^N e( h \, x_n) =  \sum_{d | h} d M(Q/d) $$
+where $0 < x_n < 1$ ranges over all the Farey fractions $\mathcal{F}$. \vspace{12pt} \hrule \vspace{12pt}
+\noindent I have not been able to find a proof of the prime number theorem in the book, but the results he's approving approach that of the \textbf{Riemann Hypothesis}.  It might be possible to prove PNT using the techniques in the book\footnote{I suspect that Weyl's Equidistribution theorem is strong enough to prove PNT.  Karamata's Theorem can be used to lead to PNT.  Both of these are consequences of Weierstrass Approximation Theorem\dots}.
+
+\fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
+
+\begin{thebibliography}{}
+
+\item M. N. Huxley \textbf{Area, Lattice Points, and Exponential Sums} London Mathematical Society Monographs.  Oxford University Press, 1996.
+
+
+\end{thebibliography}
+
+\fontfamily{qag}\selectfont \fontsize{25}{30}\selectfont
+
+\noindent \textbf{Part II} strategy proposals \\ \\
+Somehow we need to improve our Weyl sums 
+$$ \sum_1^N e( h \, x_n) =  \sum_{d | h} d M(Q/d)  = o(N^{1/2})$$
+where $0 < x_n < 1$ are the Farey Fractions $\mathcal{F}$. \\ \\
+However before we do that here we take some examples of theorems that may be equivalent to the Prime Number Theorem
+$$ \sum_{n \leq x} \mu(n)^2 =  \frac{6}{\pi^2} \; x^2 + o(  x^{1/2}) $$
+The topic of square-free numbers is very much developed by Cellarosi and Sinai in recent years and I have not closely examined.
+$$ \sum_{n \leq x} d(n)
+= x \log x + (2 C_0 - 1)x + o(x^{1/2}) $$
+where $d(n) \approx x \log x $ counts the divisors of $n$.  \\ \\
+In short, anything in Chapter 2 of Montgomery Vaughn is equivalent to PNT if $O(x) \Longrightarrow o(x) $ 
+
+\newpage
+
+\noindent \textbf{Large Sieve}
+
+\newpage
+
+\noindent \textbf{Horocycle Flow} \\ \\
+How does the action $\times m $ act on all the Farey Fractions $0 < \frac{a}{d} < 1$ ? They get kind of mixed around a bit.   In fact, there are two maps:
+$$ \frac{a}{d} \to \frac{a}{d} + (\dots) \hspace{0.25in}\text{or}\hspace{0.25in} \frac{a}{d} \to m \times \frac{a}{d} $$
+Following any horocircle we can get an interesting ordering of fractions which might behave analagously to the Farey Fractions and still retain much of their behavior.  \\ \\
+More importantly we can attempt to quantify how fast this horocycle flow is mixing.
+
+\includegraphics{ford.png} \\
+Are the Ford circles a discretization of the horocycle flow?
+
+\newpage
+
+\fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
+
+\begin{thebibliography}{}
+
+\item Francesco Cellarosi, Yakov G. Sinai \textbf{Ergodic Properties of Square-Free Numbers} \texttt{arXiv:1112.4691}
+
+\item M. N. Huxley \textbf{Multiplicative Number Theory I: Classical Theory} Cambridge Studies in Advanced Mathematics.  Cambridge University Press, 2006.
+
+\item  Ford, L. R. (1938), \textbf{Fractions}, The American Mathematical Monthly, 45 (9): 586–601
+
+\item Robin Chapman, \textbf{Evaluating $\zeta(2)$} \texttt{http://bit.ly/2aYFEXv}
+
+\end{thebibliography}
+
+\newpage
+
+\fontfamily{qag}\selectfont \fontsize{25}{30}\selectfont
+
+\noindent \textbf{Part III} Karamata Theorem \\ \\
+There are several somewhat conflicting proofs of the Prime Number Theorem, starting from the Hardy-Littlewood Tauberian Theorem. \\ \\
+\textbf{I} Let $a_n > -K$ and if we have a convergent series:
+$$ f(x) = \sum \frac{a_n x^n}{1-x^n}$$
+for all $|x|<1$ and near the point $x \to 1$ we have:
+$$ f(x) \sim \frac{A}{1-x} $$
+Then the summation converges as $x \to 1$:
+$$ \sum \frac{a_n}{n} = A $$
+Hardy \& Littlewood observe this implies the Prime Number Theorem - and must be logically equivalent to it! 
+
+\newpage 
+
+\noindent \textbf{Ia} If $a_n > -K$ and 
+$$ f(x)= \sum \frac{a_n e^{-ny}}{1 - e^{-ny}} = o(\frac{1}{y})$$
+the logarithmic sum converges to $0$
+$$ \sum \frac{a_n}{n} = 0$$
+These are taken from Hardy-Littlewood (1919). \\ 
+
+\noindent \textbf{II} If $b_n \geq 0$ for all $n$ and as $x \to 1$ 
+$$ f(x) = \sum b_n x^n \sim \frac{B}{1-x}$$
+then as $n \to \infty$ the sums converge 
+$$ \frac{1}{n} \sum b_k = B $$
+This is taken from Titchmarsh's Theory of Functions and the proof is by Karmata. \\\\
+It doesn't seem like \textbf{II} $\to$ \textbf{I}.  Not at all.
+$$ \sum \frac{a_n}{n} =
+\sum \frac{1}{n} \, a_n x^n
+ =  (1-x)\sum \frac{a_n x^n}{1-x^n}
+= A  $$
+
+\newpage
+
+\noindent Let $g(x)$ be [piecewise-continuous] then:
+$$ \lim_{x \to 1} (1-x)\sum a_n x^n g(x^n) = \int_0^1 g(t) \, dt $$
+Different choices of $g$ should give version \textbf{I} and version \textbf{II}. \\ \\
+The choice of $g$ returning \textbf{II} is
+$$ g(x) 
+= \left\{ 
+\begin{array}{ccc} 
+0 & \text{if} & 0 < t < e^{-1} \\
+\frac{1}{t} &  \text{if} & e^{-1} < t < 1
+\end{array}
+\right.$$
+The Lambert-type functions of \textbf{I} escape me.
+$$ \sum \frac{a_n x^n}{1-x^n}
+= \sum_n a_n x^n \left[ \sum_k x^{nk}\right] \stackrel{?}{=} \dots $$
+Widder's book on Laplace Transform has:
+$$ \sum a_n e^{-ns} \to A  $$
+with $a_n > - K/n$ implies that $\sum a_n = A$. \\ \\
+This is equivalent to \textbf{II} but not \textbf{I} or \textbf{Ia}.  \\ \\
+After much reading \textbf{II} $\not \longrightarrow $ \textbf{I}.  It is more general.
+\end{document}
+
