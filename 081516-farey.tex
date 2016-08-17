@@ -48,7 +48,7 @@ If we prove the cancellation is faster, it is equivalent to showing the \textbf{
 
 \newpage
 
-\noindent \textbf{Ramanuja's Sum}.  If $p$ is prime:
+\noindent \textbf{Ramanujan's Sum}.  If $p$ is prime:
 $$ \sum_{0 \leq \frac{a}{q} < 1} e\left( h \, \frac{a}{q} \right) = \sum_{ c | (h,q)} c\,  \mu \left(\frac{q}{c}\right)$$
 If $h=1$ there is only one term on the right hand side:
 $$ \sum_{0 \leq \frac{a}{q} < 1} e\left(  \, \frac{a}{q} \right) = \mu(q)$$
@@ -63,6 +63,49 @@ where $0 < x_n < 1$ ranges over all the Farey fractions $\mathcal{F}$. \vspace{1
 
 \item M. N. Huxley \textbf{Area, Lattice Points, and Exponential Sums} London Mathematical Society Monographs.  Oxford University Press, 1996.
 
+
+\end{thebibliography}
+
+\fontfamily{qag}\selectfont \fontsize{25}{30}\selectfont
+
+\noindent \textbf{Part II} strategy proposals \\ \\
+Somehow we need to improve our Weyl sums 
+$$ \sum_1^N e( h \, x_n) =  \sum_{d | h} d M(Q/d)  = o(N^{1/2})$$
+where $0 < x_n < 1$ are the Farey Fractions $\mathcal{F}$. \\ \\
+However before we do that here we take some examples of theorems that may be equivalent to the Prime Number Theorem
+$$ \sum_{n \leq x} \mu(n)^2 =  \frac{6}{\pi^2} \; x^2 + o(  x^{1/2}) $$
+The topic of square-free numbers is very much developed by Cellarosi and Sinai in recent years and I have not closely examined.
+$$ \sum_{n \leq x} d(n)
+= x \log x + (2 C_0 - 1)x + o(x^{1/2}) $$
+where $d(n) \approx x \log x $ counts the divisors of $n$.  \\ \\
+In short, anything in Chapter 2 of Montgomery Vaughn is equivalent to PNT if $O(x) \Longrightarrow o(x) $ 
+
+\newpage
+
+\noindent \textbf{Large Sieve}
+
+\newpage
+
+\noindent \textbf{Horocycle Flow} \\ \\
+How does the action $\times m $ act on all the Farey Fractions $0 < \frac{a}{d} < 1$ ? They get kind of mixed around a bit.   In fact, there are two maps:
+$$ \frac{a}{d} \to \frac{a}{d} + (\dots) \hspace{0.25in}\text{or}\hspace{0.25in} \frac{a}{d} \to m \times \frac{a}{d} $$
+Following any horocircle we can get an interesting ordering of fractions which might behave analagously to the Farey Fractions and still retain much of their behavior.  \\ \\
+More importantly we can attempt to quantify how fast this horocycle flow is mixing.
+
+\includegraphics{ford.png} \\
+Are the Ford circles a discretization of the horocycle flow?
+
+\newpage
+
+\fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
+
+\begin{thebibliography}{}
+
+\item Francesco Cellarosi, Yakov G. Sinai \textbf{Ergodic Properties of Square-Free Numbers} \texttt{arXiv:1112.4691}
+
+\item M. N. Huxley \textbf{Multiplicative Number Theory I: Classical Theory} Cambridge Studies in Advanced Mathematics.  Cambridge University Press, 2006.
+
+\item  Ford, L. R. (1938), "Fractions", The American Mathematical Monthly, 45 (9): 586–601,
 
 \end{thebibliography}
 
