@@ -1,0 +1,67 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{21}{18}
+
+\usepackage{tikz}
+
+\title{\textbf{ Theta Functions }}
+\author{John D Mangual}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{25}{30}\selectfont
+
+\maketitle
+
+$$\theta(x; p) = (x;p)_\infty (px^{-1}; p)_\infty = \exp \left( - \sum_{ m \neq 0} \frac{x^m}{m(1-p^m)} \right) $$
+another one
+$$\theta(z; q) := (z;q)_\infty (q/z ;q)_\infty = \frac{1}{(q;q)_\infty} \sum_{k \in \mathbb{Z}} z^k q^{\binom{k}{2}}  $$
+the shifted factorials are defined by:
+$$ (z;q)_\infty = \prod_{i \geq 0} (1 - z q^i)$$
+Let's see if
+$$ \binom{k}{2} = \frac{k(k-1)}{2} = \frac{k^2}{2} - \frac{k}{2}$$
+
+\newpage
+
+\noindent Then it could be:
+
+$$ \theta( q^2 ; q) = \frac{1}{(q; q^2) }
+\sum_{k \in \mathbb{Z}} q^k q^{2\binom{k}{2}}
+ = \frac{1}{(q; q^2) }
+\sum_{n \in \mathbb{Z}}  q^{n^2}
+$$
+Wikipedia has
+$$ \sum_{n \in \mathbb{Z}}
+a^{\frac{n(n+1)}{2}}
+b^{\frac{n(n-1)}{2}}
+= (-a; ab)_\infty (-b; ab)_\infty (ab; ab)_\infty
+$$
+and we can set $a = b = q$:
+$$
+\sum_{n \in \mathbb{Z}}
+q^{n^2}
+= (-q; q^2)_\infty (-q; q^2)_\infty (q^2; q^2)_\infty
+ $$
+ This also seems odd we can try
+$$ \theta(q;q^2)
+= (q;q^2)_\infty (q;q)_\infty (q^2; q^2)_\infty = \sum_{n \in \mathbb{Z}}q^{n^2}$$
+
+\newpage
+
+\fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
+
+\begin{thebibliography}{}
+
+\item Taro Kimura, Vasily Pestun \textbf{Quiver elliptic W-algebras} \texttt{arXiv:1608.04651}
+\item Wikipedia ``Jacobi Triple Product", ``Ramanujan Theta Function"
+\item Eric M. Rains, S. Ole Warnaar \textbf{Bounded Littlewood identities} \texttt{arXiv:1506.02755}
+
+\end{thebibliography}
+
+
+\end{document}
