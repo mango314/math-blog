@@ -51,7 +51,36 @@ q^{n^2}
 $$ \theta(q;q^2)
 = (q;q^2)_\infty (q;q)_\infty (q^2; q^2)_\infty = \sum_{n \in \mathbb{Z}}q^{n^2}$$
 
+\newpage 
+
+\noindent It might parameterized in terms of two angles:
+$$ \theta(z; \tau) = \sum_{n \in \mathbb{Z}} e^{\pi i n^2 \tau + 2\pi i n z}$$
+which has another triple product
+$$\prod_{m=1}^\infty
+(1 - e^{2\i m i \tau})
+\left[ 1 + e^{(2m-1)\pi i \tau + 2\pi i z} \right]
+\left[ 1 + e^{(2m-1)\pi i \tau - 2\pi i z} \right]$$
+Then $q = e^{2\pi i \tau}$ and $x = e^{2\pi i z}$:
+$$\theta( 0; q) =  \prod (1 - q^2 )(1 + q^{2m-1})(1 - q^{2m+1}) $$
+This is a beautiful triple product but we have to write in terms of rising and falling factorials.
+$$
+\sum_{n \in \mathbb{Z}}
+q^{n^2}
+= (-q; q^2)_\infty (-q; q^2)_\infty (q^2; q^2)_\infty
+ $$
+ \hrule
+\vspace{12pt}
+\noindent The exponent formula looks like
+$$ \log(1-x) = \sum \frac{x^m}{m} $$
+and the geometric series formula:
+$$ \sum p^{km} = \frac{1}{1-p^m}$$
 \newpage
+
+\noindent If we put two of them together it says:
+$$ \sum_m \sum_k \frac{1}{m}x^m p^{km} = \sum_m \frac{1}{m} \frac{x^m }{1 - p^m} $$
+This is very much the logarithm in the beginning of this article. \newpage
+
+\noindent \textbf{Part II}
 
 \fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
 
