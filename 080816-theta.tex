@@ -78,9 +78,56 @@ $$ \sum p^{km} = \frac{1}{1-p^m}$$
 
 \noindent If we put two of them together it says:
 $$ \sum_m \sum_k \frac{1}{m}x^m p^{km} = \sum_m \frac{1}{m} \frac{x^m }{1 - p^m} $$
-This is very much the logarithm in the beginning of this article. \newpage
+This is very much the logarithm in the beginning of this article.
+% Lambert Series, Bernoulli identity
+ \newpage
 
 \noindent \textbf{Part II}
+
+\noindent So one big problem I will have with a lot of elliptic index paper with $\theta$ functions eveywhere is the normalization.  And their endless obsession with modular invariance\footnote{If the object is invariant under $\text{SL}_2(\mathbb{Z})$ or a congruence subgroup $[ \Gamma_0(N) : \text{SL}_2(\mathbb{Z})] = N$ or a \textit{non-congruenc} group.  There are many possibilities that Nekrasov and Shatashvili do not account for ('cuz they're not interested).} \\ \\
+Uh... so before I get into that we rewind to 2003 before a lot of this paper and read through Appendix A of Nekrasov-Okounkov:
+$$ \gamma_{\hbar}(x; \Lambda)
+= \frac{d}{ds}\bigg|_{s=0} \frac{\Lambda^s}{\Gamma(s)} \int_0^\infty \frac{dt}{t} t^s \frac{e^{-tx}}{(e^{\hbar t}-1)(e^{-\hbar t}-1)} $$
+This is a mouth-ful but notice right away this is a \textbf{Mellin transform} and also this is \textbf{zeta regularization}. The Nekrasov partition function is \textit{badly} divergent (as most physics formulas are) and here is one way to fix it.\\ \\
+However, these gentlement have used a very common idea in number theory.  Here is a baby example:
+$$ \sqrt{1} -\sqrt{2} + \sqrt{3} - \sqrt{4} + \dots = (\sqrt{1} -2\sqrt{2} + \sqrt{3}) + (\sqrt{2} -2\sqrt{3} + \sqrt{4}) + \dots $$
+Uh... hopefully I remember later\footnote{but \textbf{you} and read \texttt{http://math.stackexchange.com/q/1896464/4997}}
+  
+
+\newpage
+
+\noindent Nekrasov and Okounkov state this really is zeta-function regularization so we have
+$$ \gamma_{\hbar}(0; \Lambda) = - \frac{1}{12} $$
+and even some instance of the volumes of the unitary groups:
+$$ \log \big( \text{Vol}\; U(N) \big) = \gamma_1(N; 1)$$ 
+and the other functions $\gamma_{\epsilon_1, \epsilon_2}$ are embellishments\footnote{and a nuisiance to read -- painful on the eyes}. \\ \\
+These $\gamma_\hbar$ satisfy a second-difference equation:
+$$ \gamma_\hbar(x - \hbar, \Lambda  )
+- 2\gamma_\hbar(x , \Lambda  )
++ \gamma_\hbar(x + \hbar, \Lambda  )
+ = \log \left( \frac{x}{\Lambda} \right)$$
+Theres so many logs floating around but I really want to talk about this $\Lambda$:
+$$ \sum [\Lambda(n) - 1] \frac{e^{-ny}}{1 - e^{-ny}} \sim - \frac{2\gamma}{y} $$
+Then by the Hardy-Littlewood Tauberian theorem (for Lambert series)\footnote{which we will argue is the same kind of regularization as Nikita Nekrasov uses}:
+$$ \sum_{n=1}^\infty \frac{\Lambda(n)-1}{n} = - 2\gamma $$
+If this thing converges at all the coefficients must have been small:
+$$ \sum_{n \leq x} [ \Lambda(n)-1 ] = o(x)$$
+and this is very much equivalent to the Prime Number Theorem. \\ \\
+Here the $\Lambda$ in question is the Van Mangold function:
+$$ \Lambda(n) = \left\{ 
+\begin{array}{cl} 
+\log p &  \text{if }n = p^k \\
+0 & \text{otherwise}
+\end{array}
+\right. $$
+and we regularize the Lambert sum to a normal finite sum
+$$ 
+y \sum_{n = 1}^\infty \frac{ (\Lambda(n) - 1)e^{-ny}}{1 - e^{-ny}}
+\approx 
+\sum_{n = 1}^\infty \frac{ (\Lambda(n) - 1)}{n} e^{-ny} \to - 2\gamma
+$$
+if we let $y \to 0$
+\newpage
 
 \fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
 
@@ -89,6 +136,8 @@ This is very much the logarithm in the beginning of this article. \newpage
 \item Taro Kimura, Vasily Pestun \textbf{Quiver elliptic W-algebras} \texttt{arXiv:1608.04651}
 \item Wikipedia ``Jacobi Triple Product", ``Ramanujan Theta Function"
 \item Eric M. Rains, S. Ole Warnaar \textbf{Bounded Littlewood identities} \texttt{arXiv:1506.02755}
+\item GH Hardy \textbf{Divergent Series} texttt{https://archive.org/details/DivergentSeries}
+\item David Vernon Widder \textbf{The Laplace Transform} \texttt{https://archive.org/details/laplacetransform031816mbp}
 
 \end{thebibliography}
 
