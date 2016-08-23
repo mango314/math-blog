@@ -140,6 +140,55 @@ $$ \zeta(2)  = \sum_{n=1}^\infty \frac{1}{n^2} = - \int_0^\infty \log(1 - e^{-x}
 Even before trying our hand at the double-shuffle identities, or relating $\zeta(2)$ to famous constants\footnote{Why stop at $\pi$, there's the Glaisher constant and the Euler-Masceroni number and the Twin Prime Constant etc.} how to transform the first formula into the third? \\ \\
 I dug up the fist formula from a paper of Zagier, the second in a paper of Elkies and a third in a paper by Passare\footnote{and there is more... Papers flying everywhere!}
 
+\newpage
+
+\noindent Elkies showed a sum linking L-functions and $\zeta$-functions:
+$$ 
+S(n) = \left\{ \begin{array}{cl}
+(1-2^{-n})\zeta(n) & \text{if }n\text{ is even} \\
+L(n, \chi_4) & \text{if }n\text{ is odd}
+\end{array} \right.
+ $$
+Elkies formula also links the Euler numbers and Bernoulli numbers.
+$$ \frac{A_n}{n!} = \left( \frac{2}{\pi} \right)^n \left( \frac{4}{\pi}\right) S(n+1) $$
+The $A(n)$ numbers count the volume of a certain polytope:
+$$ t_1 < t_2 > t_3 < t_4 > \dots < t_n > t_1 $$
+this high-dimensional shape splits into a certain number of ``triangular" parts:
+$$ 0 < t_1 < t_2 < \dots < t_n < 1$$
+The volume integrals are different too:
+$$ \int_{\frac{\pi}{2} } 1 du_1, \dots du_n $$
+and the integral is:
+$$ \int_0^1 \dots \int_0^1 \frac{dx_1 \dots dx_n}{1 \pm (x_1 \dots x_n)^2} $$
+\newpage
+\noindent The middle integral is an odd duck. 
+$$ \frac{3}{8} \zeta(2)=\sum_{k=0}^\infty \frac{1}{(2k+1)^2} = \int_0^1 \int_0^1 \frac{dx \, dy}{1 - (xy)^2} $$
+There's no magic change of variables turning into the iterated integral over the triangle $0 < s < t < 1$. \\ \\ I am pushing a square peg into a round hole.
+$$ \zeta(2)  = \sum_{n=1}^\infty \frac{1}{n^2} = - \int_0^\infty \log(1 - e^{-x})$$
+Passare also shows this is the volume of a polygon just a triangle:
+$$ \int_{ x < y < \pi} 1 \; dx \, dy $$
+and the reason the triangle and the exponential integral are the same
+is they are the real and comlpex parts of the Amoeba. 
+$$ x + y + 1 = e^u + e^v + 1 = 0 $$
+I've checked already.  This special coincidence doesn't always work.  Just for Harnak curves\footnote{and the variables on this page are screwed up}
+ \newpage
+\includegraphics{triangle-amoeba.png} \\
+Does Elkies polygon decomposition match up with Passare.  We're stuck in a really lame situation\footnote{There's an OK paper by Zurab Silagadze that says yes, but his explanation is a bit disorderly.  It's almost better to try again and I have some stuff he won't think of.} with these two polygon decomposition's don't match up in a fundamental way.
+\begin{itemize}
+\item Do we have one triangle?
+\item or many triangles?
+\end{itemize}
+There is a paper by Alexander Goncharov\footnote{it's still ``geometry" but it is quite varied.} \\
+\textbf{Multiple zeta-values, Galois groups, and geometry of modular varieties}
+\texttt{ arXiv:math/0005069}
+ \newpage
+
+\noindent At will we can find source that find $\zeta(2n)$ by induction.  First $$\zeta(2) = \frac{\pi^2}{6}, \zeta(4)= \frac{\pi^4}{90}, \zeta(6)=\frac{\pi^6}{945}, \dots $$
+skipping $n \mapsto n+2$. The link to even Bernoulli numbers was not that direct anyway:
+$$\zeta(2n) = (-1)^{n+1} B_{2n} \frac{(2\pi)^{2n}}{2(2n)!} $$
+What about $\zeta(3)$?  We know it is irrational but not transcendental.  Elkies' chain looks more like:
+$$ L(1, \chi_4) \to \zeta(2) \to L(3, \chi_4) \to \zeta(4) \to \dots $$
+switching between the $\zeta$ and L-functions.  
+
 \fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
 
 \begin{thebibliography}{}
