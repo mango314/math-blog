@@ -58,7 +58,12 @@ The only equation we can really solve.  \newpage
 \noindent Maybe we can be more aggressive and say:
 $$ f(x + \Delta x) - 2 f(x) + f(x - \Delta x) \approx k \, f(x) \, (\Delta x)^2 $$
 Numerical methods textbooks complain why pick specifically this kind of derivative anyway?  And they show you how to solve all sorts of things. \\ \\
-\textbf{Log} or notions of \textbf{size} or \textbf{angle} should play a big role here.  Or \textbf{charge}.  Basic ideas of \textbf{shape}. \newpage
+\textbf{Log} or notions of \textbf{size} or \textbf{angle} should play a big role here.  Or \textbf{charge}.  Basic ideas of \textbf{shape}.  \\ \\
+Suppose that $f$ solves the following equation:
+$$ f(x + \Delta x) - f(x) \approx k \, f(x) \, \Delta x $$
+Then observe it also solves the related equation:
+$$ f(x + \Delta x) \approx f(x) (1 + k  \, \Delta x) $$
+ \newpage
 
 \noindent \textbf{2} - Solving the actual problem... \\ \\
 \newpage
