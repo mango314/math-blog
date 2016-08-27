@@ -7,6 +7,8 @@
 \newcommand{\off}[1]{}
 \DeclareMathSizes{20}{30}{21}{18}
 
+\newcommand{\myhrule}{}
+
 \usepackage{tikz}
 
 \title{\textbf{ Reflection Positivty }}
@@ -66,6 +68,43 @@ $$ f(x + \Delta x) \approx f(x) (1 + k  \, \Delta x) $$
  \newpage
 
 \noindent \textbf{2} - Solving the actual problem... \\ \\
+It is shown this bilinar interaction of fermions:
+\begin{eqnarray*}
+H &=& \sum_{i,j \in A} c_i^\dagger(C_{ij} - B_{1,ij})c_j 
++ \sum_{i,j \in B} c_i^\dagger(D_{ij} + B_{2,ij})c_j \\ 
+&+& \sum_{i \in A, j \in B} \left( c_i^\dagger F_{ij} c_j + h.c \right) \end{eqnarray*}
+is Majorana reflection positive defined.
+\vspace{12pt}
+\hrule
+\vspace{12pt}
+\noindent \textbf{What on earth does this mean???}
+\begin{itemize}
+\item what do the variables mean?  I think $B,C,D,F$ are matrices but $A$ is a set of some kind.
+\item hopefully h.c. stands for ``Hermitian conjugate"
+\item How does $c_i$ and $c_i^\dagger$ act? 
+\item What is the Majorana reflection?
+\item What was the sign problem in Quantum Monte Carlo (QMC)?
+\end{itemize}
+
+\newpage
+
+\noindent Which inequality was referred to?
+$$ \rho = \det \left( I + \prod_{k=1}^M e^{-\tau h^0} e^{-\eta h^I(\eta_k)} \right)$$
+This is equation 20 and it is not derived\footnote{  Instead they refer  you to \texttt{http://journals.aps.org/prb/abstract/10.1103/PhysRevB.31.4403} where it is shown:
+$$ \mathrm{tr} e^{-c_i^\dagger A_{ij} c_j}
+e^{-c_i^\dagger B_{ij} c_j} = \det (1 + e^{-A}e^{-B}$$
+where te summation over indices is ``understood".  I wonder if block diagonal notation might be better for these guys:
+$$ \left[ \begin{array}{cc|cc} 
+ \cdot & \cdot & \cdot & \cdot \\
+ \cdot & \cdot & \cdot & \cdot \\ \hline
+ \cdot & \cdot & \cdot & \cdot \\
+ \cdot & \cdot & \cdot & \cdot  \end{array}\right] $$}. \\ Otherwise it's written
+ $$ \rho = \mathrm{tr}
+ \prod_{k=1}^M e^{-\tau H^0} e^{-\eta H^I(\eta_k)} 
+  $$
+ 
+\noindent \textbf{Theorem} - $\rho$ is positive semidefinite if all the coefficient matrices are Majorana reflection positive. \\ \\
+\textbf{Question} what does it mean for a determinant or trace to be positive-semidefinite?  is $\det (\dots)$ not just a number?  
 \newpage
 
 \fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
@@ -80,6 +119,8 @@ $$ f(x + \Delta x) \approx f(x) (1 + k  \, \Delta x) $$
 \texttt{arXiv:1506.05349}
 
 \item Arthur Jaffe, Zhengwei Liu \textbf{Planar Para Algebras, Reflection Positivity} \texttt{arXiv:1602.02662} 
+
+\item Arthur Cayley \textbf{A Memoir on the Theory of Matrices} \texttt{https://archive.org/details/philtrans05474612}
 
 \end{thebibliography}
 
