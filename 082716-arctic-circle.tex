@@ -287,11 +287,61 @@ How to encode one domino?  The middle line is at  (1,0) and (1,1) so we will enc
 \end{center}
 Exercise 5: prove limiting behavior of zig-zag
 
+\newpage
+
+\noindent The Krawtchouk ensemble is the correct ensemble for the Aztec Diamond problem.  We only focus on $p = \frac{1}{2}$:
+$$ \mathbb{P}_{\text{Kr}}[(h_1, \dots h_n)]= \frac{1}{Z} \times \frac{1}{2^{\binom{N}{2}}} \times \Delta_N(h) \times  \prod_{j=1}^N \binom{K}{h_j} $$ 
+where the normalization $Z$ is a number:
+$$ \frac{N!}{0!\times 1!\times 2!\times \dots \times (N-1)!} \times \frac{1}{2^{\binom{N}{2}}} \times \prod_{j=1}^N \binom{K}{j} $$
+the meaning of these number would be clear to a professor Combinatorics\footnote{or various branches of Computer Science} these are related to the Krawtchouk polynomials.  \\ \\
+Johansson attributes the circular shape o Timo Sepalainen.  We settle for this summary by Persi Diaconis and Robert Griffiths
+\begin{quotation}
+\color{black!60!white}{Orthogonal polynomials for the multinomial distribution of N balls dropped into d boxes  are called multivariate Krawtchouk polynomials.}
+\end{quotation}
+These ball-and-urn models are commonplace.
+
+\newpage
+
+\noindent The limit shape seems to be known from the theory of \textbf{first-passage percolation}.  It would not hurt to read the book by Grimmett.
+$$ 
+\mu(x,y) = 
+\left\{ 
+\begin{array}{ll} 
+y & \text{if }x < y \\
+y + (\sqrt{x/2} + \sqrt{y/2})^2 & \text{if }x \geq y
+\end{array}
+ \right.
+$$
+The earliest proof by Jockusch-Shor-Propp uses the TASEP model\footnote{which can be converted to this type of ``first-passage percoltion".  More on this once I figure it out.} \\ \\ 
+The most important is that we have a formula for all possible $\vec{h}$ on a given row (and later, the joint probability density over all rows). \\ \\ Johansson says it is an easy analysis from here.
+
+\newpage
+
+\noindent \textbf{2} - Determinantal Processes \\ \\
+The surprising fact that\footnote{The surprising fact that there is any formula at all \dots}:
+$$ \mathbb{P}(h)
+= \frac{1}{Z_M \, 2^{\binom{M}{2}}} \prod_{1 \leq i < j \leq M}
+(h_i - h_j)^2 \prod_{k=1}^M
+\binom{M}{k}
+ $$
+I could not figure out the ball-and-urn model this is associated to this combination formula. \\ \\
+Diaconis-Griffiths point out the Krawtchouk polynomials are related to bosonic Fock space from Quantum Field Theory\footnote{Feynman himself may not have known this or many \texttt{hep-th} style physicists.  We get very lucky here there is a formula for the Kernel for this determintal process.  An adequate discussion (but certainly not the final word) of Determintal Process theory is in this blog \texttt{https://terrytao.wordpress.com/2009/08/23/determinantal-processes/}  What if we do not have a Kernel?   } \\ \\
+On the other hand if $k, M \to \infty$ with $k/M \in \mathbb{R}$ 
+$$ \frac{1}{2^k} \binom{M}{k} \to e^{(\frac{k}{M})^2}$$
+or something like that -- De Moivre Laplace limit theorem. \newpage
+
+\noindent The ``reproducing kernel" should be the sum of Krawtchouk polynomials
+$$ Q(x,y) = \sum Q_n(x) Q_n(y)$$
+adding over the Krawtchouk polynomials of giving $M$.  \\ \\ 
+The answer is the binomial theorem that's all I'm gonna say\footnote{:/}
+
+\newpage
+
 \fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
 
 \begin{thebibliography}{}
 
-\item Kurt Johanssn \textbf{Discrete orthogonal polynomial ensembles and the Plancherel measure.} \texttt{math/9906120} Annals of Mathematics (2) 153 (2001), No. 2, 259--296.
+\item Kurt Johansson \textbf{Discrete orthogonal polynomial ensembles and the Plancherel measure.} \texttt{math/9906120} Annals of Mathematics (2) 153 (2001), No. 2, 259--296.
 
 \item Benjamin J. Fleming, Peter J. Forrester.  \textbf{Interlaced particle systems and tilings of the Aztec diamond.} \texttt{arXiv:1004.0474}
 
@@ -300,6 +350,13 @@ Exercise 5: prove limiting behavior of zig-zag
 \item Fr\'{e}d\'{e}ric Bosio, Marc A. A. Van Leeuwen.  \textbf{A bijection proving the Aztec diamond theorem by combing lattice paths.} \texttt{arXiv:1209.5373}
 
 \item David E. Speyer \textbf{Variations on a theme of Kasteleyn, with application to the totally nonnegative Grassmannian} \texttt{arXiv:1510.03501}
+
+\item Persi Diaconis, Robert Griffiths.  \textbf{An introduction to multivariate Krawtchouk polynomials and their applications} \texttt{arXiv:1309.0112}
+
+\item Tom Koornwinder \textbf{Krawtchouk Polynomials, a Unification of Two Different Group Theoretic Interpretations}
+\texttt{SIAM J. Math. Anal., 13(6), 1011–1023.}
+
+\item Richard Feynman \textbf{Statistical Mechanics} 
 
 \end{thebibliography}
 
