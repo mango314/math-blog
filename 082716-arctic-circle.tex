@@ -333,9 +333,57 @@ or something like that -- De Moivre Laplace limit theorem. \newpage
 \noindent The ``reproducing kernel" should be the sum of Krawtchouk polynomials
 $$ Q(x,y) = \sum Q_n(x) Q_n(y)$$
 adding over the Krawtchouk polynomials of giving $M$.  \\ \\ 
-The answer is the binomial theorem that's all I'm gonna say\footnote{:/}
+The answer is the binomial theorem that's all I'm gonna say\footnote{:/} \\
+
+\noindent \textbf{3} - Candidates for Generalization: \\\
+\begin{itemize}
+\item the Topological Vertex
+\item the Hilbert Scheme of Points
+\item Donaldson-Thomas invariants
+\item Black Hole microstate counting
+\end{itemize} 
+\vspace{12pt}
+it is much harder - in my opinion - to gain solid understanding of the original case.  All 4 of these theories are missing crucial details as well. \\ \\
+For these reasons we resume a study of the basic case.
 
 \newpage
+
+\noindent \textbf{4} - New ideas in Random Walk \\ \\
+$N$ balls dropped into two boxes with probabilities $p, 1-p$ satisfy the binomial distribution:
+$$ m(k, p) = \binom{N}{k} p^k (1-p)^{N-k}$$
+The orthogonal polynomials with respect to this measure:
+$$ u_1^k u_1^l + u_2^k u_2^k = \delta_{kl} $$
+As functions of $p \in [0,1]$ these are the \textbf{Krawtchouk polynomials}.  
+
+
+\newpage
+
+\noindent \textbf{4} - New ideas in Random Walk (please ignore previous page)\\ \\
+Mathworld says: Krawtchouk polynoials are:
+$$ \sum_{k=1}^N (-1)^{n-k} \binom{N-x}{n - k} \binom{x}{k}p^{n-k}q^k$$
+these polynials are orthogonal with respect to the binomial distribution:
+$$ w(x)= \binom{N}{x} p^x (1-p)^{N-x}$$
+umm... that's all Mathworld says
+
+\newpage
+
+\noindent \textbf{4} - New ideas in Random Walk (please un-disregard page 10)\\ \\
+Here is a version by Koornwinder\footnote{Diaconis, being an expert statistician is speaking generally...  I have one case in mind. It seems they are also looking for a generalized ball-and-box model -- they find one but it's too general.  }  
+
+$$ \sum_{x=0}^N \psi_m(x) \psi_n(x) \cdot \binom{N}{x} p^x (1-p)^{N-x}
+\asymp \mathbf{1}_{m=n} $$
+and the constant of proportionality is:
+$$||\psi_m( \;\cdot \;;p,N)||^2 = \left[ \binom{N}{n} \left( \frac{p}{1-p} \right)^n \right]^{-1}$$
+The easiest way I have found is to let $X$ take a random walk on the number $0,1,\dots, N$ which has binomial distribution.  Then
+$$ \mathbb{E}[\psi_m(X)\,\psi_n(X)] = \mathbf{1}_{m=n}\;  n!^2\binom{N}{n}(pq)^n$$
+
+\newpage \textbf{4} - New ideas in Random Walk
+
+Let $u(\xi) = \xi - p$, so that $1+u(0)= 1-p$ and $1+u(1)=p$ then we have a formula in terms of permutations
+$$K_n(X; N, p) = n! \sum_{\sigma \in S_N} u(\xi_{\sigma(1)})\dots u(\xi_{\sigma(n)}) $$
+and in addition to the K's there are the Q's:
+$$Q_n(X) = \binom{N}{n}^{-1} \sum_{\sigma \in S_N} v(\xi_{\sigma(1)})\dots v(\xi_{\sigma(n)}) $$
+with $v(\xi)= 1 - \xi/p$ These are sums of permutations of iid random variables\footnote{Identical Independendently Distributed, these are taken from \textbf{Exchangeable pairs of Bernoulli random variables, Krawtchouk polynomials, and Ehrenfest urns} \texttt{http://statweb.stanford.edu/~cgates/PERSI/papers/DG11.pdf}  These are not well-known.} $u(\xi), v(\xi)$
 
 \fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
 
