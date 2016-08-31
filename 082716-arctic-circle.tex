@@ -377,13 +377,77 @@ $$||\psi_m( \;\cdot \;;p,N)||^2 = \left[ \binom{N}{n} \left( \frac{p}{1-p} \righ
 The easiest way I have found is to let $X$ take a random walk on the number $0,1,\dots, N$ which has binomial distribution.  Then
 $$ \mathbb{E}[\psi_m(X)\,\psi_n(X)] = \mathbf{1}_{m=n}\;  n!^2\binom{N}{n}(pq)^n$$
 
-\newpage \textbf{4} - New ideas in Random Walk
+\newpage 
 
-Let $u(\xi) = \xi - p$, so that $1+u(0)= 1-p$ and $1+u(1)=p$ then we have a formula in terms of permutations
+\noindent \textbf{4} - New ideas in Random Walk \\
+
+\noindent Let $u(\xi) = \xi - p$, so that $1+u(0)= 1-p$ and $1+u(1)=p$ then we have a formula in terms of permutations
 $$K_n(X; N, p) = n! \sum_{\sigma \in S_N} u(\xi_{\sigma(1)})\dots u(\xi_{\sigma(n)}) $$
 and in addition to the K's there are the Q's:
 $$Q_n(X) = \binom{N}{n}^{-1} \sum_{\sigma \in S_N} v(\xi_{\sigma(1)})\dots v(\xi_{\sigma(n)}) $$
 with $v(\xi)= 1 - \xi/p$ These are sums of permutations of iid random variables\footnote{Identical Independendently Distributed, these are taken from \textbf{Exchangeable pairs of Bernoulli random variables, Krawtchouk polynomials, and Ehrenfest urns} \texttt{http://statweb.stanford.edu/~cgates/PERSI/papers/DG11.pdf}  These are not well-known.} $u(\xi), v(\xi)$
+
+\newpage
+
+\noindent \textbf{5} - How determinantal process actually works \\ \\
+In the case of GUE\footnote{I infamously remember my mother asking me, ``what is GUE"?} the Vandermonde product is turned into a determinant:
+$$ \rho_n(x_1, \dots, x_n) = \prod_{1 \leq i < j \leq n} (x_i - x_j)^2 e^{- \sum x_i^2 } $$
+This is \textbf{Ginibre formula} and there is \textbf{Gaudin-Mehta formula}
+$$\rho_n(x_1, \dots, x_n) = \det \bigg[ \sum_{k=1}^n \phi_k(x_i) \phi_k(x_j) e^{-(x_i^2 + x_j^2)/4}\bigg] $$
+or why not just absorb these into oscillator eigenfunctions:
+$$ \rho_n(x_1, \dots, x_n) 
+=  \det_{1 \leq i,j\leq n} \langle x_i | \bigg[ \sum_{k=1}^n  |k \rangle \langle k |  \bigg] | x_j \rangle $$
+Instead of Gaussian weight there is discrete weight from binomial coefficients.
+$$ \binom{N}{x} p^x (1-p)^{N-x} 
+ $$
+with $x \approx pN$ in fact $x - pN = O(\sqrt{N})$
+
+\newpage
+
+We can expand the binomial coefficint with Stirling's formula:
+$$ 
+\binom{N}{x}
+= \frac{N!}{ x! (N-x)!}
+$$
+More or less is equal to:
+$$\frac{ \sqrt{2\pi N}(N/e)^N}{
+\sqrt{2\pi (N-x)}((N-x)/e)^{N-x}
+\sqrt{2\pi x}(x/e)^x
+}
+$$
+arranging factors:
+$$  \frac{\sqrt{2\pi N}}{\sqrt{2\pi (N-x)}\sqrt{2\pi x}} \times \frac{ N^N}{(N-x)^{N-x}x^x}$$
+Observe $x \approx pN$ and $N-x \approx (1-p)N$
+$$ \frac{\sqrt{2\pi N}}{\sqrt{2\pi (N-x)}\sqrt{2\pi x}} \approx \frac{1}{\sqrt{2\pi p(1-p)}}=
+\frac{1}{\sqrt{2\pi pq}}
+$$
+In the other case let $ x = pN + t\sqrt{N}$
+$$ \frac{ N^N}{(N-x)^{N-x}x^x}
+= \frac{ N^N}{(qN - t\sqrt{N}))^{qN - t\sqrt{N}}(pN + t\sqrt{N})^{pN + t\sqrt{N}}}$$
+and in a very clumsy way on approaches the Gaussian
+$$ \frac{p^{-pN}q^{-qN}}{(1 - \frac{t}{q\sqrt{N}}
+)^{qN - t\sqrt{N}}(1 + \frac{t}{p\sqrt{N}})^{pN + t\sqrt{N}}}$$
+
+\newpage
+
+\noindent The Asymptotic Equidistribution Property should give:
+$$ 
+\binom{N}{x} p^x (1-p)^{N-x} 
+\approx e^{- t^2/\sqrt{pq}}
+$$
+if $x = pN + t \sqrt{N}$ for $t = o(\sqrt{N})$.
+
+\newpage
+
+\noindent \textbf{6} Steepest Descent \\ \\
+We have shown the Krawtchouk Kernel approaches the Gaussian kernel. \\ \\
+The steepest descent for the Gaussian Kernel
+$$ \frac{1}{N}\sum \psi_i(x)^2 \approx \sqrt{1 - x^2} $$
+has been done elsewhere. \hfill $\square$ \\ \\ 
+This concludes the feasibility study for this project.  
+
+
+\newpage
 
 \fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
 
@@ -407,6 +471,29 @@ with $v(\xi)= 1 - \xi/p$ These are sums of permutations of iid random variables\
 \item Richard Feynman \textbf{Statistical Mechanics} 
 
 \end{thebibliography}
+
+\newpage
+
+\newpage
+
+\fontfamily{qag}\selectfont \fontsize{20}{20}\selectfont
+
+``The historically first example of such a system goes back to \textbf{De Moivre} (1738) and
+\textbf{Laplace} (1812) who considered the problem of finding the asymptotic distribution of a sum
+of i.i.d. random variables for Bernoulli trials, when the pre-limit distribution is explicit,
+and took the limit of the resulting expression. \\ \\ 
+\indent While this computation may look like a
+simple exercise when viewed from the heights of modern probability, in its time it likely
+served the role of a key stepping stone - {\color{blue!50!white!80!black}{first rigorous proofs of central limit theorems
+appeared only in the beginning of the XXth century}}. \\ \\
+\indent At the moment we are arguably in a ``De Moivre-Laplace stage" for a certain class
+of stochastic systems which is often referred to as the \textbf{KPZ universality class}, after an
+influential work of Kardar-Parisi-Zhang in mid-80's\dots" \\ \\
+
+\fontfamily{qag}\selectfont \fontsize{25}{30}\selectfont
+\noindent taken from: \\ \\
+\fontfamily{qag}\selectfont \fontsize{20}{15}\selectfont
+Alexei Borodin, Vadim Gorin.  \textbf{Lectures on Integrable probability} \texttt{1212.3351}
 
 
 \end{document}
