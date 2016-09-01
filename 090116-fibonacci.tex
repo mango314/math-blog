@@ -1,0 +1,84 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{21}{18}
+
+
+
+\newcommand{\myhrule}{}
+
+\usepackage{tikz}
+
+\title{\textbf{ Fibonacci Numbers }}
+\author{John D Mangual}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{25}{30}\selectfont
+
+\maketitle
+
+\noindent Every issue of Mathematics Magazine is flooded with proofs of Fibonacci identity.  I myself have solved a few.  So it is surprising to see a discussion by leading dynamicist and Fields Medallalist Curtis McMullen.  \\ \\
+Let $\epsilon \in \mathbb{R}$ be an algebraic unit of degree two over $\mathbb{Q}$.  Then $x = \epsilon$ solves a quadratic equation:
+$$ x^2 - ax + b = 0 $$
+with $a,b \in \mathbb{Q}$.  McMullen writes instead:
+$$ \epsilon^2 = t\epsilon - n $$
+with $t = \mathrm{tr}_\mathbb{Q}^K(\epsilon)$ and $n = \mathrm{N}_\mathbb{Q}^K(\epsilon)= \pm 1 $. \newpage
+
+\noindent In the number theory jargon:
+\begin{itemize}
+\item $\mathbb{Z}[\epsilon]$ is called a \textbf{order} in the field $K = \mathbb{Q}(\epsilon)$.
+\item The discriminant is $D = t^2 - 4n > 0$.
+\item $(1,\epsilon)$ is a basis for $\mathbb{Z}[\epsilon] \subset \mathbb{R}$.
+\end{itemize}
+We represent algebraic numbers by $2 \times 2$ matrices\footnote{this should be extremely bothersome... and we haven't even done cubic fields\dots}
+$$ \epsilon = \left(
+\begin{array}{cr} 
+0 & -n \\
+1 & t
+\end{array}\right), 
+ 1 = \left(
+\begin{array}{cr} 
+1 & 0 \\
+0 & 1
+\end{array}
+ \right),
+  \sqrt{D} = \left(
+\begin{array}{rr} 
+-t & -2n \\
+1 & t
+\end{array}\right)
+ $$
+Here's one place where Curtis gets tricky.  He says:
+$$ \mathrm{tr}_\mathbb{Q}^K: \mathrm{M}_2(K) \to \mathrm{M}_2(Q) $$
+a $2 \times 2$ matrix in $K = \mathbb{Q}(\epsilon)$ is like a $4 \times 4$ matrix in $\mathbb{Q}$ (with some rules)\footnote{Schemes could be defined as matrices satisfying certain equations.  If Alexander Grothendieck hadn't been around, we could say these equations define a ``variety" but with additional problems.  And spend hours hunting through our commutative algebra textbooks for the properties of these rings.  So there you have it a \textbf{scheme} is a set of \textbf{equations} with certain \textbf{problems}.}.
+$$
+\left[
+\begin{array}{cc|cc}
+\;\cdot \; & \;\cdot \; & \;\cdot \; & \;\cdot \; \\
+\;\cdot \; & \;\cdot \; & \;\cdot \; & \;\cdot \; \\ \hline
+\;\cdot \; & \;\cdot \; & \;\cdot \; & \;\cdot \; \\
+\;\cdot \; & \;\cdot \; & \;\cdot \; & \;\cdot \;  
+ \end{array}
+ \right]
+ $$
+
+\newpage
+
+\fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
+
+\begin{thebibliography}{}
+
+\item Curtis McMullen.  \textbf{Uniformly Diophantine Fixed Numbers in a Real Quadratic Field}
+
+\item Jean Bourgain, Alex Kontorovich.
+\textbf{Beyond Expansion II: Traces of Thin Semigroups} \texttt{arXiv:1310.7190v1}
+
+\end{thebibliography}
+
+
+\end{document}
