@@ -161,6 +161,55 @@ z&=&
 m^2+n^2
 \end{eqnarray}
 
+
+
+\newpage
+
+\noindent \textbf{2} - What Fibonacci sequence does McMullen have in mind?
+$$ f_{m+1} = t f_m - n f_{m-1} $$
+with $f_0 = 0$ and $f_1 = 1$.  \\ \\ With are $2 \times 2$ matrices in $K = \mathbb{Q}(\epsilon)$ or $4 \times 4$ matrices in $\mathbb{Q}$.  
+$$ f_m = \mathrm{tr}_\mathbb{Q}^K (\epsilon^m / \sqrt{D}) $$
+and asymptotic $f_m \asymp \epsilon^m$ when $m$ is very large.\footnote{So in the usual Fibonacci sequence:
+$$ f_m \asymp \left( \frac{1+\sqrt{5}}{2}\right)^m  $$  } \\ \\
+As numbers we get Fibonacci identity:
+$$ \epsilon^m = f_m \epsilon - n f_{m-1}$$
+as $U \leftrightarrow \epsilon$ as $2 \times 2$ matrices:
+$$ U^m = f_m U - n f_{m-1}I $$
+and he even puts for us:
+$$ \large U^m = \left(
+\begin{array}{cc}  -n & 0 \\ 0 & 1 \end{array}
+ \right)
+ \left(
+\begin{array}{cc}  f_{m-1} & f_m \\ f_m & f_{m+1} \end{array}
+ \right) \equiv f_{m+1} \left(
+ \begin{array}{cc}
+ 1 & 0 \\ 0 & 1
+  \end{array}
+ \right) \mod f_m
+ $$
+These $2 \times 2$ congruence formulas are delighful.  Stanley's Enumerative Combinatorics should be full of them\footnote{And a discussion of ``trace" as defined by numbertheorists discussed in short article by Keith Conrad http://bit.ly/2bXUjNL or in textbooks on Algebraic Number Theory }
+
+\newpage
+
+\noindent The lattice Curtis McMullen winds up picking is:
+$$ \left(
+\begin{array}{c|c}
+f_{m+1}- f_{m-1} & f_{m+2} - f_{m+1} - f_m \\ \hline
+0 & f_m
+\end{array}
+\right) $$
+and if you want we can pick the simplest one:
+$$ f_m = \left( 
+\frac{1+\sqrt{5}}{2}
+\right)^m
++ \left( {\color{black!10!white}{
+\frac{1-\sqrt{5}}{2}}}
+\right)^m$$
+the numbers in this case are $\mathbb{Q}(\sqrt{5})$ and our $2 \times 2$ matrix supplies infinitely many geodesics in half-plane $\mathbb{H}/\mathrm{SL}_2(\mathbb{Z})$.  \\ \\
+If I read correctly the numbers:
+$$ \frac{f_{m+1} - f_{m-1}}{f_m} \in \mathbb{Q}$$
+all have distinct infinitely repeating continued fractions with bounded coefficients. \\ \\ someting is not quite right I am afraid
+
 \newpage
 
 \fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
