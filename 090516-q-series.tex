@@ -1,0 +1,62 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{21}{18}
+
+
+
+\newcommand{\myhrule}{}
+
+\usepackage{tikz}
+
+\title{\textbf{ q-Series }}
+\author{John D Mangual}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{24}{30}\selectfont
+
+\maketitle
+
+\noindent Every day we are being slammed on arXiv with ever more complicated q-series.  In order to attempt the infinite backlog today's example is \textbf{rarefied elliptic hypergeometric functions}.  \\ \\ 
+They define the elliptic Gamma function:
+$$ \Gamma(z; p, q) = \prod_{j,k=0}^\infty
+\frac{1 - z^{-1} p^{j+1}q^{k+1}}{1 - z p^j q^k} $$
+for some numbers $|p|, |q| < 1 $ and $z \in \mathbb{C}^\ast$.  If that's not enough here is a second-order elliptic Gamma function:
+$$ \Gamma(z; p, q, t) = \prod_{j,k,l=0}^\infty
+(1 - z p^j q^k t^l)(1 - z^{-1}p^{j+1}q^{k+1}t^{l+1}) $$ with $|t|, |p| , |q| < 1$.  \hfill Why not stop there?
+\newpage
+
+\noindent The \textbf{rarefied} elliptic hypergeometric function:
+$$ \small \left( - \tfrac{z}{\sqrt{pq}} \right)^{\frac{m(m-1)}{2}}
+\left(  \tfrac{p}{q} \right)^{\frac{m(m-1)(2m-1)}{12}}
+\Gamma( zp^m ; p^r, pq)\Gamma(z q^{r-m}; q^r, pq) $$
+This is related to the {\color{blue!50!white}\textbf{Lens space}} a quotient of the 3-sphere:
+$$  S^3/\mathbb{Z}_r = \{ |z_1|^2 + |z_2|^2 = 1 \}/ (e^{2\pi i/r}z_1, e^{2\pi i / r}z_2) \sim (z_1, z_2)$$
+and now we have mixed the topology and geometry of 3-manifolds with the classical $\Gamma$ function.  \\ \\ 
+Some facts about the Gamma function:
+\begin{itemize}
+\item $\Gamma(\frac{1}{2}) = \sqrt{\pi}$
+\item $\Gamma(1-z) \Gamma(z) = \frac{\pi}{\sin(\pi z)}$
+\item $\Gamma(\frac{1}{3})\Gamma(\frac{2}{3}) = \frac{2\pi}{\sqrt{3}} $
+\end{itemize} 
+The special values formulas\footnote{http://mathworld.wolfram.com/GammaFunction.html} are endless I am just getting started:
+$$ \frac{\Gamma(\frac{1}{24})\Gamma(\frac{11}{24})}{\Gamma(\frac{5}{24})\Gamma(\frac{7}{24})} = \sqrt{3}\cdot  \sqrt{2 + \sqrt{3}} $$
+
+\fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
+
+\begin{thebibliography}{}
+
+\item V P Spiridonov  \textbf{Rarefied Ellipic Hypergeometric Fucnction} \texttt{arXiv:1609.00715}
+
+\item Christine Berkesch, Jens Forsg\aa{}rd, Mikael Passare
+\textbf{Euler--Mellin integrals and A-hypergeometric functions} \texttt{arXiv:1103.6273}
+
+\end{thebibliography}
+
+
+\end{document}
