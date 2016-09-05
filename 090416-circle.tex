@@ -62,13 +62,65 @@ $$ z \mapsto \frac{z - a}{\overline{a}z-1} $$
 \newpage
 
 \noindent \textbf{A} - the Easy Way \\ \\
-This particular layout of circle is symmetric about the $x$ axis --- so we might\footnote{The small circle $|z-3|=\frac{1}{4}$ is moving in between $|z|=1$ and the image of $|z|=\frac{1}{2}$.  What happens (under inversion) if I rotate this figure? My question is what the image of the circle is under the map $z \mapsto  \frac{z - a}{\overline{a}z-1} $ and also $a = e^{i\theta} \frac{1}{3}$ and $\theta \in [0, 2\pi]$. } find an easier solution!
+This particular layout of circle is symmetric about the $x$ axis --- so we might\footnote{The small circle $|z-3|=\frac{1}{4}$ is moving in between $|z|=1$ and the image of $|z|=\frac{1}{2}$.  What happens (under inversion) if I rotate this figure? My question is what the image of the circle is under the map $z \mapsto  \frac{z - a}{\overline{a}z-1} $ and also $a = e^{i\theta} \frac{1}{3}$ and $\theta \in [0, 2\pi]$. } find an easier solution! \\ \\
+The image of $x^2 + y^2 = \frac{1}{4}$ is itself a circle, symmetric about the $x$ axis.  
+\begin{itemize}
+\item $z = \frac{1}{2} \mapsto w = \frac{\frac{1}{2}-a}{\frac{1}{2}\overline{a}-1}$
+and $z = -\frac{1}{2} \mapsto w = \frac{ - \frac{1}{2}-a}{-\frac{1}{2}\overline{a}-1}$
 
+\item The center should be midway between them:
+$$ \frac{1}{2} \left(
+\frac{\frac{1}{2}-a}{\frac{1}{2}a-1}
++ 
+\frac{-\frac{1}{2}-a}{-\frac{1}{2}a-1}
+\right)
+= \frac{3}{4} \times \frac{ a }{1 - \frac{1}{4} a^2} $$
+\item and the radius should be half the difference 
+$$ \frac{1}{2} \left(
+\frac{\frac{1}{2}-a}{\frac{1}{2}a-1}
+- 
+\frac{-\frac{1}{2}-a}{-\frac{1}{2}a-1}
+\right)
+= \frac{1}{2} \times \frac{ - 1+ a^2 }{1 - \frac{1}{4}a^2} $$
+\end{itemize}
+\hrule \vspace{6pt}
+The circle $(x - \frac{3}{4})^2 + y^2 = \frac{1}{4^2}$ has diameter $z = \frac{1}{2}$ and $z = 1$:
+\begin{itemize}
+\item $z = 1 \mapsto w = \frac{1-a}{a-1}= - 1$ and  easy computation:
+$$ R = \frac{1}{2} \left(
+\frac{\frac{1}{2}-a}{\frac{1}{2}a-1}
++
+1 \right) \hspace{0.5in} C = \frac{1}{2} \left(
+\frac{\frac{1}{2}-a}{\frac{1}{2}a-1}
+- 1
+\right) $$
+\end{itemize}
 
 \newpage
 
-\noindent \textbf{B} - from Old Textbooks
+\noindent \textbf{B} - from Old Textbooks \\ \\
+If $p$ and $q$ are inverse points on a Circle\footnote{This could be Ptolemy's Theorem since we are discussing power of a point.  I look at Titchmarsh's textbook on analysis and feel two ways: why are physicists skipping important steps even when they are very doable?  Why is the geometry limited to only one chapter?  Why not take a geometric approach to Hadamard's theorem or Lebesgue Theory?} that circle takes the form:
+$$ \frac{|z- p|}{|z- q|} = k$$
+and the map $z \mapsto f(z) = \frac{az+b}{cz+d}$ maps perfectly:
+$$ \frac{|z- f(p)|}{|z- f(q)|} = k$$
+This should feel awkard how to express the simple eq:
+$$ |z| = \frac{1}{2}$$
+which says that $0\leftrightarrow \infty$ are inverses.  Instead try:
+$$ \frac{|z - \frac{1}{4} |}{|z - 1|} = \frac{1}{2}$$
+and for the other circle $|z - \frac{3}{4}| = \frac{1}{2} $ a new formula:
+$$  \frac{|z-\frac{5}{8}|}{|z-0|} = \frac{3}{8} $$
+and hopefully our images agree.
 
+\newpage
+
+\noindent \textbf{C} - nnnooooooooo!!!! \\ \\
+we just want a bit of detailed balanace making sure the algebra checks out. \\ \\
+just because it is equation you think it is correct? 
+\\ \\ LOL
+
+\newpage
+
+\noindent \textbf{D} - LOL
 
 \newpage
 
