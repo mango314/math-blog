@@ -302,7 +302,7 @@ I could not figure out the ball-and-urn model this is associated to this combina
 The theory of determinantal processes says once we know the kernel we know everything else about that process\footnote{The theory of determinantal processes - especially the \textbf{geometry} - will be important once I assemble the basic discussion.}.  The Krawtchouk polynomials are orthogonal with respect to:
 $$ \frac{1}{2^N} \binom{N}{x} =
   \frac{1}{2^N} \binom{N}{\frac{N}{2} + t \sqrt{N}} \to \frac{1}{2\pi } e^{-t^2 / 2}$$
-if $ x = \frac{N}{2} + t \sqrt{N}$ were we magically know the correct scaling :-) \\ \\
+if $ x = \frac{N}{2} + t \sqrt{N}$ where we magically know the correct scaling :-) \\ \\
 The probabilities are \textbf{Slater determinant} of the different wave functions:
 $$ \mathbb{P}[h] = \det \Big[ \sum \psi_n(h_i)\psi_n(h_j) \Big]_{i,j}$$
 
@@ -381,12 +381,15 @@ $$ Q_n(x) = \sum_{k = 0}^N \frac{\binom{x}{k}\binom{N-x}{n-k}}{\binom{N}{n}}
 then we are trying to evaluate a very complicated determinant:
 $$ \det \Bigg[ 
 \sum_{n=0}^N \bigg(
-\sum_{k = 0}^N \frac{\binom{n}{k}\binom{N-n}{x_i-k}}{\binom{N}{x_i}} \times 
-\sum_{k = 0}^N \frac{\binom{n}{k}\binom{N-n}{x_j-k}}{\binom{N}{x_j}}\bigg)
+\sum_{k = 0}^N \frac{(-1)^k\binom{n}{k}\binom{N-n}{x_i-k}}{\binom{N}{x_i}} \times 
+\sum_{k = 0}^N \frac{(-1)^k\binom{n}{k}\binom{N-n}{x_j-k}}{\binom{N}{x_j}}\bigg)
 \Bigg]_{i,j} $$
 again this is pretty dreadful to read and we don't know what these objects are counting.
 $$ \det \left[ \sum_{n=0}^N Q_n(x_i) Q_n(x_j)\right]_{i,j}$$
-This is simpler but less informative.  
+This is simpler but less informative. The kernel looks like this:\\ \\ 
+$$ 
+\sum_{n=0}^N \bigg[ \sum_{k = 0}^N \frac{(-1)^k\binom{n}{k}\binom{N-n}{x-k}}{\binom{N}{x}} \times 
+\sum_{l = 0}^N \frac{(-1)^l\binom{n}{l}\binom{N-n}{y-l}}{\binom{N}{y}}\bigg] $$  
 
 \newpage
 
@@ -397,18 +400,25 @@ $$ \sum_{x=0}^N \psi_m(x) \psi_n(x) \times \frac{1}{2^N} \binom{N}{x} = \left\{
 ? & \text{otherwise}\end{array}
  \right.$$
 but actually the steady state of a random walk on $\{ 0, \dots, N\}$ with odds of jumping half to the left and to the right, is the uniform distribution.  \\ \\
-This is known was the \textbf{gambler's ruin}.  Instead we need the Ehrenfest urn model.  
+This is known was the \textbf{gambler's ruin}\footnote{Gambler's ruin says if you random walk left and right on $0, \dots, n$ you eventually hit zero.}.  Instead we need the Ehrenfest urn model.  
 
 \begin{quotation}
 An urn has $N$ balls coloured {\color{red}{red}} or {\color{blue}{blue}}. Transitions in a Markov chain
 are made by selecting a ball at random and changing its colour. $X_t$
 is the
-number of red balls after $t$ transitions. \\ \\ $\{X_t\}_t \in \mathbb{N}$ is a reversible Markov Chain
+number of red balls after $t$ transitions. \\ \\ $\{X_t\}_{t \in \mathbb{N}}$ is a reversible {\color{green!50!black}{\textbf{Markov Chain}}}
 with a Binomial $(N, \frac{1}{2})$ stationary distribution. \end{quotation}
 
 \newpage
 
-\noindent This can also be considered a random walk on $(\mathbb{Z}_2)^N$.
+\noindent So this Ehrenfest model can also be considered a random walk on $(\mathbb{Z}_2)^N$. \begin{tikzpicture} 
+\draw[color=red!50!white, fill=red!50!white] (0,0) circle (12pt); 
+\draw[color=blue!50!white, fill=blue!50!white] (36pt,0) circle (12pt);
+\draw[color=blue!50!white, fill=blue!50!white] (72pt,0) circle (12pt);
+\draw[color=red!50!white, fill=red!50!white] (108pt,0) circle (12pt); 
+\draw[color=red!50!white, fill=red!50!white] (144pt,0) circle (12pt); 
+\end{tikzpicture} \\ \\
+\textbf{Q}: How many circles are red? How many circles are blue?
 
 \newpage
 
