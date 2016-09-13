@@ -1,0 +1,78 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{21}{18}
+
+\newcommand{\myhrule}{}
+
+\usepackage{tikz}
+
+\title{\textbf{ Examples:  Counting }}
+\author{John D Mangual}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{25}{30}\selectfont
+
+\maketitle
+
+\noindent The IHES offered a nice course on the \textbf{Exponential Integral}.  Here's what Maxim Kontsevich had to say:
+
+\fontfamily{qag}\selectfont \fontsize{15}{20}\selectfont
+\begin{quotation}
+	Let $X$ be a smooth algebraic variety over a field $k$ and let $f \in \Gamma(\mathcal{O}_X)$ be a function on $X$.  One can treat the pair $(X,f)$ as a generalization of a variety. \\ \\
+\textbf{Plain varieties correspond to the case $f = 0$}.  If $k = \mathbb{F}_q$ with $q = p^k$ the generalization of the number of points is the exponental sum:
+$$ \sum_{x \in X(\mathbb{F}_q)} 
+\mathrm{exp} \tfrac{2\pi i }{p}\left[ \text{Tr}_{\mathbb{F}_q/\mathbb{F}_p} f(x) \right]$$
+For $k = \mathbb{C}$ there are Betti and de Rham cohomology theories together with {\color{blue}{\textbf{comparison isomorphism}}} given by exponential integrals:
+$$ \int_\gamma e^f \omega $$ where $\omega$ is an algebraic differential form on $X$ killed by twisted differental $d + df \wedge \cdot $  and $\gamma$ is a non-copact closed chain in $X(\mathbb{C}$ under some conditions.
+\end{quotation}
+\fontfamily{qag}\selectfont \fontsize{25}{30}\selectfont
+This abstract is frustrating since the finite field case $\mathbb{F}_p$ case never gets covered in any of Kontsevich's videos.  \newpage
+
+\noindent My first question was \textbf{how does an exponential sum generalize the number of points?} raising fundamental questions of the nature of counting\footnote{
+Counting is important in computer programming since we have to \textit{enumerate} over all possibilities (since we don't know which one we might need or where to find it):
+\begin{itemize}
+\item How do we know who items are distinct?
+\item How do we know we have found ``one" item?
+\item Which items are admissible?  What ``counts"?
+\item How do we know we finished counting? 
+\item Can we be sure we counted everybody?
+\end{itemize}
+{\color{blue}{How many times do I stir a cup of coffee}}? \\ 
+{\color{red}{How many minutes until the bus arrives}}? \\ 
+{\color{blue}{Will I get a seat on the train}}? \\ 
+{\color{red}{Where did I leave my keys}}? \\
+{\color{blue}{What time is good for everybody}}? \\ \\
+None of these sample questions are very good. and hopefully you can find better.  }. \\ \\
+There are other notions of ``number" or ``size" that could be examined.  
+\fontfamily{qag}\selectfont \fontsize{15}{20}\selectfont 
+\begin{quotation}
+What I would like to see more of in the future is more development of the somewhat vague idea of the "Zariski complexity" of various sets, by which I mean something like the least degree of a non-trivial polynomial which vanishes on that set. One can view the polynomial method as the strategy of comparing upper and lower bounds on the Zariski complexity of sets to obtain nontrivial combinatorial consequences. I have the vague feeling that ultimately, such notions of complexity should play as prominent a role in these sorts of combinatorial problems as existing notions of "size" for such sets, such as cardinality, dimension, or Fourier uniformity.
+\end{quotation}
+\fontfamily{qag}\selectfont \fontsize{25}{30}\selectfont
+The example\footnote{Kontsevich's video was very difficult to transcribe.  One part is reflecting on the difference between Betti and de Rham cohomology.  It might be worth it as his formalism ``leads to an nice class of resurgent functions".  Resurgence enables us to make sense of \textbf{essential singularities} such as $e^{1/z}$ near $z = 0$.  } I would like to aim for is: \textbf{Gaiotto-Moore-Neitzke spectral networks}. \newpage
+
+\noindent How is wall-crossing a type of counting? \\ \\
+
+
+
+
+\newpage
+
+\fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
+
+\begin{thebibliography}{}
+
+
+
+\item Maxim Kontsevich.  \textbf{Exponential Integral} \texttt{https://indico.math.cnrs.fr/event/694/material/3/0}
+
+\end{thebibliography}
+
+
+\end{document}
