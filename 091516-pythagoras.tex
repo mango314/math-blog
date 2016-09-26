@@ -177,6 +177,99 @@ Janos Kollar gives us a bunch of exotic new Veronese embeddings.
 
 \newpage
 
+\noindent For now we simply note this quadratic identity:
+$$
+\frac{1}{4}(u^2 + v^2 + (a+b)w^2)^2 - 
+\frac{1}{4}(u^2 - v^2 + (a-b)w^2)^2 =
+(uv)^2 + a(vw)^2 + b(uw)^2 + ab(w^2)^2
+ $$
+ and if $a > 0$ and $b > 0$ this has equivalent form:
+$$ \frac{1}{4}(|A|^2 + |B|^2)^2
+- \frac{1}{4}(|A|^2 - |B|^2)^2
+=|AB|^2 $$
+and $A = u + iw \sqrt{a}$ and $B = v + jw\sqrt{b}$ are elements of $\mathbb{H}$ (the Quaternions). \\ \\
+Here are some embeddings of $\mathbb{R}P^2$ into the sphere of radius $1$:
+\begin{itemize}
+\item $(u:v:w)\mapsto \\ \frac{\sqrt{3}}{u^2 + v^2 + w^2} \big( uv:vw:uw:\frac{1}{2}(u^2 - v^2): \frac{1}{\sqrt{12}} (u^2 + v^2 - 2w \big) $
+\\
+\item $(u:v:w) \mapsto \\\frac{2}{u^2 + v^2 + 2w^2} \big( uv:vw:uw: w^2 : \frac{1}{2}(u^2 - v^2\big) $
+\end{itemize}
+these are in the unit sphere in 5 dimensions 
+$$ (u:v:w) \mapsto \left(\begin{array}{ccc}
+u^2 & uv & uw \\
+uv & v^2 & vw \\
+uw & vw & w^2 \end{array}\right)$$
+Leaving the circles,  sheaves, ruled surfaces for another time\dots 
+
+\newpage
+
+\noindent Lastly we talk a little bit about wedge products.  By coincicenc we have that:
+$$ \mathbb{R}^3 \wedge \mathbb{R}^3 \simeq \mathbb{R}^3 $$
+what does that mean?  If we can count to three $e_1, e_2, e_3$ we can also count pairs of numbers (also up to three):
+$$ e_1 \wedge e_2, \quad e_2 \wedge e_3, \quad
+e_3 \wedge e_1 \; $$
+Pythagoras Theorem reads that:
+$$ ||(a,b,c)||^2 = (a,b,c) \cdot (a,b,c) = a^2 + b^2 + c^2 $$
+Suppose we take the wedge of two vectors and find it's norm:
+$$ (a_1,b_1,c_1) \wedge (a_2, b_2, c_2)
+= ( b_1 c_2 - b_2 c_1 ,
+c_1 a_2 - a_2 c_1 ,
+a_1 b_2 - b_2 a_1  ) $$
+The area of the parallelogram\footnote{quadrilateral?} spanned by these two vectors
+should be the sum of squares:
+$$ A = 
+( b_1 c_2 - b_2 c_1)^2+
+( c_1 a_2 - a_2 c_1)^2+ 
+( a_1 b_2 - b_2 a_1)^2$$
+These are the areas of the shadows of a 2D surface (a parallelogram) into the 3 coordinate axes, \textbf{which I must draw now}!
+\newpage
+
+
+\newpage
+
+\begin{tikzpicture}[scale=5]
+
+\node[coordinate] (a) at (0,0) {};
+\node[coordinate] (b) at (1,0) {};
+\node[coordinate] (c) at (0,1) {};
+\node[coordinate] (d) at (0.2,0.354) {};
+
+\draw[dashed, color=black!25!white] (0,0)--(1.125,0);
+\draw[dashed, color=black!25!white] (0,0)--(0, 1.125);
+\draw[dashed, color=black!25!white] (0,0)--(0.4,0.708);
+
+\draw[fill=red, opacity=0.2]  (a)--(b)--(c)--cycle;
+\draw[fill=blue, opacity=0.4] (a)--(b)--(d)--cycle;
+\draw[fill=green, opacity=0.1] (b)--(d)--(c)--cycle;
+\draw[fill=red, opacity=0.2] (c)--(a)--(d)--cycle;
+
+\end{tikzpicture}\\
+Perspective drawing not so easy!
+
+$$ A^2_{\color{black}{\text{ABC}}} = 
+A^2_{\color{blue}{\text{ABO}}}+
+A^2_{\color{green!50!black}{\text{ACO}}}+
+A^2_{\color{red}{\text{BCO}}} $$
+Finally since $a \wedge b = - (b \wedge a)$ we can try to arrange three wedges into an anti-symmetri matrix:
+$$ 
+(a \wedge b) + (b \wedge c) + (c \wedge a)=
+\left[\begin{array}{ccc} 
+0 & a & b \\ 
+-a & 0 & c \\
+-b & -c & 0\\
+\end{array}\right]
+$$
+now if we comine them we three plain-old vectors $x,y,z$ notice we can do so meaningfully:
+$$
+(x+y+z) + 
+(a \wedge b + b \wedge c + c \wedge a)=
+\left[\begin{array}{rrr} 
+x & a & b \\ 
+-a & y & c \\
+-b & -c & \;\,z\\
+\end{array}\right]
+ $$
+
 \fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
 
 \begin{thebibliography}{}
@@ -191,6 +284,10 @@ Almost prime Pythagorean triples in thin orbits}
 
 \item Alexander Belyaev, Boris Khesin, Serge Tabachnikov. \textbf{Discrete spherical means of directional derivatives and Veronese maps.}
 \texttt{arXiv:1106.3691}
+
+\item Janos Kollar \textbf{Quadratic solutions of quadratic forms} \texttt{arXiv:1607.01276}
+
+\item Wikipedia \textbf{De Gua's Theorem} and  \textbf{Pythagorean Theorem} \S \textbf{Generalizations}
 
 \end{thebibliography}
 
