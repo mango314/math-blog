@@ -111,6 +111,26 @@ $$ \int e^{t\, f(x)}\; dx \approx \frac{e^{t \, f(x_0)}}{\sqrt{f''(x_0)}} $$
 Because $f(x) \approx f(x_0) + \frac{t^2}{2} f''(x_0)$ near $x \approx x_0$.
 \newpage
 
+\noindent Consider $n$ particles with mass $m_i$ and with phase space $X = \mathbb{R}^{2n}$ and total angular momentum:
+$$ \omega = \sum_{i=1}^n dx^i \wedge dy_i $$
+and consider the rotation in phase space:
+$$ \left(\begin{array}{c} x \\ y \end{array} \right) \mapsto \left( \begin{array}{cc}
+\cos \theta & \sin \theta \\ 
+-\sin \theta & \cos \theta  \end{array}\right) \left(\begin{array}{c} x \\ y \end{array} \right)$$
+with $\theta \in [0, 2\pi]$.  This are $n$ independent harmonic oscillators.  The total energy of the $n$ particles is:
+$$ \mu = \sum m_i (x_i^2 + y_i^2) $$
+and mysteriously the Duistermaat Heckman formula produces a Gaussian integral:
+$$ \frac{1}{n!} \int_{\mathbb{R}^n}
+(dx^1 \wedge dy_1)\wedge
+\dots \wedge
+(dx^n \wedge dy_n) e^{\epsilon \sum (x_i^2 + y_i^2)}
+= \frac{(2\pi)^n}{\prod_{i=1}^n w_i}
+ $$
+The pair $X = \mathbb{R}^{2n}$ and $\omega = \sum (dx \wedge dy)$ could be the phase space of $n$ harmonic oscillators.  And we achieve a Gaussian distribution.  \\ \\
+The geometric object used here is the Euler class, rotation each particle $(x^i, y_i)$ by an angle $\theta_i$.  The Hamiltonian is $H = \mu$.  The DH formula ``quantizes" this rotation into $n$ random walks ( or $n$ copies of the \textbf{free particle}).
+
+\newpage
+
 \fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
 
 \begin{thebibliography}{}
@@ -121,9 +141,11 @@ Because $f(x) \approx f(x_0) + \frac{t^2}{2} f''(x_0)$ near $x \approx x_0$.
 \item Ofer Aharony, Oren Bergman, Daniel Louis Jafferis, Juan Maldacena \textbf{N=6 superconformal Chern-Simons-matter theories, M2-branes and their gravity duals}
 \texttt{arXiv:0806.1218v4}
 
-\item Vasily Pestun, Maxim Zabzine. \textbf{Introduction to localization in quantum field theory.} \texttt{arXiv:1608.02953}
+\item Vasily Pestun, Maxim Zabzine. \textbf{Introduction to Localization in Quantum Field Theory.} \texttt{arXiv:1608.02953}
 
 \item Richard Feynman \textbf{Path Integrals and Quantum Mechanics} Dover, 2010.
+
+\item Vasily Pestun \textbf{Review of Localization in Geometry} \texttt{arXiv:1608.02954}
 
 
 \end{thebibliography}
