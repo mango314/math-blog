@@ -61,18 +61,37 @@ I will have a little bit to say about each of these steps.  Here are some old id
 \item Symlectic Geometry, ODE 
 \item Integral Geometry
 \end{itemize}}
+\\
 
-
-\noindent We get some hints from Pestun's original paper:
+\noindent We get hints from Pestun's original paper:
 \begin{quotation}
 \noindent {\color{blue}{equivariant Euler class of the infinite-dimensional normal
 bundle to the localization locus}}
 \end{quotation}
-Do we know what this means?  I don't. Maybe some complicated infinite dimensional object has been erected over our 4-sphere, $\text{S}^4$.
+I don't know what this means.   Maybe some complicated infinite dimensional object has been erected over our 4-sphere, $\text{S}^4$\,?
 \newpage
 
-\noindent .
-
+\noindent The Chern-Simon's matter action is involved:
+$$ \frac{k}{4\pi} 
+\int \text{Tr} \big( A \wedge dA + \frac{2}{3} A^3 - \overline{\chi}\chi + 2D \sigma \big) $$
+called a \textbf{multiplet} and a \textbf{superpotential} 
+$$W = \frac{2\pi}{k} \epsilon^{ab} \epsilon_{\dot{a}\dot{b}}
+\text{Tr}
+(A_a B_{\dot{a}}
+A_b B_{\dot{b}}) $$
+and these are somehow going to localize. \\ \\
+\textbf{Why do Path Integrals Localize to Gaussians}\footnote{
+As soon as you hear the logic two things should happen:
+\begin{itemize}
+\item You should remember this has appeared in every single quantum mechanics textbook.
+\item Realize this is entirely bull-shit.
+\end{itemize}}\\ \\
+An action depends on a function.  By calculus of variations:
+$$ S(x + \delta x) = S(x) + \delta x \, S'(x) + \frac{(\delta x)^2}{2} S''(x)$$
+Our job should be to set $\boxed{S'(x) = 0}$ this is our critical point.  Feynman writes the path integral:
+$$ Z = \sum e^{S(x)} $$
+However our logic is the same, this sum should concentrate \textit{near} the classical trajectory:
+$$ Z \approx e^{x_\text{cl}} \sum_{x = x_\text{cl} + t \delta x}  e^{ \frac{1}{2}\, t^2 \,S''(x)}$$
 \newpage
 
 \fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
@@ -84,6 +103,8 @@ Do we know what this means?  I don't. Maybe some complicated infinite dimensiona
 
 \item Ofer Aharony, Oren Bergman, Daniel Louis Jafferis, Juan Maldacena \textbf{N=6 superconformal Chern-Simons-matter theories, M2-branes and their gravity duals}
 \texttt{arXiv:0806.1218v4}
+
+\item Richard Feynman \textbf{Path Integrals and Quantum Mechanics} Dover, 2010.
 
 
 \end{thebibliography}
