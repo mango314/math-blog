@@ -1,0 +1,64 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+%\usepackage{graphicx}
+\usepackage{graphics}
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{21}{18}
+
+\newcommand{\myhrule}{}
+
+\usepackage{tikz}
+
+\title{\textbf{ Examples:  ABJM Theory }}
+\author{John D Mangual}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{25}{30}\selectfont
+
+\maketitle
+
+\noindent There's not a whole lot to say until we write the formula:
+
+$$ \int \left( \prod_i e^{ik\pi (\theta_i^2 - \phi^2)} \right) \times \frac{\prod_{i \neq j}\big(2 \sinh \pi (\theta_i - \theta_j) 2 \sinh \pi (\phi_i - \phi_j)\big)}{\prod_{i,j}(2 \cosh \pi (\theta_i - \phi_j))^2} $$
+This integral could possibly be over $[0, 2\pi]^2$ but I am expecting it's over the real numbers:
+$$ (\theta, \phi) \in \mathbb{R}^N \times \mathbb{R}^N$$
+since this the domain of integration of the reals.  Here is the simplest one:
+$$ \int_{-\infty}^\infty d\theta \; e^{i k \pi \theta^2} = \sqrt{\frac{\pi}{8}} (1+i)$$
+I have not done that yet.  If we set $N=1$ or $N=2$ and this integral is totally feasible.
+
+\newpage
+
+\noindent ABJM theory could refer to two things:
+\begin{itemize}
+\item The $U(N) \times U(N)$ Chern-Simons-matter theory with $\mathcal{N}=6$ superconformal symmetry.  The first $U(N)$ is at level $k$ and the second $U(N)$ is at level $-k$.
+\item The $U(N) \times U(N)$ Gaussian matrix integral the CS-theory localizes to.  
+\end{itemize}
+Both of these are called \textbf{ABJM theory}.  This is rather confusing. \\ \\
+Here is another Chern-Simons formula:
+$$ Z_\text{CS} (N, k) = \frac{1}{\sqrt{N+k}} \prod_{\alpha > 0} 2 \sin \frac{\pi \,\alpha \cdot \rho}{k+N} $$
+where $\alpha_{ij} = e_i - e_j \in \mathbb{C}^N$ are vectors\footnote{This is called the \textbf{Cartan subalgebra} a term which should mean nothing right now.} and 
+$$ \rho = \frac{1}{2} \sum_{\alpha > 0} \alpha = \sum_{i=}^N \left(\frac{N+1}{2} - i \right) e_i $$
+and also $k \in \mathbb{Z}$ is a positive integer, and so is $n \in \mathbb{Z}$. \\ \\
+Therefore our Chern-Simons partition function $Z_\text{CS}$ should be a number.
+
+\newpage
+
+\fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
+
+\begin{thebibliography}{}
+
+
+\item Anton Kapustin, Brian Willett, Itamar Yaakov.  \textbf{Exact Results for Wilson Loops in Superconformal Chern-Simons Theories with Matter } \\ \texttt{https://terrytao.wordpress.com/2009/08/23/determinantal-processes/}
+
+\item Ofer Aharony, Oren Bergman, Daniel Louis Jafferis, Juan Maldacena \textbf{N=6 superconformal Chern-Simons-matter theories, M2-branes and their gravity duals}
+\texttt{arXiv:0806.1218v4}
+
+
+\end{thebibliography}
+
+
+\end{document}
