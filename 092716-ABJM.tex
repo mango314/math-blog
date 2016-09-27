@@ -72,26 +72,43 @@ I don't know what this means.   Maybe some complicated infinite dimensional obje
 \newpage
 
 \noindent The Chern-Simon's matter action is involved:
-$$ \frac{k}{4\pi} 
-\int \text{Tr} \big( A \wedge dA + \frac{2}{3} A^3 - \overline{\chi}\chi + 2D \sigma \big) $$
+$$ S =  \frac{k}{4\pi} 
+\int \text{Tr} \big( A \wedge dA + \frac{2}{3} A^3 - \overline{\chi}\chi + 2D \sigma \big) +W $$
 called a \textbf{multiplet} and a \textbf{superpotential} 
 $$W = \frac{2\pi}{k} \epsilon^{ab} \epsilon_{\dot{a}\dot{b}}
 \text{Tr}
 (A_a B_{\dot{a}}
 A_b B_{\dot{b}}) $$
-and these are somehow going to localize. \\ \\
-\textbf{Why do Path Integrals Localize to Gaussians}\footnote{
+and we're somehow going to localize this. \\ \\
+\textbf{Why Path Integrals Localize to Gaussians}\footnote{
 As soon as you hear the logic two things should happen:
 \begin{itemize}
 \item You should remember this has appeared in every single quantum mechanics textbook.
 \item Realize this is entirely bull-shit.
 \end{itemize}}\\ \\
-An action depends on a function.  By calculus of variations:
+An action $S$ depends on a function.  By calculus of variations:
 $$ S(x + \delta x) = S(x) + \delta x \, S'(x) + \frac{(\delta x)^2}{2} S''(x)$$
 Our job should be to set $\boxed{S'(x) = 0}$ this is our critical point.  Feynman writes the path integral:
 $$ Z = \sum e^{S(x)} $$
 However our logic is the same, this sum should concentrate \textit{near} the classical trajectory:
-$$ Z \approx e^{x_\text{cl}} \sum_{x = x_\text{cl} + t \delta x}  e^{ \frac{1}{2}\, t^2 \,S''(x)}$$
+$$ Z \approx e^{x_\text{cl}} \sum_{x = x_\text{cl} + t \delta x}  e^{ \frac{1}{2}\, (t\, \delta x)^2 \,S''(x_\text{cl})}$$
+\newpage
+
+\noindent Pestun cites the \textbf{Duistermaat-Heckman} theorem\footnote{This is a formula from \textbf{Symplectic Geometry} or closely related to \textbf{Hamiltonian Mechanics}.  }
+$$ \int_M \frac{\omega^n}{n!} e^{-\mu} = \sum_i \frac{e^{-\mu(x_i)}}{e(x_i)} $$
+Here are some notations we might need:
+\begin{itemize}
+\item $M$ is a symplectic compact manifold
+\item $\omega$ is a symplectic form
+\item $\dim M = 2n$ the number of dimensions
+\item $\mu$ is the moment map of the $U(1)$ action\footnote{It is a \textbf{rotation}.}
+\item $x_i$ are the fixed points of the rotation
+\item $e(x_i)$ is the product of the \textbf{weight} of te $U(1)$ action on the tangent space at $x_i$ 
+\end{itemize}
+$$ \int_M \alpha = \sum_i \frac{\pi^n \alpha_0(x_i)}{\sqrt{\det(\partial_\mu V^\nu (x_i))}}$$
+This \textbf{Berline-Vergne-Atiyah-Bott} formula is quite robust.  The low-end version of this formula is:
+$$ \int e^{t\, f(x)}\; dx \approx \frac{e^{t \, f(x_0)}}{\sqrt{f''(x_0)}} $$
+Because $f(x) \approx f(x_0) + \frac{t^2}{2} f''(x_0)$ near $x \approx x_0$.
 \newpage
 
 \fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
@@ -103,6 +120,8 @@ $$ Z \approx e^{x_\text{cl}} \sum_{x = x_\text{cl} + t \delta x}  e^{ \frac{1}{2
 
 \item Ofer Aharony, Oren Bergman, Daniel Louis Jafferis, Juan Maldacena \textbf{N=6 superconformal Chern-Simons-matter theories, M2-branes and their gravity duals}
 \texttt{arXiv:0806.1218v4}
+
+\item Vasily Pestun, Maxim Zabzine. \textbf{Introduction to localization in quantum field theory.} \texttt{arXiv:1608.02953}
 
 \item Richard Feynman \textbf{Path Integrals and Quantum Mechanics} Dover, 2010.
 
