@@ -42,7 +42,26 @@ so the generic WKB curve is a \textbf{logarithmic spiral}.
 $$ x^K + \sum_{k=2}^K u_k(z) x^{K-k} = 0$$
 the coefficients polynomials of suitable degree\footnote{There are lecture notes of Nigel Hitchen or Simon Donaldson -- one of them -- for undergraduates and he gives you the Riemann existence theorem.  I didn't think to much of this but it's \textbf{rare} for any good explanation of this result.} \\ \\
 This is a polynomial in $x$ of degree $K$, but let's use some earth-shattering language and say that $\Sigma$ it is $K$-fold cover of $C$, and that coefficients are sections of the sheaf $u_k \in H^0(C, K^{\otimes k})$.  Which in turn which define a curve $\Sigma \subset T^\ast C$. \\ \\ 
-And we will set $K = 2$.
+And we will set $K = 2$.  \newpage
+
+\noindent I can say a tiny bit more the ``Coulomb branch" of this theory is:
+$$ \mathcal{B} = \bigoplus_{k=1}^r H^0(C, K^{\otimes d_k}) $$
+so an element of the Coulomb branch is the as choosing these polynomial cofficients.  \\ \\
+I feel these singularities are interesting in their own right, but we have indicated other motives.  \\ \\
+Our choice of lie group $G = SU(2)$ or quiver $A = A_2$.  The central charge is the integral of this differential:
+$$ Z = \frac{1}{\pi} \otimes_\gamma \lambda $$
+yet this theory is also described by a case of Hitchin's equations:
+\begin{eqnarray}
+F + R^2 [ \phi, \overline{\phi}] &=& 0 \\
+\overline{\partial}_A \phi := \big( \partial_{\overline{z}} \phi_z + [A_{\overline{z}}, \phi_z)] \big) d\overline{z} \wedge dz &=& 0 \\
+\partial_A \phi := \big( \partial_z \phi_{\overline{z}} + [A_z, \phi_{\overline{z}})] \big) dz \wedge d\overline{z}&=& 0 
+\end{eqnarray}
+and the solutions to this equation can be combined into a single connection:
+$$ \mathcal{A} = \frac{R}{\xi} \phi + A + R \xi \overline{\phi} $$
+this is much analogous to how the \textbf{real} and \textbf{imaginary} parts combine to form a \textbf{\color{blue!50!white}{complex number}}.  These equations involve {\color{red!50!white}{twistor}} theory which for now is just a parameter $\xi \in \hat{\mathbb{C}}$ and especially $\xi \in {0, \infty}$ but also $\xi \in \hat{\mathbb{C}}$. \\ \\
+Then near $\xi = 0$ we know the singular behavior of $\mathcal{A}$ is determined by the zeros and polesof $\lambda$, but putting all this physics aside our singularities are of the type:
+$$ e^{ \frac{R}{\xi} \int^z \sqrt{\frac{p(x)}{q(x)}} \, dz} $$
+and which obviously has a bunch of essential singuarlties the tool we shall use to evaluate these are \textbf{resurgence analysis} otherwise known as ``steepest descent".
 \newpage
 
 \fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
