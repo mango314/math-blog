@@ -27,10 +27,10 @@ $$ \phi = \left( \begin{array}{cc}
 \lambda & 0 \\ 0 & -\lambda \end{array} \right) $$
 there are two independent $\mathcal{A}$-flat sections of the form:
 $$\psi^1 \sim \left( \begin{array}{c} 
-e^{- \frac{R}{\xi} \int^z \lambda } \\ 0 \end{array} \right), 
+e^{- \frac{R}{\zeta} \int^z \lambda } \\ 0 \end{array} \right), 
 \psi^2 \sim \left( \begin{array}{c} 0 \\ 
-e^{- \frac{R}{\xi} \int^z \lambda }\end{array} \right) $$
-therefore in the limit as $\xi \to 0$ we obtain \textbf{essential singularities}, which behave like $e^{1/z}$ near $z = 0$. 
+e^{- \frac{R}{\zeta} \int^z \lambda }\end{array} \right) $$
+therefore in the limit as $\zeta \to 0$ we obtain \textbf{essential singularities}, which behave like $e^{1/z}$ near $z = 0$. 
 
 \newpage
 
@@ -57,14 +57,28 @@ F + R^2 [ \phi, \overline{\phi}] &=& 0 \\
 \partial_A \phi := \big( \partial_z \phi_{\overline{z}} + [A_z, \phi_{\overline{z}})] \big) dz \wedge d\overline{z}&=& 0 
 \end{eqnarray}
 and the solutions to this equation can be combined into a single connection:
-$$ \mathcal{A} = \frac{R}{\xi} \phi + A + R \xi \overline{\phi} $$
-this is much analogous to how the \textbf{real} and \textbf{imaginary} parts combine to form a \textbf{\color{blue!50!white}{complex number}}.  These equations involve {\color{red!50!white}{twistor}} theory which for now is just a parameter $\xi \in \hat{\mathbb{C}}$ and especially $\xi \in {0, \infty}$ but also $\xi \in \hat{\mathbb{C}}$. \\ \\
-Then near $\xi = 0$ we know the singular behavior of $\mathcal{A}$ is determined by the zeros and polesof $\lambda$, but putting all this physics aside our singularities are of the type:
-$$ e^{ \frac{R}{\xi} \int^z \sqrt{\frac{p(x)}{q(x)}} \, dz} $$
+$$ \mathcal{A} = \frac{R}{\zeta} \phi + A + R \zeta \overline{\phi} $$
+this is much analogous to how the \textbf{real} and \textbf{imaginary} parts combine to form a \textbf{\color{blue!50!white}{complex number}}.  These equations involve {\color{red!50!white}{twistor}} theory which for now is just a parameter $\zeta \in \hat{\mathbb{C}}$ and especially $\zeta \in {0, \infty}$ but also $\zeta \in \hat{\mathbb{C}}$. \\ \\
+Then near $\zeta = 0$ we know the singular behavior of $\mathcal{A}$ is determined by the zeros and polesof $\lambda$, but putting all this physics aside our singularities are of the type:
+$$ e^{ \frac{R}{\zeta} \int^z \sqrt{\frac{p(x)}{q(x)}} \, dz} $$
 and which obviously has a bunch of essential singuarlties the tool we shall use to evaluate these are \textbf{resurgence analysis} otherwise known as ``steepest descent".
+
+\newpage
+
+\noindent -- TODO -- 
+
+\begin{itemize}
+\item what is a 2D wall-crossing formula?
+\item what is a 4D wall-crossing formula?
+\item how the WKB curves predict such formulas?
+
+\item how to obtain \textbf{flat-surfaces} and the \textbf{siegel-veech} constants.
+\end{itemize}
+
 \newpage
 
 \fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
+
 
 \begin{thebibliography}{}
 
@@ -73,6 +87,21 @@ and which obviously has a bunch of essential singuarlties the tool we shall use 
 
 \item Davide Gaiotto, Gregory W. Moore, Andrew Neitzke. \textbf{Wall-crossing, Hitchin Systems, and the WKB Approximation.} \texttt{ arXiv:0907.3987}
 
+\end{thebibliography}
+
+\vspace{0.25in}
+
+\begin{thebibliography}{}
+
+\item Alex Eskin, Howard Masur, Anton Zorich \textbf{Moduli Spaces of Abelian Differentials: The Principal Boundary, Counting Problems and the Siegel--Veech Constants} \texttt{math/0202134}
+
+\item David Sauzin.	\textbf{ Introduction to 1-summability and resurgence. } \texttt{arXiv:1405.0356}
+
+\item Tom Bridgeland, Ivan Smith.  \textbf{Quadratic differentials as stability conditions.} \texttt{1302.7030}
+
+\item Kohei Iwaki, Tomoki Nakanishi \textbf{Exact WKB analysis and cluster algebras} \texttt{1401.7094}
+
+\item David Aulicino \textbf{The Cantor-Bendixson Rank of Certain Bridgeland-Smith Stability Conditions} \texttt{1512.02336}
 
 \end{thebibliography}
 
