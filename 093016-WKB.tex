@@ -1,0 +1,61 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+%\usepackage{graphicx}
+\usepackage{graphics}
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{21}{18}
+
+\newcommand{\myhrule}{}
+
+\usepackage{tikz}
+
+\title{\textbf{ Examples:  WKB Approximation }}
+\author{John D Mangual}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{25}{30}\selectfont
+
+\maketitle
+
+\noindent We hit the ground running a bit here\footnote{I have been encouraged to look at this topic by various sources and have had the privilege to meet Davide Gaiotto during my one-time visit to Perimeter and Andrew Neitzke at various conferences.  Since the papers were written about 7 years ago.  These read somewhat like Harry Potter, and they are quite lengthy.  The reward, potentially is a new look at holomorphic functions and complex analysis (at least for me.} - why are we drawing all these curves in the first place.  I'll draw a few in a moment.  \\ \\
+The \textbf{WKB approximation} says if the guage where:
+$$ \phi = \left( \begin{array}{cc} 
+\lambda & 0 \\ 0 & -\lambda \end{array} \right) $$
+there are two independent $\mathcal{A}$-flat sections of the form:
+$$\psi^1 \sim \left( \begin{array}{c} 
+e^{- \frac{R}{\xi} \int^z \lambda } \\ 0 \end{array} \right), 
+\psi^2 \sim \left( \begin{array}{c} 0 \\ 
+e^{- \frac{R}{\xi} \int^z \lambda }\end{array} \right) $$
+therefore in the limit as $\xi \to 0$ we obtain \textbf{essential singularities}, which behave like $e^{1/z}$ near $z = 0$. 
+
+\newpage
+
+\noindent Locally the essential singularity looks like a spiral.  Let's solve:
+$$ e^{1/z} \in \mathbb{R} $$
+then $z = R e^{i\theta}$, 
+$$ z(t) = z_0 e^{t\, e^{i\theta}} $$
+so the generic WKB curve is a \textbf{logarithmic spiral}.
+$$ x^K + \sum_{k=2}^K u_k(z) x^{K-k} = 0$$
+the coefficients polynomials of suitable degree\footnote{There are lecture notes of Nigel Hitchen or Simon Donaldson -- one of them -- for undergraduates and he gives you the Riemann existence theorem.  I didn't think to much of this but it's \textbf{rare} for any good explanation of this result.} \\ \\
+This is a polynomial in $x$ of degree $K$, but let's use some earth-shattering language and say that $\Sigma$ it is $K$-fold cover of $C$, and that coefficients are sections of the sheaf $u_k \in H^0(C, K^{\otimes k})$.  Which in turn which define a curve $\Sigma \subset T^\ast C$. \\ \\ 
+And we will set $K = 2$.
+\newpage
+
+\fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
+
+\begin{thebibliography}{}
+
+\item Davide Gaiotto, Gregory W. Moore, Andrew Neitzke. \textbf{Wall-Crossing in Coupled 2d-4d Systems.} \texttt{ arXiv:1103.2598v1}
+
+
+\item Davide Gaiotto, Gregory W. Moore, Andrew Neitzke. \textbf{Wall-crossing, Hitchin Systems, and the WKB Approximation.} \texttt{ arXiv:0907.3987}
+
+
+\end{thebibliography}
+
+
+\end{document}
