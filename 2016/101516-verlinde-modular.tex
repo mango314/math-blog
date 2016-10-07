@@ -158,7 +158,38 @@ It's hard to draw the picture of what holomorphic means... that the real and ima
 
 \newpage
 
-\noindent 
+\noindent A \textbf{free field} or more specifically a \textbf{free boson} or \textbf{gaussian model} as an action:
+$$ S = \int \mathcal{L} = \frac{1}{2\pi} \int \partial X \overline{\partial X} $$
+and Ginsparg tells us the propagator should be:
+$$ \langle X(z, \overline{z})\, X(w, \overline{w} )\rangle = - \frac{1}{2} \log |z - w| $$
+What is a conformal field anyway?  Length behaves nicely under conformal mappings:
+$$ ds^2 \mapsto \left( \frac{\partial f}{\partial z} \right)
+\bigg( \frac{\partial \overline{f}}{\partial \overline{z}} \bigg) ds^2 $$
+This field splits into a holomorphic and anti-holomorphic part\footnote{they are not complex conjugates... $x$ depends on $z$ and $\overline{x}$ depends holomorphically on $\overline{z}$.  Nature somehow requires the real and imaginary parts to behave separate but equal -- in reality creating two different worlds.}
+$$ X(z, \overline{z}) = \frac{1}{2}( x(z) + \overline{x}(\overline{z}) ) $$
+and I can't seem to find how $X$ behaves under conformal mappings $z \mapsto f(z)$.
+
+\newpage
+
+\noindent Conformal fields seem to be \textbf{representations of the Virasoro algebra} describing things that transform nicely under conformal maps:
+$$ \ell_n: z \mapsto z + \epsilon \, z^n $$
+I am looking for a formula for $x(z)$.  Reading many many times I try a formula I saw elsewhere:
+$$ x(z) = \sum_{n = 0}^\infty a_n z^n $$
+where $a_n$ is either an\footnote{The first version -- which makes the most sense to me -- I learned from Yuval Peres at PCMI 2007.  However it comes from work of Mikhail Sodin.}
+\begin{itemize}
+\item Gaussian random variable with mean 0 and norm $1$
+\item a simple harmonic oscillator $[a_m, a_n] = \delta_{m, n}$
+\end{itemize}
+There is a way to pass between a Gaussian and harmonic oscillator that I reviwed before\footnote{There was a trick in symplectic geometry that takes one random walk and turns it into a harmonic oscillator. It could be the Distermaat-Heckman theorem.  When I wrote one thing it magically turned into the other.  This is a linear space, so it's reasonable to assume this will work in infinite dimensions.  } \\ \\
+Oh, here is a free fermion:
+$$ S = \frac{1}{8\pi} \int \psi \,\overline{\partial}\psi + \overline{\psi} \,\partial \overline{\psi} $$
+
+
+\newpage
+
+\noindent There is a lot to be unhappy with here.  And yet we continue.\\ \\
+Section 8 of Ginsparg shows us how to put free bosons on a torus\dots
+
 
 \newpage
 
@@ -175,6 +206,8 @@ Volume 300, 1988, Pages 360-376
 \item Gregory Moore, Nathan Seiberg \textbf{Lectures on Rational Conformal Field Theory} \texttt{...}
 
 \item Paul Ginsparg.  \textbf{Applied Conformal Field Theory} \texttt{arXiv:hep-th/9108028}
+
+\item Mikhail Sodin. \textbf{Zeroes of Gaussian analytic functions} \texttt{arXiv:math/0410343}
 
 
 \end{thebibliography}
