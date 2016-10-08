@@ -10,6 +10,14 @@
 
 \newcommand{\myhrule}{}
 
+\newcommand{\dash}{
+\begin{tikzpicture}[scale=0.35]
+\foreach \x in {1,...,55}{
+	\draw (\x,-0.25)--(\x+0.5,0.25)--(\x+1,-0.25);
+}
+\end{tikzpicture}
+}
+
 \usepackage{tikz}
 
 \title{\textbf{ Examples:  Theta Functions}}
@@ -22,11 +30,7 @@
 \maketitle
 
 \noindent  Conformal field theory is a central topic in mathematical physics\footnote{What does that even mean?  Here it means there are other math problems  in fields like Number Theory and Topology and Chern Simons Theory -- and specific sources -- which point to the paper we will review today. }.  What is Conformal Field Theory? \\
-\begin{tikzpicture}[scale=0.35]
-\foreach \x in {1,...,55}{
-	\draw (\x,-0.25)--(\x+0.5,0.25)--(\x+1,-0.25);
-}
-\end{tikzpicture}
+\dash
 The rational gaussian model has a single scalar free field $\phi$ which is compactified on a circle with $R^2 \in \mathbb{Q}$.  \\ \\
 This theory has a large group of symmetries -- an extension of the the $U(1)$ current algebra. \\ \\
 The $N$ primary fields $[\phi_p]$ are vertex-operators with momentum $\frac{p}{\sqrt{N}}$ and $p \in \mathbb{Z}_N$. \\ \\
@@ -188,9 +192,40 @@ $$ S = \frac{1}{8\pi} \int \psi \,\overline{\partial}\psi + \overline{\psi} \,\p
 \newpage
 
 \noindent There is a lot to be unhappy with here.  And yet we continue.\\ \\
-Section 8 of Ginsparg shows us how to put free bosons on a torus\dots
+Section 8 of Ginsparg shows us how to put free bosons on a torus\footnote{ and the compactification means the image is a cylinder $S^1 \times \mathbb{R}$ and $X \equiv X + 2\pi r$.  All that seems to matter is the ring (order?) $\frac{1}{2r}\mathbb{Z} + \mathbb{Z}r $ and different $r$'s give the same range of numbers. I'm getting there}\dots  \\ 
+\dash
+My logic: all scalars are real numbers, so they all commute.  CFT has three similar-looking objects:
+\begin{itemize}
+\item fields
+\item states
+\item operators
+\end{itemize}
+A conformal field theory \textbf{is} a quantum field theory:
+$$ \text{CFT} \subset \text{QFT} $$
+A field could be a function $\phi: \mathbb{R}^2 \to V$ where $V$ is a vector space of some kind describing the feelings of the particle. \\ \\
+The group of conformal transformations in the Eucliean plane should act on these fields in a nice way.  These nice actions are called \textbf{representations} -- and occasionally by other names. \\ \\
+I am not the first person to lose sleep over a mathematical definition of CFT - there is also \textbf{Graeme Segal}, who has done much of that for me. \\
+\begin{tikzpicture}[scale=0.35]
+\draw (0,0)--(55,0);
+\end{tikzpicture}
+The representations of the conformal group are known as Verma modules.  \\ \\
+Even easier (in flat space\dots) there is a recipe for quantizing the Hamiltonians\footnote{and now we complain that we don't really know or understand the Hamiltonian formalism.  My advice is to find an interesting motion that you like and then compute the Hamiltonian.  Advice \#2 -- they are always rotations. }  that one learns in the QFT class.   Start from Classical mechanics:
+\begin{eqnarray*} \dot{q} &=& \; \;\,\frac{\partial H}{\partial p} = \{ q, H  \} \\ 
+\dot{p} &=& -\frac{\partial H}{\partial q} = \{ p, H  \}  \end{eqnarray*}
+ We simply decree that the Poisson bracket\footnote{Newton comes up with his awesome mechanics and we start solving free-body diagrams for two centuries.  Eventually we have trains and textiles and so forth.  If you solve these things all day, they kind of start to look the same.  Hamilton's equations (but first Lagrange) streamlined all of that.
+ 
+As far as I can tell... the Hamiltonian is just a way to say ``total energy" -- and the Hamiltonian is \textit{generating} the flow of the position and momentum $(p,q)$.
 
+From Hamiltonian's viewpoint, the position and conjugate momentum are interchangeable.  So we stop calling it $x(t)$ and call it $q(t)$ because it looks just like $p(t)$. } are replaced by Commutator brackets. 
+\begin{eqnarray*} \dot{q} &=& [ q, H  ] \\  
+\dot{p} &=&  [ p, H  ]  \end{eqnarray*}
+and then our QFT class proceeds to write hundreds of pages of algebra without any insight.  \newpage
 
+In QFT, the bosons still anti-commute.  If there is a boson we use a commutator:
+$$ [a,b] = ab - ba $$
+if we have a fermion we an anti-commutator:
+$$ \{ a, b\} = ab + ba $$
+which is just plain addition.
 \newpage
 
 \fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
@@ -208,6 +243,8 @@ Volume 300, 1988, Pages 360-376
 \item Paul Ginsparg.  \textbf{Applied Conformal Field Theory} \texttt{arXiv:hep-th/9108028}
 
 \item Mikhail Sodin. \textbf{Zeroes of Gaussian analytic functions} \texttt{arXiv:math/0410343}
+
+\item Graeme Segal. \textbf{The definition of conformal field theory} See: \texttt{https://ncatlab.org/nlab/show/conformal+field+theory}
 
 
 \end{thebibliography}
