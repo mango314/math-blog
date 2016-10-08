@@ -243,7 +243,14 @@ a(z) & b(z) \\ -\overline{b}(z) & \overline{a}(z) \end{array} \right]$$
 \newpage
 
 \noindent I don't think the book ever tells us exactly how $\phi$ acts on the space of states $|n(z) \rangle$ , or how the Virasoro algebra acts. \\ \\
-and then I broke out Senechal.
+and then I broke out Senechal.  I suppose all Verline has in mind are the eq on page 167:
+$$ \phi(x + L, t) = \phi(x,t) + 2\pi m \, R $$
+the free field goes around a cylinder $m$ times\footnote{If I wanted a ``free field" of some kind going around a circle --- as time progresses I just do a random walk... but on the condition that after a fixed amount of distance $L$ I have returned to where I started.  Since it is a circle I could have gone around any number of times.  That is the \textbf{winding number} $m \in \pi_1(S^1) = \mathbb{Z}$. }  and the Senechal-Di Francesco textbook furnishes us with a formula:
+$$ \phi(x,t) = \phi_0 + \frac{n}{gRL} t + \frac{2\pi R m}{L} x + \frac{i}{\sqrt{4\pi g}} \sum_{k \neq 0} \frac{1}{k} \big( a_k e^{2\pi i k(x-t)/L} - \overline{a}_{-k} e^{2\pi i k (x+t)/L} \big) $$
+the \textbf{homomorphic} part (using only $z$) is
+$$ \partial x(z)
+= x_0 - i \bigg( \frac{n}{4\pi g R} + \frac{1}{2} m R \bigg)\ln z + \frac{i}{\sqrt{4\pi g}}\sum_{k \neq 0} \frac{1}{k} a_k z^{-k}  $$
+We will try again at some future time.  (Maybe soon!).
 
 \fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
 
