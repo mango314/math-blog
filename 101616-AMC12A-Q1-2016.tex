@@ -18,6 +18,12 @@
 \end{tikzpicture}
 }
 
+\newcommand{ \sk }{
+\begin{tikzpicture}
+\draw (0,0)--(18,0);
+\end{tikzpicture} \\
+}
+
 \usepackage{tikz}
 
 \title{\textbf{ Problem:  AMC 12A (2016)}}
@@ -59,6 +65,12 @@ That would be choice \\
 and that was none of the choices\,...
 $$ \frac{11 \times 10! - 10!}{9!} = (11 - 1) \times \frac{10 \times 9!}{9!}= 100$$
 The answer is choice \textbf{(B)}.  
+
+\sk
+\textbf{Alterantive} If we took remainders upon division modulo 10.  Forget it.
+$$  \frac{11! - 10!}{9!}$$
+$9!$ is a very complicated thing.  Since $2 < 9$ and $5 < 9$ we have that $10$ divides $9!$ -- this is not relevant.
+$$ \frac{11 \times 10 \times 9! - 10 \times 9!}{9!} = 11 \times 10 - 10 = 100$$ 
 
 
 \end{document}
