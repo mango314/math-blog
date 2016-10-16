@@ -31,7 +31,7 @@
 \date{}
 \begin{document}
 
-\fontfamily{qag}\selectfont \fontsize{25}{30}\selectfont
+\fontfamily{qag}\selectfont \fontsize{25}{32}\selectfont
 
 \maketitle
 
@@ -72,5 +72,43 @@ $$  \frac{11! - 10!}{9!}$$
 $9!$ is a very complicated thing.  Since $2 < 9$ and $5 < 9$ we have that $10$ divides $9!$ -- this is not relevant.
 $$ \frac{11 \times 10 \times 9! - 10 \times 9!}{9!} = 11 \times 10 - 10 = 100$$ 
 
+\newpage
 
+\noindent The peculiar thing about this problem is that we rarely need the last decimal place of a large number!  If I said:
+$$ 10! \approx 10^{10}$$
+that might be convincing enough.  But that is not right since: 
+\begin{itemize}
+\item $  1 < 10$
+\item $ 2 < 10$
+\item $ 3 < 10$
+\item $\dots$
+\item $ 9 < 10$
+\item $10 = 10$
+\end{itemize}
+Then if we multiply all these inequalities together
+$$ 1 \times 2 \times 3 \times \dots \times 9 \times 10 < 10^{10}$$
+So how bad is our estimate?  That must wait for another time... 
+
+\newpage
+
+\noindent The other place this number might appear:
+$$ 6 = 3! = \# \big| \{ ABC, ACB, BAC, BCA, CAB, CBA \} \big|$$
+The factorials $n!$ count the number or re-orderings of a word. \\ \\ So how do we ascribe meaning to this? \\
+$$  \frac{ \text{rearrange 11 letters}
+- \text{rearrange 10 letters}}{ \text{rearrange 9 letters}}$$
+Let's rearrange the letters $\{ a,b,c,d,e,f,g,h,i,j,k\}$.
+$$  \text{any letter is not }a \Big| \text{ any letter } \Big| \text{everything else} $$
+and this is another reason why $\boxed{10! < 10^{10}!}$ is because we are not allowing repeats: \\
+\begin{itemize}
+\item \textbf{NO} AABBCCDDEEF
+\item \textbf{YES} ABCDEFGHIKJ
+\end{itemize}
+
+\newpage
+
+\noindent \textbf{Scratchwork} if I could find the last digit mod 10 I'd be done:
+$$ \frac{11! - 10!}{9!}  \equiv x \text{ mod } 10 $$
+Then multiply both sides by $9!$ some very large perculiar number we don't fully understand.
+$$ 11! - 10!  \equiv 9! x \text{ mod } 10 \times 9!$$
+Rather disappointly this does not yield anything new.  This merely yields one of the solutions we've presented before.
 \end{document}
