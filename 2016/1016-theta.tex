@@ -47,6 +47,47 @@ $$ (\pm x_1)^2 + (\pm x_2)^2 + (\pm x_3)^2 = n $$
 However let's not to forget to try far more basic approaches such as the Hasse Princple.\footnote{Or the mean value theorem! Let $f: \mathbb{R}^3 \to \mathbb{R}$ show that $|\frac{1}{6}\sum_{k \in \{1,2,3\}} f(x \pm dx_k) - f(x)|\ll \partial f (x)$ (this is ambiguous)}
 
 \newpage
+
+\noindent \textbf{Ex \#1A} What is a modular form?  What is a cusp form?  How do we check some crazy series is holomorphic?  I have done many many exercie, and now it's show-time and I've drawn a blank.  There are very good notes of Zagier which gave me my first clue. \\ \\
+\textbf{Theta Functions are Modular Forms} His proof is a little bit succinct, and we'll adapt a version from \textit{Methods of Mathematical Physics I} by Courant and Hilbert.  I can almost do it myself.  The Fourier coefficients are merely:
+$$ a_m = \int_0^1 \bigg[ \sum_{n = - \infty}^\infty e^{ - n^2 x} \bigg] e^{2\pi i \, m x} \; dx $$
+and the we apply the Poisson summation formula $\sum f(n) = \sum \hat{f}(n)$.  We can talk about how to interchange $\sum \int = \int \sum$ and when such an equality can be profitably used.  \\ \\
+Now I am going to copy Courtant-Hilbert and here's why.  Consider the theta function over $y + \mathbb{Z}$ with $0 < y < 1$.
+$$\phi(y) = \sum e^{- \pi(n + y)^2 \, x}$$
+This function is periodic in $y$ -- this has the effect of warpping the complex plane $\mathbb{C}$ about a cylinder $S^1 \times \mathbb{R}$.
+$$ \hspace{1.04in}\phi(y) = \sum_{n =0}^\infty e^{- \pi(n + y)^2 \, x}
+= \sum_{n =0}^\infty a_n e^{2\pi i n y}$$
+The Fourier coeffcients are pretty mechanical to compute for an upper leven Engineer or math student (if they remember integrals)
+$$ \hspace{1in} a_m = \int_0^1 \sum_{n = - \infty}^\infty e^{- \pi (n+t)^2 \, x - 2\pi i \, mt} \, dt $$
+We are adding a function with many copies of itself shifted by  time $t \mapsto t + n$.  And $\int \sum = \sum \int$:
+$$ \hspace{1.04in} a_m = \sum_{n = - \infty}^\infty \int_0^1 e^{- \pi (n+t)^2 \, x - 2\pi i \, mt} \, dt $$
+For each term we can move $[0,1]$ to $[n, n+1]$.  Using properties of the Gaussian integral:
+$$ a_m = \int_{\infty}^\infty e^{-\pi t^2 x - 2\pi i mt} dt = e^{-\pi n^2 / x}\int_{-\infty}^\infty e^{-\pi x \big(t + i m / x \big)^2} \, dt = \frac{e^{-\pi m^2 / x}}{\sqrt{x}}$$
+The Gaussian is (almost) it's own Fouier transform, and therefore, $\theta$ is going to have these modular properties.  How did we know the integral?
+$$ 
+\int_{-T}^T e^{-\pi x \big(t + i m / x \big)^2} \, dt
++ \int_{T}^{T+im/x} e^{-\pi x \,t ^2} \, dt
+- \int_{-T}^{-T+im/x} e^{-\pi x \,t ^2} \, dt
+- \int_{-T}^T e^{-\pi x \,t^2} \, dt
+= 0 $$
+This Gaussian has no poles so this is always zero by Cauchy's theorem.\footnote{Do I believe Cauchy's Theorem here?  If I cut the rectangle $-T, T, T + im/x, -T + im/x $ into very small squares (or triangles) I can verify the integral around these rectangles is zero.  Do I really believe I have the resources to compute all those tiny integrals? Or that the combined errors from all those linear approximations doesn't lead to extra contributions?}.  Then
+$$ \theta(x) = \sum_{n = - \infty}^\infty e^{\pi n^2 \, x}= \phi(0) = \frac{1}{\sqrt{x}}
+\sum_{n = - \infty}^\infty e^{\pi n^2 / x}
+= \frac{1}{\sqrt{x}} \theta(\frac{1}{x})$$
+
+\newpage
+
+\noindent We gave really shifty derivation of Poisson summation in the case of the Gaussian function.  And 3rd year math student should be concerned by any equation of the type:
+$$ \sum_{n=0}^\infty \int_0^1 a_n(x) \, dx = 
+\int_0^1 \sum_{n=0}^\infty a_n(x) $$
+The rearrangement step is a bit worrisome I can try to reproduce it.  This looks somewhat mysterious:
+$$\hspace{-0.05in} \sum_{n=-\infty}^\infty \int_0^1 \phi(t + n ) \, dt = \int_{-\infty}^\infty \phi(t) \, e^{-2\pi i\, nt} \, dt $$
+This rearrangement trick\footnote{idea} looks almost like the Poisson summation formula itself:
+$$ \hspace{0.4in}\sum_{n = - \infty}^\infty \phi(n) = \sum_{n = - \infty}^\infty \int_{-\infty}^\infty \phi(t) e^{- 2\pi i\, t} dt $$
+and the Gaussian itself $\phi(t) = e^{-t^2}$ has some extra symmetries as we are learning!  \\ \\
+Despite being rather advanced --- a solid review of 3rd and 4th year analysis and geometry yields some partial progress in that direction.
+
+
 %\fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
 
 
