@@ -54,7 +54,7 @@ $$ a_m = \int_0^1 \bigg[ \sum_{n = - \infty}^\infty e^{ - n^2 x} \bigg] e^{2\pi 
 and the we apply the Poisson summation formula $\sum f(n) = \sum \hat{f}(n)$.  We can talk about how to interchange $\sum \int = \int \sum$ and when such an equality can be profitably used.  \\ \\
 Now I am going to copy Courtant-Hilbert and here's why.  Consider the theta function over $y + \mathbb{Z}$ with $0 < y < 1$.
 $$\phi(y) = \sum e^{- \pi(n + y)^2 \, x}$$
-This function is periodic in $y$ -- this has the effect of warpping the complex plane $\mathbb{C}$ about a cylinder $S^1 \times \mathbb{R}$.
+This function\footnote{This function is an Eisenstein series?} is periodic in $y$ -- this has the effect of warpping the complex plane $\mathbb{C}$ about a cylinder $S^1 \times \mathbb{R}$.
 $$ \hspace{1.04in}\phi(y) = \sum_{n =0}^\infty e^{- \pi(n + y)^2 \, x}
 = \sum_{n =0}^\infty a_n e^{2\pi i n y}$$
 The Fourier coeffcients are pretty mechanical to compute for an upper leven Engineer or math student (if they remember integrals)
@@ -85,16 +85,29 @@ $$\hspace{-0.05in} \sum_{n=-\infty}^\infty \int_0^1 \phi(t + n ) \, dt = \int_{-
 This rearrangement trick\footnote{idea} looks almost like the Poisson summation formula itself:
 $$ \hspace{0.4in}\sum_{n = - \infty}^\infty \phi(n) = \sum_{n = - \infty}^\infty \int_{-\infty}^\infty \phi(t) e^{- 2\pi i\, t} dt $$
 and the Gaussian itself $\phi(t) = e^{-t^2}$ has some extra symmetries as we are learning!  \\ \\
-Despite being rather advanced --- a solid review of 3rd and 4th year analysis and geometry yields some partial progress in that direction.
+Despite being rather advanced --- a solid review of 3rd and 4th year analysis and geometry yields some partial progress in that direction. \\ \\
+The theta function has two symmetries: $z \mapsto z + 1$ and $z \mapsto -1/4z$: 
+$$ \theta(z + 1) = \theta(z) \quad\text{and}\quad \theta(-1/4z) = \sqrt{-2\pi i}\;\theta(z) $$
+so $\theta$ is a \textbf{half-integer weight  modular form}.  $\sqrt{dz}$ is not such a bad object it has to do with spinors. \\ \\ \\ \\
+\textbf{Ex \#1B} Show $\theta(u; z)$ is a cusp form over $\Gamma_0(4)$ of weight $\frac{3}{2} + \ell$ for $\ell \geq 1$.  In the case $\ell = 0$ $\theta(1; z) = \theta(z)$ is \textit{not} a cusp form:
+$$ \theta(z) = \mathbf{1} + 2q + 2q^4 + 2q^9 + \dots $$
+Verify all these functions are holomorphic on $\mathbb{H}$. \\ \\
+\textbf{Ex \#1C} What are the spherical harmonics of degree $\ell$ ? These are functions on the sphere $x^2 + y^2 + z^2 = 1$ of degree $\ell$, so $ x^i y^j z^k$ with $ i + j + k = \ell$.  Are these orthonormal over $L^2 (S^2)$ ?  
+$$ \int_{S^2} x^2 \, dS = \;? $$
 
+\newpage 
 
-%\fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
-
+\fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
 
 \begin{thebibliography}{}
 
 \item Emil Artin and George Whaples \textbf{Axiomatic characterization of fields by the product formula for valuations} Bull. Amer. Math. Soc.
 Volume 51, Number 7 (1945), 469-492.
+
+\item Richard Courant, David Hilbert \textbf{Methods of Mathematical Physics Vol 1} \\
+\texttt{https://archive.org/details/MethodsOfMathematicalPhysicsVolume1}
+
+\item David Mumford \textbf{Lectures on Theta} Birkhauser, 2010.
 
 
 
