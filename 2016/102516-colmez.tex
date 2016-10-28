@@ -111,8 +111,67 @@ The DeMoivre-Laplace limit formula - for the middle binomial coefficient
 $$ \frac{(2n)!}{n! \times n!} =  \binom{2n}{n} \asymp
 \; 2^{2n} \times \frac{1}{ \sqrt{\pi n}} $$
 Somehow these stupid objects have to yield statements about Galois theory, L-functions, etc.
+$$ \sin \pi x = \pi x\, \prod_{n \neq 0} \bigg(1 - \frac{x}{n}\bigg) $$
+\newpage
+
+\noindent Let's do an attempt at the modern language:
+\Large
+$$
+\begin{array}{ccccc}
+\frac{\zeta_E'(0)}{\zeta_E(0)} &=& \frac{1}{12h}\sum_{i=1}^h \log \big( \Delta(\mathfrak{a}_i)\big)
+\Delta(\mathfrak{a}_i^{-1})\big)&=&-2h_{\text{Fal}}(X) + \frac{1}{2} \log D \\ 
+\uparrow \downarrow & & & & || \\
+\frac{\zeta'(0)}{\zeta(0)}
++ \frac{L'(\chi, 0)}{L(\chi, 0)} &=&
+\log 2\pi - \log D + \frac{w}{2h}\sum_{x=1}^{D-1} \chi(x) \log \Gamma(\frac{x}{D})&=& ht(1 + \chi_\text{Art})
+\end{array}
+ $$
+well I drew ``$||$" as $\uparrow \downarrow$ for a sideways equal sign.  The equal signs turn into arrows anyway.  This is Colmez diagram of all the different terms.\footnote{Notice the \textbf{logarithmic derivative} $d \log f(x) = \frac{f'(x)}{f(x)}\, dx$ For example: $p(x) = \prod(x - c)$ then $d \log p(x) = \frac{p'(x)}{p(x)}=\sum \frac{1}{x-c} $}
+\begin{itemize}
+\item $\zeta_E$ is the zeta function for elliptic curve
+\item $L(\chi), 0)$ is the L-function at $0$ for basically $1+1+1\dots$ (forever) $$1\cdot \chi(0) + 1 \cdot \chi(1) + \dots = \sum_{n \geq 0} 1 \cdot \chi(n)$$
+Remember that $\zeta(0) = \frac{1}{2}$ and $\zeta'(0) = - (1/2) \log |2\pi|_\infty$ where $|\cdot|_\infty$ is the infinite place corresponding to $\mathbb{R}$.
+\item Does this normalization look right with the $\log 2\pi$? 
+$$ \log |2\pi|_\infty - \sum_{p < \infty} \frac{\log p}{p-1} = 0 $$
+\item $X$ is an elliptic curve exhibiting \textbf{complex multiplication} and specifically the ring is $\mathcal{O}_E$.
+\item I don't know what an ``Artin character" is
+\item $\Delta$ is the modular form of weight 12: $\Delta(a) = q\prod (1-q^n)^{-24}$
+\item $E = \mathbb{Q}(\sqrt{-D}) \subset \overline{\mathbb{Q}}$ is a quadratic extention of the fractions. and $\mathfrak{a}$ is a ``representative of the group of clsses of fraction ideals of $E$ that on considers as a <<net>> of $\mathbb{C}$"
+\end{itemize}
+And then one looks at the Faltings height conjecture - named after Colmez - and they look quite similar. \textbf{Not} doing that today.
 
 \newpage
+
+\noindent What seems to be called into question is our use of the very integers $\mathbb{Z}$ and the  number $\pi$ or circle $\bigcirc$.  Our entire education is build on learning to use these two symbols as a model of the real world. 
+\begin{tikzpicture}
+\draw (0,0)--(20,0);
+\end{tikzpicture} \\
+Colmez offers two proof (strategies) for the Chowla-Selberg formula.  The two formulas in the middle are equivalent either:
+\begin{itemize}
+\item moving to the left ( \textbf{analysis} )
+\item moving to the right ( \textbf{geometry} )
+\end{itemize}
+So here are all the ingredients we need: the middle binomial coefficients, the eta function, some number fiels, some crazy height, some tori. \\ \\
+And we'll be almost not quite modern - Colmez conjecture (this is almost purely geometric) involve:
+\begin{itemize}
+\item Logarithmic derivative of Artin L-functions at $s= 0$
+\item Faltings heights of Abelian varieties with complex multiplication
+\item It generalizes $\zeta'(0)/\zeta(0) = \log 2\pi$.
+\end{itemize}
+Pierre Colmez takes some effort to make it accessible\footnote{to someone who has been studying math 20 years} writing:
+$$\prod_{p \in \mathcal{P}} \prod_{\sigma\in H_k} | \langle \omega_\tau^\sigma, \omega_{c\tau}^\sigma , u_\sigma \rangle_p |_p = 1 $$
+Or there is something about the Faltings height and abelian varieties
+$$ ht(a) = Z(a^\ast, 0) \text{ for all } a \in \mathcal{CM}^0 $$
+perhaps CM stands for ``complex multiplication".  For all abelian varieties this height should equal this partition function defined over a very exotic number system.
+
+\newpage
+
+\noindent Where is the factorial?  I started asking about $\Gamma(\frac{1}{2}) = \sqrt{\pi}$ and got this mess.  
+$$\Gamma(\tfrac{1}{2}) = \sqrt{\pi} = \lim_{n \to \infty}
+\frac{ \sqrt{n} \;n!}{ \frac{1}{2} \times \frac{3}{2} \times \frac{5}{2} \times \dots \times \big(\frac{1}{2}+n\big)} $$
+
+\newpage
+
 \fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
 
 
@@ -126,6 +185,9 @@ Somehow these stupid objects have to yield statements about Galois theory, L-fun
 
 \item Bruno Klingler, Emmanuel Ullmo, Andrei Yafaev
 \textbf{Bi-algebraic geometry and the André-Oort conjecture} Preprint.
+
+\item Stephen Hawking \textbf{Zeta function regularization of path integrals in curved spacetime} Comm. Math. Phys.
+Volume 55, Number 2 (1977), 133-148.
 
 \end{thebibliography}
 
