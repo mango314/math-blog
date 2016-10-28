@@ -1,0 +1,116 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+%\usepackage{graphicx}
+%\usepackage{graphicx}
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{21}{18}
+
+\newcommand{\myhrule}{}
+
+\newcommand{\dash}{
+\begin{tikzpicture}[scale=0.35]
+\foreach \x in {1,...,55}{
+	\draw (\x,-0.25)--(\x+0.5,0.25)--(\x+1,-0.25);
+}
+\end{tikzpicture}
+}
+
+\usepackage{tikz}
+
+\title{\textbf{ Examples:  Gamma Functions}}
+\author{John D Mangual}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{25}{30}\selectfont
+
+\maketitle
+
+\noindent  I found this neat little formula on the internet:
+$$ \frac{\Gamma(\frac{1}{24})\Gamma(\frac{11}{24})}
+{\Gamma(\frac{5}{24})\Gamma(\frac{7}{24})}
+= \sqrt{3} \cdot \sqrt{2 + \sqrt{3}} $$
+My question was answered by Noam Elkies\footnote{Fellow Stuyesant alumnus} using various cheap multiplication tricks, he derives th formula in question.  He explains to me a bit what I am looking at, and why some of these equations might be happening.\footnote{Equations like these are divorced from applications.  I go to an engineer's desk and read one equation on page of his notes - completely irrelevant to the application he has in mind - and run with it.}\\ \\
+The core equation: \textbf{mirror formula} is really kind of the only formula there is for the Gamma function:
+$$ \Gamma(z) \Gamma(1-z) = \frac{\pi}{\sin \pi z}$$
+\newpage
+
+\noindent Given the connection between the Gamma function and the factorial: $\Gamma(n+1)=n!$ we get a relation between the factorial and the sine.\footnote{De Moivre's formula $ e^{ix} = \cos \theta + i \sin \theta $ is already quite exotic since it claims that exponentials and trigonometry are related.  More fudamentally:
+$$ \textbf{size} \asymp \textbf{angle} $$ 
+The relationship between factorial $n!$ and trig function $\sin \theta$ is a bit more exotic.} \\ \\
+Here is one more:
+$$ F( \tfrac{1}{4},\tfrac{1}{4};1;\tfrac{1}{64}) = \sqrt{\frac{2}{7\pi}} \times \left[\frac{ 
+\Gamma(\frac{1}{7})\Gamma(\frac{2}{7})\Gamma(\frac{4}{7})
+}{
+\Gamma(\frac{3}{7})\Gamma(\frac{5}{7})\Gamma(\frac{6}{7})
+}\right]^{1/2}$$
+expressed in terms of the hypergeometric function.  I could not find an infinte product for general hypergeometric funtions, but there could be for special values.
+$$F( \tfrac{1}{4},\tfrac{1}{4};1;\tfrac{1}{64})
+= \frac{\Gamma(1)}{\Gamma(\frac{3}{4})\Gamma(\frac{1}{4})} \int_0^1  \frac{dz}{\sqrt[4]{z^3(1-z)(1-zx)}} $$
+and $\Gamma(1) = 0! = 1!$ Just trying to make it look like binomial coefficients. \\ \\
+In general there is something called \textbf{Chowla-Selberg} formula.  Legendre knew
+$$ \int_0^{\frac{\pi}{2}} \frac{dt}{1 - k^2 \sin^2 t}
+= \frac{2^{2/3} 3^{1/4}}{8\pi})\Gamma(\frac{1}{3})^3 $$
+where $k = \sin \frac{\pi}{12}$ and there is an Elliptic curve related to $\mathbb{Q}(\sqrt{-3})$. \\ \\
+And Elkies knew these special integrals are artifacts of possibly
+\begin{itemize}
+	\item  Colmez conjecture 
+	\item  Abelian varieties or Shimura Varieties
+	\item  Chowla-Selberg or Gross-Zagier formulas
+	\item  Complex multiplication
+	\item  Motives, Homology, etc
+	\item  Andre-Oort conjecture
+\end{itemize}
+Unfortunately these are written in very complicated abstract language.   It is very likely that classical computations (with an $\int$-sign) could exhibit they phenomenon they are talking about. \\ \\
+One shorthand they use is to say:
+$$ \phi \in H^1 \longleftrightarrow \int_a^b  \in H^1   $$
+I have written the correspondence in schematic and incorrect fashion.
+
+\newpage
+
+\noindent With zero knowledge of this field a few surprises already:
+\begin{itemize}
+	\item 
+\end{itemize}
+At the heart is the first contour integral we always know:
+$$  \int_{-\infty}^\infty \frac{dx}{\sqrt{x^2 + 1}} = \tan^{-1} x \bigg|^\infty_{-\infty} = \frac{\pi}{2} - \bigg(-\frac{\pi}{2} \bigg) = \pi $$
+There is lots of questions here.\footnote{ I just made up this formula I don't even remember -- I assume Cauchy residue formula is correct, without verifying the approximations made in the proof work.}  In between the lines this is a question about the curve:
+$$ y^2 = x^2 + 1 $$
+This is a hyperbola over real numbers $\mathbb{R}$, and is a \textbf{sphere} (genus 0) over $\mathbb{C}$. \\ \\ 
+Here is the example from Colmez own paper.  Let $\epsilon = e^{i\pi/8}$ (this is an {\color{green!80!white}octogon})
+$$ \int_\epsilon^{\epsilon^3} \frac{x^3 - x}{\sqrt{x^8 + 1}} \frac{dx}{x} = \frac{2\pi i}{8} (\epsilon^6 - \epsilon^2) \left( \frac{\Gamma(\frac{1}{2})}{
+\Gamma(\frac{5}{8})\Gamma(\frac{7}{8})} \right)$$
+Here it is instructive to draw the octogon where the poles should lie, and the line between two corners. 
+\newpage
+
+\noindent So what is this new-fangled language Math professors are talking about?  Here is a formula for a Faltings height:
+$$ h_\text{Fal}( X_{y^2 = x^5 + 1})
+= \log 2\pi - \frac{1}{2} \log \left(
+\Gamma(\frac{1}{5})^5
+\Gamma(\frac{2}{5})^3
+\Gamma(\frac{3}{5})
+\Gamma(\frac{1}{5})^{-1} \right) $$
+Obviously this is an \textbf{entropy}.  Except I don't know what a Jacobian variety or a Faltings height.
+
+\newpage
+\fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
+
+
+\begin{thebibliography}{}
+
+\item Xinyi Yuan, Shou-Wu Zhang \textbf{On the Averaged Colmez Conjecture} \texttt{arXiv:1507.06903}
+
+\item Pierre Colmez \textbf{Periodes des Varietes Abeliennes a Multiplication Complexe} \\ Annals of Mathematics Vol. 138, No. 3 (Nov., 1993), pp. 625-683
+
+\item David Mumford \textbf{Abelian Varieties} American Mathematical Society, 2012.
+
+\item 
+
+\end{thebibliography}
+
+
+
+\end{document}
