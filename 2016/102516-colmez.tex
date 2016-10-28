@@ -73,7 +73,7 @@ I have written the correspondence in schematic and incorrect fashion.
 
 \noindent With zero knowledge of this field a few surprises already:
 \begin{itemize}
-	\item 
+	\item Why is there no special Gamma function for numberfields $\Gamma_{\mathbb{Q}(i)}$, $\Gamma_\mathbb{Q}(\sqrt{3})$? etc.
 \end{itemize}
 At the heart is the first contour integral we always know:
 $$  \int_{-\infty}^\infty \frac{dx}{\sqrt{x^2 + 1}} = \tan^{-1} x \bigg|^\infty_{-\infty} = \frac{\pi}{2} - \bigg(-\frac{\pi}{2} \bigg) = \pi $$
@@ -96,6 +96,23 @@ $$ h_\text{Fal}( X_{y^2 = x^5 + 1})
 Obviously this is an \textbf{entropy}.  Except I don't know what a Jacobian variety or a Faltings height.
 
 \newpage
+
+\noindent At least here are some of my own thoughts.  I might start by using Euler's formula for the factorial:
+$$ \Gamma(x) = \lim_{n \to \infty} \frac{n^x n!}{x(x+1)(x+2)\dots (x+n)} $$
+so what could we mean by re-ordering half an object?
+$$\Gamma(\tfrac{1}{2}) = \lim_{n \to \infty}
+\frac{ \sqrt{n} \;n!}{ \frac{1}{2} \times \frac{3}{2} \times \frac{5}{2} \times \dots \times \big(\frac{1}{2}+n\big)} $$
+This number is related to the middle binomial coefficient.  We have that:
+$$
+\frac{1}{2} \times \frac{3}{2} \times \frac{5}{2} \times \dots \times \bigg( \frac{1}{2}+(n-1) \bigg)
+= \frac{(2n)!}{2^n \, n!}
+ $$
+The DeMoivre-Laplace limit formula - for the middle binomial coefficient 
+$$ \frac{(2n)!}{n! \times n!} =  \binom{2n}{n} \asymp
+\; 2^{2n} \times \frac{1}{ \sqrt{\pi n}} $$
+Somehow these stupid objects have to yield statements about Galois theory, L-functions, etc.
+
+\newpage
 \fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
 
 
@@ -107,7 +124,8 @@ Obviously this is an \textbf{entropy}.  Except I don't know what a Jacobian vari
 
 \item David Mumford \textbf{Abelian Varieties} American Mathematical Society, 2012.
 
-\item 
+\item Bruno Klingler, Emmanuel Ullmo, Andrei Yafaev
+\textbf{Bi-algebraic geometry and the André-Oort conjecture} Preprint.
 
 \end{thebibliography}
 
