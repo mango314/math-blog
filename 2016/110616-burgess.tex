@@ -53,8 +53,41 @@ This is divergent if $\chi \equiv 1$ -- the \textbf{trivial character} but what 
 
 \newpage
 
-\noindent 
+\noindent  \textbf{\#1} - For every number there can be a Dirichlet character.  Mod 3 we can set $\chi(2)=-1$ and then
+$$ L(\tfrac{1}{2}, \chi_3) = 
+0+
+\frac{1}{\sqrt{1}} - 
+ \frac{1}{\sqrt{2}} +
+ 0 + 
+\frac{1}{\sqrt{4}} - 
+ \frac{1}{\sqrt{5}} +
+ 0 + \dots 
+$$
+and this symbol ``$\ll$" is somewhat startling since are are not looking at any single Dirichlet characters, but \textit{all} Dirichlet characters as $k \to \infty$.  \\ \\
+Those numbers $L(\frac{1}{2}, \chi) \ll k^\frac{7}{24}$ (or whatever crazy exponent you will put). \\ \\
+\noindent  \textbf{\#2} - Subconvexity bounds - admittedly not very convex - originate from 
+\begin{itemize}
+\item the \textbf{Phragmen-Lindel\"{o}f} theorem and
+\item the \textbf{Hadamard three circles} theorem 
+\item The \textbf{Maximum Modulus} theorem
+\end{itemize}
+as I found out flipping between various textbooks\footnote{If you know which book to look at, it is easy to get started.  These are the resoures I found.  Actually quite old. \\ Titchmarsh \textbf{Theory of Functions} (endlessly useful - I thought I knew it all already)  \\ Iwaniec + Kowalski \textbf{Analytic Number Theory} The maximum modulus principle talks about \textbf{bounded holomorphic functions} if $|f(z) \leq M$ on $C$ either:\begin{itemize}
+\item $|f(z)|< M$ at all interior points in $D$
+\item $f(z)\equiv M$ is a constant.
+\end{itemize}  }
 
+\newpage
+
+\noindent \textbf{\#3} - This might be the wrong idea but I would like to study the equation 
+$$ x^2 + y^2 + z^2 = d $$
+The number of three squares points is related to the 
+$$ \# \big\{ (x,y,z): x^2 + y^2 + z^2 = n \big\}
+=  \frac{24}{\pi} \sqrt{n} L (1, \chi_{n \text{ or }4n})$$
+These numbers should be very roughly evenly distributed on the sphere, but there are still many patterns which persist for large values $d \gg 1$. \\ \\
+And $L(1, \chi)$ is a slightly different series.  
+$$ \sum \frac{\chi(n)}{n} < n^{\frac{1}{2} + \epsilon} $$
+and if $\chi \equiv 1$ this series is the \textbf{Harmonic series} which is divergent.  \\ \\
+Yet, I have to keep my L-functions straight.  $L(\frac{1}{2}, \chi)$ and $L(1, \chi)$.  When is one appropriate and when is the other?
 
 \newpage
 
