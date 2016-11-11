@@ -1,0 +1,89 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+%\usepackage{graphicx}
+%\usepackage{graphicx}
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{21}{18}
+
+\newcommand{\myhrule}{}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+
+\newcommand{\dash}{
+\begin{tikzpicture}[scale=0.35]
+\foreach \x in {1,...,55}{
+	\draw (\x,-0.25)--(\x+0.5,0.25)--(\x+1,-0.25);
+}
+\end{tikzpicture}
+}
+
+\usepackage{tikz}
+
+\title{\textbf{ Examples: $n!$ the Factorial}}
+\author{John D Mangual}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{25}{30}\selectfont
+
+\maketitle
+
+\noindent There are famous McMahon formulas and I could be mixing them up.  Here is one, which counts literally \textit{all} plane paritions:
+$$ \sum_{\pi} q^{|\pi|} = \prod_{n=1}^\infty \left( \frac{1}{1-q^n} \right)^n$$
+My apology in advance for not having a good picture.  They are take some work to draw.  Here we take example from Mirjana Vuletic.
+
+\includegraphics{boxes.png} \\
+This is good but not really what I am looking for today.
+
+\newpage
+
+\noindent I am looking for those partitions which fit inside an $a \times b \times c$ box.  There is an exact number on Wikipedia:
+$$ \# \{ boxes\} = \prod_{i=1}^a 
+\prod_{j=1}^b
+\prod_{k=1}^c \frac{i+j+k-1}{i+j+k-2}$$
+and you might wonder why so much attention might be drawn to a simple equation like this:
+\begin{itemize}
+\item Inside Mathematics - literally thousands of papers and they keep coming
+\item Outside Mathematics - maybe a statistician or data analyst might find this structure relates to something in the real world\footnote{Baseball, elections, the human genome, the weather, instagram, the radio... and the end of the day these are all tables of numbers and there exist procedures where these can processed in a similar ways.}
+\end{itemize}
+Today we will do something totally useless and set $a = b = c = \frac{1}{2}$.  How many ways to pack $1 \times 1 \times 1$ cubes into a box of side $\frac{1}{2}\times \frac{1}{2} \times \frac{1}{2}$ ? \\ \\
+The procedure for guessing a value of $(\frac{1}{2})!$ might stem from Euler's definition of factorial:
+$$ x! = \lim_{n \to \infty} \frac{n^x \, n!}{x \times (x+1)\times (x+2)\times \dots (x+n)} $$
+
+\newpage
+
+\noindent Let's try to shift the product lattice by $(x,y,z)$:
+$$  
+\prod_{i=1}^a 
+\prod_{j=1}^b
+\prod_{k=1}^c \frac{(i+j+k)+(x+y+z)-1}{(i+j+k)+(x+y+z)-2} $$
+I don't even know what this number is.  OK.  Let
+$$ n!! = 0! \times 1! \times \dots \times (n-1)! $$
+and we can even define the $q$-factorial 
+$$[n]_q! := \prod_{i=1}^n \frac{1 -q^n}{1-q} $$
+The hyperfactorial (and the Barnes G-function)
+$$ \sum_\pi q^{|\pi|} = \frac{a!!_q b!!_q c!!_q (a+b+c)!!_q}{(a+b)!!_q (b+c)!!_q (c+a)!!_q} $$
+and we can set $q=1$ to get one McMahon formula.  Or let $a,b,c \to \infty$ to get the other.\footnote{Everything fits together in McMahon world.  Everything is beautiful!} \\ \\
+And now we can set $a = b = c = \frac{1}{2}$, so that $(\frac{1}{2})! = \sqrt{\pi}$ and $(\frac{1}{2})!! = \dots $ Euler never wrote a formula for the Barnes G-function. \\ \\
+Oh my this got complicated.  Have an answer in a bit.
+\newpage
+
+\fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
+
+
+\begin{thebibliography}{}
+
+\item Mirjana Vuletic \textbf{A generalization of MacMahon's formula} \texttt{arXiv:0707.0532}
+
+\item Paul Zinn-Justin \textbf{Six-Vertex, Loop and Tiling models: Integrability and Combinatorics} \texttt{arXiv:0901.0665}
+
+
+\end{thebibliography}
+
+
+
+\end{document}
