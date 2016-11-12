@@ -21,6 +21,11 @@
 \end{tikzpicture}
 }
 
+\newcommand{\sq}[3]{
+\node at (#1+0.5,#2+0.5) {#3};
+\draw (#1+0,#2+0)--(#1+1,#2+0)--(#1+1,#2+1)--(#1+0,#2+1)--cycle;
+}
+
 \usepackage{tikz}
 
 \title{\textbf{ Examples: $n!$ the Factorial}}
@@ -70,6 +75,51 @@ $$ \sum_\pi q^{|\pi|} = \frac{a!!_q b!!_q c!!_q (a+b+c)!!_q}{(a+b)!!_q (b+c)!!_q
 and we can set $q=1$ to get one McMahon formula.  Or let $a,b,c \to \infty$ to get the other.\footnote{Everything fits together in McMahon world.  Everything is beautiful!} \\ \\
 And now we can set $a = b = c = \frac{1}{2}$, so that $(\frac{1}{2})! = \sqrt{\pi}$ and $(\frac{1}{2})!! = \dots $ Euler never wrote a formula for the Barnes G-function. \\ \\
 Oh my this got complicated.  Have an answer in a bit.
+\newpage
+
+\noindent One reason I want to move on is because 
+I have a lot of interesting factorials to talk about.
+
+$$ n! = \sum_{\lambda \in P_n} (t_\lambda)^2 $$
+
+$P_n$ is the set of all partitions of $n$.  Any way you can think of to split a number:
+$$ 10 = 5 + 3 + 2$$
+for each such partition you could play a game and draw a \textbf{tableau} \\\\
+\begin{tikzpicture}
+
+\sq{0}{0}{10}
+\sq{1}{0}{8}
+\sq{2}{0}{7}
+\sq{3}{0}{4}
+\sq{4}{0}{3}
+
+\sq{0}{-1}{9}
+\sq{1}{-1}{6}
+\sq{2}{-1}{5}
+
+\sq{0}{-2}{2}
+\sq{1}{-2}{1}
+
+\begin{scope}[xshift=6cm]
+
+\sq{0}{0}{10}
+\sq{1}{0}{9}
+\sq{2}{0}{8}
+\sq{3}{0}{3}
+\sq{4}{0}{1}
+
+\sq{0}{-1}{7}
+\sq{1}{-1}{5}
+\sq{2}{-1}{4}
+
+\sq{0}{-2}{6}
+\sq{1}{-2}{2}
+\end{scope}
+
+\end{tikzpicture}
+the Robinson Schensted correspondence is a way of taking permutations and turning them into pairs of shapes like this.  And the miracle is there are exactly $n!$ as can be bound by playing \textbf{jeu de taquin}. \\ \\
+And now we ask the obvious question, how do we play jeu de taquin with $\frac{1}{2} \times \frac{1}{2}$ square?
+
 \newpage
 
 \fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
