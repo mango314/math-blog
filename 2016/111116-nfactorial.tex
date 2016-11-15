@@ -122,6 +122,34 @@ And now we ask the obvious question, how do we play jeu de taquin with $\frac{1}
 
 \newpage
 
+\noindent Interesting - badly divergent infinite products - can arise in supersymmetric localization computations in theoretical physics.  Even if you don't know what that term means you can appreciate the strange number it produces:
+
+$$  \prod_\alpha \prod_{\ell=1}^\infty \big( (\ell+1)^2 + \alpha(\sigma_0)^2\big)^{2\ell(\ell+2)}$$
+Again I am not beginning to ask why or how these occur.  These are determinant of Laplacian.  Here is a matrix:
+$$ \det \left[ 
+\begin{array}{ccc}
+1 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & c
+\end{array}
+\right]  = 1 \times 2 \times  3 = 6$$
+and you multiply all the numbers of the diagonal.  And somehow we compute 
+$$ \det \nabla = \det \big( \frac{\partial^2}{\partial x^2}  +  \frac{\partial^2}{\partial y^2} \big) = \prod_{n=1}^\infty \dots $$
+and the question is how we can replace $\Delta$ by an appropriate large matrix.  In the case of a sphere $$ S^3 = \{ x^2 + y^2 + z^2 + w^2 = 1\}$$
+we can find a convincing basis using \textbf{spherical harmonics}.  Even the basic case:
+$$ \frac{df}{dx} \approx \frac{f(x+1)- f(x-1)}{2} $$
+leads to a matrix which can be diagonalized.  Or what about the less symmetric definition:
+$$ \frac{df}{dx} \approx f(x+1)- f(x) $$
+Or what if we incorporate scale.  Then maybe we can get appropriate answer:
+$$ \frac{df}{dx} \approx \frac{f(x + \Delta x) - f(x)}{\Delta x} $$
+and we have many other choices we can make which are more or less the same, but could give wildly different answers in important situations!
+$$ \prod_{n=1}^\infty n^4 \stackrel{?}{=}
+\big(  \prod_{n=1}^\infty n \big)^4$$
+if you like just multiply all the numbers and take fourth powers.  the tradtional rules of arithmetic break down.
+$$ (1 \times 2 \times 3\times 4)^4 \approx 
+1^4 \times 2^4 \times 3^4 \times 4^4 $$
+and - if you're really cynical - even multiplication is called into question.  why are we doing this?
+
+\newpage 
+
 \fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
 
 
@@ -130,6 +158,8 @@ And now we ask the obvious question, how do we play jeu de taquin with $\frac{1}
 \item Mirjana Vuletic \textbf{A generalization of MacMahon's formula} \texttt{arXiv:0707.0532}
 
 \item Paul Zinn-Justin \textbf{Six-Vertex, Loop and Tiling models: Integrability and Combinatorics} \texttt{arXiv:0901.0665}
+
+\item Anton Kapustin, Brian Willett, Itamar Yaakov \textbf{Exact Results for Wilson Loops in Superconformal Chern-Simons Theories with Matter} \texttt{arXiv:0909.4559}
 
 
 \end{thebibliography}
