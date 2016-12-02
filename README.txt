@@ -7,3 +7,9 @@ in general I feel math has gotten way too sophisticated. and obscures its own pr
 this blog ( this branch ) is geared towards that 0.01% of people who specialize in mathematical subjects. 
 
 here is an article I like http://mathoverflow.net/questions/167951/entropy-proof-of-brunn-minkowski-inequality
+
+Sometimes I can see a lot, other times I see absolutely nothing.  And it's quite lonely because mostly everybody is waiting for a result.  Part of it is that math is really disconnected from the real world.  Many people ask me for the applications of math -- tha this called "Engineering"; and they will not indulge in the silly luxurious calculations such as here.  Instad as soon as its built we move on to the next project.  I think that is less exciting.
+
+But time is money.  T = $
+
+I find LaTeX to be constraining at times because it lacks the vivid nature of handwriting.  I thought it would be necessary to resort to TeX but people are showing me I can still achieve many new 
