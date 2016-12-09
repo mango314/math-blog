@@ -13,3 +13,15 @@ Sometimes I can see a lot, other times I see absolutely nothing.  And it's quite
 But time is money.  T = $
 
 I find LaTeX to be constraining at times because it lacks the vivid nature of handwriting.  I thought it would be necessary to resort to TeX but people are showing me I can still achieve many new 
+what do I work on ?
+* I like the equation 1+2+3+...= -1/12 this is one of my favorite *
+
+*I like Stirling formula. log 1 + log 2 + ... + log n = n log n - 
+* I would like to understand the mean value theorem f(a)-f(b)= (a-b)f'(c)
+
+there are some old books that I like 
+Euclid Elements , Fricke Klein, Principia 
+
+I think it's important to have your own point of view. for example Hardy and Wright introduction to number written without computer but now we have big data  
+
+many others.
