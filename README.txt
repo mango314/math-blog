@@ -19,9 +19,15 @@ what do I work on ?
 *I like Stirling formula. log 1 + log 2 + ... + log n = n log n - 
 * I would like to understand the mean value theorem f(a)-f(b)= (a-b)f'(c)
 
+these formulas are pretty basic. but we can't do any better than dress these few gorillas or combine them. and no matter how smart we get never get past the basic dilemmas. 
+
+
 there are some old books that I like 
-Euclid Elements , Fricke Klein, Principia 
+Euclid's Elements , Fricke Klein, Principia  (Newton)
 
-I think it's important to have your own point of view. for example Hardy and Wright introduction to number written without computer but now we have big data  
+I think it's important to have your own point of view. for example Hardy and Wright introduction to number written without computer but now we have big data.  There are prime numbers larger than can be stored on computer. Is there anything we can do? Yet this is also our source of richness and complexity. 
 
-many others.
+
+the prime number theory is not only about density of primes. it can be about whether square free numbers have odd or even number of factors. or how quickly or evenly  fractions  of small denominator distribute on the number line. there is a lot to say about fractions and our system of random. we don't have the time or resources to tell the whole story. so we estimate or lie.
+
+we lie
