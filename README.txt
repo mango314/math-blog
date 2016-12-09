@@ -30,4 +30,8 @@ I think it's important to have your own point of view. for example Hardy and Wri
 
 the prime number theory is not only about density of primes. it can be about whether square free numbers have odd or even number of factors. or how quickly or evenly  fractions  of small denominator distribute on the number line. there is a lot to say about fractions and our system of random. we don't have the time or resources to tell the whole story. so we estimate or lie.
 
-we lie
+
+the modern   scientific literature moves very fast. and is developed by disconnected networks. so it's quite possible the same I act is defined in several different contexts. and math is a pretty fastidious subject asking for details that nobody cares about.how do we motivate such details? 
+
+
+then I tell you the quick version and you get mad.   I spend a lot of energy parsing symbols and definitions. and never quite get to my I objective
