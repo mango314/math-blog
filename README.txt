@@ -35,3 +35,5 @@ Here are some conjectures:
 
 a^4 + 2 obtains infinitely many square-free values
 the AGT conjecture
+the Birch-Tate conjecture
+Every multiple-zeta value is spanned by zeta(n1,n2,...,nk) with nk in {2,3}
