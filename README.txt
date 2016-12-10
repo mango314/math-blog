@@ -15,23 +15,23 @@ But time is money.  T = $
 I find LaTeX to be constraining at times because it lacks the vivid nature of handwriting.  I thought it would be necessary to resort to TeX but people are showing me I can still achieve many new 
 what do I work on ?
 * I like the equation 1+2+3+...= -1/12 this is one of my favorite *
-
-*I like Stirling formula. log 1 + log 2 + ... + log n = n log n - 
+* I like Stirling formula. log 1 + log 2 + ... + log n = n log n - n + O(n)
 * I would like to understand the mean value theorem f(a)-f(b)= (a-b)f'(c)
 
 these formulas are pretty basic. but we can't do any better than dress these few gorillas or combine them. and no matter how smart we get never get past the basic dilemmas. 
-
 
 there are some old books that I like 
 Euclid's Elements , Fricke Klein, Principia  (Newton)
 
 I think it's important to have your own point of view. for example Hardy and Wright introduction to number written without computer but now we have big data.  There are prime numbers larger than can be stored on computer. Is there anything we can do? Yet this is also our source of richness and complexity. 
 
-
 the prime number theory is not only about density of primes. it can be about whether square free numbers have odd or even number of factors. or how quickly or evenly  fractions  of small denominator distribute on the number line. there is a lot to say about fractions and our system of random. we don't have the time or resources to tell the whole story. so we estimate or lie.
-
 
 the modern   scientific literature moves very fast. and is developed by disconnected networks. so it's quite possible the same I act is defined in several different contexts. and math is a pretty fastidious subject asking for details that nobody cares about.how do we motivate such details? 
 
+then I tell you the quick version and you get mad.   I spend a lot of energy parsing symbols and definitions. and never quite get to my objective.
 
-then I tell you the quick version and you get mad.   I spend a lot of energy parsing symbols and definitions. and never quite get to my I objective
+Here are some conjectures:
+
+a^4 + 2 obtains infinitely many square-free values
+the AGT conjecture
