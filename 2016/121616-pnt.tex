@@ -76,12 +76,30 @@ $$  \sum_{n=1}^\infty \Lambda(n) \; \frac{d}{d(n\xi)}\bigg[ \frac{n\xi }{1-e^{n\
 
 \item G. H. Hardy \textbf{Divergent Series} Oxford University Press 1973
 
-
-
-
-
 \end{thebibliography}
 
+\newpage
+
+\fontfamily{qag}\selectfont \fontsize{25}{30}\selectfont
+
+\noindent The argument in the previous section is wrong.\footnote{I got really good at writing glib and suggestive proofs to hand in to graders.  Who themselves are not always sure so they give you a check.
+$$ \sum^{1/\xi}_{n=1} a_n \, g( n \epsilon) \approx \sum^{1/\xi}_{n=1} a_n g(0) $$
+Glib arguments can be acceptable, since we don't always have the time / resources to check all the cases.}  \\ \\It is very difficult to express in a vivid way - with images - why it is incorrect.  \\ \\
+And in most situations it doesn't really matter. As for motivation, I can only speak for myself. \\
+\begin{itemize}
+\item why is Prime Number Theorem in a book on Laplace Transforms?
+\item why is Prime Number Theorem in a book in Divergent Series? \\
+\end{itemize}
+These lead me to neo-classical approaches - they will feel pretty modern to you!\footnote{I tried to read the most modern papers first: there is Tao and Gowers and Green.  However, that conversation pre-supposes knowledge I don't have and is written in language that I really don't like.  They are pretty dreadful to read as are most papers in Analytic Number Theory as well as the people who write them!  The ``beauty of the primes" is just a marketing term.} \\ \\
+One possibility is: \textbf{there is nothing new under the sun}.  Everything is thinly dressed-up versions of the same problems since antiquity.
+\newpage
+
+\noindent And that's pretty much how we feel.  So let's try take some examples from \texttt{hep-th} and \texttt{math-nt}. \\ \\
+Hopefully, also finish a real proof of PNT.\footnote{The terms ``combinatorial" or ``geometric" or ``algebraic" or ``elementary" have all been misleading and so I have often chosen to start from scratch.}  What could possibly go wrong with approximations like this? 
+$$ \sum_{n=1}^\infty \Lambda(n) \frac{\xi e^{-n\xi}}{1-e^{-n\xi}} \approx \sum_{n=1}^{1/\xi} \frac{\Lambda(n)}{n} $$
+Maybe if we take the derivative of both sides:
+$$  \sum_{n=1}^\infty \Lambda(n) \; \frac{d}{d(n\xi)}\bigg[ \frac{n\xi }{1-e^{n\xi}} \bigg]  \approx \sum_{n=1}^{1/\xi} \Lambda(n) $$
+These should be satisfactory in any Physics or Engineering textbook. \\ \\
 
 
 \end{document}
