@@ -139,4 +139,99 @@ The tools and arguments get increasingly sophicistated, but many things are comp
 \end{itemize}
 All these things have an intrinsic complexity.  \\ \\
 Why did it take Norbert Wiener to solve this?  B/c there is signal processing and random processes all over the place.\footnote{Primes are not random, but signal processing (music) is full of signals and noise which are hard to separate.  And many of those basic tools are taught to \textit{their} undergraduates.}
+
+\fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
+
+
+\begin{thebibliography}{}
+
+\item David Vernon Widder \textbf{The Laplace Transform} Princeton University Press, 1948.
+
+\item Norbert Wiener \textbf{Tauberian Theorems} Annals of Mathematics Vol. 33, No. 1 , pp. 1-100
+
+\item G. H. Hardy \textbf{Divergent Series} Oxford University Press 1973
+
+\end{thebibliography}
+
+\newpage
+
+\fontfamily{qag}\selectfont \fontsize{25}{30}\selectfont
+
+\noindent The starting point varies from author to author. \\ \\
+\textbf{\#1 (Hardy)} If you have a sequence $s_n = O(1)$ then:
+$$ \Bigg[(1 - r) \sum s_n r^n \to s \Bigg]
+\longrightarrow
+\Bigg[ \frac{1}{x} \sum_{n \leq x} s_n \to s \Bigg]
+ $$
+Perhaps if I am taking one arrow $\to$ to another arrow $\to$ maybe it should be denoted $\Rightarrow $ as in \textbf{category theory}. \\ \\
+The problem could be if $s_n = \Lambda(n)$ it is not $O(1)$ -- the van Mangolt function (or simply $\log p$) is not bounded by any constant. \\ \\
+Nothing should stop us from writing into argument a false implication such as 
+$$ \bigg[(1 - r) \sum_{n=1}^\infty \Lambda(n) \,r^n \to x\big] \bigg]
+\longrightarrow
+\bigg[ \frac{1}{x} \sum_{n \leq x} \Lambda(n) \to x \Bigg]
+ $$
+as long as we are judicious.\footnote{``$x$" here means ``up to experimental error" such as $x+ o(x)$.  Just like cooking recipes on the internet. }  Especially since the Physics, Engineering and Econ literatures are full of these (if we are lucky). 
+
+\newpage
+
+\noindent \textbf{\#2 (Widder)} Textbook starts very like a machine.\footnote{The same author wrote a very nice textbook called \textit{Advanced Calculus} with many lively discussions.}
+$$ f(x) = \int_0^\infty e^{-st} \, d \alpha(t) $$
+This is a Stieltjes integral.  Then two asymptotics are related:
+$$
+\Bigg[ \alpha(t) \sim \frac{A t^k}{\Gamma(k+1)}\Bigg] \Rightarrow \Bigg[ f(s) \sim \frac{A}{s^k} \Bigg]
+ $$
+ As stated I wouldn't challenge them because they seem so plausible.   In the case of PNT
+ $$
+f(x) = \sum_{n=1}^\infty \frac{(\Lambda(n) - 1)e^{-nx}}{1 - e^{-nx}} = \int_0^\infty \left[\frac{t e^{-xt}}{1 - e^{-xt}} \right]\, dh(t)
+  $$
+setting up an {\color{green}integration by parts}.  This is not a Laplace transform but it can be rearranged into one:
+\begin{eqnarray*} f(x) &=& \sum_{n=1}^\infty \sum_{m=1}^\infty \left\{ \Lambda(n) - 1\right\} \;\;\;e^{-mn\,x}\\ 
+&=& \sum_{n=1}^\infty \Bigg[ \sum_{d|n} \big( \Lambda(d)-1 \big) \Bigg] e^{-nx}\end{eqnarray*}
+The coefficient $c_n \asymp n$ ( I often write $c_n \propto n$ ).  \newpage
+
+\noindent \textbf{\#3 (Norbert Wiener)} \\ \\The necessary and sufficient condition for the set of all translations $f(x+t)$ to be {\color{red!50!white}\textbf{closed}} is the that the real zeros of it's Fourier transform
+$$ \hat{f}(t) = \lim_{A \to \infty} \frac{1}{\sqrt{2\pi}} \int_{-A}^A f(x) e^{-ixt} \, dx $$
+should form a set of zero measure.\footnote{Sets of zero measure can be quite interesting!  They may in fact be the best part.  Why are we talking about translations anyway?  I bet it you shift around any function along the real number line $\mathbb{R}$ you can get everything else!} \\ \\ The \textbf{step function} cerainly has this property
+\footnote{I think -- with a small amount of care about the value of $\mathbf{1}(0)$.}   
+$$ \mathbf{1}(x) = \left\{ 
+\begin{array}{cc}
+1 & \text{ if } x < 0 \\
+0 & \text{ if } x \geq 0 \\
+ \end{array} \right. $$
+Wiener proceeds to do a lot of trigonometry to show that:
+\begin{eqnarray*}
+g(x) &=_1&  \frac{d}{dx} \bigg[\frac{x \, e^{-x}}{e^{-x}-1}\bigg] \\ \\
+&=_2&  \frac{d}{dx} \left( \frac{\sin x}{x}\right)^2
+\end{eqnarray*}
+The second one behaves like a ``wave packet" the first one behaves rather nicely.
+
+\fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
+
+
+\begin{thebibliography}{}
+
+\item David Vernon Widder \textbf{The Laplace Transform} Princeton University Press, 1948.
+
+\item Norbert Wiener \textbf{Tauberian Theorems} Annals of Mathematics Vol. 33, No. 1 , pp. 1-100
+
+\item G. H. Hardy \textbf{Divergent Series} Oxford University Press 1973
+
+\end{thebibliography}
+
+\newpage
+
+\fontfamily{qag}\selectfont \fontsize{25}{30}\selectfont
+
+\noindent These proofs are completely arbitrary!  One after the other, each more ridiculous than the last.  And that is all there is. \\ \\
+Could there be more unifying recent ideas coming from other areas ?
+\begin{itemize}
+\item thermodynamics, entropy
+\item the geodesic flow, hyperbolic geometry
+\item enumerative combinatorics, generalizing $\binom{2n}{n}$
+\item ergodic theory of dynamical systems
+\item newer develoments in the theory of primes
+\item modular forms \\
+\end{itemize}
+The answer is certainly yes in at least one of these cases, even if it's just a rearrangement of an old proof.
+
 \end{document}
