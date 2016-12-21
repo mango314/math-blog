@@ -3,7 +3,7 @@
 \usepackage{amsmath, amsfonts, amssymb}
 \usepackage[margin=0.5in]{geometry}
 \usepackage{xcolor}
-%\usepackage{graphicx}
+\usepackage{graphicx}
 %\usepackage{graphicx}
 \newcommand{\off}[1]{}
 \DeclareMathSizes{20}{30}{21}{18}
@@ -90,7 +90,7 @@ And in most situations it doesn't really matter. As for motivation, I can only s
 \item why is Prime Number Theorem in a book on Laplace Transforms?
 \item why is Prime Number Theorem in a book in Divergent Series? \\
 \end{itemize}
-These lead me to neo-classical approaches - they will feel pretty modern to you!\footnote{I tried to read the most modern papers first: there is Tao and Gowers and Green.  However, that conversation pre-supposes knowledge I don't have and is written in language that I really don't like.  They are pretty dreadful to read as are most papers in Analytic Number Theory as well as the people who write them!  The ``beauty of the primes" is just a marketing term.} \\ \\
+These lead me to neo-classical approaches - they will feel pretty modern to you!\footnote{I tried to read the most modern papers first: there is Tao and Gowers and Green.  However, that conversation pre-supposes knowledge I don't have and is written in language that I really don't like.  They are pretty dreadful to read as are most papers in Analytic Number Theory as well as the people who write them!y  The ``beauty of the primes" is just a marketing term.} \\ \\
 One possibility is: \textbf{there is nothing new under the sun}.  Everything is thinly dressed-up versions of the same problems since antiquity.
 \newpage
 
@@ -99,7 +99,44 @@ Hopefully, also finish a real proof of PNT.\footnote{The terms ``combinatorial" 
 $$ \sum_{n=1}^\infty \Lambda(n) \frac{\xi e^{-n\xi}}{1-e^{-n\xi}} \approx \sum_{n=1}^{1/\xi} \frac{\Lambda(n)}{n} $$
 Maybe if we take the derivative of both sides:
 $$  \sum_{n=1}^\infty \Lambda(n) \; \frac{d}{d(n\xi)}\bigg[ \frac{n\xi }{1-e^{n\xi}} \bigg]  \approx \sum_{n=1}^{1/\xi} \Lambda(n) $$
-These should be satisfactory in any Physics or Engineering textbook. \\ \\
+These should be satisfactory in any Physics or Engineering textbook. 
 
+\newpage 
 
+\noindent By default plotting the van Mandolt function uses \textbf{linear interpolation} - disastrous.
+
+\includegraphics{vanmangoldt-01.png}  
+
+\noindent If we use ``dots" we get that $\Lambda(n)$ has two parts $\Lambda(n) = 0$ when $n \neq p^k$ a prime power, and also $\Lambda(n) = \log p$ when $n = p^k$.  Mysterious\footnote{It is related to $\zeta'(s)/\zeta(s)= \sum \frac{\Lambda(n)}{n^s}$.}\\
+\includegraphics{vanmangoldt-02.png} 
+
+\newpage
+
+\noindent The cumulative sum\footnote{basically adding all the numbers.  Please observe that $e^{\sum_{n \leq x} \Lambda(n)} = \mathrm{lcm}(1,2,\dot, n) \approx e^x$. This is another way of stating PNT.  The Least Common Multiple and the Permutation Group should play a more central role! } $\sum_{n \leq x} \Lambda(n) \approx x$ we get almost a straight line. For comparison $y=x$.
+
+\includegraphics{vanmangoldt-03.png}  
+
+\noindent The blue curve was consistently above the line in our range.  This bias in an artifact of our choice primes $1 < p < 10^3$
+
+\includegraphics{vanmangoldt-04.png}  
+
+\newpage
+
+\noindent These pictures what the statement of PNT could mean:
+$$ \sum_{n \leq x} \Lambda(n) \approx x + o(x)$$
+Sometimes when reading a complicated passage I'd get cynical:\footnote{My latest idea is that Prime Number Theorem summarizes experiences with prime numbers up to a certain level.  If you're not a cryptographer, it is possible that prime number theory or the zeta function plays an implicit level.}
+\begin{itemize}
+\item why prime numbers?
+\item where do we consider averages over primes?
+\item why does it get so difficult? 
+\end{itemize}
+The tools and arguments get increasingly sophicistated, but many things are complicted:
+\begin{itemize}
+\item a chair
+\item an iPhone
+\item an airplane
+\item rice
+\end{itemize}
+All these things have an intrinsic complexity.  \\ \\
+Why did it take Norbert Wiener to solve this?  B/c there is signal processing and random processes all over the place.\footnote{Primes are not random, but signal processing (music) is full of signals and noise which are hard to separate.  And many of those basic tools are taught to \textit{their} undergraduates.}
 \end{document}
