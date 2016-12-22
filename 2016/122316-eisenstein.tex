@@ -1,0 +1,52 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+%\usepackage{graphicx}
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{21}{18}
+
+\newcommand{\myhrule}{}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+
+\newcommand{\dash}{
+\begin{tikzpicture}[scale=1]
+\draw (0,0)--(19,0);
+\end{tikzpicture}
+}
+
+\newcommand{\sq}[3]{
+\node at (#1+0.5,#2+0.5) {#3};
+\draw (#1+0,#2+0)--(#1+1,#2+0)--(#1+1,#2+1)--(#1+0,#2+1)--cycle;
+}
+
+\usepackage{tikz}
+
+\title{\textbf{New Directions: Eisenstein Series}}
+\author{John D Mangual}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{20}{22}\selectfont
+
+\maketitle
+
+\noindent For the remainder of the year I would like to outline simple problems to work on.  \\ \\ The goal is proficiency passing from problems we care about (often stated over $\mathbb{Z}$ or $\mathbb{Q}$) and moving over to the real analysis problem.  \\ \\Then I will complian the argument is disorganized and try to find a geometric problem entangled there. \\ \\
+Likewise we can try to take some modern number theory (such as modular forms) whose translations into English are promising.\\ \\
+\textbf{Ex \#1} find $x,y,z \in \mathbb{Z}$ with $|x^2 + y^2 - \sqrt{2}z^2 |< 10^{-6}$ \\ \\
+The goal is not really to solve any conjectures yet, sinc much energy will be spent deciphering notations and jargon.  Why bother? \\ \\
+I believe there is new phenomenon embedded in modern number theory, with no classical counterpart, that can still be stated in the classical language. \\ \\
+Much of my use of the standard number theory argot will be wrong.  Because it is too difficult. 
+$$ E_a(z|\psi) = \sum_{\gamma \in \Gamma_\mathfrak{a} \backslash \Gamma} \psi \big( \mathrm{Im}(\sigma_\mathfrak{a}^{-1} \gamma z) \big) \; \chi(\gamma^{-1}) \; P_\mathfrak{a} $$
+Is this something we care about?  It might be I can't tell.\\ \\
+There are many computations of this type and I can only consider a few.  In fact, I have missed so many to my embarassment I have to start over.\\
+\dash \\ 
+\fontfamily{qag}\selectfont \fontsize{25}{30}\selectfont
+
+
+
+\end{document}
