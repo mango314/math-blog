@@ -203,7 +203,12 @@ Wiener proceeds to do a lot of trigonometry to show that:
 g(x) &=_1&  \frac{d}{dx} \bigg[\frac{x \, e^{-x}}{e^{-x}-1}\bigg] \\ \\
 &=_2&  \frac{d}{dx} \left( \frac{\sin x}{x}\right)^2
 \end{eqnarray*}
-The second one behaves like a ``wave packet" the first one behaves rather nicely.
+The second one behaves like a ``wave packet" the first one behaves rather nicely. \newpage
+
+\noindent This rather stalwart opening brings back some bad memories for me.  Back when I took a very beginning PDE\footnote{Partial Differential Equations} course, I was asked to show that:
+$$ L^2([0,2\pi]) \text{ is spanned by } \{\sin n \, x\}_{n \in \mathbb{Z}}$$
+I said this space was complete.  It's not.  You cannot get $\cos x$ this way.  There went my A+.
+
 
 \fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
 
@@ -220,7 +225,7 @@ The second one behaves like a ``wave packet" the first one behaves rather nicely
 
 \newpage
 
-\fontfamily{qag}\selectfont \fontsize{25}{30}\selectfont
+%\fontfamily{qag}\selectfont \fontsize{25}{30}\selectfont
 
 \noindent These proofs are completely arbitrary!  One after the other, each more ridiculous than the last.  And that is all there is. \\ \\
 Could there be more unifying recent ideas coming from other areas ?
@@ -232,6 +237,69 @@ Could there be more unifying recent ideas coming from other areas ?
 \item newer develoments in the theory of primes
 \item modular forms \\
 \end{itemize}
-The answer is certainly yes in at least one of these cases, even if it's just a rearrangement of an old proof.
+The answer is certainly yes in at least one of these cases, even if it's just a rearrangement of an old proof. \\
+
+\fontfamily{qag}\selectfont \fontsize{25}{30}\selectfont
+
+
+\noindent \textbf{Connections to Other Divergent Series} \\
+I think a less ambitious divergent series is to show:
+$$ 1 + 2 + 3 + 4 + \dots = - \frac{1}{12}$$
+If we subtract a series from four times itself:
+\begin{eqnarray*}
+c &=& 1 + 2 + 3 + 4 + \dots \\
+4c &=& 4 + 8 + 12 + \dots \\
+-3c &=& 1 - 2 + 3 - 4 + 5 - 6 = \frac{1}{(1+1)^2} = \frac{1}{4}
+\end{eqnarray*}
+and we conclude $c = - \frac{1}{12}$.  Then there is {\color{green!50!white}\textbf{zeta regularization}}
+and {\color{blue!50!white}\textbf{cutoff regularization}}. \\
+\fontfamily{qag}\selectfont \fontsize{20}{30}\selectfont
+Can these senseless elementary-school tricks, become serious mathematics?  GH Hardy addresses both of these methods in his book on Divergent Series (he knew Ramanujan personally). \newpage
+\fontfamily{qag}\selectfont \fontsize{3}{5}\selectfont
+\noindent The way I learned Euler Maclaurin summation is through a kind of symbol calculus:
+\begin{eqnarray*} f(0)+ f(1)+ \dots + f(n) &=& 
+\big(1 + e^{\Delta}
+ + e^{2\Delta}
+  + e^{3\Delta} 
+  + \dots \big) f\\
+  &=& \left[\frac{e^{(n+1)\Delta}-1}{e^\Delta - 1}\right] f(0)
+  \end{eqnarray*}
+Yet what is the formula for the integral.  
+$$ \frac{1}{N}\sum f(i) = \sum_{k=0}^{nN} e^{k \Delta /N} f(0) = \left[ \frac{e^{\Delta n(1+1/N)} - 1}{e^{\Delta /N} - 1}\right] f(0)$$
+so I don't remember anymore.  The generating function for the Bernoulli numbers:
+$$ g(t) = \frac{t}{e^t - 1} = \sum_{m=0}^\infty B_m\, \frac{t^m}{m!} $$
+is also the weight for Lambert summation (rather $g'(t)$). 
+$$  \frac{1}{\xi} \approx 
+ \prod_{n=1}^\infty p^{ \frac{\xi e^{-p\xi}}{1-e^{-p\xi}}} \approx \prod_{n=1}^{1/\xi} p^{1/n} $$
+and set $x = 1/t$ with $t \to 0$.  Exercise! Um... right. \\ \\
+Whenever we add evenly spaced numbers (or by rescaling sum over the integers) are are evaluating a ``weighted" zeta function.  And then we talk about ``the" sum when you add a function $f(\,\cdot\,)$ over all of $\mathbb{Z}$. \\ \\
+This generalizes in a way that nobody ever works out: to number fields, lattices in higher dimensions, Todd classes, other quadratures, L-functions, etc.  
+
+\fontfamily{qag}\selectfont \fontsize{25}{30}\selectfont
+
+\noindent From here on the strategy is:
+\begin{itemize}
+\item pick a problem
+\item realized someone worked on it and solved already
+\end{itemize}
+and step 1.  In order to not be too critical, these are 
+\begin{itemize}
+\item new technique (last 5-15 yrs) 
+\item which have classical counterparts (or not).
+\item known to experts
+\item not widely known
+\end{itemize}
+and nobody is 100\% sure which bin to put any given problem. \\ \\
+Perhaps better not to think too much about this aspect.\footnote{The best one can do, I think is review.  I think collectively I have } 
+
+\newpage
+
+\noindent \textbf{Ex \#1} Let's sum all the imginary numbers:
+$$ \frac{1}{4}\sum_{(a,b) \neq 0} (a^2 + b^2) = \bigg[ \prod_{p \equiv 1 (4)} \big(1-p\big)^{-1} \bigg]^2
+\bigg[ \prod_{p \equiv 3 (4)} \big(1-p^2\big) \bigg]
+ $$
+In fact we can sum all the positive integers:
+$$ \sum_{a \geq 0} a = - \tfrac{1}{12} = \prod_p (1-p)^{-1}$$
+and other amazing artifacts await!
 
 \end{document}
