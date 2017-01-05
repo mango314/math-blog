@@ -17,11 +17,20 @@ what do I work on ?
 * I like the equation 1+2+3+...= -1/12 this is one of my favorite *
 * I like Stirling formula. log 1 + log 2 + ... + log n = n log n - n + O(n)
 * I would like to understand the mean value theorem f(a)-f(b)= (a-b)f'(c)
+* if p(x) has all real roots then p'(x) roots interlace with those of p(x)
+* any sequence of 21 distinct integers has an increasing subsequence of 6 or a decreasing sequence of 5
 
 these formulas are pretty basic. but we can't do any better than dress these few gorillas or combine them. and no matter how smart we get never get past the basic dilemmas. 
 
 there are some old books that I like 
 Euclid's Elements , Fricke Klein, Principia  (Newton)
+
+Video Collection: 
+
+* https://www.perimeterinstitute.ca/video-library/collection/it-qubit-summer-school
+* http://scgp.stonybrook.edu/archives/16151
+* http://scgp.stonybrook.edu/archives/16247
+* http://scgp.stonybrook.edu/archives/9714
 
 I think it's important to have your own point of view. for example Hardy and Wright introduction to number written without computer but now we have big data.  There are prime numbers larger than can be stored on computer. Is there anything we can do? Yet this is also our source of richness and complexity. 
 
@@ -37,3 +46,4 @@ a^4 + 2 obtains infinitely many square-free values
 the AGT conjecture
 the Birch-Tate conjecture
 Every multiple-zeta value is spanned by zeta(n1,n2,...,nk) with nk in {2,3}
+
