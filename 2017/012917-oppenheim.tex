@@ -1,0 +1,103 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+%\usepackage{graphicx}
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\newcommand{\myhrule}{}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+
+\newcommand{\dash}{
+\begin{tikzpicture}[scale=1]
+\draw (0,0)--(19,0);
+\end{tikzpicture}
+}
+
+\newcommand{\sq}[3]{
+\node at (#1+0.5,#2+0.5) {#3};
+\draw (#1+0,#2+0)--(#1+1,#2+0)--(#1+1,#2+1)--(#1+0,#2+1)--cycle;
+}
+
+\usepackage{tikz}
+
+\title{\textbf{Proposal: Oppenheim Conjecture}}
+\author{John D Mangual}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{20}{25}\selectfont
+
+\maketitle
+
+\noindent On the one hand, the Oppenheim Conjecture is settled.  For example, we can find $x,y,z \in \mathbb{Z}$ solving:
+$$ |x^2 + y^2 - \sqrt{3} z^2 | < 10^{-k} $$
+for any natural number $ k \in \mathbb{N}$.  This has been resolved by Grigori Margulis in the affirmative since 1988. \\ \\
+As a researcher, is there anything new to say here?  The goal of this note is to state problems that are expected to be ``open" - at least at the time of writing\footnote{February 2017}. \\ \\
+The most trivial density result I can think of is that rationals are dense in the reals:
+$$  \overline{\mathbb{Q}} = \mathbb{R}$$
+This merely says that we can get arbitrarily close to any real number with a fraction.  \\ \\
+This theorem doesn't tell us how much work it takes to approximate a real number.  
+$$ \Big| \sqrt{2} - \frac{17}{12} \Big| < \frac{1}{12 \times 12} = \frac{1}{144}$$
+using small denominators we can get pretty good estimate. \\ \\
+Even a reasonable statement like showing fractions are equidistributed in the reals -- that fractions are evenly space in the real numbers -- has content.
+$$ 0 <  \frac{1}{4} < \frac{1}{3} < \frac{1}{2}  < \frac{2}{3} <  \frac{3}{4} < 1$$
+Partly it's because the fractions are not perfectly evenly space, and we are claiming this behavior averages out for large denominators. For the Oppenheim conjecture I can make two objections.  
+ \\ \\
+\textbf{\#1} Margulis' proof is really complicated. \\ \\
+Marina Ratner's orbit closure theorem runs about 200 pages and plays a crucial role in the Oppenheim conjecture.  In our case we would like to know if 
+\begin{itemize}
+\item the orbit of $(1,1,-\sqrt{3})$ 
+\item under the action of $SO(2,1)$
+\item is dense in the space $SL(3, \mathbb{Z})\backslash SL(3,\mathbb{R}) $ 
+\end{itemize}
+  This orbit is spiraling around so much it actually hits the whole space... but I would like more details.
+ \\ \\
+\textbf{\#2} We don't know how quickly the values of quadratic forms converge to all of $\mathbb{R}$ \\ \\
+Jean Bourgain shows, in about 8 pages the largest number is not too big:
+$$ \min_{|x| < N \; \; x \in \mathbb{Z}^3 \backslash \{ 0\} } | x^2 +  y^2 - b z^2  | \ll N^{-\frac{2}{5} + \epsilon}$$
+In order to be correct this statment is full of legalese.  This inequality will be true for \textbf{almost every} $b \in [\frac{1}{2}, 1] $. \\ \\
+A few things make me nervous about Bourgain's statement.  
+\begin{itemize}
+\item The decay is slow: $10^{2/5} \approx 2.5$ and $100^{2/5} \approx 6.3$, which indicates how uneven these values of quadratic forms.
+\item We can't get rid of $\epsilon$.  It is wrong to say  $$\min_{|x| < N} |Q(x)| < C \cdot  N^{-2/5}$$ 
+is wrong.  It's not totally wrong, and we could try to find the constant $C$ and the exceptional values.
+\item Almost every $b$ -- this is an open invitation to find a quadrtic form where this inequality definitely \textbf{does not hold}.\footnote{ One reason Bourgain's proof is so short is that he spreads his attention on many quadratic forms, telling us nothing about each individual case. } 
+\end{itemize}
+\newpage
+\noindent \textbf{\#3} Lastly, there are obvious generalizations to number fields.  
+$$  x^2 + y^2  - \sqrt{2} z^2 \neq 0$$
+definitely has a solution if we adjoin roots of unity:
+$$ z =  \frac{ \sqrt{x^2 + y^2}}{\sqrt[4]{2}} $$
+so there are solutions in a large enough ring, such as $\mathbb{Z}[\sqrt[4]{2}]$. \\ \\
+Thanks to work of Borel and Prasad we know the  values of:
+$$ \big| x^2 + y^2 - i \sqrt{3} z^2\big| \stackrel{?}{<} 10^{-k} $$
+are dense in $\mathbb{C}$ if we let $x,y,z \in \mathbb{Z}[i]$.  These numbers will also be dense in an ultrametric space such as:
+$$ \mathbb{Z}[i]_{1+i} = \lim_{\longleftarrow} \mathbb{Z}[i]/ (1+i)^k\mathbb{Z}[i]$$
+or we could define a hybrid metric such as
+$$ \mathbb{Z}[i]_\infty \times \mathbb{Z}[i]_{1+i} \times \mathbb{Z}[i]_3
+\times \mathbb{Z}[i]_{1+2i} \times \mathbb{Z}[i]_7$$
+results in these directions will certainly be new. \\ \\
+Maybe not profound, but certainly necessary in order to gain a basic understanding and slightly new.  In fact, upon writing I am likely to be corrected on all of this.\\ \\
+
+
+\newpage
+
+\fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
+
+\begin{thebibliography}{}
+
+\item S.G. Dani \textbf{Diophantine approximation and dynamics of unipotent flows on homogeneous spaces} \textit{(online)}
+
+\item Elon Lindenstrauss \textbf{Effective Estimates on Indefinite Ternary Forms}
+
+\item Jean Bourgain
+\textbf{A quantitative Oppenheim Theorem for generic diagonal quadratic forms} \texttt{arXiv:1604.02087}
+
+\end{thebibliography}
+
+\end{document}
