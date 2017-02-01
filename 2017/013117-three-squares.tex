@@ -1,0 +1,114 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+%\usepackage{graphicx}
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\newcommand{\myhrule}{}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+
+\newcommand{\dash}{
+\begin{tikzpicture}[scale=1]
+\draw (0,0)--(19,0);
+\end{tikzpicture}
+}
+
+\newcommand{\sq}[3]{
+\node at (#1+0.5,#2+0.5) {#3};
+\draw (#1+0,#2+0)--(#1+1,#2+0)--(#1+1,#2+1)--(#1+0,#2+1)--cycle;
+}
+
+\usepackage{tikz}
+
+\title{\textbf{Proposal: Sum of Three Squares}}
+\author{John D Mangual}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{20}{25}\selectfont
+
+\maketitle
+
+\noindent In order to tie up loose ends I thought I'd study some easy diophantine equations:
+$$ n = x^2 + y^2 + z^2 $$
+This one turns out to be too difficult and one is better of starting in four variables:
+$$ n = x^2 + y^2 + z^2 + w^2 $$
+I had a good laugh to see professionals get when asking about these, being warned that I was not ready. \\ \\
+\textbf{\#1} Legendre's Sum of Three Squares Theorem
+$$ n = x^2 + y^2 + z^2  \quad\text{iff}\quad n \neq 4^a(8b+7)  $$ 
+\textbf{\#2} Lagrange's Sum of Four Squares Theorem
+$$ n = x^2 + y^2 + z^2 + w^2 \quad\text{if}\quad n \geq 0$$
+so with four squares we finally get enough numbers. \\ \\
+
+\newpage
+
+\noindent These problems look easy and by now they are solved.
+\begin{itemize}
+\item \textbf{1988} As $n \to \infty$ the solutions to $x^2 + y^2 + z^2 = n$  become evenly distributed over the sphere.
+\end{itemize}
+This one is credited to William Duke in 1988, using
+difficult Kloosterman sums.  So let's try an easier one:
+\begin{itemize}
+\item \textbf{196?} As $n \to \infty$ the solutions to $x^2 + y^2 + z^2 + w^2 = n$  become evenly distributed over the sphere.
+\end{itemize}
+This is credited to Malyshev (with no first name).  Both problem use difficult spectral theory techniques. \\ \\
+Both of these problems are considered resolved, I feel like they can be re-opened at will. \\ \\
+I am wrong. \\ \\
+In 2003, Hee Oh and Wee-Tek Gan consider $f(x)$ a homogenous polynomial (such as $x^2 + y^2 + z^2$):
+$$ V_m = \{ x \in \mathbb{R}^n : f(x) = m \}$$ 
+and they prove equidistribution for all of these:
+$$ \frac{\# \big( \;\frac{1}{m^k}V_m(\mathbb{Z})\cap \Omega_1 \big)}
+{\# \big( \;\frac{1}{m^k}V_m(\mathbb{Z})\cap \Omega_2 \big)} 
+\sim \frac{\mathrm{vol}(\Omega_1)}{\mathrm{vol}(\Omega_2)} \text{ as } m \to \infty$$
+These proof are written in a very streamlined way, meant to solve many problems at once.  The reasoning is a bit circular.  
+
+\newpage
+
+\noindent If we ask about other number fields. What about in $\mathbb{Z}[i]$? 
+$$ x^2 + y^2 + z^2 = n  $$
+There certainly is a Hasse principle here and I can find the rule so there is a solution for certain values of $n$.  \\ \\ Have I stated it for you? No, but an expert can.\footnote{
+The line of reasoning I keep hearing over and over is that such-and-such smart person knows how to solve it, so you should take their word for it.  \textbf{This is going to stop.}  This defeats the purpose of having a mathematical proof, which is about exhibiting the details so that one can verify the solution.}  It is the difference between fixing my own car, and having someone fix it for me. \\ \\
+\textbf{Problem} A lot of proofs are written purely in terms of ``wavefunctions" on hyperbolic manifolds.  How to express them in terms of integers again or in terms of shapes living on these hyperbolic spaces?\footnote{There might even be a name for this process of turning wavefunctions into integers such as ``Fourier transform" or ``Functor of points".  All the things I am complaining about might have a mathematical name.} \\ \\
+\textbf{Example}  Show that if we can find one solution to:
+$$ x^2 + y^2 + z^2 = n$$
+we can find another such that $x \geq y \geq z \geq 0$. \\ \\
+There are infinitely many $n$ with solutions so that $$x \geq 2y \geq 3z \geq 0$$  This is contained inside one of the proofs of Duke's Theorem.
+
+\newpage
+
+\noindent If I go on the internet, on Google there seems to be an answer to all my question.  All of them written in this kind of lame, obfuscated way, but also packed with insight. \\ \\
+Let's try simultaneous quadratic forms:\footnote{There are two papers by Lillian Pierce and others which consider quadratic forms in several variables. Like 20 or 100.}
+\begin{eqnarray*}
+ x^2 + y^2 + 3z^2 &=& m \\
+ x^2 + y^2 + 5z^2 &=& n 
+\end{eqnarray*}
+The results like Hee Oh's show that my question has an answer.  As $m,n \to \infty$ the integer points will become equidistriuted in some way.  But not much else.  \\ \\
+There is a hodge-podge of techniques.  The line between what is known and what is impossible to solve is very thin.
+
+\newpage
+
+
+
+\fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
+
+\begin{thebibliography}{}
+
+\item S.G. Dani \textbf{Diophantine approximation and dynamics of unipotent flows on homogeneous spaces} \textit{(online)}
+
+\item Elon Lindenstrauss \textbf{Effective Estimates on Indefinite Ternary Forms}
+
+\item Jean Bourgain
+\textbf{A quantitative Oppenheim Theorem for generic diagonal quadratic forms} \texttt{arXiv:1604.02087}
+
+\item Gergely Harcos \textbf{Twisted Hilbert modular L-functions and spectral theory} \texttt{arXiv:1402.1332}
+
+\item Yves Benoist, Hee Oh. \textbf{Effective equidistribution of S-integral points on symmetric varieties} \textbf{arXiv:0706.1621}
+
+\end{thebibliography}
+
+\end{document}
