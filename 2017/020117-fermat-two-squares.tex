@@ -1,0 +1,83 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+%\usepackage{graphicx}
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\newcommand{\myhrule}{}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+
+\newcommand{\dash}{
+\begin{tikzpicture}[scale=1]
+\draw (0,0)--(19,0);
+\end{tikzpicture}
+}
+
+\newcommand{\sq}[3]{
+\node at (#1+0.5,#2+0.5) {#3};
+\draw (#1+0,#2+0)--(#1+1,#2+0)--(#1+1,#2+1)--(#1+0,#2+1)--cycle;
+}
+
+\usepackage{tikz}
+
+\title{\textbf{Proposal: Fermat Two Squares}}
+\author{John D Mangual}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{20}{25}\selectfont
+
+\maketitle
+
+\noindent The last number theory project I want to propose is the Fermat Two-Squares problem.
+$$ p = x^2 + y^2 \longleftrightarrow p \equiv 1 \text{ mod }4 $$
+It took me years to decide these are separate projects, compared to the 3- and 4- squares projects. 
+\begin{itemize}
+\item every positive number is the sum of four squares
+\item every prime number (with remainder of 1 after dividing by 4) is the sume of two perfect squares
+\end{itemize}
+Our perspective will be slightly advaned.  If you go on Wikipedia, our prime number theorem is a type of \textbf{Fermat Descent}.  Other examples are:
+\begin{itemize}
+\item $\sqrt{2}$ is not a fraction
+\item Viet\'{e} Jumping (e.g. $x^2 + y^2 + z^2 = 3xyz$)
+\item $a^2 + b^4 = c^4$ has no integer solutions
+\end{itemize}
+I am less interested in the last one.  It is very specific and very technical.  Hopefully I can find the specific name for the reason I don't like it very much. 
+
+\newpage
+
+\noindent In a way, all of my projects are the same\dots no matter which equation I pick it all becomes hard-core analysis and cohomology. \\ \\
+Here is the from the Wikipedia page on Fermat's Infinite Descent:
+\begin{quotation}
+{\color{blue} To extend this to the case of an abelian variety, Andr\'{e} Weil had to make more explicit the way of quantifying the size of a solution, by means of a \textbf{\color{black}height function} -- a concept that became foundational. \\\\ To show that $A(Q)/2A(Q)$ is finite, which is certainly a necessary condition for the finite generation of the group $A(Q)$ of rational points of $A$, one must do calculations in what later was recognised as \textbf{\color{black}Galois cohomology}. In this way, abstractly defined cohomology groups in the theory become identified with \textit{\color{green!85!white!90!black}\textbf{descents}} in the tradition of Fermat. }
+\end{quotation}
+One example of Fermat decent is that the solutions to 
+$$ x^2 + y^2 + z^2 = 3xyz $$
+form a tree.  In the two squares case descent means that:
+$$ p = 102761 = 19 \times 320 + 320 \times 320 $$
+can be found in a systematic way.  Our goal is to understand why his is an instance of Galois Cohomology.
+
+\newpage
+
+Markoff Tree:
+
+\includegraphics[width=5in]{MarkoffNumberTree.png}
+
+\newpage
+
+
+
+\fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
+
+\begin{thebibliography}{}
+
+\item 
+
+\end{thebibliography}
+
+\end{document}
