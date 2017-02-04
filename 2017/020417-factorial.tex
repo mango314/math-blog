@@ -1,0 +1,62 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+%\usepackage{graphicx}
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\newcommand{\myhrule}{}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+
+\newcommand{\dash}{
+\begin{tikzpicture}[scale=1]
+\draw (0,0)--(19,0);
+\end{tikzpicture}
+}
+
+\newcommand{\sq}[3]{
+\node at (#1+0.5,#2+0.5) {#3};
+\draw (#1+0,#2+0)--(#1+1,#2+0)--(#1+1,#2+1)--(#1+0,#2+1)--cycle;
+}
+
+\usepackage{tikz}
+
+\title{\textbf{Proposal: The Factorial Function}}
+\author{John D Mangual}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{20}{25}\selectfont
+
+\maketitle
+
+\noindent It would not be a stretch to categorize my work under the topics in my 3 previous blog posts and this one.  I talk about the Stirling formula:
+$$ n! \approx \sqrt{2 \pi e } \left( \frac{n}{e} \right)^n $$
+Think about it.  If you don't know much math, there are only so many starting points.  So no matter how complicated our analysis gets, there shold only be a few principles at play. \\ \\
+Here we can get away with just the trapezoid rule:
+\begin{eqnarray*} \log n! &=& \log 1 + \log 2 + \dots + \log n \\ \\
+& \approx &
+\int_1^n \log x \, dx = n \log n - n \end{eqnarray*}
+The goal of this project is to state and make towards specific conjectures, built from these. \\ \\
+This concludes my proposals for the Spring.
+
+\newpage
+
+
+\newpage
+
+
+
+\fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
+
+\begin{thebibliography}{}
+
+\item \textbf{Wikipedia} ``Factorial Function" \texttt{https://en.wikipedia.org/wiki/Factorial}
+
+\end{thebibliography}
+
+\end{document}
