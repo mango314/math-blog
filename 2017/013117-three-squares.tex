@@ -88,7 +88,10 @@ Let's try simultaneous quadratic forms:\footnote{There are two papers by Lillian
  x^2 + y^2 + 5z^2 &=& n 
 \end{eqnarray*}
 The results like Hee Oh's show that my question has an answer.  As $m,n \to \infty$ the integer points will become equidistriuted in some way.  But not much else.  \\ \\
-There is a hodge-podge of techniques.  The line between what is known and what is impossible to solve is very thin.
+There is a hodge-podge of techniques.  The line between what is known and what is impossible to solve is very thin. \\ \\
+Reminder to self: the starting point for solving the sum of four squres problems is to observe you can solve it with a theta function:
+$$ \theta(z)^4 = \left(\sum q^{n^2} \right)^4 = 
+\sum r_4(n) q^n $$
 
 \newpage
 
@@ -111,4 +114,78 @@ There is a hodge-podge of techniques.  The line between what is known and what i
 
 \end{thebibliography}
 
+\newpage
+
+\fontfamily{qag}\selectfont \fontsize{20}{25}\selectfont
+
+\noindent There are several proofs that every every integer is the sum of 4 squares.  Let's try: 
+$$ 5 = 2^2 + 1^2 + 0^2 + 0^2 $$
+and how about another number see if we get lucky:
+$$ 17 = 4^2 + 1^2 + 0^2 + 0^2 $$ 
+Then we can multiply solutions in some kind of way
+$$ 5 \times 17 = (...)^2 + (...)^2 + (...)^2 + (...)^2 $$
+there should be maybe some kind of multiplication rule:
+$$ (x_1^2 + x_2^2 + x_3^2 + x_4^2)
+(y_1^2 + y_2^2 + y_3^2 + y_4^2) $$
+is going to be also the sum of four squares:
+\begin{eqnarray*} &=& (x_1 y_1 + x_2 y_2 + x_3 y_3 + x_4 y_4)^2 \\
+&+& (x_1 y_2 - x_2 y_1 + x_3 y_4 - x_4 y_3)^2 \\
+&+& (x_1 y_3 - x_3 y_1 + x_4 y_2 - x_2 y_4)^2 \\
+&+& (x_1 y_4 + x_4 y_1 + x_2 y_3 + x_3 y_2)^2    \end{eqnarray*}
+It's a bit of a typographical nightmare.  As a mathematician, I rarely think about the clarity of my writing from the literary or orthographic perspective.
+$$ 85 =  (2 \times 4 + 1 \times 1)^2 + (4 \times 1  - 1 \times 2)^2 + 0^2 + 0^2  $$
+At least we get a formula. 
+
+\newpage
+
+In the case of 3 squares the answers are still multiplicative, but there's no formula.  
+$$ 5 = 4^2 + 1^2 + 0^2 $$
+Therefore, $25$ should also be admissible.  And in fact:
+$$ 25 = 4^2 + 3^2 + 0^2 $$
+and the third power of five should also have an answer:
+$$ \hspace{-0.8in} 125 = 5^2 \times ( 4^2 + 1^2 + 0^2 ) $$
+We are glad just to have an answer.  3 is even easier:
+$$ 3^2 = 1^2 + 1^2 + 1^2 $$
+and therefore we should also get $15$:
+\begin{eqnarray*} 15 &=& 3^2 + (...)^2 + (...)^2  \\
+&=& 2^2  + 2^2 + (...)^2
+\end{eqnarray*}
+I am trying the different combinations.  There is no solution.  $n \neq 4^a(8b+7) $ and yet 
+$$ 7 \times 23 = 161 = 4^2 + 8^2 + 9^2 $$
+Are we guaranteed a solution?  The answer is yes.  And we are quickly led to rich objects
+\begin{itemize}
+\item geometry of numbers
+\item Kloosterman sums
+\item quantum computation
+\item the Weil conjectures 
+\end{itemize}
+
+\newpage
+
+\noindent Here's a way to get lots of three-squares type results:
+$$ 3^2 + 4^2 = 5^2$$
+therefoe we can arrange them into a rotation matrix:
+$$ \det \left[ 
+\begin{array}{crc}
+\frac{3}{5} & -\frac{4}{5} & 0 \\
+\frac{4}{5} & \frac{3}{5} & 0 \\
+0 & 0 & 1  \end{array}\right] = 1$$
+but we can also get a matrix by rearranging the numbers:
+$$ \det \left[ 
+\begin{array}{ccr}
+\frac{3}{5} & 0 &  -\frac{4}{5}  \\
+0 & 1 & 0 \\
+\frac{4}{5} & 0  & \frac{3}{5}  
+  \end{array}\right] = 1$$
+and then if we multiply them, we don't have any chance of getting a simpler matrix:
+$$ \left[
+\begin{array}{rrr}
+\frac{9}{25} & - \frac{4}{5} & - \frac{12}{25} \\
+-\frac{4}{5} & \frac{3}{5} & 0 \\ 
+\frac{4}{5} & 0 & \frac{3}{5} \\ 
+\end{array}\right]
+$$
+the more we multiply, and these denominators will never get smaller.  However a sphere has volume $4\pi$ and the space of rotation matrices has volume 
+$$\pi \times 4\pi \stackrel{?}{=} 4\pi^2 $$
+so we have countably infinitely many matrices in a finite (or ``compact") space, so we can find matrices unnervingly close to the diagonal $(1,1,1)$ matrix.
 \end{document}
