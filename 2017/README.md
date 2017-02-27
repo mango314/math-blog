@@ -10,3 +10,4 @@ In all of these I am trying my luck.  There are a lot of smart people proving ex
 * Typically the existing proof is very, very complicated and I am asking for an easier way -- "Life Hacks"
 
 And I am always pushing it.
+You know what? I have no plans to finish my PhD. **You** can decide what is know or publishable and what isn't.
