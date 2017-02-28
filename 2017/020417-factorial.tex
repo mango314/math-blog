@@ -154,7 +154,6 @@ And hopefully these are helpful exchanges.  \\ \\ I will argue (maybe not here) 
 Cayley's Representation Theorem is the observation that all finite groups embed in a permutation group $G \subseteq S_n$. These are like coordinates.  And Schur-Weyl duality says $S_N \leftrightarrow U(N)$. \\ \\
 If I look at empirical data, ``real-world" we will never have a group structure.  Things will always be off.  So there's something called an \textbf{almost-group} or we'll find some other way to reason about life.
 
-
 \newpage
 
 \fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
@@ -168,5 +167,75 @@ If I look at empirical data, ``real-world" we will never have a group structure.
 \item Kurt Johansson \textbf{Discrete orthogonal polynomial ensembles and the Plancherel measure} \texttt{arXiv:math/9906120}
 
 \end{thebibliography}
+
+\fontfamily{qag}\selectfont \fontsize{20}{25}\selectfont
+
+
+\newpage
+
+\noindent \textbf{E} One of the earliest examples of mathematics I was exposed to was the Arctic Circle phenomenon\footnote{At the PROMYS summer program in Boston, where we learned Continued Fractions, Quadratic Reciprocity and a few other results in Number Theory.} showing that random tilings have a limit shape (a circle).  \\ \\
+\includegraphics[width=7.5in]{AD-01.png} \\
+That was in 1998.  By 2017 there are several complete proofs.  
+
+\newpage
+
+\noindent In order to argue mathematically:
+\begin{itemize}
+\item how do we know the number of tilings is $2^{\binom{n}{2}}$ ? This particular shape has an ingenious ``shuffling" algorithm, which comes out of a hat
+\item how do we pick one at random?   (this is Markov Chain Monte Carlo) and write a computer simulation
+\item How do we express the notion of ``convergence" to a ``limit shape" ? this is the theory of large deviations
+\end{itemize} 
+
+\noindent In order to argue like a theoretical physicist
+\begin{itemize}
+\item these numbers are related to the XXZ spin chain
+\item Domino tilings fall under the umbrella of integrable systems and spectral curves
+\end{itemize}
+and so the discussion is done, right?  At least, that group of people consider it done.\footnote{There's a duality between exposition and research.  I would like to hope that you can tell the story better, that can be channeled into a better technical result.}  \\ \\
+There's an even dumber problem, which is to count the number of domino tilings of a rectangle.  
+$$ \prod_{j=1}^{m}\prod_{j=1}^{n} \left( 4 \cos^2 \frac{\pi j}{2n+1} 
++ 4 \cos^2 \frac{\pi k}{2n+1} \right) \in \mathbb{Z}$$
+This doesn't look like a whole number. And I know that patterns in tilings occur with special frequencies, also related to $\pi$.
+
+
+\newpage
+
+\noindent Emphasis:  \textbf{integrable systems}
+
+
+\fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
+
+\begin{thebibliography}{}
+
+\item \textbf{Wikipedia} ``Factorial Function" \texttt{https://en.wikipedia.org/wiki/Factorial}
+
+\item William Jockusch, James Propp , Peter Shor\textbf{Random Domino Tilings and the Arctic Circle Theorem} \texttt{arXiv:math/980168}
+
+\item Kurt Johansson \textbf{Discrete orthogonal polynomial ensembles and the Plancherel measure} \texttt{arXiv:math/9906120}
+
+\item Eric Nordenstam \textbf{On the Shuffling Algorithm for Domino Tilings} \texttt{arXiv:0802.2592}
+
+\item Benjamin J. Fleming, Peter J. Forrester \\ \textbf{Interlaced particle systems and tilings of the Aztec diamond} \texttt{1004.0474}
+
+\item Alexei Borodin, Vadim Gorin \textbf{Lectures on Integrable Probability} \texttt{arXiv:1212.3351}
+
+\item Sunil Chhita, Kurt Johansson \\ \textbf{Domino statistics of the two-periodic Aztec diamond} \texttt{arXiv:1410.2385}
+
+\end{thebibliography}
+
+\fontfamily{qag}\selectfont \fontsize{20}{25}\selectfont
+
+\noindent Emphasis:  \textbf{calculus of variations}
+
+
+\fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
+
+\begin{thebibliography}{}
+
+\item 
+
+\end{thebibliography}
+
+\fontfamily{qag}\selectfont \fontsize{20}{25}\selectfont
 
 \end{document}
