@@ -178,6 +178,353 @@ And I wonder why this particular shape is so essential: \\
 
 \newpage
 
+\noindent Let's put two reasonable tilings on the board.  One strategy for this shape is to start from the corners and work indwards.  And in this case we get lucky: it always works. \\
+
+\begin{tikzpicture}[scale=0.75]
+
+
+%\def \b {0}
+%\def \c {0}
+%\draw[fill=black!30!white, line width=2] (\b,\c)--(\b+2,\c)--(\b+2,\c+1)--(\b,\c+1)--cycle;
+
+\def \b {-1}
+\def \c {3}
+\draw[fill=black!30!white, line width=1] (\b,\c)--(\b+2,\c)--(\b+2,\c+1)--(\b,\c+1)--cycle;
+
+\def \b {-2}
+\def \c {2}
+\draw[fill=black!30!white, line width=1] (\b,\c)--(\b+2,\c)--(\b+2,\c+1)--(\b,\c+1)--cycle;
+
+\def \b {-1}
+\def \c {-4}
+\draw[fill=black!70!white, line width=1] (\b,\c)--(\b+2,\c)--(\b+2,\c+1)--(\b,\c+1)--cycle;
+
+\def \b {0}
+\def \c {-3}
+\draw[fill=black!70!white, line width=1] (\b,\c)--(\b+2,\c)--(\b+2,\c+1)--(\b,\c+1)--cycle;
+
+\def \b {1}
+\def \c {-2}
+\draw[fill=black!70!white, line width=1] (\b,\c)--(\b+2,\c)--(\b+2,\c+1)--(\b,\c+1)--cycle;
+
+\def \b {-4}
+\def \c {-1}
+\draw[fill=black!10!white, line width=1] (\b,\c)--(\b+1,\c)--(\b+1,\c+2)--(\b,\c+2)--cycle;
+
+\def \b {-3}
+\def \c {-2}
+\draw[fill=black!10!white, line width=1] (\b,\c)--(\b+1,\c)--(\b+1,\c+2)--(\b,\c+2)--cycle;
+
+\def \b {-2}
+\def \c {-3}
+\draw[fill=black!10!white, line width=1] (\b,\c)--(\b+1,\c)--(\b+1,\c+2)--(\b,\c+2)--cycle;
+
+%\def \b {-3}
+%\def \c {0}
+%\draw[fill=black!10!white, line width=2] (\b,\c)--(\b+1,\c)--(\b+1,\c+2)--(\b,\c+2)--cycle;
+
+\def \b {1}
+\def \c {1}
+\draw[fill=black!50!white, line width=1] (\b,\c)--(\b+1,\c)--(\b+1,\c+2)--(\b,\c+2)--cycle;
+
+\def \b {2}
+\def \c {0}
+\draw[fill=black!50!white, line width=1] (\b,\c)--(\b+1,\c)--(\b+1,\c+2)--(\b,\c+2)--cycle;
+
+\def \b {3}
+\def \c {-1}
+\draw[fill=black!50!white, line width=1] (\b,\c)--(\b+1,\c)--(\b+1,\c+2)--(\b,\c+2)--cycle;
+
+
+
+\foreach \a in {0,...,3}{
+
+	\draw[line width=2] (\a  ,4-\a)--(\a+1, 4-\a  );
+	\draw[line width=2] (\a+1,4-\a)--(\a+1, 4-\a-1);
+	
+	\draw (   \a, 4-\a)--(   \a, \a-4);
+	\draw (-1*\a, 4-\a)--(-1*\a, \a-4);
+	
+	\draw ( 4-\a,    \a)--(\a-4,    \a);
+	\draw ( 4-\a, -1*\a)--(\a-4, -1*\a);
+
+	\def \b {-1}
+	\def \c { 1}
+		
+	\draw[line width=2] (\b*\a  ,\c*4-\c*\a)--(\b*\a+\b*1, \c*4-\c*\a  );
+	\draw[line width=2] (\b*\a+\b*1,\c*4-\c*\a)--(\b*\a+\b*1, \c*4-\c*\a-\c*1);
+	
+	\def \b { 1}
+	\def \c {-1}
+		
+	\draw[line width=2] (\b*\a  ,\c*4-\c*\a)--(\b*\a+\b*1, \c*4-\c*\a  );
+	\draw[line width=2] (\b*\a+\b*1,\c*4-\c*\a)--(\b*\a+\b*1, \c*4-\c*\a-\c*1);
+	
+	\def \b {-1}
+	\def \c {-1}
+		
+	\draw[line width=2] (\b*\a  ,\c*4-\c*\a)--(\b*\a+\b*1, \c*4-\c*\a  );
+	\draw[line width=2] (\b*\a+\b*1,\c*4-\c*\a)--(\b*\a+\b*1, \c*4-\c*\a-\c*1);
+
+}
+
+\draw[line width=4] (0,-2)--(1,-2)--(1,-1)--(3,-1)--(3,0)--(2,0)--(2,1)--(1,1)--(1,3)--(0,3)--(0,2)--(-3,2)--(-3,0)--(-2,0)--(-2,-1)--(-1,-1)--(-1,-3)--(0,-3)--cycle;
+
+\begin{scope}[xshift=10cm]
+
+%\def \b {0}
+%\def \c {0}
+%\draw[fill=black!30!white, line width=2] (\b,\c)--(\b+2,\c)--(\b+2,\c+1)--(\b,\c+1)--cycle;
+
+\def \b {-1}
+\def \c {3}
+\draw[fill=black!30!white, line width=2] (\b,\c)--(\b+2,\c)--(\b+2,\c+1)--(\b,\c+1)--cycle;
+
+\def \b {-2}
+\def \c {2}
+\draw[fill=black!30!white, line width=2] (\b,\c)--(\b+2,\c)--(\b+2,\c+1)--(\b,\c+1)--cycle;
+
+\def \b {1}
+\def \c {-1}
+\draw[fill=black!30!white, line width=2] (\b,\c)--(\b+2,\c)--(\b+2,\c+1)--(\b,\c+1)--cycle;
+
+\def \b {0}
+\def \c {0}
+\draw[fill=black!30!white, line width=2] (\b,\c)--(\b+2,\c)--(\b+2,\c+1)--(\b,\c+1)--cycle;
+
+\def \b {-1}
+\def \c {-4}
+\draw[fill=black!70!white, line width=2] (\b,\c)--(\b+2,\c)--(\b+2,\c+1)--(\b,\c+1)--cycle;
+
+\def \b {0}
+\def \c {-3}
+\draw[fill=black!70!white, line width=2] (\b,\c)--(\b+2,\c)--(\b+2,\c+1)--(\b,\c+1)--cycle;
+
+\def \b {1}
+\def \c {-2}
+\draw[fill=black!70!white, line width=2] (\b,\c)--(\b+2,\c)--(\b+2,\c+1)--(\b,\c+1)--cycle;
+
+\def \b {-2}
+\def \c {-1}
+\draw[fill=black!70!white, line width=2] (\b,\c)--(\b+2,\c)--(\b+2,\c+1)--(\b,\c+1)--cycle;
+
+\def \b {-4}
+\def \c {-1}
+\draw[fill=black!10!white, line width=2] (\b,\c)--(\b+1,\c)--(\b+1,\c+2)--(\b,\c+2)--cycle;
+
+\def \b {-3}
+\def \c {-2}
+\draw[fill=black!10!white, line width=2] (\b,\c)--(\b+1,\c)--(\b+1,\c+2)--(\b,\c+2)--cycle;
+
+\def \b {-2}
+\def \c {-3}
+\draw[fill=black!10!white, line width=2] (\b,\c)--(\b+1,\c)--(\b+1,\c+2)--(\b,\c+2)--cycle;
+
+\def \b {0}
+\def \c {1}
+\draw[fill=black!10!white, line width=2] (\b,\c)--(\b+1,\c)--(\b+1,\c+2)--(\b,\c+2)--cycle;
+
+\def \b {-3}
+\def \c {0}
+\draw[fill=black!10!white, line width=2] (\b,\c)--(\b+1,\c)--(\b+1,\c+2)--(\b,\c+2)--cycle;
+
+\def \b {-1}
+\def \c {0}
+\draw[fill=black!10!white, line width=2] (\b,\c)--(\b+1,\c)--(\b+1,\c+2)--(\b,\c+2)--cycle;
+
+\def \b {1}
+\def \c {1}
+\draw[fill=black!50!white, line width=2] (\b,\c)--(\b+1,\c)--(\b+1,\c+2)--(\b,\c+2)--cycle;
+
+\def \b {2}
+\def \c {0}
+\draw[fill=black!50!white, line width=2] (\b,\c)--(\b+1,\c)--(\b+1,\c+2)--(\b,\c+2)--cycle;
+
+\def \b {3}
+\def \c {-1}
+\draw[fill=black!50!white, line width=2] (\b,\c)--(\b+1,\c)--(\b+1,\c+2)--(\b,\c+2)--cycle;
+
+\def \b {-2}
+\def \c {0}
+\draw[fill=black!50!white, line width=2] (\b,\c)--(\b+1,\c)--(\b+1,\c+2)--(\b,\c+2)--cycle;
+
+\def \b {-1}
+\def \c {-3}
+\draw[fill=black!50!white, line width=2] (\b,\c)--(\b+1,\c)--(\b+1,\c+2)--(\b,\c+2)--cycle;
+
+\def \b {0}
+\def \c {-2}
+\draw[fill=black!50!white, line width=2] (\b,\c)--(\b+1,\c)--(\b+1,\c+2)--(\b,\c+2)--cycle;
+
+\foreach \a in {0,...,3}{
+
+	\draw[line width=2] (\a  ,4-\a)--(\a+1, 4-\a  );
+	\draw[line width=2] (\a+1,4-\a)--(\a+1, 4-\a-1);
+	
+	\draw (   \a, 4-\a)--(   \a, \a-4);
+	\draw (-1*\a, 4-\a)--(-1*\a, \a-4);
+	
+	\draw ( 4-\a,    \a)--(\a-4,    \a);
+	\draw ( 4-\a, -1*\a)--(\a-4, -1*\a);
+
+	\def \b {-1}
+	\def \c { 1}
+		
+	\draw[line width=2] (\b*\a  ,\c*4-\c*\a)--(\b*\a+\b*1, \c*4-\c*\a  );
+	\draw[line width=2] (\b*\a+\b*1,\c*4-\c*\a)--(\b*\a+\b*1, \c*4-\c*\a-\c*1);
+	
+	\def \b { 1}
+	\def \c {-1}
+		
+	\draw[line width=2] (\b*\a  ,\c*4-\c*\a)--(\b*\a+\b*1, \c*4-\c*\a  );
+	\draw[line width=2] (\b*\a+\b*1,\c*4-\c*\a)--(\b*\a+\b*1, \c*4-\c*\a-\c*1);
+	
+	\def \b {-1}
+	\def \c {-1}
+		
+	\draw[line width=2] (\b*\a  ,\c*4-\c*\a)--(\b*\a+\b*1, \c*4-\c*\a  );
+	\draw[line width=2] (\b*\a+\b*1,\c*4-\c*\a)--(\b*\a+\b*1, \c*4-\c*\a-\c*1);
+
+}
+
+\end{scope}
+
+\end{tikzpicture} \\ 
+
+\noindent And for rectangle the case is even clearer.  There are no intermediate stages.  I mean, if you put enough tiles down there can be come question as to whether you put yourself in a corner yet.   \\ \\
+
+\begin{tikzpicture}[scale=0.75]
+
+\def \b {0}
+\def \c {0}
+\draw[fill=black!10!white, line width=2] (\b,\c)--(\b+1,\c)--(\b+1,\c+2)--(\b,\c+2)--cycle;
+
+\def \b {3}
+\def \c {1}
+\draw[fill=black!10!white, line width=2] (\b,\c)--(\b+1,\c)--(\b+1,\c+2)--(\b,\c+2)--cycle;
+
+\def \b {4}
+\def \c {4}
+\draw[fill=black!10!white, line width=2] (\b,\c)--(\b+1,\c)--(\b+1,\c+2)--(\b,\c+2)--cycle;
+
+\def \b {5}
+\def \c {3}
+\draw[fill=black!10!white, line width=2] (\b,\c)--(\b+1,\c)--(\b+1,\c+2)--(\b,\c+2)--cycle;
+
+\def \b {6}
+\def \c {0}
+\draw[fill=black!10!white, line width=2] (\b,\c)--(\b+1,\c)--(\b+1,\c+2)--(\b,\c+2)--cycle;
+
+\def \b {1}
+\def \c {5}
+\draw[fill=black!10!white, line width=2] (\b,\c)--(\b+1,\c)--(\b+1,\c+2)--(\b,\c+2)--cycle;
+
+\def \b {0}
+\def \c {2}
+\draw[fill=black!30!white, line width=2] (\b,\c)--(\b+2,\c)--(\b+2,\c+1)--(\b,\c+1)--cycle;
+
+\def \b {2}
+\def \c {4}
+\draw[fill=black!30!white, line width=2] (\b,\c)--(\b+2,\c)--(\b+2,\c+1)--(\b,\c+1)--cycle;
+
+\def \b {3}
+\def \c {7}
+\draw[fill=black!30!white, line width=2] (\b,\c)--(\b+2,\c)--(\b+2,\c+1)--(\b,\c+1)--cycle;
+
+\def \b {6}
+\def \c {6}
+\draw[fill=black!30!white, line width=2] (\b,\c)--(\b+2,\c)--(\b+2,\c+1)--(\b,\c+1)--cycle;
+
+\def \b {4}
+\def \c {2}
+\draw[fill=black!30!white, line width=2] (\b,\c)--(\b+2,\c)--(\b+2,\c+1)--(\b,\c+1)--cycle;
+
+\def \b {6}
+\def \c {3}
+\draw[fill=black!50!white, line width=2] (\b,\c)--(\b+1,\c)--(\b+1,\c+2)--(\b,\c+2)--cycle;
+
+\def \b {2}
+\def \c {5}
+\draw[fill=black!50!white, line width=2] (\b,\c)--(\b+1,\c)--(\b+1,\c+2)--(\b,\c+2)--cycle;
+
+\foreach \a in {0,...,8}{
+	\draw (\a,0)--(\a,8);
+	\draw (0,\a)--(8,\a);
+}
+
+\draw[line width = 2] (0,0)--(8,0)--(8,8)--(0,8)--cycle;
+
+
+\begin{scope}[xshift=10cm]
+
+\def \b {0}
+\def \c {0}
+\draw[fill=black!10!white, line width=2] (\b,\c)--(\b+1,\c)--(\b+1,\c+2)--(\b,\c+2)--cycle;
+
+\def \b {3}
+\def \c {1}
+\draw[fill=black!10!white, line width=2] (\b,\c)--(\b+1,\c)--(\b+1,\c+2)--(\b,\c+2)--cycle;
+
+\def \b {4}
+\def \c {4}
+\draw[fill=black!10!white, line width=2] (\b,\c)--(\b+1,\c)--(\b+1,\c+2)--(\b,\c+2)--cycle;
+
+\def \b {5}
+\def \c {3}
+\draw[fill=black!10!white, line width=2] (\b,\c)--(\b+1,\c)--(\b+1,\c+2)--(\b,\c+2)--cycle;
+
+\def \b {6}
+\def \c {0}
+\draw[fill=black!10!white, line width=2] (\b,\c)--(\b+1,\c)--(\b+1,\c+2)--(\b,\c+2)--cycle;
+
+\def \b {1}
+\def \c {5}
+\draw[fill=black!10!white, line width=2] (\b,\c)--(\b+1,\c)--(\b+1,\c+2)--(\b,\c+2)--cycle;
+
+\def \b {0}
+\def \c {2}
+\draw[fill=black!30!white, line width=2] (\b,\c)--(\b+2,\c)--(\b+2,\c+1)--(\b,\c+1)--cycle;
+
+\def \b {2}
+\def \c {4}
+\draw[fill=black!30!white, line width=2] (\b,\c)--(\b+2,\c)--(\b+2,\c+1)--(\b,\c+1)--cycle;
+
+\def \b {3}
+\def \c {7}
+\draw[fill=black!30!white, line width=2] (\b,\c)--(\b+2,\c)--(\b+2,\c+1)--(\b,\c+1)--cycle;
+
+\def \b {6}
+\def \c {6}
+\draw[fill=black!30!white, line width=2] (\b,\c)--(\b+2,\c)--(\b+2,\c+1)--(\b,\c+1)--cycle;
+
+\def \b {4}
+\def \c {2}
+\draw[fill=black!30!white, line width=2] (\b,\c)--(\b+2,\c)--(\b+2,\c+1)--(\b,\c+1)--cycle;
+
+\def \b {6}
+\def \c {3}
+\draw[fill=black!50!white, line width=2] (\b,\c)--(\b+1,\c)--(\b+1,\c+2)--(\b,\c+2)--cycle;
+
+\def \b {2}
+\def \c {5}
+\draw[fill=black!50!white, line width=2] (\b,\c)--(\b+1,\c)--(\b+1,\c+2)--(\b,\c+2)--cycle;
+
+\foreach \a in {0,...,8}{
+	\draw (\a,0)--(\a,8);
+	\draw (0,\a)--(8,\a);
+}
+
+\draw[line width = 2] (0,0)--(8,0)--(8,8)--(0,8)--cycle;
+
+\end{scope}
+
+
+\end{tikzpicture} \\ \\
+There is also the lovely John Conway game of ``Domineering" which is not related but you also place dominoes on a checkerboard. See \textbf{Winning Ways for Your Mathematical Plays} (Vol I). \\ \\
+\textbf{Exercise} Fill the rest of the tiling.
+
+\newpage
+
 \fontfamily{qag}\selectfont \fontsize{20}{25}\selectfont  
 
 
