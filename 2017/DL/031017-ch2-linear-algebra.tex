@@ -114,7 +114,51 @@ This is called a \textbf{shear}.  \\ \\
 \end{tikzpicture}\\ \\
 Our covariance matrix is symmetric: $(X X^T)^T = X^T (X^T)^T = X X^T$, so out our eigenvalues, our {\color{green!20!blue} \textbf{features}} are real numbers.  In practice these features will be linear combinations and therefore totally ridiculous:
 $$ \frac{1}{2} \times \text{Height} + 2 \times \text{Birthday} $$
-Let us proceed with our analysis of Principal Component Analysis.\\
+Let us proceed with our analysis of Principal Component Analysis.\\ \\
+The goal of PCA is to somehow ``shrink" the data in to more mangeable form.  This could be:
+\begin{itemize}
+\item shrinking an image file using JPEG, PNG, GIF or some other file format
+\item shrinking a WAV file to MP3
+\item shrinking a video to fit on your mobile phone
+\end{itemize}
+All of these compressions can be modeled as linear transforms from a space of $n \times 1 $ vectors to smaller $n_0 \times 1$ vectors:
+$$ f: x \in \mathbb{R}^n \mapsto c \in \mathbb{R}^{n_0} $$
+and this is what we call a \textbf{lossy} compression (or a ``matrix").  How could it be possible to keep all this information?  We simply cannot. \\ \\
+If we are lucky there will be some correlation and we can recover some of the information we have lost. $x = g(c) $ and $c = f(x)$ with $x \approx (g \circ f)(x)$ 
+
+\newpage
+
+\noindent Our deep learning textbook has two simplifications that $f$ and it's ``pseudoinverse" $g$ are both linear transformations:
+\begin{itemize}
+\item $c = f(x) = D\;\,x$
+\item $x = g(c) = D^T x$
+\item $x = (g \circ f)(x) $
+\end{itemize}
+It will be impossible to have all these true for all our data points, so what is the best we can do? \\ \\
+\begin{tikzpicture}
+
+
+
+\draw[line width=1.5] (11,0)--(0,4);
+
+\foreach \a in {0,...,10}{
+	\draw[color=black!50!white] (0,0)--( 11- 11*\a/10 , 0 + 4*\a/10 );
+}
+
+\draw[line width=1.5] (0,0)--(4*4*11/137, 4*11*11/137);
+\draw[fill=black] (0,0) circle (0.05);
+\draw[fill=black] (4*4*11/137, 4*11*11/137) circle (0.05);
+\draw[fill=white] (4*4*11/137, 4*11*11/137) circle (0.05);
+
+\draw[line width=1.5] (4*4*11/137 + 11*0.05 , 4*11*11/137 - 4*0.05)--(4*4*11/137 + 11*0.05 - 4*0.05 , 4*11*11/137 - 4*0.05 - 11*0.05)--(4*4*11/137 - 4*0.05 , 4*11*11/137 - 11*0.05);
+
+\end{tikzpicture} \\ \\
+The closest point from one point to the line can be found by dropping a perpendicular.  Even if a curve, the tangent line will be perpendicular. \\ \\
+If there are many points, then we have many points we can drop to a particular line.  And we want the sum of the squares of all these distances.
+
+\includegraphics[width=7in]{linear-algebra-01.png}
+
+\noindent We include some random points and a candidate best fit line.
 
 
 \end{document}
