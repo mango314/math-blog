@@ -1,0 +1,99 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+%\usepackage{graphicx}
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\newcommand{\myhrule}{}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+
+\newcommand{\dash}{
+\begin{tikzpicture}[scale=1]
+\draw (0,0)--(19,0);
+\end{tikzpicture}
+}
+
+\newcommand{\sq}[3]{
+\node at (#1+0.5,#2+0.5) {#3};
+\draw (#1+0,#2+0)--(#1+1,#2+0)--(#1+1,#2+1)--(#1+0,#2+1)--cycle;
+}
+
+\usepackage{tikz}
+
+\title{\textbf{Chapter 2: Principal Component Analysis}}
+\author{John D Mangual}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{15}{20}\selectfont
+
+\maketitle
+
+\noindent Machine learning is just linear regression and best fit lines.  And that is just the Pythagorean theorem.  Today let's discuss \textbf{Principal Component Analysis}. \\ \\
+Our data points are $x^{(1)}, \dots, x^{(m)} \in \mathbb{R}^n $ so we can merge them into a single matrix $X \in \mathbb{R}^{m \times n}$.
+$$ \begin{tikzpicture}  
+\draw (0,0)--(1,0)--(1,5)--(0,5)--cycle; 
+\node at (0.5,2.5) {$x^{(1)}$};
+
+\node at (1.5,2.5) {$\oplus$};
+
+\draw (2,0)--(3,0)--(3,5)--(2,5)--cycle; 
+\node at (2.5,2.5) {$x^{(2)}$};
+
+\node at (4,2.5) {$\oplus \dots \oplus $};
+
+\draw (5,0)--(6,0)--(6,5)--(5,5)--cycle; 
+\node at (5.5,2.5) {$x^{(n)}$};
+
+\node at (6.5,2.5) {$=$};
+
+\draw (7,0)--(10,0)--(10,5)--(7,5)--cycle;
+\node at (8.5,2.5) {$X$};
+
+\end{tikzpicture} $$
+In Python is this done with the \texttt{np.hstack} or \texttt{np.vstack} commands (where \texttt{numpy} is shortened to \texttt{np}). \\ \\
+In beginning statistics we search for the best fit line.  That means all our data points $x$  approximately solve the same equation:
+$$ A x + B \approx 0 $$ 
+What are the dimensions of $A$ and $B$?  Our vectors $x$ have shape $1 \times n$ and the zero has shape $1 \times 1$, so that $A$ has shape $n \times 1$ and $B$ has shape $1 \times 1$.  However, reduction to a line may lose much information.  \\ \\
+What if we need more features?  Let's take $n_0 < n$ feature. \\ \\
+What are the dimensions of $A$ and $B$?  Our vectors $x$ have shape $1 \times n$ and the zero has shape $1 \times n_0$, so that $A$ has shape $n \times n_0$ and $B$ has shape $1 \times n_0$.  
+
+\newpage
+
+\noindent What is a reasonable numbe of data points?  Some data sets brag as much as a billion, $m = 10^9$ data points.  Each row of data could have as much as $n = 100$ features (or more) and we could like to reduce that to $n_0 = 10$. \\ \\
+If our data set included a few bit of inforation about each person:
+\begin{itemize}
+\item Height
+\item Favorite Ice Cream
+\item {\color{black!20!white} Birthday}
+\item {\color{black!20!white} Occupation}
+\end{itemize}
+Can we infer the \textbf{Birthday}  and \textbf{Occupation} from the height and favorite ice cream flavor?  Hopefully there is some type of {\color{green!20!blue}correlation}! \\ \\
+So we will take our data points $X$ and find the covariance matrix.  Hopefully our numbers do not have too much mistakes because they may propagage throughout our computation!
+$$ \text{Covariance} = X^T X  \in \mathbb{R}^{m \times m}$$
+What is the shape of our matrix?  It is always okay to multiply a matrix with its own transpose:
+$$ (m \times n ) \cdot (n \times m) = m \times m \quad\text{ or }\quad(n \times m) \cdot (m \times n) = n \times n$$
+$n$ is the \textbf{number of features}  and $m$ is the \textbf{number of data points}, so we are doing the one on the right.  \\ \\
+ Next we decide which features are the most important.  Using the eigenvalue decomposition:
+$$ X^T X \sim \left[ \begin{array}{cccc} \lambda_1 & & & \\ & \lambda_2 & & \\ &  &  \ddots  \\ 
+& & & \lambda_n \end{array} \right] $$
+Our matrix is not only square, but they are symmetric!  So the eigenvalues $\lambda \in \mathbb{R}$ can be compared.
+$$ \lambda_1 > \lambda_2 > \dots > \lambda_n $$
+
+\newpage
+
+\noindent An example of a matrix whose eigenvalues cannot be a real number is a \textbf{rotation} by $90^\circ$: 
+$$ \left[ \begin{array}{cr} 0 & -1 \\ 1 & 0 \end{array}\right] 
+\sim \left[ \begin{array}{cr} \sqrt{-1} & 0 \\ 0 & \sqrt{-1} \end{array}\right] $$
+Here is a $2 \times 2$ matrix which is not diagonal.  There is only one eigenvector:
+$$ \left[ \begin{array}{cr} 1 & 1 \\ 1 & 0 \end{array}\right] $$
+This is called a \textbf{shear}.  \\ \\
+Our covariance matrix is symmetric: $(X X^T)^T = X^T (X^T)^T = X X^T$, so out our eigenvalues, our {\color{green!20!blue} \textbf{features}} are real numbers.  In practice these features will be linear combinations and therefore totally ridiculous:
+$$ \frac{1}{2} \times \text{Height} + 2 \times \text{Birthday} $$
+Let us proceed with our analysis of Principal Component Analysis.
+\end{document}
