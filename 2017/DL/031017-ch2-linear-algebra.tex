@@ -93,7 +93,28 @@ $$ \left[ \begin{array}{cr} 0 & -1 \\ 1 & 0 \end{array}\right]
 Here is a $2 \times 2$ matrix which is not diagonal.  There is only one eigenvector:
 $$ \left[ \begin{array}{cr} 1 & 1 \\ 1 & 0 \end{array}\right] $$
 This is called a \textbf{shear}.  \\ \\
+\begin{tikzpicture}
+
+\draw (0,0)--(1,0)--(1,1)--(0,1)--cycle;
+\draw (0.25,0.25)--(0.25,0.75)--(0.5,0.75)--(0.5,0.25)--(0.75,0.25)--(0.75,0.75);
+\draw[fill=black] (0.25,0.25) circle (0.05);
+
+\begin{scope}[cm={1,0,1,1,(2,0)}]
+\draw (0,0)--(1,0)--(1,1)--(0,1)--cycle;
+\draw (0.25,0.25)--(0.25,0.75)--(0.5,0.75)--(0.5,0.25)--(0.75,0.25)--(0.75,0.75);
+\end{scope}
+\draw[fill=black] (2.5,0.25) circle (0.05);
+
+\begin{scope}[cm={0,-1,1,0,(5,1)}]
+\draw (0,0)--(1,0)--(1,1)--(0,1)--cycle;
+\draw (0.25,0.25)--(0.25,0.75)--(0.5,0.75)--(0.5,0.25)--(0.75,0.25)--(0.75,0.75);
+\draw[fill=black] (0.25,0.25) circle (0.05);
+\end{scope}
+
+\end{tikzpicture}\\ \\
 Our covariance matrix is symmetric: $(X X^T)^T = X^T (X^T)^T = X X^T$, so out our eigenvalues, our {\color{green!20!blue} \textbf{features}} are real numbers.  In practice these features will be linear combinations and therefore totally ridiculous:
 $$ \frac{1}{2} \times \text{Height} + 2 \times \text{Birthday} $$
-Let us proceed with our analysis of Principal Component Analysis.
+Let us proceed with our analysis of Principal Component Analysis.\\
+
+
 \end{document}
