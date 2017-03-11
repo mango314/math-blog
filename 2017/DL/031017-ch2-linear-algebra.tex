@@ -169,5 +169,39 @@ If there are many points, then we have many points we can drop to a particular l
 \noindent This example is not the most aesthetic, just like real data is not. \\ \\
 Which one is a better fit? 
 
+\newpage
 
+\noindent Let's do some basic linear algebra (despite its simplicity it took a long time):
+
+$$ x \in \mathbb{R}^N \stackrel{f}{\mapsto} c = f(x) \in \mathbb{R}^M \stackrel{g}{\mapsto} x \approx (g \circ f)(x) \in \mathbb{R}^N $$
+This looks just like inverse functions, but if $M \gg N$ there can be no inverse that works everywhere.  This is why we need a \textbf{pseudoinverse}.  I don't even know the definition. \\ \\
+Let's construct one a pseudoinverse by finding the constraints.
+$$ x \in \mathbb{R}^N \stackrel{f}{\mapsto} D \, x \in \mathbb{R}^M \stackrel{g}{\mapsto} x \approx D^T D \, x \in \mathbb{R}^N $$
+and if $x$ lies perfectly on the best-fit line (or best fit linear subspace)
+$$ D^T D = I_{M \times M} $$
+This is a \textbf{rotation} (or ``orthogonal matrix").  Except this $D$ is an $N \times M$ matrix up to rotations, so this is an element of the Grassmanian.\footnote{https://en.wikipedia.org/wiki/Grassmannian} \\ \\
+Why did we pick the transpose?  We are trying to solve a minimization problem:
+$$  \min \big|\big| x - (g \circ f)(x) \big|\big|^2 $$
+If we decide the decoder function is $g(c)= D \, c$, we can try to solve this simplified problem. 
+$$ \min_c \big|\big| x - D \, c \big|\big|^2 $$
+The closest we can get to an inverse is by the transpose, $c = f(x) = D^T x$. \\ \\
+{\color{blue!20!green!70!white}\textbf{Best Fit Hyperplane}} I am trying to find a way of encoding my length $N$ with less information, just $N$ bits and it should work reliably on all my existing data points.  So I am going to guess that all my points live on an $M$ dimensional subspace.
+$$ \mathrm{Gr}(N,M) = O(N)/\big( O(M) \times O(N-M) \big) $$
+and $D$ is an element of this Grassman space.  And we would like to minimize the error obtained over all possible choices of $D$:
+$$ \min_D \big|\big| x - (D^T D ) x \big|\big|^2 = 
+\min_D \bigg|\bigg| x \, \big(I - (D^T D )\big)  \bigg|\bigg|^2 
+$$
+To me this is just another $L^2$ norm. The Grassmanian is compact and there must be a minimum, found by a method of your choice.
+ 
+\newpage
+
+\noindent Then we can prove the minimizing $D$ is found by in fact the covariance of our data points $X^T X$.  And we can prove that any flow on the Grassmanian (such as \textbf{stochastic gradient descent}) \\
+
+\fontfamily{qag}\selectfont \fontsize{10}{15}\selectfont
+
+\noindent If I google the phrase ``{\color{blue!50!green}principal component analysis grassmanian}" more than zero things arise. Including this one:
+\begin{itemize}
+\item Matthew Nokleby, Miguel Rodrigues, Robert Calderbank \textbf{Discrimination on the Grassmann Manifold: Fundamental Limits of Subspace Classifiers} \texttt{ arXiv:1404.5187}
+\end{itemize}
+I don't want to be stuck analyzing giant spreadsheets all day, when we all have things we want to do.  At least someone has observed the geometric approach to PCA, that I am advocating. 
 \end{document}
