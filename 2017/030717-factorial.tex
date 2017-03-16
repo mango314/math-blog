@@ -685,7 +685,229 @@ The Ising model is even more simple-minded than the domino tilings.  How could i
 
 \newpage
 
-\noindent This is my attempt to be ``contemporary" and ``advanced".
+\noindent One way to count the domino tilings is through the Kasteleyn determinant.  In the $2 \times 2$ square, there are 4 vertices: \\
+\begin{tikzpicture}
+
+\def \domino {
+
+	\def \a {0}
+	\def \b {0}
+	\draw (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+
+	\def \a {1}
+	\def \b {0}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+
+	\def \a {0}
+	\def \b {1}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+
+	\def \a {1}
+	\def \b {1}
+	\draw (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+
+}
+
+% ------------------------------------------------------
+
+\def \dimer {
+
+	\draw (0.5,0.5)--(1.5,0.5)--(1.5,1.5)--(0.5,1.5)--cycle;
+
+	\def \a {0}
+	\def \b {0}
+	\draw[fill=white] (\a + 0.5 ,\b + 0.5) circle (0.1);
+
+	\def \a {1}
+	\def \b {0}
+	\draw[fill=black] (\a + 0.5 ,\b + 0.5) circle (0.1);
+
+	\def \a {0}
+	\def \b {1}
+	\draw[fill=black] (\a + 0.5 ,\b + 0.5) circle (0.1);
+
+	\def \a {1}
+	\def \b {1}
+	\draw[fill=white] (\a + 0.5 ,\b + 0.5) circle (0.1);
+
+}
+
+\domino
+
+\dimer
+
+\begin{scope}[xshift=3cm]
+
+\domino
+
+\draw[line width=2] (0.5,0.5)--(1.5,0.5);
+
+\draw[line width=2] (0.5,1.5)--(1.5,1.5);
+
+\dimer
+
+
+
+\end{scope}
+
+\begin{scope}[xshift=6cm]
+
+\domino
+
+\draw[line width=2] (0.5,0.5)--(0.5,1.5);
+
+\draw[line width=2] (1.5,0.5)--(1.5,1.5);
+
+\dimer
+
+\end{scope}
+
+\begin{scope}[xshift=9cm]
+
+\domino
+
+\node at (0.5,0.5) {A};
+
+\node at (1.5,0.5) {B};
+
+\node at (1.5,1.5) {C};
+
+\node at (0.5,1.5) {D};
+
+\end{scope}
+
+\end{tikzpicture} \\ 
+There should be two tilings.  Let's make sure Kateleyn's method returns the answer \textbf{2}.  He would draw a matrix:
+$$ Pf \left[ \begin{array}{c|cccc}
+ & \text{A} & \text{B} & \text{C} & \text{D} \\ \hline
+\text{A} & 0 & 1 &  0 &  1 \\
+\text{B} & 1 & 0 &  1 &  0 \\ 
+\text{C} & 0 & 1 &  0 &  1 \\
+\text{D} & 1 & 0 &  1 &  0 
+ \end{array}\right] \stackrel{?}{=} Det 
+ \left[ \begin{array}{c|cc}
+ & \text{C} & \text{D} \\ \hline
+\text{A} & 1 & 1  \\
+\text{B} & 1 & 1  \\ 
+ \end{array}\right]
+ $$
+Since A is next to B, the entry A-B is 1.  B and D are not next to each other.  And then we compute not the Determinant, but the Pfaffian. \\ \\
+Hopefully the value of the Pfaffian is $2$.  The value of that determinant is $0$.
+I guess I have to put a minus sign.
+
+$$ \hspace{0.8in} Pf \left[ \begin{array}{c|cccc}
+ & \text{A} & \text{B} & \text{C} & \text{D} \\ \hline
+\text{A} & 0 & 1 &  0 &  1 \\
+\text{B} & 1 & 0 &  1 &  0 \\ 
+\text{C} & 0 & 1 &  0 &  1 \\
+\text{D} & 1 & 0 &  1 &  0 
+ \end{array}\right] = Det 
+ \left[ \begin{array}{c|cr}
+ & \text{C} & \text{D} \\ \hline
+\text{A} & 1 & -1  \\
+\text{B} & 1 & 1  \\ 
+ \end{array}\right] = 2
+ $$
+We are just making it up as we go along and this is the Kasteleyn orientation. \\ \\ Without knowing why, this is just what we have to do in order to make sense, and this is called an ``anomaly".
+
+
+\newpage
+
+\noindent There should be ways to ``glue" the patches together and the number of domino tilings will behave in an organized way.  \\ \\
+As for all this Ising model stuff.  As long as we know the ising model and the domino tilings are the same theory.  \\ \\The ising model has varied literature\footnote{The dilemma these are 4 very complicated topics, none of which I know very well, and we are trying to make a comparison.  Namely, the ising model literature is all over the place, there should be variants of the domino tilings as well, where the answers still make a lot of sense.} - all over the place:
+\begin{itemize}
+\item statistical mechanics
+\item integrable systems
+\item TQFT
+\item lattice gauge theory
+\item Chern Simons Theory
+\end{itemize}
+and yet we only except one tractable model, the domino tilings. We need more examples: \\
+\begin{tikzpicture}
+
+	\def \a {0}
+	\def \b {0}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {1}
+	\def \b {0}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {2}
+	\def \b {0}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {3}
+	\def \b {0}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {4}
+	\def \b {0}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {5}
+	\def \b {0}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {0}
+	\def \b {1}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {1}
+	\def \b {1}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {2}
+	\def \b {1}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {3}
+	\def \b {1}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {4}
+	\def \b {1}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {5}
+	\def \b {1}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	
+	
+\begin{scope}[xshift=7cm]
+
+	\def \a {0}
+	\def \b {0}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {1}
+	\def \b {0}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {2}
+	\def \b {0}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {3}
+	\def \b {0}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {0}
+	\def \b {1}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {1}
+	\def \b {1}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {2}
+	\def \b {1}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {3}
+	\def \b {1}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {1}
+	\def \b {2}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {2}
+	\def \b {2}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a { 1}
+	\def \b {-1}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a { 2}
+	\def \b {-1}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+
+\end{scope}
+
+\end{tikzpicture} \\
+Can we glue partial answers together into a big picture?  You can.  In a very complicated way.
+
+\newpage
 
 \fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
 
