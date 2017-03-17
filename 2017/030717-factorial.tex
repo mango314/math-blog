@@ -904,8 +904,536 @@ and yet we only except one tractable model, the domino tilings. We need more exa
 
 \end{scope}
 
+\begin{scope}[xshift=12cm]
+
+	\def \a {0}
+	\def \b {0}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {1}
+	\def \b {0}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {2}
+	\def \b {0}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {3}
+	\def \b {0}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {0}
+	\def \b {1}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {1}
+	\def \b {1}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {2}
+	\def \b {1}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {3}
+	\def \b {1}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {0}
+	\def \b {2}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {1}
+	\def \b {2}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {2}
+	\def \b {2}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {3}
+	\def \b {2}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+
+\end{scope}
+
 \end{tikzpicture} \\
 Can we glue partial answers together into a big picture?  You can.  In a very complicated way.
+
+\begin{tikzpicture}
+
+
+	\def \a {0}
+	\def \b {0}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {1}
+	\def \b {0}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {2}
+	\def \b {1}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {3}
+	\def \b {1}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {0}
+	\def \b {1}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {1}
+	\def \b {1}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {2}
+	\def \b {2}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {3}
+	\def \b {2}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {0}
+	\def \b {2}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {1}
+	\def \b {2}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {2}
+	\def \b {3}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {3}
+	\def \b {3}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+
+
+\begin{scope}[xshift=5cm]
+
+	\def \a {0}
+	\def \b {0}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {1}
+	\def \b {0}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {2}
+	\def \b {0}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {3}
+	\def \b {0}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {3}
+	\def \b {1}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {3}
+	\def \b {2}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {3}
+	\def \b {3}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {2}
+	\def \b {3}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {1}
+	\def \b {3}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {0}
+	\def \b {3}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {0}
+	\def \b {2}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {0}
+	\def \b {1}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+
+\end{scope}
+
+\begin{scope}[xshift=10cm]
+
+	\def \a {0}
+	\def \b {0}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {1}
+	\def \b {0}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {2}
+	\def \b {0}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {3}
+	\def \b {0}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {0}
+	\def \b {1}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {1}
+	\def \b {1}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {2}
+	\def \b {1}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {3}
+	\def \b {1}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {0}
+	\def \b {2}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {1}
+	\def \b {2}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {0}
+	\def \b {3}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {1}
+	\def \b {3}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+
+\end{scope}
+
+\end{tikzpicture} \\
+
+\fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
+
+\noindent An aside for the grown-ups.  The Kasteleyn determinants are put into a computer and with some effort the correct number will be returned.   In a sense, we have already used a tiny bit of cohomology theory.
+\begin{itemize}
+\item All of these shapes are homeomorphic (``the same as") $\mathbb{D}$ (all the rectangles are homomeomorphic.  The L-shapes are homeomorphic to rectangles).  This is a really myopic way of doing things and obviously loses important information.  
+\item Fiddling with these shapes is essential.  The ``new" exercise here is to use the patchwork technique to check how the overlapping works.  
+\end{itemize}
+
+\begin{tikzpicture}
+
+	\def \a {0}
+	\def \b {0}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {1}
+	\def \b {0}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {2}
+	\def \b {1}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {3}
+	\def \b {1}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {0}
+	\def \b {1}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {1}
+	\def \b {1}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {2}
+	\def \b {2}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {3}
+	\def \b {2}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {0}
+	\def \b {2}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {1}
+	\def \b {2}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {2}
+	\def \b {3}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {3}
+	\def \b {3}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	
+	\draw[line width=2] (0,0)--(2,0)--(2,3)--(0,3)--cycle;
+	
+\begin{scope}[xshift=5cm]
+
+	\def \a {0}
+	\def \b {0}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {1}
+	\def \b {0}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {2}
+	\def \b {1}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {3}
+	\def \b {1}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {0}
+	\def \b {1}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {1}
+	\def \b {1}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {2}
+	\def \b {2}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {3}
+	\def \b {2}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {0}
+	\def \b {2}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {1}
+	\def \b {2}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {2}
+	\def \b {3}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {3}
+	\def \b {3}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	
+	\draw[line width=2] (2,1)--(4,1)--(4,4)--(2,4)--cycle;
+
+\end{scope}
+
+\begin{scope}[xshift=10cm]
+
+	\def \a {0}
+	\def \b {0}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {1}
+	\def \b {0}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {2}
+	\def \b {1}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {3}
+	\def \b {1}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {0}
+	\def \b {1}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {1}
+	\def \b {1}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {2}
+	\def \b {2}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {3}
+	\def \b {2}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {0}
+	\def \b {2}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {1}
+	\def \b {2}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {2}
+	\def \b {3}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {3}
+	\def \b {3}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	
+	\draw[line width=2] (0,1)--(4,1)--(4,3)--(0,3)--cycle;
+
+\end{scope}
+
+
+\end{tikzpicture} \\ \\
+A $2 \times 3$ rectangle can be paved 3 ways by dominoes.  And a $2 \times 4$ rectangle can be paved 5 ways.  And a $2 \times 2$ rectangle can be paved $2$ ways.  And we could try to build the whole shape.  \\ \\
+I don't know this number off the top of my head.  I don't even know the $3 \times 4$ rectangle.
+
+\begin{tikzpicture}
+
+	\def \a {0}
+	\def \b {0}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {1}
+	\def \b {0}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {2}
+	\def \b {0}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {3}
+	\def \b {0}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {4}
+	\def \b {0}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {5}
+	\def \b {0}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {0}
+	\def \b {1}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {1}
+	\def \b {1}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {2}
+	\def \b {1}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {3}
+	\def \b {1}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {4}
+	\def \b {1}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {5}
+	\def \b {1}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	
+	\draw[line width=2] (0,0)--(4,0)--(4,2)--(0,2)--cycle;
+
+
+\begin{scope}[xshift=7cm]
+
+	\def \a {0}
+	\def \b {0}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {1}
+	\def \b {0}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {2}
+	\def \b {0}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {3}
+	\def \b {0}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {4}
+	\def \b {0}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {5}
+	\def \b {0}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {0}
+	\def \b {1}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {1}
+	\def \b {1}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {2}
+	\def \b {1}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {3}
+	\def \b {1}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {4}
+	\def \b {1}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {5}
+	\def \b {1}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	
+	\draw[line width=2] (2,0)--(6,0)--(6,2)--(2,2)--cycle;
+
+\end{scope}
+
+\end{tikzpicture} \\  \\
+So again $Z(2 \times 4) = 5$ and $Z(2 \times 2) = 2$ and we should patch these together to obtain $Z (2 \times 6) = 13$.  Is that right? \\
+
+\begin{tikzpicture}
+
+	\def \a {0}
+	\def \b {0}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {1}
+	\def \b {0}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {2}
+	\def \b {0}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {3}
+	\def \b {0}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {0}
+	\def \b {1}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {1}
+	\def \b {1}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {2}
+	\def \b {1}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {3}
+	\def \b {1}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {0}
+	\def \b {2}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {1}
+	\def \b {2}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {2}
+	\def \b {2}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {3}
+	\def \b {2}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	
+	\draw[line width=2] (0,0)--(4,0)--(4,2)--(0,2)--cycle;
+
+\begin{scope}[xshift=5cm]
+
+	\def \a {0}
+	\def \b {0}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {1}
+	\def \b {0}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {2}
+	\def \b {0}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {3}
+	\def \b {0}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {0}
+	\def \b {1}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {1}
+	\def \b {1}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {2}
+	\def \b {1}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {3}
+	\def \b {1}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {0}
+	\def \b {2}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {1}
+	\def \b {2}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {2}
+	\def \b {2}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {3}
+	\def \b {2}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	
+	\draw[line width=2] (0,1)--(4,1)--(4,3)--(0,3)--cycle;
+
+
+\end{scope}
+
+\begin{scope}[xshift=10cm]
+
+	\def \a {0}
+	\def \b {0}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {1}
+	\def \b {0}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {2}
+	\def \b {0}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {3}
+	\def \b {0}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {0}
+	\def \b {1}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {1}
+	\def \b {1}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {2}
+	\def \b {1}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {3}
+	\def \b {1}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {0}
+	\def \b {2}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {1}
+	\def \b {2}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {2}
+	\def \b {2}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {3}
+	\def \b {2}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	
+	\draw[dashed, line width=2] (0,1)--(4,1)--(4,2)--(0,2)--cycle;
+
+
+\end{scope}
+
+\end{tikzpicture} \\ \\
+The $3 \times n$ or $4 \times n$ cases deserve attention and could be pedagogical.  We will have more observables to think about soon.  And one should already be thinking about whether domino tilings are the only cases we can reasonably solve.  That answer might be yes \dots
+
+\fontfamily{qag}\selectfont \fontsize{20}{25}\selectfont
 
 \newpage
 
