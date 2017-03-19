@@ -1612,7 +1612,174 @@ $$
 1 & 0 & -1 & 1 & 0 & 1 \\
 -1 & -1 & 1 & 0 & 0 & 0  \end{array}
 \right] = 2 \neq 11 $$
-Time to read a bit more on Kasteleyn orientations.
+Time to read a bit more on Kasteleyn orientations.  OK It's done with a spanning tree.
+
+\begin{tikzpicture}
+
+	\def \a {0}
+	\def \b {0}
+	\draw[black!20!white, fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {1}
+	\def \b {0}
+	\draw[black!20!white,fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {2}
+	\def \b {0}
+	\draw[black!20!white,fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {3}
+	\def \b {0}
+	\draw[black!20!white,fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {0}
+	\def \b {1}
+	\draw[black!20!white,fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {1}
+	\def \b {1}
+	\draw[black!20!white,fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {2}
+	\def \b {1}
+	\draw[black!20!white,fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {3}
+	\def \b {1}
+	\draw[black!20!white,fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {0}
+	\def \b {2}
+	\draw[black!20!white,fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {1}
+	\def \b {2}
+	\draw[black!20!white,fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {2}
+	\def \b {2}
+	\draw[black!20!white,fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {3}
+	\def \b {2}
+	\draw[black!20!white,fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	
+	
+	\draw[decoration={markings, mark=at position 0.5 with {\arrow[scale=1,  line width=1]{>}}},
+        postaction={decorate}] (1.5,0.5)--(0.5,0.5);        
+	\draw[decoration={markings, mark=at position 0.5 with {\arrow[scale=1,  line width=1]{>}}},
+        postaction={decorate}] (2.5,0.5)--(1.5,0.5);  
+	\draw[decoration={markings, mark=at position 0.5 with {\arrow[scale=1,  line width=1]{>}}},
+        postaction={decorate}] (3.5,0.5)--(2.5,0.5);  
+	\draw[decoration={markings, mark=at position 0.5 with {\arrow[scale=1,  line width=1]{>}}},
+        postaction={decorate}] (1.5,1.5)--(0.5,1.5);        
+	\draw[decoration={markings, mark=at position 0.5 with {\arrow[scale=1,  line width=1]{>}}},
+        postaction={decorate}] (2.5,1.5)--(1.5,1.5);  
+	\draw[decoration={markings, mark=at position 0.5 with {\arrow[scale=1,  line width=1]{>}}},
+        postaction={decorate}] (3.5,1.5)--(2.5,1.5); 
+	\draw[decoration={markings, mark=at position 0.5 with {\arrow[scale=1,  line width=1]{>}}},
+        postaction={decorate}] (1.5,2.5)--(0.5,2.5);        
+	\draw[decoration={markings, mark=at position 0.5 with {\arrow[scale=1,  line width=1]{>}}},
+        postaction={decorate}] (2.5,2.5)--(1.5,2.5);  
+	\draw[decoration={markings, mark=at position 0.5 with {\arrow[scale=1,  line width=1]{>}}},
+        postaction={decorate}] (3.5,2.5)--(2.5,2.5); 
+	\draw[decoration={markings, mark=at position 0.5 with {\arrow[scale=1,  line width=1]{>}}},
+        postaction={decorate}] (3.5,2.5)--(3.5,1.5);        
+	\draw[decoration={markings, mark=at position 0.5 with {\arrow[scale=1,  line width=1]{>}}},
+        postaction={decorate}] (3.5,1.5)--(3.5,0.5);          
+
+	\draw[black!60!white,decoration={markings, mark=at position 0.5 with {\arrow[scale=1,  line width=1]{>}}},
+        postaction={decorate}] (2.5,0.5)--(2.5,1.5);         
+	\draw[black!60!white,decoration={markings, mark=at position 0.5 with {\arrow[scale=1,  line width=1]{>}}},
+        postaction={decorate}] (1.5,1.5)--(1.5,0.5); 
+	\draw[black!60!white,decoration={markings, mark=at position 0.5 with {\arrow[scale=1,  line width=1]{>}}},
+        postaction={decorate}] (0.5,0.5)--(0.5,1.5); 
+	\draw[black!60!white,decoration={markings, mark=at position 0.5 with {\arrow[scale=1,  line width=1]{>}}},
+        postaction={decorate}] (2.5,1.5)--(2.5,2.5);         
+	\draw[black!60!white,decoration={markings, mark=at position 0.5 with {\arrow[scale=1,  line width=1]{>}}},
+        postaction={decorate}] (1.5,2.5)--(1.5,1.5); 
+	\draw[black!60!white,decoration={markings, mark=at position 0.5 with {\arrow[scale=1,  line width=1]{>}}},
+        postaction={decorate}] (0.5,1.5)--(0.5,2.5); 
+	
+	\draw[fill=white] (0.5,0.5) circle (0.125);
+	\draw[fill=white] (2.5,0.5) circle (0.125);
+	\draw[fill=white] (1.5,1.5) circle (0.125);
+	\draw[fill=white] (0.5,2.5) circle (0.125);
+	\draw[fill=white] (2.5,2.5) circle (0.125);
+	\draw[fill=white] (3.5,1.5) circle (0.125);
+	
+	\draw[fill=black] (1.5,0.5) circle (0.125);
+	\draw[fill=black] (3.5,0.5) circle (0.125);
+	\draw[fill=black] (0.5,1.5) circle (0.125);
+	\draw[fill=black] (2.5,1.5) circle (0.125);
+	\draw[fill=black] (1.5,2.5) circle (0.125);
+	\draw[fill=black] (3.5,2.5) circle (0.125);
+	
+	
+\begin{scope}[xshift=5cm]
+
+
+	\def \a {0}
+	\def \b {0}
+
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {1}
+	\def \b {0}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {2}
+	\def \b {0}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {3}
+	\def \b {0}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {0}
+	\def \b {1}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {1}
+	\def \b {1}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {2}
+	\def \b {1}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {3}
+	\def \b {1}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {0}
+	\def \b {2}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {1}
+	\def \b {2}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {2}
+	\def \b {2}
+	\draw[fill=black!0!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	\def \a {3}
+	\def \b {2}
+	\draw[fill=black!20!white] (\a,\b)--(\a+1,\b)--(\a+1,\b+1)--(\a,\b+1)--cycle;
+	
+	\node at (0.5,0.5) {A};
+	\node at (0.5,2.5) {B};
+	\node at (1.5,1.5) {C};
+	\node at (2.5,0.5) {D};
+	\node at (2.5,2.5) {E};
+	\node at (3.5,1.5) {F};
+
+	\node at (3.5,2.5) {\color{white} A};
+	\node at (3.5,0.5) {\color{white} B};
+	\node at (2.5,1.5) {\color{white} C};
+	\node at (1.5,2.5) {\color{white} D};
+	\node at (1.5,0.5) {\color{white} E};
+	\node at (0.5,1.5) {\color{white} F};
+\end{scope}
+	
+	
+\end{tikzpicture} \\
+As you move around the square, there should be either
+\begin{itemize}
+\item 3 $\leftarrow$, 1 $\rightarrow$
+\item 1 $\leftarrow$, 3 $\rightarrow$
+\end{itemize}
+and in some cases these are called ``IRF" models (interaction around face).  I also have a round face.
+$$ \det \left[
+\begin{array}{rrrrrrr}
+0 & 0& 0& 0& +1& +1\\
+0 & 0 & 0 & +1 & 0 & -1 \\
+0 & 0 & +1 & -1 & +1 & -1 \\
+0 & +1 & +1 & 0 & -1 & 0  \\
++1 & 0 & -1 & -1 & 0 & 0 \\
+-1 & +1 & -1 & 0 & 0 & 0
+\end{array}
+ \right] = 11 $$
+\hfill $\square$
 
 \newpage
 
