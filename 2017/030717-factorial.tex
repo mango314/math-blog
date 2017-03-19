@@ -4,6 +4,7 @@
 \usepackage[margin=0.5in]{geometry}
 \usepackage{xcolor}
 \usepackage{graphicx}
+\usepackage{slashed}
 %\usepackage{graphicx}
 \newcommand{\off}[1]{}
 \DeclareMathSizes{20}{30}{20}{18}
@@ -1785,6 +1786,37 @@ $$ \det \left[
 
 \fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
 
+\noindent Can the physics literature offer more interesting tiling models?  Lots of overloaded terms here:
+\begin{itemize}
+\item domino tiling
+\item dimer model
+\end{itemize}
+The dimer model is more general (since any planar graph has a dual tiling model), but maybe not all tiling problems come from a dimer model (the shapes can be more varied). \\ \\
+The physics papers I raise more distinctions.  There's distinction between:
+\begin{itemize}
+\item high-energy physics (such as Chern Simons Theory)
+\item condensed matter physics (such as TQFT, symmetry protected topological phases, ising models or free fermions)
+\end{itemize}
+This is consistent with using Gauge Theory to describe the theory of everything.  Here we are using Gauge Theory to describe the dominoes.  In th case we find the ising model there is one more distinction:
+\begin{itemize}
+\item ising statistical model (state-sum model)
+\item ising conformal field theory (continuum limit)
+\end{itemize}
+Hopefully that is enough.  I am not sure I care which Chern-Simons Theories have tiling models as low-energy limits, as long as I know that Kasteleyn determinants are discrete Diract operators.
+$$ \#\{\text{ tilings }\} = \det K  \approx \det \slashed{D} $$
+I think the number of tilings is the factor of the Dirac determinant which gets thrown away (``renormalized"). \\ \\
+Here is a really basic one if we define $\Delta f = \frac{1}{\Delta x}[f(x+\Delta x) - f(x)]$ then we discrete approximation:
+$$ \frac{d}{dx} \approx \frac{1}{\Delta x} \left[  
+\begin{array}{rrrr} 
+1 & -1 & 0 &  \\
+0 & 1 & -1 & 0 \\ 
+ & 0 & \ddots & -1  \\
+ &  & 0 & 1 
+\end{array}\right] $$
+In the same way, all these circulant matrices are discretizations of differential operators (maybe Dirac operators, for fermions) or whatever complicated thing that solves Chern-Simons Theory.
+
+\fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
+
 \begin{thebibliography}{}
 
 \item Davide Gaiotto, Anton Kapustin \textbf{Spin TQFTs and fermionic phases of matter} \texttt{arXiv:1505.05856}
@@ -1792,6 +1824,10 @@ $$ \det \left[
 \item Nathan Seiberg, Edward Witten \textbf{Gapped Boundary Phases of Topological Insulators via Weak Coupling}   \texttt{arXiv:1602.04251}
 
 \item Davide Gaiotto, Anton Kapustin, Zohar Komargodski, Nathan Seiberg \textbf{Theta, Time Reversal, and Temperature} \texttt{arXiv:1703.00501}
+
+\item Edward Witten \textbf{Fermion Path Integrals And Topological Phases} \texttt{arXiv:1508.04715}
+
+\item Nathan Seiberg, Edward Witten \textbf{Gapped Boundary Phases of Topological Insulators via Weak Coupling} \texttt{arXiv:1602.04251}
 
 \item Werner Krauth \textbf{Statistical Mechanics: Algorithms and Computations} (Oxford Master Series in Physics), OUP, 2006.
 
