@@ -1857,5 +1857,67 @@ In the same way, all these circulant matrices are discretizations of differentia
 \end{tikzpicture}
 \end{verbatim}
 
+\newpage
 
+
+\fontfamily{qag}\selectfont \fontsize{20}{25}\selectfont
+
+\noindent The gauge theory view on dimers, while natural, is also extremely confusing to use.  So, just some final remarks.  \\ \\
+\textbf{\#1} Where do height functions come from? \\ 
+Height functions come from cohomology. \\ \\
+\textbf{\#2} Cohomology of what? No idea.  \\ 
+There are a few candidates.  They all work kind of OK. \\ \\
+\textbf{\#3} Here is a hint from Seiberg-Witten '16:
+\begin{quotation}
+\color{blue!50!green}The \textbf{representation of the braid group} that we have just described is very close to one that
+arises in \textbf{Ising conformal field theory} in {\color{blue!25!green}two} dimensions, or in the corresponding \textbf{Chern-Simons} topological field theory in {\color{red!50!green}three} dimensions.
+\end{quotation}
+Even the term ``height function" clearly means these tilings should have been look at as 3D objects. \\ \\
+\begin{tikzpicture}
+
+\draw[fill=black!50!white] (2,0)--(4,0)--(4,2)--(2,2)--cycle;
+
+\draw[fill=black!50!white] (0,2)--(2,2)--(2,4)--(0,4)--cycle;
+
+\draw[fill=black!50!white] (4,2)--(6,2)--(6,4)--(4,4)--cycle;
+
+\draw[line width = 4] (0,0)--(2,0)--(4,0)--(4,2)--(2,2)--(0,2)--cycle;
+
+\draw[line width = 4] (4,0)--(6,0)--(6,2)--(6,4)--(4,4)--(4,2)--cycle;
+
+\draw[line width = 4] (0,2)--(2,2)--(4,2)--(4,4)--(2,4)--(0,4)--cycle; 
+
+
+
+\draw[fill=white] (0,0) circle (0.5);
+\node at (0,0) {0} ;
+\draw[fill=white] (2,0) circle (0.5);
+\node at (2,0) {1} ;
+\draw[fill=white] (4,0) circle (0.5);
+\node at (4,0) {0} ;
+\draw[fill=white] (4,2) circle (0.5);
+\node at (4,2) {-1} ;
+\draw[fill=white] (2,2) circle (0.5);
+\node at (2,2) {-2} ;
+\draw[fill=white] (0,2) circle (0.5);
+\node at (0,2) {-1} ;
+\draw[fill=white] (6,0) circle (0.5);
+\node at (6,0) {1} ;
+\draw[fill=white] (6,2) circle (0.5);
+\node at (6,2) {2} ;
+\draw[fill=white] (6,4) circle (0.5);
+\node at (6,4) {1} ;
+\draw[fill=white] (4,4) circle (0.5);
+\node at (4,4) {0} ;
+\draw[fill=white] (2,4) circle (0.5);
+\node at (2,4) {1} ;
+\draw[fill=white] (0,4) circle (0.5);
+\node at (0,4) {0} ;
+
+%\begin{scope}[xshift=8cm]
+%\end{scope}
+
+\end{tikzpicture}
+\includegraphics[]{AD-08.png} \\
+With the height function the tiling is distorted quite a bit.
 \end{document}

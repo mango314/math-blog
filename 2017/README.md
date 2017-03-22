@@ -13,7 +13,7 @@ And I am always pushing it.
 You know what? I have no plans to finish my PhD. **You** can decide what is know or publishable and what isn't.
 
 There are lots of really great videos on the internet ranging from the very basic to the professional level.  This blog, in particular is always teaching to the very front of the class.  
-If you're having trouble following, so am I. 
+If you're having trouble following, so am I.
 
 * [Douglas Stanford - Chaos in QFT and black holes](https://www.youtube.com/watch?v=mJIocoC-wJA)
 
@@ -23,15 +23,17 @@ If you're having trouble following, so am I.
 
 * [Christophe Soulé - 1/4 On the Arakelov theory of arithmetic](https://youtu.be/v7juozS6AdE)
 
-* [Introduction to Quantum Integrable Systems](https://www.perimeterinstitute.ca/video-library/collection/psi-2016/2017-introduction-quantum-integrable-systems) 
+* [Introduction to Quantum Integrable Systems](https://www.perimeterinstitute.ca/video-library/collection/psi-2016/2017-introduction-quantum-integrable-systems)
 
 * [Unlikely Intersections: Diophantine Problems in Number Theory](http://www.fields.utoronto.ca/activities/16-17/congruencing-diophantine)
 
 * String Theory (Review) [2013](https://www.perimeterinstitute.ca/video-library/collection/13/14-psi-string-theory-review) or [2016](https://www.perimeterinstitute.ca/video-library/collection/psi-2016/2017-string-theory-review-davide-gaiotto)
 
+* Statistical Mechanics [705](https://www.perimeterinstitute.ca/video-library/collection/2016/2017-phys-705-statistical-mechanics-2-roger-melko) or [733](https://www.perimeterinstitute.ca/video-library/collection/phys-733-quantum-many-body-physics-w2016-roger-melko)
+
 There are lots of excellent videos now.  Lots of ways to keep our fingers moving in a healthy and meaningful way. It was not always like this!!
 
-These videos are chosen because of catchy titles and b/c of a vague sense of "I should learn this."   I mean why do I choose the problms so basic?  After talking to lots of people, I've decided there can't be too many ideas or too many that is very deep. 
+These videos are chosen because of catchy titles and b/c of a vague sense of "I should learn this."   I mean why do I choose the problms so basic?  After talking to lots of people, I've decided there can't be too many ideas or too many that is very deep.
 
 * everybody is in a hurry
 * nobody has time
