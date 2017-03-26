@@ -1,0 +1,95 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{slashed}
+%\usepackage{graphicx}
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\newcommand{\myhrule}{}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+
+\newcommand{\dash}{
+\begin{tikzpicture}[scale=1]
+\draw (0,0)--(19,0);
+\end{tikzpicture}
+}
+
+\newcommand{\sq}[3]{
+\node at (#1+0.5,#2+0.5) {#3};
+\draw (#1+0,#2+0)--(#1+1,#2+0)--(#1+1,#2+1)--(#1+0,#2+1)--cycle;
+}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.markings}
+
+\title{\textbf{Proposal: Wallis Product}}
+\author{John D Mangual}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{15}{20}\selectfont
+
+\maketitle
+
+\noindent Two particle physicists came up with a new proof of the Wallis Product for $\pi$:
+$$ \frac{\pi}{2} = \frac{2\cdot 2}{1 \cdot 3}\;\frac{4\cdot 4}{3 \cdot 5} \;\dots $$
+The Wallis product proof is very old, but their argument at the end of 2015 was fairly new. \\ \\
+There are many ways to argue this without Quantum Mechanics.  Reasoning about the foundations is always a bit circular.  
+\begin{itemize}
+\item Theoretical physicists, who generate product formulas like these on their way to more serious objectives.  The best I can do can do is take them out of context and remark on how wonderful they are.  
+\item If we study the proofs carefully we can get \textit{many} product formulas for all kinds of numbers, but mostly they will always involve numbers like $\pi^n$.   Or they are elements of the ring $\mathbb{Q}[\pi]$.
+\end{itemize}
+Let's simplify the Friedman-Hagen proof, we are asking about the eigenvalues (or ``spectrum" or ``Energy levels") of the Hydrogen atom:
+$$ \Big( - \frac{\hbar}{2m}\nabla  + \frac{e}{r} \Big) \psi = E \psi $$
+The hydrogen atom is ``kind of like" the Free Particle (setting electric charge to $e=0$) and the eigenfunctions will be the spherical harmonics
+$$ \hspace{0.35in} \Big( - \frac{\hbar}{2m}\nabla  \Big) \psi = E \psi $$
+Empty space is rotationally symmetric.  A light bulb in the center of the room gets dimmer as you move further away. \\ \\
+There are exact formulas for eigenfunctions (a mystery in itself why we get so lucky). No only is there $SO(3)$ symmetry, but $SO(4)$ and even $SO(4,2)$.
+
+\newpage
+
+\noindent Because of the symmetry we have very detailed knolwedge of the energy levels here.
+$$ E_{0, \ell } = - \frac{m \hbar^4}{2 \hbar^2} \frac{1}{(\ell + 1)^2} $$
+If you want to know a bit more, there is \textbf{quantum chemistry}; anything more than a single Hydrogen atom is unsolvable. \\ \\
+If you look far enough away you should not notice the electric charge.
+$$  - \frac{\hbar}{2m}\nabla  + \frac{e}{r}  \approx  - \frac{\hbar}{2m}\nabla  $$
+How do eigenvalues of $E$ change as a function of the electric charge $e$? 
+$$ E_\ell  \leq \langle \psi_\ell | H | \psi_\ell \rangle  $$
+1st-order perturbation theory has a way to estimate the energy levels. \\ \\
+Friedman-Hagen compute ``statistical uncertainty" to be $0$ (which is nice):
+$$ \frac{ [\langle r^4 \rangle - \langle r^2 \rangle^2 ]^{\frac{1}{2}} }{\langle r^2 \rangle} = \Big(\ell + \frac{1}{2}\Big)^{-\frac{1}{2}}$$
+that the radius of the electron doesn't deviate too much.  \\ \\
+An electron with high energy is really far away from the center of the atom, so the charge shouldn't matter that much.  So the orbit is nearly a perfect sphere.  I think $\langle r \rangle = \ell$. \\\\
+Before you know it we have growing list of inner product spaces
+$$ \langle \,H(r)\, \rangle\,, \quad \langle H \rangle_{\alpha\ell}\,, \quad \langle H \rangle_{min}^\ell $$
+Do we even know over which subspace the trace was taken? 
+$$ \langle H \rangle = \langle \psi | H | \psi \rangle $$
+If we assume $\Gamma(\frac{1}{2}) = \sqrt{\pi}$ then we get a relationship between the Hydrogen 
+$$ \lim_{\ell \to \infty} \frac{\langle H \rangle_{min}^\ell }{ E_{0, \ell}} 
+= \lim_{\ell \to \infty}  \frac{(\ell+1)^2}{\ell + \frac{3}{2} }\left[ \frac{ \Gamma (\ell + 1) }{   \Gamma (\ell + \frac{3}{2} ) }\right]^2 = 1$$
+ground state energy and the free particle .
+
+\newpage
+
+\noindent Maybe what they have in mind is this version of the Wallis product formula:
+$$ \log det \Delta = \zeta'(0) = - \frac{1}{2} \log (2\pi)  $$
+and we're computing the ``Redeimister torsion" of the sphere $S^2$.
+
+\vfill
+
+\begin{thebibliography}{}
+
+\item Tamar Friedmann, C. R. Hagen, \textbf{Quantum Mechanical Derivation of the Wallis Formula for $\pi$}, \texttt{arXiv:1510.07813}
+
+\item Stephen W. Hawking \textbf{Zeta function regularization of path integrals in curved spacetime} Comm. Math. Phys.
+Volume 55, Number 2 (1977), 133-148.
+
+
+\end{thebibliography}
+
+\end{document}

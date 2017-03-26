@@ -17,7 +17,7 @@ If you're having trouble following, so am I.
 
 * [Douglas Stanford - Chaos in QFT and black holes](https://www.youtube.com/watch?v=mJIocoC-wJA)
 
-* [Joao Penedones - Conformal and S-matrix bootstrap](https://www.youtube.com/watch?v=W-EjVn1BfHw)
+* [João Penedones - Conformal and S-matrix bootstrap](https://www.youtube.com/watch?v=W-EjVn1BfHw)
 
 * [Six-vertex model, dimers, shapes, and all that](http://scgp.stonybrook.edu/archives/14175)
 
