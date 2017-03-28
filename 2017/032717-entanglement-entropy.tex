@@ -1,0 +1,57 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{slashed}
+%\usepackage{graphicx}
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\newcommand{\myhrule}{}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+
+\newcommand{\dash}{
+\begin{tikzpicture}[scale=1]
+\draw (0,0)--(19,0);
+\end{tikzpicture}
+}
+
+\newcommand{\sq}[3]{
+\node at (#1+0.5,#2+0.5) {#3};
+\draw (#1+0,#2+0)--(#1+1,#2+0)--(#1+1,#2+1)--(#1+0,#2+1)--cycle;
+}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.markings}
+
+\title{\textbf{Proposal: Entanglement Entropy}}
+\author{John D Mangual}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{15}{20}\selectfont
+
+\maketitle
+
+\noindent One way I used to generate projects was to look on arXiv and find any computation that I recognized in the \texttt{hep-th} section.  These days \textbf{holographic entanglement entropy} is the buzzword.  I have no idea about AdS/CFT but if I continue their work, I have obviously said something about holography.\footnote{The bibliography is in LIFO order (Last In First Out) just like a pile of letters and you read the most recent one.  With some strain, I could articulate what I have done that is new.  Personally I do not like that system, as it is an artifact of the days of patents, which is an arcane notation of intellectual property.\\ \\ In the past, writing this way had led to results that seemed trivial or old-fashioned to people (in fact experts in the field).  My point of view was that no matter how much ``physical" reasoning you put in the front of the page, or (on Math side) no matter how many derived categories you throw at me, you still have to do some rather classical computations.  Either in the ``proof" section or an appendix.  Somewhere.  \\ \\ So... it never goes away.  Modern math is neither harder, nor more advanced than it was in the past.} \\ \\
+
+
+\vfill
+
+\fontfamily{qag}\selectfont \fontsize{10}{15}\selectfont
+
+\begin{thebibliography}{}
+
+\item M\'{a}rk Mezei, Silviu S. Pufu, Yifan Wang
+ \textbf{A 2d/1d Holographic Duality}, \texttt{ arXiv:1703.08749}
+
+\item Song He, Feng-Li Lin, Huajia Wang, Jia-ju Zhang \textbf{Subsystem eigenstate thermalization hypothesis for entanglement entropy in CFT} \texttt{arXiv:1703.08724}
+
+\item Michael Gutperle, John D. Miller \textbf{Entanglement entropy at CFT junctions} \texttt{arXiv:1701.08856}
+
+\end{thebibliography}
+
+\end{document}
