@@ -1,0 +1,80 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+%\usepackage{graphicx}
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\newcommand{\myhrule}{}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+
+\newcommand{\dash}{
+\begin{tikzpicture}[scale=1]
+\draw (0,0)--(19,0);
+\end{tikzpicture}
+}
+
+\newcommand{\sq}[3]{
+\node at (#1+0.5,#2+0.5) {#3};
+\draw (#1+0,#2+0)--(#1+1,#2+0)--(#1+1,#2+1)--(#1+0,#2+1)--cycle;
+}
+
+\usepackage{tikz}
+
+\title{\textbf{Proposal: Sum of Two Squares}}
+\author{John D Mangual}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{20}{25}\selectfont
+
+\maketitle
+
+\noindent The beginning of the \'{E}tale cohomology book says we did it whenver we used \textbf{height functions} and \textbf{descent} to prove Fermat's Theorem:
+$$ p = 4k+1 \leftrightarrow p = a^2 + b^2 $$ 
+It's not fair.  You can't sell me on that and then I never see so much as an equation again.  \\ \\
+There are several arguments -- all of which I enjoy. Here's one:\\ \\
+\textbf{\#1} The equation $a^2 + b^2 \equiv 0 \text{ mod }p$ has two solutions:
+\begin{itemize} 
+\item $(a,b) = (p,0)$
+\item $(a,b) = (x,1)$ with $x \equiv \sqrt{-1} \text{ mod } p$
+\end{itemize}
+The two solutions generate a lattice - some element of $SL(2, \mathbb{Z}) \backslash SL(2, \mathbb{R})$ - I can't say much more, just a random element. The area of the rhombus is $A = p$.\\ \\
+Next we intersect with a circle. $\{ x^2 + y^2 = 2p\}\subset \mathbb{R}^2 $ with area $A = \pi p$.
+
+\newpage
+
+\noindent This argument solved the equation $x^2 + y^2 = p$ in two different venues:
+\begin{itemize}
+\item finite fields $\mathbb{F}_p \times \mathbb{F}_p$ with $\mathbb{F}_p= \mathbb{Z}/p\mathbb{Z}$
+\item the Euclidean plane $\mathbb{R} \times \mathbb{R}$
+\end{itemize}
+What geometric object merges them both? \\ \\
+No matter which proof you choose, these arguments all seem to come from nowhere.\footnote{While this problem is almost totally useless, the argument style.  Real problems are difficult, have no symmetry}  I have found 3 types:
+\begin{itemize}
+\item descent
+\item heights
+\item geometry of numbers
+\item factorials
+\item Viete Jumping
+\end{itemize}
+and all of these will fall out of Etale Cohomology.  \\ \\
+Somehow, when we write all these equations we are already doing this wonderful thing. \\ \\ Now we read the book - which has virtually no equations whatsoever - hoping we can recover Fermat.
+
+\newpage
+
+
+
+\fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
+
+\begin{thebibliography}{}
+
+\item Christoph Soul\'{e} \textbf{Lectures on Arakelov Geometry} Cambridge Studies in Advanced Mathematics (Book 33) CUP, 1995.
+
+\end{thebibliography}
+
+\end{document}
