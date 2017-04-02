@@ -1,0 +1,65 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+%\usepackage{graphicx}
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\newcommand{\myhrule}{}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+
+\newcommand{\dash}{
+\begin{tikzpicture}[scale=1]
+\draw (0,0)--(19,0);
+\end{tikzpicture}
+}
+
+\newcommand{\sq}[3]{
+\node at (#1+0.5,#2+0.5) {#3};
+\draw (#1+0,#2+0)--(#1+1,#2+0)--(#1+1,#2+1)--(#1+0,#2+1)--cycle;
+}
+
+\usepackage{tikz}
+
+\title{\textbf{Proposal: Sum of Three Squares}}
+\author{John D Mangual}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{12.5}{15}\selectfont
+
+\maketitle
+
+\noindent In this section we cover Lagrange's sum of three squares theorem:
+$$ n = a^2 + b^2 + c^2 \leftrightarrow n \neq 4^a(8b+7) $$
+and we will go straight for the Eistenstein series and the Kloosterman sums.  However, we will defer all the \'{E}tale craziness until it is absolutely necessary (once we invoke the Weil conjectures).  \\ \\
+I am guessing if we learn a modest amount of Etale cohomology we can answer a few important questions:
+\begin{itemize}
+\item Why is here a Hasse principle for $x^2 + y^2 + z^2= n$? and study $SO(3,\mathbb{A})$
+\item do we have to black-box the Weil conjectures?  perhaps these encode arbitrary amounts of algebra\footnote{Hilbert's \textbf{nullstellensatz} is that way\dots} We know that $X = \{ x^2 + y^2 + z^2 - n w^2 = 0 \}$ what do the line bundles $\mathcal{O}_X$ look like?  Why is sheaf cohomology necessary to make that kind of estimate? 
+\item Equidistrubiton of the sum of three squares seems to contain a lot of information.  How do we recover intermediate results?  
+\item The Etale cohomology should real like an instruction manual.  I have no idea what a sheaf is or how something could fail to be a sheaf.  There is just algebra. 
+\end{itemize}
+There are books out there, but it seems beneficial just to do it myself.  The first step is there are all these theta functions:
+$$ \theta_\phi(z) = \sum_{|d|\geq 1} \bigg( \sum_{a^2 + b^2 + c^2 = n}\phi(a,b,c) \bigg)e^{2\pi i \, |d|z} $$ 
+To me it's bit surprise that all the sphere averages over solutions to the sum of three squares problem, combine so neatly into a modular form.  The transform over $z \mapsto z+1$ is clear.  The transform of $z \mapsto - \frac{1}{4z}$ is a shock.  How can I encode this surprise in the form of a theorem? \\ \\
+There exists a decomposition of this series in terms of Eisenstein series (which I'd like to learn more about).  And the coefficients of these eisenstein series will decay quickly enough (and that used the Weil conjectures).  \\ \\
+I may as well have accepted the entire proof on faith.  Science is supposed to be reproducible, but the argument we have so far is that someone smart told us these results are correct.
+
+
+\newpage
+
+\fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
+
+\begin{thebibliography}{}
+
+\item Philippe Michel and Akshay Venkatesh \textbf{Equidistribution, L-functions and ergodic theory: on some problems of Yu. Linnik} Proceedings of the International Congress
+of Mathematicians, Madrid, Spain, 2006.
+
+\end{thebibliography}
+
+\end{document}
