@@ -70,11 +70,36 @@ and these questions become more and more pressing the further along we read. I g
 I have no idea what these are, but Google turns up lots and lots of papers.  Maybe there's some insight into number theory problems, there.   The Weyl sums are related to the Fourier coefficients.
 $$ \int \phi \,  d\mu_d =  \widehat{\theta}_\phi(d) $$
 There's another proof I don't know much about involving the ``subconvexity" of L-functions.
-$$ W(\phi, d) = \int_{T_d(\mathbb{Q}) \backslash T_d(\mathbb{A})/K_{T_d} \big)} \phi( z_d . t) \, dt $$
+$$ W(\phi, d) = \int_{T_d(\mathbb{Q}) \backslash T_d(\mathbb{A})/K_{T_d} } \phi( z_d . t) \, dt $$
 with an inadequate explanation of the definition of K (or perhaps I can find it in a book).  This is an ``integral" over an ``adelic torus".  What could be the maximal compact subgroup of $SO(3, \mathbb{A}_f)$ of rotations over finite adeles?
-$$  SO( x^2 + y^2 + z^2, \mathbb{A}) $$
+$$  \mathrm{SO}( x^2 + y^2 + z^2, \mathbb{A}) $$
+My knowledge of algebraic groups is rather limited because they take common-sense looking objects and do common-sense things to them and the result is counter-intuitive.  Here is their definition of a torus:
+$$ \mathbf{T}_d = \text{res}_{K/Q} \mathbb{G}_m / \mathbb{G}_m \to \mathbf{G} = \mathrm{PG} (B^{2, \infty}) $$
+If I recall, we'd like to map solutions to the three squares problem to the quaternions, and there is a very formal ways of expressing that.  
+$$ \mathbf{T}_d(\mathbb{Q})\backslash z_d.\mathbf{T}_d(\mathbf{A}_\mathbb{Q}) /K_{\mathbf{T}_d} \subset \mathbf{G}(\mathbf{Q})\backslash \mathbf{G}(A_\mathbf{Q})/K $$
+So there is a torus orbit for each equation $x^2 + y^2 + z^2 = d$ possibly the finite set we could obtain by plugging the eq into a calculator.
 
 \newpage
+
+\noindent The Waldspurger formula relates the square of these sphere averages (Weyl sums) to ``automorphic L-functions"
+$$ \big|W(\phi, d)\big|^2 = c_{\phi, d} \; \frac{L(\pi, \frac{1}{2}) L(\pi \times \chi_d , \frac{1}{2})}{L(\chi_d, 1)\sqrt{|d|}} $$
+and equidistribution of three squres follows from ``subconvexity" and this other estimate:
+$$ L(\phi \otimes \chi_K, \frac{1}{2})  \ll \mathrm{disc}(\mathcal{O}_K)^{\frac{1}{2} - \epsilon} \text{ and } c \ll \left[\frac{\mathrm{disc}(\mathcal{O})\;\;\;}{\mathrm{disc}(\mathcal{O}_K)}\right]^{\frac{1}{2} - \epsilon} $$
+In that case, we have to prove subconvexity estimates or borrow someone else.
+\vspace{6pt}
+\hrule
+\vspace{6pt}
+\noindent Step back a moment.  \\ \\
+Experts now agree this problem is completely settled.  I totally disagree, I just have o idea what these things are.   \\ \\
+When we ask ``who is this?  what is this?" we look for a name, or make some observation about them.  \\ \\
+If I am interested in this one problem (three squares), for a minimal effort, maybe I get to solve a whole class of problems. 
+\vspace{6pt}
+\hrule
+\vspace{6pt}
+\noindent Theta functions are still manageable objects and we were just told there are such objects in abundance (even more than I had realized) that we can solve with the theory of automorphic forms.  What have we obtained this way?
+
+\vfill
+
 
 \fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
 
@@ -83,8 +108,8 @@ $$  SO( x^2 + y^2 + z^2, \mathbb{A}) $$
 \item Philippe Michel and Akshay Venkatesh \textbf{Equidistribution, L-functions and ergodic theory: on some problems of Yu. Linnik} Proceedings of the International Congress
 of Mathematicians, Madrid, Spain, 2006.
 
-\item  W. T. Gan, Theta correspondence: recent progress and applications, Procedings of
-ICM (2014) Vol. 2, 343–366.
+\item  Wee Teck Gan, \textbf{Theta correspondence: recent progress and applications}, Procedings of
+ICM (2014) Vol. 2, 343-366.
 
 \end{thebibliography}
 
