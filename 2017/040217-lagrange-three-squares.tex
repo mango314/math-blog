@@ -50,6 +50,29 @@ To me it's bit surprise that all the sphere averages over solutions to the sum o
 There exists a decomposition of this series in terms of Eisenstein series (which I'd like to learn more about).  And the coefficients of these eisenstein series will decay quickly enough (and that used the Weil conjectures).  \\ \\
 I may as well have accepted the entire proof on faith.  Science is supposed to be reproducible, but the argument we have so far is that someone smart told us these results are correct.
 
+\newpage
+
+\noindent \textbf{Theorem} We have a modular form of weight $\frac{3}{2} + r$ for the modular group $\Gamma_0(4)$
+$$ \theta_\phi(z) = \sum_{|d|\geq 1} \bigg( \sum_{a^2 + b^2 + c^2 = n}\phi(a,b,c) \bigg)e^{2\pi i \, |d|z} $$ 
+where $\phi$ is a (non-constant) Harmonic polynomial of degree $r$.  (So we're excluding $\phi \equiv 1$.) \\ \\
+I feel there is details missing here -- stuff that I can find in textbooks
+\begin{itemize}
+\item Can we actually solve $a^2 + b^2 + c^2 = n$ (long digression)
+\item What are some good $\phi(a,b,c) \in L^2(S^2)$ ? E.g. $\phi(a,b,c) = a^2$.
+\item This $\theta_\phi(z)$ is holomorphic.  That's great.  What's a cusp form?
+\item Can we draw the fundamental domain of $\Gamma_0(4)$ using lines and circles?
+\end{itemize}
+and these questions become more and more pressing the further along we read. I guess number theorists are seeing things on a bigger scale.  Modular forms, number theory -- it's all good!  
+\begin{itemize}
+\item Maass (theta) corespondence
+\item Theta correspondence for dual pairs
+\end{itemize}
+I have no idea what these are, but Google turns up lots and lots of papers.  Maybe there's some insight into number theory problems, there.   The Weyl sums are related to the Fourier coefficients.
+$$ \int \phi \,  d\mu_d =  \widehat{\theta}_\phi(d) $$
+There's another proof I don't know much about involving the ``subconvexity" of L-functions.
+$$ W(\phi, d) = \int_{T_d(\mathbb{Q}) \backslash T_d(\mathbb{A})/K_{T_d} \big)} \phi( z_d . t) \, dt $$
+with an inadequate explanation of the definition of K (or perhaps I can find it in a book).  This is an ``integral" over an ``adelic torus".  What could be the maximal compact subgroup of $SO(3, \mathbb{A}_f)$ of rotations over finite adeles?
+$$  SO( x^2 + y^2 + z^2, \mathbb{A}) $$
 
 \newpage
 
@@ -59,6 +82,9 @@ I may as well have accepted the entire proof on faith.  Science is supposed to b
 
 \item Philippe Michel and Akshay Venkatesh \textbf{Equidistribution, L-functions and ergodic theory: on some problems of Yu. Linnik} Proceedings of the International Congress
 of Mathematicians, Madrid, Spain, 2006.
+
+\item  W. T. Gan, Theta correspondence: recent progress and applications, Procedings of
+ICM (2014) Vol. 2, 343–366.
 
 \end{thebibliography}
 
