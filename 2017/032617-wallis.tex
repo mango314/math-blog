@@ -94,4 +94,39 @@ Volume 55, Number 2 (1977), 133-148.
 
 \end{thebibliography}
 
+\newpage
+
+\noindent Reading the Hagen-Friedman proof got me to think about a lot of things.  There are a few formulas we learn in undergrad, where the miracle is that we can fine the exact number:
+\begin{itemize}
+\item $\zeta(2) = \sum \frac{1}{n^2} = \frac{\pi^2}{6}$
+\item $\Gamma(\frac{1}{2}) = \sqrt{\pi}$
+\item $n! \approx \sqrt{2\pi n } (n/e)^n$
+\end{itemize}
+The area of the unit circle \begin{tikz} \draw (0,0) circle (0.2cm); \end{tikz} -- we call it $\pi$ --  poses a constraint on all the other things we are able to figure out.  There are lots of other ``miracles" but basically there are mostly combinations of these few. 
+\begin{itemize}
+\item look for other ``miracles"
+\item verify these miracles are what they claim to be
+\end{itemize} 
+The second one is about checking all the details we sweep under the rug, inspecting a very common calculation carefully.  \\ \\
+In calculus, engineers can do mostly correct calculations, and still getting the wrong answer.  This lead to a branch of mathematics called Analysis.  In my opinion, it is quite tedious to construct the real numbers $\mathbb{R}$ as the limit of fractions $\mathbb{Q}$. \\ \\ Then, one day I got kicked out of graduate school.  I got to look at the street, the supermarket, the basketball court, whatever.  They are using some exotic number system they didn't teach us about yet. \\ \\
+The goal of the rest of this note is mostly to construct more miracles (as already appear in the literature) and they will be dull ``miracles", but nonetheless extraordinary.  \\ \\
+But first a bit of what I think might be the content of Hagen-Friedman.  Instead of computing the determinant of $\Delta = \frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2} $ they estimate the determinant of the Hamiltonian (``energy") of the hydrogen atom
+$$ - \frac{\hbar}{2m}\nabla  + \frac{e}{r} $$
+so\dots Could there be ``exact" information encoded in the matrix elements of the operators? Yes.
+
+\newpage
+
+\noindent What I keep seeing in the physics literature are operators - or path integers - that we can never compute / have no hope of computing, and we immediately approximate them with something we're more familiar with.
+
+\vfill
+
+\begin{thebibliography}{}
+
+\item Kentaro Ihara, Masanobu Kaneko and Don Zagier \textbf{Derivation and double shuffle relations for multiple zeta values} Compositio Math. 142 (2006) 307-338
+
+\item Anton Kapustin, Brian Willett, Itamar Yaakov \textbf{Exact Results for Wilson Loops in Superconformal Chern-Simons Theories with Matter} \texttt{arXiv:0909.4559}
+
+\end{thebibliography}
+
+
 \end{document}
