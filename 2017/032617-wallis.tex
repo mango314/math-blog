@@ -116,7 +116,8 @@ so\dots Could there be ``exact" information encoded in the matrix elements of th
 
 \newpage
 
-\noindent What I keep seeing in the physics literature are operators - or path integers - that we can never compute / have no hope of computing, and we immediately approximate them with something we're more familiar with.
+\noindent What I keep seeing in the physics literature are operators - or path integrals - that we can never compute / have no hope of computing, and we immediately approximate them with something we're more familiar with. \\ \\
+
 
 \vfill
 
@@ -128,5 +129,30 @@ so\dots Could there be ``exact" information encoded in the matrix elements of th
 
 \end{thebibliography}
 
+\newpage
+
+\fontfamily{qag}\selectfont \fontsize{15}{20}\selectfont
+
+\noindent Let's review some of Zagier's article.  If I set this on a homework, it will get solved:
+$$ \zeta(k) \zeta(l) = \zeta(k,l) + \zeta(l,k) + \zeta(k+l) $$
+I would write out the definition of a zeta series:
+$$ \left[ \sum_{m>0} \frac{1}{m^k} \right]\left[ \sum_{n>0} \frac{1}{n^l} \right]
+= \sum_{m>n} \frac{1}{m^k n^l}
++ \sum_{m>n} \frac{1}{m^l n^k}
++ \sum_{m>0}      \frac{1}{m^{k+l}} $$
+In the product on the left one of two things will happen.  Either $m=n$ and we get the last term or $m > n$ or $m < n$.  Zagier summarizes this short hand with a ``harmonic product"
+$$ z_k \ast z_l = z_k z_l + z_l z_k + z_{k+l} $$
+There is also a \textit{shuffle product}  and a double shuffle.  I never read past the intro\dots Zagier writes all sorts of relations in terms of polynomial algebra (even though he is talking about zeta).  And his paper is already a bit old, the researching dating to the 1980's  -- looking for relations between value of the zeta function at 2. \\ \\
+And we never get past these basic issues.  Maybe the best way to approach this is to review the modern articles and observe that Zagier is always in the background (if only by construction).  There is always $\zeta(2)$, $\Gamma(\frac{1}{2})$, $n!$ and I'd like there to be $\zeta(-1)$. \\ \\ And we are fitting all of this into the computation of $\det \Delta$, there must be a new paper every week. How can there not be something to say??
+
+\vfill
+
+\begin{thebibliography}{}
+
+\item Kentaro Ihara, Masanobu Kaneko and Don Zagier \textbf{Derivation and double shuffle relations for multiple zeta values} Compositio Math. 142 (2006) 307-338
+
+\item Anton Kapustin, Brian Willett, Itamar Yaakov \textbf{Exact Results for Wilson Loops in Superconformal Chern-Simons Theories with Matter} \texttt{arXiv:0909.4559}
+
+\end{thebibliography}
 
 \end{document}
