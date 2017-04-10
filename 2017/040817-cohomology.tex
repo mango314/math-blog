@@ -1,0 +1,58 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+%\usepackage{graphicx}
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\newcommand{\myhrule}{}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+
+\newcommand{\dash}{
+\begin{tikzpicture}[scale=1]
+\draw (0,0)--(19,0);
+\end{tikzpicture}
+}
+
+\newcommand{\sq}[3]{
+\node at (#1+0.5,#2+0.5) {#3};
+\draw (#1+0,#2+0)--(#1+1,#2+0)--(#1+1,#2+1)--(#1+0,#2+1)--cycle;
+}
+
+\usepackage{tikz}
+
+\title{\textbf{Item: Dijkgraaf Witten Theory}}
+\author{John D Mangual}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{12.5}{15}\selectfont
+
+\maketitle
+
+\noindent I had better start writing.  I don't understand why they give a special name for the character theory of finite groups.  For me the problem has been there is nothing really I can test.  There are lots of really promising papers all of which I kind of parse, but non of them I can compute. \\ \\
+There is action.  Let $A$ be a 1-form and $B$ is a $d-2$-form on the manifold $M$
+$$  S[A,B] = \int_{M_d}  \frac{N}{2\pi} B \wedge dA $$
+Then the path integral is when you do this integral many times over the space of all possible connecions
+$$ Z = \int DA \; DB \; e^{i \, S[A,B]} = \int DA \; DB \; e^{i \, \int_{M_d}  \frac{N}{2\pi} B \wedge dA} $$
+that is really excellent!
+
+\vfill
+
+\fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
+
+\begin{thebibliography}{}
+
+
+
+\item Pavel Putrov, Juven Wang, Shing-Tung Yau.  \textbf{Braiding Statistics and Link Invariants of Bosonic/Fermionic Topological Quantum Matter in 2+1 and 3+1 dimensions}
+\texttt{arXiv:1612.09298}
+
+\end{thebibliography}
+
+
+\end{document}
