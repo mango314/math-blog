@@ -126,7 +126,7 @@ ICM (2014) Vol. 2, 343-366.
 
 \noindent \textbf{1} \quad Constructing series with good properties like the theta functions may be very difficult and I find the automorphic forms literature rather unfriendly.  \\ \\
 Let $F$ be a local field (not of characteristic $2$).  This could be the $p$-adic numbers 
-$$ \mathbb{Z}_p = \lim_{\longleftarrow} \mathbb{Z}/p\mathbb{Z} $$
+$$ \mathbb{Z}_p = \lim_{\longleftarrow} \mathbb{Z}/p^n\mathbb{Z} $$
 We need the fractions of $p$-adic numbers $\mathbb{Q}_p$, and $\psi$ is a nontrivial additive character.  
 $$ \text{character} = \text{exponential function}$$
 and I don't know what non-trivial means here.  Every time the word is used it means something slightly different. 
@@ -164,5 +164,40 @@ ICM (2014) Vol. 2, 343-366.
 \item James Arthur, Stephen Gelbart \textbf{Lectures on Automorphic L-functions}
 
 \end{thebibliography}
+
+\newpage  
+
+\fontfamily{qag}\selectfont \fontsize{12.5}{15}\selectfont
+
+\noindent \textbf{2} \indent What\dots is a ``dual pair"? \\ \\
+Last time we combined Poisson summation, Quadratic Reciprocity and the shift invariance of theta functions into a single formula.  \\ \\
+Let $\Theta$ be a Schwartz function (either $S(\mathbb{R})$ or $S(\mathbb{A})$ or even a reasonable space $S(X_\mathbb{R})$ or $S(X_\mathbb{A})$. We will pick $\Phi(x) = e^{- a \, x^2}$.  And we will add over all $x \in \mathbb{Z}$.
+$$ \sum_{\xi \in X_F} \Phi( \xi)  = \frac{1}{2\pi} \sum_{\xi \in \mathbb{Z}_p} e^{-a \, \xi^2}$$
+here $X_F = \mathcal{O}_{\mathbb{Q}_p} = \mathbb{Z}_p$.  And $\Phi(\xi) = \mathbf{1}_{\mathbb{Z}_p}(\xi) \times \frac{1}{\sqrt{2\pi}} e^{-\xi^2}$ where $\Phi :\mathbb{Z}_p \times \mathbb{R}  \to\mathbb{R} $.  This may look like too many numbers, but Gaussian's seem to behave nicely under the $p$-adic numbers.
+$$ \exp \bigg[ - a\big(1 + p^\infty \xi \big)^2 \bigg] = 
+\exp \bigg[ -  a \big( 1 + p^\infty (2\xi) + \dots \big) \bigg] = \frac{1}{e^a} $$
+A back of the envelope computation. If we are only looking for $\xi \in \mathbb{R}$ we can ignore all the infinitesimal terms:
+$$  \sum_{\xi \in X_F} \Phi( \xi)  = \frac{1}{\sqrt{2\pi a}} \sum_{\xi \in \mathbb{Z}_p} e^{-a \, \xi^2} \approx 
+\frac{1}{\sqrt{2\pi a}} \sum_{\xi \in \mathbb{Z}} e^{-a \, \xi^2} = \Theta(\xi)
+$$
+And that's how we get theta functions in this ecumenical framework. There are two symmetries over $\mathbb{Z}$ 
+$$ z \mapsto z + 1 \hspace{0.5in} z \mapsto -\frac{1}{z} $$ 
+However, now when we add these infinitesimals, we have completed this pair into a continuous group of symmetries.  A simple lookup on Wikipedia shows up three types of symplectic matrices over $\mathbb{R}$:
+$$ 
+\left[ \begin{array}{cc} 1 & 0 \\ 0 & 1 \end{array} \right] 
+\hspace{0.25in}
+\left[ \begin{array}{cc} 1 & 0 \\ 1 & 1 \end{array} \right]
+\hspace{0.25in}
+\left[ \begin{array}{cr} 0 & -1 \\ 1 & 0 \end{array} \right] 
+\hspace{0.25in}
+\left[ \begin{array}{cc} 1 & 1 \\ 0 & 1 \end{array} \right] $$
+These matrices are acting on a space $\mathbb{R}$ and another $\mathbb{R}$ pointing in the opposite direction, $X = \mathbb{R} \oplus \mathbb{R}^\ast \not \simeq \mathbb{R}^2 $.  It's not actually the metric that is preserve, but the symplectic form:
+$$ ds^2 = dx_1^2 + dx_2^2 \quad dA = dx_1 \wedge dx_2 $$
+which is a kind of \textbf{area}.  All of classical mechanics (the part we can solve) is finding immersions of this integrable system in other problems. \\ \\
+Perhaps the symmetry $\mathrm{Sp}(2, \mathbb{Z})$ (or $\mathrm{SL}(2, \mathbb{Z})$) get's completed to $\mathrm{SL}(2, \mathbb{Z}_p)$.  Is this how it works?
+
+\newpage
+
+\noindent \textbf{3} \indent \dots
 
 \end{document}
