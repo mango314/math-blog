@@ -39,7 +39,24 @@ There is action.  Let $A$ be a 1-form and $B$ is a $d-2$-form on the manifold $M
 $$  S[A,B] = \int_{M_d}  \frac{N}{2\pi} B \wedge dA $$
 Then the path integral is when you do this integral many times over the space of all possible connecions
 $$ Z = \int DA \; DB \; e^{i \, S[A,B]} = \int DA \; DB \; e^{i \, \int_{M_d}  \frac{N}{2\pi} B \wedge dA} $$
-that is really excellent!
+that is really excellent!  The message from Yau is that all these path integrals look the same.  And if you cheat and pretend you know how these things localize those answers all have similar structure.  \\ \\
+Let's examine one:  the author says  ``3+1D local bosonic model whose low-energy effective theory is a fermionic $\mathbb{Z}_2$-gauge theory".  And then he says there is already \textit{several} instances already in the liteature.  \\ \\
+At least, we only have 3 dimensions + 1 time, there is no classification of 4-manifolds, and there will never be one, except under very special circumstances.  
+$$ Z(M^{3+1}) = \sum_{b = \text{2-cochain}} e^{i \pi \int_{M^{3+1}} b\cup b} $$
+Mr Wen, whose first language is Chinese, calls this equation a ``statistical transmtation" of the field theory.  We certainly believe his intution except I have no idea what he means.  \\ \\
+The real-world application that the consumer might see, is that it's a smart-phone or a DVD players, or a flat-screen television. Back to parsing the equation:
+\begin{itemize}
+\item $b$ is a 2-cochain field (a great time to consult Hatcher's Algebraic topology textbook)
+\item $j$ is a ``cycle" correspond to the world-line of bosonic scalar particle
+\item $\ast j$ is 3-cocycle corresonding to Poincare dual
+\item $\pi \int_{M^{3+1}} b \cup b$ changes from boson to Fermion
+\item $db \stackrel{2}{=} \ast j $ means $db = \ast j \pmod 2$ 
+\end{itemize}
+I have introduced any geometric objects without explaining what they are because I am still in the process of finding them in textbooks.
+
+\newpage
+
+\noindent These are templates for this section of the literature.  The professor says ``these are well-defined" and you come back with ``I have no idea what you are talking about".
 
 \vfill
 
@@ -51,6 +68,8 @@ that is really excellent!
 
 \item Pavel Putrov, Juven Wang, Shing-Tung Yau.  \textbf{Braiding Statistics and Link Invariants of Bosonic/Fermionic Topological Quantum Matter in 2+1 and 3+1 dimensions}
 \texttt{arXiv:1612.09298}
+
+\item Xiao-Gang Wen \textbf{Exactly soluble local bosonic cocycle models, statistical transmutation, and simplest time-reversal symmetric topological orders in 3+1D} \texttt{arXiv:1612.01418}
 
 \end{thebibliography}
 
