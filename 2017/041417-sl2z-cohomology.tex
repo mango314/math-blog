@@ -67,6 +67,7 @@ so the cosets $[\text{SL}_2(\mathbb{Z}) : \Gamma_0(N)]$ is indexed by the Farey 
 $$ 1 \to \Gamma(N) \to \text{SL}_2(\mathbb{Z}) \to \text{SL}_2( \mathbb{Z}/N\mathbb{Z}) \to 1 $$
 We will have time to test my intuition for algebra later (as is already happening!).
 
+
 \vfill
 
 \fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
@@ -83,5 +84,46 @@ Newforms: Implementation, Choice of
 Parameters and Verification of Zero} (Diplomarbeit, 2010)
 
 \end{thebibliography}
+
+\begin{tikzpicture}
+
+\draw[fill=blue!5!white, line width=0.5, draw=green] 
+(0,0.5) arc (90:0:0.5)--
+(0.5,0) arc (180:0:0.5)--
+(1.5,0) arc (180:0:0.5)--
+(2.5,0) arc (180:0:0.5)--
+(3.5,0) arc (180:0:0.5)--
+(4.5,0) arc (180:0:0.5)--
+(5.5,0) arc (180:0:0.5)--
+(6.5,0) arc (180:0:0.5)--
+(7.5,0) arc (180:0:0.5)--
+(8.5,0) arc (180:0:0.5)--
+(9.5,0) arc (180:0:0.5)--
+(10.5,0) arc (180:90:0.5)--
+(11,0.5)--(11,3)--(0,3);
+
+\foreach \a in {0,...,12}{
+
+	\draw[color=black!20!white] (\a, 3)--(\a, 1);
+	%\draw[color=black!20!white] (\a+0.5,0.5) arc (60:120:1);
+
+}
+
+\foreach \a in {2,...,11}{
+	
+	\draw[color=black!20!white] (\a ,0) arc (0:180:1);
+
+}
+
+\draw[color=black!20!white] (1,0) arc (0:90:1);
+\draw[color=black!20!white] (11,0) arc (180:90:1);
+
+
+
+\draw[line width = 2] (-0.5,0)--(12,0);
+\draw[line width = 2] (0,3)--(0,0);
+
+
+\end{tikzpicture}
 
 \end{document}
