@@ -1,0 +1,64 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+
+
+\usepackage{tikz}
+
+\title{Item: \textbf{Cohomology of Arithmetic Groups}}
+\author{John D Mangual}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{12.5}{15}\selectfont
+
+\maketitle
+
+\noindent The Eichler-Shimura isomorphism let's you express weight-2 modular forms theory into cohology of $\text{SL}_2(\mathbb{Z})$. This will take a lot of effort to unpack.  One version I have found says these two are the same:
+\begin{itemize}
+\item $f(z) \, dz$ is a $\Gamma$-invariant form on $\mathbb{H}$
+\item $[ \, f(z) dz \, ] \in H^1 (\mathbb{H}/\Gamma, \mathbb{C}) = H^1(\Gamma, \mathbb{C})$
+\end{itemize}
+but these are two different kinds of cohomology.  One of them is a hyperbolic space $\mathbb{H}/\Gamma$ and the other is a group of $2 \times 2$ matrices $\Gamma \subseteq \text{SL}_2(\mathbb{Z})$.  How can we not have a complete understanding of both of these objects? \\ \\
+There's a trade-off between generality and our ability to supply details.  I never told you what $\Gamma$ was, and the entire textbook writes the discussion without naming a specific answer.  How can they have the best possible answer?  If, I decide to focus on one $\Gamma$, let's say $\Gamma_0(4) = \langle z \mapsto z + 1, z \mapsto - \frac{1}{4z}\rangle$ maybe I will say things that don't generalize.  \\ \\
+In between, would be story where I examine many possible $\Gamma$ and a statement will be true in cases and not others (in many cases and not others). I might even be able to express this type of meta-logic using a small amount of category theory. \\ \\
+Let's find a modular form of weight 2.  The first one I can think of is a theta-function raised to the 4th power:
+$$  \theta(z) = \big( \sum q^{n^2} \big)^4 = \sum r_4(n) \, q^n $$
+and here $\Gamma_0(4) \neq \text{SL}_2(\mathbb{Z})$. How do we know it is modular form of weight 2?  This is a great example if we keep in mind the following recipe:
+$$ \text{M}_2(\Gamma_0(N)) = \text{S}_2(\Gamma_0(N)) \oplus \text{E}_2(\Gamma_0(N)) $$
+for all congruence groups, not just $N = 4$.  This says every weight two modular form splits into to parts:
+\begin{itemize}
+\item Eisenstein series
+\item Cusp forms
+\end{itemize}
+The jargon gets worse and worse.  Eichler-Shimura theory, Atkin-Lehmer theory.   If I have an interestng number theory problem, maybe I can turn it into a modular forms problem:
+$$ \text{modular forms} \stackrel{?}{\not =} \text{number theory} $$
+I cannot find any modular forms of weight 2 that are not Eisenstein series until $\Gamma_0(11)$
+
+\newpage
+
+\noindent \dots
+
+\vfill
+
+\fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
+
+\begin{thebibliography}{}
+
+\item John Cremona \textbf{The L-functions and modular forms database project}  \texttt{arXiv:1511.04289}  
+\texttt{http://www.lmfdb.org/}
+
+\item William Stein \textbf{Modular Forms, A Computational Approach} Modular forms of Weight 2 \texttt{http://wstein.org/books/modform/modform/index.html}
+
+\end{thebibliography}
+
+\end{document}
