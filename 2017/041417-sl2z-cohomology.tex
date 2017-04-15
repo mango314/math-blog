@@ -38,7 +38,7 @@ $$ \text{M}_2(\Gamma_0(N)) = \text{S}_2(\Gamma_0(N)) \oplus \text{E}_2(\Gamma_0(
 for all congruence groups, not just $N = 4$.  This says every weight two modular form splits into to parts:
 \begin{itemize}
 \item Eisenstein series
-\item Cusp forms
+\item Cusp forms ( Poincar\'{e} series )
 \end{itemize}
 The jargon gets worse and worse.  Eichler-Shimura theory, Atkin-Lehmer theory.   If I have an interestng number theory problem, maybe I can turn it into a modular forms problem:
 $$ \text{modular forms} \stackrel{?}{\not =} \text{number theory} $$
@@ -46,7 +46,26 @@ I cannot find any modular forms of weight 2 that are not Eisenstein series until
 
 \newpage
 
-\noindent \dots
+\noindent The formula I found on the internet is a \textbf{newform}\footnote{\texttt{http://www.lmfdb.org/ModularForm/GL2/Q/holomorphic/11/2/1/a/}} and the coefficient field is $\mathbb{Q}$ (in fact they're in $\mathbb{Z}$) and we get the first fiew terms and Satake parameters (which sound useful). 
+$$ \eta(z)^2 \eta(11z)^2 = q \prod_{n=1}^\infty (1-q^n)^2 (1 - q^{11n})^2  = q - 2q^2 - q^3 + 2q^4 + q^5 + 2 q^6 - 2 q^7 - 2q^9 + \text{O}(q^{10})$$
+It is not obvious to me these coefficients are multiplicative (except $a_{11} = +1$), in that case:
+$$ a_2 \times a_3 = (-2) \times (-1) = + 2 = a_6 $$
+The coefficients don't seem to match up since perfect powers they are not multiplicative:
+$$ a_2 \times a_2 \times a_2 = (-2)\times (-2)\times (-2) = -8 \neq 0 = a_8 $$
+The L-function is found by moving the q-series $q^n$ to Dirichlet-series $n^s$ as done by the \textbf{Mellin transform}
+$$ L(f,s) = 1^s -2 \times 2^s - 1 \times 3^s + 2 \times 4^s + 1 \times 5^s + 2 \times 6^s  + \dots = \left( 1 - \frac{a_{11}}{11^s} \right)^{-1} \prod_{p \neq 11} \left( 1 - \frac{a_p}{p^s} \right)^{-1} $$
+Eichler-Shimura maps the newforms (or Eisenseries) over this group and maps them to elements of group cohomology
+$$ \int_0^{11} \eta(z)^2 \eta(11z)^2 \; dz = \text{???} $$
+and now for a homework question: what are the other cycles of $\Gamma_0(11)$ ? Not so easy.\footnote{\texttt{http://wstein.org/books/modform/modform/modform.html}}
+$$ \Gamma_0(N) = \left\{ \left( \begin{array}{cc} a & b \\ c & d \end{array}   \right) \in \text{SL}_2(\mathbb{Z}) : 
+\left( \begin{array}{cc} a & b \\ c & d \end{array}   \right)  \equiv
+\left( \begin{array}{cc} \ast & \ast \\ 0 &  \ast  \end{array}  \right) \pmod{ N }
+ \right\} $$
+ Where is also $\Gamma_1(N)$ with a more strict equivalence relation.   The equation $ad-bc=1$ says they are neighbors on the Farey fraction list:
+ $$ \dots  < \frac{a}{c} <  \frac{b}{d} < \dots $$
+so the cosets $[\text{SL}_2(\mathbb{Z}) : \Gamma_0(N)]$ is indexed by the Farey fractions $\pmod {N}$ (I just took that from a textbook) so there should be \textbf{11+1=12} cosets.  Neither of these is normal subgroup with exact sequence:
+$$ 1 \to \Gamma(N) \to \text{SL}_2(\mathbb{Z}) \to \text{SL}_2( \mathbb{Z}/N\mathbb{Z}) \to 1 $$
+We will have time to test my intuition for algebra later (as is already happening!).
 
 \vfill
 
@@ -58,6 +77,10 @@ I cannot find any modular forms of weight 2 that are not Eisenstein series until
 \texttt{http://www.lmfdb.org/}
 
 \item William Stein \textbf{Modular Forms, A Computational Approach} Modular forms of Weight 2 \texttt{http://wstein.org/books/modform/modform/index.html}
+
+\item Christoph Schmitt. \textbf{Calculation of L-Functions Associated with
+Newforms: Implementation, Choice of
+Parameters and Verification of Zero} (Diplomarbeit, 2010)
 
 \end{thebibliography}
 
