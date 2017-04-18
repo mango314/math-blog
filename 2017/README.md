@@ -46,4 +46,6 @@ So... there will be a lot of gaps! As you have guessed all the sum-of-squares an
 
 Math lectures are God-awful.  Usually I get a New York Times crossword puzzle and fill it out while the man or woman is talking.  Just terrible.
 
-It grieves me to learn that mathematician [Jean-Christophe Yoccoz](https://en.wikipedia.org/wiki/Jean-Christophe_Yoccoz) is dead.  It as always been on my to-do list to learn about [interval-exchange transformations](https://www.college-de-france.fr/media/jean-christophe-yoccoz/UPL15305_PisaLecturesJCY2007.pdf) and square-tiled surfaces more carefully.  And then I would go to Paris and sip a glass of champaigne and write equations.  Feasibility is another story.
+It grieves me to learn that mathematician [Jean-Christophe Yoccoz](https://en.wikipedia.org/wiki/Jean-Christophe_Yoccoz) is dead.  I have never met the guy, but it as always been on my to-do list to learn about [interval-exchange transformations](https://www.college-de-france.fr/media/jean-christophe-yoccoz/UPL15305_PisaLecturesJCY2007.pdf) and square-tiled surfaces more carefully.  And then I would go to Paris and sip a glass of champaigne and write equations.  Feasibility is another story.
+
+I remember watching the [TV](https://www.college-de-france.fr/site/jean-christophe-yoccoz/course-2016-02-03-10h00.htm) show (his lectures rather difficult), and mid-way through the series he passes away; he croaks.  And then I said: now what?
