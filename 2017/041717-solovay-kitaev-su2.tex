@@ -43,7 +43,22 @@ This is the part of abstract algebra class I blanked out on.  However, the more 
 
 \newpage
 
-\noindent \dots
+\noindent What exactly did Sarnak do?  Picking two matrices in $SO(3)$ out and we just multiply them at random, they will get close to all matrices, this is called \textbf{density}. 
+$$ F: \langle A, B \rangle \to SO(3) \simeq SU(2) $$ 
+and the image of $F$ will be a dense in group.  Since he is talking about quantum computation, he will use $U(2)$.  There is a homomorphism:
+$$ \det: U(2) \to S^1 $$
+and this leads to an exact sequence of matrix groups, where $SU(2)$ is the kernel:
+$$ 1 \to SU(2) \to U(2) \to S^1 \to 1 $$
+Then - the part I got stuck on - how to make a good choice of generators.  Using the platonic solids, Sarnak and I went two different routes:
+\begin{itemize}
+\item  move each of the vertices slightly, e.g. $\left( \begin{array}{rl}0  + \epsilon & 1 +\epsilon \; \\ -1 + \epsilon & 0 +  \epsilon  \end{array} \right) $ 
+\item adjoin a single element $\left( \begin{array}{cc} 1 & 0 \\ 0 & e^{\pi i / 8} \end{array} \right) $ as in all the textbooks
+\end{itemize}
+It doesn't look like adjoining something that well-behaved (by itself it behaves like $\frac{1}{8}$) on it's own could be enough to produce chaos.  \\ \\ Then, using measures like the Prime Number Theorem and GRH he gets various estimates for various situations\footnote{cuspidal representations and Adeles, etc. if we knew what those were} (strong approximation) and sort of trails off\dots \\ \\
+For someone who is not that experience, I think it's important to learn the various benchmarking techniques (such as the circle method or geometry of numbers) and try to get as far along. \\ \\
+
+
+\vfill 
 
 
 \fontfamily{qag}\selectfont \fontsize{12}{10}\selectfont
@@ -53,7 +68,7 @@ This is the part of abstract algebra class I blanked out on.  However, the more 
 \item John Cremona \textbf{The L-functions and modular forms database project}  \texttt{arXiv:1511.04289}  
 \texttt{http://www.lmfdb.org/}
 
-\item Sofia Lindqvist \textbf{Weak approximation results for quadratic forms in four variables} Modular forms of Weight 2 \texttt{arXiv:1704.00502}
+\item Sofia Lindqvist \textbf{Weak approximation results for quadratic forms in four variables} \texttt{arXiv:1704.00502}
 
 \item Ori Parzanchevski, Peter Sarnak.  \textbf{Super-Golden-Gates for PU(2)} \texttt{arXiv:1704.02106} \\ \\
 Peter Sarnak.  \textbf{Letter to Aaronson and Pollington on the Solvay-Kitaev Theorem and Golden Gates} \texttt{https://publications.ias.edu/sarnak/paper/2637}
