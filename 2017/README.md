@@ -45,3 +45,5 @@ So... there will be a lot of gaps! As you have guessed all the sum-of-squares an
 * [The Art of Storytelling](https://www.khanacademy.org/partner-content/pixar/storytelling)
 
 Math lectures are God-awful.  Usually I get a New York Times crossword puzzle and fill it out while the man or woman is talking.  Just terrible.
+
+It grieves me to learn that mathematician [Jean-Christophe Yoccoz](https://en.wikipedia.org/wiki/Jean-Christophe_Yoccoz) is dead.  It as always been on my to-do list to learn about [interval-exchange transformations](https://www.college-de-france.fr/media/jean-christophe-yoccoz/UPL15305_PisaLecturesJCY2007.pdf) and square-tiled surfaces more carefully.  And then I would go to Paris and sip a glass of champaigne and write equations.  Feasibility is another story.
