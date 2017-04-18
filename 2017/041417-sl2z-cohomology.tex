@@ -138,7 +138,62 @@ We will have time to test my intuition for algebra later (as is already happenin
 
 \newpage
 
-\noindent \dots 
+\noindent The question at hand is why there is a weight 2 modular form at ``level" 11.  These terms level and weight are the most ambiguous terms I have ever used.  Here is some of the table from LMFDB: \\
+
+\begin{tabular}{r|rrrrrrrrrrrrrrrr}
+
+ \textbf{level} & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 \\ \hline
+\textbf{weight }2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0  & \color{red!60!white}{\textbf{1}}  & 0  & 0  &  1 &  1 \\ 
+4 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 2  & 1  & 3  & 2  &  2 
+\end{tabular} \\ \\
+These modular forms are the raw materials.  Fustratingly, I took for granted the connection between modular forms and number theory.  The connections between number theory and geometry get packaged away into theorems, preventing real insight from occuring. \\ \\
+These tables are not enough for me.  \\ \\
+The program was: learn modular forms, solve problems in number theory.  It still hasn't happened.  Something about the way textbooks are written. \\ \\
+My best guess is that $11 + 1 = 3 \times 4$ is just enough ``volume" for a weight 2 modular form to occur.  \\ \\ 
+All modular forms break up into newforms and Eisenstein series and we are told there's no newforms before a certain point.  Hopefully I haven't mixed up ``newform" and ``cusp form".  \\ 
+
+\begin{tikzpicture}
+
+\draw[fill=blue!5!white, line width=0.5, draw=green] 
+(0.5,0.866)--(0.5,3)--(11.5,3)--(11.5,0.866)--
+(11.5, 0.866) arc (60:120:1)--
+(10.5, 0.866) arc (60:120:1)--
+( 9.5, 0.866) arc (60:120:1)--
+( 8.5, 0.866) arc (60:120:1)--
+( 7.5, 0.866) arc (60:120:1)--
+( 6.5, 0.866) arc (60:120:1)--
+( 5.5, 0.866) arc (60:120:1)--
+( 4.5, 0.866) arc (60:120:1)--
+( 3.5, 0.866) arc (60:120:1)--
+( 2.5, 0.866) arc (60:120:1)--
+( 1.5, 0.866) arc (-60:0:-1)--
+( 1,0) arc (0:60:1);
+
+\foreach \a in {0,...,11} {
+
+	\draw[color=black!20!white] (0.5 + \a , 3)--(0.5 + \a , 0.866);
+
+}
+
+
+
+\foreach \a in {2,...,12} {
+	\draw[color=black!20!white] ( \a ,0) arc (0  :180:1);
+}
+
+
+\draw[color=black!20!white] (1 ,0) arc (0  : 90:1);
+\draw[color=black!20!white] (11,0) arc (180: 90:1);
+
+
+\draw[line width = 1] (-0.5,0)--(12,0);
+\draw[line width = 1] (   0,3)--( 0,0);
+
+
+\end{tikzpicture}  \\ \\
+This is a quick drawing.  The natural question: how does a circle cut these shapes? Since I have written: $ \eta(z)^2 \eta(11z)^2 $ is the weight-2 modular form let's check:
+$$ \eta(z)^2 \, \eta(11z)^2 \, dz \text{ is invariant under } \Big\langle z \mapsto z + \frac{1}{11}, z \mapsto - \frac{1}{z} \Big\rangle $$
+I don't see why multiplying four copies of the eta function doesn't already give weight 2 modular form.  Just by $4 \times \frac{1}{2} = 2$.  
 
 \vfill
 
