@@ -65,8 +65,80 @@ $$ \Gamma_0(N) = \left\{ \left( \begin{array}{cc} a & b \\ c & d \end{array}   \
  $$ \dots  < \frac{a}{c} <  \frac{b}{d} < \dots $$
 so the cosets $[\text{SL}_2(\mathbb{Z}) : \Gamma_0(N)]$ is indexed by the Farey fractions $\pmod {N}$ (I just took that from a textbook) so there should be \textbf{11+1=12} cosets.  Neither of these is normal subgroup with exact sequence:
 $$ 1 \to \Gamma(N) \to \text{SL}_2(\mathbb{Z}) \to \text{SL}_2( \mathbb{Z}/N\mathbb{Z}) \to 1 $$
-We will have time to test my intuition for algebra later (as is already happening!).
+We will have time to test my intuition for algebra later (as is already happening!). \\
 
+\begin{tikzpicture}
+
+\draw[color=black!20!white] (0.5, 3)--(0.5, 0.866);
+\draw[color=black!20!white] (1.5, 3)--(1.5, 0.866);
+\draw[color=black!20!white] (2.5, 3)--(2.5, 0.866);
+
+
+\draw[color=black!20!white] (3,0) arc (0  :180:1);
+\draw[color=black!20!white] (2,0) arc (0  :180:1);
+\draw[color=black!20!white] (1,0) arc (0  : 90:1);
+\draw[color=black!20!white] (2,0) arc (180: 90:1);
+
+\draw[fill=blue!5!white, line width=0.5, draw=green] 
+(1.5,0.866)--(1.5,3)--(0.5,3)--(0.5,0.866)--
+(0.5, 0.855) arc (-60:-120:-1);
+
+\draw[line width = 1] (-0.5,0)--(3,0);
+\draw[line width = 1] (0,3)--(0,0);
+
+\begin{scope}[xshift=5cm]
+
+\draw[color=black!20!white] (0.5, 3)--(0.5, 0.866);
+\draw[color=black!20!white] (1.5, 3)--(1.5, 0.866);
+\draw[color=black!20!white] (2.5, 3)--(2.5, 0.866);
+
+
+\draw[color=black!20!white] (3,0) arc (0  :180:1);
+\draw[color=black!20!white] (2,0) arc (0  :180:1);
+\draw[color=black!20!white] (1,0) arc (0  : 90:1);
+\draw[color=black!20!white] (2,0) arc (180: 90:1);
+
+\draw[fill=blue!5!white, line width=0.5, draw=green] 
+(0.5, 0.855) arc (-60:-120:-1)--
+(1.5, 0.855) arc (-60:0:-1)--
+(1,0) arc (0:60:1);
+
+\draw[line width = 1] (-0.5,0)--(3,0);
+\draw[line width = 1] (0,3)--(0,0);
+
+\end{scope}
+
+\begin{scope}[xshift=10cm]
+
+
+\draw[color=black!20!white] (0.5, 3)--(0.5, 0.866);
+\draw[color=black!20!white] (1.5, 3)--(1.5, 0.866);
+\draw[color=black!20!white] (2.5, 3)--(2.5, 0.866);
+
+
+\draw[fill=blue!5!white, line width=0.5, draw=green] 
+(0.5,0.866)--(0.5,3)--(1.5,3)--(1.5,0.866)--
+(1.5, 0.866) arc (-60:0:-1)--
+(1,0) arc (0:60:1);
+
+\draw[color=black!20!white] (3,0) arc (0  :180:1);
+\draw[color=black!20!white] (2,0) arc (0  :180:1);
+\draw[color=black!20!white] (1,0) arc (0  : 90:1);
+\draw[color=black!20!white] (2,0) arc (180: 90:1);
+
+
+
+
+\draw[line width = 1] (-0.5,0)--(3,0);
+\draw[line width = 1] (0,3)--(0,0);
+
+\end{scope}
+
+\end{tikzpicture}
+
+\newpage
+
+\noindent \dots 
 
 \vfill
 
