@@ -128,7 +128,44 @@ $$ h(2) = h(\tfrac{2}{1}) = 2 = h(\tfrac{a^2}{b^2})  = a^2 + b^2$$
 here I used the symbol ``=" to mean the English word ``but also" and $(a,b) = 1$ the numbers $a$ and $b$ are \textbf{relatively prime}.  How can two integers, have a square that sums to two?  
 $$ a^2 + b^2 = 1 \longrightarrow a = b = 1 $$
 That's not possible.   \\ \\
-The find print is, we could find completions where $\sqrt{2}$ exists, such as $\mathbb{R}$ or $\mathbb{Q}_3$ or any $\mathbb{Q}_p$ when $\frac{p^2-1}{8}\in \mathbb{Z}$ is an even number\footnote{\texttt{https://mixedmath.wordpress.com/2012/08/23/an-elementary-proof-of-when-2-is-a-quadratic-residue/}}.
+The find print is, we could find completions where $\sqrt{2}$ exists, such as $\mathbb{R}$ or $\mathbb{Q}_3$ or any $\mathbb{Q}_p$ when $\frac{p^2-1}{8}\in \mathbb{Z}$ is an even number\footnote{\texttt{https://mixedmath.wordpress.com/2012/08/23/an-elementary-proof-of-when-2-is-a-quadratic-residue/}}. \\ \\
+\textbf{\#2} These math textbooks give really deep names to really basic concepts.  Continuing with $\sqrt{2}$
+$$ x^2 - 2y^2 = (x - \sqrt{2} y) ( x + \sqrt{2}y )=  1 $$
+One way to phrase this is that we have adjoint $\sqrt{2}$ to the ring of integers $\mathbb{Z}$ and obtained $\mathbb{Z}[\sqrt{2}]$.  Bjorn Poonen defines an affine variety (an ``equation"):
+$$ x^2 - 2y^2 = -3  \text{ over } \mathbb{A}_\mathbb{Q}$$
+In his notation $\mathbb{A}_\mathbb{Q} = \mathrm{Spec}\; \mathbb{Q} $ is the ``line" while $\mathbf{A}_\mathbb{Q}$ are the Adeles.  I think $\mathrm{Spec}\;\mathbb{Q}$ is just $\mathbb{Q}$. So we are trying to solve this equation over fractions.  We don't know if there are any solutions just yet. \\ \\
+He defines a \textbf{torus} -- a term which throws me completely off because it is a hyperbola.
+\begin{itemize}
+\item $T = \{ x^2 -2y^2 = 1 \} \subseteq \mathbb{A}_\mathbb{Q}^2 = \mathrm{Spec} \; \mathbb{Q}[x,y]$
+\item there is some kind of multiplication: $\mathbf{\times}: T \times T \to T$
+\item $(x_1,y_1) \times (x_2,y_2) = ( x_1 x_2 + 2 y_1 y_2 , x_1 y_2 + x_2 y_1)$
+\end{itemize}
+The real definition of torus is the most obnoxious thing ever: it is a twist on $\mathbb{G}_m^n$ (as a group scheme), where $\mathbb{G}_m = \mathrm{Spec}\; \mathbb{Q}[t, t^{-1}] $ and $m$ stands for ``multiplication".
+\newpage
+
+\noindent This guy really emphasizes schemes and he considers $\mathrm{Spec}[ \; \cdot \; ]$ a lot (this is a \textbf{functor})\\ \\We can look for different points on curves, and there will be a torus action:
+$$ x^2 - 2y^2 = - 3 \quad\text{ or }\quad x^2 - 2y^2 = 0 $$
+The last one might be a scheme and not a variety.\footnote{The book is written in such a formal way, it's hard to understand.  Can't say I'm doing a great job.}  In both cases, $X(\mathbb{Q}) = \varnothing$ (there are no rational ``points") in either case so\dots this is a non-trivial $T$-torsor. \\ \\
+For any fixed smooth algebraic group $G$ (in our case, the solutions to $x^2 - 2y^2 = 1$ with multiplication and we will write it $T$) these three objects are thes same: 
+
+\begin{itemize}
+\item $T$-torsor over $\mathbb{Q}$
+\item twists of $\mathbf{G}$ (possibly $\mathbf{G}$)
+\item $H^1(\mathbb{Q}, T)$
+\end{itemize}
+if $X = \{ x^2 - 2y^2 = 0 \}$ is a torsor it has a cohomology the cohomology class. $$[\{ x^2 - 2y^2 = 0 \}] \in H^1 \big(\mathbb{Q}, \{ x^2 - 2y^2 = 1\} \big)$$ 
+$\mathbf{G}$ is the \textbf{trivial torsor}  (Grothendieck thought math centered around the notion of zero, which took thousands of years to develop.  So we have all thse notations for zero-like concepts.). \\ \\
+$\sqrt{2} \notin \mathbb{Q}$ how can our torsor have any points? \\ \\
+We have to examine the \textbf{separable closure} $\mathbb{Q}_s$ -- I have never seen so many numbers in my life.  Hopefully if we adjoin enough numbers, $\sqrt{2}$ is in there.  Maybe
+$$ \mathbb{Q}(\sqrt{2}) = \mathbb{Q}[x]/(x^2 - 2) $$
+will be enough. \\ \\
+I haven't really said what ``cohomology" is.  Any function $\mathbb{Q} \to T$ is an element of cohomology and the ``class" is just a way of declaring two of these two be the same.  These equivalences form a hierarchy. \\ \\
+I am thinking the end result here is not a ``proof" but an exhibition of how all the machinery is connected.
+
+\newpage
+
+\dots
+
 \vfill
 
 
@@ -136,7 +173,7 @@ The find print is, we could find completions where $\sqrt{2}$ exists, such as $\
 
 \begin{thebibliography}{}
 
-%\item Nancy Childress \textbf{Class Field Theory} (Universitext).  Spinger, 2009.
+\item Nancy Childress \textbf{Class Field Theory} (Universitext).  Spinger, 2009.
 
 \item Ben Green, Terence Tao, Tamar Ziegler. \textbf{An inverse theorem for the Gowers $U^{s+1}[N]$-norm} \texttt{arXiv:1009.3998}
 
