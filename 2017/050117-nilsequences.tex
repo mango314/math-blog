@@ -178,8 +178,40 @@ There is an extensive literature of zeta-functions.  There's a zeta function for
 $$ \zeta(s) = \sum_{n \geq 1} n^{-s} = \prod_{p = \text{prime}} \frac{1}{1-p^{-s}} = 
 \prod_{\mathfrak{m}\in \text{maximal}} \frac{1}{1- \# (\mathbb{Z}/\mathfrak{m})^{-s}} = \prod_{P \in \mathrm{Spec}\mathbb{Z}} \frac{1}{1-\# \mathbb{Q}(P)^{-s}}$$
 So $\mathbb{Z}$ is now the scheme $X = \mathrm{Spec} \mathbb{Z}$. In that section of the book he uses \'{e}tale cohomology\footnote{to prove the Hasse principle (local-global principle) we were using Galois cohomology.  It's tough to keep these straight.} The formulas that Soul\'{e} outlines for us a zeta function for any scheme $X$. \\ \\
-It seems to be on me, what I want for an ``explicit computation".  Seems to be kind of a game.  
+It seems to be on me, what I want for an ``explicit computation".  Seems to be kind of a game.  We have an endless supply of zeta functions.  Let's write down one or two:
+$$ \zeta(s)^2 = \left( \sum_{n \geq 1} n^{-s} \right)^2 = \sum_{n \geq 1} d(n) \, n^{-s} \neq \sum_{n \geq 1} r_2(n) \, n^{-s}  $$
+here $r_2(n)$ is the number of way of writing $n$ as the sum of two squares.  $d(n)$ is \# of divisors.
+$$ 50 = 5 \times 5 + 5 \times 5 = 7 \times 7 + 1 \times 1 = 1 \times 1 + 7 \times 7 $$
+considerations like these lead to a very rich theory of modular forms; and there is all kinds of stuff.  I am wrong.  Sum of two squares is it's own zeta function.  I think it's 
+$$ \zeta_{\text{Spec}\mathbb{Z}[i]}(s) = \left( \sum_{a,b} (a^2+ b^2)^{-s} \right)  = \sum_{n \geq 1} r_2(n) \, n^{-s} = \prod_{p = 4k+1} \dots \times \prod_{p = 4k+3} \dots $$
+\textbf{Exercise} (i.e. I have no idea right now) find an appropriate Dirichlet series for the sum of two squares. \\ \\
+\textbf{Discussion} Already did it.  There are two kinds of primes in $\mathbb{Z}[i]$, $p = 4k+1$ which split into $p = a^2 + b^2 = (a+bi)(a-bi) $ and $p = 4k+1$ which do not split.  This factorization result is not free, it uses a {\color{red!60!white}geometry of numbers} leads into {\color{blue}class field theory}.  
+$$ \left( \sum_{a,b,c,d} (a^2+ b^2 + c^2 + d^2)^{-s} \right) =  \sum_{n \geq 1} r_4(n) \; n^{-s}  $$
+There are lots of interesting zeta-functions and a rich complicated literature. I think it's our choice to pick an encoding back into ``elementary" number theory (if possible)
 
+\newpage
+
+\noindent Soul\'{e} has three approaches for understanding $\infty! = \sqrt{2\pi}$. \\ \\
+\textbf{\#1} Stirling's formula let's us estimate the number of rearrangements of things:
+$$  n! = 1 \times 2 \times 3 \times \dots \times \times  n = (n/e)^n \sqrt{2\pi n}$$
+This formula can arise in two ways: gambling and estimation.
+\begin{itemize}
+\item $\binom{n}{k}$ the probability of flipping $n$ coints and getting $k$ heads and $n-k$ tails
+\item $f(x + \epsilon) = \sum f^{(n)}(x) \frac{\epsilon^n}{n!}$ this is called \textbf{Taylor Series}; it's just the best fit line. we do it mentally
+\end{itemize}
+this is a low-fat way of getting all sorts of dualities.  Not rarefied enough for certain crowd but will have to suffice. Eventually I will return to the Terry Tao blog -- he has all kinds of yummy low-fat tricks for us to learn even if he writes in a somewhat obfuscated way that I don't like. \\ \\
+Taking the logarithm of the Stirling series we get an informative identity:
+$$ \log (n!) = \log 1 + \log 2 + \dots + \log n = n \log n - n + \log \sqrt{2\pi} + O(n^{-1})$$
+We should already be suspicious of Soul\'{e}'s approach.  One of the inputs to his discussion is a derivaton Stirling formula: 
+\begin{itemize}
+\item where did that $\sqrt{2\pi}$ come from? 
+\item our estimate works within $O(n^{-1})$ precision.  How good is that really?
+\end{itemize}
+\textbf{\#2} Another way is using ``the functional equation" of the zeta function.\footnote{Later, we will find a whole class of L-series which satisfy a function equation.  These sequences of are not the easiest to calculate.  Again, I think the hard part is linking these modular forms to the sequences of numbers we care about.}  As eveyone knows:
+$$ \pi^{s/2} \Gamma(s/2) \zeta(s) = \pi^{(1-s)/2} \Gamma((1-s)/2)\zeta(1-s) $$ 
+so far so good.  There is symmetry around $\mathrm{Re}(s) = \frac{1}{2}$.  And take derivaive of zeta function:
+$$ - \, \zeta'(s) =  \sum_{n \geq 1} \log n \; n^{-s} = \Bigg|_{s = 0} \;\; \sum_{n \geq 1} \log n $$
+So\dots why is $\sqrt{2\pi}$ a reasonable number here? 
 
 \newpage
 
