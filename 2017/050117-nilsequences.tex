@@ -249,13 +249,27 @@ This one is much clearer: subsitute $s \mapsto 1 - s$.  And we do these gymnasti
 \end{tikzpicture} \\
 To me this makes more sense that the equations are being chain togeter this way.  Lastly:
 $$ \frac{\zeta'(0)}{\zeta(0)} = \log 2 + \log \pi \text{ and } \zeta(0) = - \frac{1}{2} \text{ so that } \zeta'(0) = - \frac{1}{2} \log 2\pi  $$
-This is my crude protoype for group cohomology: writing a bunch of equations in an organized way (using $\times$ and $+$).
+This is my crude protoype for group cohomology: writing a bunch of equations in an organized way (using $\times$ and $+$). \\ \\
+\textbf{\#3} (Divergent Integrals) \\ \\
+The last template Soul\'{e} gives us has to do with theta functions and Mellin transforms: \\ \\
+\begin{tikzpicture}
+\node at (0,0) { $\displaystyle \zeta(2s) = \frac{1}{\Gamma(s)} \int_0^\infty \Big[ \underbrace{\sum_{n=1} e^{-n^2 t}}_{=\Theta(t)} \Big] \, t^{s-1} \, dt $ };
+\draw[->] (4,0.5)--(6,0.5);
+\node at (5,1) {$\frac{d}{ds}\Big|_{s=0}$};
+\node at (11,0.5) {$\displaystyle 2 \zeta'(0) ``=" \int_0^\infty \Theta(t) \left( \frac{t^s}{\Gamma(s)} \right)'_{s=0} \frac{dt}{t} 
+``=" \int_0^\infty \Theta(t)  \frac{dt}{t}$};
+\end{tikzpicture} \\ 
+Poisson summation is related to the map $t \mapsto - \frac{1}{t}$ in $SL(2, \mathbb{Z})$. 
+$$ \Theta(t) = \sqrt{\tfrac{\pi}{t}} \Theta(\tfrac{\pi}{t})  - \frac{1}{2} 
+ \quad\stackrel{t\approx 0}{=}\quad \tfrac{1}{2}\sqrt{\tfrac{\pi}{t}} - \tfrac{1}{2}   + O(\sqrt{t})$$
+The [[derivative of the Mellin transform near $0$]] of $\Theta(t)$ is divergent and we can pick out the bad parts:
+$$ \int_\epsilon^\infty \Theta(t)  \frac{dt}{t}
+ = \# + a_0 \log \epsilon + \frac{a_{-1}}{\sqrt{\epsilon}} $$
+ Regularization of infinite products involves doing stuff like this; just a bit old-fashioned yet lots of uncharted territory.\footnote{It's not hard to write an infinite product we'd be curious about (that is not just recycling the example we just did), and maybe it's important to a Math or Physics professor somewhere.}
 
 \newpage
 
-
-
-\dots
+\noindent We still haven't shown $\sqrt{2} \notin \mathbb{Q}$ is irrational. \dots
 
 \vfill
 
@@ -263,6 +277,8 @@ This is my crude protoype for group cohomology: writing a bunch of equations in 
 \noindent Here's a reading list. I will leave in the Class Field Theory book since even though don't need it any way (we are solving over $\mathbb{Z}$), in fact we may need it anyway.
 
 \begin{thebibliography}{}
+
+\item Nicole Berline, Ezra Getzler, Mich\'{e}le Vergne. \textbf{Heat Kernels and Dirac Operators} Grundlehren der mathematischen Wissenschaften, Vol 298. (Springer, 1992)
 
 \item Nancy Childress \textbf{Class Field Theory} (Universitext).  Spinger, 2009.
 
