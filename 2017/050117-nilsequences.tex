@@ -269,7 +269,27 @@ $$ \int_\epsilon^\infty \Theta(t)  \frac{dt}{t}
 
 \newpage
 
-\noindent We still haven't shown $\sqrt{2} \notin \mathbb{Q}$ is irrational. \dots
+\noindent We still haven't shown $\sqrt{2} \notin \mathbb{Q}$ is irrational. \dots \\ \\
+Just trying to get a sense of what this machinery is like and why it's there.  
+\begin{itemize}
+\item $X \subseteq \mathbb{P}^N$ is a bunch of equations
+\item $\hat{X} \in \widehat{CH}(\mathbb{P}^{N-d}) $ is an ``arithmetic cycle" or whatever
+\item $\hat{c}_1(\mathcal{O}(1))\in \widehat{CH}(\mathbb{P}^N) $ is the first arithmetic chern class 
+\item $f : X \mapsto \mathrm{Spec}\, \mathbb{Z}$ is the projection map
+\item The Faltings height is: $ h(X) = f_\ast (\hat{X} \cdot \hat{c}_1(\overline{\mathcal{O}(1)})^d) \in \mathbb{R} = \widehat{CH}^1(\mathrm{Spec}\, \mathbb{Z})$
+\end{itemize}
+This height in the cases where it matters will be the same as the square-root height:
+$$ h(X) = \log (x_0^2 + x_1^2 + \dots + x_n^2)  \text{ with } (x_1, x_2, \dots, x_n) \in \mathbb{Z}^{N+1} $$
+at this point you are referred to the proof on page {\color{blue} 4}.
+
+\newpage
+
+\noindent For the rest of this blog we will learn about nilsequences:
+\begin{itemize}
+\item find examples we care about such as $\{ n \sqrt{2}\}$ or $ \{ n \sqrt{2} \, \lfloor n \sqrt{3}\rfloor \} $
+\item explain why nilsequences are natural in the context of \textbf{all} dynamical systems
+\end{itemize}
+In a way, we'll be like janitors since these professors don't really talk about specific dynamical systems or optimize their constants in any way.  But wouldn't you like that?  Just a cleaner rendition of the song already being played.
 
 \vfill
 
