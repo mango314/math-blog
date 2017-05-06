@@ -289,7 +289,50 @@ at this point you are referred to the proof on page {\color{blue} 4}.
 \item find examples we care about such as $\{ n \sqrt{2}\}$ or $ \{ n \sqrt{2} \, \lfloor n \sqrt{3}\rfloor \} $
 \item explain why nilsequences are natural in the context of \textbf{all} dynamical systems
 \end{itemize}
-In a way, we'll be like janitors since these professors don't really talk about specific dynamical systems or optimize their constants in any way.  But wouldn't you like that?  Just a cleaner rendition of the song already being played.
+In a way, we'll be like janitors since these professors don't really talk about specific dynamical systems or optimize their constants in any way.  But wouldn't you like that?  Just a cleaner rendition of the song already being played. \\ \\
+Here is the definition of nilsequence from the blog:
+\begin{quotation}
+\noindent A nilmanifold of step at most ${d}$ is a quotient ${G/\Gamma}$, where ${G}$ is a connected, simply connected nilpotent Lie group of step at most ${d}$ (thus, all ${d+1}$-fold commutators vanish) and ${\Gamma}$ is a discrete cocompact lattice in ${G}$. A basic nilsequence of degree at most ${d}$ is a sequence of the form ${n \mapsto F(g^n g_0 \Gamma)}$, where ${g_0 \Gamma \in G/\Gamma}$, ${g \in G}$, and ${F: G/\Gamma \rightarrow {\bf C}^m}$ is a continuous function.
+\end{quotation}
+Rearranging the text on the page is sufficient to make a clearer definition.  Again:
+\begin{quotation}
+\noindent A nilmanifold of step at most ${d}$ is a quotient ${G/\Gamma}$, where:
+\begin{itemize}
+\item ${G}$ is a connected, simply connected nilpotent Lie group of step at most ${d}$ (thus, all ${d+1}$-fold commutators vanish) and 
+\item ${\Gamma}$ is a discrete cocompact lattice in ${G}$.
+\end{itemize}
+A basic nilsequence of degree at most ${d}$ is a sequence of the form ${n \mapsto F(g^n g_0 \Gamma)}$, where 
+\begin{itemize}
+\item ${g_0 \Gamma \in G/\Gamma}$, 
+\item ${g \in G}$, and 
+\item ${F: G/\Gamma \rightarrow {\bf C}^m}$ is a continuous function.
+\end{itemize}
+\end{quotation}
+Merely having rearranged the text we have a chance at this definition.\footnote{Math has these air-tight defintiions that you don't see in Law or Physics or Business or anywhere.  Either it is, or it isn't.  We don't have a notion of ``kind of true" in stead approximating with these rigid, brittle definitions.  Up to you, whether we are being particular, or legalistic or no-nonsense.} if we understand the words \textbf{nilpotent}, \textbf{co-compact}, \textbf{continuous}.  This last one is a bit treacherous, since ``contintuity" is something we take for granted, why should it require a definition.
+$$ G = \left\{ \left( \begin{array}{ccc} 1 & x & y \\ 0 & 1 & z \\ 0 & 0 & 1 \end{array} \right) : x, y , z \in \mathbb{R} \right\}$$
+The co-compact lattice will be setting integer values instead of real numbers:
+$$ \Gamma = \left\{ \left( \begin{array}{ccc} 1 & x & y \\ 0 & 1 & z \\ 0 & 0 & 1 \end{array} \right) : x, y , z \in \mathbb{Z} \right\} $$
+and the nil-manifold will be $G/\Gamma$ (using the right-action).  What about our contiuous function $F$ ? 
+
+\newpage
+
+\noindent Our choice of continuous function is to project onto the third coordinate:
+$$ \left( \begin{array}{ccc} 1 & x & y \\ 0 & 1 & z \\ 0 & 0 & 1 \end{array} \right) 
+\stackrel{\simeq}{\mapsto} (x,y,z) \stackrel{\text{projection}}{\mapsto} z $$
+Our continuous function has to behave nicely with the group structure:
+$$ \left( \begin{array}{ccc} 1 & x & y \\ 0 & 1 & z \\ 0 & 0 & 1 \end{array} \right)  \; \left( \begin{array}{ccc} 1 & x & y \\ 0 & 1 & z \\ 0 & 0 & 1 \end{array} \right)  
+= \left( \begin{array}{ccc} 1 & x_1 + x_2 & y_1 + y_2 + x_1 y_2 + y_1 x_2 \\ 0 & 1 & z_1 + z_2 \\ 0 & 0 & 1 \end{array} \right) $$
+This equality has the same information as just some crazy addition rule:
+$$ (x,y,z) \,(x,y,z) = (x_1 + x_2, x_1 y_2 + y_1 z_2 , z_1 + z_2 )  $$
+This is almost but not quite three copies of the circle $S^1 \times S^1 \times S^1 $ it has been twisted by a co-cycle.  At least, we can multiply by $n$ and get some type of sequence:
+$$ (x,y,z)^n = (n x,  ny + \binom{n}{2} x z , nz) \mapsto ny + \binom{n}{2} x z $$
+and this is what arithmetic in $G$ is like.  What about modular arithmetic in $G/\Gamma$?  I'm just getting to that:
+$$ \dots $$
+I asked about nilmanifolds and an angry Daryl Cooper responded there are \textbf{nilmanifolds} and \textbf{solvomanifolds}, which are iterated circle bundles over the torus.  I asked if all nilmanifolds could be found using matrix multiplication, as in this nice example.  Experts say \boxed{\textbf{\color{red!80!white}no}} but no examples.
+
+\newpage
+
+\dots 
 
 \vfill
 
