@@ -10,7 +10,12 @@
 
 \newcommand{\two }{\sqrt[3]{2}}
 \newcommand{\four}{\sqrt[3]{4}}
-
+\newcommand{\red}{\begin{tikz}[scale=0.25]
+\draw[fill=red, color=red] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\blue}{\begin{tikz}[scale=0.25]
+\draw[fill=blue, color=blue] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\green}{\begin{tikz}[scale=0.25]
+\draw[fill=green, color=green] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
 
 \usepackage{tikz}
 
@@ -515,7 +520,30 @@ and we do the other multiplication:
 $$  (x_1 + x_2 + x_3, y_1 + y_2 +y_3   + m \, x_2 z_3 + n \, x_3 z_2
 + m x_1 (z_2 + z_3) + n (x_2 + x_3)z_1  , z_1 + z_2+ z_3) $$
 the Heisenberg construction goes much further than we thought.  It's so hard to believe that works. \\ \\
-This is the same arithmetic we learned in grade school.  It looks like we have added bells and whistles but we haven't.
+This is the same arithmetic we learned in grade school.  It looks like we have added bells and whistles but we haven't. \\ \\
+Matrix multiplicaion looks  bit different through.  That last cross term:
+$$  \left(\begin{array}{ccc} 1 & x_1 & y_1 \\ 
+0 & 1 & z_1 \\ 
+0 & 0 & 1 \end{array}\right)
+\times 
+\left(\begin{array}{ccc} 1 & x_2 & y_2 \\ 
+0 & 1 & z_2 \\ 
+0 & 0 & 1 \end{array}\right) = 
+\left(\begin{array}{ccl} 1 & x_1 +x_2 & y_1 + y_2 + mx_1z_2 + n x_2z_1 \\ 
+0 & 1 & z_1 +z_2 \\ 
+0 & 0 & 1 \end{array}\right)$$
+Tao's paper becomes a typographic nightmare, but we will manage.  The last column:
+$$  \left(\begin{array}{ccc} 1 & \red  & \blue \\ 
+0 & 1 & \green \\ 
+0 & 0 & 1 \end{array}\right)
+\times 
+\left(\begin{array}{ccc} 1 & \red  & \blue \\ 
+0 & 1 & \green \\ 
+0 & 0 & 1 \end{array}\right) = 
+\left(\begin{array}{ccl} 1 & \red + \red & \blue + \blue + m \, \red \;\; \green + n \,\green \;\; \red \\ 
+0 & 1 & \green + \green \\ 
+0 & 0 & 1 \end{array}\right)$$
+It seems too good to be true.  And that's why I sat on this project for 5 years!
 \newpage
 
 \noindent \dots 
