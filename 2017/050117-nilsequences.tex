@@ -669,7 +669,49 @@ and also
 $$ (x,0,z) \sim (x,0,z) + (0,1,0) = (x+0, 0+1+0, z + 0)= (x,1,z) \hspace{0.27in} $$
 The first two are rather hard to picture.  Moving my box around, it has gotten more slanted.  I would like to say ``only the third equation matters".   \\ \\
 In really formal language, we are asking about the action of $\mathbb{Z}^3$ (or the integer Heisenberg group $\mathbb{Z}^2 \ltimes \mathbb{Z} $) on the first homology group $H_1$ of the cube or something like that. \\ \\
-Sorry I can't picture it right now.
+Sorry I can't picture it right now. 
+
+\newpage
+
+\noindent Liebman shows a way to get nilsequences very quickly.  $(X, \mu, T)$ is a measure-preserving dynamical system. $(h_0, \dots, h_d)$ are integers.  $f_0, \dots, f_d$ are $L^\infty(X)$ are functions.  Here is your nilsequence:
+$$ n \mapsto \int_X f_0( T^{h_0 n}x)\dots  f_d( T^{h_d n}x) \, d\mu(x) $$
+This is a bit abstract (even for me) so I might choose
+\begin{itemize}
+\item $h_0 = 0$, $h_1 = 1$, $h_2 = 2$, everything else $h_k = 0$ for $k > 3$
+\item $f_0 = f_1 = f_2 = 1_U$ with some realistic measurable set $U \subseteq X$.
+\end{itemize}
+The nilsequence (a bit simplified is) counting how many times a trajectory falls in a given set {\color{red!50!yellow!90!white}as well as}, the same trajectory at twice it's speed:
+$$ n \mapsto \int_X 1_U( x) \, 1_U( T^n x) \, 1_U( T^{2n} x) \, d\mu(x)  =
+ \Big\{ x \in U \Big\} \cap \Big\{ T^n(x)\in U\Big\} \cap \Big\{ T^{2n}(x) \in U \Big\} $$
+It would be really nice to make a choice of $X$ and $T$ (and $\mu$). \\ \\
+\textbf{A} Let $X = S^1 = [0,1]/(0\sim 1)$ and $U = [0, \frac{1}{2}]$ and the measure-preserving map is $x \mapsto x + \sqrt{2}$.  Our nilsequence is:
+$$ n \mapsto \left\{ \begin{array}{cl} 
+1  & \text{ if }  \{ n \sqrt{2} \} \in [0, \frac{1}{2}]  \text{ and }\{ 2n \sqrt{2} \} \in [0, \frac{1}{2}] \\ \\
+0 & \text{ otherwise }\end{array} \right. $$
+Not a terribly exciting nilsequence but lots of stuff going on there already. \\ \\
+\textbf{B} How about the space of polynomials of degree $d \leq 3$.  We could write a section $p(x) = ax^3 + bx^2 + cx + d$ and the map is $x \mapsto x+1$, so that:
+\begin{itemize}
+\item $d \mapsto d$
+\item $cx \mapsto cx + c$
+\item $bx^2 \mapsto bx^2 + 2bx + b$
+\item $ax^3 \mapsto ax^3 + 3ax^2 + 3a x + a$
+\end{itemize}
+and if we put it together there is someting like the horocycle flow:
+$$ (a,b,c,d) \mapsto \big( a, (b + 3a), (3a+2b+c),(a+b+c+d) \big) $$
+The horocycle flow has to to with the map $x \mapsto x + 1$ or the $2 \times 2$ matrix map:
+$$  \big( \begin{array}{cc}1 & 1 \\ 0 & 1 \end{array}\big)$$
+and the shift map acts on various spaces of functions. \\ \\
+\textbf{C} Here's a bit of a magic trick example I like from Cellarosi and Sinai.  Consider $x \mapsto x+1$ acting simultanously on all $\mathbb{Z}/p^2 \mathbb{Z}$. 
+$$ \mathbb{G} = \prod_{\text{primes}} \mathbb{Z}/p^2 \mathbb{Z} $$
+and we're considering the map $x \mapsto x+1$ on each factor.  I'm guessing that: $\mathbb{G} \not \simeq \mathbb{Z}$, but our shift map really has to do with takeing a step $n \mapsto n+1$ so that $3 \mapsto 4$ and $4 \mapsto 5$ and as long as we have avoided $0$ for all primes $p$ that number $n$ is square-free.
+
+\newpage
+
+\noindent I think we really hit on a recipe for creating (somewhat manageable) dynamical systems. Take a geometric map (even something stupid like $x \mapsto x+1$) and observe the action on a the space of functions.  And this is going to be wonderful. \\ \\
+Yet, if we are using the inverse Gowers theorems these number sequences must be truly nasty defying all sorts of detection methods.  The horocycle or geodesic flow, the morse flow -- are certainly the candidate dynamical systems. Yet they look so benign, how can they be capable of generating such sequences? \\ \\
+Continued fractions?  Addition by 1?  Really?  I already know where to look, and every time I forget why this is the case.
+
+
 \newpage
 
 \noindent \dots 
@@ -686,6 +728,8 @@ Sorry I can't picture it right now.
 \item Nancy Childress \textbf{Class Field Theory} (Universitext).  Spinger, 2009.
 
 \item Ben Green, Terence Tao, Tamar Ziegler. \textbf{An inverse theorem for the Gowers $U^{s+1}[N]$-norm} \texttt{arXiv:1009.3998}
+
+\item Francesco Cellarosi, Yakov G. Sinai \textbf{Ergodic Properties of Square-Free Numbers} \texttt{arXiv:1112.4691}
 
 \item Ben Green \textbf{Approximate algebraic structure} \texttt{arXiv:1404.0093}
 
