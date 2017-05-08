@@ -432,7 +432,7 @@ My attempt at drawing heights.  My failure to draw them represent the various st
 
 \newpage
 
-\noindent For the rest of this blog we will learn about nilsequences:
+\noindent \textbf{5/6} For the rest of this blog we will learn about nilsequences:
 \begin{itemize}
 \item find examples we care about such as $\{ n \sqrt{2}\}$ or $ \{ n \sqrt{2} \, \lfloor n \sqrt{3}\rfloor \} $
 \item explain why nilsequences are natural in the context of \textbf{all} dynamical systems
@@ -521,7 +521,7 @@ $$  (x_1 + x_2 + x_3, y_1 + y_2 +y_3   + m \, x_2 z_3 + n \, x_3 z_2
 + m x_1 (z_2 + z_3) + n (x_2 + x_3)z_1  , z_1 + z_2+ z_3) $$
 the Heisenberg construction goes much further than we thought.  It's so hard to believe that works. \\ \\
 This is the same arithmetic we learned in grade school.  It looks like we have added bells and whistles but we haven't. \\ \\
-Matrix multiplicaion looks  bit different through.  That last cross term:
+Matrix multiplication looks  bit different through.  That last cross term:
 $$  \left(\begin{array}{ccc} 1 & x_1 & y_1 \\ 
 0 & 1 & z_1 \\ 
 0 & 0 & 1 \end{array}\right)
@@ -544,6 +544,132 @@ $$  \left(\begin{array}{ccc} 1 & \red  & \blue \\
 0 & 1 & \green + \green \\ 
 0 & 0 & 1 \end{array}\right)$$
 It seems too good to be true.  And that's why I sat on this project for 5 years!
+\newpage
+
+\noindent \textbf{5/8} This is my blog, and I defend my interest in \textit{drawing} a nilmanifold. \\ \\
+What does ``draw" mean?  It means to find an embedding (or immersion) into the two dimensional plane (a sheet up paper).  In Junior high someone gave me a science textbook and show me how a donut can be drawn in to this shape: \\
+\begin{tikzpicture}
+
+\draw (0,0)--(5,0)--(5,5)--(0,5)--cycle;
+\draw[color=red, line width=3] (0,0)--(5,0);
+\draw[color=red, line width=3] (0,5)--(5,5);
+\draw[color=blue, line width=3] (0,0)--(0,5);
+\draw[color=blue, line width=3] (5,0)--(5,5);
+\foreach \a in {1,...,4}{
+	\draw[color=black!50!white] (2.5,2.5) circle (\a/2);
+}
+
+\begin{scope}[xshift=6cm]
+\draw (0,0)--(5,0)--(5,5)--(0,5)--cycle;
+\draw[color=red, line width=3] (0,0)--(5,0);
+\draw[color=red, line width=3] (0,5)--(5,5);
+\draw[color=blue, line width=3] (0,0)--(0,5);
+\draw[color=blue, line width=3] (5,0)--(5,5);
+\foreach \a in {1,...,4}{
+	\draw[color=black!50!white] (0,\a)--(5,\a);
+}
+\end{scope}
+
+\begin{scope}[xshift=12cm]
+\draw (0,0)--(5,0)--(5,5)--(0,5)--cycle;
+\draw[color=red, line width=3] (0,0)--(5,0);
+\draw[color=red, line width=3] (0,5)--(5,5);
+\draw[color=blue, line width=3] (0,0)--(0,5);
+\draw[color=blue, line width=3] (5,0)--(5,5);
+\foreach \a in {1,...,4}{
+	\draw[color=black!50!white] (\a,0)--(\a,5);
+}
+\end{scope}
+
+\end{tikzpicture} \\
+In topology textbooks, they tell you it's a theory of shape which allows for distortion, but we were not told (nor did we ask) \textit{how much} disortion is allowed.  And the example only shows a little bit of distortion. \\ \\
+The torus is the arena for a lot of mathematics.  Maybe it's complicated in some way, recognizing that a shape is the torus, or mapping it to the square we just showed.  \\ \\
+Three dimensional torus \\ \\
+As a data visualzation problem, we have to use coordinates and we have to choose good coordinates and nobody tells us ahead of time which coordinates are ``good". Therefore topology textbooks (if we're lucky) are fully of drawings of squares that we mentally link together.  And the worst, there are no pictures at all. \\ \\
+Here is 3-dimensional torus: \\ \\
+\begin{tikzpicture}[scale=2]
+\draw[color=black!50!white, fill=red, opacity=0.1] (0,0)--(1,0)--(1,1)--(0,1)--cycle;
+\draw[color=black!50!white, fill=red, opacity=0.1] (0+0.25,0+0.25)--(1+0.25,0+0.25)--(1+0.25,1+0.25)--(0+0.25,1+0.25)--cycle;
+\draw[color=black!50!white] (0,0)--(1,0)--(1+0.25,0+0.25)--(0+0.25,0+0.25)--cycle;
+\draw[color=black!50!white] (0,1)--(1,1)--(1+0.25,1+0.25)--(0+0.25,1+0.25)--cycle;
+\draw[color=black!50!white] (1,0)--(1+0.25, 0+0.25)--(1+0.25, 1+0.25)--(1,1)--cycle;
+\draw[color=black!50!white] (0,0)--(0+0.25, 0+0.25)--(0+0.25, 1+0.25)--(0,1)--cycle;
+
+\begin{scope}[xshift=2cm]
+\draw[color=black!50!white] (0,0)--(1,0)--(1,1)--(0,1)--cycle;
+\draw[color=black!50!white] (0+0.25,0+0.25)--(1+0.25,0+0.25)--(1+0.25,1+0.25)--(0+0.25,1+0.25)--cycle;
+\draw[color=black!50!white, fill=blue, opacity=0.1] (0,0)--(1,0)--(1+0.25,0+0.25)--(0+0.25,0+0.25)--cycle;
+\draw[color=black!50!white, fill=blue, opacity=0.1] (0,1)--(1,1)--(1+0.25,1+0.25)--(0+0.25,1+0.25)--cycle;
+\draw[color=black!50!white] (1,0)--(1+0.25, 0+0.25)--(1+0.25, 1+0.25)--(1,1)--cycle;
+\draw[color=black!50!white] (0,0)--(0+0.25, 0+0.25)--(0+0.25, 1+0.25)--(0,1)--cycle;
+\end{scope}
+
+\begin{scope}[xshift=4cm]
+\draw[color=black!50!white] (0,0)--(1,0)--(1,1)--(0,1)--cycle;
+\draw[color=black!50!white] (0+0.25,0+0.25)--(1+0.25,0+0.25)--(1+0.25,1+0.25)--(0+0.25,1+0.25)--cycle;
+\draw[color=black!50!white] (0,0)--(1,0)--(1+0.25,0+0.25)--(0+0.25,0+0.25)--cycle;
+\draw[color=black!50!white] (0,1)--(1,1)--(1+0.25,1+0.25)--(0+0.25,1+0.25)--cycle;
+\draw[color=black!50!white, fill=green, opacity=0.1] (1,0)--(1+0.25, 0+0.25)--(1+0.25, 1+0.25)--(1,1)--cycle;
+\draw[color=black!50!white, fill=green, opacity=0.1] (0,0)--(0+0.25, 0+0.25)--(0+0.25, 1+0.25)--(0,1)--cycle;
+\end{scope}
+
+\end{tikzpicture}\\
+It is a box, where the top and the bottom of the box are the same.  Or the left and the right of the box are the same.  Using coordinates:
+\begin{itemize}
+\item $(x,y,z) \equiv (x+1, y, z) $
+\item $(x,y,z) \equiv (x, y+1, z) $
+\item $(x,y,z) \equiv (x, y, z+1) $
+\end{itemize}
+For Heisenberg nilmanifold we get two of the three identificatons:
+\begin{itemize}
+\item $(x,y,z) \equiv (x, y, z)+(1,0,0)=(x+1,y,z) $
+\item $\color{black!20!white}{(x,y,z) \equiv (x, y+1, z)}$ instead $(x,y,z) \equiv (x,y,z) + (0,1,0)=(x,y+1,z) $
+\item $(x,y,z) \equiv (x, y, z)+(0,0,1)=(x,y,z+1) $ 
+\end{itemize}
+\newpage
+
+\noindent We got exactly the same identifications as before.  If the rule is:
+$$ (x,y,z) + (x,y,z) = (x+x, y+y+xz , z + z) $$
+and we want to see the action of the ``shift map" the faces... the bottom face is the st
+$$ (x,y,0) \sim (x,y,0) + (0,0,1) = (x+0, y+0+x, 0+1) = (x,x+y,1) $$
+This a very interesting action.  Shall I draw it for you? \\
+\begin{tikzpicture}
+\draw[fill=red, opacity=0.25] (0,0)--(1,0)--(0,1)--cycle;
+\draw[fill=blue, opacity=0.25] (1,0)--(1,1)--(0,1)--cycle;
+\draw (0,0)--(1,0)--(1,1)--(0,1)--cycle;
+
+\draw[->] (1.5,0.5)--(2.5,0.5);
+\draw[fill=red, opacity=0.25] (3,0)--(4,0)--(4,1)--cycle;
+\draw[fill=blue, opacity=0.25] (4,0)--(5,1)--(4,1)--cycle;
+\draw (3,0)--(4,0)--(5,1)--(4,1)--cycle;
+\draw[dashed] (4,0)--(4,1);
+\node at (6,0.5) {=};
+\draw[fill=red, opacity=0.25] (7,0)--(8,0)--(8,1)--cycle;
+\draw[fill=blue, opacity=0.25] (7,0)--(8,1)--(7,1)--cycle;
+\draw (7,0)--(8,0)--(8,1)--(7,1)--cycle;
+\end{tikzpicture} \\
+The other two actions are less intresting:
+$$ (x,y,0) \sim (x,y,0) + (1,0,0) = (x+1, y+0+0, 0+0) = (x+1,y,0) $$
+This action says the square is equal to itself:\\
+\begin{tikzpicture}
+\draw[fill=yellow, opacity=0.25] (0,0)--(1,0)--(1,1)--(0,1)--cycle;
+\draw (0,0)--(1,0)--(1,1)--(0,1)--cycle;
+\node at (2,0.5) {=};
+\draw (3,0)--(4,0)--(4,1)--(3,1)--cycle;
+\draw[fill=yellow, opacity=0.25] (3,0)--(4,0)--(4,1)--(3,1)--cycle;
+\end{tikzpicture} \\
+and the last one says that:
+$$ (x,y,0) \sim (x,y,0) + (0,1,0) = (x+0, y+1+0, 0+0) = (x,y+1,0) $$
+which is the same.  If you are looking at the top and bottom of the box, hopefully moving left and right has the trivial action. All that is intersting is the vertical axis. \\ \\
+The left and right faces are: $(0,y,z)$ and the story is identical.\footnote{These words ``trivial" and ``identical" have to be watchd carefully.  These words are all synonyms for ``zero" and shift meaning from sentence to sentence.  }  That remains is $(x,0,z)$ 
+$$ (x,0,z) \sim (x,0,z) + (1,0,0) = (x+1, 0 + 0 + z, z + 0)= (x+1,z,z) $$
+and also 
+$$ (x,0,z) \sim (x,0,z) + (0,0,1) = (x+0, 0 + 0 + x, z + 1)= (x,x,z+1) $$
+and also
+$$ (x,0,z) \sim (x,0,z) + (0,1,0) = (x+0, 0+1+0, z + 0)= (x,1,z) \hspace{0.27in} $$
+The first two are rather hard to picture.  Moving my box around, it has gotten more slanted.  I would like to say ``only the third equation matters".   \\ \\
+In really formal language, we are asking about the action of $\mathbb{Z}^3$ (or the integer Heisenberg group $\mathbb{Z}^2 \ltimes \mathbb{Z} $) on the first homology group $H_1$ of the cube or something like that. \\ \\
+Sorry I can't picture it right now.
 \newpage
 
 \noindent \dots 
