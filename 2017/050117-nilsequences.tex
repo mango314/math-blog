@@ -709,8 +709,14 @@ and we're considering the map $x \mapsto x+1$ on each factor.  I'm guessing that
 
 \noindent I think we really hit on a recipe for creating (somewhat manageable) dynamical systems. Take a geometric map (even something stupid like $x \mapsto x+1$) and observe the action on a the space of functions.  And this is going to be wonderful. \\ \\
 Yet, if we are using the inverse Gowers theorems these number sequences must be truly nasty defying all sorts of detection methods.  The horocycle or geodesic flow, the morse flow -- are certainly the candidate dynamical systems. Yet they look so benign, how can they be capable of generating such sequences? \\ \\
-Continued fractions?  Addition by 1?  Really?  I already know where to look, and every time I forget why this is the case.
-
+Continued fractions?  Addition by 1?  Really?  I already know where to look, and every time I forget why this is the case. \\ \\
+Maybe Tao is advocating the opposite approach.  We have a sequence of numbers and we wish to find arithmetic sequences within.  Here's a sample:
+$$ \big\{ x^2 + y^2 - \sqrt{2} z^2 : |x|, |y|, |z| < N \big\} $$
+is equidistributed on the reals.  Therefore the density is something like
+$$ a_N = \sum_{|x|,|y|,|z| \leq N } e^{ 2\pi i n \, \big(x^2 + y^2 - \sqrt{2} z^2\big)  } \times 1_{ |x^2 + y^2 - \sqrt{2} z^2| < 1} =  0 + o(1) $$
+Using Weyl equidistribution, know the main term is zero.  We can ask, how big is that that remainder term?  How often is it larger than 10\% of it's average?  Without fail these noise / error terms will be difficult to analye and these discrepancy-type questions could invite the use of a nilsequence.
+$$ \bigg\{ N:  \frac{|a_N|}{ \frac{1}{N}\sum_{m < N} |a_m|}  \geq 2\bigg\} $$
+Almost every project I have involves a main term and an error term.  And I am always stuck because I can't show the error term is $\to$ zero.  That's every single project I have.
 
 \newpage
 
