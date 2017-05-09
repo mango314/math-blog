@@ -720,8 +720,50 @@ Almost every project I have involves a main term and an error term.  And I am al
 
 \newpage
 
-\noindent \dots 
+\noindent \textbf{5/9} I don't know if this falls into the nilsequence framework, but we can study two matrices:
+$$ A = \left( \begin{array}{crc} \frac{3}{5} & -\frac{4}{5} & 0 \\
+ \frac{4}{5} & \frac{3}{5} & 0 \\
+ 0 & 0 & 1  \end{array} \right) 
+ \text{ and }  B = \left( \begin{array}{ccr} 
+ 1 & 0 & 0 \\
+0 &  \frac{3}{5} & -\frac{4}{5} \\
+0 & \frac{4}{5} & \frac{3}{5}  \end{array} \right) \text{ so that }A,B \in SO(3, \mathbb{Q})$$
+How do you propose generating a dynamical system from the free group on two generators $F = \langle A, B \rangle$.  I guess we can study the sequence of matrices iterating powers of:
+$$ T = 0.5 \times  A + 0.5  \times B $$
+The result is a sequence of $3 \times 3$ matrices we can punch into a calculator:
+$$ I,  \frac{1}{2}(A+B), \frac{1}{4}(A^2 + AB + BA + B^2), \frac{1}{8}(A^3 + \dots + B^3), \text{etc.} $$
+Clearly the averages will tend to the identity matrix and return where we started.  It takes forever.  My question is really about the result of multiplying several of these matrices at random:
+$$ A \times A \times A\hspace{0.1in},\hspace{0.1in} A \times A \times B\hspace{0.1in},\hspace{0.1in} A \times B \times A\hspace{0.1in},\hspace{0.1in} \dots \hspace{0.1in},\hspace{0.1in} B \times A \times A\hspace{0.1in},\hspace{0.1in} \dots \hspace{0.1in},\hspace{0.1in} B \times B \times B $$
+The sequence of matrices $T^n$ is like shuffling a deck of cards, and we expect convergence to randomness to happen very quickly.  \\ \\
+This is exactly the the type of probem I don't want.   Maybe it's OK.  There must be a way of turning this into a sequence of numbers.  \\ \\
+Another recipe could be to start with sequences of numbers on $\mathbb{R}$ (so they will already be ordered) and we can turn them into :
+\begin{itemize}
+\item $ \{ x^2 + y^2 - \sqrt{3} z^2 : |x|, |y|, |z| < N \}\subset \mathbb{R} $ for large enough $N$ these numbers will fill up any interval. 
+\item $ \{ \frac{a}{b} + \frac{c}{d} \sqrt{2} : |a|, |b|, |c|, |d| < N \}$  we know that $\overline{\mathbb{Q}}= \mathbb{R}$ the fractions are dense in $\mathbb{R}$ so if we adjoin $\sqrt{2}$ the numbers should be even more dense $ \overline{\mathbb{Q}(\sqrt{2})}= \mathbb{R}$
+\item $ \{ 2^k 3^l \frac{m}{N}: 0 < k, l < 3 \log N \} $  it could be any sequence of numbers we know they're going to be evenly distributed and we can ask the same question.
+\end{itemize}
+Really, what is being looked for are these more number-theoretic sequences of numbers. And the nilsequences will describe ever possible pattern that can occur -- even ones we've never thought of
+\begin{itemize}
+\item if $p = 4k+1$ then $p = a^2 + b^2$, we want the set $\big\{  p : \theta_1 < \tan^{-1}(\frac{b}{a}) < \theta_2\big\}$
+\item Let $\vec{v} \in S^2$,  $ \big\{ n : n = x^2 + y^2 + z^2 \text{ and } \cos^{-1}\big( \frac{(x,y,z)}{n}  \cdot \vec{v} \big) < 0.05 \big\}$ integers that can be written as the sum of three squares and also point (close to) a specific direction in space
+\end{itemize}
+Who knows?  Maybe these will have nice nilsequene properties?
+ 
+\newpage
 
+\noindent Experts have already earmarked special dynamical systems (such as interval exchange transformations, horocycle flow, geodesic flow, toral automorphisms)  \dots \\ \\
+Again we pick one out of a hat.  Let $f, g$ be two Hecke eigenforms of weight $k$ on $ \mathrm{SL}(2, \mathbb{Z}) \backslash \mathbb{H}$ they are expected to be approximately perpendicular on the line segment $[0,1] + iy$.:
+$$ \int_0^1 y^k f(x+iy)\overline{g(x+iy)} dx \to 0 $$
+This is an open problem.  There are values of $f$ and values of $g$, they have an inner product.  Off you go. \\\\
+To remind myself, the horocycle flow contains these modular forms problems because the horocycle flow can act on space of functions.  So, this geometry prolem and this analysis problem have thes same information. \\ \\
+And we continue to make stuff up.  Let $\mathrm{PSL}(2, \mathbb{Z}[i])$ be some kind of Bianchi group.  Our 3-manifold could be:
+$$ X = \mathrm{PSL}(2, \mathbb{Z}[i]) \backslash \mathrm{PSL}(2, \mathbb{C})$$
+our matrix could be conjugate to the $x \to x+1$ shifting map. And we study the closure:
+$$ \overline{ \left\{ \left( \begin{array}{cc} 1 & s \\ 0 & 1\end{array} \right)x : s \in \mathbb{R} \right\}  }   \subseteq \mathrm{PSL}(2, \mathbb{C}) \text{ or }X $$
+This part of Dynamics is aggravating to me.  You know examples like these are everywhere and yet you can't point to this problem or that problem and say this is what you're looking for.  And it's always the one staring you in the face.
+ 
+\newpage
+ 
 \vfill
 
 
@@ -739,7 +781,11 @@ Almost every project I have involves a main term and an error term.  And I am al
 
 \item Ben Green \textbf{Approximate algebraic structure} \texttt{arXiv:1404.0093}
 
+\item Curtis T. McMullen, Amir Mohammadi and Hee Oh \textbf{Horocycles in hyperbolic 3-manifolds} \texttt{http://math.harvard.edu/\~{}ctm/papers/home/text/papers/horo/horo.pdf}
+
 \item W. T. Gowers \textbf{Generalizations of Fourier analysis, and how to apply them} \texttt{arXiv:1608.04127}
+
+\item Ho Chung Siu, Kannan Soundararajan \textbf{Restriction of Hecke eigenforms to horocycles} \texttt{arXiv:1705.02080}
 
 \end{thebibliography}
 
