@@ -763,6 +763,46 @@ $$ \overline{ \left\{ \left( \begin{array}{cc} 1 & s \\ 0 & 1\end{array} \right)
 This part of Dynamics is aggravating to me.  You know examples like these are everywhere and yet you can't point to this problem or that problem and say this is what you're looking for.  And it's always the one staring you in the face.
  
 \newpage
+
+\noindent \textbf{5/10} Finding the nilsequences associated to the horocycle flow or our favorite choice of numbers is an entire project in itself.  Starting with a good explanition of the horocycle flow. \\ \\
+For now we content ourself with more definitions:
+\begin{quotation}\noindent
+{\color{black!50!white}Definition 3} (Nilcharacters) Let ${d \geq 1}$. A sub-nilcharacter of degree ${d}$ is a basic nilsequence ${\chi: n \mapsto F(g(n))}$ of degree at most ${d}$, such that ${F}$ obeys the additional modulation property
+$$\displaystyle F( g_d g ) = e( \xi \cdot g_d ) F(g) \ \ \ \ \ (1)$$
+for all ${g \in G}$ and ${g_d \in G_d}$, where ${\xi: G_d \rightarrow {\bf R}}$ is a continuous homomorphism ${g_d \mapsto \xi \cdot g_d}$. (Note from (1) and ${\Gamma}$-automorphy that unless ${F}$ vanishes identically, ${\xi}$ must map ${\Gamma_d}$ to ${{\bf Z}}$, thus without loss of generality one can view ${\xi}$ as an element of the Pontryagial dual of the torus ${G_d / \Gamma_d}$.) If in addition one has ${\|F(g)\|=1}$ for all ${g \in G}$, we call ${\chi}$ a nilcharacter of degree ${d \geq 1}$.
+\end{quotation}
+I'm going to say it once an for all here.  His writing is pretty bad.  You sholud never write like this.   \\ \\
+We can observe a few things. 
+\begin{itemize}
+\item  There are three separate definitions here:
+$$ \text{nilcharacters} \subseteq \text{sub-nilcharacters} \subseteq \text{nilsequences}$$
+\end{itemize}
+Looks like we need Definition 2:
+\begin{quotation}\noindent A \textbf{filtered group} of degree at most {d} is a group  ${G}$ together with a sequence ${G_\bullet = (G_0,G_1,G_2,\dots)}$ of subgroups ${G \geq G_0 \geq G_1 \geq \dots}$ with ${G_{d+1}=\{\hbox{id}\}}$ and ${[G_i,G_j] \subset G_{i+j}}$ for ${i,j \geq 0}$. \\ \\
+A \textbf{polynomial sequence} ${g: {\bf Z} \rightarrow G}$ into a filtered group is a function such that ${\partial_{h_i} \dots \partial_{h_1} g(n) \in G_i}$ for all ${i \geq 0}$ and ${n,h_1,\dots,h_i \in{\bf Z}}$, where ${\partial_h g(n) := g(n+h) g(n)^{-1}}$ is the difference operator. \\ \\
+A \textbf{filtered nilmanifold} of degree at most ${s}$ is a quotient ${G/\Gamma}$, where ${G}$ is a filtered group of degree at most ${s}$ such that  ${G}$ and all of the subgroups ${G_i}$ are connected, simply connected nilpotent filtered Lie group, and ${\Gamma}$ is a discrete cocompact subgroup of ${G}$ such that ${\Gamma_i := \Gamma \cap G_i}$ is a discrete cocompact subgroup of ${G_i}$. \\ \\
+A \textbf{basic nilsequence} of degree at most ${d}$ is a sequence of the form ${n \mapsto F(g(n))}$, where ${g: {\bf Z} \rightarrow G}$ is a polynomial sequence, ${G/\Gamma}$ is a filtered nilmanifold of degree at most ${d}$, and ${F: G \rightarrow {\bf C}^m}$ is a continuous function which is ${\Gamma}$-automorphic, in the sense that ${F(g \gamma) = F(g)}$ for all ${g \in G}$ and ${\gamma \in \Gamma}$.
+\end{quotation}
+Outside of academia an expert who doesn't help a willing person to learn a subject is called an ``asshole".  However, I do believe Terry Tao has made every effort to take a very complicated idea and make it less complicated. \\ \\
+I hope - even by changng the font weight and rearranging the text, I have made it more readable.\footnote{User experience Stackexchange had a question:  do I make the buttons say [{\color{green}YES}] [{\color{red}NO}] or [{\color{red}NO}] [{\color{green}YES}] reasoning about whether to put the button to the left or to the right.  And we can measure how many users we gain or lose in th process.}
+
+\newpage
+
+\noindent Also there's a little bit of ontology here.  We can reason about 
+\begin{itemize}
+\item a single nilsequence
+\item a family of nilsequences
+\item all nilsequences
+\end{itemize}
+In the end, Green and Tao do not really care about specific nilsequences.  It's just there's \textit{some} sequence of numbers, they care about (e.g. the prime numbers) and they will show there are infinitely many arithmetic sequences in the primes (e.g. 251, 257, 263, 269, however 275 = 25 $\times$ 11 ). \\ \\
+We may as well keep going 
+\begin{quotation} \noindent We say that two degree ${d}$ nilcharacters ${\chi: {\bf Z} \rightarrow {\bf C}^m}$, ${\chi': {\bf Z} \rightarrow {\bf C}^{m'}}$ are \textbf{equivalent} if ${\chi \otimes \overline{\chi'}: {\bf Z} \rightarrow {\bf C}^{mm'}}$ is equal (as a sequence) to a basic nilsequence of degree at most ${d-1}$. \\ \\
+We will later show that this is indeed an equivalence relation. \\ \\ The equivalence class ${[\chi]_{\mathrm{Symb}^d({\bf Z})}}$ of such a nilcharacter will be called the \textbf{symbol} of that nilcharacter, and the collection of such symbols will be denoted ${\mathrm{Symb}^d({\bf Z})}$.
+\end{quotation}
+These definitions are like legos: they come with come sort of guarantee that they will fit together nicely if you look at them long enough.  However, I'm concerned we really haven't said very much if we don't get out of our heads and look at real sequences of numbers.\footnote{I think another pro mathematician with better writing skills could take this same information and produce a better development.  Not this.} \\ \\
+There must be a reason why choose to write in this is mechanical way.  On the bright side, we're almost ready to examine Tao, Green, Ziegler directly remembering that all of this is about sequences of numbers.
+
+\newpage
  
 \vfill
 
