@@ -84,6 +84,100 @@ And we have shown both Fermat and Mauperthuis lead to length minmization.  \\ \\
 This is the worst derivation ever.  Yet it reflects the equality of derivations we have in a typical Lagrangian mechanics textbook.  And likely, as must as Mr. Fermi had in mind.  \\ \\
 We'll see his derivation wasn't much better, but at least he can get us to Schr\"{o}dinger.
 
+\newpage
+
+\noindent It's hard to know how to continue this because Fermi's development is just so far-fetched.  I'm a bit rusty, however:
+$$ \mathbf{p} = m \mathbf{v} \hspace{0.125in}\text{ and }\hspace{0.125in} E = \frac{1}{2} m v^2 \hspace{0.25in}\text{ therefore }\hspace{0.25in} E = \frac{p^2}{2m}$$
+In physics class, quantization is just a procedure for generating the Schr\"{o}dinger equations:
+$$ \mathbf{p} = i\hbar \nabla \text{ and we just said }E = \frac{p^2}{2m} \text{ so that } - \frac{\hbar^2}{2m} \nabla^2 \psi = E \psi $$
+and that is the free particle Schr\"{o}dinger equation.  And it's solutions are the standing waves:
+$$ \psi(r, t) = A \, e^{ - \frac{1}{i\hbar}(\mathbf{p}\cdot \mathbf{r} -  E \, t)} $$
+That's really well.  The reason we solve th wave equation in class is because it's the only differential equation we know how to solve. All other cases, have boundedness issues and well-posedness issues that have never been resolved. \\ \\
+The other problem is that I learned quantum mechanics about 7 years ago in 2009 back in Califronia.  I left there on very bad terms and havn't been since 2012. 
+$$ K_t(x,y) = K_t(x-y) = \frac{1}{\sqrt{2\pi i t}}e^{-\frac{i(x-y)^2}{2t}} \stackrel{t\to 0}{\longrightarrow} \delta (x-y)$$
+The propagator is away of ``generating" the evolution -- how the wave function changes oer time.  My approach is neither
+\begin{itemize}
+\item rigorous enough for functional analysts
+\item physically relevant enough for engineers
+\item visual enough for geometers
+\end{itemize}
+There are people who make entire careers out of studying Laplacian operators on surfaces:
+$$ \nabla^2 = \frac{\partial^2 }{\partial x^2 }
++ \frac{\partial^2 }{\partial y^2 }
++ \frac{\partial^2 }{\partial z^2 }$$
+and here we specify we are doing the Laplacian on $\mathbb{R}^2$ (flat Euclidean space).\\ \\
+Feynman uses the Lagrangian (instead of the Hamiltonian) for the Path integral:
+$$ \text{Lagrangian} = \text{Potential}-\text{Kinetic} \hspace{1in} 
+\text{Hamiltonian} = \text{Potential}+\text{Kinetic} $$
+In the case of free particle $L = \frac{1}{2}mv^2$ so that the propagator is:
+$$ K_0(b,a) = \lim_{\epsilon \to 0} \left( \frac{m}{2\pi i h \epsilon} \right)^{N/2} 
+\times \int \dots \int \exp \left\{ \frac{im}{2\hbar\epsilon} \sum_{i=1}^N  (x_i - x_{i-1})\right\} dx_1 \dots dx_{N-1}$$
+\newpage
+
+\noindent and if you do the infinitely many Gaussian integrals: 
+$$ K_0(b,a) = \sqrt{\frac{m}{2\pi i \hbar(t_b - t_a)}} \exp \left\{ \frac{ im (x_b - x_a)^2}{2\hbar (t_b - t_a)} \right\} $$
+This answer makes sense.  The quantum free particle starts off concentrated at a point, and diffuses spreading out evenly in a circle.  \\ \\
+We have now solved the free particle equation twice.  
+\begin{itemize}
+\item some kind of Gaussian diffusion
+\item a wave
+\end{itemize}
+Maybe I'll conclude with my picture of the propagator. \\\\
+\begin{tikzpicture}
+
+\draw[fill=black] (0,0) circle (0.05);
+\draw[fill=black] (1,0) circle (0.05);
+\draw[fill=black] (0.5,0.5) circle (0.05);
+
+\begin{scope}[xshift=5cm]
+\foreach \a in {1,...,10}{
+	\draw[color=black!50!white] (0,0) circle (0.1*\a);
+	\draw[color=black!50!white] (1,0) circle (0.1*\a);
+	\draw[color=black!50!white] (0.5,0.5) circle (0.1*\a);
+}
+
+\end{scope}
+
+\end{tikzpicture} \\ \\
+Maybe can solve the Schr\"{o}dinger equation by taking minkowski sums of shapes:
+\\\\
+\begin{tikzpicture}
+
+\foreach \a in {0,...,10}{
+	\draw[fill=black] (0,0 + \a*0.2) circle (0.025);
+	\draw[fill=black] (2,0 + \a*0.2) circle (0.025);
+	\draw[fill=black] (0 + \a*0.2,0) circle (0.025);
+	\draw[fill=black] (0 + \a*0.2,2) circle (0.025);
+}
+
+
+\node at (3,1) {+};
+
+\foreach \b in {1,...,10}{
+	\draw[color=black!50!white, opacity=0.5] (5,1) circle (0.025 + \b*0.1);
+}
+
+\node at (7.5,1) {=};
+
+\begin{scope}[xshift=10cm]
+\foreach \b in {1,...,10}{
+	\foreach \a in {1,...,10}{
+		\draw[color=black!50!white, opacity=0.25] (0,0 + \a*0.2) circle (0.025 + \b*0.1);
+		\draw[color=black!50!white, opacity=0.25] (2,0 + \a*0.2) circle (0.025 + \b*0.1);
+		\draw[color=black!50!white, opacity=0.25] (0 + \a*0.2,0) circle (0.025 + \b*0.1);
+		\draw[color=black!50!white, opacity=0.25] (0 + \a*0.2,2) circle (0.025 + \b*0.1);
+	}
+}
+
+\end{scope}
+
+\end{tikzpicture}  \\ \\
+and the wave function equation could read $\psi(t) = \psi(0) + K(t - 0)$ as shapes?
+
+\newpage
+
+\noindent \dots 
+
 \vfill
 
 \begin{thebibliography}{}
@@ -91,6 +185,11 @@ We'll see his derivation wasn't much better, but at least he can get us to Schr\
 \item Richard Feynman.  \textbf{Quantum Mechanics and Path Integrals} Dover, 2010.
 
 \item Enrico Fermi.  \textbf{Quantum Mechanics} University of Chicago Press, 1961.
+
+\item David Tong \textbf{Quantum Field Theory} (Math Tripos, Part III)  \\ \texttt{http://www.damtp.cam.ac.uk/user/tong/qft/qft.pdf}
+
+\item Matthew Schwartz \textbf{Quantum Field Theory} (class notes, Fall 2008) \\
+\texttt{http://isites.harvard.edu/fs/docs/icb.topic521209.files/QFT-Schwartz.pdf}
 
 \end{thebibliography}
 
