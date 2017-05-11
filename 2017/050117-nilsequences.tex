@@ -803,6 +803,54 @@ These definitions are like legos: they come with come sort of guarantee that the
 There must be a reason why choose to write in this is mechanical way.  On the bright side, we're almost ready to examine Tao, Green, Ziegler directly remembering that all of this is about sequences of numbers.
 
 \newpage
+
+\noindent \textbf{5/11} Let's look at a real MathOverflow discussion.  Today's question is: \\ \\
+\textbf{Is there any definition of $H^1$ in one dimensional Arakelov geometry}\footnote{\texttt{https://mathoverflow.net/questions/268667/is-there-any-definition-of-h1-in-one-dimensional-arakelov-geometry/269477\#269477}} \\ \\
+I don't know any Arakelov geometry or much about divisors and cohomology theory. More and more, these seems like very complicated ways of examining the equations we're familiar with ($ x^2 =2y^2$ or $x^2 + y^2 = z^2$ etc.) Let's look at the answer:
+\begin{quotation}
+There is a definition of $h^{1}(\overline{D})$ by many people, and a definition of $H^{1}(\overline{D})$ by using the notion of ghost spaces of the second kind. But neither is the same as the "original ones" you are talking about. 
+\\ \\
+As Neukirch pointed out in his book, \textbf{Algebraic Number Theory}, in the classical setting an analgous definition of $H^{1}(\overline{D})$ is completely missing. The classical way of getting around this issue is to -- {\color{black!10!white} blah blah blah} -- instead we have a "Faltings volume" that can be used in some ways to form the Euler characteristic. Many people [have generalized] this to higher dimensional situations in 1980s using index theorem, and characteristic classes. 
+\\ \\
+{\color{yellow!50!black!80!green}If we step out of the comfort zone and willing to compromise, then there are "\textbf{regularization} procedure" that allows you to define $h^{1}(\overline{D})$ which essentially boils down to Poisson summation formula}, or Pontriyagin duality if you prefer. And it has been invented and re-invented by many people. But the essential obstacle is still the same. 
+\end{quotation}
+So now the bad news.  Despite being on the right track, we are on a well-beaten path.  This paradox happends to anyone who lives on the ``edge" (people trying to break world-records or whatever).  Here, just writing a scientific paper:
+\begin{itemize}
+\item you're going too far
+\item you're not going far enough
+\end{itemize}
+Everything I have said so far is safely within the existing texts.  So, I thought I should read the old books more carefully.  Then I am ``old-fashioned".  So then I read the modern literature and I was ``way too specific". \\ \\
+The tone of this blog: at the same time, hitting way too hard and not hitting hard enough.
+
+\newpage
+ 
+\noindent Refreshing our my memory even more.  Tao's obsession is length-4 arithmetic sequences.  
+\begin{quotation}
+\noindent Every positive upper density sequence has infinitely many arithmetic progressions of arbitrary length.
+\end{quotation}
+I almost wouldn't question it really.  An arithemetic sequence is just an evenly spaced set of numbers:
+$$ 1,4,7,10,13,16\dots \hspace{0.5in}\text{or}\hspace{0.5in} 2,7,12,17,22,\dots 
+\hspace{0.5in}\text{etc.}$$
+No surprises that any sequence $a \mathbb{Z}+b$ should have arithmetic sequence, and in fact if we take a few or lose a few are still infinitely many sequences.  That's cute. 
+\\ \\
+What is a positive upper density sequence anyway?  I can only think of two:
+\begin{itemize}
+\item for each number $n \in \mathbb{Z}$ flip a coin at random and adjoin to your set
+\item arithmetic sequences $\{ a \times n + b : n \in \mathbb{Z} \}$
+\end{itemize}
+The most difficult cases lie somewhere between these two sets.  These days I can think of more.  Since $x^2 + y^2 - \sqrt{2} z^2$ 
+$$  X_t=  \bigg\{ t : \bigg| \sum_{|x|,|y|,|z| < N} e^{2\pi i t \; (x^2 + y^2 - \sqrt{2}z^2) }\bigg|  > \epsilon \bigg\} \subseteq \mathbb{R} $$
+This is a subset of reals, but if you think about it some more get a subset of integers and this will have positie density and then level off as $|t| \gg 1$. \\ \\
+You can read books that run for thousands of pages and not find a single sequence.\footnote{This dilemma lasted a few years and it got a bit scary (to me).  It's not too hard to build a sequence of numbers that more fully engages the properties of \textbf{additive combinatorics} or your favourite alternative.  These are always implicit in the literature in number theory or from empirical data, there is some effort to extract them in an explicit form.}  So here is one that could work. \\ \\
+Didn't we complain that real world data is too complicated for simple math formulas to work?  Here are potential steps that fix it.  Only in the broadest of sketches. \\ \\
+Another question is why count arithmetic sequences?  I read papers like this and I just take their word that these professors have better judgement than I do.  However, they are professors at fine universities and I am just a reader.  So, can we have a better answer:
+$$ \text{fourier analysis} = \text{finding arithmetic 3-progressions} $$
+If what these guys are saying is true, this turns signal processing into some sort of Easter egg hunt.  Going back to 4-progressions:
+$$ a^2 - 3(a+k)^2 + 3 (a+2k)^2 - 3(a+3k)^2 = 0 $$
+We might hope a sequence of numbers: $f: \mathbb{Z} \to \mathbb{R}$ behaves thes same way:
+$$ f(a) - 3f(a+k) + 3 f(a+2k) - 3f(a+3k) = 0 $$
+where instead of $f(x)= x^2$ we could have any sequence.
+\newpage
  
 \vfill
 
@@ -826,6 +874,14 @@ There must be a reason why choose to write in this is mechanical way.  On the br
 \item W. T. Gowers \textbf{Generalizations of Fourier analysis, and how to apply them} \texttt{arXiv:1608.04127}
 
 \item Ho Chung Siu, Kannan Soundararajan \textbf{Restriction of Hecke eigenforms to horocycles} \texttt{arXiv:1705.02080}
+
+\end{thebibliography}
+
+\begin{thebibliography}{}
+
+\item Ben Green, Terence Tao \textbf{Yet another proof of Szemeredi's theorem} \texttt{arXiv:1002.2254}
+
+\item Ben Green, Terence Tao \textbf{New bounds for Szemer\'{e}di's theorem, III: A polylogarithmic bound for $r_4(N)$} \texttt{arXiv:1705.02080}
 
 \end{thebibliography}
 
