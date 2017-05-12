@@ -1,0 +1,54 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+
+
+\usepackage{tikz}
+
+\title{What is Entanglement Entropy?}
+\author{John D Mangual}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{12.5}{15}\selectfont
+
+\maketitle
+
+\noindent I have no idea what entangelement entropy really is.  I just think it's good time to review it.\footnote{This is a cause for discomfort: trying things out before we really know what we are doing or why.  It's the reverse order of many people.}  \\ \\
+Appendix A through D cover different aspects of theta functions.  \\ \\ 
+$$ \begin{array}{ccrcr}
+\theta_1(z|\tau) & = & {\displaystyle (-i)\sum_{n \in \mathbb{Z} + \frac{1}{2}} }(-1)^{n - \frac{1}{2}} \, q^{n^2/2} \, e^{2\pi i \, n z} & = & 
+{ \displaystyle 2 \sin (\pi z) \; q^{1/8} \prod_{n \in \mathbb{Z} } \big(1-q^n\big) \big( 1 - 2q^n \cos (2\pi z) + q^{2n} \big) } \\ 
+\theta_2(z|\tau) & = & {\displaystyle \sum_{n \in \mathbb{Z} + \frac{1}{2}} } q^{n^2/2} \, e^{2\pi i \, n z} & = & 
+{ \displaystyle 2 \cos (\pi z) \; q^{1/8} \prod_{n \in \mathbb{Z} } \big(1-q^n\big) \big( 1 + 2q^n \cos (2\pi z) + q^{2n} \big) } \\ 
+\theta_3(z|\tau) & = & {\displaystyle \sum_{n \in \mathbb{Z} } \;q^{n^2/2} \, e^{2\pi i \, n z} } & = & 
+{ \displaystyle  q^{1/8} \prod_{n \in \mathbb{Z} + \frac{1}{2}}  \big(1-q^n\big) \big( 1 + 2q^n \cos (2\pi z) + q^{2n} \big) } \\ 
+\theta_4(z|\tau) & = & {\displaystyle \sum_{n \in \mathbb{Z} }(-1)^{n } \, q^{n^2/2} \, e^{2\pi i \, n z} } & = & 
+{ \displaystyle  q^{1/8} \prod_{n \in \mathbb{Z} + \frac{1}{2}}  \big(1-q^n\big) \big( 1 - 2q^n \cos (2\pi z) + q^{2n} \big) } 
+\end{array}$$
+The review runs about 6 pages.  Yet, there are books and books on theta functions and modular forms.  I can't do new physics -- I'm just not qualified, but maybe I can give their equations a bit of a manicure\footnote{In certain situations, both the Math and Physics sides are highly developed.  It's very difficult to chime in.  I am hoping here there is less competition.  Bluntly.}.  Conformal Field Theory (CFT) is a bit of a vague object, but we can look at what they did.  That is the goal of of this writing exercise. 
+
+\vfill
+
+\begin{thebibliography}{}
+
+\item Mukund Rangamani, Tadashi Takayanagi. \textbf{Holographic Entanglement Entropy} \texttt{arXiv:1609.01287}
+
+\item Michael Gutperle, John D. Miller. \textbf{Entanglement entropy at CFT junctions} \texttt{arXiv:1701.08856}
+
+
+
+
+
+\end{thebibliography}
+
+\end{document}
