@@ -24,7 +24,36 @@
 \maketitle
 
 \noindent Here is another situation where I must play ``follow the leader".  Between Pestun, and Kimura, and Nekrasov there's a discussion fo the $qq$-characters and these W-algebras.\footnote{An ``algebra" is just anything with a reasonable addition and multiplication. There are lots and lots of algebras we can use and study. It could be anything.  Yet, I'm confident Vasily knows what he's doing.  Why these?  and more importantly, how can I link these to the stuff that I care about? or to the big discussion?} \\ \\
-Why does Pestun and Kimura extend W-algebra in this way?  The only sentence that resonates with me in any way from the intro is ``{\color{red!50!orange}our construction is orthogonal to AGT construction}".  What is AGT?  It is the definition of a conformal field theory, but it is also the literature -- all the research papers that are called ``AGT".  Tody, our discussion will be orthogonal to that.
+Why does Pestun and Kimura extend W-algebra in this way?  The only sentence that resonates with me in any way from the intro is ``{\color{red!50!orange}our construction is orthogonal to AGT construction}".  What is AGT?  It is the definition of a conformal field theory, but it is also the literature -- all the research papers that are called ``AGT".  Tody, our discussion will be orthogonal to that. \\ \\
+Literally a quiver is a collection of arrows. \\ \\ 
+A \textbf{quiver} $\Gamma$ is a set of nodes $\Gamma_0$ and edges $\Gamma_1$.  An \textbf{edge}  from $i$ to $j$ is denoted: $e: i \to j$. \\ \\
+A quiver defins a matrix of size $|\Gamma_0 \times \Gamma_0|$ with entries, counting the left and right arrows:
+$$ c_{ij} = 2 \delta_{ij} - \# (e: i \to j) - \# (e: j \to i) $$
+called the \textbf{quiver Cartan matrix}. 
+\begin{tikzpicture}
+\draw (0,0) circle (0.1);
+\draw (1,0) circle (0.1);
+\draw[->] (0+0.2,-0.1)--(1-0.2,-0.1);
+\draw[<-] (0+0.2,+0.1)--(1-0.2,+0.1);
+\end{tikzpicture}
+.  Next some quiver jargon:
+\begin{itemize}
+\item If $c_{ij} = c_{ji}$ ($\# \text{left-pointing arrows}=\# \text{right-pointing arrows}$) the quiver is ``simply laced"
+\item If $c_{ij} \neq c_{ji}$ ever, the quiver is ``non-simply laced". 
+\end{itemize}
+The simply-laced case seems to be old news.  It's not.  We'll discuss both. \\ \\
+If the quiver does not have any loops, all diagonal elements $c_{ii} = 2$ (since $\# (i \to i) = 0$).  The Kac-Moody algebras $\mathfrak{g}(\Gamma)$ are ubiquitous in physics.\footnote{``Ubiquitous" is ubiquitous in physics.  In Spanish, the word \textit{ubicar} just means ``located", instead of ``everywhere".} 
+\fontfamily{qag}\selectfont \fontsize{10}{15}\selectfont
+\begin{quotation}
+In mathematics, a \textbf{Kac-Moody algebra} (named for {\color{green!50!white!80!black}Victor Kac} and {\color{blue!50!white}Robert Moody}, who independently discovered them) is a Lie algebra, usually infinite-dimensional, that can be defined by generators and relations through a generalized Cartan matrix. These algebras form a generalization of finite-dimensional semisimple Lie algebras, and many properties related to the structure of a Lie algebra such as its root system, irreducible representations, and connection to flag manifolds have natural analogues in the Kac-Moody setting. \\ \\
+A class of Kac-Moody algebras called affine Lie algebras is of particular importance in mathematics and theoretical physics, especially conformal field theory and the theory of exactly solvable models. Kac discovered an elegant proof of certain combinatorial identities, the Macdonald identities, which is based on the representation theory of affine Kac-Moody algebras. \hfill (Wikipedia)
+\end{quotation}
+\fontfamily{qag}\selectfont \fontsize{12.5}{15}\selectfont
+These constructions are rather bland.  We need them to define the \textbf{fractional quiver}.
+\newpage
+
+\noindent \dots 
+
 \vfill
 
 \begin{thebibliography}{}
