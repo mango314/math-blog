@@ -52,6 +52,73 @@ A class of Kac-Moody algebras called affine Lie algebras is of particular import
 These constructions are rather bland.  We need them to define the \textbf{fractional quiver}.
 \newpage
 
+%\noindent I can't stand it !! Make it stop !! Oh God, please make it stop !! \\ \\
+\noindent After that unbearable math intro, the physics definition offers us a lot more context.  Just, anything to hold on to.  The examples in Section \textbf{4} look completely tangible and rather fun: \\ \\
+\textbf{\#1} $BC_2$ quiver
+\begin{tikzpicture}
+\draw (0,0) circle (0.3);
+\node at (0,0) {2};
+\draw (2,0) circle (0.3);
+\node at (2,0) {1};
+\draw (0+0.3,0)--(2-0.3,0);
+\end{tikzpicture} has a ``mass-deformed" Cartan matrix:
+$$ \left(  \begin{array}{ll} 
+1 + \;\; q_1^{-1}q_2^{-2} & - \mu^{-1} \\ 
+\hspace{0.1in}-\mu \; q_1^{-1}q_2^{-1}(1+q_2^{-1}) & \;\;\;1 + q_1^{-1}q_2^{-1}
+\end{array} \right) \longrightarrow 
+\left(  \begin{array}{rr} 
+2 & -1 \\ -2 & 2
+\end{array} \right)
+$$
+\textbf{\#2} \begin{tikzpicture}
+\draw (0,0) circle (0.3);
+\node at (0,0) {4};
+\draw (2,0) circle (0.3);
+\node at (2,0) {1};
+\draw (0+0.3,0)--(2-0.3,0);
+\end{tikzpicture} the authors call ``affine fractional quiver" with a little more algbra:
+$$ \left(  \begin{array}{ll} 
+1 + \;\; q_1^{-1}q_2^{-4} & - \mu^{-1} \\ 
+\hspace{0.1in}-\mu \; q_1^{-1}q_2^{-1}(1+q_2^{-1}+q_2^{-2} + q_2^{-3}) & \;\;\;1 + q_1^{-1}q_2^{-1}
+\end{array} \right) \longrightarrow 
+\left(  \begin{array}{rr} 
+2 & -1 \\ -4 & 2
+\end{array} \right)
+$$
+\textbf{\#3} \begin{tikzpicture}
+\draw (0,0) circle (0.3);
+\node at (0,0) {3};
+\draw (2,0) circle (0.3);
+\node at (2,0) {2};
+\draw (0+0.3,0)--(2-0.3,0);
+\end{tikzpicture} the authors call ``hyperbolic fractional quiver"
+$$ \left(  \begin{array}{ll} 
+1 + \;\; q_1^{-1}q_2^{-3} & - \mu^{-1} \\ 
+\hspace{0.1in}-\mu \; q_1^{-1}q_2^{-1}(1+q_2^{-1}+q_2^{-2} ) & \;\;\;1 + q_1^{-1}q_2^{-1}
+\end{array} \right) \longrightarrow 
+\left(  \begin{array}{rr} 
+2 & -2 \\ -3 & 2
+\end{array} \right)
+$$
+This helps us understand what Cartan matrices were all about.  There are $|\Gamma_0| = 2$ notes in each case, and the Cartan matrix is $2 \times 2$.  \\ \\
+The $d$-fractional gauge theory on $\mathbb{C}^2$ involves a ring $R = \mathbb{C}[z_1, z_2] $.  At each node, the ring gets replaced by $R_ i= \mathbb{C}[z_1, z_2^{d_i}]$.  Equivariant gauge theory counts $R_i$ ideals.\footnote{Let $R$ be a ring (such as $\mathbb{C}[z_1, z_2]$.  An \textbf{ideal} is a set $\mathfrak{a} \in R$ such that
+\begin{itemize}
+\item $0 \in \mathfrak{a}$
+\item $a,b \in \mathfrak{a}$ implies $a+b \in \mathfrak{a}$
+\item $x \in R$ and $a \in \mathfrak{a}$ implies $xa \in \mathfrak{a}$.
+\end{itemize} 
+This is taken from a Commutative Algebra textbook (e.g. \texttt{http://web.mit.edu/18.705/www/12Nts-2up.pdf})} \\ \\
+Once there is a ring you are intersted in, we can consult a Commutative Algebra or Scheme Theory textbook.  Algebraic Geometry really was supposed to be, just Algebra + Geometry
+\begin{itemize}
+\item we know what Algebra is
+\item we know what Geometry is
+\end{itemize}
+it seems really plausible one might try to solve a geometry problem with algebra (and less frequently the other way around).  And, the great Algebraic Geometers understood that. This is why I really like the textbook of Hodge + Pedoe {\color{red!50!orange}Methods of Algebraic Geometry} and maybe {\color{black!50!white}The Red Book of Varieties and Schemes} by Mumford. \\ \\
+I look at a ring like $\mathbb{C}[z_1, z_2]$ and think I know everything there is and could be on that subject. \\ On page 3 of Pestun-Kimura they talk about \textbf{observable sheaves} on the moduli space of instantons associatted to $R_i = \mathbb{C}[z_1, z_2^d]$ \\ \\
+This is a great time to review the entire Equivariant Gauge Theory framework presented in Book 1.
+
+\newpage
+
 \noindent \dots 
 
 \vfill
