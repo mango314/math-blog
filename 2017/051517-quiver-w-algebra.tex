@@ -119,8 +119,35 @@ This is a great time to review the entire Equivariant Gauge Theory framework pre
 
 \newpage
 
-\noindent \dots 
-
+\noindent \textbf{5/16} Quiver Gauge Theories. \\ \\
+Pestin, generously lets us examine all possible quivers (cuz I don't know any better).  And there will be a Cartan matrix 
+$$ c_{ij} = 2 - \# (e: i \to j) - \# (e: j \to i)$$
+and there is a Kac-Moody algebra $\mathfrak{g}_\Gamma$ in some way I don't know how to do. \\ \\
+``Space-Time" is a complex variety\footnote{I do not know what ``complex variety" here means, if it is in Zariski topology, or more likely the topology inherited from $\mathbb{C}$.} $\mathcal{S}$ with structure sheaf $\mathcal{O}_\mathcal{S}$.   And now there is this category $\text{Coh}(\mathcal{S})$ of ``coherent sheaves" on $\mathcal{S}$. 
+\begin{itemize}
+\item coherent sheaf
+\item category of $\mathcal{O}_\mathcal{S}$-modules
+\end{itemize} 
+These are \$500 objects we are looking at today, just a bit out of my reach. We ask for all coherent sheaves:
+$$ \mathfrak{M}(\Gamma, \mathcal{S}) = \text{Coh}(\mathcal{S})_\Gamma / \text{Aut}\big[\text{Coh}(\mathcal{S})_\Gamma \big] $$
+is the moduli space of $\Gamma$-quiver sheaves on $\mathcal{S}$. 
+\begin{itemize}
+\item we don't just want coherent sheaves on the variety $\mathcal{S}$ we want {\color{red!50!yellow}quiver gauge theories} $\text{Rep}\big(\Gamma, \text{Coh}(\mathcal{S})\big)$ 
+\begin{itemize}
+\item Each node $i$ is sent to a sheaf $\mathcal{Y}_i$ on $\mathcal{S}$
+\item Each arrow $e: i \to j$ is sent to an element of $\text{Hom}_{\mathcal{O}_\mathcal{S}}(\mathcal{Y}_i, \mathcal{Y}_i)$.
+\end{itemize}
+\item ``Hom" is always kind of ambiguous.  In $\textbf{Vect}$ (vector spaces) it's a matrix, in $\textbf{Group}$ it counts homomorphisms, on $\textbf{Set}$ it counts bijections.  And there is Hom for many other situations.
+\item Pestun is the expert on $\mathcal{N}=2$ gauge theory.  So just a few hints:
+\begin{itemize}
+\item Each node $i$ is sent to a {\color{red!50!green}gauge connection} $\mathcal{Y}_i$ in the {\color{red!30!green}vector multiplet}  on $\mathcal{S}$
+\item Each arrow $e: i \to j$ is sent to {\color{red!70!green}bifundamental field} $\text{Hom}_{\mathcal{O}_\mathcal{S}}(\mathcal{Y}_i, \mathcal{Y}_i)$.
+\end{itemize}
+\end{itemize}
+In Physics, complicated stuff is happening in the world.  Sheaves, derived categories \dots \\ These \$1000 objects offer us language to describe it.  \\ \\
+Before I go here is the virtual tangent bundle of the tangent stack:
+$$ T_\mathcal{Y}\mathfrak{M}(\Gamma, \mathcal{S})^\bullet = \bigoplus_{(e:i\to j)\in \Gamma_1} \text{Ext}_{\mathcal{O}_\mathcal{S}}^\bullet (\mathcal{Y}_i, \mathcal{Y}_i) \oplus \bigoplus_{i \in \Gamma_0} \text{Ext}_{\mathcal{O}_\mathcal{S}}^{\bullet + 1}(\mathcal{Y}_i, \mathcal{Y}_i) $$
+% This version of Supersymmetric Gauge Theory has suppressed the supersymmetry and localization computations. 
 \vfill
 
 \begin{thebibliography}{}
