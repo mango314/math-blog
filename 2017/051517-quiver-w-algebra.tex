@@ -148,6 +148,58 @@ In Physics, complicated stuff is happening in the world.  Sheaves, derived categ
 Before I go here is the virtual tangent bundle of the tangent stack:
 $$ T_\mathcal{Y}\mathfrak{M}(\Gamma, \mathcal{S})^\bullet = \bigoplus_{(e:i\to j)\in \Gamma_1} \text{Ext}_{\mathcal{O}_\mathcal{S}}^\bullet (\mathcal{Y}_i, \mathcal{Y}_i) \oplus \bigoplus_{i \in \Gamma_0} \text{Ext}_{\mathcal{O}_\mathcal{S}}^{\bullet + 1}(\mathcal{Y}_i, \mathcal{Y}_i) $$
 % This version of Supersymmetric Gauge Theory has suppressed the supersymmetry and localization computations. 
+
+\newpage
+
+\noindent \textbf{5/18} This article is surpisingly dense for such a short discussion.  Good effective writing is like that, covers a lot of ground very succinctly. \\ \\
+The formula is that partition function is the Euler characteristic of moduli space of sheaves.  
+$$ Z_\text{T}(\Gamma, \mathcal{S}) = \sum_{n \in \mathbb{Z}} (-1)^n \mathrm{ch}_\text{T} H^n \big( \mathfrak{M}(\Gamma, \mathcal{S})_\gamma , \mathcal{O}_{\mathfrak{M}(\Gamma, \mathcal{S})_\gamma} \big) $$
+I have on idea what these things are.
+\begin{itemize}
+\item fundamental matter (skip)
+\item local observables (skip)
+\item extended partition function (skip)
+\item localization (skip)
+\item partition funtion (hundreds of definitions)
+\item holomorphic equivariant Euler characteristic 
+\item topological sector $\gamma$ (of the quiver moduli space) a.k.a. the ``charge"
+\end{itemize}
+I didn't say what a Chern character or a structure sheaf were.  
+What remains of this paper is a little bit odd.  We only evaluate a few ``spacetimes".  \begin{itemize}
+\item $\mathcal{S} = \mathbb{C}^2$ 
+\item $\mathcal{S} = \mathbb{C}_{q_1,\,q_2}$ (a doubly twisted copy of $\mathbb{C}$)
+\end{itemize}
+For me, these correspondences are somewhat lacking in concreteness.  \\ \\
+Here is one correspondence the equiver is 
+\begin{tikzpicture}
+\draw[fill=black] (0,0) circle (0.1);
+\draw[fill=black] (1,0) circle (0.1);
+\draw[->] (0+0.2,0.1)--(1-0.2,0.1);
+\draw[->] (0+0.2,-0.1)--(1-0.2,-0.1);
+\end{tikzpicture} and matrix $\left[\begin{array}{rr} 2 & -2 \\ -2 & 2 \end{array}\right]$ and $\mathfrak{g}_\Gamma$ is an affine Lie algebra.  This is the $\mathrm{sinh}$-Gordon theory on the disc $\mathbb{C}^\times \backslash \{ 0\}$. The examples where somewhat spare and \dots don't do this to me. \\ \\
+There is a lot of discussion on $\mathbb{C}^2$ that is what he wanted to focus on.  This is flat 4-dimensional space-time.  This is the world we live in: length, width, height, time.  \\ \\
+Looks like $\mathbb{C}^2$ is all we can get. There is a lot. We can shift between the architecture and the computations.  Judging from the bibliography, it may have taken Pestun + Kimura some time to figure out for themselves what to do with a situation. \\\\
+I am myself not in a position to judge until I try it for myself.
+
+\newpage
+
+\noindent \textbf{5/20} Let $\mathbf{Q}$ be the fiber to the cotangent bundle of $\mathcal{S} = \mathbb{C}^2$ at $o \in \mathbb{C}^2$. They could just say these are just two complex numbers.  The cotangent space of $\mathbb{C}^2$ is itself:
+$$  \mathbf{Q} = T_0^\vee \mathcal{S} \simeq \mathbb{C}^2 $$
+Abstract algebraic like that, we're saying that a cotangent vector is specified by two numbers.  Cotangent space probabily just means we have to specifiy a position and momentum
+$$ \mathbf{x} \in \mathbb{C} \text{ and }  \mathbf{p} \in \mathbb{C}  \text{ so that }(\mathbf{x},\mathbf{p}) \in \mathbb{C}^2 $$
+I would have thought position and momentum would combine as two vector.  After all $\mathbf{p} = m \mathbf{v}$ where $\mathbf{v} = \frac{d\mathbf{x}}{dt}$. \\ \\
+In Lagrange formalism $L = T - V  = \text{kinetic} - \text{potential}$.  After you do enough mechanics problems (we're faking that we have\dots) who knows what the positions and momentums were, but we can describe a physics system in terms of various paramters:
+$$ L = L(q) \text{ with } \dot{q} = \frac{\partial L}{\partial q}$$
+and when you solve it the right way, you can get something like $\mathbf{F} = m \mathbf{a}$.  Now, momentum behaves like a co-vector:
+$$ q \mapsto f(q) \text{ then }\dot{q} \mapsto \frac{\partial L}{\partial f(q)}
+= \frac{\partial L}{\partial q} \frac{\partial q}{\partial f}
+= \frac{\partial L}{\partial q} \Big(\frac{\partial f}{\partial q}\Big)^{-1} $$
+whoops!  Now the derivative is upside-down! So here $(\,\cdot\,)^{-1}$ means reciprocal not inverse, but if it's any consolation:
+$$ \frac{df^{-1}}{dq} = \frac{1}{\frac{df}{dq}} = \Big( \frac{df}{dq} \Big)^{-1} $$
+and in this way, Lagrangian mechanics looks a tiny bit like category theory.  \\ \\
+Unfortunately, Lagrange and his students stopped using geometry in his mechanics problems.  And what a can of worms that opened up! \\ \\
+Hamilton of course had $H = L + V$ and the situation is almost the same. \\  Let's continue nice and slow.
+
 \vfill
 
 \begin{thebibliography}{}
