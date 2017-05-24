@@ -44,10 +44,20 @@ view model =
             , ("width"        , "25px"    )
             , ("height"       , "21px"    )
             , ("color"        , "#602FFF" )
-            , ("padding"      , "3px"     )] ++ (color <| Tuple.first x) ]
-            [ a [ onClick ( Click <| Tuple.second x ) ] [ ( toString >> text ) <| Tuple.first x ] ]
-        )   links
+            , ("padding"      , "3px"     )] ++ (color <| ( Tuple.first  x  ) // 2 ) ]
+            [ a [ onClick ( Click <| Tuple.second x ) ] [ ( toString >> text ) <| Tuple.first x  ] ]
+        )   <| List.filter (\x -> ( Tuple.first x ) % 2 == 0 ) links
     ,   div [ style [ ("display", "inline-block"), ("vertical-align", "top")] ]
+    <|  List.map (\ x  ->  div [ style <|
+            [ ("font-family"  , "Courier" )
+            , ("text-align"   , "right"   )
+            , ("width"        , "25px"    )
+            , ("height"       , "21px"    )
+            , ("color"        , "#602FFF" )
+            , ("padding"      , "3px"     )] ++ (color <|  ( Tuple.first x ) // 2  + 1 ) ]
+            [ a [ onClick ( Click <| Tuple.second x ) ] [ ( toString >> text ) <| Tuple.first x ] ]
+        )   <| List.filter (\x -> ( Tuple.first x ) % 2 == 1 ) links
+    ,   div [ style [ ("display", "inline-block"), ("vertical-align", "top"), ("margin-left", "5px")] ]
             [ img [ src <| "https://github.com/MonsieurCactus/math-blog/blob/gh-pages/2017/img/" ++ model ++ "?raw=true", width 800, height 600  ] [] ]
     ]
 
