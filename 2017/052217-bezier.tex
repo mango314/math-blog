@@ -90,9 +90,80 @@ Analysis is the branch of math where we account for all the uses of the $\approx
 
 \newpage
 
-% tease out template problems and instances in literature
+\noindent When I read someone else's paper, a lot of my surprise stems from the author suggesting there is enough from in function space for something (very unlikely) to occur.  Let's make a little problem set: \\ \\
+\# \textbf{1} Show constant function on the rational numbers integrates to zero:
+$$ \int_{[0,1]} \mathbf{1}_{\mathbb{Q}} = 0 $$ 
+\# \textbf{2} Find a curve that weaves around the obstacle course on page one:\\ \\
+\begin{tikzpicture}
 
-\noindent \dots 
+\begin{scope}
+
+\node at ( 5,0) {x};
+\node at (-0.5,4.5) {y};
+
+\draw[color=red!50!yellow] (1, 1)--(1.5,1.5)--(0.5,2.5)--(1.5,3.5)--(2.5,2.5)--(1.6,1.6)--(2.4,0.4)
+--(3.5,1.5)--(4.5,0.5)--(3.7,2.9)--(2.5,1.4)--(3,3);
+
+\foreach \a in {0,...,4}{ 
+	\draw[color=black!20!white] (\a,0)--(\a,4.5);
+	\draw[color=black!20!white] (0,\a)--(4.5,\a);
+ }
+
+\draw[line width=2, ->] (0,0)--(4.5,0);
+\draw[line width=2, ->] (0,0)--(0,4.5);
+
+\foreach \a in {0,...,4}{
+\foreach \x in {0,...,4}{
+			\draw[fill=black] (\a,\x) circle (0.06);
+	 }
+}
+
+
+\draw[line width=1.5] (1,1)--(1,2)--(1,3)--(2,3)--(2,1)--(4,1)--(4,2)--(3,2)--(3,3);
+
+
+
+\end{scope}
+
+\begin{scope}[xshift=5cm]
+
+\node at ( 5,0) {x};
+\node at (-0.5,4.5) {y};
+
+\foreach \a in {0,...,4}{ 
+	\draw[color=black!20!white] (\a,0)--(\a,4.5);
+	\draw[color=black!20!white] (0,\a)--(4.5,\a);
+ }
+
+\draw[line width=2, ->] (0,0)--(4.5,0);
+\draw[line width=2, ->] (0,0)--(0,4.5);
+
+\foreach \a in {0,...,4}{
+\foreach \x in {0,...,4}{
+			\draw[fill=black] (\a,\x) circle (0.06);
+	 }
+}
+
+
+\draw[line width=1.5] (1,1)--(1,2)--(1,3)--(2,3)--(2,1)--(4,1)--(4,2)--(3,2)--(3,3);
+
+\end{scope}
+
+\end{tikzpicture} 
+With a pencil it's always possible to draw a curve that passes through all the dots.
+Our challenge is to find an equation that passes through all the loops.  This is not so obvious it can always be done. \\ \\
+\# \textbf{3} While I am remembering that my other example was going to be, we are going to solve the Prime Number Theorem.  
+$$ \Lambda(n) = \left\{ \begin{array}{cl} \log p & \text{if }n=p \\ \\
+0 & \text{not prime}\end{array} \right. $$
+The prime number says that the density of primes is roughly $ \frac{1}{\text{\# digits}} $ it can also be phrased as:
+$$ \sum_{n \leq x} \Lambda(n)  = x + o(x) $$
+where $o(x)$ is a really small, unpredictible number\footnote{if you looked at my other projects, a great question to ask would be ``how small", and ``how unpredictible".  We could ask even though $o(x)$ is a small number, maybe it is bigger than $1$ or $5$ or $100$.} This won't be a review of number theory.  Just ironing out one or two parts in a previous discussion.  It's pretty hard. \\ \\
+\# \textbf{4} Look at a real paper.  There are one or two short papers of Bourgain that I try to get through from time to time.\footnote{He does not write in a very forgiving way, and occasionally it's so bad, we may as well try to write the step ourselves.}
+$$ f(t) = \sum_{|x|, |y|, |z| < N} e^{2\pi i t \; (x^2 + y^2 - \sqrt{2} z^2)} $$ 
+This is my favorite way to cause trouble and I get the sense this is the recommended way to start.  A sense that comes from nowhere. .
+ \\ \\
+
+\newpage
 
 \vfill
 
