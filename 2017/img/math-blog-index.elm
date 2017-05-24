@@ -1,7 +1,8 @@
-import Html exposing (Html, button, div, text, h2, a)
+import Html exposing (Html, button, div, text, h2, a, img)
 import Html.Events exposing (onClick)
-import Html.Attributes exposing (style, src, href)
+import Html.Attributes exposing (style, src, href, height, width)
 
+-- UX challenge : image resize / rotation
 
 main =
   Html.beginnerProgram { model = model, view = view, update = update }
@@ -9,24 +10,20 @@ main =
 
 -- MODEL
 
-type alias Model = Int
+type alias Model = String
 
 model : Model
-model =  0
+model =  "20161117_181333.jpg"
 
 
 -- UPDATE
 
-type Msg = Increment | Decrement
+type Msg = Click String
 
 update : Msg -> Model -> Model
 update msg model =
   case msg of
-    Increment ->
-      model + 1
-
-    Decrement ->
-      model - 1
+    Click x -> x
 
 color: Int -> List (String, String)
 color x = case x%2 of
@@ -40,10 +37,28 @@ view : Model -> Html Msg
 view model =
   div [ style [("margin-left", "5px")] ]
     [   div [ style [ ("background-color", "#F1F1F1"), ("width", "250px") ] ] [ h2 [ style [("font-family", "Helvetica")] ] [ text "Image Index (2017)" ] ]
-    ,   div []
-    <|  List.map (\ x  ->  div [ style <| [ ("font-family", "Courier") , ("text-align", "right"), ("width", "25px"), ("height", "21px"), ("color", "#602FFF"), ("padding", "3px")] ++ (color <| Tuple.first x) ]
-            [ a [ href <| Tuple.second x ] [ ( toString >> text ) <| Tuple.first x ] ]
-        )   links
+    ,   div [ style [ ("display", "inline-block")] ]
+    <|  List.map (\ x  ->  div [ style <|
+            [ ("font-family"  , "Courier" )
+            , ("text-align"   , "right"   )
+            , ("width"        , "25px"    )
+            , ("height"       , "21px"    )
+            , ("color"        , "#602FFF" )
+            , ("padding"      , "3px"     )] ++ (color <| ( Tuple.first  x  ) // 2 ) ]
+            [ a [ onClick ( Click <| Tuple.second x ) ] [ ( toString >> text ) <| Tuple.first x  ] ]
+        )   <| List.filter (\x -> ( Tuple.first x ) % 2 == 0 ) links
+    ,   div [ style [ ("display", "inline-block"), ("vertical-align", "top")] ]
+    <|  List.map (\ x  ->  div [ style <|
+            [ ("font-family"  , "Courier" )
+            , ("text-align"   , "right"   )
+            , ("width"        , "25px"    )
+            , ("height"       , "21px"    )
+            , ("color"        , "#602FFF" )
+            , ("padding"      , "3px"     )] ++ (color <|  ( Tuple.first x ) // 2  + 1 ) ]
+            [ a [ onClick ( Click <| Tuple.second x ) ] [ ( toString >> text ) <| Tuple.first x ] ]
+        )   <| List.filter (\x -> ( Tuple.first x ) % 2 == 1 ) links
+    ,   div [ style [ ("display", "inline-block"), ("vertical-align", "top"), ("margin-left", "5px")] ]
+            [ img [ src <| "https://github.com/MonsieurCactus/math-blog/blob/gh-pages/2017/img/" ++ model ++ "?raw=true", width 800, height 600  ] [] ]
     ]
 
 
