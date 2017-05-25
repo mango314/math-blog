@@ -4,6 +4,7 @@
 \usepackage[margin=0.5in]{geometry}
 \usepackage{xcolor}
 \usepackage{graphicx}
+\usepackage{wasysym}
 
 \newcommand{\off}[1]{}
 \DeclareMathSizes{20}{30}{20}{18}
@@ -165,6 +166,45 @@ This is my favorite way to cause trouble and I get the sense this is the recomme
 
 \newpage
 
+\noindent All good project start from raw ingredients and tell a story.\footnote{On day I got a textbook ``Methods in Mathematical Physics (Vol 1)"  The book is in German so maybe that's why it was so cheap; it is available in English.  These math-for-phyisicists textbooks are pretty dull.  This is the middle of the 20th century and Math and Physics, which you'd assume were related had taken very different paths.  Mathematicians were tired of calculations and instead proposed to build a world entirely of abstrct principles.  Physicists needed to build things and used math whenever they needed it, or fabricated their own\dots Courant-Hilbert managed to write a textbook that assembles hundreds of unrelated techniques into a pretty-good story.  And it's still the story in the modern literature, more or less.}  For me pictures form an engine that start projects.  Or it could be a memory or something that happened. \\
+\includegraphics[width=5in]{node-01.png} \\ 
+These pictures of the vibrating nodes (``notes" \quarternote\twonotes\quarternote\, ) of a square drum were made are before computer graphics (the textbook was written in the 1930s). Drafting and technical drawing (without computers) seems like stupid and arcane technical skill, but our ability to make things of good quality is constrained by this.  Maybe the textbooks fail to make the case. \\
+\includegraphics[width=5in]{node-02.png} \\ 
+Generating these curves with computer is not so easy.  The equation for both of these is:
+$$ f(x,y) = 0 $$
+for some judiciously chosen function $f$.  In the case of the square we can try sines and cosines:
+$$ f(x,y) = \sum_{m, n \in \mathbb{Z}} a_{m,n} \sin m x \sin n y$$
+Maybe I need to include cosines as well.  Different variations.  Why stop at two?  Maybe I can get \textit{every possible pattern} using a level-set of bunch of sine and cosine. \\ \\Additionally, even when we have the equation, solving $f(x,y) = 0$ is not very realistic, maybe solving $f(x,y) < \epsilon$ where $\epsilon =  10^{-3}$ or $10^{-6}$ or however small you are intereted in.  And this becomes an algorithms problem. \\ \\
+In the process I may have mixed up two kinds of problems:
+\begin{itemize}
+\item Drawing the curve (maybe with Bezier curves)
+\item Finding a function with reasonable level set (maybe with Lagrange Interpolation)
+\end{itemize}
+I think they're almost the same but after reading Wikipedia I might be wrong.  When I started off in number theory, there are all these cute averaging statements, such as:
+$$  \frac{1}{r_3(n)}\sum_{x^2 + y^2 + z^2 = n} \phi(x,y,z) \ll n^{-1/28} $$
+All of these theorems rest on the interpolation results I'm trying to explore here\dots and perhaps all of these number theory problems are sources of ill-behaved functions I am outlining.  \\ \\
+All the papers I have seen resort to horrible complicated rearrangements that deserve a better explanation.  
+
+\newpage
+
+\noindent \# \textbf{1} Starting small, let's show that $ \int \mathbf{1}_\mathbb{Q} = 0 $.  The rational numbers are dense but form a set of measure zero.
+\begin{itemize}
+\item $\overline{\mathbb{Q}}= \mathbb{R}$
+\item $\mu(\mathbb{Q}) = 0$
+\end{itemize}
+You could take for granted that you can always find a fraction close enough to your number 
+$$ 47\% = \frac{47}{100} \approx \frac{12}{25} $$
+\textbf{12 in 25} sounds pretty good instead of \textbf{47 in 100}.  Maybe one is more persuasive than the other.\footnote{Here we use a tiny bit of projective space $\frac{a}{b} = [a:b] = \mathbb{Q}P^1$ and maybe even a tiny bit of the Galois cohomology of the field $\mathbb{Q}$.  That is my theory what all these $H^1$'s are doing there. }  Even though we say $\mathbb{Q}$ is dense in $\mathbb{R}$, finding any fraction is easy, finding a really good fraction can be some work.  If $\alpha \notin \mathbb{Q}$: 
+$$ \exists \, p,q \text{ such that }  \bigg| \frac{p}{q} - \alpha \bigg| < \frac{1}{q^2} $$
+Therefore density misses other more refined statements we could make about $\overline{\mathbb{Q}}$. \\ \\
+Let's walk through a few sample arguments.\footnote{At my school, real analysis at the level of Lebesgue Theory was taught to 3rd year undergraduates who were pretty serious about math. I failed it.  And passed the second time with a B.  These days I almost agree with their assessment because I look at the textbook and still don't really get it.}  I can't look at this picture and not see Dehn's theorem, that if the length and the width are rational, then every single rectangle must have rational length and width.\\ 
+\includegraphics[width=3in]{stein-01.png}
+\includegraphics[width=4.5in]{stein-02.png} \\ 
+I could have spent an entire semester drawing ever more complicated shapes and putting rectangles on them. \\
+ \\
+
+\newpage
+
 \vfill
 
 
@@ -172,10 +212,14 @@ This is my favorite way to cause trouble and I get the sense this is the recomme
 
 \begin{thebibliography}{}
 
-\item \dots 
+\item Richard Courant, David Hilbert.  \textbf{Methoden der mathematischen Physik} (Satz I) Springer, 1937. 
+
+\item Elias Stein, Rami Shakarchi.   \textbf{Analysis III: Real Analysis - Measure Theory, Integration and Hilbert Space }(Princeton Lectures in Analysis) Princeton University Press, 2004.
 
 
 \end{thebibliography}
+
+\vfill
 
 \begin{tikzpicture}
 
