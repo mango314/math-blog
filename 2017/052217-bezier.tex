@@ -197,18 +197,41 @@ $$ 47\% = \frac{47}{100} \approx \frac{12}{25} $$
 \textbf{12 in 25} sounds pretty good instead of \textbf{47 in 100}.  Maybe one is more persuasive than the other.\footnote{Here we use a tiny bit of projective space $\frac{a}{b} = [a:b] = \mathbb{Q}P^1$ and maybe even a tiny bit of the Galois cohomology of the field $\mathbb{Q}$.  That is my theory what all these $H^1$'s are doing there. }  Even though we say $\mathbb{Q}$ is dense in $\mathbb{R}$, finding any fraction is easy, finding a really good fraction can be some work.  If $\alpha \notin \mathbb{Q}$: 
 $$ \exists \, p,q \text{ such that }  \bigg| \frac{p}{q} - \alpha \bigg| < \frac{1}{q^2} $$
 Therefore density misses other more refined statements we could make about $\overline{\mathbb{Q}}$. \\ \\
-Let's walk through a few sample arguments.\footnote{At my school, real analysis at the level of Lebesgue Theory was taught to 3rd year undergraduates who were pretty serious about math. I failed it.  And passed the second time with a B.  These days I almost agree with their assessment because I look at the textbook and still don't really get it.}  I can't look at this picture and not see Dehn's theorem, that if the length and the width are rational, then every single rectangle must have rational length and width.\\ 
-\includegraphics[width=3in]{stein-01.png}
-\includegraphics[width=4.5in]{stein-02.png} \\ 
-I could have spent an entire semester drawing ever more complicated shapes and putting rectangles on them. \\
- \\
+Let's walk through a few sample arguments.  How did I first learn that $\mathbb{Q}$  is a set of measure zero?  This was self-evident to Stein.  A point has measure zero, there are countably many fractions, and therefore $\mathbb{Q}$ has measure zero.
+$$ \mu (\{ pt\}) = 0 \text{ and } 
+\mu(\mathbb{Q}) \leq \bigcup_{\frac{a}{b} \in \mathbb{Q}} 
+\mu(\big\{ | x - \frac{a}{b} | < \frac{\epsilon}{2^k} \big\} ) = 
+\epsilon \sum \frac{1}{2^k} = \epsilon \to 0$$
+If we index the fractions one by one we can get some kind of geometric series.
+$$ (\frac{a_1}{b_1}, \frac{1}{2}) \to 
+ (\frac{a_2}{b_2}, \frac{1}{2^2}) \to 
+  (\frac{a_3}{b_3}, \frac{1}{2^3}) \to 
+   (\frac{a_4}{b_4}, \frac{1}{2^4}) \to \dots 
+    (\frac{a_k}{b_k}, \frac{1}{2^k}) \to \dots  $$
+There are several enuerations of the fractions we can use, such as the Farey Fractions or the Calkin-Wilf tree or the Stern-Brocot Tree.  The textbook says \textbf{any} enumeration of fractions. Personally, I drew a picture: \\ 
+\includegraphics[width=3in]{farey-02.png}
 
 \newpage
 
-\vfill
+\noindent The Calkin-Wilf tree (Wikipedia) \\
+\includegraphics[width=3in]{farey-03.png} \\ \\
+The Stern-Brocot tree \\ 
+\includegraphics[width=3in]{farey-04.png} \\ \\
+I really needed to make the countability of the rationals in a tangible, almost deadpan kind of way.  Even there is some research you can do:
+\begin{itemize}
+\item Carlo Carminati, Giulio Tiozzo \textbf{A canonical thickening of Q and the dynamics of continued fractions} \texttt{arXiv:1004.3790}
+\end{itemize}
+I have to look to see if there is more.  But now we can appreciate how abstract real analysis can be: we are taking inventory of something infinitely complex and we're just saying it has been done.
 
+\newpage
 
-\noindent 
+\noindent Flipping through my old Real Anaysis textbook I found some gems.\footnote{At my school, real analysis at the level of Lebesgue Theory was taught to 3rd year undergraduates who were pretty serious about math. I failed it.  And passed the second time with a B.  These days I almost agree with their assessment because I look at the textbook and still don't really get it.}  I can't look at this picture and not see Dehn's theorem, that if the length and the width are rational, then every single rectangle must have rational length and width.\\ 
+\includegraphics[width=3in]{stein-01.png}
+\includegraphics[width=4.5in]{stein-02.png} \\ 
+I could have spent an entire semester drawing ever more complicated shapes and putting rectangles on them. \\
+
+\includegraphics[width=3in, angle=-90, origin=c]{pavage-01.jpg}\hspace{1in}
+\includegraphics[width=3in, angle=-90, origin=c]{pavage-02.jpg}
 
 \begin{thebibliography}{}
 
@@ -218,6 +241,8 @@ I could have spent an entire semester drawing ever more complicated shapes and p
 
 
 \end{thebibliography}
+
+\newpage \noindent .
 
 \vfill
 
