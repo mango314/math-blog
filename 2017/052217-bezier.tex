@@ -233,6 +233,54 @@ I could have spent an entire semester drawing ever more complicated shapes and p
 \includegraphics[width=3in, angle=-90, origin=c]{pavage-01.jpg}\hspace{1in}
 \includegraphics[width=3in, angle=-90, origin=c]{pavage-02.jpg}
 
+
+\newpage
+
+\noindent \# \textbf{3} There are two approaches I can think of two the prime number theorem that should be written:
+\begin{itemize}
+\item Real Analysis
+\item Ergodicity of the Horocycle Flow
+\end{itemize}
+and I can put this up here, because if someone beats me to it, I will gladly take their existing argument simplify it and settle for the worse constant.  \\ \\
+The starting point is a bit arbitrary, an artifact of how we have developed and do arithmetic over the centuries\dots just the way you and me do:
+$$ \Lambda(n) = \left\{ \begin{array}{cl} \log p & \text{if }n=p \\ \\
+0 & \text{not prime}\end{array} \right. $$
+The prime number says that the density of primes is roughly $ \frac{1}{\text{\# digits}} $ it can also be phrased as:
+$$ \sum_{n \leq x} \Lambda(n)  = x + o(x) $$
+With a little bit of work, this function can be charted, just like any other. 
+We'd like to be able to say the derivative of the second equation is the first one:
+$$ \frac{d}{dx} \sum_{n \leq x} \Lambda(n)  = \frac{d}{dx}  \big( x + o(x) \big) = 1 + o(1)  \quad\text{but}\quad \frac{d}{dx} o(x) \stackrel{?}{=} o(1)$$
+So our instinct -- mine at least -- really falls apart on this problem.  Unfortunately, I can try to get other instinct and it might look weird, but at least it's more accurate.  For one thing: the line is not prefectly straight: \\
+\includegraphics[width=3.5in]{farey-06.png}\hfill
+\includegraphics[width=3.5in]{farey-05.png}\\
+This took several years to state the problem in a visual way that I felt comforatble with.  It exists in the literature.  Always after you find it, suddently the paper is right there:
+\begin{itemize}
+\item Don Zagier \textbf{The First Million Prime Numbers}\footnote{http://people.mpim-bonn.mpg.de/zagier/files/doi/10.1007/BF03039306/fulltext.pdf}
+\end{itemize}
+I really want to drive the point home, how decidedly not straigth these lines are. \\
+\includegraphics[width=7.5in]{farey-07.png} \\ 
+The prime number theorem is important because there are many other statements that I care about that are equivalent to PNT, so that it has become a sort of ``gatekeeper" for me.  And I can't exactly say I've overcome, but we have a reasonable shot of pinning the last details here: \dots \; \dots \; \dots \\ \\
+For now I'm an a hurry I'll state some variants of Prime Number Theorem.  
+\begin{itemize}
+\item the angle of a prime number in $\mathbb{Z}[i]$ is equidistriuted as $p \gg 1$.  This one doesn't look like PNT at all, it starts from noticing that $5 = 2^2 + 1^2$ but $7 \neq \square + \square$. 
+\item the Sato-Tate conjecture
+\item the Chebotarev Density Theorem
+\end{itemize}
+Despite their profound modernity, all of these are slightly old fashioned.  Here I tend to check the most recent arXiv articles to see what the latest conjecture is.\footnote{And experts in other fields are not always sure where the frontier is.  You and I should feel free to settle here, or if you know a lot, to take a brand new position! Here's one:
+\begin{itemize}
+\item Kaisa Matom\"{a}ki, Maksym Radziwi\l\l, Terence Tao \textbf{An averaged form of Chowla's conjecture} \texttt{ arXiv:1503.05121}
+\end{itemize}
+The time is certainly approaching!
+} \\ \\
+I think by the 1920's, 30's and 40's I started to find really good, convincing proofs of PNT.  Parts of it were still being settled the 80's and 90's and up to now.  I heard the version I am about to give, has really bad constants.  \\ \\
+If we wanted to we could sequester the Prime Number Theory to five very basic pages:
+\begin{itemize}
+\item Don Zagier \textbf{On Newman's Short Proof of the Prime Number Theore}  American Mahtematical Monthly (1997)
+\end{itemize}
+
+
+\newpage
+
 \begin{thebibliography}{}
 
 \item Richard Courant, David Hilbert.  \textbf{Methoden der mathematischen Physik} (Satz I) Springer, 1937. 
@@ -241,8 +289,6 @@ I could have spent an entire semester drawing ever more complicated shapes and p
 
 
 \end{thebibliography}
-
-\newpage \noindent .
 
 \vfill
 
