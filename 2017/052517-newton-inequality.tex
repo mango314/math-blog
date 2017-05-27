@@ -1,0 +1,72 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+\newcommand{\red}{\begin{tikz}[scale=0.25]
+\draw[fill=red, color=red] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\blue}{\begin{tikz}[scale=0.25]
+\draw[fill=blue, color=blue] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\green}{\begin{tikz}[scale=0.25]
+\draw[fill=green, color=green] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+
+\usepackage{tikz}
+
+\title{Newton's Inequalities}
+\author{John D Mangual}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{12.5}{15}\selectfont
+
+\maketitle
+
+\noindent With some difficulty I have reconstructed my train of thought.  There are two nice, very approachable results, I wish to cover.  I had been looking three gentlement who were studying the carries we do in arithmetic.  Towards the end of their discussion they prove:
+$$ \mathbb{P}\big( \text{ random } n\text{-permutation has }j\text{ descents}\big)
+ = \mathbb{P} \big( j < \text{ sum of }n\text{ uniform in }[0,1] < j+1 \big) $$
+Diaconis credits Jim Pitman with his discussion.  That makes for a funny topic tree it goes:
+$$ \text{shuffling cards}\leftrightarrow\text{carries in arithmetic}\to \text{polynomials with real zeros}$$
+Why would three very serious men, study the carries in arithmetic.  Or how about one not-very-serious man? I went to see if I could justify it and I found out a few things.  Basically, we add numbers and carries are a foundation part of our arithmetic. \\ \\
+Looking at Pitman, there's a whole combinatorial world and it's all just right there.  Here's just one:
+$$ S_k = \frac{\sigma_k}{\binom{n}{k}} \text{ therefore }S_{k-1}S_{k+1} \leq S_k^2 $$
+where $\sigma_k$ is the elementary symmetric polynomial.  Eg. $\sigma_1 = a+b+c$ and  $\sigma_2 = ab + bc + ca$ and $\sigma_3 = abc$. These inequalities are nice and versatile, but your time is limited and mine is too.  Is there more going on? \\ \\
+Richard Stanley offers a whole collecton of these \textbf{unimodal} sequences.  He phrased the result as:
+$$ P(x) = \sum_{k=0}^n \binom{n}{k} a_k x^k \text{ therefore } a_j^2 \geq a_{j-1}a_{j+1}$$
+This is almost the same as what we had before.  The proof really blows me away.  He uses Rolle's theorem, which is pathetic. 
+$$ f(a) = f(b) = 0 \text{ therefore } f'(c) = 0 \text{ for some } a < c < b $$
+Using Rolle's Theorem many many times, he find a quadratic polynomial with only real roots:
+$$ \frac{n!}{2} ( a_{j-1}x^2 + 2a_j x + a_{j+1}) \text{ has only real roots, therfore }(2a_j^2)^2 - 4 a_{j-1}a_{j+1} \geq 0 $$
+using the quadratic formula.  Really deep stuff here. \\ \\
+It's hard for me to look at a wrench or a hammer and gain inspiration.  Likewise, I've collected these simple but very productive results here but I haven't been sure what to do with them.
+
+\newpage
+
+\noindent Until \dots 
+
+\vfill
+
+
+\noindent 
+
+\begin{thebibliography}{}
+
+\item Richard Stanley.  \textbf{Log-Concave and Unimodal Sequences in Algebra, Combinatorics, and Geometry} Annals of the New York Academy of Sciences. 576: 500–535. 
+
+\item Jim Pitman. \textbf{Probabilistic Bounds on the Coefficients of
+Polynomials with Only Real Zeros} Journal of Combinatorial Theory. Series A 77, 279-303 (1997)
+
+\item Alexei Borodin, Persi Diaconis, Jason Fulman \textbf{On adding a list of numbers (and other one-dependent determinantal processes)} \texttt{arXiv:0904.3740}
+\item Matthew Baker \textbf{Hodge theory in combinatorics} \texttt{arXiv:1705.07960}
+
+
+\end{thebibliography}
+
+
+\end{document}
