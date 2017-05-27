@@ -233,6 +233,14 @@ I could have spent an entire semester drawing ever more complicated shapes and p
 \includegraphics[width=3in, angle=-90, origin=c]{pavage-01.jpg}\hspace{1in}
 \includegraphics[width=3in, angle=-90, origin=c]{pavage-02.jpg}
 
+\begin{thebibliography}{}
+
+\item Richard Courant, David Hilbert.  \textbf{Methoden der mathematischen Physik} (Satz I) Springer, 1937. 
+
+\item Elias Stein, Rami Shakarchi.   \textbf{Analysis III: Real Analysis - Measure Theory, Integration and Hilbert Space }(Princeton Lectures in Analysis) Princeton University Press, 2004.
+
+
+\end{thebibliography}
 
 \newpage
 
@@ -273,22 +281,88 @@ Despite their profound modernity, all of these are slightly old fashioned.  Here
 The time is certainly approaching!
 } \\ \\
 I think by the 1920's, 30's and 40's I started to find really good, convincing proofs of PNT.  Parts of it were still being settled the 80's and 90's and up to now.  I heard the version I am about to give, has really bad constants.  \\ \\
-If we wanted to we could sequester the Prime Number Theory to five very basic pages:
+If we wanted to we could sequester the Prime Number Theorem to five very basic pages:
 \begin{itemize}
-\item Don Zagier \textbf{On Newman's Short Proof of the Prime Number Theore}  American Mahtematical Monthly (1997)
+\item Don Zagier \textbf{On Newman's Short Proof of the Prime Number Theorem}  American Mahtematical Monthly (1997)
 \end{itemize}
 
 
 \newpage
 
+\noindent Like I said won't spend much time on this. A lot has changed since the 1950's.  I worked out a few solutions in a Starbucks.  Just a summary\footnote{I was surprised to learn from the barista that cold brew coffee was not the same as I coffee.  I had one of each.} \\ \\ 
+Buzzwords like ``resurgence" and ``regularization" do not exist yet.  Instead, the textbook proposes a clever use of the Laplace transform:
+$$ f(x) = \sum_{n=1}^\infty \frac{\big(\Lambda(n)-1\big)e^{-nx}}{1 - e^{-nx}} $$
+Why could this series be solve our problem or natural from number theory? The weight:
+$$ \frac{ e^{-nx}}{1 - e^{-nx}} \approx \left\{
+\begin{array}{cc} 
+\frac{1}{nx} & x \to 0 \\ \\
+e^{-nx} & x \gg 1 \end{array}
+ \right. \text{ with turning point at } n \approx \frac{1}{x}$$
+Using an intelligent choice of filters we'd like to make an approximation, an engineer migth not question it.  A mathematicians could be scared of (rather faint) signals that might change the result:
+$$ f(x) = \sum_{n=1}^\infty \frac{\big(\Lambda(n)-1\big)e^{-nx}}{1 - e^{-nx}} \approx 
+\frac{1}{x} \sum_{n < \frac{1}{x}} \frac{\Lambda(n)-1}{n}$$
+So if we reason this function divergece a certain way, maybe we can collect our result about the primes.  Here are other ways to look at $f$:
+$$ f(x) = \int_0^\infty \frac{te^{-xt}}{1 - e^{-xt}} \;d \Bigg[ \sum_{n \leq x} \frac{\Lambda(n)-1}{n}\Bigg] $$
+This is a \textbf{Riemann-Stieltjes} integral, which is why I drew the \textbf{spike train} on the previous page.  The measure is no longer $dx$  instead it is 
+$$ d \Bigg[ \sum_{n \leq x} \frac{\Lambda(n)-1}{n}\Bigg] = 
+\left\{ \begin{array}{cl}
+ 0 & x \notin \mathbb{Z} \\ \\
+ \frac{\Lambda(n)-1}{n}  & x=n \in \mathbb{Z}  \end{array}\right. $$ 
+measuring all the places where this function jumps.  And we are convolving this spike train against the generator of the Bernoulli polynomials:
+$$ g(x,t) = \frac{te^{-xt}}{1 - e^{-xt}}  \text{ vs } \frac{te^{xt}}{e^t - 1} = \sum_{n=0}^\infty B_n(x) \frac{t^n}{n!} $$
+At least, they resemble each other.  Here's another awy to look at $f$
+$$ f(x) = \sum_{n=1}^\infty \sum_{m=1}^\infty \{ \Lambda(n)-1 \} e^{-mnx} = 
+\sum_{n=1}^\infty \left[ \sum_{d|n} \big(\Lambda(d)-1\big) \right] e^{-nx}$$
+He calls it Lambert summation but we can also call it M\"{o}bius transformation.  So there's a way to pass between the van Mangoldt function $\Lambda$ and the just plain $\log$ function.  
+
+\newpage
+
+\noindent Just have that $\log = \Lambda \ast 1$ or $\Lambda = \log \ast \mu $ where $\mu$ is the \textbf{M\"{o}bius} function.   Depending on which source you look, we can prove that:
+$$ f(x) \sim -\frac{2\gamma}{x} $$
+why is that a solution, though?  ``Abelian" and ``Tauberian" theorems are rather heavy tools, that either blow-up elementary calculations into deeper ones, or extract results that are buried in infinite series.  \\ \\
+Norbert Weiner solves the theorem in a few pages (plus 20 or 30 pages devoted to proving the Tauberian theorem)
+$$ \sum_{m=1}^\infty (\log m ) x^m = \dots = \sum_{n=1}^\infty \Lambda (n) \frac{x^n}{1-x^n} $$
+Using a mix of Euler-Maclaurin summation and Mo\"{o}bius inversion he rearranges everything.\\
+Substitute $x = e^\xi$ and take derivative with respect to $\xi$ and set $\xi \to 0$.  He obtains a result :\footnote{These however, begin to look like more and more desperate attempts to fix a growing problem.  As we look at the primes at finer and finer scales (or larger and larger scales) their irregularity is posing various challenges.}
+$$ \sum_{n=1}^\infty \Lambda(n) \frac{d}{dn\xi} \left[ \frac{n\xi \; e^{-n\xi}}{1 - e^{-n\xi}} \right] = \frac{1}{\xi} + O(\log \xi) $$
+Why did the grandfather of Stochastic Processes (the kind you see the stock market) take a few minutes of his time to solve the Prime Number Theorem?  I can only guess the primes are behaving like random processes. \\ \\
+In modern lingo, \textbf{regularization} could refer either to {\color{red}noisy} functions or {\color{green}divergent} functions. 
+\begin{itemize}
+\item $\sum n = 1 + 2 + 3 + 4 + \dots = - \frac{1}{12} $
+\item $\prod n = 1 \times 2 \times 3 \times 4 \times \dots = \sqrt{2\pi}$ \\
+\item $\prod p = 2 \times 3 \times 5 \times 7 \times 11 \times \dots = \frac{1}{2\pi}$
+\end{itemize}
+My goal had been to understand: What was being regularized?  Tauber theorem expand on the old proofs I think:
+$$  $$
+Why do the Tauberian theorems work?  \\ \\
+It seems, I have left a giant mess and unfortunately newer problems and challenges await!  Put it to you like this: the more time we spend on this and everything else is going haywire?
+
 \begin{thebibliography}{}
 
-\item Richard Courant, David Hilbert.  \textbf{Methoden der mathematischen Physik} (Satz I) Springer, 1937. 
-
-\item Elias Stein, Rami Shakarchi.   \textbf{Analysis III: Real Analysis - Measure Theory, Integration and Hilbert Space }(Princeton Lectures in Analysis) Princeton University Press, 2004.
+\item Norbert Weiner  \textbf{Tauberian Theorems} \\ Annals of Mathematics. Vol. 33, No. 1 (Jan., 1932), pp. 1-100
 
 
 \end{thebibliography}
+
+\newpage
+
+\noindent \#\textbf{ 4} I never consdered that the square-billiard could be connected to Ratner Theory and the Oppenheim conjecture.  I kind of get the feeling and then I lose it and then I get it again when I look at the pictures in certain textbooks. \\ \\
+The main event here is the Oppenheim conjecture and it's solution via Ratner Theorem.  This is a badly chaotic regime and ideas of sorting it out are still being figured out. \\ \\
+Item \#2 on nodal curves (and the surfaces of the vibrating drum) will be written hopefully soon.  And space-filling curves!  I think they're really cool.
+
+
+\begin{thebibliography}{}
+
+\item Ze\'{e}v Rudnick, Ezra Waxman  \textbf{Angles of Gaussian primes} \texttt{ arXiv:1705.07498}
+
+\item Jean Bourgain. \textbf{A quantitative Oppenheim Theorem for generic diagonal quadratic forms} \texttt{arXiv:1604.02087}
+
+\item Valentin Blomer, Jean Bourgain, Maksym Radziwi\l\l, Zeev Rudnick   \textbf{Small gaps in the spectrum of the rectangular billiard} \texttt{arXiv:1604.02413}
+
+
+\end{thebibliography}
+
+
 
 \vfill
 
