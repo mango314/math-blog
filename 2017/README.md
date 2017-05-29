@@ -1,10 +1,13 @@
-Every day a few nice papers surface on arXiv.  However, doing researc is not
+To me arXiv is like *telenovela* it's like the soap operas.  This happens and
+that happens.  Never comes to any real conclusion.  We can't stop watching.
+
+Every day a few nice papers surface on arXiv.  However, doing research is not
 like reading the newspaper.  If I pick one or two
 interesting articles every day, and other articles to support them, that turns
 into a few thousand pages of reading every month.  In the past, we thought
 things through a little bit more because there was less to go around.
 
-Information overload is not a bad things it's a sign of the times.  A huge
+Information overload is not a bad thing -- it's a sign of the times.  A huge
 turning point was downloading papers to my phone and reading them on very long
 bus rides in San Juan.  It really wasn't anyone's business that I was an
 academic, and they may be better off not knowing.
@@ -21,7 +24,7 @@ other professors or I can try to reach everybody.
 For me school has always been an issue.  Is school relevant or is it just
 busy-work the teachers force you to do.  A lot of advanced theories amount to
 fluff.  If you look in the middle of the article, there's always a bunch of
-integrals or algebra or geometry or whetever, organized in different ways.
+integrals or algebra or geometry or whatever, organized in different ways.
 
 Communications is a good issue.  YouTube has become even more feasible than ever.
 I've been saying this for the good part of more than a year.
