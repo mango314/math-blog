@@ -346,12 +346,62 @@ It seems, I have left a giant mess and unfortunately newer problems and challeng
 
 \newpage
 
-\noindent \#\textbf{ 4} I never consdered that the square-billiard could be connected to Ratner Theory and the Oppenheim conjecture.  I kind of get the feeling and then I lose it and then I get it again when I look at the pictures in certain textbooks. \\ \\
-The main event here is the Oppenheim conjecture and it's solution via Ratner Theorem.  This is a badly chaotic regime and ideas of sorting it out are still being figured out. \\ \\
-Item \#2 on nodal curves (and the surfaces of the vibrating drum) will be written hopefully soon.  And space-filling curves!  I think they're really cool.
+\noindent \#\textbf{ 4} In this section we attempt to discuss the Oppenheim conjecture in an intelligent way.  One way to think of it the example:
+$$ \big\{ x^2 + y^2 - \sqrt{2} z^2 : x, y, z \in \mathbb{Z} \big\} \subseteq \mathbb{R} $$
+This subset is in fact dense in $\mathbb{R}$.  That's no surprise to me since this thing can never be be zero (except for $x=y=z=0$).  If you want I pick an even more obvious one by making all the numbers different:
+$$ \big\{ \sqrt{2} x^2 + \sqrt{3}y^2 - \sqrt{5} z^2 : x, y, z \in \mathbb{Z} \big\} \subseteq \mathbb{R} $$
+Math can be a slightly doubtful field at times.  Sometimes we let plausible statements pass.  Other times we press the question.  Can you find me $x,y,z \in \mathbb{Z}$ such that:
+$$ |\sqrt{5} -  \big( x^2 + y^2 - \sqrt{2} z^2 \big) | < 10^{-6} $$
+The conjecture was that as long as the three numbers are not multiples of a fraction, the set of integer values is dense. 
+$$ \sqrt{2} \;(x^2 + \tfrac{3}{2} y^2 + \tfrac{1}{5}z^2) \in \sqrt{2}\, \mathbb{Q}$$ 
+I took out a common factor, so this number will always be $\sqrt{2}\times$ a fraction. \\ \\ \\
+The rational numbers embedded in the reals $\mathbb{Q} \subseteq \mathbb{R}$ or even the adeles $\mathbb{Q} \subseteq \mathbb{A}$ exhibit all sorts of hidden patterns and faint signals which can just happily ignore. I don't have to entertain them at all -- I can just ignore all of them!! \\ \\ \\
+Bourgain only considers quadratic forms of a certain ``signature" $(+,+,-)$ and he is going to consider entire ``lines" of qudratic forms.  I think the geometric term is ``pencil". 
+$$ x^2 + y^2 - a\,  z^2  \text{ or }x^2 + b\, y^2 - a\,  z^2$$
+the second equation is the same as the first with $b=1$. And we let $a \in [0,1]$ or some other range of values.  I might write these as $[1:1:-a]$ and $[1:b:-a] \notin \mathbb{Q}^3$ or $\mathbb{Q}P^2 = (\mathbb{Q}^\times)^3/\mathbb{Q}$.  This shorthand means I consider three numbers the same if I multiply all of them by the same fraction.  E.g. $[\sqrt{2}:\sqrt{2}:\sqrt{2} ]=[1:1:1] $.\\ \\
+In 1989 Margulis showed for any quadratic form $[a:b:c] \notin (\mathbb{Q}^\times)^3/\mathbb{Q}$ leads to a quadrtaic equation $a \, x^2 + b\, y^2 + c\, z^2$ whose values are dense in $\mathbb{R}$.  Unipotent flows are a way to change quaratic equations into one another.  Therefore, Margulis solve all quadratic equations showing their value-sets are dense, but never solves any single equation.  \\ \\ 
+I can solve any single oppenheim type problem using a computer:
+$$ |Q(x,y,z)| < \epsilon $$
+and maybe I can solve it with enough time, but I can never show the values of $\mathbb{Q}(\mathbb{Z}^3)$ are dense.  However Ratner's theorem lie very deep, taking over 200 pages to prove.  
+
+\newpage
+
+\noindent Unfortunately, I can hardly understand Bourgain's note beyond the first paragraph.  
+$$ \max_{|\xi| < A(N)}\; \;  \min_{x \in \mathbb{Z}^n \; 0 < |x| < N} |Q(x)- \xi| < \delta(N)   $$
+This is a very stuffy way of phrasing density (that might be easy for a computer to understand).  If I want to show the values of $Q(x)$ are dense: 
+\begin{itemize}
+\item Choose a test value $\xi \in \mathbb{R}$.
+\item I am going to try all integers up to size $|x| < N$ 
+\item Of all the vaues $|\xi| < A(N)$ the worst error we obtain is $\delta(N)$.
+\end{itemize}
+Next, Bourgain proved two sets of results depending on whether or not we believe the Lindel\"{o}f hypothesis.  I don't know it.  \\ \\
+With the Lindelof hypothesis the smallest value of $Q(x)$ is about size $\frac{1}{N}$.
+$$ \min  \big\{  |Q(x)| : {x \in \mathbb{Z}^3 \backslash \{ 0\}, \;\;|x| < N}  \big\} \ll N^{-1 + \epsilon} $$
+and there is a trade-off between the range of values $\xi$ we can approximate and how accurately we can estimate them:
+$$ A(N) \delta(N)^{-2} \ll N^{1-\epsilon} $$
+Without the Lindelof Hypothesis we do a bit worse:
+$$ \min  \big\{  |Q(x)| : {x \in \mathbb{Z}^3 \backslash \{ 0\}, \;\;|x| < N}  \big\} \ll N^{-\frac{2}{5} + \epsilon} $$
+and there is the trade-off between also worse (with funny dimensions):
+$$ A(N)^3 \delta(N)^{-\frac{11}{2}} \ll N^{1-\epsilon} $$
+So, although he uses some rather expensive theorems, Bourgain whittles down the Oppenheim conjecture from 200 pages down to 8 pages.  Except, this is true for \textbf{almost all} values.  
+$$ \mu \Bigg\{  a \in [\tfrac{1}{2},1]: \min \Big\{ x^2 + y^2 - a \; z^2 :  |x|, |y|,|z| < N, (x,y,z) \in \mathbb{Z}^3 \backslash \{ 0\}  \Big\} \ll N^{-\frac{2}{5}+\epsilon} \Bigg\} = 1$$
+This is Jean Bourgain for you.  Not only does he tell us the values of $Q(x)$ are dense (or small) he tells us how dense (or small) these values will be -- most of the time! \\ \\
+If I point to any one quadratic equation:  $ x^2 + y^2 - \sqrt{2 + \sqrt{2}}\; z^2 $ Bourgain's theorem tells us \textbf{nothing}.  Only how this equation and its neighbors behave collectively.  
+
+\vfill
+
+\hrule \vspace{6pt}
+
+\noindent \textbf{Personal side note:} We can get this full-measure result without doing any Ratner Theory because of Bourgain's arguments.  I think the key is not to get lost in the shuffle.  Maybe later we study the horocycle flow itself and why it's related to these quaratic equations.  I want to know what the big deal is.
+
+\newpage
+
+\noindent -- \textsc{draw pictures} -- \\ -- \textsc{numericals??} --
 
 
 \begin{thebibliography}{}
+
+\item J\'{a}nos Koll\'{a}r \textbf{Quadratic solutions of quadratic forms} \texttt{arXiv:1607.01276}
 
 \item Ze\'{e}v Rudnick, Ezra Waxman  \textbf{Angles of Gaussian primes} \texttt{ arXiv:1705.07498}
 
