@@ -10,20 +10,21 @@ main =
 
 -- MODEL
 
-type alias Model = String
+type alias Model = { photoID :  String , orientation : Int }
 
 model : Model
-model =  "20161117_181333.jpg"
+model =  { photoID = "20161117_181333.jpg" , orientation = 0 }
 
 
 -- UPDATE
 
-type Msg = Click String
+type Msg = Click String | Rotate
 
 update : Msg -> Model -> Model
 update msg model =
   case msg of
-    Click x -> x
+    Click x -> { model | photoID = x }
+    Rotate  -> { model | orientation = ( model.orientation + 1 ) % 4}
 
 color: Int -> List (String, String)
 color x = case x%2 of
@@ -31,12 +32,39 @@ color x = case x%2 of
   0 -> [("background-color", "#FFFFFF")]
   _ -> []
 
+imgStyle : Int -> String -> Html Msg
+imgStyle n pid = case n of
+  0 -> img  [ src pid
+            , width  800
+            , height 600
+            , onClick Rotate
+            , style [("transform", "rotate(  0deg) " )] ]  []
+  1 -> img  [ src pid
+            , width  800
+            , height 600
+            , onClick Rotate
+            , style [("transform", "rotate( 90deg) translate(100px,100px)" )] ] []
+  2 -> img  [ src pid
+            , width  800
+            , height 600
+            , onClick Rotate
+            , style [("transform", "rotate(180deg)" )] ] []
+  3 -> img  [ src pid
+            , width  800
+            , height 600
+            , onClick Rotate
+            , style [("transform", "rotate(270deg) translate(-100px,-100px)" )] ] []
+  _ -> img  [ src pid
+            , width  800
+            , height 600
+            , onClick Rotate ] []
+
 -- VIEW
 
 view : Model -> Html Msg
 view model =
   div [ style [("margin-left", "5px")] ]
-    [   div [ style [ ("background-color", "#F1F1F1"), ("width", "250px") ] ] [ h2 [ style [("font-family", "Helvetica")] ] [ text "Image Index (2017)" ] ]
+    [   div [ style [ ("background-color", "#F1F1F1"), ("width", "250px") ] ] [ h2 [ style [("font-family", "Helvetica")] ] [ text <| "Image Index (2017)" ] ]
     ,   div [ style [ ("display", "inline-block")] ]
     <|  List.map (\ x  ->  div [ style <|
             [ ("font-family"  , "Courier" )
@@ -58,7 +86,7 @@ view model =
             [ a [ onClick ( Click <| Tuple.second x ) ] [ ( toString >> text ) <| Tuple.first x ] ]
         )   <| List.filter (\x -> ( Tuple.first x ) % 2 == 1 ) links
     ,   div [ style [ ("display", "inline-block"), ("vertical-align", "top"), ("margin-left", "5px")] ]
-            [ img [ src <| "https://github.com/MonsieurCactus/math-blog/blob/gh-pages/2017/img/" ++ model ++ "?raw=true", width 800, height 600  ] [] ]
+            [ imgStyle model.orientation <| "https://github.com/MonsieurCactus/math-blog/blob/gh-pages/2017/img/" ++ model.photoID ++ "?raw=true" ]
     ]
 
 

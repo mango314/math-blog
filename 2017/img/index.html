@@ -8446,9 +8446,171 @@ var _user$project$Main$color = function (x) {
 var _user$project$Main$update = F2(
 	function (msg, model) {
 		var _p1 = msg;
-		return _p1._0;
+		if (_p1.ctor === 'Click') {
+			return _elm_lang$core$Native_Utils.update(
+				model,
+				{photoID: _p1._0});
+		} else {
+			return _elm_lang$core$Native_Utils.update(
+				model,
+				{
+					orientation: A2(_elm_lang$core$Basics_ops['%'], model.orientation + 1, 4)
+				});
+		}
 	});
-var _user$project$Main$model = '20161117_181333.jpg';
+var _user$project$Main$model = {photoID: '20161117_181333.jpg', orientation: 0};
+var _user$project$Main$Model = F2(
+	function (a, b) {
+		return {photoID: a, orientation: b};
+	});
+var _user$project$Main$Rotate = {ctor: 'Rotate'};
+var _user$project$Main$imgStyle = F2(
+	function (n, pid) {
+		var _p2 = n;
+		switch (_p2) {
+			case 0:
+				return A2(
+					_elm_lang$html$Html$img,
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$src(pid),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$width(800),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$height(600),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$Rotate),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$html$Html_Attributes$style(
+											{
+												ctor: '::',
+												_0: {ctor: '_Tuple2', _0: 'transform', _1: 'rotate(  0deg) '},
+												_1: {ctor: '[]'}
+											}),
+										_1: {ctor: '[]'}
+									}
+								}
+							}
+						}
+					},
+					{ctor: '[]'});
+			case 1:
+				return A2(
+					_elm_lang$html$Html$img,
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$src(pid),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$width(800),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$height(600),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$Rotate),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$html$Html_Attributes$style(
+											{
+												ctor: '::',
+												_0: {ctor: '_Tuple2', _0: 'transform', _1: 'rotate( 90deg) translate(100px,100px)'},
+												_1: {ctor: '[]'}
+											}),
+										_1: {ctor: '[]'}
+									}
+								}
+							}
+						}
+					},
+					{ctor: '[]'});
+			case 2:
+				return A2(
+					_elm_lang$html$Html$img,
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$src(pid),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$width(800),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$height(600),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$Rotate),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$html$Html_Attributes$style(
+											{
+												ctor: '::',
+												_0: {ctor: '_Tuple2', _0: 'transform', _1: 'rotate(180deg)'},
+												_1: {ctor: '[]'}
+											}),
+										_1: {ctor: '[]'}
+									}
+								}
+							}
+						}
+					},
+					{ctor: '[]'});
+			case 3:
+				return A2(
+					_elm_lang$html$Html$img,
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$src(pid),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$width(800),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$height(600),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$Rotate),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$html$Html_Attributes$style(
+											{
+												ctor: '::',
+												_0: {ctor: '_Tuple2', _0: 'transform', _1: 'rotate(270deg) translate(-100px,-100px)'},
+												_1: {ctor: '[]'}
+											}),
+										_1: {ctor: '[]'}
+									}
+								}
+							}
+						}
+					},
+					{ctor: '[]'});
+			default:
+				return A2(
+					_elm_lang$html$Html$img,
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$src(pid),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$width(800),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$height(600),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$Rotate),
+									_1: {ctor: '[]'}
+								}
+							}
+						}
+					},
+					{ctor: '[]'});
+		}
+	});
 var _user$project$Main$Click = function (a) {
 	return {ctor: 'Click', _0: a};
 };
@@ -8570,9 +8732,9 @@ var _user$project$Main$view = function (model) {
 										},
 										{
 											ctor: '::',
-											_0: function (_p2) {
+											_0: function (_p3) {
 												return _elm_lang$html$Html$text(
-													_elm_lang$core$Basics$toString(_p2));
+													_elm_lang$core$Basics$toString(_p3));
 											}(
 												_elm_lang$core$Tuple$first(x)),
 											_1: {ctor: '[]'}
@@ -8661,9 +8823,9 @@ var _user$project$Main$view = function (model) {
 											},
 											{
 												ctor: '::',
-												_0: function (_p3) {
+												_0: function (_p4) {
 													return _elm_lang$html$Html$text(
-														_elm_lang$core$Basics$toString(_p3));
+														_elm_lang$core$Basics$toString(_p4));
 												}(
 													_elm_lang$core$Tuple$first(x)),
 												_1: {ctor: '[]'}
@@ -8707,25 +8869,12 @@ var _user$project$Main$view = function (model) {
 							{
 								ctor: '::',
 								_0: A2(
-									_elm_lang$html$Html$img,
-									{
-										ctor: '::',
-										_0: _elm_lang$html$Html_Attributes$src(
-											A2(
-												_elm_lang$core$Basics_ops['++'],
-												'https://github.com/MonsieurCactus/math-blog/blob/gh-pages/2017/img/',
-												A2(_elm_lang$core$Basics_ops['++'], model, '?raw=true'))),
-										_1: {
-											ctor: '::',
-											_0: _elm_lang$html$Html_Attributes$width(800),
-											_1: {
-												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$height(600),
-												_1: {ctor: '[]'}
-											}
-										}
-									},
-									{ctor: '[]'}),
+									_user$project$Main$imgStyle,
+									model.orientation,
+									A2(
+										_elm_lang$core$Basics_ops['++'],
+										'https://github.com/MonsieurCactus/math-blog/blob/gh-pages/2017/img/',
+										A2(_elm_lang$core$Basics_ops['++'], model.photoID, '?raw=true'))),
 								_1: {ctor: '[]'}
 							}),
 						_1: {ctor: '[]'}
