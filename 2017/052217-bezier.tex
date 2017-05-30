@@ -410,6 +410,178 @@ Oppenheim conjecture says the middle will be close to flat.  Nobody's telling us
 Lastly, if the equation $x^2 + y^2 - \sqrt{2} \, z^2$ is an ellipsoid (or ``hyperboloid of one sheet")  was the box $\{|x|, |y|, |z| < N \} $ really the best shape to study?  I could use a sphere or some other cutoff.   This is called \textbf{sampling} and Bourgain and I are both amateurs at Statistics.\footnote{Perhaps I can consult my statistician or data scientist friend.} \\ \\
 This worked great!  And in 5 short pages that remain, we shall obtain the Oppenheim conjecture, almost everywhere.
 
+\newpage
+
+\noindent Line by line.  Bourgain points us to another paper with lots more details.  The system being studied is the free particle on a rectangle:
+$$ H = \frac{\partial^2}{\partial x^2} + \alpha \, \frac{\partial^2}{\partial y^2} 
+\hspace{0.25in}\text{with energy levels}\hspace{0.25in}
+E \in \big\{ m^2 + \alpha \, n^2 : m,n \in \mathbb{Z} \big\} $$
+and if $\alpha \notin \mathbb{Q}$ is not a fraction, these numbers could get very interesting. 
+$$ \# \{ j : \lambda_j \leq X \} = \# \big\{ (m,n): m,n \geq 1 \text{ and } \alpha m^2 + n^2 \leq X \big\} \sim \frac{\pi}{4 \sqrt{\alpha} }X $$
+This is a good strong signal and we barely had to do any effort to obtain it! \\ \\
+\begin{tikzpicture}
+
+\begin{scope}
+
+\node at (2.5,1) {$H = \frac{\partial^2}{\partial x^2}+ \alpha \, \frac{\partial^2}{\partial y^2} $};
+
+\draw (0,0)--(5,0)--(5,2)--(0,2)--cycle;
+
+\node at (2.5,-0.5) {$\sqrt{\alpha}$};
+\draw[<-] (0,-0.5)--(2,-0.5);
+\draw[->] (3,-0.5)--(5,-0.5);
+
+\node at (5.25,1) {$1$};
+\draw[->] (5.25,1.25)--(5.25,2);
+\draw[<-] (5.25,0)--(5.25,0.75);
+
+\end{scope}
+
+\begin{scope}[xshift=10cm]
+
+\draw[<->, line width=2] (-3.25,0)--(3.25,0);
+\draw[<->, line width=2] (0,-3.25)--(0,3.25);
+
+\foreach \a in {-3.5,-3.25,...,3.5}{
+	\foreach \b in {-3.5,-3.25,...,3.5}{
+	
+		\draw[fill=black] (\a,\b) circle (0.025);
+	}
+}
+
+\draw[fill=green, opacity=0.25] (0,0) circle [x radius = 2.75, y radius = 1];
+
+\node[fill=white] at (1.75,2.25) {$\alpha m^2 + n^2 \leq E $}; 
+
+\end{scope}
+
+\end{tikzpicture} \\ \\
+It is really at our discretion whether to read any further into the problem than this.  Weyl's theorem was a huge accomplishment in it's day and continues to yield results. \\ \\
+We do continue. \\ \\
+They want to know how much these numbers bunch together: 
+$$ 1,\;\sqrt{2},\;  1 + \sqrt{2}, \; 4,\; 4 + \sqrt{2},\; 4 \sqrt{2},\; 1 + 4\sqrt{2}, \; 9, \;4 + 4 \sqrt{2}, \;\dots  $$
+Bourgain branches off and on his own writes something about the ``Energy levels" associated to the free particle in a box.
+$$
+H = \frac{\partial^2}{\partial x^2}+ \alpha \, \frac{\partial^2}{\partial y^2}
++ \alpha \, \frac{\partial^2}{\partial z^2} \text{ and now } E = l^2 + \alpha \, m^2 + \beta \, n^2  $$
+negative energy is OK.  In Quantum Mechanics, realistic systems have $E \geq 0$ ( I don't remember why). \\ \\
+This seems like kid stuff and I don't know why this particular problem is important now.  On the other hand, it's one of the only few kind of problems I know how to do.
+
+\newpage
+
+\noindent Bourgain introduces these ``bumpfunctions" -- just use the step functions. 
+$$w_1 = \left\{
+\begin{array}{cc} 
+1 &  \text{if }x \in [\frac{1}{2}, \frac{3}{4}]\\ \\
+0 & \text{if }x \notin [\frac{1}{2}, \frac{3}{4}] \end{array}  \right. 
+\hspace{0.25in}\text{and}\hspace{0.25in}
+w_1 = \left\{
+\begin{array}{cc} 
+1 &  \text{if }x \in [-1,1]\\ \\
+0 & \text{if }x \notin [-1,1]\end{array}  \right. $$
+Forget it, I am just using step functions.  Maybe we'll regret this.  He's scared of this:
+\begin{itemize}
+\item in real life we have to truncate in physical space
+\item and we have to truncate in Fourier space
+\item therefore we overshoot and have extra copies of everything.
+\end{itemize}
+\includegraphics[width=3in]{oppenheim-03.png} \hspace{1in}
+\includegraphics[width=3.25in]{oppenheim-04.png}
+so even though we're trying to draw the thing straight, there are actually small slips everywhere.  With enough modes they do go away, but we do not have infinite resources so therefore tiny artifacts always exist. \\ \\
+If you're a telephone company, all you care about are these tiny artifacts.  They become giants, as you customers start to complain about what they are hearing. \\ \\
+Here's the real reason: {\color{blue!20!white} I never learned how smoothness differentability play out in the Fourier transform}.  Here's a good one:
+\begin{quotation}
+If $f \in L^1(\mathbb{T})$ is absolutely continuous then $\hat{f}(n) = O(n^{-1})$.
+\end{quotation}
+What about our step function?  $f(-0.0001) = 0$ and yet $f(+0.0001)=1$. Maybe our Fourier coefficients won't have this decay. 
+$$ \hat{f}(n) = \int_0^1 e^{2\pi i \, n t} \, dt = \left\{ 
+\begin{array}{cc}
+1 & \text{if }n=0 \\ 
+0 & \text{if }n\neq 0 \end{array} \right. $$
+Well, our step functions $w_1$ live in $L^1(\mathbb{R})$ and not $L^1(\mathbb{T})$ (e.g. we only want one copy of our ``step", which is supposed to be smooth anyway).
+
+\newpage
+
+\noindent Even more problem:  I don't remember what \textbf{absolutely continuous}  actually meant.\footnote{I read much of 20th century Analsys and Topology as looking for shapes and sequences of numbers with increasingly ``bad" behavior.  And it's pretty dreaful.  But then maybe I thought, some of these pathologies are already happening and exist in nature.  And maybe what we think of a ``pathology" or a ``bad guy" can actually be quite helpful.  \\ Entropy is like that.  We think of change and randomness as pretty evil, but what if I called it ``fairness" or ``serendipity".  And there is mathematics of that.}  Continuous functions can be pretty weird. All Devil's staircase functions are continuous.  We can continuously map the unit interval into the entire square $[0,1] \to [0,1]^2$.  \\ \\
+\includegraphics[width=3.25in]{oppenheim-05.jpg} \\ \\
+Due to mistakes like these maybe I can read your e-mail or your Snapchat or Instagram direct messages.  And every know and then we hear of a hack. So if the phone company is constantly losing sleep over this, you and me, must be real suckers.
+\\ \\ \\
+By the way, I have that for functions with enough derivatives:
+$$ \hat{f}(n) = o(n^{-k}) $$
+Sometimes you cannot take the derivative, e.g. 
+$$
+f(x) = \left\{  \begin{array}{rc} 1 & x > 0 \\ -1 & x < 0\end{array}\right. $$
+left of zero it's flat. right of zero it's flat.  What do we assign to $f'(0)$ ? \\
+\begin{tikzpicture}[scale=0.5]
+% notice how hard I am working to draw the coordinate grid.  maybe it's artificial?
+
+\foreach \a  in {-3,...,3}{
+	\draw[color=black!50!white] (-4,\a)--(4,\a);
+	\draw[color=black!50!white] (\a,-4)--(\a,4);
+}
+
+\draw[line width =2, ->] (-4,0)--(4,0);
+\draw[line width =2, ->] (0,-4)--(0,4);
+
+\draw[color=blue, line width = 2] (-4,-2)--(0,-2);
+\draw[color=blue, line width = 2] ( 0, 2)--(4, 2);
+
+\draw[fill=white] (0, 2) circle (0.2);
+\draw[fill=white] (0,-2) circle (0.2);
+
+\end{tikzpicture}
+
+\newpage 
+
+\noindent We seek a lower bound for:
+$$ \sum_{(x_1, x_2, x_3) \in \mathbb{Z}^3} 
+w_1(\frac{x_1}{N})
+w_1(\frac{x_2}{N})
+w_1(\frac{x_3}{N}) \; \mathbf{1}_{\big\{|Q(x)-\xi| < N\big\}}
+\approx \big\{|Q(x)-\xi| < N\big\} \cap \big\{ \frac{1}{2}N < x_1, x_2, x_3 < \frac{3}{4}N \big\}\cap \mathbb{Z}^3$$
+The Bourgain's solo paper writes it on the left.  I have a much easier time with the version on the right.  Is obvious the next equation is the same as well?
+$$ 
+\big\{|\log(x_1^2 +\alpha_2 \, x_2^2 -\xi) - 2 \log x_3 - \log \alpha_3 | < \frac{\delta}{N^2} \big\} \cap \big\{ \frac{N}{2} < x_1, x_2, x_3 < \frac{3N}{4} \big\}\cap \mathbb{Z}^3 $$
+and what was with the ridiculous range $[ \frac{1}{2}, \frac{3}{4}]$? 
+\vspace{6pt}
+\hrule
+\vspace{6pt}
+In Fourier space we can split things into ways that have no ``physical" counterpart.  Later we can ascribe them meaning, right now completely mysterious:
+\begin{itemize}
+\item $\displaystyle F_1(t) = \sum_{x_1, x_2 \in \mathbb{Z}} w_1(\frac{x_1}{N}) w_1(\frac{x_2}{N})
+e^{it \; \log (x_1^2 +\alpha_2 \, x_2^2 -\xi)} = \sum_{x_1, x_2 \in \mathbb{Z}} \mathbf{1}\big(\tfrac{1}{2} < \tfrac{x_1}{N} , \tfrac{x_2}{N} < \tfrac{3}{4} \big)
+(x_1^2 +\alpha_2 \, x_2^2 -\xi)^{it} $ \\
+\item $F_2(t) = 
+\sum_{x_1\in \mathbb{Z}} w_1(\frac{x_1}{N}) 
+e^{it \; \log n} = \sum_{x_1\in \mathbb{Z}} \mathbf{1}\big(\tfrac{1}{2} < \tfrac{x_1}{N}  < \tfrac{3}{4} \big)
+n^{it}
+$
+\end{itemize}
+The simplified versions are mine.  Arguably, whenver I supply a detail that's not in Bourgain's I could turn it into an improvement on his estimates and that could be ``new" (in terms of academic-style research). \\ \\
+I think he is writing ``Dirichlet series" the most famous one is the Riemann Zeta function:
+$$ \zeta(it) = \sum n^{it} = 1^{it} + 2^{it} + 3^{it} + \dots $$
+These truncations are all over the place.  It is the Fourier transform but the frequences are all log-scale, so 
+$$ f \in \big\{ \log n : n \in \mathbb{Z} \big\} = \big\{ \log 1, \log 2, \log 3, \dots  \big\} $$
+We're nearly done for the day.  
+$$ \big\{|Q(x)-\xi| < N\big\} \cap \big\{ \frac{1}{2}N < x_1, x_2, x_3 < \frac{3}{4}N \big\}\cap \mathbb{Z}^3 \approx \frac{1}{T} \int_\mathbb{R} \widehat{w_2}(\frac{t}{T}) \, F_1(t) \overline{F_2(2t)}\,
+e^{-it \log \alpha_3} \, dt $$
+This is a good time to sit back and laugh.  This equation is going to be split as follows:
+$$ (\ast) + (\ast \ast) := \widehat{w_2}(\frac{t}{\sqrt{N}})  + \big( \widehat{w_2}(\frac{t}{T})  - \widehat{w_2}(\frac{t}{\sqrt{N}}) \big) $$
+Rather \dots we are going to split the Fourier transform this way:
+\begin{itemize}
+\item $(\ast) \;\;= \frac{1}{T} \int_\mathbb{R} \widehat{w_2}(\frac{t}{\sqrt{N}}) \, F_1(t) \overline{F_2(2t)}$
+\item $(\ast \ast) = \frac{1}{T} \int_\mathbb{R} 
+\Big(\widehat{w_2}(\frac{t}{T}) - \widehat{w_2}(\frac{t}{\sqrt{N}}) \Big)
+ \, F_1(t) \overline{F_2(2t)}$
+\end{itemize}
+What did we just do?  I have no idea.  \\ \\
+At least, we followed instruction as best we can.  Maybe it will be helpful to think of quantum mechanics and observables?  position and momentum space?  Could a signal-processing metaphor work?  There are brand new ideas, every day!
+
+\newpage
+
+\noindent \textbf{5/31} \dots 
+
+\newpage
 
 \begin{thebibliography}{}
 
