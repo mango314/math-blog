@@ -569,17 +569,62 @@ This is a good time to sit back and laugh.  This equation is going to be split a
 $$ (\ast) + (\ast \ast) := \widehat{w_2}(\frac{t}{\sqrt{N}})  + \big( \widehat{w_2}(\frac{t}{T})  - \widehat{w_2}(\frac{t}{\sqrt{N}}) \big) $$
 Rather \dots we are going to split the Fourier transform this way:
 \begin{itemize}
-\item $(\ast) \;\;= \frac{1}{T} \int_\mathbb{R} \widehat{w_2}(\frac{t}{\sqrt{N}}) \, F_1(t) \overline{F_2(2t)}$
+\item $(\ast) \;\;= \frac{1}{T} \int_\mathbb{R} \widehat{w_2}(\frac{t}{\sqrt{N}}) \, F_1(t) \overline{F_2(2t)} \;e^{-it \log \alpha_3}$
 \item $(\ast \ast) = \frac{1}{T} \int_\mathbb{R} 
 \Big(\widehat{w_2}(\frac{t}{T}) - \widehat{w_2}(\frac{t}{\sqrt{N}}) \Big)
- \, F_1(t) \overline{F_2(2t)}$
+ \, F_1(t) \overline{F_2(2t)}\;e^{-it \log \alpha_3}$
 \end{itemize}
 What did we just do?  I have no idea.  \\ \\
 At least, we followed instruction as best we can.  Maybe it will be helpful to think of quantum mechanics and observables?  position and momentum space?  Could a signal-processing metaphor work?  There are brand new ideas, every day!
 
 \newpage
 
-\noindent \textbf{5/31} \dots 
+\noindent \textbf{5/31} After a day of resting on it, let's evaluate $(\ast)$ on one page and $(\ast \ast)$ on the other page. \\ \\
+$(\ast)$ 
+$$ \frac{1}{T} \int_\mathbb{R} \widehat{w_2}(\frac{t}{\sqrt{N}}) \, F_1(t) \overline{F_2(2t)} \;e^{-it \log \alpha_3}$$ 
+Wouldn't it be great to know what $\widehat{w}_2$ means?  I am replacing it with $1_{[-1,1]}$.
+$$ \widehat{w}(t)  = \int_{-1}^1 e^{2\pi i \, x t} \, dx = \frac{e^{2\pi i \, x t}}{t}\bigg|_{-1}^1 = \frac{e^{2\pi i \, t} - e^{-2\pi i \, t}}{2\pi i t} = \frac{\sin 2\pi t}{2\pi t}$$
+In Fourier space the step functions don't look so tidy.  They require a infinite amount of information to build.  You don't need the Fourier transform formula anyway, just general properties to value to:
+$$ \frac{\sqrt{N}}{T} \times \bigg\{ x_1, x_2, x_3 \in \big[\frac{1}{2}N, \frac{3}{4}N \big] : \Big| \log(x_1^2 + \alpha_2 x_2^2 - \xi) - 2 \log x_3 - \log \alpha_3 \Big| < \sqrt{N} \bigg\}   $$
+If I take the exponent of both sides, we fine we're solving an equation:
+$$  \frac{\alpha_3 \, x_3^2 }{x_1^2 + \alpha_2 x_2^2 - \xi} = 1 + O(\sqrt{N}) \text{ and } x_i \approx N$$
+This is a vary coarse or smudgy way to deal with numbers.  Very impressionistic.  Observe:
+$$ x_1^2 + \alpha_2 x_2^2 - \xi = O(N^2)$$
+and we are multiplying on both sides we get get a single equation we are solving:
+$$ x_1^2 + \alpha_2 x_2^2 - \alpha_3 x^3 = O(N^{3/2})$$
+and the number of solutions is about $N^{5/2}$. This is a real back of the envelope calculation and I am mostly just doing what I am told.
+
+\newpage
+
+\noindent $\displaystyle (**) = \frac{1}{T} \int_\mathbb{R} 
+\Big(\widehat{w_2}(\frac{t}{T}) - \widehat{w_2}(\frac{t}{\sqrt{N}}) \Big)
+ \, F_1(t) \overline{F_2(2t)}\;e^{-it \log \alpha_3}$ \\ \\ \\
+Who knows that this collection of symbols means or what it evaluates to?
+$$
+\text{\rm mes\,} \Big[\alpha_3\in \Big[\frac 12, 1\Big] ; |(**)| \gtrsim \delta N\Big] \leq (\delta N)^{-2} ||(**)||_{L^2_{\alpha_3}}
+$$
+I should explain Chebyshev inequality here\dots we are taking a risk here that maybe $(**)$ doesn't hold. \\ \\
+He discusses a bit of $\widehat{w}$ he doesn't know much abou it either, but he produces this ridiculous-looking but helpful estimate:
+$$|\widehat{w_2} (\frac tT) -\widehat{w_2} (\frac t{N^{1/2}})| \leq C\min(1, \frac {t^2}N, (\frac T{|t|})^{10}) \eqno{(***)}$$
+I have no idea what it means but we are contining because we've spent too much time on this already.  Bourgain obtains:
+$$
+(\delta N)^{-2}\Vert(**)\Vert^2_{L^2_{(\alpha_3)}}< CN^{-\frac 32} +CN^{-6} \int_{[|t|<N^{\frac 1{10}]}}\min \Big(1, \Big(\frac Tt\Big)^{20}\Big) |F_1|^2 |F_2|^2.
+\eqno{(2.4)}
+$$
+At this point we are copying Bourgain's \LaTeX \; source code directly. Have we thrown in the towel? \\ \\
+Maybe we should understand $(***)$ then, our options:
+\begin{itemize}
+\item within half-a-page we obtain Oppenheim conjecture (with possibly a few exceptions) if we believe in the Lindelof hypothesis. 
+\item skip to page 5 and build our own estimates leading to another -- slightly more crude proof of Oppenheim (with a few more exceptions).
+\item arguably $(**)$ is also counting something.  It is a highly chaotic function of $\alpha_3$ which Bourgain is estimating using very indirect means. 
+\end{itemize}
+Bourgain is relentless, I am not.  Plotting $(**)$ as a function of $\alpha_3$ could be the way to go. \\ 
+He has suggested we can obtain {\color{green!50!red!50!white}pretty good} meaningful estimates ourselves if we do maybe 2 or 3 more pages of work.  \\ \\
+Remember, I am not here to copy Bourgain's instruction, I am here to solve my own problem.
+
+\newpage
+
+\noindent \textbf{6/1} skipping to page 5\dots
 
 \newpage
 
