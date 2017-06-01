@@ -1,0 +1,137 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+\newcommand{\red}{\begin{tikz}[scale=0.25]
+\draw[fill=red, color=red] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\blue}{\begin{tikz}[scale=0.25]
+\draw[fill=blue, color=blue] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\green}{\begin{tikz}[scale=0.25]
+\draw[fill=green, color=green] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+
+\usepackage{tikz}
+
+\newcommand{\susy}{{\bf Q}}
+\newcommand{\RV}{{\text{R}_\text{V}}}
+
+\title{Miscellaneous New Techniques}
+\author{John D Mangual}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{12.5}{15}\selectfont
+
+\maketitle
+
+\noindent Sometimes it get's exhausting to read that far in between the lines.  We can also pass to the opposite regime, like we see in parts of Theoretical Physics, focusing only on the very BIGGEST signals and my complaint will be they are not looking closely enough! \\ \\
+For the past month I've been finding a whole slew of these ``neo-romantic" type problems.  The Physics part is very modern, the Mathematics they are using dates to the mid-19th century.  Nobody we typically use is the cutting-edge, but it's kind of surprising. \\ \\
+Here is a result in Hosomichi-Lee-Okuda (of the three I only know the last guy personally). 
+\begin{equation}
+ Z
+ = \sum_{s\in\frac12\mathbb Z}\int\frac{da}{2\pi}
+ e^{-2ira+2is\theta} Z_\text{1-loop}
+ = \sum_{s\in\frac12\mathbb Z}\int\frac{da}{2\pi}
+ z^{-s+ia}\bar z^{s+ia} Z_\text{1-loop}.
+\label{zs2}
+\end{equation}
+where $z\equiv e^{-t}=e^{-r-i\theta}$.  We are off to a good start if I can find out what is this one-loop determinant.  I have found two possible formulas:
+\begin{equation}
+ Z_\text{1-loop}
+ = \frac{\Gamma(s+q-ia)}{\Gamma(s+1-q+ia)}.
+\label{1l0}
+\end{equation}
+Later in the paper there is a more-complicated formula which is also called ``1-loop determinant"
+\begin{eqnarray}
+Z_\text{1-loop}^\text{reg} &=& \prod_{n\in\mathbb Z_{\ge0}}
+\left[
+ \frac{\frac {-i}\ell(n+1-q+ia+|s|)}{\frac i\ell(n+q-ia+|s|)}
+ \prod_{j}
+ \left(
+ \frac{\frac {-i}\ell(n+1-q+ia+|s|+i\alpha_j\ell\Lambda)}
+      {\frac i\ell(n+q-ia+|s|-i\alpha_j\ell\Lambda)}
+ \right)^{\epsilon_j}
+\right]
+ \nonumber \\ &=&
+ \frac{\Gamma(|s|+q-ia)}{\Gamma(|s|+1-q+ia)}
+ \prod_j\left[\frac{\Gamma(|s|+q-ia-i\alpha_j\ell\Lambda)}
+                 {\Gamma(|s|+1-q+ia+i\alpha_j\ell\Lambda)}\right]^{\epsilon_j}.
+\label{zolpv}
+\end{eqnarray}
+while this formula looks very very complicated, I can say that a colleage has come to me with this formulas and perhaps I should study it.  \\ \\
+The theory of infinite products has been around since the 19th's century.  Here's a good one:
+$$ \sin \pi x = \pi x \prod_{n=1}^\infty \left(1 - \frac{x}{n} \right)\left(1 + \frac{x}{n} \right) $$
+I can assure you the infinite products discuss in Okuda's paper have never been studied before and have new properties. 
+
+\newpage
+
+\noindent The small danger is once I studied these products, maybe I can't produce answers that are meaningful to Mr. Okuda.  Here's one question we can ask: where did these infinite product come from?  He supplies us with a starting point: 
+\begin{equation}
+ Z_\text{1-loop} =
+ \frac{\text{det}_{{\cal H}'}(\susy^2)}
+      {\text{det}_{{\cal H} }(\susy^2)},
+\label{zol}
+\end{equation}
+The definition of $\susy$ is extremely complicated.  There is a cohomology theory:
+\begin{equation}
+ X\equiv\phi,
+~~
+ \susy X\equiv\xi\psi,
+~~
+ \Xi\equiv\bar\xi\psi,
+~~
+ \susy\Xi
+ =F-\bar\xi\gamma^m\bar\xi D_m\phi+i\bar\xi\gamma^3\bar\xi\rho\phi,
+\label{dfch}
+\end{equation}
+and the action of $\susy^2$ is very very complicated:
+\begin{eqnarray}
+ \susy^2 &=&
+ -\bar\xi\gamma^m\xi\partial_m
+ +(\frac i{2f}\bar\xi\xi-iv^mV_m)\RV
+ +(\bar\xi\xi\sigma+i\bar\xi\gamma^m\xi A_m+i\bar\xi\gamma^3\xi\rho)\,\text{e}
+ \nonumber \\ &=&
+ \frac1\ell\left\{\partial_\varphi +\frac i2\RV
+ +(a\pm is)\hskip0.5mm\text{e}\right\}.
+\label{q2gn}
+\end{eqnarray}
+The first equation is a horrible mess, that second equation I have a chance at understanding.  If we restrict to some of the best-behaved subspaces of particle fields, we can find the eigenvalues of $\susy^2$:
+\begin{itemize}
+\item \begin{equation}
+ \text{det}(\susy^2)|_{\text{ker}J^+}
+ = \prod_{n\ge0}\frac i\ell(n+q-ia+|s|).
+\label{dkj1}
+\end{equation}
+\item \begin{equation}
+\hspace{0.4in} \text{det}(\susy^2)|_{\text{ker}J^-}
+ = \prod_{n\ge0}\frac i\ell(-n+q-1-ia-|s|).
+\label{dkj2}
+\end{equation}
+\end{itemize}
+And we obtain the 1-loop determinant formula:
+$$
+ Z_\text{1-loop}
+ = \frac{\Gamma(s+q-ia)}{\Gamma(s+1-q+ia)}.
+\eqno{(2)}
+$$
+We still have no idea what a 1-loop determinant is, but it looks highly significant, even if it's a bit old-fashioned. \\ \\
+The theory of $\mathcal{N}=(2,0)$ supersymmetry is very complicated and built on somewhat shaky mathematical foundations.  We're pretty sure it's sound, but we can never fill in all the details. \\ \\
+Maybe we can take result directly from the source and at the end of the day replace with simpler object\dots \\ \\
+There is a growing list of papers that follow this paradigm it behooves us to learn it quickly, as I had been asked to do some time ago.\footnote{Nobody asked.  It just falls from the grapevine.}
+
+\vfill
+
+\begin{thebibliography}{}
+
+\item Kazuo Hosomichi, Sungjay Lee, Takuya Okuda \textbf{Supersymmetric vortex defects in two dimensions} \texttt{arXiv:1705.10623}
+
+\end{thebibliography}
+
+\end{document}
