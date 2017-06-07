@@ -106,11 +106,30 @@ $$  n \mapsto \int_0^1 f(x) \, f( 2^n x ) \, f( 2^{2n} x ) \, dx  = \mu \Bigg\{ 
 \draw[black!30!white] (0, 0.05)--(19, 0.05);
 \draw[black!30!white] (0,-0.05)--(19,-0.05);
 \end{tikzpicture} \\ 
-There must be all sorts of examples, very difficult to name just one.
+There must be all sorts of examples, very difficult to name just one. \\ \\
+By Weyl's Law (not for free) we can count the number of lattice points inside an ellipse:
+$$ \# \{ (m, n) : m^2 + \sqrt{\color{red}{2}} \, n^2 < X \} \sim \frac{X}{ 4 \times \sqrt[4]{2} } $$
+I ran these numbers on my computer I found possibly that:
+$$ \bigg| \# \{ (m, n) : m^2 + \sqrt{2} \, n^2 < X \} - \frac{X}{ 4 \times \sqrt[4]{2} }  \bigg| \approx { \sqrt{\color{blue}{\mathbf{2}}}} \times  \# \{ (m, n) : m^2 + \sqrt{2} \, n^2 < X \} $$
+and this pattern does not hold if $\sqrt{\color{red}{2}}$ is replaced with $\sqrt{\color{red}{3}}$.  This histogram is suggestive: 
 
-\newpage
+\newpage 
 
-\noindent .
+\includegraphics[width=3.5in]{weyl-02.png}
+\includegraphics[width=3.5in]{weyl-01.png} \\
+
+\noindent I can't the center is exactly $\sqrt{2}$ and the pattern breaks down for other values of $\alpha$, but there's some clear convergence and there's a split between values above and below the line.   \\ \\
+We could ask how many values of $(m,n)$ lie significantly above or below the median. 
+$$ f(X) =  \# \{ (m, n) : m^2 + \sqrt{2} \, n^2 < X \} \text{ when does }
+\left|f(x) -   \frac{\pi}{4 \times \sqrt[4]{2} } X \right| \stackrel{?}{>} c \times \sqrt{X} $$
+I think a reasonable number is $c = 2$.  This is the idea $f(X)$ is impossible to calculate exactly for all value, we find average that looks pretty good, most of the time. \\ \\
+That just becomes our starting point to look for exceptions.  These ``obvious" statements can be a nuisiance to prove, maybe because we underestimate how much information lies in there. \\ \\
+Step back a minute, we are counting lattice points inside of a circle:
+$$ \# \{ (m,n):  m^2 + n^2 < X \} \approx \pi X $$
+This is known as the \textbf{Gauss circle problem} and we know that 
+$$ \# \{ (m,n):  m^2 + n^2 < X \}  =  \pi X  + O(X) \text{ maybe } \stackrel{?}{=}\pi X + O(\sqrt{X})$$
+which is what I'm observing on my computer. \\ \\
+This problem is hard, therefore must be a lot of ``information".  These signals are of a rather difficult and unknown nature.  This may be a candidate for Terry's nilsequence techiques.
 
 \vfill
 
@@ -129,6 +148,8 @@ Manfred Einsiedler, Thomas Ward \\ \textbf{Ergodic Theory
 with a view towards Number Theory} (GTM, \# 259) Springer, 2011.
 
 \item Jean Bourgain, Elon Lindenstrauss, Philippe Michel, Akshay Venatesh. \textbf{Some effective results for $\times a \times b$} Ergodic theory and dynamical systems (2009).
+
+\item Valentin Blomer, Jean Bourgain, Maksym Radziwi\l\l, Zeev Rudnick \textbf{Small gaps in the spectrum of the rectangular billiard} \texttt{arXiv:1604.02413}
 
 \end{thebibliography}
 
