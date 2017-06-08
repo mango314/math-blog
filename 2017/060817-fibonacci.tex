@@ -1,0 +1,115 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+\newcommand{\red}{\begin{tikz}[scale=0.25]
+\draw[fill=red, color=red] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\blue}{\begin{tikz}[scale=0.25]
+\draw[fill=blue, color=blue] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\green}{\begin{tikz}[scale=0.25]
+\draw[fill=green, color=green] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+
+\usepackage{tikz}
+
+\newcommand{\susy}{{\bf Q}}
+\newcommand{\RV}{{\text{R}_\text{V}}}
+
+\title{Fibonacci Numbers}
+\author{John D Mangual}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{12.5}{15}\selectfont
+
+\maketitle
+
+\noindent I've been trying to figure out why in the middle of a rather serious paper, Curtis McMullen writes about the Fibonacci numbers.  $F_0 = 0, F_1 = 1$:
+$$ F_n = \mathrm{tr}_\mathbb{Q}^K \big[ \epsilon^m / \sqrt{D} \big]  \text{ so that } F_m \asymp \epsilon^m $$ 
+Or we can write in the usual, recursive bunny-rabit format:
+$$ F_{m+1} = t F_m - n F_{m-1} $$
+here $t$ and $n$ are the \textbf{trace} and the \textbf{norm} of the number field unit $\epsilon$.  The number field is just adjoining the $\sqrt{D}$ to the rational numbers:
+$$ K = \mathbb{Q}(\sqrt{D})  $$
+Then $\epsilon$ is a unit in this quadratic field and it satisfies a quadratic equation:
+$$ \epsilon^2 - t \, \epsilon + n = 0 \text{ with } t = \mathrm{tr}_\mathbb{Q}^K (\epsilon) \text{ and } n = \mathrm{N}_\mathbb{Q}^K (\epsilon)  = \pm 1 $$
+McMullen does something (standard) but a bit freaky, lifing the field $\mathbb{Q}(\sqrt{D})$ off the number line into two dimensions:
+$$ \mathbb{Z}[\epsilon] = \mathbb{Z} \oplus \mathbb{Z}\, \epsilon = (1, \epsilon) $$
+The actions of $\epsilon$ and $\sqrt{D}$ get promoted to $2 \times 2$ matrices:
+$$ \epsilon \sim U = \left( \begin{array}{cr} 0 & -n \\ 1 & t \end{array}  \right)
+\text{ and } \sqrt{D} \sim S = 2U - tI =  \left( \begin{array}{cr} -t & -n \\ 2 & t \end{array}  \right) $$
+The Fibonacci identity lifts to one for $2 \times 2$ matrices:
+$$ U^m = f_m \, U - n \, f_{m-1} \, I  $$
+
+
+\newpage
+
+\noindent Curtis McMullen's objectives were to prove three results: \\ \\
+\textbf{\#1} Any real quadratic field $\mathbb{Q}(\sqrt{d})$ contains infinitely many periodic continued fractions $x = \overline{[a_0, \dots, a_{p-1}]}$ with $1 \leq a_i \leq M_d$. \\ \\
+\textbf{\#2} For any fundamental geodesic $\gamma \subset \mathbb{H}/\mathrm{SL}(2, \mathbb{Z})$ there is a compact subset of $M$ that contains infinitely many primitive, closed geodesics whose lengths are multiples of $L(\gamma)$.  ( A geodesic $\gamma$ is primitive if it's indivisible in $\pi_1(M)$. \\ \\
+The meaning of the word ``compact" here in this context exceeds my geometric intuition:
+\begin{itemize}
+\item Complete geodesics lying in $Z$ form a closed set $G(Z)$ of measure zero.
+\item Geodesics of length $m \, L(\gamma)$ become uniformly distributed in $\mathbb{H}/\mathrm{SL}(2, \mathbb{Z})$ as $m \to \infty$.
+\item Most geodesics whose lengths are multiples $m \, L(\gamma)$ are not contained in $Z$, but infinitely many of them are.
+\item Hausdorff dimension of $G(Z)$ can be made arbitrarily close to $2$ if $Z$ is large enough.
+\end{itemize}
+\textbf{\#3} In any real quadratic field $K$, there are infinitey many ideal classes with $\delta(I) > \delta_K > 0$.  
+\begin{itemize}
+\item $\delta(I) = \frac{N^\ast(I)}{\det (I) }$ ``packing density"
+\item $\det (I) = \sqrt{\mathrm{disc}(I) }$ 
+\item $N^\ast(I) = \min \big\{ | N^K_\mathbb{Q}(x) |: x \in I \text{ and } N^K_\mathbb{Q}(x) \neq 0 \big\}  $ \\
+\end{itemize}
+\textbf{\#2a} ({ \color{black!30!white} extension of result \#2 for Bianchi groups}) \\ For any fundamental geodesic in the hyperbolic orbifold $\mathbb{H}/ \mathrm{SL}_2(\mathcal{O}_d)$, there is a compact set that contains infinitely many closed primitive geodesics whose lengths are multiples of $L(\gamma)$. 
+
+\newpage
+
+\noindent McMullen's main construction: \\ \\
+Start with matrix $A \in \mathrm{GL}_2(\mathbb{Z})$ such that
+\begin{itemize}
+\item $A^2 = I$
+\item $\mathrm{tr}(A) = 0$
+\item $\mathrm{tr}(A^\dagger U) = \pm 1$
+\end{itemize}
+and let $L_m = U^m + U^{-m} A $.  Then for all $m \geq 0$:
+\begin{itemize}
+\item $|\det (L_m)| = f_{2m}$ is a Fibonacci number
+\item The lattice $[L_m]$ is fixed by $U^{2m}$ 
+\item $L_{-m}= L_m \, A$ 
+\item $\big|\big| U^i L_m U^{-i}\big|\big| , \big|\big| U^i L_m U^{-i}\big|\big|   \leq C \sqrt{|\det{L_m}|} $ 
+\end{itemize}
+
+\newpage 
+
+\noindent This discussion has not used any modular forms, even though Duke's equidistribution theorem was proven using the elusive \textbf{Maass forms}.  Not sure what gives. \\ \\
+Likely: many open questions about the geometry of the hyperbolic surfaces and 3-manifolds.
+
+\vfill
+
+\begin{thebibliography}{}
+
+\item Curtis McMullen \\ \textbf{Uniformly Diophantine numbers in a
+Fixed Real Quadratic Field} \texttt{http://www.math.harvard.edu/\~{}ctm/papers/home/text/papers/cf/cf.pdf} \\
+\textbf{Horocycles in Hyperbolic 3-manifolds} \\ \texttt{http://www.math.harvard.edu/\~{}ctm/papers/home/text/papers/horo/horo.pdf}
+
+\item Alex Brandts, Tali Pinsky, Lior Silberman \\ \textbf{Volumes of hyperbolic three-manifolds associated to modular links} \texttt{arXiv:1705.04760}
+
+\end{thebibliography}
+These references are more advanced, but also they are using the theory of modular forms, which I have deliberately left out of the previous discussion.  Wouldn't it be nice to find mmore elementary stuff to go here?
+\begin{thebibliography}{}
+
+\item Paul D. Nelson
+\textbf{Quantum variance on quaternion algebras, I} \texttt{arXiv:1601.02526}
+
+\item Paul D. Nelson
+ \textbf{Quantum variance on quaternion algebras, I} \texttt{arXiv:1702.02669}
+
+\end{thebibliography}
+
+\end{document}

@@ -153,4 +153,77 @@ with a view towards Number Theory} (GTM, \# 259) Springer, 2011.
 
 \end{thebibliography}
 
+
+\newpage
+
+\noindent The candidate I have for ``naturally occuring" dynamical systems.\footnote{The fact that Artur Avila is studying the Thousless Transition points could have a nice tie-in to the 2016 Nobel Prize in Physics.  Not 100\% sure if the names are correct, or if I have a mix-up.}  Mostly they are Hamiltonians of physical dynamical systems:
+$$ \boxed{\text{let }T = H} $$
+Mostly, any physics textbook problem is either an embedded copy of a rotation or a harmonic oscillator:
+\begin{itemize}
+\item a spring (or a swing)
+\item a spinning top
+\end{itemize}
+All of classical mechanics amounts to finding embedded copies of these two physical systems in nature\dots 
+\begin{itemize}
+\item We can evolve a small region of phase space and it get's really stretchy and twisty
+\item We can find an easy solution and study the space of solutions ``nearby"
+\end{itemize}
+The team of three, choose a Hamiltonian to study, not the easiest to write down
+$$ (H_{\theta; \lambda, \alpha })_k 
+= v(\theta +  \alpha k) \psi_k 
++ c_\lambda (\theta + \alpha k) \psi_{k+1} + 
+\overline{c_\lambda (\theta + a(k-1)) } \psi_{k-1}  $$
+where $c_\lambda$ and $v$ are two numbers:
+$$c_\lambda = \lambda_1 e^{-2\pi i \, \theta + \frac{\alpha}{2}}  + \lambda_2 + \lambda_3 e^{2\pi i \, \theta + \frac{\alpha}{2}} \quad v(\theta ) = 2 \cos (2\pi \theta) $$
+This operator is rather complicated.  Lots of literature written about it in 1980's but maybe as thorough discussio as Avila is about to give.\footnote{and maybe Physicists did not really care about  such trivialities as ``convergence" and ``Lyapounov exponents"} \\ \\
+We have gone the opposite extreme already.  I have no chance of obtaining the nilsequence averages I wanted on the first page.  Instead he moves in an entirely different direction. 
+$$ \liminf_{n \to \infty} \max_{|z|=1} \prod_{k=1}^n \big|z - e^{2\pi i \, k \alpha } \big| \stackrel{?}{<} \infty  $$
+and then I obtained this function in a different way using numerical approximation.
+$$ f \big (\Delta t \big) = \sum_{k=0}^{\frac{1}{\Delta t}} \sin \big( 2\pi k \, \Delta t \big) $$
+And as the mesh shrings to zero, $||\Delta t|| \to 0$, the Riemann sums ``bounce" very much like the funtion Avila describes.  \\ \\
+Continued fractions (or more complicated objects) seem to be describing how are ``approximate" solutions to differential equations are failig.  \\ \\
+As it stands, I think we can get the nilsequences by studying interesting sequeneces of numbers and comparing them to the textbook dynamical systms such as the shift map or horocycle flow.
+
+
+
+\begin{thebibliography}{}
+
+\item Mei-Chu Chang, Jean Bourgain \textbf{On a paper of Erd\"{o}s and Szekeres} \texttt{arXiv:1509.08411}
+
+\item Artur Avila, Svetlana Jitomirskaya, C. A. Marx \textbf{Spectral theory of extended Harper's model and a question by Erd\"{o}s and Szekeres} \texttt{arXiv:1602.05111} 
+
+\item Artur Avila, Svetlana Jitomirskaya, Qi Zhou \textbf{Second Phase transition line} \texttt{arXiv:1608.01799} 
+
+\item Amie Wilkinson \textbf{What are Lyapunov exponents, and why are they interesting?} \texttt{arXiv:1608.02843} 
+
+\newpage
+
+\noindent Foliations and continued fractions seem to emerge in the \textbf{perturbation theory} of physical systems.\footnote{our vauge and abstract language means we have no idea what we're talking about :-)  If we want, we can find a situation where KAM theory does't exist, and maybe our generalized continued fraction object will be there!  Our textbooks only show the cases where perturbation theory behaves nicely\dots } With our shallow understanding about why number theory might be relavant to classical mechanics, we go back to textbook problems.  \\ \\
+Mainly, if we deviate from eqilibrium solutions (or from cycles) or change our dyamical system slightly, the orbts will get very complicated again.  There are tools:
+\begin{itemize}
+\item Kolomogorov-Arnold-Moser theory
+\item Aubry-Mather theory
+\end{itemize}
+Maybe the word I am missing is ``tractable".  There are always dynamical systems, very few I can say anything intelligent about. \\ \\
+Here's maybe a way to get realistic nilsequences:
+\begin{itemize}
+\item I want to show that Gaussian primes (in $\mathbb{Z}[i]$) are rotationally symmetric
+\item I will find a modular form and show that since the horocycle flow is mixing,
+we can obtain a really good estimate of the coefficients.  
+\item the error terms to equidistribution (or mixing) will have some faint noise that never goes away.
+\end{itemize}
+There are lots and lots of modular forms, and lots of instances of the horocycle flow, but I knew of a limited few exmples where the Ratner theory matches up with a Diophantine Equation. 
+\vfill
+
+\begin{thebibliography}{}
+
+\item Etienne Ghys \textbf{R\'{e}sonances et petits diviseurs}, Colloque ``Fourier", Auxerre 2002, publi\'{e} dans la deuxi\`{e}me \'{e}dition de ``L'h\'{e}ritage de Kolmogorov", Belin. Traduction anglaise dans ``Kolmogorov's heritage in mathematics", 187-213, Springer, Berlin, 2007.  \\ \\
+\texttt{http://perso.ens-lyon.fr/ghys/articles/resonancesmall.pdf}
+\texttt{http://perso.ens-lyon.fr/ghys/articles/resonancesdiviseurs.pdf}
+
+
+\end{thebibliography}
+
+\end{thebibliography}
+
 \end{document}
