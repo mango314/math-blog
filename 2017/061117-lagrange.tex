@@ -17,6 +17,8 @@
 \newcommand{\green}{\begin{tikz}[scale=0.25]
 \draw[fill=green, color=green] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
 
+\newcommand{\sq}[3]{\draw[#3] (#1,#2)--(#1+1,#2)--(#1+1,#2+1)--(#1,#2+1)--cycle;}
+
 \usepackage{tikz}
 
 \newcommand{\susy}{{\bf Q}}
@@ -70,9 +72,94 @@ We don't really know what is happending between the values of $x = 0$ and $x = 1
 \draw (0,0)--(18,0);
 \draw (0,-0.125)--(18,-0.125);
 \end{tikzpicture} \\ \\
-\textbf{NEXT} more constraint problems.  Maybe in two dimensions.
+\textbf{NEXT} more constraint problems.  Maybe in two dimensions. \\ \\
+There are lots of good textbook discussions of Lagrange interpolation, the example I had in mind was the Prime Number Theorem, where the common-sense interolation seems to fail.\footnote{We could be in the other situation, where everybody is in the field and three's no theory.}  \\ \\
+I wonder if it's possible to write a function which is positive in some parts and negative in the other.  Here's a picture.  It's actually really hard to write a good pattern without going up to $4 \times 4$.   \\ \\
+\begin{tikzpicture}
+
+
+
+\begin{scope}[xshift=5cm]
+\sq{0}{0}{fill=black!80!white};
+\sq{1}{0}{};
+\sq{2}{0}{};
+\sq{3}{0}{fill=black!80!white};
+\sq{0}{1}{};
+\sq{1}{1}{fill=black!80!white};
+\sq{2}{1}{};
+\sq{3}{1}{};
+\sq{0}{2}{};
+\sq{1}{2}{};
+\sq{2}{2}{fill=black!80!white};
+\sq{3}{2}{};
+\sq{0}{3}{fill=black!80!white};
+\sq{1}{3}{};
+\sq{2}{3}{};
+\sq{3}{3}{fill=black!80!white};
+\end{scope}
+
+
+\end{tikzpicture} \\
+Can we define a function which is positive on the black square and negative on the white squares? \textbf{Yes} we have to be more specific:
+\begin{itemize}
+\item monomials $\{ x^m \, y^n : m, n \in \mathbb{N} \}$
+\item trig functions $\{ \sin m x \, \sin n y : m, n \in \mathbb{Z}  \}$ 
+\end{itemize}  
+The second one is more likely, but we can find algebraic curves whose level sets have exactly the contraints we specify (at a cost). \\ \\
+My knowledge of 2D interpolation is slim to none and I have to ask around.  So even though PNT\footnote{Prime Number Theorem} is much more difficult, we might proceed first there. \\ \\
+Lastly of my outline of examples: \textbf{find a circle that passes through three points}.  Thanks to Decartes, we know a circle has equation like this:
+$$ (x - h)^2 + (y- k)^2 = r^2$$
+However we may never exactly know what the triples $(h,k,r)$ could be.  In my work, I have to do transformations on the circles, and for each transformation I make, I keep losing accuracy.  Settle for:
+$$ (x^2 + y^2) + a\,x + b\,y + c = 0 $$
+There are three equations (and three unknowns) so if I add a 4th point, this system will be overdetermined:
+$$ \left|
+\begin{array}{cllc}
+x^2 + y^2 & x & y & 1 \\ \\
+x_1^2 + y_1^2 & x_1 & y_1 & 1 \\ \\
+x_2^2 + y_2^2 & x_2 & y_2 & 1 \\ \\
+x_3^2 + y_3^2 & x_3 & y_3 & 1 \end{array} \right| = 0 $$
+It is possible to determine the circle this way.  Let's pick three points: $(0,0),(1,0),(1,1)$ and find the center and radius:
+$$ 0 = \left|
+\begin{array}{cllc}
+x^2 + y^2 & x & y & 1 \\ 
+0^2 + 0^2 & 0 & 0 & 1 \\ 
+1^2 + 0^2 & 1 & 0 & 1 \\ 
+1^2 + 1^2 & 1 & 1 & 1 \end{array} \right| =
+\left|
+\begin{array}{cll}
+x^2 + y^2 & x & y  \\ 
+1^2 + 0^2 & 1 & 0  \\ 
+1^2 + 1^2 & 1 & 1  \end{array} \right| =
+\left|
+\begin{array}{cll}
+x^2 + y^2 & x & y  \\ 
+1 & 1 & 0  \\ 
+1 & 0 & 1  \end{array} \right| =
+ =(x^2 + y^2) \times 1 - x \times 1  - y \times 1$$
+The equation is $x^2 - x + y^2 - y= (x - \frac{1}{2})^2 + (y - \frac{1}{2})^2 - \frac{1}{2}= 0$ so the center is $(x,y,) = (\frac{1}{2},\frac{1}{2})$ and the radius is $r = \frac{1}{\sqrt{2}}$. \\ \\
+More difficult is to observe if we map this circle under an \textbf{inversion} the image is still a circle, whose center and radius is less clear:
+$$ z \mapsto  - \frac{1}{\overline{z}} \text{ or } (x,y) \mapsto
+ \left( \frac{-x}{x^2 + y^2 }, \frac{y}{x^2 + y^2 } \right)  $$
+ some proofs are more convincing than others.  Our goal would be to find the radius and center more efficiently. \\ \\
+ In the modern day, since we have computers, we might try to \textbf{learn} the center and radius by trial and error.  And we can see how to do that.
 
 \newpage  
+
+\begin{tikzpicture}
+
+\foreach \a in {0,0.5,...,3}{
+\draw[color=black!50!white] (0,\a)--(3,\a);
+\draw[color=black!50!white] (\a,0)--(\a,3);
+}
+
+
+\draw[fill=black] (0,0) circle (0.1);
+\draw[fill=black] (1,0) circle (0.1);
+\draw[fill=black] (1,1) circle (0.1);
+
+\draw[] (0.5,0.5) circle (0.707);
+
+\end{tikzpicture}
 
 \begin{thebibliography}{}
 
