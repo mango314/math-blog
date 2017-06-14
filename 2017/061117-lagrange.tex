@@ -159,12 +159,59 @@ $$ z \mapsto  - \frac{1}{\overline{z}} \text{ or } (x,y) \mapsto
 
 \draw[] (0.5,0.5) circle (0.707);
 
-\end{tikzpicture}
+\end{tikzpicture} \\ 
+To solve the inversion problem very efficiently: we can use the ``cross product".  This \textit{used} to be taught in older geometry textbooks.  I found the older discussions are more interesting.  Here's a book one way from Morley \& Morley's textbook \textbf{Inversive Geometry} from 1933. \\ \\
+$$  \frac{(x_1 - x_2)(x_3 - x_4)}{(x_1 - x_3)(x_2 - x_4)} = 
+\frac{\big( f(x_1) - f(x_2) \big) \big( f(x_3) - f(x_4) \big) }{
+\big( f(x_1) - f(x_3) \big) \big( f(x_2) - f(x_4) \big) }
+ $$
+After playing with formulas many many times (a process of centuries) geometers realized this number is preserved under hyperbolic transformations.  One case is obvious $f: x \mapsto x+1$
+$$  \frac{( x_1 - x_2)(x_3 - x_4)}{(x_1 - x_3)(x_2 - x_4)} = 
+ \frac{ \Big(  (x_1 + 1) - (x_2 + 1)\Big) \Big( (x_3 + 1) - (x_4 + 1) \Big) }{  \Big(  (x_1 + 1) - (x_3 + 1)\Big) \Big( (x_2 + 1) - (x_4 + 1) \Big)  } = \frac{( x_1 - x_2)(x_3 - x_4)}{(x_1 - x_3)(x_2 - x_4)} = 
+ $$
+Absolutely nothing has happened.  On the other hand if we do the inversion: $g: x \mapsto - \frac{1}{x}$
+$$  \frac{( x_1 - x_2)(x_3 - x_4)}{(x_1 - x_3)(x_2 - x_4)} = 
+ \frac
+{ \Big(  - \frac{1}{x_1} + \frac{1}{x_2} \Big)\Big(  - \frac{1}{x_3} + \frac{1}{x_4} \Big)  } { \Big(  - \frac{1}{x_1} + \frac{1}{x_3} \Big)\Big(  - \frac{1}{x_2} + \frac{1}{x_4} \Big)  }
+=  
+ \frac
+{   \frac{x_1 - x_2}{x_1 x_2} \;\;\; \frac{x_3 - x_4}{x_3 x_4}  }
+{   \frac{x_1 - x_3}{x_2 x_4} \;\;\; \frac{x_2 - x_4}{x_2 x_4} }
+= 
+ \frac{( x_1 - x_2)(x_3 - x_4)}{(x_1 - x_3)(x_2 - x_4)}$$
+We need formulas like this because if I run inversion my computer directly, the spacing between the dots on the circle grow more and more uneven.  We can even compute how uneven the circles are getting using some calculus $f(z_0+dz) = f(z_0) + f'(z_0) \, dz$ with $f(z) = - \frac{1}{z}$. \\ 
+\includegraphics[width=4in]{inversion-01.png} \\
+Notice how I started with a perfect circle and turned it into a straight line. 
+
+\newpage
+
+\noindent Around the year 2000 a group of people figured out a lot about circle inversions (stuff going back to Rene Descarts in the 1600's) but when I ran it on my own computer, the images turned out very bad.  I'll try to reproduce the bad one\dots 
 
 \begin{thebibliography}{}
 
-\item \dots 
+\item R.L. Graham, J.C. Lagarias, C.L. Mallows, A.R. Wilks, C.H. Yan \\
+ \textbf{Apollonian Circle Packings: Number Theory} \texttt{arXiv:math/0009113}
+ 
+\item R.L. Graham, J.C. Lagarias, C.L. Mallows, A.R. Wilks, C.H. Yan \\
+\textbf{Apollonian Circle Packings: Geometry and Group Theory I. The Apollonian Group}
+ \texttt{arXiv:math/0010298} 
+
+\item R.L. Graham, J.C. Lagarias, C.L. Mallows, A.R. Wilks, C.H. Yan \\
+\textbf{Apollonian Circle Packings: Geometry and Group Theory II. Super-Apollonian Group and Integral Packings}
+\texttt{arXiv:math/0010302}
+
+
+\item R.L. Graham, J.C. Lagarias, C.L. Mallows, A.R. Wilks, C.H. Yan \\
+\textbf{Apollonian Circle Packings: Geometry and Group Theory III. Higher Dimensions}
+\texttt{arXiv:math/0010324} 
+
+\item \texttt{arXiv:math/0101066} 
+\textbf{Beyond the Descartes circle theorem}
+Jeffrey C. Lagarias, Colin L. Mallows, Allan R. Wilks
 
 \end{thebibliography}
+
+\includegraphics[width=5in]{inversion-02.png} \\ 
+(from Wikipedia)
 
 \end{document}
