@@ -1,0 +1,65 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+\newcommand{\red}{\begin{tikz}[scale=0.25]
+\draw[fill=red, color=red] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\blue}{\begin{tikz}[scale=0.25]
+\draw[fill=blue, color=blue] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\green}{\begin{tikz}[scale=0.25]
+\draw[fill=green, color=green] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+
+\newcommand{\sq}[3]{\draw[#3] (#1,#2)--(#1+1,#2)--(#1+1,#2+1)--(#1,#2+1)--cycle;}
+
+\usepackage{tikz}
+
+\newcommand{\susy}{{\bf Q}}
+\newcommand{\RV}{{\text{R}_\text{V}}}
+
+\title{Worksheet: Exotic Number Systems}
+\author{John D Mangual}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{12.5}{15}\selectfont
+
+\maketitle
+
+\noindent Something truly exotic challenges your norms a little bit\dots makes one feel uneasy. \\ \\
+The goal of this project is to study new numbers and number-like things.  We only try a small fraction of the ideas available. And there's no guarantee this will work. \\ \\
+Our decimal system is intimately related to the multiplication by ten shift map $\times 10$ we can envision a number as a sequence of decimal digits (kind of like a factory)
+$$ \pi = 3. \to  1 \to 4 \to 1 \to 5 \to 9 \to \dots $$
+Each digit is connected to the last by one either by multplying by ten or shifting by 1:
+\begin{itemize}
+\item $T: x \mapsto (10 \times x ) \pmod 1 $  with  $x \in \mathbb{R}$\\ 
+\item $T: (x_0, x_1, x_2, \dots ) \mapsto (x_1, x_2, x_3, \dots ) $ with $x \in \{0,1\}^\mathbb{N}$
+\end{itemize}
+This framework kind of forgets that $\mathbb{R}$ is a ring $(\mathbb{R}, + , \times)$ or even a group $(\mathbb{R}, +)$.  Regardless of our choice of $T$ we can say that rings are isomorphic. Yet, in reality we must make a choice of $T$, and it can have nothing to do with the decimal system.
+$$ (x_0, x_1, x_2, \dots ) \oplus (y_0, y_1, y_2, \dots ) = \;? $$
+Our goal is to explain the different ways $\mathbb{R}$ could be partitioned and try to achieve an analogue of addition with carries.  Some partitions are more ordinary, others are more unique. 
+
+\vfill 
+
+\begin{thebibliography}{}
+
+\item Michael Baake, Natalie Frank , Uwe Grimm , E. Arthur Robinson 
+\textbf{Geometric properties of a binary non-Pisot inflation and absence of absolutely continuous diffraction} \texttt{arXiv:1706.03976} 
+
+\item Roy L. Adler.  \textbf{Symbolic dynamics and Markov partitions}
+
+Bull. Amer. Math. Soc. 35 (1998), 1-56 
+
+\item Carlos Matheus \textbf{New Numbers in M-L}\\ \texttt{https://matheuscmss.wordpress.com/2017/04/05/new-numbers-in-m-l/}
+
+\end{thebibliography}
+
+
+\end{document}
