@@ -5,6 +5,8 @@
 \usepackage{xcolor}
 \usepackage{graphicx}
 
+\usepackage{wrapfig}
+
 \newcommand{\off}[1]{}
 \DeclareMathSizes{20}{30}{20}{18}
 
@@ -93,6 +95,46 @@ We are way ahead, because we know the result is true, but we don't know how much
 
 \end{thebibliography}
 
+\newpage
 
+\noindent \textbf{6/15}
+
+\begin{quotation}{ \color{black!90!white}
+\noindent ``\textbf{Homogeneous sets and measures} Number theoretical problems often relate to orbits of subgroups (periods) and so can be attacked
+by dynamical methods\dots \\
+
+Let~$X=\Gamma\backslash G$ be a homogeneous space defined by a lattice~$\Gamma<G$
+in a locally compact group~$G$. Note that any subgroup~$H<G$ acts naturally
+by right multiplication on~$X$, sending~$h\in H$ to the map~$x\in X\mapsto xh^{-1}$. 
+We will refer to~$H$ as the acting subgroup.  \\ 
+
+A {\em homogeneous (probability) measure} on $X$ is, by definition, a probability measure $\mu$ that is supported
+on a single closed orbit $Y=\Gamma g H_Y$ of its stabilizer $H_Y=\mathrm{Stab}(\mu)$. 
+A {\em homogeneous set} is the support of some homogeneous probability measure." }
+\end{quotation}
+Especially Akshay\dots the stuff he writes looks advanced.  It is very advanced, however there's always some reciprocity with material you might have learned in the very beginning (i.e. undergrad, or early graduate school). \\ \\
+In a sense, you're being asked to turn away.  The paper says every good number theory problem can be turned into a dynamical systems problem:\\
+\begin{center}
+\begin{tikzpicture}
+\node at (0,0) {Number Theory};
+\draw[<->] (2,0)--(5,0);
+\node at (7.5,0) {Dynamical Systems};
+\end{tikzpicture}
+\end{center}
+If you read number theory literature on \texttt{arXiv}, there are a few places where dynamical systems are being mentioned, and many places where it's not being mentioned. \\\\
+This example may be too old-fashioned, but it's the one I am familiar with.  Maybe it's not what they had in mind? \\
+\begin{wrapfigure}{l}{0.5\linewidth}\includegraphics[width=3.5in]{primes-01.png} 
+\end{wrapfigure}
+
+\noindent Here I plotted all the solutions to $p = a^2 + b^2$ where $p = 4k+1$ is prime number.  With some effort we can show there infinitely many primes both of the $p =4k+1$ kind and also $p = 4k+3$.  The primes of the for $p = 4k+3$ cannot be written as the sum of two squares. \\ \\
+I have plotted the as $(a,b)$ and also $(b,a)$ and we need to consider the signs, $(\pm a,\pm b)$ , so that the plot as been divided into octants. 
+$$  \{ (a,b) : p = a^2 + b^2 \text{ and } p < N \} \times \big( \mathbb{Z}/2\mathbb{Z}\big)^3 $$
+A nice artifact of this plotting strategy is an emergent circular symmetry.  Yet, the primes in $\mathbb{Z}[i]$ do not form a circularly symmetric set\footnote{The symmetry itself has to be corrected by a small error term.} \\ \\
+ 
+\vspace{-24pt}
+
+\noindent This problem is slightly out of date, but it was news to me.  The proof in the textbook involves L-functions and twisted by the variou ways of assigning a value to a prime number $P_{\mathbb{Z}[i]} \to \mathbb{C}$.  \\ \\ 
+The proofs did not really emphasize symmetry in any way. Certainly it did not use dynamical systems or any kind of homogeneous flow.  It makes me think that maybe if I could find a good modular form, I could prove this ``Gaussian prime number theorem" in a very geometric way. \\ \\
+Given Akshay's paper, maybe there's an even bigger result of thes same kind.   My only complaint is they don't really prove anything too tangible.  Instead, they outline a general strategy that should work in all cases. 
 
 \end{document}
