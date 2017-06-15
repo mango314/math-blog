@@ -46,6 +46,28 @@ This framework kind of forgets that $\mathbb{R}$ is a ring $(\mathbb{R}, + , \ti
 $$ (x_0, x_1, x_2, \dots ) \oplus (y_0, y_1, y_2, \dots ) = \;? $$
 Our goal is to explain the different ways $\mathbb{R}$ could be partitioned and try to achieve an analogue of addition with carries.  Some partitions are more ordinary, others are more unique. 
 
+\newpage
+
+\noindent \textbf{6/15} I have a lot on my mind.  I saw a discussion on the internet that made me re-think all the proofs I could think of about the irrationality of $\sqrt{2}$.  Wikipedia suggested that descent proofs like this one:
+$$ p^2 = 2q^2 \to p \equiv 0 \pmod 2 \to p = 2r \to (2r)^2 = 2q^2 \to q^2 = 2r^2  $$
+are examples of Galois cohomology.  Is that true? Textbooks other than Wikipedia use another example:
+$$ p = a^2 + b^2 \quad\text{ iff}\quad p = 4k+1 $$
+Unfortunately, none of these textbooks explain how to simplify the machinery or to build it from scratch.   I even went as far as to ask the very authors of the textbooks themselves, and they didn't know, they didn't care; they have bigger fish to fry. \\ \\
+They really do.  I do not.  \\ \\
+This is how I learn and teach: agonizing over the basics attaching names to everything. Their theory is failing my textcase, and these days I'd rather believe my own experience than 100 experts.\\ \\
+Intermediate between elementary number theory.  Is the theory of \textbf{heights}.  On the set of pairs fractions or pairs of integers we could assign a number:
+$$ \bigg[ \frac{p}{q} \in \mathbb{Q} \bigg] \leftrightarrow  \bigg[ [p:q] \in \mathbb{Q}P^1 \bigg] \mapsto |p|+|q| \in \mathbb{Z} \subset \mathbb{R} $$
+The map $(p,q) \mapsto (q,r)$ leads to an infinite decreasing sequence of heights with values in $\mathbb{Z}_{\geq 0}$ which is impossible.  \\ \\
+Then we find out height are related to \textbf{torsors} which are then related to a cohomology of some kind.  I am scared there will be other examples of instances of heights that are not so trivial, and I will be unable. \\ \\
+There are textbooks on Galois Cohomology written by smart guys like JP Serre who give outlines, but in a way we're on our own.  Even the cohomology theory we could build ourselves. \\ \\
+Why such a complicated thing?  I could total envision an arithmetic where our fractions:
+$$ \bigg[ \frac{p}{q} \in \mathbb{Q} \bigg] $$
+Our replaced with some other complicated figment of our imagination, which may also prove to be a useful arithemtic concept.  Our goal is to solve the equation:
+$$  \bigg\{  x^2 - 2y^2 = 0 \bigg\} \stackrel{?}{=} [\varnothing ]\subseteq \mathbb{Q}^2  $$
+How can this equation be nothing it is the union of two lines.  Clearly I can re-write this as:
+$$ x^2 - 2y^2 = (x-\sqrt{2}y) ( x + \sqrt{2}y) = 0 \text{ therefore } \Big[ x-\sqrt{2}y = 0\Big] \text{ or }
+\Big[ x+\sqrt{2}y = 0 \Big] $$
+Is this OK?  And if not, there are 28 other proofs I can find on the internet\footnote{\texttt{http://www.cut-the-knot.org/proofs/sq\_{}root.shtml}}
 \vfill 
 
 \begin{thebibliography}{}
