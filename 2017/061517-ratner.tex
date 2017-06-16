@@ -1,6 +1,6 @@
 \documentclass[12pt]{article}
 %Gummi|065|=)
-\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{amsmath, amsfonts, amssymb, amsfonts}
 \usepackage[margin=0.5in]{geometry}
 \usepackage{xcolor}
 \usepackage{graphicx}
@@ -13,6 +13,7 @@
 \newcommand{\two }{\sqrt[3]{2}}
 \newcommand{\four}{\sqrt[3]{4}}
 \newcommand{\red}{\begin{tikz}[scale=0.25]
+\newtheorem{thm}[subsection]{Theorem}
 \draw[fill=red, color=red] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
 \newcommand{\blue}{\begin{tikz}[scale=0.25]
 \draw[fill=blue, color=blue] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
@@ -135,6 +136,59 @@ A nice artifact of this plotting strategy is an emergent circular symmetry.  Yet
 
 \noindent This problem is slightly out of date, but it was news to me.  The proof in the textbook involves L-functions and twisted by the variou ways of assigning a value to a prime number $P_{\mathbb{Z}[i]} \to \mathbb{C}$.  \\ \\ 
 The proofs did not really emphasize symmetry in any way. Certainly it did not use dynamical systems or any kind of homogeneous flow.  It makes me think that maybe if I could find a good modular form, I could prove this ``Gaussian prime number theorem" in a very geometric way. \\ \\
-Given Akshay's paper, maybe there's an even bigger result of thes same kind.   My only complaint is they don't really prove anything too tangible.  Instead, they outline a general strategy that should work in all cases. 
+Given Akshay's paper, maybe there's an even bigger result of the same kind.   My only complaint is they don't really prove anything too tangible.  Instead, they outline a general strategy that should work in all cases.  \\ \\
+\textbf{6/16} 
+\begin{quotation}
+
+Ratner's celebrated measure classification theorem\dots ``linearization techniques"
+imply in the case where $G$
+is a real Lie group that, given a sequence of homogeneous probability measures
+$\{\mu_i\}$ with the property that $H_i=\mathrm{Stab}(\mu_i)$ contain ``enough'' unipotents,
+any weak$^*$ limit of $\{\mu_i\}$ is also homogeneous, where often
+the stabilizer of the weak$^*$ limit has bigger dimension than $H_i$ for 
+every $i$. \\ \\
+These theorems have found many applications in number theory, but are (in most cases) ineffective. \\ \\
+Our aim in this paper is  to present one instance
+of an adelic result which is entirely quantitative in terms of the ``volume" of the orbits, 
+and is in many cases not accessible, even in a non-quantitative form, by the measure classification theorem and linearization techniques.
+A special case of this result
+will recover ``property $(\tau)$'' (but with weaker exponents) from the theory of automorphic forms.
+\end{quotation}
+We are still reading the intro -- there's a lot being said here and a lot not being said.
+\begin{itemize}
+\item What was \textbf{Ratner's Theorem}?  I know it is used in one of my favorite problems, the Oppenheim Conjecture. 
+\item There's a tiny bit of chaos theory, sincwe we talk about the \textbf{dimension} of of the orbit of the stabilizer.  Some of Ratner's theorems sound a bit tautological, that the the orbit has a shape with an integer dimension.  
+\item What are they calling \textbf{volume}?  I think I have good geometric intuition and can understand many aspects of volume, so what are they calling volume in the space of adeles $\mathbb{A}$.
+\item There's a bit of a sales-pitch.  This new theorem is so great, it's \textit{even better} than Ratner theorem (which is too diffficult anyway) so maybe their result could even be a simplification of previous results. 
+\end{itemize}
+There is also a shortage of examples.  I have been reluctant to write on this because I don't know enough Number Theory to really pick a group action or automorphic form.  When I read it seems like there's more but when I write I can only think of one or two.  The paper itself only gives one example about the spinor genus of quadratic forms.
+
+\newpage
+
+\noindent Their new theorem is rather enticing I will include their entire phrasing including some jargon:
+
+\begin{quotation}\noindent \textbf{Theorem} [Equidistribution of adelic periods] \\\\
+Let $Y_\mathcal{D}$ be a \textbf{\color{blue}{maximal algebraic semisimple homogeneous set}}
+arising from $D=(\mathbf{H},\iota,g)$.
+Furthermore, assume that $\mathbf{H}$ is simply connected.
+Then
+$$\left| \int_{Y_D}
+ f \mu_D- \pi^+ f(y)\right| \ll  \mathrm{vol}(Y_D)^{-\kappa}
+S(f)\quad\text{ for all } f \in C^{\infty}_c(X),$$
+where $y\in Y_D$ is arbitrary, $S( f)$ denotes a certain adelic Sobolev norm,
+and $\kappa$ is a positive constant which depends only on $[F:\mathbb{Q}]$ and 
+$\dim \mathbb{G}$.\end{quotation}
+At first glance, this result look really good.  As volume gets big, the difference is getting smaller and smaller.  There is a problem:
+\begin{itemize}
+\item what is a ``maximal algebraic semisimple homogeneous" (MASH) set?
+\item what volume is getting bigger and bigger?  and compared to what?
+\item do we have any idea of the value of $\kappa$? 
+\item I barely know what a Sobolev norm is over $\mathbb{R}$ we are being askedd to define it over adeles.
+\item $C_c^\infty(X)$ is compactly supported, ``smooth" functions over $X$.  What on earth does that mean over our space $X$?
+\item For a given problem that I am intersted in, can we find the appropriate $G$ and $H$ ?
+\end{itemize}
+This is a disaster: we have no idea what they are talking about.  It sounded promising in the beginning, but maybe I have no idea how to use this framework.  Arguably, the shape of the theore is familiar and that's about it. \\ \\
+However, they do give us a framework and some kind of assurance there is something like Ratner theory in the adelic setting and that it should yield an answer.\footnote{Many projects yield no answer at all\dots} \\ \\
+\textbf{Long-story-short} when I take off my glasses and poke and prod, the general shape of these theorems feels extremely familiar but if I look too closely the techniques look very foreign and forbidding.  The ones we'd have to deliver upon.
 
 \end{document}
