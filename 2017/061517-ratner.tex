@@ -191,4 +191,67 @@ This is a disaster: we have no idea what they are talking about.  It sounded pro
 However, they do give us a framework and some kind of assurance there is something like Ratner theory in the adelic setting and that it should yield an answer.\footnote{Many projects yield no answer at all\dots} \\ \\
 \textbf{Long-story-short} when I take off my glasses and poke and prod, the general shape of these theorems feels extremely familiar but if I look too closely the techniques look very foreign and forbidding.  The ones we'd have to deliver upon.
 
+\newpage
+
+\noindent \textbf{6/17} We have exciting equidistribution results available, but there's a lot of disclaimer.  Most of their paper will be useful and we're doing a lot of the work ourselves.  And we don't have any guarantee that our problem will exactly fit Margulis' framework. \\ \\
+Here is the strategy they have outlined for us:
+\begin{quotation}
+The dynamical argument uses {\color{red!50!yellow}unipotent flows} 
+(but we note that one could also give an argument using the mixing property). 
+Assuming that the volume is large, we find by a {\color{blue}pigeon-hole principle}
+nearby points that have equidistributing orbits. Using {\color{purple}polynomial divergence} of the unipotent flow we obtain almost invariance under a transverse direction. By {\color{green}maximality} and {\color{green}spectral gap} on the ambient space we conclude the equidistribution.
+\end{quotation}
+If we need inspiration, the 4 authors have a complete discussion, or we can try to supply the details ourselves and make a comparison.  Everytime they say something abstractly, I am inclined to fill out the details.  I think that's how this paper can be read.  \\ \\
+\textbf{Pigonhole principle} which I leared in 9th grade or Junior High School says that if you have more objects than spaces, the two of the must occupy the same space. 
+\begin{itemize}
+\item There are 400 people in a room.  Two of them have the same birthday.  \\ \\ Proof: there are 365 days i a year $<$ 400 people, so if each of 365 people had a different birthday, there are still 35 people left 
+\item An softer computation show that if there are only 30 people in the room, two of them are \textit{very likely} to have the same birthday.
+$$ \mathbb{P} \big( \textbf{no collision} \big) = \frac{365}{365} \times \frac{364}{365} \times \frac{363}{365} \times \dots \times \frac{365-30}{365} = \prod_{k=0}^{30} \left( 1 - \frac{k}{365}\right) 
+< \prod_{k=0}^{30} e^{\frac{k}{365}} =  \exp \Big[ \frac{1}{365}\binom{30}{2} \Big] \approx \frac{1}{3}$$
+The odds of two people in a room having the same birthday are \textbf{2:1} in gambling terms.
+\end{itemize}
+Next my image of a \textbf{unipotent flow} is the shearing of a rhombus: \\ \\
+\begin{tikzpicture}
+
+\begin{scope}
+\draw (0,0)--(2,0)--(2,1)--(0,1)--cycle;
+\end{scope}
+
+\node at (3.5,0.5) {$x \mapsto x+1$};
+\draw[->] (3,0.25)--(4,0.25);
+
+\begin{scope}[xshift=5cm]
+\draw (0,0)--(2,0)--(3,1)--(1,1)--cycle;
+\end{scope}
+
+\node at (8.5,0.5) {$=$};
+
+\begin{scope}[xshift=9cm]
+\draw[dotted] (0,0)--(2,0)--(3,1)--(1,1)--cycle;
+\draw (0,0)--(2,0)--(2,1)--(0,1)--cycle;
+\end{scope}
+
+\end{tikzpicture} \\ 
+Maybe, in Akshay and Amir's paper, the rhombus flow is happeing in a much more abstract setting over a 3-manifold $M$ or over the adel\'{e}s, $\mathbb{A}$. \\ \\
+The one I understand less is \textbf{polyomial divergence}.  If I'm not mistaken one example comes out of arithmetic:
+$$  1 + 2 + 3 + 4 + \dots = - \frac{1}{12}$$
+which happeds because we have tried to reguarlize this sum; the left side which has no values and we're forced to assign it a number:
+$$  1 \times e^{-\epsilon}+  2 \times e^{-2\epsilon} + 3 \times e^{-3\epsilon} + 4 \times e^{-4\epsilon} + \dots =  \epsilon^2 - \frac{1}{12} + O(\epsilon^2)$$
+As for \textbf{maximality} I am not sure what it means;  I have no guarantee the unipotent orbit I choose will be maximal.
+
+\newpage
+
+\noindent The \textbf{spectral gap} is expressed rather succictly like this.  I don't know what this split means:
+$$ L^2(X,\text{Vol}_G)=L^2_0(X,\text{Vol}_G)\oplus L^2(X,\text{Vol}_G)^{\mathbf{G}(\mathbb{A})^+} $$
+and mixing is also going to be expressed in the language of Hilbert spaces as well:
+$$ 
+\Big|\int_{X\times X}
+ f \, d\mu_{X_g} 
+ -\int_{X\times X} f_1\otimes\bar f_2 \; d\text{Vol}_{G\times G}\Big|
+ =\Big|\langle \pi_gf_1, f_2\rangle_X-
+ \int_X f_1\operatorname{d}\!\text{Vol}_G\int_X\bar f_2\operatorname{d}\!\text{Vol}_G\Big|\ll 
+ \|g\|^{-\kappa}\text{Sob}(f) $$
+The problem is\dots all of this is so extremely speculative, it hardly makes any sense to continue.  Some parts look more familiar, and other parts I am less sure about.
+
+
 \end{document}
