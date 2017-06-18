@@ -68,6 +68,110 @@ How can this equation be nothing it is the union of two lines.  Clearly I can re
 $$ x^2 - 2y^2 = (x-\sqrt{2}y) ( x + \sqrt{2}y) = 0 \text{ therefore } \Big[ x-\sqrt{2}y = 0\Big] \text{ or }
 \Big[ x+\sqrt{2}y = 0 \Big] $$
 Is this OK?  And if not, there are 28 other proofs I can find on the internet\footnote{\texttt{http://www.cut-the-knot.org/proofs/sq\_{}root.shtml}}
+
+\newpage
+
+\noindent \textbf{6/19} The best way I can think of to run through the ``higher algebra" content of irrationality proofs is to do one. \\ \\
+cut-the-knot.com Proof \#8 involves patchwork of square.  Literally $x^2 = 2y^2$ looks like this:
+\begin{tikzpicture}
+\draw(0,0)--(4,0)--(4,4)--(0,4)--cycle;
+
+\begin{scope}[xshift=6cm]
+\draw[fill=blue!50!white] (0,0)--(2.818,0)--(2.818,2.818)--(0,2.818)--cycle;
+\end{scope}
+
+\begin{scope}[xshift=11cm]
+
+\draw[fill=yellow!50!white] (4-2.818,4-2.818)--(4-2.818+ 2.818,4-2.828)--(4-2.818+ 2.818,4)--(4-2.818,4)--cycle;
+\draw[dotted, line width = 2] (0,0)--(2.818,0)--(2.818,2.818)--(0,2.818)--cycle;
+\end{scope}
+
+\node at (10,2) {$+$};
+\node at (5,2) {$=$};
+\end{tikzpicture} \\ 
+Literally, these squares can be considered the second homology of the plane, $H_2(\mathbb{R}^2)$. \\
+If we superimpose the three squares as shown: \\ \\
+\begin{tikzpicture}
+\draw(0,0)--(4,0)--(4,4)--(0,4)--cycle;
+
+\draw[fill=yellow!50!white] (4-2.818,4-2.818)--(4,4-2.828)--(4,4)--(4-2.818,4)--cycle;
+\draw[fill=blue!50!white] (0,0)--(2.818,0)--(2.818,2.818)--(0,2.818)--cycle;
+\draw (0,0)--(2.818,0)--(2.818,2.818)--(0,2.818)--cycle;
+
+\draw (4-2.818,4-2.818)--(4,4-2.828)--(4,4)--(4-2.818,4)--cycle;
+
+\draw[fill=green!50!blue!50!white] (4-2.818,4-2.818)--(2.818,4-2.818)--(2.818, 2.818)--(4-2.818,2.818)--cycle;
+
+
+\begin{scope}[xshift=7cm]
+
+\draw(0,0)--(4,0)--(4,4)--(0,4)--cycle;
+
+\draw[fill=yellow!50!white] (2.818,0)--(4,0)--(4,4-2.818)--(2.818,4-2.818)--cycle;
+
+\draw[fill=blue!50!white] (0,2.818)--(4-2.818,2.818)--(4-2.818,4)--(0,4)--cycle;
+
+\draw (0,0)--(2.818,0)--(2.818,2.818)--(0,2.818)--cycle;
+
+\draw (4-2.818,4-2.818)--(4,4-2.828)--(4,4)--(4-2.818,4)--cycle;
+
+\draw[fill=green!50!blue!50!white] (4-2.818,4-2.818)--(2.818,4-2.818)--(2.818, 2.818)--(4-2.818,2.818)--cycle;
+
+\end{scope}
+
+\node at (5,2) {$=$};
+
+\end{tikzpicture} \\ \\ 
+By the \textbf{Carpets Theorem} (stated without proof), the area of the blue and yellow squares totals to the area of the green square.  The blue and yellow squares have the same area. \\
+\begin{tikzpicture}
+\draw[fill=green!50!blue!50!white](0,0)--( 4*2 - 4*1.414,0)--( 4*2 - 4*1.414,4*2 - 4*1.414)--( 0,4*2 - 4*1.414)--cycle;
+
+\begin{scope}[xshift=4cm, yshift=0.5cm]
+\draw[fill=yellow!50!white] (0,0)--(4-2.818,0)--(4-2.818,4-2.818)--(0,4-2.818)--cycle;
+\end{scope}
+
+\begin{scope}[xshift=7cm, yshift=0.5cm]
+\draw[fill=blue!50!white] (0,0)--(4-2.818,0)--(4-2.818,4-2.818)--(0,4-2.818)--cycle;
+\end{scope}
+
+\node at (6,1) {$+$};
+\node at (3,1) {$=$};
+\end{tikzpicture} \\ 
+We continue to overthink the situation:
+\begin{itemize}
+\item $
+\text{Area} (\begin{tikz}\draw(0,0)--(10pt,0)--(10pt,10pt)--(0,10pt)--cycle;\end{tikz} )
+- \Big( \text{Area}( \begin{tikz}\draw[fill=yellow!50!white](0,0)--(10pt,0)--(10pt,10pt)--(0,10pt)--cycle;\end{tikz})
++ \text{Area}(\begin{tikz}\draw[fill=blue!50!white](0,0)--(10pt,0)--(10pt,10pt)--(0,10pt)--cycle;\end{tikz}) \Big) - \text{Area}(\begin{tikz}\draw[fill=blue!50!green!50!white](0,0)--(10pt,0)--(10pt,10pt)--(0,10pt)--cycle;\end{tikz})  = 0 $ the \textbf{inclusion-exclusion} principle
+\item $
+\text{Area}( \begin{tikz}\draw[fill=yellow!50!white](0,0)--(10pt,0)--(10pt,10pt)--(0,10pt)--cycle;\end{tikz})
+= \;\;\text{Area}(\begin{tikz}\draw[fill=blue!50!white](0,0)--(10pt,0)--(10pt,10pt)--(0,10pt)--cycle;\end{tikz}) $ \hspace{2.11in} symmetry
+\end{itemize}
+If you know a little bit of programming you might try to understand the area-conservation statement here.\footnote{\texttt{http://www.cut-the-knot.org/Curriculum/Geometry/CarpetsInSquare.shtml}} In my case, I prefer the programmig language \textsc{\textbf{Elm}}.  Obviously you are welcome to use anything you like. \\ \\
+If we tried to write this purely in terms of Algebra:
+$$ X \otimes X = A \otimes A + B \otimes B  $$
+The only other parameter I can think of is the amount of intersection of $\square_A \cap \square_B$:
+$$  X = A + B - C $$
+If I pursue this and try to take the tensor product:
+\begin{eqnarray*} X \otimes X &=& (A + B - C) \otimes (A + B - C) \\  
+&=& A \otimes A + B \otimes B + C \otimes C \\
+&+& \big( A \otimes B + B \otimes A\big)
+- \big( B \otimes C + C \otimes B\big)
+- \big( C \otimes A + A \otimes C\big) \end{eqnarray*}
+Judging from the diagrams I can write another set of areas:
+\begin{eqnarray*}
+0 &=& (-1)(X-A) \otimes (X-A) + (-1)(X-B) \otimes (X-B) +
+\Big( 2\,X - (A+B) \Big)\otimes \Big(2\,X - (A+B)\Big) \end{eqnarray*}
+Not totally sure right now.  The carpets theorem enable to turn one diagram into the other:
+$$ A \mapsto X - A \hspace{0.5in} B \mapsto X-B 
+\hspace{0.5in} C \mapsto (X-A+X-B)-X$$
+and the statements about areas in one equations, turn into the second equation.  These could be statemets in $\mathbb{H}_2 (\mathbb{R})$.  The implication is something like:
+$$ \bigg[ \;\; X^2 = A^2 + B^2 \;\; \bigg] \to \Bigg[\;\; (X-A)^2 + (X-B)^2 = (2X - A - B)^2 \;\; \Bigg] $$
+In fact, these are not equal.  These two are off by a certain amount:
+$$ 2 \,\big( X^2 - AX - BX + AB \big) = 2 \,(X-A)\,(X-B) $$
+One issue, is the small blue and yellow have equal area.  In our algebra we'd need $A = B$.  Or maybe they're not quite the same, but as segments in the plane: $ A \simeq B \in H_1(\mathbb{R}^2$). \\ \\
+These ideas need lots of refining, but \textbf{Euclidean geometry} = (trivial) \textbf{Homology of the Euclidean Plane}.  And there is non-trivial homology as well.
+
 \vfill 
 
 \begin{thebibliography}{}
