@@ -172,6 +172,60 @@ $$ 2 \,\big( X^2 - AX - BX + AB \big) = 2 \,(X-A)\,(X-B) $$
 One issue, is the small blue and yellow have equal area.  In our algebra we'd need $A = B$.  Or maybe they're not quite the same, but as segments in the plane: $ A \simeq B \in H_1(\mathbb{R}^2$). \\ \\
 These ideas need lots of refining, but \textbf{Euclidean geometry} = (trivial) \textbf{Homology of the Euclidean Plane}.  And there is non-trivial homology as well.
 
+\newpage
+
+\noindent \textbf{6/20} We move into uncharted. Territory.  Carlos and I have had exchanges online, but I don't know him or anything.  They seem to be really good at Dynamics in Brazil.  \\ \\
+Dynamics here $\neq$ Dynamics on Homogenous spaces; \\ \\
+These could be iterations of polynomials, or evolutions of differential equations.  Bifurcations and more. \\ \\
+One of his latest blogs he reviews the \textbf{Markov spectrum} and \textbf{Lagrange spectrum}.   If we rewind to 2009, he has already reviewed what they are.\footnote{\texttt{https://matheuscmss.wordpress.com/2009/07/30/gugus-theorem-on-the-markov-and-lagrange-spectrum/}} Lagrange's Theorem says:
+$$ \Big| \Big\{ \frac{p}{q}:  \big|  \alpha - \frac{p}{q} \big| < \frac{1}{q^2} \Big\} \Big| = \infty $$
+This inequality seems OK. \\ \\
+In my mind, I always thought all fractions were kind of the same.  If we write them with decials they look very even:
+$$ 0.0 < 0.1 < 0.2 < 0.3 < \textbf{0.31} < \textbf{0.32} < \textbf{0.33} < \dots < 
+\textbf{0.39} < 0.4 < 0.5 < 0.6 < 0.7 < 0.8 < 0.9 < 1.0 $$
+If we look at fractions by denominator, the spread is telling a very different story:
+$$  0 < \frac{1}{5} < \frac{1}{4} <   \frac{1}{3} < \frac{2}{5} <  \frac{1}{2} < \frac{3}{5} < \frac{2}{3}  < \frac{3}{4} <  \frac{4}{5} < 1  $$
+There are lots of approximations to irrational numbers that are particularly fast.  One can solve:
+$$ \Big|  \alpha - \frac{p}{q} \Big| < \frac{1}{q^2}  $$
+but we can do even better by a factor of $\sqrt{5}$ for any $\alpha$. Then it stops. 
+$$ \Big|  \alpha - \frac{p}{q} \Big| <  \;\frac{1}{\sqrt{5}}\;\frac{1}{q^2}  $$
+The next bext constant I believe is $2 \sqrt{2}$.  There exist irrational numbers such that:
+$$\Big|  \alpha - \frac{p}{q} \Big| <  \;\frac{1}{2\sqrt{2}}\;\frac{1}{q^2}  $$
+and the next best number after that is $\sqrt{221}/5$.  And there are infinitely many of those\dots \\ \\
+There is a whole Lagrange spectrum:
+$$ k (\alpha) := \sup \bigg\{ k > 0 : \Big| \alpha - \frac{p}{q} \Big| < \frac{1}{k \, q^2}  \bigg\} \hspace{0.25in}\text{and}\hspace{0.25in} L = \big\{ k(\alpha): \alpha \in \mathbb{R} - \mathbb{Q}, k(\alpha) < \infty \big\}  $$
+This definition is rather complicated, and as we move further along the Lagrange spectrum, these numbers are getting rather weird or specific.
+
+\newpage
+
+\noindent Carlos Matheus is really smart guy.  I can already tell\dots  he's going to tell us about the Lagrange spectrum but not necessarily the numbers that exhibit them. We know that: 
+$$ \mu \big( \alpha \in \mathbb{R} : k(\alpha) = \infty \big) = 1 $$
+This is a hard formula to interpret.  For basically \textbf{all} numbers we can get really good continued fraction approximations.  The Lagrange spectrum measures the exceptions.  And it has a weird, not-totally-understood shape.\\ \\
+We're not going to fully comprehend it either.  Instead, there will be room for us to do action. Can  you name an $\alpha \in \mathbb{R}$ such that:
+$$ \# \bigg\{ \frac{p}{q} \in \mathbb{Q} : \Big|  \alpha - \frac{p}{q} \Big| <  \;\frac{1}{2\sqrt{2}}\;\frac{1}{q^2} \bigg\} \stackrel{?}{=} \infty $$
+He will reason about a lot of Cantor sets, that I would like to draw.  He won't. A priori, this may not the best approach.  \\ \\
+I am a little bit nervious that $[6, +\infty) \subset L$.  This is basically the whole real number line to the right of 6 is part of Lagrange spectrum.  We know all there are a bunch of dots to the left of 3.   \\ \\
+\begin{tikzpicture}
+
+\draw (0,0)--(10,0);
+\foreach \a in {0,...,10}{
+	\draw (\a,-0.1)--(\a,0.1);
+	\node at (\a,0.5) {\a};	
+}
+
+\draw[fill=black] (6,0) circle (0.1);
+\draw[line width = 2, ->] (6,0)--(10.5,0);
+
+\draw[fill=black] (2.236,0) circle (0.05);
+\draw[fill=black] (2.828,0) circle (0.05);
+\draw[fill=black] (2.973,0) circle (0.05);
+
+\draw[line width = 5, , opacity=0.5, color=green!50!blue] (3,0)--(6,0);
+
+\node at (4.5,-0.5) {???};
+\end{tikzpicture} \\ 
+In between 3 and 6 we know absolutely nothing.  Carlos' friend Gugu will show us a thing or two about these exotic numbers.
+
 \vfill 
 
 \begin{thebibliography}{}
