@@ -88,12 +88,12 @@ $$ \lim_{\xi \to 0} \xi \sum_{n=1}^\infty  \Lambda(n) \, \frac{d}{d(n\xi)} \left
 or if we want to be ``precise"
 $$ \xi \sum_{n=1}^\infty \Lambda(n) \,  \frac{d}{d(n\xi)} \left( \frac{ n \xi \, e^{-n\xi}}{e^{-n\xi}-1} \right) = 1 + O(\xi \log \xi) $$
 This is the M\"{o}bius inversion of the formulas on the previous page.
-$$N_1(x) = ``g(x)"  = \frac{d}{dx} \left( \frac{  x }{ 1 - e^x} \right)
+$$N_1(u) = ``g(u)"  = \frac{d}{du} \left( \frac{  u }{ 1 - e^u} \right)
 = \left\{ \begin{array}{ll}
-O(1) & x \to 0 \\
-O(xe^{-x}) & x \to \infty
+O(1) & u \to 0 \\
+O(ue^{-u}) & u \to \infty
  \end{array} \right.$$
-This ``kernel" function is behaving one way for small umbers $x \ll 1$ and one way for large number $x \gg 1$.  This is not the magical part anyway. \\ \\
+This ``kernel" function is behaving one way for small numbers $x \ll 1$ and one way for large number $x \gg 1$.  This is not the magical part anyway. \\ \\
 Somehow:
 $$ \Bigg[ \xi \sum_{n=1}^\infty \Lambda(n) \,  \frac{d}{d(n\xi)} \left( \frac{ n \xi \, e^{-n\xi}}{e^{-n\xi}-1} \right) = 1 + O(\xi \log \xi) \Bigg]
 \to \Bigg[ \xi \sum_{n=1}^{1/\xi} \Lambda(n)  = 1 + O_?(\xi) \Bigg] $$
@@ -116,6 +116,45 @@ We're in the early 21st century and a lot as changed.  And it's a little bit dan
 
 \newpage
 
-\noindent 
+\noindent That went by really fast.  Maybe later I can review to, very similar instances.  \\ \\
+I was trying to show that Gaussian primes -- in the ring $\mathbb{Z}[i]$ are (almost) rotationally symmetric.  Here is the picture of that: \\
+\includegraphics{primes-01.png} \\
+Number in $\mathbb{Z}[i]$ can factor that do not factor in $\mathbb{Z}$.  For example, $5$ is prime but
+$$  5 = (2+i)(2-i)$$
+and we know that all primes $p = 4k+1$ factor.  Lookup a large prime number and try again:
+$$ 7109 = 70 \times 70 + 47 \times 47 = \big( 70 + 47\,i \big)\big( 70 - 47\,i \big) $$
+When I asked online\footnote{\texttt{https://mathoverflow.net/questions/133410/hecke-equidistribution}} (someone else asked) I was referred to graduate-level textbook \textbf{Algebraic Number Theory} by Serge Lang.  It's really dull and I didn't learn much. \\ \\
+The Tauberian Theorem used is so severe, it's almost meaningless. Let $\phi$ be a function of ``bounded variation".
+$$ f(s) = \int_0^\infty e^{-sx} \, d\phi(x) $$
+This doesn't look like a Dirichlet series, but we can set:
+$$ \phi(x) =  \sum_{n \leq x} a_n \, n^{-s} \hspace{0.25in}\text{then}\hspace{0.25in} f(s) = \sum_{n \leq x} a_n e^{-nx} n^{-s} $$
+We look for cases when $f(s)$ converges for $\mathrm{Re}(s) > 1$.  All Dirichlet series look convergent to me.  Hopefully $f(s) < \infty$ -- is this too much to ask for?
+
+\newpage
+
+\noindent We asked everything behave good for numbers to the right of a certain line, $z = s + it $ with $s > 1$.  Then we ask for some good (relatively OK)  behavior at $s = 1+\epsilon + it $:
+$$ h_\epsilon(t) = f(s) - \frac{1}{s-1}  $$
+The statement of the Tauberian theorem looks really tautological (doesn't say anything):
+$$ \Bigg[ \lim_{\epsilon \to 0} \Big( f(1 + \epsilon + it) - \frac{1}{\epsilon + it}\Big) = f(1 + it) - \frac{1}{ it}  \Bigg] \to \Bigg[ \lim_{x \to \infty } e^{-x} \phi (x) = 1 \Bigg] $$
+I am almost willing to use complex analysis at this point.  Especially since I was concerned about points in $\mathbb{Z}[i]$. \\ \\
+\textbf{This Dirichlet series has bounded variation.} Doesn't sound like very much Number Theory. So I backtracked to this obscure textbook on Laplace transforms, and got the softer proof in the previous section. \\ \\
+These statements look very different and we're being told they have the structure:
+\begin{itemize}
+\item as $p \to \infty$ among only $p = 4k+1$ prime numbers the angle $\theta = \tan^{-1}(b/a)$  with \\ $p = (a+bi)(a-bi) $ is evenly distributed in $\theta \in [0, 2\pi]$.
+\item the density of primes is $\# \text{( digits )}^{-1}$
+\end{itemize}
+These Tauberian theorems are very difficult and don't quantify in a nice way. However, they do give a window into regularization, which I like.  If we prove using Complex Analysis have we reguarlized in some way? \\ \\
+I can only remember a few of these issues at a time, but PNT starts off as a discussion of $\zeta(1)$ but we have used $\zeta(-1)$, possibly $\zeta(2)$ and $\zeta(0)$ in this process.  And I can see modern generalizations of that.
+ 
+\vfill
+
+\fontfamily{qag}\selectfont \fontsize{12}{15}\selectfont
+
+\begin{thebibliography}{}
+
+\item Serge Lang \textbf{Algebraic Number Theory} (Graduate Texts in Mathematics \#110 )  Springer, 1986.
+
+\end{thebibliography}
+
 
 \end{document}
