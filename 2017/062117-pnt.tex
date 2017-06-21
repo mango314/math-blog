@@ -1,0 +1,121 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+\newcommand{\red}{\begin{tikz}[scale=0.25]
+\draw[fill=red, color=red] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\blue}{\begin{tikz}[scale=0.25]
+\draw[fill=blue, color=blue] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\green}{\begin{tikz}[scale=0.25]
+\draw[fill=green, color=green] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+
+\newcommand{\sq}[3]{\draw[#3] (#1,#2)--(#1+1,#2)--(#1+1,#2+1)--(#1,#2+1)--cycle;}
+
+\usepackage{tikz}
+
+\newcommand{\susy}{{\bf Q}}
+\newcommand{\RV}{{\text{R}_\text{V}}}
+
+\title{Worksheet: Prime Number Theorem}
+\author{John D Mangual}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{12.5}{15}\selectfont
+
+\maketitle
+
+\noindent Studying the Prime Number Theorem was meant just to be a template of a much broader class.  In my opinion, the arguments are not very visual, or ``elementary".  Many people are making the point that ``elementary" proofs are more complicated then the Complex Analysis proof. \\ \\
+If I complain that way, and have received such a negative response, then I can argue in a visual elementary way, and the proof should new.  Since all PNT problems seem to be about the hardness, I could imagine two engines for a proof:
+\begin{itemize}
+\item Stirling's formula
+\item Horocycle flow
+\end{itemize}
+So far I haven't been able to give a complete answer.  Every day I'm learning a bit. \\ \\
+The argument's from the 1930's and 1940's all have a similar flavor.  Starting from Stirling's formula for $n!$.\\ \\
+\textbf{\#1} The first step of Norbert Weiner's argument looks like M\"{o}bius inversion, but possibly the lattice point counting on a hyperbola:
+$$ \sum_{m=0}^\infty (\log m) x^m = \sum_{n=1}^\infty \sum_{m=1}^\infty \Lambda(n) \, x^{-mn\, } =  \sum_{n= 0}^\infty \Lambda(n) \frac{x^n}{1 - x^n} $$
+If I evaluate at $x = 1$, the left side looks like logarithm of factorial:
+$$ \log \big(\infty  ! \,\big) = \sum_{m=0}^\infty \big( \log m \big) = \sum \Lambda(n) \, \frac{1}{0} $$
+Writing it this way would have been offensive to everyone at the time. We spend the rest understand the behavior at $x \approx 1$. This is my \textbf{regularization} approach to PNT.  I don't think anyone else thinks of it quite this way.  \\ \\
+I tried setting $x = 1 + \epsilon$.  This is has a few derived approximations:
+$$ x^m = (1 + \epsilon)^m = 1 + m \epsilon + \dots \hspace{0.25in}\text{and}\hspace{0.25in} \frac{x^n}{1 - x^n} =\frac{(1+ \epsilon)^n}{1 - (1+ \epsilon)^n}
+= \frac{1 + n \epsilon }{1 - (1 - n \epsilon)} = 1 + \frac{1}{n \epsilon} $$
+and if some small things get away, we can look at with a microsope and get more terms.
+$$ \sum_{m=0}^\infty (\log m) \big(1 + m \epsilon\big) = \sum_{n=1}^\infty \sum_{m=1}^\infty \Lambda(n) \, \big(1 + mn \epsilon \big)  =  \sum_{n= 0}^\infty \frac{\Lambda(n)}{n} \big( 1 + \frac{1}{n \epsilon}\big)$$
+Algebra always does more than we tell it to.  While this algebra is not correct, we can read it and know a little bit
+
+\newpage
+
+\noindent I do not like the way the next few lines were written so, I can do it over. It's not obvious at all to me that:
+$$ \sum_{m=1}^\infty \big(\log m \big) \frac{x^m - x^{m+1}}{1-x} \stackrel{??}{=} \frac{x}{1-x} \sum_{m=1}^\infty  \log \Big( 1 + \frac{1}{m}  \Big) \, x^m $$
+Norbert Weiner is suggesting there is an equality here.  There is also someting about M\"{o}bius transformations:
+$$ x \mapsto x + 1 \hspace{0.25in}\text{and}\hspace{0.25in} x \mapsto \frac{x}{1-x}
+\hspace{0.25in}\text{or}\hspace{0.25in}m \mapsto 1+\frac{1}{m}$$
+Issues like this are not commented on in the paper.  He had other things in mind.
+$$ \log \left( 1 + \frac{1}{m} \right)  - \frac{1}{m} = O \left(\frac{1}{m^2} \right) $$
+He needed to keep track of exactly how bad the approximation $\log(1 + m^{-1})\approx \frac{1}{m}$ could be:
+$$ \frac{x}{1-x}\sum_{m=1}^\infty \left[ \frac{1}{m} + O\left( \frac{1}{m^2}\right) \right] x^m  = 
+\frac{x}{1-x}\sum_{m=1}^\infty \left[ \frac{1}{m} \right] x^m 
++ 
+\underbrace{\frac{x}{1-x} \sum_{m=1}^\infty \left[ O\left( \frac{1}{m^2}\right) \right] x^m }_{??} $$
+We don't know how large the derivative could be... but before we do that, what have we been estimating? \\ \\
+\textbf{\#1 : crazy regularized factorial} 
+$$ (\infty!)(x) := \sum_{m=0}^\infty (\log m) x^m \;\approx\; \frac{x}{1-x}\sum_{m=1}^\infty \left[ \frac{1}{m} + O\left( \frac{1}{m^2}\right) \right] x^m  $$
+\textbf{\#2 : ( derivative of ) crazy regularized factorial}
+\begin{eqnarray*}  \xi \frac{d}{d\xi} \Big[ \xi \,(\infty!)(e^{-\xi}) \Big] 
+&=& \frac{\xi e^{-\xi} (1 - \xi - e^{-\xi} )}{(1 - e^{-\xi})^2} \left[ \log(1 - e^{-\xi}) -  \sum_{m=1}^\infty  O\left( \frac{1}{m^2} e^{-m \xi} \right) \right]  \\ \\ \\
+&+& \frac{\xi^2 e^{-\xi}}{1 - e^{-\xi}} \left[ \frac{e^{-\xi}}{1 - e^{-\xi}} + \sum_{m=1}^\infty
+O\left( \frac{1}{m} \right) e^{-m\xi}\right]   \end{eqnarray*}
+What does that mean\dots to take a derivative of a random series? Even if it's small? \\ \\
+In the end\dots since I don't really know what he's saying and nobody's really there to explain to me, no not much progress. \\ \\
+Everyone is busy.  I understand.  It can wait. \\ \\
+Norbert Weiner was the grandfather of random process theory -- the same collection of ideas we can use to study the weather or the stock market.  What's it doing here in Prime Number Theory, which I thought would be pretty regular? \\ \\
+Doesn't this look like the partition function from statistical thermodynamics?  I'm getting really skeptical.   \\ \\Yet we proceed\dots
+
+\newpage
+
+\noindent We've basically shown that:
+$$ \lim_{\xi \to 0} \xi \sum_{n=1}^\infty  \Lambda(n) \, \frac{d}{d(n\xi)} \left( \frac{ n \xi \, e^{-n\xi}}{e^{-n\xi}-1} \right) = 1$$
+or if we want to be ``precise"
+$$ \xi \sum_{n=1}^\infty \Lambda(n) \,  \frac{d}{d(n\xi)} \left( \frac{ n \xi \, e^{-n\xi}}{e^{-n\xi}-1} \right) = 1 + O(\xi \log \xi) $$
+This is the M\"{o}bius inversion of the formulas on the previous page.
+$$N_1(x) = ``g(x)"  = \frac{d}{dx} \left( \frac{  x }{ 1 - e^x} \right)
+= \left\{ \begin{array}{ll}
+O(1) & x \to 0 \\
+O(xe^{-x}) & x \to \infty
+ \end{array} \right.$$
+This ``kernel" function is behaving one way for small umbers $x \ll 1$ and one way for large number $x \gg 1$.  This is not the magical part anyway. \\ \\
+Somehow:
+$$ \Bigg[ \xi \sum_{n=1}^\infty \Lambda(n) \,  \frac{d}{d(n\xi)} \left( \frac{ n \xi \, e^{-n\xi}}{e^{-n\xi}-1} \right) = 1 + O(\xi \log \xi) \Bigg]
+\to \Bigg[ \xi \sum_{n=1}^{1/\xi} \Lambda(n)  = 1 + O_?(\xi) \Bigg] $$
+Turning the limit on the left into the limit on the right is where the bulk of the work remains.   \\ \\
+Whether we're done really depends on who you are:
+\begin{itemize}
+\item number theorists are very comfortable manupulating sum without a ``picture" of what's going on; that this discussion is ``done"
+\item a physicist would be satisfied stopping here without any Tauberian theorem.  And ``intepretaion" of this discussion could be nice? 
+\item Quantum Field Theory routinely uses divergent series of a kind that GH Hardy would have disapproved, even though he wrote an excellent book called \textbf{Divergent Series}.
+\item information theory? Did not exist until Claude Shannon in 1950.
+\item geometry?  The mixing of the horocycle flow wouldn't be studied until the 1970's or 1990's ?
+\end{itemize}
+We're in the early 21st century and a lot as changed.  And it's a little bit dangerous for me to get stuck on one problem.
+
+\begin{thebibliography}{}
+
+\item GH Hardy \textbf{Divergent Series}  Oxford University Press, 1949/1973.
+
+\end{thebibliography}
+
+\newpage
+
+\noindent 
+
+\end{document}
