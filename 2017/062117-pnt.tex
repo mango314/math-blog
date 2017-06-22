@@ -167,5 +167,56 @@ $$ f(x) =
 We can subtract off the main part and it looks like a jumprope.  The waves cut the axis in the same pattern as the Farey fractions, almost. \\
 \includegraphics[width=4in]{fourier-02.png} \\
 We could use high frequences. There is an artifct near the jump at $x \in \mathbb{Z}$ (any whole number).\\
-\includegraphics[width=4in]{fourier-03.png} \\
+\includegraphics[width=4in]{fourier-03.png} 
+
+\newpage 
+
+\fontfamily{qag}\selectfont \fontsize{12.5}{15}\selectfont
+
+\noindent In the middle of a rather difficult paper is a section titled: \boxed{\textbf{$\mathbf{\zeta}(-1)$ and the homology of $\mathrm{PGL}_2$}} \\ \\
+Understanding nothing else in the paper it really sparks my imagination because he is suggesting (and justifying) that we study: $\zeta_F(-1) $ for \textit{any} number field $F$.   The most famous case is just $F = \mathbb{Q}$ and the summation is over $\mathbb{Z}$.
+$$ \zeta(-1) = 1 + 2 + 3 + 4 + \dots = - \frac{1}{12} $$
+and we know the right side is correct because of \textbf{analytic continuation}.  If the left side gets regularized to another number, hopefully the writer has explained his choice.  For the style of problems I am interested in, after a long reflection, I had come up with something equivalent to analytic continuation. \\ \\
+We could try to write down $\zeta_F(-1)$ for another easy field like $F = \mathbb{Q}(i)$.  I call a field like this ``easy" because we have adjoined $i = \sqrt{-1}$ and there is still unique factorization and many nice things.  There's a \textbf{Dedekind zeta fuction} 
+$$ \zeta_{\mathbb{Q}(i)} (-1) = \sum_{a+bi \in \mathbb{Z}[i]_+} \frac{1}{(a^2+b^2)^{-1}} = \sum_{a \text{ or }b \,>\, 0} (a^2 + b^2) = 0 + 1 + 1 + 2 + 4 + 4 + 5 + 5+ \dots  $$
+It doesn't look how I expected.  If you write it the other way, with surds it has to do with $\zeta(-\frac{1}{2})$.
+$$ \zeta_{\mathbb{Q}(i)} (-\tfrac{1}{2}) = \sum_{a+bi \in \mathbb{Z}[i]_+} \frac{1}{(a^2+b^2)^{-\frac{1}{2}}} = \sum_{a \text{ or }b \,>\, 0} \sqrt{a^2 + b^2} = 0 + \sqrt{1}
++ \sqrt{1}
++ \sqrt{2} 
++ \sqrt{4}
++ \sqrt{4}  + \dots  $$
+This is another problem entirely.  We just want the first one with integers, but I am asking:
+$$ \zeta_F(-1) = \sum_{r \in \square + \square } r = \big\{ x^2 : x \in \mathbb{Z} \big\} +  \big\{ x^2 : x \in \mathbb{Z} \big\}  = \text{?} $$
+The actual statement of the theorem is irrelevant.  As long as someone is expressing interest. He mentions hyperbolic 3-manifolds:
+$$ Y_0(1) = \mathrm{PGL}_2(F)  \backslash  \mathbb{H}^3  $$
+I have removed the adelic parts, just to try to make sense of what these numbers might be
+\begin{eqnarray*}
+Y_0(1) &=& \mathrm{PGL}_2(F) \backslash \Big( \mathbb{H}^3 \times \mathrm{PGL}_2(\mathbb{A})_f / \mathrm{PGL}_2(\mathcal{O}_\mathbb{A}) \Big) \\
+Y_0(\mathfrak{p}) &=& \mathrm{PGL}_2(F) \backslash \Big( \mathbb{H}^3 \times 
+\mathrm{PGL}_2(\mathbb{A})_f / K_\mathfrak{p} \hspace{41pt} \Big) 
+\end{eqnarray*}
+We can reflect on the meaning of $\mathrm{PGL}_2(\mathbb{A})$ . The ring of integers of the adeles $\mathcal{O}_\mathbb{A}$ and the $K_\mathfrak{p}$ is some complicated assortment of upper triangular matrices, quaternions and $\mathrm{PGL}_2$'s. \\ \\
+Akshay, somewhat abrasively mixes several conjectures into one, but here I just say $\zeta_F(-1)$ is related to 
+$$ H_\ast \big( Y_0(1) , \mathbb{Z} \big) \simeq 
+H_\ast \big( \mathrm{PGL}_2(\mathcal{O}_F), \mathbb{Z} \big)  $$
+The left side is almost definely about modular forms, while the right is called ``group cohomology". 
+
+\newpage
+
+\noindent Lastly, we mention the {\color{green!50!blue}\textbf{Birch-Tate}} conjecture:
+$$ \# K_2(F) =  | N \, \zeta_F(-1) |  $$
+where this deals with $K$-theory over number fields.  And we look and look and look\dots
+
+\vfill
+
+
+
+\begin{thebibliography}{}
+
+\item J. T. Tate, \textbf{Symbols in Arithmetic}, Actes, Congr\'{e}s Intern. Math., Nice, 1970, Tome 1, Gauthier-Villars(1971), 201-211
+
+\item Frank Calegari, Akshay Venkatesh.  \textbf{A torsion Jacquet--Langlands correspondence} \texttt{arXiv:1212.3847}
+
+\end{thebibliography}
+
 \end{document}

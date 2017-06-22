@@ -40,3 +40,5 @@ and here is the solution. Usually when I do that, people start shooting the bree
 At the pace of about two notes every two weeks, I can put my finger into the
 literature current, but still keep it moving.  They're almost like real articles
 at this point I'm somewhat pleased.
+
+Videos: [Recent developments in Analytic Number Theory](http://www.msri.org/workshops/810)
