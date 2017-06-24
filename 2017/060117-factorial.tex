@@ -134,4 +134,98 @@ There is a growing list of papers that follow this paradigm it behooves us to le
 
 \end{thebibliography}
 
+\newpage
+
+\noindent \textbf{6/24} in Chapter 5 of Soul\'{e}'s \textbf{Lectures on Arakelov Geometry} is about $\mathbb{R}$. Zeta function regulariztion\footnote{Soul\'{e} writes this for Hermitian vector bundles $E$ and leaves us to generate examples.  In our case $E = (\mathbb{C}, dz)$ and $\Delta = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} $. His discussion could be generalized to ellitic operators.  No idea what those are.} is like this:
+$$\det (\Delta) = \det \Big( \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2}\Big) = \exp \big[ \zeta'(0) \big] = 1 \times 2 \times 3 \times 4 \times \dots = \sqrt{2\pi}  $$
+If physics is so varied, it makes no sense there should be just one instance of regularization fueling the entire literature.  Nature is more vast than Ramanujan was clever. \\ \\
+Math is also more varied.  Any time there is a zeta-function, there could be an L-function. \\ Do I know what the correct L-function is?  I have a few small examples that should be entertaining to examine, but come up short in the broader discussion of things.\footnote{any of the famous ``correspondences": Langlands, Eichler-Shimura, Rankin-Selberg, whatever\dots \\ Here is someone who tried: \texttt{http://web.math.princeton.edu/sarnak/Determinants\%20of\%20Laplacians.pdf} \\ 
+and item \# 6 if I google \textbf{determinant of laplacian} \texttt{https://www.youtube.com/watch?v=pknzQREI4Us} }  \\ \\
+One thing I dislike about modular forms theory is that you enter with one specific problem and return with 100 problems that are not exactly what you're looking for.  Let's briefly discuss the equivariant index theorem and call it a day. \\ \\
+Pestun's review opens up a bit strangely, discussing the cohomology of a single point in space.
+% \begin{tikz} \draw[fill=black] (0,0) circle (0.05); \end{tikz}
+$$ H^n (X) = \left\{
+\begin{array}{cc}
+\mathbb{R} & \text{if }n = 0\\ 
+0 &  \text{if }n \neq 0 
+\end{array}
+  \right.$$
+and he spends the rest of his review discussing \textbf{equivariant cohomology} written like: $H^{\begin{tikz} \draw[fill=black] (0,0) circle (0.05); \end{tikz}}_G(X)$ \\
+He even outlines the computation for us, in a practical way, in one sentence:
+$$
+H^{\begin{tikz} \draw[fill=black] (0,0) circle (0.05); \end{tikz}}_G( pt , \mathbb{R})
+ \simeq 
+ H^{\begin{tikz} \draw[fill=black] (0,0) circle (0.05); \end{tikz}}_G( BG , \mathbb{R})
+ \simeq 
+ \mathbb{R}[\mathfrak{\mathbf{g}}]^G 
+ \simeq  
+ \mathbb{R}[\mathfrak{\mathbf{t}}]^{W_G} 
+ $$
+ so if we wish, we can look at all of $G$ or only the Weyl group $W_G$ acting on the maximal torus. \\ \\
+ He does the same computation using Calculus:
+ $$
+ H^{\begin{tikz} \draw[fill=black] (0,0) circle (0.05); \end{tikz}}_G( X)
+ \simeq \mathrm{Kernel}\big[ d_G\big] / \mathrm{Image}\big[ d_G \big]
+ \hspace{0.25in}
+ \text{ and }\hspace{0.25in}
+ H^{\begin{tikz} \draw[fill=black] (0,0) circle (0.05); \end{tikz}}_G( pt)
+ \simeq \mathbb{R} \big[ \mathbf{\mathfrak{g}} \big]^G
+   $$
+where Calculus behaves like the derivative over $\mathbb{R}$ arranged in a special way:
+$$ \dots \stackrel{d_G}{\to} \Omega^n_G(X) \stackrel{d_G}{\to} \Omega^{n+1}_G(X) \stackrel{d_G}{\to} \dots $$
+this is called \textbf{equivariant de Rham cohomology} I think.  In our case $X = \mathbb{R}^2$ and $G = \{1\}$.
+$$  0 \stackrel{d}{\to}
+\langle 1 \rangle  \stackrel{d}{\to}
+ \langle dx, dy \rangle \stackrel{d}{\to} \langle dx \wedge dy \rangle  \stackrel{d}{\to} 0 
+ $$
+where $\langle \,\cdot \,\rangle$ should be read as $\mathbb{R}$-span and the derivative operator is just:
+$$ d = \frac{d}{dx} \, dx \,\wedge  + \frac{d}{dy} \, dy \,\wedge   $$
+If you look the factions literally cancel out; this is Isaac Newton's \textbf{chain rule}.
+
+\newpage
+
+\noindent \textbf{Exercise:} Let's locate the Wallis product in terms of Pestun's formulation\footnote{the framework is much older, I am crediting him for today}.  All of this discusssion ``should" work for infinite dimensions.   *chortle* Let $X = \mathbb{R}^\infty$ maybe $X = \mathbb{R}^\mathbb{Z} $ or $X = L^2(\mathbb{R})$. There is a cohomological field theory, just the free particle:
+$$  \int_{L^2(\mathbb{R})} dF \,  \exp \left[ \, \int dx\, dy \, |\nabla F|^2 \, \right] = \det \Delta  = \frac{1}{\sqrt{2\pi}} \, \Big(  1 \times 2 \times 3 \times \dots \Big) = 1$$
+and the standard computation carries through. \\ \\
+My concern here is that not all particle fields live in $L^2(\mathbb{R})$.  Built into the foundation is something patently false.  Especially, if we can't name a better function space, or identify and animal that lives outside, The standard procedure is to continue. \\ \\
+I could approximate $\Delta$ acting on $L^2(\mathbb{R})$ but that's ``infinite" so I will replace it with 
+\begin{itemize}
+\item $L^2( \begin{tikz} \draw (0,0) circle (4pt); \end{tikz} )$ \hspace{12pt} letting the radius $R$ to infinity.  
+\item $L^2( [0,1])$ letting the length $L$ to infinity.  
+\end{itemize}
+Is that really correct? The real number line has all sorts of crazy functions that might not fit on the circle:
+$$ L^2(\mathbb{R}) \not \simeq \lim_{ R \to \infty} L^2 \big( S^1 \big) $$ 
+Maybe, maybe not.  These days I am leaning towards not.  \\ \\
+On the circle, the exponents $e(m) = e^{2\pi i \; m t}$ the derivative operator is diagonal
+$$ \frac{d^2}{dx^2} \big[ e^{2\pi i m t}  \big]  =  m^2  \big( e^{2\pi i m t} \big) $$
+and these matrices are fairly well-behaved in other bases.  We could also have written:
+$$  \frac{d}{dx} \big[f \big] \approx \frac{f(x+ \Delta x) - f(x)}{\Delta x}$$
+and I am make the functional determinant of $\frac{d}{dx}$ look pretty darn ordinary:
+$$ \det f ``=" \det \left[ 
+\begin{array}{rrrrr}
+1 & -1 & 0 & 0 & 0  \\
+0 & 1 & -1 & 0 & 0  \\
+0 & 0 & 1 & -1 & 0  \\
+0 & 0 & 0 & 1 & -1  \\
+-1 & 0 & 0 & 0 & 1  \\ 
+\end{array}
+\right]  = 0 \neq 5! = 120$$
+If I do it right, the answer hopefully is the factorial.  This could be in Feynman's book on Path Integrals and Quantum Mechanics. \\ \\
+We'll try again later.
+
+\vfill
+
+\begin{thebibliography}{}
+
+\item Vasily Pestun + \textbf{Localization techniques in quantum field theories} \texttt{arXiv:1705.10623}
+
+\item Alexei Borodin, Ivan Corwin, Patrik L. Ferrari \textbf{Anisotropic (2+1)d growth and Gaussian limits of q-Whittaker processes} 
+\texttt{arXiv:1612.00321}
+
+\item Alexei Borodin, Michael Wheeler \textbf{Spin $q$-Whittaker polynomials} \texttt{arXiv:1701.06292}
+
+\item  C. Soul\'{e}, D. Abramovich, J. F. Burnol, J. K. Kramer. \textbf{Lectures on Arakelov Geometry } \\ (Cambridge Studies in Advanced Mathematics \#33)  Cambridge University Press, 1995.
+
+\end{thebibliography}
+
 \end{document}

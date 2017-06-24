@@ -1,0 +1,102 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+\newcommand{\red}{\begin{tikz}[scale=0.25]
+\draw[fill=red, color=red] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\blue}{\begin{tikz}[scale=0.25]
+\draw[fill=blue, color=blue] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\green}{\begin{tikz}[scale=0.25]
+\draw[fill=green, color=green] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+
+\newcommand{\sq}[3]{\draw[#3] (#1,#2)--(#1+1,#2)--(#1+1,#2+1)--(#1,#2+1)--cycle;}
+
+\usepackage{tikz}
+
+\newcommand{\susy}{{\bf Q}}
+\newcommand{\RV}{{\text{R}_\text{V}}}
+
+\title{Worksheet: Prime Number Theorem}
+\author{John D Mangual}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{12.5}{15}\selectfont
+
+\maketitle
+
+\noindent Divergent series have always been a very controversial topic and I remain somewhat closeted on the matter.  Hardy's textbook on the subject was published only once he was dead. \\ \\
+If I talk about divergent series from the point of view of ``regularization" in Physics, many people I have spoken to consider it mostly solved,  After which, we proceed to open up arXiv and 10 or 20 papers each day clumsily use Ramanujan summation, when maybe they a really meant somethig else.  \\ \\
+Therefore, even bringing up the topic is met with open hostility and ridicule.  So I remain on the DL on the  matter. \\ \\
+There are two books I really like that get us started:
+\begin{itemize}
+\item GH Hardy \textbf{Divergent Series}
+\item David Vernon Widder \textbf{The Laplace Transform}
+\item Don Zagier \textbf{Newman's Short Proof of the Prime Number Theorem}
+\item Stephen Hawking \textbf{Zeta function regularization of path integrals in curved spacetime}
+\end{itemize}
+Number theory could be a source of increasingly ill-behaved series.  There are others, such as pure Combinatorics, or Data Science which is super-trendy.  I have included a short commplex analysis proof (5 pages).\footnote{more complete: \texttt{https://terrytao.wordpress.com/category/teaching/254a-analytic-prime-number-theory/}}  \\ \\
+If you noticed my bibliography is rather dated.  The most recent being in the 1970's. \\ \\
+My idea is there are even newer ideas that contain and subsume the above.  For reasons that I are very very difficult to explain why I notice and feel this way.\footnote{Wikipedia getes you started, e.g. \texttt{https://en.wikipedia.org/wiki/Zeta\_{}function\_{}regularization}}  This is my blog and so I will waste my time here on such silly considerations. \\ \\
+GH Hardy points outs that sine waves at high frequences average to zero.  If you take the square, it's oscillating between $0$ and $1$.  So the average must be $1/2$.  Common sense?
+$$   \Bigg[ \epsilon \int_0^{1/\epsilon} \sin^2 mt \, dt =  \frac{1}{2} \Bigg]
+\to \Bigg[ \sin^2 mx \to \frac{1}{2} \;\; (C,1) \Bigg]  $$ 
+This is called the ``Cesaro average" but if you can't find an answer, and you're looking for the next best thing to do, this is the first thing that comes to mind.  \textbf{Taking the average.}
+
+\newpage
+
+\noindent 
+All the prime number theorem proofs rely at some critical point on a way to turn an integral or infinite series, back into information about prime number series.  And they always look completely obvious.  
+$$   \Bigg[ \sum a_n = s \Bigg]
+\to \Bigg[ \sum a_n x^n  = s \Bigg] \equiv \Bigg[ \sum a_n = s \;\;(A)\Bigg]   $$
+This is Abel's Theorem.  Here, please read $\equiv$ as ``the same as".  We are going down a slippery slip since we have written $=$ and $\to$ and $\equiv$ and there could be a few more\dots \\ \\ 
+Lot's of Analytic (or Prime) Number Theory as solutions motivated from trigonometric sums, but no longer with any clear interpretation as arrangements of circles or triangles. \\ \\
+ These limits will exhibit some truly pathological behavior.\footnote{Lots of these get past in front of our faces without too much question.  And there's not always real cause for anxiety.  In the majority of cases, what we may have proven, is that there really \textbf{isn't} any room for stuff to occur.  You look at it and that's what it is.}  Other's wont.  Perhaps Taylor's theorem forces us into this mess, initially:
+$$ f(x + t) = f(x) ) + t f'(x) + \frac{t^2}{2!} f''(x) + \dots = \sum_{k=0}^\infty \frac{t^n}{n!} f^{(n)}(x) $$ 
+If we wish, we could streamline the algebraic aspects into a single eq.  It neglects convergence:
+$$ f(x+t) = e^{t \, \frac{d}{dx}} f(x) = \Bigg[ \sum_{k=0}^\infty \frac{t^n}{n!} \frac{d^n}{dx^n}\Bigg] f(x)  $$
+by the middle of the 20th century, we understand what series like this could mean, but it's been around since the 17th century at or before Newton. At much of its usefulness remains unexplored. \\ \\
+These days, when ``data science" is trending, ``regularization" could mean: 
+\begin{itemize}
+\item de-noising of data / removing garbage
+\item making sense (assigning a finite number in a well-behaved way) to an infinite series
+\end{itemize}
+Maybe the garbage is the thing we wish to inspect; a careful removal of the main term. \\ \\
+I saw a type written paper where big-$O$ notation was written as big-$0$ notation:
+$$ 0 \to O $$
+In many computations, these series have all but disappeared, replaced with sections of schemes and line bundles.  But you still need equations to write these sections down. 
+$$ O(x) \leftarrow H_\ast(X) $$
+As completely speculative and bonkers as the equation I have written down, sadly it doesn't go far enough.  People like Deligne and Kashiwara have long beaten me to it. \\ \\
+A reasonable goal, is to run through Hardy's discussion of the Tauberian theorems of increasing sophistication, and maybe scratch the surface on why a homology theory might be lurking there after all.
+
+\vfill
+
+
+
+\begin{thebibliography}{}
+
+\item David Sauzin \textbf{Introduction to 1-summability and resurgence} \texttt{arXiv:1405.0356}
+
+\item J. T. Tate, \textbf{Symbols in Arithmetic}, Actes, Congr\'{e}s Intern. Math., Nice, 1970, Tome 1, Gauthier-Villars(1971), 201-211
+
+\item GH Hardy \textbf{Divergent Series}  Oxford University Press, 1949/1973.
+
+\item Frank Calegari, Akshay Venkatesh.  \textbf{A torsion Jacquet--Langlands correspondence} \texttt{arXiv:1212.3847}
+
+\end{thebibliography}
+\vspace{0.5in}
+
+\begin{quotation}
+\noindent "The introduction of the digit 0 or the group concept was general nonsense too, and mathematics was more or less stagnating for thousands of years because nobody was around to take such childish steps..." \\ \\
+-Alexander Grothendieck
+\end{quotation}
+
+\end{document}
