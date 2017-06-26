@@ -60,14 +60,17 @@ When procedure comes along that covers \textit{all} unipotent flows.  First of a
 and the algebra says the closure of a certain orbit is the entire group: $\overline{G_\mathbb{Z}H}= G$.  That's excellent.  What does that even mean? \\ \\
 Another similar statement $Q(H \mathbb{Z}^3) = Q(\mathbb{R}^3) $. (Yes, that's a 4th root of $2$) :
 $$ [Q] = \big[ x^2 + y^2 - \sqrt{2} \, z^2  \big] \leftrightarrow \left[\begin{array}{ccc}1 & & \\ & 1 & \\ & & -\sqrt[4]{2} \end{array} \right] $$
-The $H$ could literally be thought of a groups of substitutions.\footnote{There might even be a professional-soundeding name for it, like ``representation"} 
-$$ \Big[ (x + t \, z)^2 + y^2 - \sqrt{2} \, z^2  \Big] \leftrightarrow 
-\left[\begin{array}{ccc}1 & t & \\ & 1 & \\ & & 1 \end{array} \right]
+The $H$ could literally be thought of a group of substitutions.\footnote{There might even be a professional-soundeding name for it, like ``representation"} If $a_+^2 + b_+^2 = 1$ then:
+$$ \Big[ (a_+\, x + b_+ \, y)^2 + (-b_+\, x + a_+ \, y)^2 - \sqrt{2} \, z^2  \Big] \leftrightarrow 
+\left[\begin{array}{rcc}a_+ & b_+ & \\ -b_+ & a_+ & \\ & & 1 \end{array} \right]
 \left[\begin{array}{ccc}1 & & \\ & 1 & \\ & & -\sqrt[4]{2} \end{array} \right] $$
-and we need the other substitution:$$ \Big[ x^2 + (y + s\, z)^2 - \sqrt{2} \, z^2  \Big] \leftrightarrow 
-\left[\begin{array}{ccc}1 &  & \\ & 1 & s \\ & & 1 \end{array} \right]
+and we need the other substitution:
+If $a_-^2 -  \sqrt{2}\, b_-^2 = 1$ then:
+$$ \Big[ x^2 + \big( a_- \, y + \sqrt{2} \, b_-  \, z \big)^2 
+- \sqrt{2} \, \big( b_-  \, y+ a_- \ z \big)^2  \Big] \leftrightarrow 
+\left[\begin{array}{ccr}1 &  & \\ & a_- & \sqrt{2} \, b_-  \\ & b_- & a_- \end{array} \right]
 \left[\begin{array}{ccc}1 & & \\ & 1 & \\ & & -\sqrt[4]{2} \end{array} \right] $$
-and this is as far as I got on my previous attempts.  I think I'll go try something else.
+and hopefully the $\sqrt{2}$'s are correct. This is as far as I got on my previous attempts. \\ \\ I think I'll go try something else.
 \\ \\ \\
 Later\dots how do we solve Lagrange's 3 squares problem as a unipotent flow?
 $$  x^2 + y^2 + z^2 = n $$
