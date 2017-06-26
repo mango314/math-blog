@@ -1,0 +1,83 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+\newcommand{\red}{\begin{tikz}[scale=0.25]
+\draw[fill=red, color=red] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\blue}{\begin{tikz}[scale=0.25]
+\draw[fill=blue, color=blue] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\green}{\begin{tikz}[scale=0.25]
+\draw[fill=green, color=green] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+
+\usepackage{tikz}
+
+\newcommand{\susy}{{\bf Q}}
+\newcommand{\RV}{{\text{R}_\text{V}}}
+
+\title{Unipotent Flows}
+\author{John D Mangual}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{12.5}{15}\selectfont
+
+\maketitle
+
+\noindent I audited a course on homogeneous systems 
+\begin{itemize}
+\item Roth's Theorem
+\item Szemeredi Theorem
+\item Ratner Theorem
+\end{itemize}
+It was much too fast to absorb.  And, year later, I still have questions.  The teacher was brilliant and that may have been $\frac{1}{2}$ a design feature and $\frac{1}{2}$ my own curiosity.  \\ \\
+Now, when I read the actual papers I notice the material is much more complicated than he had shown us; that he had (rather calmly) manoeuvered around various technicalities in order to present the material to us.  Also, there are now textbooks covering many features. \\ \\
+In particular, I tried to understand the Oppenheim conjecture, as usual thinking it would be very simple to resolve.
+$$  \overline{ \Big\{  x^2 + y^2 - \sqrt{2} \, z^2 : (x,y,z) \in \mathbb{Z}^3 \Big\} } = \mathbb{R} $$
+My strategoy would have been to say here is $a \in \mathbb{R}$ and $\epsilon \ll 1$ and we'd like to find $(x,y,z)$ such that $q(x,y,z) \approx a$.
+$$ \Big| (x^2 + y^2 - \sqrt{2} \, z^2) - a \Big| < \epsilon  $$
+This is $\epsilon$-$\delta$ definition the way we might see in calculus class.  I have drawn the picture a few times.  Instead, the main step is to deform the equation itself:
+$$ $$
+The saying goes: \textbf{Algebra is generous: she often gives more than is asked for}; it is also hiding things from us as well.  Things that are quite complicated.\footnote{This is due to Jean d'Alembert (1717-1783) and I thought it was David Hilbert (1862-1943).}   This is also part of a common strategy in mathematics, to make the problem more severe and more terrifying, but we also see the big picture. \\ \\
+In this case, we know a few things that are going on:
+\begin{itemize}
+\item Lie groups over $\mathbb{Q}$ are more complicated than Lie groups over $\mathbb{R}$ (e.g. it's possible to take limits in $SO(3, \mathbb{Q})$ that go outside the group).
+\item ?? ( I forgot ) 
+\end{itemize}
+Cognitively, I see a blind spot \textit{among professors} about Ratner's theorem.  We treat it as a black box.  \textbf{By Ratner's Orbit-Closure Theorem the values of $Q$ are dense.} We have no idea inside, I have learned nothing. It makes asking for help very difficult. \\ \\
+When procedure comes along that covers \textit{all} unipotent flows.  First of all, we are going to Oppenheim conjucture into a single giant procedure that will absorb all equidistribution problems, including ones we haven't though of.  We need two pieces of information:
+\begin{itemize}
+\item $G = \mathrm{SL}(3,\mathbb{R})$
+\item $H = \mathrm{SO}(Q) \simeq \mathrm{SO}(1,2) \simeq \mathrm{PSL}(2, \mathbb{R})$
+\end{itemize}
+and the algebra says the closure of a certain orbit is the entire group: $\overline{G_\mathbb{Z}H}= G$.  That's excellent.  What does that even mean? \\ \\
+Another similar statement $Q(H \mathbb{Z}^3) = Q(\mathbb{R}^3) $. (Yes, that's a 4th root of $2$) :
+$$ [Q] = \big[ x^2 + y^2 - \sqrt{2} \, z^2  \big] \leftrightarrow \left[\begin{array}{ccc}1 & & \\ & 1 & \\ & & -\sqrt[4]{2} \end{array} \right] $$
+The $H$ could literally be thought of a groups of substitutions.\footnote{There might even be a professional-soundeding name for it, like ``representation"} 
+$$ \Big[ (x + t \, z)^2 + y^2 - \sqrt{2} \, z^2  \Big] \leftrightarrow 
+\left[\begin{array}{ccc}1 & t & \\ & 1 & \\ & & 1 \end{array} \right]
+\left[\begin{array}{ccc}1 & & \\ & 1 & \\ & & -\sqrt[4]{2} \end{array} \right] $$
+and we need the other substitution:$$ \Big[ x^2 + (y + s\, z)^2 - \sqrt{2} \, z^2  \Big] \leftrightarrow 
+\left[\begin{array}{ccc}1 &  & \\ & 1 & s \\ & & 1 \end{array} \right]
+\left[\begin{array}{ccc}1 & & \\ & 1 & \\ & & -\sqrt[4]{2} \end{array} \right] $$
+and this is as far as I got on my previous attempts.  I think I'll go try something else.
+\\ \\ \\
+Later\dots how do we solve Lagrange's 3 squares problem as a unipotent flow?
+$$  x^2 + y^2 + z^2 = n $$
+This equation is \textbf{positive-definite}.
+\vfill
+
+\begin{thebibliography}{}
+
+\item Dave Witte Morris \textbf{Introduction to Arithmetic Groups} \texttt{arXiv:math/0106063}
+
+\end{thebibliography}
+
+\end{document}
