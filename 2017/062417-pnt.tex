@@ -99,4 +99,40 @@ A reasonable goal, is to run through Hardy's discussion of the Tauberian theorem
 -Alexander Grothendieck
 \end{quotation}
 
+\newpage
+
+\noindent I was mostly shooting the breeze when I noticed the Prime Number Theorem was proven in Hardy's divergent series.  The narrative style of Hardy's book is difficut; the theorems are numbered for easy reference, but you are thinking like a computer. 
+$$ \Big[ s_n \to s\hspace{0.125in}(A) \Big] \to \Big[ s_n \to s\hspace{0.125in}(C,1) \Big]  $$
+Not very helpful.  He unpacks the definitions from the previous chapter:
+\begin{itemize}
+\item $ \sum a_n r^n \to s  $
+\item $ (1-r) \sum s_n r^n \to s  $ with $\displaystyle s_n = \sum^n a_k$
+\item $ y \sum s_n e^{-ny} \to s $ or $\frac{1}{x} \sum s_n e^{-n/x} \to s$
+\end{itemize} 
+The definition on the right is another infinite series $s_n \to s \hspace{0.125in} (C,1)$ means
+\begin{itemize}
+\item $\frac{1}{x} \sum_{n \leq x} s_n \to s $
+\end{itemize}
+The implication looks like:
+$$ \Bigg[ (1-r) \sum s_n r^n \to s \Bigg] \to \Bigg[ \frac{1}{x} \sum_{n \leq x} s_n \to s \Bigg]  $$
+or possibly, keeping the same goal and substituting $r = e^{n/x}$: 
+$$ \Bigg[ \frac{1}{x} \sum_{n=0}^\infty s_n e^{n/x} \to s \Bigg] \;\;\to \;\;\Bigg[ \frac{1}{x} \sum_{n \leq x} s_n \to s \Bigg]  $$
+and think about it.  $x \gg 1$ is a big number, therefore $\frac{1}{x} \approx 0$. \\ \\ Could we prove the Prime Number Theorem this way?  Hardy did.  Or Littlewood.  One of them.  Even though the van Mangoldt function is not a partial sum,\footnote{we'd have $a_n = \Lambda(n) - \Lambda(n-1) = \log p - \log q$ for random prime numbers $p,q$. } set $s_n = \Lambda(n) $.
+$$ \Bigg[ (1-r) \sum_{n=1}^\infty \Lambda(n) \; r^n \to 1 \Bigg] \to \Bigg[ \frac{1}{x} \sum_{n \leq x} \Lambda(n) \to 1 \Bigg]  $$
+and this is what he showed.  This is called \textbf{Karamata theorem} or \textbf{Hardy-Littlewood Tauberian Theorem} depending on which argument you use.  Except, $\Lambda(n) \neq O(1)$.  That'd be Hardy Theorem 92.
+$$ \Bigg[ \frac{1}{x} \sum_{n=1}^\infty \Lambda(n) \; e^{n/x} \to 1 \Bigg] \to \Bigg[ \frac{1}{x} \sum_{n \leq x} \Lambda(n) \to 1 \Bigg]  $$
+Hardy has Theorem 93, with $\Lambda(n) \geq 0$.  I forget how he gets around this.  Something easy.  Except, somehow we'd have to establish: 
+$$ \frac{1}{x} \sum_{n=1}^\infty \Lambda(n) \; e^{n/x} \to 1 $$
+It is true.  Hardy did it.  I don't know how to do it still.
+
+\newpage
+We know this can't be right, because there's a piece of information I haven't included yet. 
+$$ \zeta( 1 + it) \neq 0 $$
+and then it took me a long time to think, where did the \textbf{non-vanishing} of a number play such a cricial r\^{o}le.  It's just that we need to avoid a divide by zero.
+$$ \bigg[ d\log f(x) = \frac{f'(x)}{f(x)} \bigg] \to \bigg[ d \log \zeta(x) = \frac{\zeta'(x)}{\zeta(x)}\bigg]  $$
+If I write it with $f$ it looks like a calculus textbook.  Instead I write it with $\zeta$ it looks exotic.  We're sure $\zeta(z) \neq 0$ for $\mathrm{Re}(z) > \frac{1}{2}$ so we haven't used any of the information really availble to us.  However  $\zeta(1 + it) \neq 0$ is the bare minimum for ``proof". \\ \\
+Just as a reminder here's how it is proved in the divergent series book, using a different summation method:
+$$ \Bigg[ x\sum_{n=1}^\infty \Lambda(n) \left[ \frac{d}{d(nx)} \frac{nx e^{-nx}}{e^{-nx} - 1} \right]  \Bigg] \to \left[ x \sum_{n=1}^{\frac{1}{x}} \Lambda(n) = 1 \right] $$
+We know to prove the left side, very easily but the implication $\to$ is next to impossible. \\ \\
+None of these summation methods, look like ``regularization" or ``resummation", yet.  Just reminder to self.
 \end{document}
