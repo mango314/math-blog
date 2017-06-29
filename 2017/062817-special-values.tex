@@ -1,0 +1,58 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+\newcommand{\red}{\begin{tikz}[scale=0.25]
+\draw[fill=red, color=red] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\blue}{\begin{tikz}[scale=0.25]
+\draw[fill=blue, color=blue] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\green}{\begin{tikz}[scale=0.25]
+\draw[fill=green, color=green] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+
+\newcommand{\sq}[3]{\draw[#3] (#1,#2)--(#1+1,#2)--(#1+1,#2+1)--(#1,#2+1)--cycle;}
+
+\usepackage{tikz}
+
+\newcommand{\susy}{{\bf Q}}
+\newcommand{\RV}{{\text{R}_\text{V}}}
+
+\title{Worksheet: Evaluating $\zeta(2)$ by random walk}
+\author{John D Mangual}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{12.5}{15}\selectfont
+
+\maketitle
+
+\noindent There's an excellent review called ``Fifteen Proofs of $\zeta(2)$" which never fails to inspire me. Yet, I have to be somewhat exigent.  There's only so much we can get by close-reading a formula like this.  We can do it over and over, and a single formla can be read many ways.  \\ \\
+One rememedy is to go into the literature and find the undercurrents.  Where does the exact value of $\zeta(2)$ play a role?  Hardly ever. My instinct has always been to compute the value as accurately as possible.  Often, it doesn't even matter. \\ \\
+Taking the opposite position, $\zeta(2) = \frac{\pi^2}{6}$ is  very specialized.  By symmetry $s \leftrightarrow 1 - s$ it is also related to other special values such as the value at the origin $\zeta(0)$.   And gratuitously I examine values like $\zeta(-1)$ just because I like divergent series, and similarly $\zeta'(0)$. \\ \\
+The zeta-functions and L-functions I read about in the literature are not very explicit.  They simply do not have the ``ring" of the classical zeta function.  It could be that we do not understand the meaning of these L-series yet.  \\ \\
+\textbf{Problem \#1} how can special values of L-functions emerge from a noisy world? \\ \\
+I don't have an answer to Problem \#1.  Moving on, we read the review article of Bourgain + Fujita + Yor, connecting $\zeta(2n)$ and random processes, trying to expand on the parts that are too snappy.  There are Cauchy processes, planer Brownian motions and hitting times, and unfortunately they are too succinct. \\ \\
+Maybe we get lucky.
+ 
+\vfill
+
+\begin{thebibliography}{}
+
+\item Paul Bourgade, Takahiko Fujita, and Marc Yor. \textbf{Euler's formulae for $\zeta(2n)$ and products of Cauchy variables} Electronic Communications Probability
+Volume 12 (2007), 73-80. \\
+\texttt{https://projecteuclid.org/euclid.ecp/1465224952}
+
+\item Kentaro Ihara, Masanobu Kaneko and Don Zagier. \textbf{Derivation and double shuffle relations
+for multiple zeta values} Compositio Math. 142 (2006) 307-338 \\ 
+\texttt{http://people.mpim-bonn.mpg.de/zagier/files/doi/10.1112/S0010437X0500182X/fulltext.pdf}
+
+\end{thebibliography}
+
+\end{document}
