@@ -1,0 +1,53 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+\newcommand{\red}{\begin{tikz}[scale=0.25]
+\draw[fill=red, color=red] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\blue}{\begin{tikz}[scale=0.25]
+\draw[fill=blue, color=blue] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\green}{\begin{tikz}[scale=0.25]
+\draw[fill=green, color=green] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+
+\newcommand{\sq}[3]{\draw[#3] (#1,#2)--(#1+1,#2)--(#1+1,#2+1)--(#1,#2+1)--cycle;}
+
+\usepackage{tikz}
+
+\newcommand{\susy}{{\bf Q}}
+\newcommand{\RV}{{\text{R}_\text{V}}}
+
+\title{Worksheet: Evaluating $\zeta(2)$ by random walk}
+\author{John D Mangual}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{12.5}{15}\selectfont
+
+\maketitle
+
+\noindent I'd like to do a chops piece.  There is a lot of discussion of entanglement entropy and it's written in foreign language.  We just choose a point of contact and try it:
+$$ \langle \langle S | q^{\sum_{i=1}^N (L^i_0 + \overline{L}^i_0 - \frac{1}{12} ) }   | S \rangle \rangle = g^2 \, \Theta_\Lambda (2it) \, \big[\eta(2it) \big]^{-N} $$
+I don't know why they wrote a thing, or the meaning of certain symbols such as $| S \rangle\rangle$.   I have seen the symbol $L_0$ but I don't know quite what it's doing here.  $\Theta$ functions are very common place in math, but they are not the only modular forms in existence. \\ \\
+It's very very difficult to say what these people are writing about.  I write a similar proposal before and never did anything with it. \\ \\
+This is \textbf{Conformal Field Theory}.  Depending on who you ask, it is on solid or shaky foundation. We have this other buzzword that we like {\color{red!50!yellow!50!green}\textbf{Entanglement Entropy}}. \\ \\
+Let's say it one more time, ``Entanglement Entropy".  Feels good, don't it?
+
+
+ 
+\vfill
+
+\begin{thebibliography}{}
+
+\item Michael Gutperle, John D. Miller \textbf{Entanglement entropy at CFT junctions} \texttt{arXiv:1701.08856}
+
+\end{thebibliography}
+
+\end{document}
