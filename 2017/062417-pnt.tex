@@ -132,7 +132,33 @@ and then it took me a long time to think, where did the \textbf{non-vanishing} o
 $$ \bigg[ d\log f(x) = \frac{f'(x)}{f(x)} \bigg] \to \bigg[ d \log \zeta(x) = \frac{\zeta'(x)}{\zeta(x)}\bigg]  $$
 If I write it with $f$ it looks like a calculus textbook.  Instead I write it with $\zeta$ it looks exotic.  We're sure $\zeta(z) \neq 0$ for $\mathrm{Re}(z) > \frac{1}{2}$ so we haven't used any of the information really availble to us.  However  $\zeta(1 + it) \neq 0$ is the bare minimum for ``proof". \\ \\
 Just as a reminder here's how it is proved in the divergent series book, using a different summation method:
-$$ \Bigg[ x\sum_{n=1}^\infty \Lambda(n) \left[ \frac{d}{d(nx)} \frac{nx e^{-nx}}{e^{-nx} - 1} \right]  \Bigg] \to \left[ x \sum_{n=1}^{\frac{1}{x}} \Lambda(n) = 1 \right] $$
+$$ \Bigg[ x\sum_{n=1}^\infty \Lambda(n) \left[ \frac{d}{d(nx)} \frac{nx e^{-nx}}{e^{-nx} - 1} \right] = 1 \Bigg] \to \left[ x \sum_{n=1}^{\frac{1}{x}} \Lambda(n) = 1 \right] $$
 We know to prove the left side, very easily but the implication $\to$ is next to impossible. \\ \\
 None of these summation methods, look like ``regularization" or ``resummation", yet.  Just reminder to self.
+
+\newpage
+
+\noindent \textbf{7/01} How do we begin the somewhat terrifying descent towards the Wiener-Ikehara Tauberian theorem?  I suspect number theorists are correct that results of these kind are old-fashioned and too specialized. \\ \\
+So are we going to back to mindlessly manipulating sums? \\ \\
+Tauberian Theorems offer us a connection between number theory and regularization.  The Complex Analysis proof should as well.  Even that short 6-page proof by Newman (as discussed by Don Zagier).   \\ \\
+If I knew Real Analysis / Functional Analysis better maybe I could devise a broader .  Or at least, I could articulate better what makes these things so difficult. And finally, maybe it's time to expand our scope beyond the Prime Number Theorem? \\ \\
+My best guess is that Dirichlet series, while they can be politely written down as sequences of numbers, they will have very chaotic ``analytic properties" as functions of $\mathbb{C}$.  Therefore I was going to suggest we use {\color{red!70!yellow!80!green} splines}. \\ \\
+In my opinion why not stop there?  We can turn them into functions of $\mathbb{H}$ or $\mathrm{PSL}_2(\mathbb{R})$?  These maps will be functorial.  We could lift functions, we could lift maps we could lift everything, I think. \\ \\
+If $\zeta(\frac{1}{2} + it)$ is so badly chaotic, maybe the best we can do is take averages?  This is starting to sound like \textbf{ergodic theory}.  GH Hardy's treatment does not use ergodic theory, which was stll being developed.  By now the book is somewhat dated, it doesn't play by the rules but it is very forward-thinking.
+
+\vfill
+
+
+
+\begin{thebibliography}{}
+
+\item David Sauzin \textbf{Introduction to 1-summability and resurgence} \texttt{arXiv:1405.0356}
+
+\item J. T. Tate, \textbf{Symbols in Arithmetic}, Actes, Congr\'{e}s Intern. Math., Nice, 1970, Tome 1, Gauthier-Villars(1971), 201-211
+
+\item GH Hardy \textbf{Divergent Series}  Oxford University Press, 1949/1973.
+
+\item Theodore Rivlin \textbf{An Introduction to the Approximation of Functions}
+
+\end{thebibliography}
 \end{document}

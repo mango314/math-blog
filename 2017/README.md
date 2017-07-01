@@ -41,4 +41,15 @@ At the pace of about two notes every two weeks, I can put my finger into the
 literature current, but still keep it moving.  They're almost like real articles
 at this point I'm somewhat pleased.
 
-Videos: [Recent developments in Analytic Number Theory](http://www.msri.org/workshops/810)
+Videos:
+
+* [Recent developments in Analytic Number Theory](http://www.msri.org/workshops/810)
+* [Entanglement and Dynamical Systems](http://scgp.stonybrook.edu/video_portal/results.php?event_id=165)
+* [Strongly Correlated Topological Phases of Matter](http://scgp.stonybrook.edu/video_portal/results.php?event_id=215)
+
+Some carry-over.  Maybe DL to my phone! for those long bus rides
+
+* Statistical Mechanics [705](https://www.perimeterinstitute.ca/video-library/collection/2016/2017-phys-705-statistical-mechanics-2-roger-melko) or [733](https://www.perimeterinstitute.ca/video-library/collection/phys-733-quantum-many-body-physics-w2016-roger-melko)
+
+* Quantum Field Theory [3](http://perimeterinstitute.ca/video-library/collection/psi-2016/2017-quantum-field-theory-iii)
+(can't find parts 1 and 2)
