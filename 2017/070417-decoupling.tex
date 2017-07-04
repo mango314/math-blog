@@ -1,0 +1,87 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+\usepackage{pifont}
+\usepackage{amsmath}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+\newcommand{\red}{\begin{tikz}[scale=0.25]
+\draw[fill=red, color=red] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\blue}{\begin{tikz}[scale=0.25]
+\draw[fill=blue, color=blue] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\green}{\begin{tikz}[scale=0.25]
+\draw[fill=green, color=green] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+
+\newcommand{\sq}[3]{\draw[#3] (#1,#2)--(#1+1,#2)--(#1+1,#2+1)--(#1,#2+1)--cycle;}
+
+\usepackage{tikz}
+
+\newcommand{\susy}{{\bf Q}}
+\newcommand{\RV}{{\text{R}_\text{V}}}
+
+\title{Scratchwork: Decoupling}
+\author{John D Mangual}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{12.5}{15}\selectfont
+
+\maketitle
+
+\noindent It seems very important we review the topic of \textbf{decoupling}\dots Many analytic number theorists seem to feel strongly this is the next big advance.  Me, being a fair bit outside this circle, observe that \textit{they} feel it's important.  It's like when Lebron James wears a certain sneaker and *everyone* feels they gotta have it. \\ \\
+Even the statement of decoupling is very difficult to understand. We're greatful to Ms. Lillian Pierce for charging through impenetrable sections of the literature.  We include Bourgain's own ``study guide" and his original sources.  We do not include any primary sources. \\ \\
+Why study?  Like any subject there are ``moments" of familiarity followed by mostly chaos.  If it is too much effort you simply give up and move to the next project. \\ \\
+Here's one way to phrase the conjecture from Tao's blog:
+\[ \int_{[0,1]^2}  | \sum_{j= 0}^N e(jx + j^2 y) |^6 \, dx \, dy \ll N^{3 + o(1)} \tag{\ding{37}}\]
+as $N \to \infty$. It looks like a freshman Calculus exercise or something you will see on the Putnam exam.  It does not look very modern.   It looks very easy to compute.  If I recall, getting bogged down with the sixth power:
+$$  | a + b + c|^6 = (a + b + c)^3 \; \overline{(a+b+c)^3}$$
+I am less satisfied when I learned which equation they were solving:
+\begin{eqnarray*}
+j_1 + j_2 + j_3 &=& k_1 + k_2 + k_3 \\
+j_1^2 + j_2^2 + j_3^2 &=& k_1^2 + k_2^2 + k_3^2 
+\end{eqnarray*}
+If these equations look intuitive their solution certainly does not.  Here's an exercise:
+\begin{itemize}
+	\item Let $N = 5$ or $N = 100$.  Evaluate the integral, \ding{37} to 10 decimal places.
+\end{itemize}
+At this level I really should qualify this term ``evaluate" to mean, as an element of $\mathbb{R}$ find 10 decimal places.  While I am reading (it may be some time) here's another way to look at this exercise:
+\begin{itemize}
+\item Which quadrant does $\sum_{j= 0}^N e(jx + j^2 y) $ live in? as a function of $x$ and $y$ ?  Find the entropy of the corresponding partition of $[0,1]^2$ into those 4 sets.
+\item When does this function exhibit lots of ``cancellation" (if we can define such a thing) ?
+\item Why is the {\color{red!50!white}\textbf{6}}th power important?
+\end{itemize}
+
+\newpage
+\noindent Math is the luxurious world were we can ``evaluate" every function $f$ to arbitrary accuracy at every ``point" $x$ or $y$.  If I am skeptical of Tao's framework, or Bourgain's own devices, I can derive my own way of understanding this.  Very simply: we can't use decimals anymore is there a better language to describe this cacncellation?\footnote{One that's more concrete than what is being provided?} \\ \\
+Like good librarians we have compiled all of our resources.  Now it's time to do some math! 
+
+\vfill
+
+
+
+\begin{thebibliography}{}
+
+\item Lillian B. Pierce 
+\textbf{
+The Vinogradov Mean Value Theorem }[after Wooley, and Bourgain, Demeter and Guth] \texttt{arXiv:1707.00119}
+
+\item Terence Tao \\
+\textbf{Decoupling and the Bourgain-Demeter-Guth proof of the Vinogradov main conjecture}
+\texttt{https://terrytao.wordpress.com/2015/12/10/decoupling-and-the-bourgain-demeter-guth-proof-of-the-vinogradov-main-conjecture/} \\ 
+\textbf{The two-dimensional case of the Bourgain-Demeter-Guth proof of the Vinogradov main conjecture}
+\texttt{https://terrytao.wordpress.com/2015/12/11/the-two-dimensional-case-of-the-bourgain-demeter-guth-proof-of-the-vinogradov-main-conjecture/}
+
+\item Jean Bourgain, Ciprian Demeter. \textbf{A study guide for the $l^2$ Decoupling Theorem}  \texttt{arXiv:1604.06032}
+
+\end{thebibliography}
+
+
+\end{document}
