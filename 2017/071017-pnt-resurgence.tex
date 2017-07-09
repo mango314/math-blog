@@ -1,0 +1,153 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+\usepackage{pifont}
+\usepackage{amsmath}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+\newcommand{\red}{\begin{tikz}[scale=0.25]
+\draw[fill=red, color=red] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\blue}{\begin{tikz}[scale=0.25]
+\draw[fill=blue, color=blue] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\green}{\begin{tikz}[scale=0.25]
+\draw[fill=green, color=green] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+
+\newcommand{\sq}[3]{\draw[#3] (#1,#2)--(#1+1,#2)--(#1+1,#2+1)--(#1,#2+1)--cycle;}
+
+\usepackage{tikz}
+
+\newcommand{\susy}{{\bf Q}}
+\newcommand{\RV}{{\text{R}_\text{V}}}
+
+\title{Scratchwork: Divergences}
+\author{John D Mangual}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{12.5}{15}\selectfont
+
+\maketitle
+
+\noindent It's time to get serious.  I can nearly put it together myself.  \\ \\
+How do I review this proof without it degenerating into some kind of recitation fo facts? One of my critiques of analytic number theory is that\dots it doesn't look like number theory.  If I spend all this effort to prove the Prime Number Theory\dots I already believed it was true! \\ \\
+I started to look for arguments where the connection to prime factorization or to Geometry or Probablity or any other branch of Math.\footnote{If I express someone of my aggravation, and provide a partial demonstration / answer, that could be new.}  Talking to professors, I'm pretty much out of luck. They are satisfied with the current arguments.  They are professionals, I'm not.\\ \\
+Try to imagine if Hollywood or a Hip-Hop label adopted the garbled narrative style of a Math Textbook.  To me, Mathematics has been a giant bait-and-switch.  They sold me one result, I got completely another.   \\ \\ 
+I'm trying not to do that to you.  \\ \\
+Zagier proves PNT as a series of facts.  He introduces 3 functions:
+\begin{itemize}
+\item $\displaystyle \zeta(s) = \sum_{n=1}^\infty \frac{1}{n^s}$
+\item $\displaystyle \Phi(s) = \sum_{p > 1} \frac{\log p}{p^s}$
+\item $\displaystyle \theta(s) = \sum_{p < x} \log p $
+\end{itemize}
+If you a sequence of numbers $a_n$ here are three different numbers you could assign to that sequence:
+$$ \{ a_n\}_{n=1}^\infty \mapsto \sum_{n=1}^\infty a_n 
+\text{ or } 
+\{ a_n\}_{n=1}^\infty \mapsto \sum_{p > 1} a_p 
+\text{ or }
+\{ a_n\}_{n=1}^\infty \mapsto \sum_{p < x} a_p $$
+One is a sum over \textit{all integers} another is a sum over \textit{all primes} and the other is over \textit{primes less than $x$}.  This is what Hardy saw: all these are just ways of assigning numerical averages to sequences of numbers.  Some are better behaved than others. \\ \\
+He starts to prove a sequence of facts.
+
+\newpage
+
+\noindent \textbf{\#1} The Euler Product: this sum over integers $n$ is also sum over primes $p$. 
+$$ \zeta(s) = \sum_{n=1}^\infty \frac{1}{n^s} = \prod_p \frac{1}{1 - p^{-s}}$$
+This falls out of Unique Factorization, which calls out of the Euclidean Algorithm.  Lurking in the background is the statment $\mathrm{Spec}(\mathbb{Z}) = \{ \text{primes}\}$, in the event we choose to use scheme. \\ \\
+\textbf{\#2} If we subtract the pole at $s = 1$, this function extends holomorphically to $\mathrm{Re}(s) > 0$.  
+$$ \zeta(s) - \frac{1}{s-1} $$
+This statement is loaded.  I never noticed it before.  There is already ``analytic continuation": 
+$$ \zeta \big( \frac{1}{2} \big) = \sum_{n=1}^\infty \frac{1}{\sqrt{n}} = 
+1 + \frac{1}{\sqrt{2}} +  \frac{1}{\sqrt{3}} +   \frac{1}{\sqrt{4}} + \dots =\infty $$
+We'll say, rather bluntly, that it equals infinity.  Leaving more refined information later. \\ The numbers never get small enough. And we only subtract off a small amount:
+$$ \zeta(\frac{1}{2}) - \frac{1}{\frac{1}{2}-1} = \infty + 2 $$
+and perhaps this is why I dislike analytic number theory.  We have to competely change our way of adding - without any mention at all - just because of this one small thing.
+$$  \zeta(s) - \frac{1}{s-1}
+= \sum_{n=1}^\infty \frac{1}{n^s} -  \int_1^\infty  \frac{dx}{x^s} 
+= \sum_{n=1}^\infty \int_n^{n+1} \left( \frac{1}{n^s} - \frac{1}{x^s} \right) \, dx < \infty $$
+so for each term, we can subtract off the excess, and get a finite number. \\ \\
+\textbf{\#3} $\theta(x) = O(x)$.  Could we be a little more obnoxious here?
+$$   \sum_{p < x} \log p  = O(x)$$
+if $f(x) = O(x)$ this means $f(x) \leq C x $ and we don't care about the constant.  Or how about this?
+$$ \frac{1}{x} \sum_{p < x} \log p  = O(1) $$
+which is saying this number is finite.\footnote{There are many theories to try to include ``infinite numbers" but none of them have been successful.  Even in the time I have left graduate school, there are peole trying and doing pretty well.  And others, trying to remove all the divergences.}  No surprises here.   \\ \\
+\textbf{\#4} $\zeta(1 + it) \neq 0$ and we have holomorphic function on $\mathrm{Re}(s) \geq 1$.  
+$$ \frac{\zeta'(s)}{\zeta(s)} = \sum_{n=1}^\infty \frac{\Lambda(n) }{n^s} =
+\sum_{p> 1} \frac{\log p}{p^s - 1} = 
+ \sum_{p > 1} \frac{ \log p }{p^s}  + (\text{ finite number })(s)$$
+ 
+\newpage 
+
+\noindent \textbf{\#5} $\to$ \textbf{\#6}
+$$ \left[ \int_1^\infty \frac{\theta(x) - x}{x^2} \, dx < \infty \right] \to \left[ \theta(x) \sim x \right]  $$
+This notation is aggravating for a number of reasons.  Usually I define the symbol $\theta$ to mean something else:
+$$  \theta(q) \neq \sum_{n=1}^\infty q^{n^2}$$
+and I still don't know the preicse meaning of $A\sim B$ (instead of  $A \asymp B$). Here it means $\frac{A}{B} \to 1$. \\ \\ 
+If I phrase it differently setting $\frac{1}{x} \theta(x)   = f(x)$ and say:
+$$ \left[ \int_1^\infty \frac{f(x)-1}{x} \, dx < \infty \right] \to \big[ f(x) \sim 1 \big]  $$
+I don't know if this is precise but I am a lot happier. That leaves us to prove item \#5. \\ \\
+One great question here is why it was possible to write down the integral of $\theta(x)$. Between the $\int$ sign and the word ``holomorphc" a lot of things have gotten swept under the rug.  However, correctly. \\ \\
+\textbf{\#5} Tauberian theorems all have statements like ``obviously that thing should converge" and then it does converge.  And we could try to imagine functions where the implication does not hold. \\ \\
+In Chapter 1 of Titchmarsh, Tauber's Theorem was stated like this:
+$$ \Big[ \lim_{x \to 1} \sum_{n = 0}^\infty a_n \, x^n = s \Big] \stackrel{a_n = o(n^{-1})}{\to\,\to \, \to} \Big[ \sum_{n = 0}^\infty a_n = s \Big] $$
+and it as the converse to \textbf{Abel's Theorem} which is why these are called Abelian and Tauberian theorems.
+$$ \Big[ \sum_{n = 0}^\infty a_n = s \Big]  \to 
+\Big[ \lim_{x \to 1} \sum_{n = 0}^\infty a_n \, x^n = s \; (\text{uniformly}) \Big]  $$
+and we would confront an unknown series and we would apply one of these litmus tests and if we were careful it yielded a positive result.  \\ \\
+$$ \left[ g(z) = \int_0^\infty f(t) e^{-zt} \, dt \text{ \textbf{holomorphic} on }\mathrm{Re}(z) \geq 0\right] \to \left[ g(0) = \int_0^\infty f(t) \, dt \right] $$
+More belaboring the obvious.  This is why we like Complex Analysis.  At least in principles, theorem yield under $\mathbb{C}$ that wouldn't under $\mathbb{R}$. And this is our replacement for pages and pages of Tauberian theorems.  \\ \\
+It remains to prove item \#5, philosophize about the Cauchy-Riemann equations, meditate about many proofs whose statements are modeled after the Prime Number Theorem.  This could be done later. \\ \\
+What could be done now, is to figure out why Sauzin talks about Zagier-Newman's paper in 2014 in this discussion on {\color{red!50!green!50!orange}\textbf{resurgence}} and {\color{blue!80!white}\textbf{1}}-{\color{blue!80!white}\textbf{summability}}.  This is me taking something at face-value, when I shouldn't. \\ \\
+Zagier had taken Newman's short proof and made it even shorter:
+$$ \left[ (\mathcal{L}\phi )(z) = \int_0^\infty e^{-z t }\phi(t) \, dt \text{ holo. }\mathrm{Re}(z) \geq 0 \right]\to \left[  \int_0^T \phi(t) \, dt = (\mathcal{L}\phi)(0)\right]  $$
+I guess it's time to say something about {\color{green!50!orange}holomorphic extension}. The number $(\mathcal{L}\phi)(0)$ was not defined by writing an integral as it was for $(\mathcal{L}\phi)(z)$ with $\mathrm{Re}(z) > 0$.  Here's one definition:\footnote{The contour $C$ should contain the origin $0$.}
+$$ g(0) = \frac{1}{2\pi i } \oint_C f(z) \, e^{zT} \, \left( 1 + \frac{z^2}{R^2} \right) \, \frac{dz}{z}  $$
+and this integral is the same, regardless of the value of $T \in \mathbb{R}$.  We could even set $T = 0$ and leave it out.  On the other hand, 
+$$ g_T(0) = \int_0^T f(t) \, dt = \oint_C f(z) \, e^{zT} \, \left( 1 + \frac{z^2}{R^2} \right) \, \frac{dz}{z} $$
+and now the statement looks really tautological, because we wish to show
+$$ \lim_{T \to \infty} \big| g(0) - g_T(0) \big|  = 0 $$
+for some \textbf{bounded} and \textbf{locally integrable} function.  These are big words, whose number-theory content I don't fully understand.  Yet
+$$ f(t) = \theta(e^t) - e^t \hspace{0.125in}\text{ and }\hspace{0.125in}
+g(z) = \frac{1}{z}\sum_{p > 1} \frac{\log p}{p^s}  - \frac{1}{z-1}$$
+Hopefully I wrote the Laplace transform identities correctly:
+\begin{itemize}
+\item $\displaystyle \mathcal{L}(t \,\phi) = \frac{d\phi }{dz}$
+\item $\displaystyle (e^{ct} \,\mathcal{L}\phi)  = \phi(z + c)$ 
+\item $\displaystyle \mathcal{L}(1 * \phi) = z^{-1}\phi(z) $ 
+\item $\displaystyle \mathcal{L}\left( \frac{d\phi}{dt} \right) = z \phi(z) - \phi(0) $ 
+\end{itemize}
+There's nothing ``divergent" about this discussion, but I have to think about it some more.
+
+\vfill
+
+
+
+\begin{thebibliography}{}
+
+\item Terence Tao 
+\\ \textbf{The Euler-Maclaurin formula, Bernoulli numbers, the zeta function, and real-variable analytic continuation} 
+\texttt{http://bit.ly/2cyNB3H}
+\item GH Hardy \textbf{Divergent Series}  Oxford University Press, 1949/1973.
+\item EC Titchmarsh \textbf{Theory of Functions} \texttt{https://archive.org/details/TheTheoryOfFunctions}
+\item Simon Rubinstein-Salzedo \textbf{Could Euler have conjectured the prime number theorem?} \texttt{ arXiv:1701.04718}
+\item Andrew Granville, Adam J Harper, K. Soundararajan \textbf{A more intuitive proof of a sharp version of Hal\'{a}sz's theorem} \texttt{arXiv:1706.03755}
+
+\item Serge Lang \textbf{Algebraic Number Theory} (Graduate Texts in Mathematics \# 110) Springer, .
+
+\item J\"{u}rgen Neukirch. \textbf{Algebraic Number Theory} (Grundlehren der mathematischen Wissenschaften \#322) Springer, 1999.
+
+\item David Sauzin \textbf{Introduction to 1-summability and resurgence} \texttt{arXiv:1405.0356}
+
+\item Don Zagier \textbf{On Newman's Short Proof of the Prime Number Theorem} \texttt{http://people.mpim-bonn.mpg.de/zagier/files/doi/10.2307/2975232/fulltext.pdf}
+
+\end{thebibliography}
+
+
+\end{document}
