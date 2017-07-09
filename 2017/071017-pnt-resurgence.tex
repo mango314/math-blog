@@ -123,7 +123,24 @@ Hopefully I wrote the Laplace transform identities correctly:
 \item $\displaystyle \mathcal{L}(1 * \phi) = z^{-1}\phi(z) $ 
 \item $\displaystyle \mathcal{L}\left( \frac{d\phi}{dt} \right) = z \phi(z) - \phi(0) $ 
 \end{itemize}
-There's nothing ``divergent" about this discussion, but I have to think about it some more.
+There's nothing ``divergent" about this discussion, but I have to think about it some more. \\ \\
+For one thing I'd be concerned about writing an Laplace trasnform integral
+$$ \dots $$
+$C$ is a semicircle contour $|z| = R$ and $\mathrm{Re}(z) > -\delta$, moved ``infinitesially" over the real l ine.
+
+\newpage
+
+\noindent The Gamma function: 
+$$ \Gamma(z+1) t^{-(z+1)} = \int_0^\infty x^z e^{-xt} \, dx $$
+is the Laplace transform of a power function.  Therefore if we write down an operator like:
+$$ g(0) = \frac{1}{2\pi i } \oint_{C} f(z) \, e^{zT} \, \left( 1 + \frac{z^2}{R^2} \right) \, \frac{dz}{z} $$
+we might ask for the inverse Laplace transform of $g$ and hopefully it will be something like $f$.
+$$ \sum_{n=0}^\infty a_n z^n \stackrel{\mathcal{L}^{-1}}{\to} \sum_{n=0}^\infty a_n \frac{x^n}{n!}$$ 
+The problem is unequivocally solved, but there are still maybe some interesting problems about how all the different part work.  I am still reading.  There's a Stirling series:
+$$ \log \big[ \Gamma(z)  \big]
+\sim \sqrt{2\pi z} (z/e)^z  
+\sum \frac{B_{2k}}{2k(2k-1)} z^{-2k+1}  $$
+and this is this is also the resurgent expansion of $\log n!$ This is looking like the start of a  very different than the one by Newman+Zagier.
 
 \vfill
 
