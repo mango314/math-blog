@@ -140,11 +140,7 @@ The problem is unequivocally solved, but there are still maybe some interesting 
 $$ \log \big[ \Gamma(z)  \big]
 \sim \sqrt{2\pi z} (z/e)^z  
 \sum \frac{B_{2k}}{2k(2k-1)} z^{-2k+1}  $$
-and this is this is also the resurgent expansion of $\log n!$ This is looking like the start of a  very different than the one by Newman+Zagier.
-
-\vfill
-
-
+and this is this is also the resurgent expansion of $\log n!$ This is looking like the start of a  very different discussion than the one by Newman+Zagier.
 
 \begin{thebibliography}{}
 
@@ -156,15 +152,73 @@ and this is this is also the resurgent expansion of $\log n!$ This is looking li
 \item Simon Rubinstein-Salzedo \textbf{Could Euler have conjectured the prime number theorem?} \texttt{ arXiv:1701.04718}
 \item Andrew Granville, Adam J Harper, K. Soundararajan \textbf{A more intuitive proof of a sharp version of Hal\'{a}sz's theorem} \texttt{arXiv:1706.03755}
 
-\item Serge Lang \textbf{Algebraic Number Theory} (Graduate Texts in Mathematics \# 110) Springer, .
+\item Serge Lang \textbf{Algebraic Number Theory} \\
+(Graduate Texts in Mathematics \#110) Springer, 1970.
 
-\item J\"{u}rgen Neukirch. \textbf{Algebraic Number Theory} (Grundlehren der mathematischen Wissenschaften \#322) Springer, 1999.
+\item J\"{u}rgen Neukirch. \textbf{Algebraic Number Theory} \\ (Grundlehren der mathematischen Wissenschaften \#322) Springer, 1999.
 
 \item David Sauzin \textbf{Introduction to 1-summability and resurgence} \texttt{arXiv:1405.0356}
 
 \item Don Zagier \textbf{On Newman's Short Proof of the Prime Number Theorem} \texttt{http://people.mpim-bonn.mpg.de/zagier/files/doi/10.2307/2975232/fulltext.pdf}
 
 \end{thebibliography}
+
+\newpage
+
+\noindent \textbf{7/10}  To keep things interesting, it's time to include more examples of problems that can be solved with technique.  I doubt anyone really understands it the first time around but the algebraic number theory textbooks lift statements about $\mathbb{Q}$ and $\mathbb{Z}$ and $\zeta(s)$ to 
+\begin{itemize}
+\item all number fields
+\item arithmetic progressions
+\item Grossencharakters ( I don't know what they are but it sounds really big ! )
+\end{itemize}
+Any ``lift" that behaves this nicely is called a \textbf{functor}.  We can write $L$-functions for very deep objects such as varieties and schemes and motives, cuspital automorphic representations, etc.  Finally these things can be read in terms of \textbf{category theory}.\footnote{My understanding is category theory can be taught to pre-schoolers.  It's the type of reasoning we do before there is any concept of symbol or number.  We just look at objects and connections between them.  We manipulate them with our hands.  In a Mathematician's mind these are the basic object.  In practice, there's still a lot of work to be done.  Mostly it looks like nonsense.} \\ \\
+All of their solutions will have the same spirit: they will solve the problem but either something terrifying was swept under the rug - in a relatively safe correct way, mind you - or the proof was write in such advanced language it is no longer possible to corroborate if their argument is correct. One is left with more questions than answers. \\ \\
+Part of why contributing to math seems to be difficult is the criterion of ``novelty".\footnote{What if we were looking for tall things?  5-foot-6 is hardly considered tall, it is the typical height.  If someone is 6 foot, they are pretty tall.  Even in a small town, the tallest person might be over 6-foot-6.  The tallest people in the world well over 7 feet and suffer from genetic disorders.  These things are also to subject to verification and to dispute.  Perhaps being first is not the best thing? Or very meaningful? Sultan Kosen (Turkey) and I share the same birthdya of 10 December.} After much digging and probing, the exercise I had proposed, to show the equidistribution of prime numbers in $\mathbb{Z}[i]$ is very carefully and beautifully done in Edmund Hlawka's textbook. \\ \\
+This doesn't prelude me finding yet another technique that solves this style of problem.  There's a field called \textbf{Additive Combinatorics} that I am really enjoying.  However, which theorem do I use?  They don't really deal with Prime Number Theorem -- in their group, they will use an example called {\color{red!50!green!50!blue}Szemeredi Theorem} about arithmetic progressions in sequences of numbers.  Prime numbers very sparse compared to arithmetic progressions (or any sequence of numbers that occurs with some ``regularity").  If I'm not mistaken we'd strengthen Szemeredi's Theorem and start to strip away all the extraneous numbers until we get arithemtic sequences of primes. \\ \\
+And that's just one idea.    When we are ready we are free to write our own. There are many other fish in the sea. \\ \\
+These theorems seem to be about the same strength:
+\begin{itemize}
+\item Hardy Littlewood Tauberian Theorem
+\item Weierstrass Approximation Theorem
+\item Hairy Ball Theorem (from Topology)
+\item Gambler's Ruin
+\end{itemize}
+and the Prime Number Theorm will evade all of these. So I tried to have a glimpse of 
+
+\newpage
+
+\noindent I've begun to speculate these other theorems are of the same strength:
+\begin{itemize}
+\item Wiener-Ikehara Tauberian Theorem
+\item Euler-Maclaurin Summation Formula
+\item The Heat Kernel
+\end{itemize}
+I currently do not have the technical resources or follow-through to solve it.  Until then we have Newman + Zagier. \\ \\ \\ \\ \\
+\textbf{7/10} Time to get off the soapbox. Let's widen the panorama a bit with Edmund Hlawka's discussion bit.  He did exactly what I was going to do: he read Newman's proof and solved it for $K = \mathbb{Z}[i]$.  Perhaps I can try $\mathbb{Z}[\sqrt{-5}]$ which has a non-trivial class number $h = 2$.
+$$ 6 = 2 \times 3 = (1 - \sqrt{5}) \times (1 + \sqrt{-5}) $$ 
+Or $\mathbb{Z}[i]$. Maybe let's try to write down an $L$-function that counts 
+$$ \sum_{n \geq 0} \frac{ \# \Big\{ (a,b): a^2 + b^2 = n \text{ and } 0 < \tan^{-1}( \frac{b}{a}) < \frac{\pi}{3} \Big\} }{ n^s } $$
+This blog is full of errors.  I doubt even if I wrote this one correctly.  Off we go\dots
+
+\vfill
+
+
+\begin{thebibliography}{}
+
+\item Simon Rubinstein-Salzedo \textbf{Could Euler have conjectured the prime number theorem?} \texttt{ arXiv:1701.04718}
+\item Andrew Granville, Adam J Harper, K. Soundararajan \textbf{A more intuitive proof of a sharp version of Hal\'{a}sz's theorem} \texttt{arXiv:1706.03755}
+
+\item Serge Lang \textbf{Algebraic Number Theory} \\
+(Graduate Texts in Mathematics \#110) Springer, 1970.
+
+\item J\"{u}rgen Neukirch. \textbf{Algebraic Number Theory} \\ (Grundlehren der mathematischen Wissenschaften \#322) Springer, 1999.
+
+\item David Sauzin \textbf{Introduction to 1-summability and resurgence} \texttt{arXiv:1405.0356}
+
+\item Edmund Hlawka \textbf{Geometric and Analytic Number Theory} (Universitext) Springer, 1991.
+
+\end{thebibliography}
+
 
 
 \end{document}
