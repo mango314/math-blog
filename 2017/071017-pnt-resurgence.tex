@@ -198,7 +198,24 @@ I currently do not have the technical resources or follow-through to solve it.  
 $$ 6 = 2 \times 3 = (1 - \sqrt{5}) \times (1 + \sqrt{-5}) $$ 
 Or $\mathbb{Z}[i]$. Maybe let's try to write down an $L$-function that counts 
 $$ \sum_{n \geq 0} \frac{ \# \Big\{ (a,b): a^2 + b^2 = n \text{ and } 0 < \tan^{-1}( \frac{b}{a}) < \frac{\pi}{3} \Big\} }{ n^s } $$
-This blog is full of errors.  I doubt even if I wrote this one correctly.  Off we go\dots
+This blog is full of errors.  I doubt even if I wrote this one correctly.  Off we go\dots \\ \\
+Neukich is a great and reliable textbook to introduce algebraic number theory. He only shows there are infinitely many primes in arithmetic sequences (which he does for all number fields).   He covers other things! Serge Lang, writes in rather austere manner, yet he obtains for us.  Now, if I find the guy's writing a bit spare, perhaps there's a Lemma I can contribute that creates a more vivid set of images. \\ \\
+I hypothesize there are two kinds of singularies that are connected by the Prime Number Theorem.  The zeta function has a \textbf{pole} at $s = 1$, as $\zeta(1) =  \sum \frac{1}{n} = 1 + \frac{1}{2} + \frac{1}{3} + \dots = \infty $
+$$ \Bigg[ \Gamma(z+1) \sim \sqrt{2\pi z} \, (z/e)^z \, (\dots) \Bigg] \leftrightarrow \Bigg[ \zeta(s) = \frac{1}{s-1} + \dots  \Bigg] $$
+For simplicity $\Gamma(n+1)=n!$ is called the \textbf{factorial}.  The function $(z/e)^z$ has \textbf{essential singularities} both at $z = 0$ (where it behaves like $0^0$) and $z = \infty$ (where it behaves like $\infty^\infty$).  Even our friend, the exponential function has some sly behavior near $z = \infty$:
+$$ e^{\frac{1}{z}} \to e^\infty \text{ near }z=0 $$
+Sauzin in his discussion of 1-summability and resurgence proceeds quite casually.  Yet, every time we invoke the Stirling formula, a singularity quite worse than this exists in between the lines.
+$$ e^{z \, \log z  } = e^{ (re^{i\theta}) \, \log (re^{i\theta}) } 
+= e^{ (re^{i\theta}) \, \big( \log r + i\theta + 2\pi i k \big) }  $$
+Hopefully I am still on topic here if I say there's no good way to assign a phase angle if $r \to \infty$
+
+\newpage
+
+\noindent That might explain why the real analsis techniques are so difficult. The essential singularity for $(\infty)!$ seem much more difficult than the pole for $\zeta(1)$.  Holomorphic functions - if we can obtain them - simplify life tremendously. These seemingly endless benefits, I wonder how long could last. \\ \\
+To be fair $(\infty + \epsilon  \, e^{i\theta})!$ where $\epsilon \ll 1$ is very tiny.  And $\zeta(1 + \epsilon  \, e^{i\theta} ) = \frac{1}{0} +  {\color{blue}\mathbf{1}}\times i \theta \,\epsilon $.  Neither of these describe any information at all a priori.  You know, off the bat.  Maybe it's a separate thing to show in either case 
+that $\frac{1}{x} \sum_{n < x} \Lambda(n) = {\color{blue}\mathbf{1}}$. A pole is much easier than an essencial singularity. \\ \\
+Sauzin doesn't explicitly say, his discussion of resurgence and 1-summability kind of mixes the two. \\ \\
+\textbf{7/11}
 
 \vfill
 
