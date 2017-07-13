@@ -53,3 +53,8 @@ Some carry-over.  Maybe DL to my phone! for those long bus rides
 
 * Quantum Field Theory [3](http://perimeterinstitute.ca/video-library/collection/psi-2016/2017-quantum-field-theory-iii)
 (can't find parts 1 and 2)
+
+Arithmetic: I used to push the envelope.  Now I just twiddle my Thumbs.
+
+* [The Arithmetic Site](https://arxiv.org/abs/1405.4527)
+* [Supernatural numbers and a new topology on the arithmetic site](https://arxiv.org/abs/1407.5538)
