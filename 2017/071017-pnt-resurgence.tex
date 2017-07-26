@@ -316,17 +316,72 @@ And of course, there are newer ideas not on the previous list.
 \newpage 
 
 \noindent \textbf{Edmund Hlawka}  \\ \\
-towards Equidistribution of primes.
+towards Equidistribution of primes in $\mathbb{Z}[i]$. \\ \\
 
 \newpage 
 
 \noindent \textbf{Hua Loo Keng} \\ \\
-We go straight for the Ikehara Tauberian theorem.
+We go straight for the Ikehara Tauberian theorem. \\ \\
 
 \newpage 
 
-\noindent \textbf{Iwaniec} \\ \\
-Devious Kloosterman sums.
+\noindent \textbf{Henryk Iwaniec} \\ \\
+Devious Kloosterman sums. \\ \\
+First of all.  Why Kloosterman?  Here is Iwaniec's theorem: 
+\begin{quotation} 
+Let $a_n$ be the $n$-th Fourier coefficient of a cusp form $f(z)$ of weight $k = \frac{1}{2} + \ell \geq \frac{5}{2}$ for the group $\Gamma = \Gamma_0(N)$ with $N \equiv 0 \pmod 4$, normalized by 
+$$ \langle f, f \rangle = \int_{\Gamma \backslash \mathbb{H}} \big| f(z) \big|^2 \; y^k \; \frac{dx \, dy}{y^2 } = 1$$ 
+Then for $n$ square-free, we have (the implied constant for $\ll$ depends only on $k$)
+$$  a_n \ll n^{k/2 - 2/7} \tau (n) \big( \log 2n \big)^2 $$
+\end{quotation}
+When I was a kid, a teacher threw me a physics book and it say that symmetries ``determine" constraints on an object.  The example they gave was a box.  And if you rotate the box $90^\circ$ in any direction it looks the same.   So it must be a cube. \\ \\
+Iwaniec does not tell us how to obtain such objects in any way.  Yet, if we do find an equation:
+$$ f(z) = \sum_{n=1}^\infty a_n \, e \big( n z \big) 
+= \sum_{n=1}^\infty a_n \, q^n $$
+The numbers $a_n$ are constrained quite-a-bit, once we understand the jargon:
+\begin{itemize}
+\item ``cusp form" means $a_0 = 0$
+\item modular form means $f(z) y^{k/2}$ is invariant under the symmetries of $\Gamma$
+\item $\Gamma$ is a ``congruence subgroup" such as $\big\langle z \mapsto z + 1, z \mapsto - \frac{1}{4z} \big\rangle$
+\item $n$ is square-free, e.g. $n \neq 18 = 2 \times 3^2 $ but $n = 35 = 5 \times 7$ is OK.
+\end{itemize}
+This is enough to put a strict relationship on all of the $n$, but where do we find such a thing? \\ Duke borrows his from Goro Shimura. \\ \\ If $u \in L^2 (\text{Sphere})$ is a \textbf{spherical harmonic} of degree $\ell$:
+$$ \theta(z; u) = \sum_{m \in \mathbb{Z}^3} u(m) \; e \big(z \,|(a,b,c)|^2 \big)  =  \sum_{m \neq  0} m^{\ell/2} \; r_3(m) \; \left[ \frac{1}{r_3(m)} \sum_{ \{(a,b,c): a^2 + b^2 + c^2 = m  \}} u\left(\frac{a}{m},\frac{b}{m},\frac{c}{m} \right) \right] e \big( |m| z \big)  $$
+is a modular form of weight $ k = \ell + \frac{3}{2}$ on $\Gamma_0(4) \subseteq \mathrm{SL}(2, \mathbb{Z})$. Shimura says the proof is easy. \\ \\
+It's a surprise to me we didn't lose modularity in the process of adding all these bells and whistles.  It was found by trial-and-error, these days we know it's part of the \textbf{theta correspondence}.  \\ \\
+We can sort of, by decree, illustrate or prove these things are modular forms of whatever congruence group.  Someone with less knowledge (like me) could try running through all the formulas and try to write down formulas involving the $a_n$ that express the symmetry. \\ \\
+It's not obvious that $\theta(z; u)$ is a modular form.  And only vague hints.  We know that Mumford's ``Lectures on Theta" contains some generalized theta functions, but he doesn't go quite as far as Goro Shimura. \\ \\
+Q: \\ 
+{\color{orange!50!green}{Do coeffients of modular forms obtained by theta functions, count solutions to an equation}}? \\ \\
+We are so far up the ladder of abstraction, perhaps the word ``counting" would become something else as well?  Also, we are up for some intensive french reading on the paper of Waldspurger, who will turn all these modular forms into L-functions. It overwhelms my ability to scoop from Spanish cognates. \\ \\
+The L-function version is connected to these low-fat estimates of Burgess:
+$$ L(\frac{1}{2} + it, \chi_D ) \ll |D|^{3/16 + \epsilon} $$
+that's getting ahead of ourselves. \\ \\
+Henryk Iwaniec proved his theorem in 1987.  The final steps are difficult.  The earlier steps are - as of 2002 in his textbook - \textbf{Spectral Methods of Automorphic Forms} which summarize his lectures at \textit{Universidad Aut\'{o}noma de Madrid}.  He very suggestively opens his notes with the Gauss circle problem:
+\begin{quotation} If $k \in C_0^\infty(\mathbb{R})$ is a smooth and \_\_\_\_ function:
+$$ \sum_{\ell=1}^\infty r(\ell) \; k(\ell) = \sum_{\ell=1}^\infty r(\ell) \; \widehat{k}(\ell)$$
+where $r(\ell)$ counts the lattice points on a circle.  
+$$ r(\ell) = \# \Big\{ (m,n): m^2 + n^2 = \ell  \Big\}  $$
+We could also count the lattice points ``near" a circle.  That's a huge deal too.
+$$ \widehat{k} (\ell) = \pi \int_0^{+\infty} k(t) \, J_0 \big( 2pi \sqrt{\ell \, t} \big) \, dt$$
+This is called the {\color{red!50!orange}{Hankel transform}}.
+\end{quotation}
+These lattice points count eigenvalues of the operator $D = \frac{\partial^2 }{\partial x^2} + \frac{\partial^2 }{\partial y^2} $ (this is on flat space $\mathbb{R}^2$), and we obtain the Weyl law.  $\# \{ x : \lambda (x ) \leq T \}  = T/4\pi + O(T^{1/3}) $
+\vfill
+So the weirdness has already come in.  Doing very natural things, we have both the apple and the orange.  Then it gets somewhat political.  Doing all these explorations some parts of it were ``new" but I couldn't tell you which part. 
+
+\newpage \noindent
+Henryk will provide 4 or 5 chapters of discussion in his book.  I feel his discussion is missing connections to Combinatorics.  And there I will be!
+\begin{itemize}
+\item the Weyl averages get encoded as theta functions (separated by their \textbf{degree})
+\item cusp forms at each degree form a finite dimensional vector space ( an expansion exists, but we don't realy know more info) 
+\item a spanning set (not really a basis) can be written in terms of Poincar\'{e} series. 
+$$ P_m(z; k, \Gamma) =  \sum_{\tau  \in \Gamma_\infty \backslash \Gamma }
+j(\tau, z)^{-2k} e(m\tau z)  $$
+\item Through clumsy and rather involved manipulations of Kloosterman sums we will obtain our bound.
+\end{itemize}
+Items \#1 thru \# 3 are in a textbook and have excellent disussion.  In my opinion, he left all the good parts out. 
+
 
 
 \end{document}
