@@ -374,14 +374,82 @@ So the weirdness has already come in.  Doing very natural things, we have both t
 Henryk will provide 4 or 5 chapters of discussion in his book.  I feel his discussion is missing connections to Combinatorics.  And there I will be!
 \begin{itemize}
 \item the Weyl averages get encoded as theta functions (separated by their \textbf{degree})
-\item cusp forms at each degree form a finite dimensional vector space ( an expansion exists, but we don't realy know more info) 
+\item cusp forms at each degree form a finite dimensional vector space ( an expansion exists, but we don't really know more info) 
 \item a spanning set (not really a basis) can be written in terms of Poincar\'{e} series. 
 $$ P_m(z; k, \Gamma) =  \sum_{\tau  \in \Gamma_\infty \backslash \Gamma }
 j(\tau, z)^{-2k} e(m\tau z)  $$
 \item Through clumsy and rather involved manipulations of Kloosterman sums we will obtain our bound.
 \end{itemize}
-Items \#1 thru \# 3 are in a textbook and have excellent disussion.  In my opinion, he left all the good parts out. 
+Items \#1 thru \# 3 are in a textbook and have excellent disussion.  In my opinion, he left all the good parts out.  \\ \\
+{\color{red!50!orange!50!green} \textbf{Wikipedia}} \\ \\
+A superficial internet search shows that Poincar\'{e} series generalize both Eisenstein series and Theta functions.  \\ \\
+\begin{tikzpicture}[scale=0.25]
 
+\draw[dashed, line width = 2] (0,0)--(10,0)--(10,10)--(0,10)--cycle;
 
+\draw[fill=red!50!white] (1,4)--(2,4)--(2,5)--(1,5)--cycle;
 
+\draw[fill=blue!50!white] (4,7)--(5,7)--(5,6)--(4,6)--cycle;
+
+\draw[fill=green!50!white] (7,3)--(8,3)--(8,4)--(7,4)--cycle;
+
+\draw (0,4.5)--(1,4.5);
+
+\draw (2,4.5)--(4,6.5);
+
+\draw (5,6.5)--(7,3.5);
+
+\draw (8,3.5)--(10,5.5);
+
+\end{tikzpicture} \\ \\
+I have no idea what Poincare series are and when I look them up - even in fairly advanced textbooks - they are nowhere to be found.
+\begin{itemize}
+\item Tom Apostol \textbf{Modular Functions and Dirichlet Series in Number Theory} GTM \#41 (1990) 
+\item Tom Apostol \textbf{Introduction to Analytic Number Theory} UTM, (1976)
+\end{itemize} 
+The books were published 14 years apart, so we can see how slow the progress is.  And neither of the textbooks discuss Poincar\'{e} seres.  \\\\
+Iwaniec's paper was written in 1987 and his book - covering aspects of his work - was published in 2002, for a 15 years gap. \\ \\
+Progress is slow.  These objects look elementary and - with a stroke of insight - can be done in a basic way, but it takes so long to figure out.  \\ \\
+What is a Poincar\'{e} series?  And why does it appear now in relation to Eisenstein series, theta series, cusp forms and other modular objects? \\ \\
+One problem: {\color{orange!50!black!50!green} we have alredy exhausted all the explicit construction of modular forms in this short paragraph}.  In my opinion, I don't know how this field proceeds without anything to go on.
+
+\newpage
+
+\noindent Henryk sketches tell me that we \textbf{don't} know a lot about Poincare series.  Modular forms are rare to begin with, but we reason about them as if they were everywhere.    \\ \\
+\textbf{1} A modular form $f(z)$ is called a {\color{blue}cusp form} if it vanishes on each cusp of $\Gamma$. The cusp of $\mathbb{H}/\Gamma$ are the parts that touch the real axis, $\mathbb{R} + 0i \subseteq \mathbb{C}$.  The space of cusp forms $S_k(\Gamma)$ is a \textbf{finite dimensional} Hilbert space  with inner product:
+$$\langle f,g \rangle = \int_{\Gamma \backslash \mathbb{H}}  f(z) \, \overline{g(z)} \, y^k \, \frac{dx \, dy}{y^2} \hspace{0.25in}\text{ with }\hspace{0.25in}\frac{dx \, dy}{y^2}=dA $$
+It's rare to find examples of these cusp forms and even rarer to find explicit computations.  I'd have to tell you what I mean by ``special value" in a way that's consistent with our common sense. \\ \\
+The space of cusp forms is spanned by Poincare series.  These are indexed by $m \in \mathbb{Z}$
+$$ P_m (z; k , \Gamma ) = \int_{\Gamma \backslash \mathbb{H}} j (\tau, z)^{-2k} \, e(m \tau z) $$
+Basically this is the \textbf{method of images} we are reflecting an ordinary function over the boundaries of three circular mirrors and hoping for the best.  In fact, these series will be divergent! \\ \\
+Poisson summation was also proven using Method of images.  There was function $f(x): \mathbb{R} \to \mathbb{C}$ and then we considered the sum of infinitely many shifted copies of itself:
+$$  \sum_{n \in \mathbb{Z}} f(x) \stackrel{?}{<} \infty  $$
+and we hoped the series didn't accumulate too much or have derivatives that are too big.  Then we could take the Fourier series of itself:
+$$  \sum_{n \in \mathbb{Z}} f(x)  = \sum_{n \in \mathbb{Z}} \widehat{f}(-n) \, e^{2\pi i \, n x} $$
+and there is confusion if we mean $\widehat{f}(n)$ as a Fourier transform of  $f: \mathbb{R} \to \mathbb{C}$ or of the sum $g(x) = \sum_{n \in \mathbb{Z}} f(x+n): \mathbb{R}/\mathbb{Z} \to \mathbb{C}$. I would argue this enriched Poisson summation over $\Gamma \backslash \mathbb{H}$ has not been explored very carefully. \\ \\
+Iwaniec's original construction was likely derived from the theta function:
+$$  \theta(z) = \sum_{n \in \mathbb{Z}} q^{n^2} \hspace{0.25in}\text{with}\hspace{0.25in} q = e^{2\pi i \, n z}$$
+and his modular forms are built from ``theta multipliers" and all of this groups are congruence groups $\Gamma = \Gamma_0(N)$ with $N \equiv 0 \pmod 4$.  Obviously, $\theta(z+1) = \theta(z)$, so perhaps we need:
+$$ \theta(z + \frac{1}{4}) = \sum_{n \in \mathbb{Z}} q^{n^2}
+= \sum_{n \in \mathbb{Z}} e^{2\pi i n^2 \, (z + \frac{1}{4})} 
+= \sum_{n \in \mathbb{Z}} q^{n^2}
+e^{\frac{1}{2}\pi i n^2 } $$
+the number $e^{\frac{1}{2}\pi i n^2 } = \pm 1$.  Quitely, the exercise of designing these modular forms has turned into one of twisting actions of $SL(2, \mathbb{Z})$ on various function spaces. 
+
+\newpage
+
+\noindent Like a child, where do moudular forms come from? Far as I can tell, we'll never get an answer.  And I'm a little bit shocked that Iwaniec only does $\Gamma = \Gamma_0(4M)$.  I'm a total beginner and I can think of other Fuchsian groups, even non-congruence groups.  \\ \\ 
+Let's fix one of Iwaniec's typos:
+$$ j(\tau, z) = \theta(\tau z) / \theta(z) \hspace{0.125in}\text{instead of}\hspace{0.125in}
+\Theta(\tau z) / \theta(z) $$
+which could also be common notation for something (e.g. Siegel modular form, or a vector-valued theta function).  And the formula for $j(\tau, z)$ comes from hard work.  It's really built from (three) formulas:
+\begin{eqnarray*}
+\sum_{n \in \mathbb{Z}} e(n^2 (z+1) ) &=& \sum_{n \in \mathbb{Z}} e(n^2 z ) \\ \\
+\sum_{n \in \mathbb{Z}} e(n^2 \frac{1}{z+1} ) &=& 1 \times \frac{1}{\sqrt{z+1}} \times \sum_{n \in \mathbb{Z}} e(n^2 z ) \\ \\
+\sum_{n \in \mathbb{Z}} e(n^2 \frac{1}{z-1} ) &=& i \times \frac{1}{\sqrt{z-1}} \times \sum_{n \in \mathbb{Z}} e(n^2 z )
+\end{eqnarray*}
+Poisson Summation can also be made to look like modular invariance with $z \mapsto - \frac{1}{z} $ \,:
+$$ \sum_{n \in \mathbb{Z}} e(n^2 \times - \frac{1}{z} ) = 1 \times \frac{1}{\sqrt{z}} \times \sum_{n \in \mathbb{Z}} e(n^2 z ) $$ 
+This is worse than Physics class.  Everyone (rather competently) charging through the equations.  I was like Stop! Stop! Look! Reason!! Think!! \\ \\
+All this ``unpacking" that I've been doing, does not improve the Iwaniec bound in any way but at least we understand better.
 \end{document}
