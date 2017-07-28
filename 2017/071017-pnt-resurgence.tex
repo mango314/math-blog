@@ -445,11 +445,38 @@ $$ j(\tau, z) = \theta(\tau z) / \theta(z) \hspace{0.125in}\text{instead of}\hsp
 which could also be common notation for something (e.g. Siegel modular form, or a vector-valued theta function).  And the formula for $j(\tau, z)$ comes from hard work.  It's really built from (three) formulas:
 \begin{eqnarray*}
 \sum_{n \in \mathbb{Z}} e(n^2 (z+1) ) &=& \sum_{n \in \mathbb{Z}} e(n^2 z ) \\ \\
-\sum_{n \in \mathbb{Z}} e(n^2 \frac{1}{z+1} ) &=& 1 \times \frac{1}{\sqrt{z+1}} \times \sum_{n \in \mathbb{Z}} e(n^2 z ) \\ \\
-\sum_{n \in \mathbb{Z}} e(n^2 \frac{1}{z-1} ) &=& i \times \frac{1}{\sqrt{z-1}} \times \sum_{n \in \mathbb{Z}} e(n^2 z )
+\sum_{n \in \mathbb{Z}} e(n^2 \frac{1}{4z+1} ) &=& 1 \times \frac{1}{\sqrt{4z+1}} \times \sum_{n \in \mathbb{Z}} e(n^2 z ) \\ \\
+\sum_{n \in \mathbb{Z}} e(n^2 \frac{1}{4z-1} ) &=& i \times \frac{1}{\sqrt{4z-1}} \times \sum_{n \in \mathbb{Z}} e(n^2 z )
 \end{eqnarray*}
-Poisson Summation can also be made to look like modular invariance with $z \mapsto - \frac{1}{z} $ \,:
-$$ \sum_{n \in \mathbb{Z}} e(n^2 \times - \frac{1}{z} ) = 1 \times \frac{1}{\sqrt{z}} \times \sum_{n \in \mathbb{Z}} e(n^2 z ) $$ 
+Poisson Summation can also be made to look like modular invariance with $z \mapsto - \frac{1}{4z} $ \,:
+$$ \sum_{n \in \mathbb{Z}} e(n^2 \times - \frac{1}{4z} ) = 1 \times \frac{1}{2\sqrt{z}} \times \sum_{n \in \mathbb{Z}} e(n^2 z ) $$ 
 This is worse than Physics class.  Everyone (rather competently) charging through the equations.  I was like Stop! Stop! Look! Reason!! Think!! \\ \\
-All this ``unpacking" that I've been doing, does not improve the Iwaniec bound in any way but at least we understand better.
+All this ``unpacking" that I've been doing, does not improve the Iwaniec bound in any way but at least we understand better. \\ \\
+Our group is defined by:
+$$ \Gamma_0(N) = \left\{  \left( \begin{array}{cc} a & b \\ c & d \end{array}\right) 
+: c \equiv 0 \pmod N\right\} $$
+and a holomorphic function $f(z)$ is a modular form of weight $k$ when
+$$ f( \gamma z) = j(\gamma, z)^{2k}f(z)$$
+with $z \in \mathbb{H} $ and $\gamma \in \Gamma_0(N)$. \\ \\
+The theta function $\theta(z)$ is a  modular form of weight $k = \frac{1}{2}$ and $\Gamma = \Gamma_0(4)$. \\ \\
+Eisenstein series are the $m = 0$ case of Poincar\'{e} series.  Here we need all of them $m \in \mathbb{Z}$:
+$$ P_m(z; k , \Gamma) =   \sum_{\gamma \in \Gamma_0 \backslash \Gamma } \frac{\# \times e(m \tau z)}{|cz+d|^k} \hspace{0.125in} = \Bigg|_{m=0} \hspace{0.125in} E(z; k ,\Gamma)  \sum_{\gamma \in \Gamma_0 \backslash \Gamma }  \frac{\#}{|cz+d|^k} $$
+the cusps are indexed by $\Gamma_0 \backslash \Gamma$ basically they are $\{ (c,d) : \mathrm{gcd}(c,d) = 1 \}$ pairs of relatively prime numbers, sitting on the real axis $\mathbb{R}$ at the edge of the hyperbolic space $\mathbb{H}$.
+
+\newpage \noindent It remains to write down the Fourier coefficient of the Poincare series for all $m \in \mathbb{Z}$:
+$$ P_m( z; k , \Gamma) = \sum_{\tau \in \Gamma_0 \backslash \Gamma } j(\tau, z)^{-2k} \, e^{m\tau z} $$
+\textbf{Q}: How to write our enriched theta functions in terms of these Poincare series?  At least we know an expansion exists:
+$$ \theta(z; u) = \sum_{m \geq 0} \left[ \frac{1}{V_3(m)} \sum_{x \in V_3(m)} u(x)  \right]  e(mz) $$
+We know the answer involves Bessel functions:
+$$ \widehat{P}_m (n; k , \Gamma) = \left( \frac{n}{m} \right)^{\frac{k-1}{2}} 
+\left\{  \delta_{mn} + 2\pi i^{-k} \sum_{c \equiv 0 \pmod N}^\infty \frac{1}{c}
+J_{k-1} \left( \frac{4\pi \sqrt{mn}}{c}\right) K(m,n; c) \right\} $$
+the Kloosterman functions themselves have been generalized.  At this point, it's better ot consult Iwaniec's book from 2002 for something closer to the state of the art.  For now:
+$$ K(m,n;c) = \sum_{d \pmod c} \varepsilon_d^{-2k} \left( \frac{c}{d} \right) e \left(  \frac{m \overline{d} +  n d}{c} \right) $$
+Since this is the Analysis blog, I can say there are two factors:
+\begin{itemize}
+\item $J_k$ about the average behavior of cubic lattices in $\mathbb{Z}^3$
+\item $K(m,n;c)$ about the number theoretic-behvior of these lattices.
+\end{itemize}
+I don't see how Iwaniec can get a good bound without engaging how horocycles move around $\mathbb{H}/\Gamma_0(4)$.  That is going in the other blog. 
 \end{document}
