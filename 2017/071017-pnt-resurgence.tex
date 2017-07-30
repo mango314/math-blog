@@ -318,10 +318,6 @@ And of course, there are newer ideas not on the previous list.
 \noindent \textbf{Edmund Hlawka}  \\ \\
 towards Equidistribution of primes in $\mathbb{Z}[i]$. \\ \\
 
-\newpage 
-
-\noindent \textbf{Hua Loo Keng} \\ \\
-We go straight for the Ikehara Tauberian theorem. \\ \\
 
 \newpage 
 
@@ -479,4 +475,24 @@ Since this is the Analysis blog, I can say there are two factors:
 \item $K(m,n;c)$ about the number theoretic-behvior of these lattices.
 \end{itemize}
 I don't see how Iwaniec can get a good bound without engaging how horocycles move around $\mathbb{H}/\Gamma_0(4)$.  That is going in the other blog. 
+
+\newpage 
+
+\noindent \textbf{Hua Loo Keng} \\ \\
+We go straight for the Ikehara Tauberian theorem.  He prefaces the Tauberian Theorem with these Lemmas:
+\begin{quotation}\textbf{Lemma \# 1} If $f(x)$ has a continuous first derivative:
+$$ \int_a^b f(x) \, e^{ixt} \, dx = O \left(\frac{1}{t}\right) $$
+\end{quotation}
+Everything I can think of has continuous first derivative.  Closer inspection show's that's not really the case.  And it certainly doesn't look like number Theory. \\ \\
+Compare to the previous section where we have a Fourier series $f(z) = \sum a_n \, e(nz)$ and we are trying to show
+$$ \hat{f}(n) \ll n^{-1/28} $$
+This can also be translated into the smoothness or roughness of $f$.  Compare with 
+\begin{quotation}\textbf{Lemma \# 2} If $f(x) \in L^1([0,1]) $ be absolutely continuous. Then 
+$$ \widehat{f}(n) = o(n^{-1}) $$
+If $f$ is $k$-times differentiable everywhere then
+$$ \widehat{f}(n) = o(n^{-k}) $$
+If $f$ is bounded variation then
+$$ \widehat{f}(n) \leq \frac{\mathrm{var}(f)}{2\pi | n|}  $$
+\end{quotation}
+So that Hua Loo Keng is at the barganing table trading smoothness conditions for number theoretic information.  We are expecting our 3-squares modular forms to be \textbf{$\frac{1}{28}$-differentiable}.
 \end{document}
