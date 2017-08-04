@@ -27,6 +27,8 @@
 \newcommand{\susy}{{\bf Q}}
 \newcommand{\RV}{{\text{R}_\text{V}}}
 
+\newcommand{\linebrk}{----------------------------------------------------------------------------------------------------------------------------------}
+
 \title{Scratchwork: Horocycles}
 \author{John D Mangual}
 \date{}
@@ -38,6 +40,83 @@
 
 \noindent While the other proofs are simmering, an alternative geometric style of number theory seems to have been emerging as of 1980.  The actual data is more could be more recent.  \\ \\
 Zagier was able to show that evaluating certain integrals of Eisenstein series was related to the prime number theorem.  Whether that was a proof of PNT, I'm not 100\% sure.  The horocycle flow, just moving across a straight line, while it looks orderly and natural is one of the most violent flows in geometry.  The equidistribution and mixing of the horocycle flow on the modular surface could have the capacity to prove statements normally proven using ``analytic methods". \\ \\
-I know there is certainly \textit{analogy} with ``spectral" methods or ``analytic" methods or ``geometric" methods but what is behind all of tha jargon?  Perhaps nothing.
+I know there is certainly \textit{analogy} with ``spectral" methods or ``analytic" methods or ``geometric" methods but what is behind all of tha jargon?  Perhaps nothing. \\
+\linebrk \\
+Let $z = x + iy$.  If you remove the bells and whistles, the Eisenstein series is just another series:
+$$ E(z,s) = \sum_{\gamma \in \Gamma_\infty \backslash \Gamma } \mathrm{Im}(\gamma \, z)^s = \frac{1}{2} \sum_{\stackrel{c,d \in \mathbb{Z}}{(c,d)=1}} \frac{y^s}{|cz + d|^{2s}} $$
+That equality is not the most obvious.  In our case we should check what the acting groups are:
+\begin{itemize}
+\item $\Gamma = \mathrm{SL}(2, \mathbb{Z})$ these are maps like $z \mapsto \frac{az+b}{cz+d}$ with $ad-bc=1$
+\item $\Gamma_\infty = \left\{  \left(\begin{array}{cc} 1 & n \\ 0 & 1 \end{array}\right) : n \in \mathbb{Z} \right\} \subset \Gamma $ these are the shift maps $z \mapsto z + n$ fixing $\infty$
+\item The {\color{green}quotient group} $\Gamma_\infty \backslash \Gamma$ (with the left-action) is the pairs of relately prime integers $(c,d) = 1$ and $c, d \in \mathbb{Z}$. \\ \\ Characterizing solutions to: $ad-bc = 1$ with $a,b,c,d \in \mathbb{Z}[i]$ or other order could be an interesting question.
+\end{itemize}
+If summation over cusps is awkward, one can multiplly by the zeta function and obtain sum over all integers:
+$$ \zeta(2s) E(z,s) = \sum_{(m,n) \neq (0,0)} \frac{y^s}{|mz + n|^{2s}}  $$
+There is holomorphic \textit{continuation}  to $\mathbb{C}$ except for a pole at $z=1$. If $\mathrm{Re}(s) < \frac{1}{2}$ the series doesn't converge but maybe there is a rearrangement or contour integral that does converge. What happens at \boxed{$s=0$} ?
+
+\newpage
+
+\noindent \textbf{Hw} Zagier has left these ``important properties" as exercises to the reader.  \\ 
+Modular forms does not come with a manual for connecting results to Number Theory. \\ \\
+I need to know the analogous Eisenstein series Poincar\'{e} for $\Gamma_0(4)$.  Not obvious to me expansion over a lattice and expansion over all cusps should give the same result.\\ \\
+\textbf{\#1} The Eisenstein series has a meromorphic continuation away from $s = 1$ and the residue is
+$$ E(z,s) = \frac{3}{\pi} \frac{1}{s-1} + \text{holomorphic} $$
+where the residue did not depend on $z$.  \\ \\
+\textbf{\#2} Eisenstein series have a more well-behaved cousin (which can be interpreted with adeles)
+$$ E^*(z,s) = \pi^{-s} \Gamma(s) \, \zeta(2s) \, E(z,s) $$
+this function is ``regular" (i.e. holomorphic? ) except for poles at $s=0$ and $s=1$.  There is {\color{red}the functional equation}:
+$$E^*(z,s) = E^*(z,1-s) $$
+There are many many proofs of \textbf{the functional equation} in Titchmarsh, and it's a pre-requisit for many of the results in the automorphic forms textbooks.
+$$ E^*(z,s) = \frac{1}{2} \pi^{-s} \Gamma(s) \sum' Q_z(m,n)^{-s} = \frac{1}{2} \int_0^\infty \big( \Theta_z(t) - 1 \big)  t^{s-1} \, dt $$
+This Mellin transform also appears in Titchmarsh's book our Soul\'{e}'s book on Arakelov geometry or other places.  The quadratic form and theta function are not quite what I'm looking for:
+$$ Q_z(m,n) = \frac{|m z + n|^2}{y} \text{ and } \Theta_z(t) = \sum_{m, n \in \mathbb{Z}} e^{ -\pi t \,  Q_z(m,n)}$$
+So Theta functions $\leftrightarrow$ Eisenstein series $\leftrightarrow$ zeta functions; all in the mix. $\Theta(\frac{1}{t}) = \frac{1}{t} \Theta(t)$.  I'd check this Poisson summation carefully. \\ \\
+\textbf{\#3} The Rankin-Selberg method.  There's the Universtext book by Anton Deitmar for a basic discussion.  Back in 1980, relatively new and undocumented.  \\ \\
+\textbf{Let} $f: \mathbb{H} \to \mathbb{C} $ be a $\Gamma$ invariant function with rapid decay near $y \to \infty$.  They are asking for:
+$$ F(x + iy) = O( y^{-N} ) \text{ as }y \to \infty
+\text{ but also } F(x+iy) = O ( y^N)\text{ as }y \to 0$$
+Literally the symbol ``$O$" is typed as ``$0$" so that big-on notaton was back then, big-zero notation.\footnote{Cohomology is going to be another way of proving refined notions of ``zero".}  The constant term of the Fourier expansion is:
+$$ C(F;y) = \int_0^1 F(x + iy) \, dx $$
+why is it such a big deal that we integrated from $0 \to 1$ ? This is routinely done except now we have added other paramters, and have to ask how the Fourier series changes with these.    We're mixing:
+\begin{itemize}
+\item Harmonic analysis on $\mathbb{H}\backslash \Gamma$
+\item Fourier series on various geodesics or horocycles (basically circles) in the Hyperbolic plane.  Likely, it matters which circle we are picking.
+\end{itemize}
+Zagier immediately re-joins it with the Mellin transform. 
+$$ I(F;s) = \int_0^\infty C(F;s) \, y^s \;\; \frac{dy}{y^2} 
+= \int_{\Gamma_\infty \backslash \mathbb{H}} F(z) \, y^s \, dz = \int_{\Gamma \backslash \mathbb{H}} F(z) \, E(z,s) \, dz $$
+so we've shown this transformation is {\color{red!50!black}generated} by integrating against the Eisenstein series.\footnote{Were there other situation were we generated a familiar transformation by taking an integral or inner product?  It might go un-announced.} \\ 
+Possibly:
+$$ dz = \frac{dx \, dy}{y^2} \stackrel{?}{=} dA $$
+The ``nice" properties of Eisenstein series $E(z,s)$ carry over to the nice behavior of our transform
+\begin{itemize}
+\item $ \mathrm{res}_{s=1}I(F;s) = \frac{3}{\pi} \int_{\Gamma \backslash \mathbb{H}} F(z) \, dz $ 
+\item $\displaystyle I^*(F;s) = \pi^{-s} \Gamma(s) \zeta(2s) I(F;s)$ is a regular function for $s \neq 0,1 $
+\item $I^*(F;s) = I^*(F; 1-s)$
+\end{itemize}
+This is now Proposition 7.2.10 in Chapter 2 of Deitmar's Automorphic form's book, where it gets the a more thorough discussion.  The Fourier series is Theorem 7.2.7.  He also seems to drill into you that \textbf{Eisenstein series are not holomorphic}.  Looks like the Rankin-Selberg method is a way to turn back and forth between modular forms into L-functions, by integrating against the Eisenstein series or using Mellin transforms. \\ \\
+What is very interesting is that Chapter 3 of Deitmer is all about the representation theory of $SL(2, \mathbb{R})$.  I didn't study it much because it looks self-evident.  What can we so hard about $2 \times 2$ matrices?  In fact the study of $SL(2, \mathbb{Z})$ and $SL(2, \mathbb{Z}[i])$ can lead to open topics. \\ \\
+Some differential equations are related to representations of $SL(2, \mathbb{R})$:
+\begin{itemize}
+\item Ricatti equation (which I learned in high school, long ugly solution)
+\item Bessel equation (more standard still rather clumsy)
+\end{itemize}
+Therefore, if Eisenstein series have rather complicated Fourier series involving Bessel functions, maybe it seems from identies like:
+$$ K_s(y) = \frac{1}{2}\int_0^\infty  e^{ - y \,(t + \frac{1}{t}) \,/\,2}  \; t^s \, \frac{dt}{t} $$
+That very nasty singularity we discussed in the divergenes blog now appears infinitely times over at all the cusps at for various $z \in \mathbb{R}$.  Without further ado:
+\begin{eqnarray*} E(z,s) &=& \sum_{n = - \infty}^\infty a_n(y,s) e^{2\pi i n x}  \\ \\
+&=& \bigg[\pi^{-s} \Gamma(s) \zeta(2s) y^s + \pi^{-(1-s)} \Gamma((1-s)) \zeta(2(1-s)) y^{1-s}\bigg] + \sum_{r \in \mathbb{Z}, r \neq 0} 2|r|^{2-1/2}\sigma_{1-2s}(|r|)K_{s - \frac{1}{2}}(2\pi |r|y)
+\end{eqnarray*}
+It's hard to say if I should write $r \in \mathbb{Z}$ suggesting it's radius or $n \in \mathbb{Z}$.  Certainly a geometric perspective of the Bessel equation is something I'm not seeing anywhere in the literature.\footnote{Mostly we read Abramowitz + Stegun and hope for the best.}
+\vfill
+ 
+\begin{thebibliography}{}
+
+\item Don Zagier \textbf{Eisenstein Series and the Riemann Zeta Function} appears in ``Automorphic Forms, Representation Theory and Arithmetic" Springer, 1979.
+
+\item Anton Deitmar \textbf{Automorphic Forms} (Universitext) Springer, 2013.
+
+\item G.N. Watson \textbf{A Treatise on the Theory of Bessel Functions} Cambridge University Press 1966 
+\end{thebibliography}
 
 \end{document}
