@@ -105,9 +105,31 @@ Therefore, if Eisenstein series have rather complicated Fourier series involving
 $$ K_s(y) = \frac{1}{2}\int_0^\infty  e^{ - y \,(t + \frac{1}{t}) \,/\,2}  \; t^s \, \frac{dt}{t} $$
 That very nasty singularity we discussed in the divergenes blog now appears infinitely times over at all the cusps at for various $z \in \mathbb{R}$.  Without further ado:
 \begin{eqnarray*} E(z,s) &=& \sum_{n = - \infty}^\infty a_n(y,s) e^{2\pi i n x}  \\ \\
-&=& \bigg[\pi^{-s} \Gamma(s) \zeta(2s) y^s + \pi^{-(1-s)} \Gamma((1-s)) \zeta(2(1-s)) y^{1-s}\bigg] + \sum_{r \in \mathbb{Z}, r \neq 0} 2|r|^{2-1/2}\sigma_{1-2s}(|r|)K_{s - \frac{1}{2}}(2\pi |r|y)
+&=& \bigg[\pi^{-s} \Gamma(s) \zeta(2s) y^s + \pi^{-(1-s)} \Gamma(1-s) \zeta(2(1-s)) y^{1-s}\bigg] + \sum_{r \in \mathbb{Z}, r \neq 0} 2|r|^{2-1/2}\sigma_{1-2s}(|r|)K_{s - \frac{1}{2}}(2\pi |r|y)
 \end{eqnarray*}
-It's hard to say if I should write $r \in \mathbb{Z}$ suggesting it's radius or $n \in \mathbb{Z}$.  Certainly a geometric perspective of the Bessel equation is something I'm not seeing anywhere in the literature.\footnote{Mostly we read Abramowitz + Stegun and hope for the best.}
+It's hard to say if I should write $r \in \mathbb{Z}$ suggesting it's radius or $n \in \mathbb{Z}$.  Certainly a geometric perspective of the Bessel equation is something I'm not seeing anywhere in the literature.\footnote{Mostly we read Abramowitz + Stegun and hope for the best. \\ 
+Also \texttt{https://mathoverflow.net/questions/264160/why-are-bessel-function-and-kloosterman-sum-similar}} \\ \\
+\textbf{\color{black!20!white}Casting Doubt} If I compute the Fourier coefficient of Eisenstein series, there was a Riemann or Lebesgue integral\footnote{or Denjoy Integral or Henstock-Kurzweil integral or your choice}.  Even if I compute the zero Fourier coefficient there is already some:
+$$ \int_0^1 E(z,s) \, dx = 
+\int_0^1   \left[ \sum_{\gamma \in \Gamma_\infty \backslash \Gamma } \mathrm{Im}(\gamma \, z)^s \right]\, ds = 
+\pi^{-s} \, \bigg[ \Gamma(s) \;\zeta(2s) \bigg] \;y^s + 
+\pi^{-(1-s)} \,\bigg[ \Gamma(1-s) \;\zeta\big(2(1-s)\big) \bigg] \;y^{1-s}  $$
+There's a separate integral for each $y > 0$.  Could we exchange the $\int$ and $\sum$ signs\,? \\ \\
+The Riemann integral involves breaking up the segment $[0,1]$ into many small pieces. Which parition leads to a Riemann sum to with $\epsilon$ of the limit? This partition, behaving nicely with the shape of the group $\Gamma_0(1) \backslash SL(2, \mathbb{Z})$. \\ \\   
+\textbf{\color{black!20!white}Speculation} are Bessel functions and the divisor function analogous?
+\begin{itemize}
+\item $\sigma_{1-2s}(|r|) $
+\item $K_{s - \frac{1}{2}}(2\pi |r|y) $
+\end{itemize}
+What if we type out the expansion for Poincar\'{e} series.   Then Bessel functions and Kloosterman sums are analogous.  Analogy is not proof.  I see big problems ahead.  For them.  \\ \\
+\textbf{\color{black!20!white!80!green}Prime Number Theorem} Zagier offers us a purely geometric way to do the Riemann Hypothesis (under a big assumption) and the Prime Number Theorem (which we can already have).
+\begin{itemize}
+\item Equidistribution of the horocycle flow on $\mathbb{H}/SL(2, \mathbb{Z})$
+\item $\zeta(1 + it) \neq 0$ for $t \in \mathbb{R}$
+\item Prime Number Theorem, e.g. $\sum_{n \leq x} \Lambda(n) = x +o(x)$
+\end{itemize}
+Geometric reasoning will connect the first two.  One still needs a Tauberian Theorem or other complex analysis tools, to obtain \#2 $\to$ \#3 .
+
 \vfill
  
 \begin{thebibliography}{}
@@ -118,5 +140,22 @@ It's hard to say if I should write $r \in \mathbb{Z}$ suggesting it's radius or 
 
 \item G.N. Watson \textbf{A Treatise on the Theory of Bessel Functions} Cambridge University Press 1966 
 \end{thebibliography}
+
+\newpage
+
+\noindent Something refreshing:  I've been looking at these estimates of Trevor Wooley.  
+$$ \int_{[0,1)^k} \left| \sum_{n\leq X} \mathfrak{a}_n e \big( \alpha_1 \varphi_1(n) + \dots \alpha_k \varphi_k(n)\big) \right|^{2k} d\mathbf{\alpha}
+ \ll X^\epsilon \left( \sum_{n\leq X} |\mathfrak{a}_n|^2 \right)^s $$
+One thing I notice is that $e(\cdot)$ is not just the exponential function.  It is a group character and a by-product of our theory of addition.\footnote{It really is just a theory.  In the Data Science era, we barely know how to add.  The blind use of machine learning will certainly lead us atray, but at least we are rejecting old, broken models.}  \\ \\
+Although any computations in number theory are long and technical and specific, averaging formulas like these are general and basic and potentially useful.
+
+\vfill
+
+\begin{thebibliography}{}
+
+\item Trevor D. Wooley \textbf{Nested efficient congruencing and relatives of Vinogradov's mean value theorem} \texttt{ arXiv:1708.01220}
+ 
+\end{thebibliography}
+
 
 \end{document}
