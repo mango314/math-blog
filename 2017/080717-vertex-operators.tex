@@ -1,0 +1,70 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+\usepackage{pifont}
+\usepackage{amsmath}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+\newcommand{\red}{\begin{tikz}[scale=0.25]
+\draw[fill=red, color=red] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\blue}{\begin{tikz}[scale=0.25]
+\draw[fill=blue, color=blue] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\green}{\begin{tikz}[scale=0.25]
+\draw[fill=green, color=green] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+
+\newcommand{\sq}[3]{\draw[#3] (#1,#2)--(#1+1,#2)--(#1+1,#2+1)--(#1,#2+1)--cycle;}
+\newcommand{\linebrk}{----------------------------------------------------------------------------------------------------------------------------------}
+
+
+\usepackage{tikz}
+
+\newcommand{\susy}{{\bf Q}}
+\newcommand{\RV}{{\text{R}_\text{V}}}
+
+\title{Tutorial : Vertex Operators}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{12.5}{15}\selectfont
+
+\maketitle
+
+\noindent I learned about Davide Gaiotto's work around 2010 with $\mathcal{N}=2$ duality.  And I met him personally towards the end of 2012.  It's now 2017.  His work is consiered important.  Since all I know is more basic math, I observed his work could challenge (or just plain modernize) certain foundations of complex analysis \\ \\
+The only Vertex Operator Algebra I can think of are \textbf{free fermsions} and \textbf{free bosons}.  And all papers I read, the best you can do is reduce to one of these two cases and find a {\color{blue}vacuum expectation value} with some mix of algebra and complex analysis.  Davide's work now says we can find literally zillions of more complicated algebras and he provides constructions of them.  \\ \\
+His reasoning is a bit abstract for my taste.  I am looking for a computation inside of a single vertex algebra, but instead he is reasoning about relations between many classes of vertex operator algebras, using \textbf{S-duality}.  He's not the only one.  A lot of the reasoning about S-duality or $\mathcal{N}=2$ uses {\color{green}derived catgories}, which as Hori himself explained to me is the natural language for describing boundary conditions of physical objects. \\ \\
+What does that even mean? \\
+\linebrk \\
+I trust Davide's judgment I just have no idea what he is talking about.  
+\begin{center}
+Junctions = Boundary Conditions = Vertex Algebras = CFT
+\end{center}
+This is what we have to work with. 
+\begin{itemize}
+\item Vertex Operator Algebras can happen at ``corners".
+\item ``Junctions" can be composed.
+\item $\boxtimes$ is an important operation on CFT's 
+\item S-duality acts on the vertex algebra's themselves.  So does convolution.
+\end{itemize}
+This seems too difficut for now.  Yet, arguably since these algebras have never been constructed, nobody has done any computations with them, or recognized their (implicit) use in the literature already.   I propose a simplification:
+\begin{center}
+Complex Anaysis $\subseteq$ CFT
+\end{center}
+and this is my personal conjecture.  Maybe we can piece together a small part of the new language in this quickly moving frontier.
+
+\vfill
+
+\begin{thebibliography}{}
+
+\item Thomas Creutzig, Davide Gaiotto \textbf{Vertex Algebras for S-duality} \texttt{arXiv:1708.00875}
+
+\end{thebibliography}
+
+\end{document}
