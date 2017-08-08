@@ -1,0 +1,66 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+\usepackage{pifont}
+\usepackage{amsmath}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+\newcommand{\red}{\begin{tikz}[scale=0.25]
+\draw[fill=red, color=red] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\blue}{\begin{tikz}[scale=0.25]
+\draw[fill=blue, color=blue] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\green}{\begin{tikz}[scale=0.25]
+\draw[fill=green, color=green] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+
+\newcommand{\sq}[3]{\draw[#3] (#1,#2)--(#1+1,#2)--(#1+1,#2+1)--(#1,#2+1)--cycle;}
+\newcommand{\linebrk}{----------------------------------------------------------------------------------------------------------------------------------}
+
+
+\usepackage{tikz}
+
+\newcommand{\susy}{{\bf Q}}
+\newcommand{\RV}{{\text{R}_\text{V}}}
+
+\title{Tutorial : Additive Combinatorics}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{12.5}{15}\selectfont
+
+\maketitle
+
+\noindent Given a set $A, B \subset \mathbb{Z}$ we can define $A + B = \{ a + b: a \in A , b \in B \}$.  \\ \\
+As I read it this construction, leading to {\color{yellow!60!black}\text{additive combinatorics}} is equivalent to Fourier analysis, to PDE, parts of graph theory, dynmical systems and many other things.  I have never followed through with taking a Fourier anlysis proof and replacing them with additive combinatorics results.  It certainly does not look like they are powerful enough to replace one with the other. \\ \\
+Melyvn Nathanson has written two nice books on Additive Number Theory.  I do have trouble connecting them to objects that I would call ``additive": 
+$$ 149 = 81 + 2 \times 27 + 9 + 3 + 2 \times 1= 3^4 = 2 \times 3^3 + 3^2 + 3 + 2 \times 3^0 =  12112_3 $$
+This is just me being na\"{i}ve.  The other problem is once I have result how to I place it into context.  Context for whom?
+\begin{itemize}
+\item the guy on the street
+\item an engineer
+\item other mathematicians
+\end{itemize}
+``Context" will mean something different to everbody.  Looking at Nathanson's work now, I realize addition is all that we really have and the main struggle is to but 2+2 together.
+
+\vfill
+
+\begin{thebibliography}{}
+
+\item  Melvyn B. Nathanson \textbf{Sumsets contained in sets of upper Banach density 1} \texttt{arXiv:1708.01905}
+
+\item Mikhail Gromov. \textbf{Colourful Categories} \\
+Uspekhi Mat. Nauk, 	\hspace{0.85in} 2015,Volume 70,	Issue 4	\\
+Russian Mathematical Surveys 2015, ----- " ----
+
+\item Terrence Tao, Van Vu \textbf{Additive Combinatorics} (Cambridge Studies in Advanced Mathematics \#105) Cambridge University Press, 2010. 
+
+\end{thebibliography}
+
+\end{document}
