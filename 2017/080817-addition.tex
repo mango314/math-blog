@@ -47,13 +47,34 @@ This is just me being na\"{i}ve.  The other problem is once I have result how to
 \item an engineer
 \item other mathematicians
 \end{itemize}
-``Context" will mean something different to everbody.  Looking at Nathanson's work now, I realize addition is all that we really have and the main struggle is to but 2+2 together.
+``Context" will mean something different to everbody.  Looking at Nathanson's work now, I realize addition is all that we really have and the main struggle is to but 2+2 together. \\ \\ \\
+What did Melvyn Nathanson prove? \\ \\
+\#1 Every set $A \subseteq \mathbb{Z}_{\geq 0}$ of positive integers with upper Banach density $1$ contains an infinite sequence of pairwise disjoint subsets $(B_i)_{i \in \mathbb{N}}$:
+$$  B_i \cap B_j = \varnothing $$
+such that each of the $B_i$ (also) has upper Banach density $1$ such that:
+$$ \sum_{i \in I} B_i = \left\{ \sum_{i \in I} b_i : b_i \in B_i  \right\}  \subseteq A $$
+This is not the same as base arithmetic.  We could have that $\mathbb{Z}$ is the sum of $B_k = \{ 0, 2^k \}$ for the various power of two, $k \in \mathbb{N}$:
+$$ \mathbb{Z} = \sum_{k \geq 0} \big\{ 0, 2^k \big\} = \{ 0 , 1\} + \{ 0, 2 \} + \{ 0, 4 \} + \dots $$
+These sets are not pairwise disjoint, nor do they have density $1$.  Erd\H{o}s' conjecture says that if $A$ has positive density then $B + C \subseteq A$ where $B$ and $C$ have positive density. 
+
+\newpage
+
+\noindent Nathanson doesn't specifically say how his theorem is relted to the Gromov, nor does Gromov mention him back, though he does talk about the Borsuk-Ulam theorem and Ramsey theory. \\ \\
+In the mean, time Nathson's book does mention the sum of 3 square problem.  How about 4-squares?  Let $\square = \{ x^2 : x \in \mathbb{Z}\}$. That $\square + \square + \square + \square = \mathbb{Z}$.  Says nothing about number fields, or what if the integers $\mathbb{Z}$ have been slightly displaced?  There's a limit to how evenly you can space objects on the surface of a sphere, there's always a bit of discrepancy. \\ \\
+Nathon's second book is on {inverse problems} and that's what we have here.  An arbitrary density = 1 set $B$ and we split into infinitely many parts each with density = 1, such that $\sum B_i = B$.   Some will be bigger than others and there must be something like a base.  How do we compare two sets of these kind?  {Which is bigger}? \\ \\
+I guess it's up to us to {find} compelling instances of density = 1 sets, and maybe improve on his result.
 
 \vfill
 
 \begin{thebibliography}{}
 
-\item  Melvyn B. Nathanson \textbf{Sumsets contained in sets of upper Banach density 1} \texttt{arXiv:1708.01905}
+\item  Melvyn B. Nathanson  \\
+\\ \textbf{Sumsets contained in sets of upper Banach density 1} \texttt{arXiv:1708.01905} \\\\
+\textbf{Additive Number Theory}
+\begin{itemize}
+\item  The Classical Bases (GTM \# 164) Springer, 1996. 
+\item  Inverse Problems and the Geometry of Sumsets (GTM \# 165) Springer, 1997.
+\end{itemize}
 
 \item Mikhail Gromov. \textbf{Colourful Categories} \\
 Uspekhi Mat. Nauk, 	\hspace{0.85in} 2015,Volume 70,	Issue 4	\\
