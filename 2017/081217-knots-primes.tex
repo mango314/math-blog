@@ -1,0 +1,83 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+\usepackage{pifont}
+\usepackage{amsmath}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+\newcommand{\red}{\begin{tikz}[scale=0.25]
+\draw[fill=red, color=red] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\blue}{\begin{tikz}[scale=0.25]
+\draw[fill=blue, color=blue] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\green}{\begin{tikz}[scale=0.25]
+\draw[fill=green, color=green] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+
+\newcommand{\sq}[3]{\draw[#3] (#1,#2)--(#1+1,#2)--(#1+1,#2+1)--(#1,#2+1)--cycle;}
+\newcommand{\linebrk}{----------------------------------------------------------------------------------------------------------------------------------}
+
+
+\usepackage{tikz}
+
+\newcommand{\susy}{{\bf Q}}
+\newcommand{\RV}{{\text{R}_\text{V}}}
+
+\title{Tutorial : Knots and Primes}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{12.5}{15}\selectfont
+
+\maketitle
+
+\noindent From the Number Theorists's point of view, Abelian Class Field Theory is pretty settled and we even have a textbook to guide us though the steps.  What might be new is the analogy between 
+$$ \text{knots} \leftrightarrow \text{primes} $$
+John Pardo asks a nice question about Gauss Linking Integral and Quadratic Reciprocity
+$$ \text{Gauss Linking \#} \leftrightarrow \text{Quadratic Reciprocity}  $$
+I could answer his question very quickly that if set $q= e^{2\pi i /k}$ for some $k \in \mathbb{Z}$, certain formulas from Abelian gauge theory will crank out a proof of QR.  If all I do is cite Dijkgraaf-Witten that's not much of an answer.  \\ \\
+I had seen a single page of the note of Kapranov in it's early stages, now at least there is a textbook about that topic as well! My reservations of Quadratic Reciprocty is the proofs are random, not very quantitative and I always forget the steps immediately upon readong. \\ \\
+My favorite proof is the argument of Zolotarev the map $x \mapsto ax$ on $(\mathbb{Z}/p\mathbb{Z})^\times$ is a permutation.  Then:
+$$ \left( \frac{a}{p} \right) = \text{sgn} (x \mapsto ax) $$
+This Lemma is not instant for me, and Conway's book leaves it as an exercise. I can draw the cycles for specific values of $a$ and $p \in \mathbb{Z}$ but I can't draw a picture for \textit{generic} values. \\ \\
+There are a bunch of necklaces I can't really see and I have to determine the parity over all, based on what little information I have.\footnote{
+Short existential rant about whether $\mathbb{Z}$ is a meaningful concept.  We certainly do count things: we have to make a judgement of whether an object constitutes a unit and whether two or more objects are separate.  Physically we count things by drawing a circle around them and we compare these circles.  This is the cave-man prototype of homology. \\ \\
+The other artifact of $\mathbb{Z}$ is the way we do sampling.  This happen once, twice, three times.  We idealize events as if they happened evenly in time, even when this could not possibly be the case.  And we have no measure of how much information we lost in the process. The Euler-Maclaurin formula is a good start.} \\ \\
+In academic Math the goal is usually a big \textbf{result} and my goal is usually \textbf{foundations} so my discussion always looks different.  In this case, there are my two favorite problems:
+\begin{itemize}
+\item $p = a^2 + b^2$ iff $p = 4k+1$
+\item $n = x^2 + y^2 + z^2$ iff $n \neq 4^a (8b+7)$
+\end{itemize}
+Quadratic reciprocity is an input to the second one. Quadratic reciprocity is \textit{implied} by the first one.  Therefore, (Abelian) Class Field Theory is kind-of everywhere. 
+
+\newpage
+
+\noindent The goal of this note is to answer John's question.
+
+\vfill
+
+\begin{thebibliography}{}
+
+\item Masanori Morishita \textbf{Knots and Primes} (Universitext) Springer, 2012.
+
+\item Nancy Childress \;\;\;\,\textbf{Class Field Theory} (Universitext) Springer, 2009.
+
+\item John Pardon \textbf{Gauss linking integral and Quadratic Reciprocity}  \\
+\texttt{https://mathoverflow.net/questions/142914/gauss-linking-integral-and-quadratic-reciprocity}
+
+\item Robbert Dijkgraaf, Edward Witten \textbf{Topological gauge theories and group cohomology} \\ 
+Comm. Math. Phys. Volume 129, Number 2 (1990), 393-429.
+
+
+\item  Jared Weinstein \textbf{Reciprocity Laws and Galois Representations: Recent Breakthroughs} \\ 
+Bull. Amer. Math. Soc. 53 (2016), 1-39 \hfill \texttt{https://doi.org/10.1090/bull/1515} 
+
+\end{thebibliography}
+
+\end{document}
