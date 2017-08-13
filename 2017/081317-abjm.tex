@@ -1,0 +1,125 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+\usepackage{pifont}
+\usepackage{amsmath}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+\newcommand{\red}{\begin{tikz}[scale=0.25]
+\draw[fill=red, color=red] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\blue}{\begin{tikz}[scale=0.25]
+\draw[fill=blue, color=blue] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\green}{\begin{tikz}[scale=0.25]
+\draw[fill=green, color=green] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+
+\newcommand{\sq}[3]{\draw[#3] (#1,#2)--(#1+1,#2)--(#1+1,#2+1)--(#1,#2+1)--cycle;}
+\newcommand{\linebrk}{----------------------------------------------------------------------------------------------------------------------------------}
+
+
+\usepackage{tikz}
+
+\newcommand{\susy}{{\bf Q}}
+\newcommand{\RV}{{\text{R}_\text{V}}}
+
+\title{Tutorial : ABJM Theory}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{12.5}{15}\selectfont
+
+\maketitle
+
+\noindent New matrix models associated to Chern-Simon's matter theory were found about 10 years ago. Especially ABJM theory: 
+\begin{itemize}
+\item how did ABJM theory happen?
+\item check for consistency
+\end{itemize}
+Consistent or not, this has not stopped a wave of results up to now.  Yet when I ask around, people are quick to point out contradictions in the setup. \\ \\
+It was significant that a supersymmetric Chern-Simon's matter theory was found.  With a minimal knowledge of supersymmetry, I looked at the matrix model definition. This is what happens \textit{after} localization:
+$$ Z = \frac{1}{\mathcal{W}} \int da \, e^{- 4 i \pi^2 \text{Tr}(a^2)} \frac{\det_{\text{Ad}}2 \sinh (\pi a) }{\det_R 2 \cosh (\pi a)} $$
+this is a finite-dimensional matrix integral.  The Lie-group machinery is very ecumenical.  
+\begin{itemize}
+\item if we find a supersymmetric Chern-Simon's theory with gauge group $G$ 
+\item and the ``chiral multiplet" is in the representation $R \oplus R^*$
+\item the partition function is the finite dimensional integral $Z$
+\item it's an integral over the Cartan $\mathcal{W}$.  If $G$ is compact (e.g. $G = SU(2)$) then $\mathcal{W}$ is the maximal torus.
+\item $\text{Tr}$ is an invariant inner product on the Lie algebra $\mathfrak{g}$.
+\item $\text{Ad}$ is the \textbf{adjoint} representation of $G$
+\item $\text{R}$ is whatever representation we have chosen. 
+\item $\det_R f(a) = \prod_\rho (f \circ \rho )(a)$ where the product is over the weights $\rho$ of the representation $R$. 
+\end{itemize}
+While I respect Kapustin and his colleagues in terms of general correctness, if we want to find the number these matrix integrals evaluate too, these answers are still much too schematic. \\ \\
+At this point, I should consult a Lie groups textbook such as Fulton-Harris and find many of my answers there.  
+
+\newpage
+
+\noindent Resources on ABJM theory are not hard to find.  What remains is to express our doubts in such as way as to not bring down the whole discussion.  A totally rigorous discussion of ABJM theory should involve one about Chern-Simon's theory which simply doesn't exist.  Therefore, we gently point out gaps in the argument. \\ \\
+Kapustin-Willet-Yaakov work out the answer for us in the case of ABJM theory and at least a few people are calculating with it:
+$$ Z = \int d\lambda \, d\mu  \left( \prod_i e^{-ik\pi \, (\lambda_i^2 - \mu_i^2) } \right) \frac{ \prod_{i < j} 2 \sinh (\mu_i - \mu_j) \prod_{i < j} 2 \sinh (\lambda_i - \lambda_j)}{\prod_{i \neq j}  \big[ 2\cosh(\lambda_i - \mu_j) \big]^2 } $$
+Now we are left with the opposite problem.  Where did this integral come from?  We have two choices:
+\begin{itemize}
+\item supersymmetric gauge theory
+\item nothing
+\end{itemize}
+The authors compare their results to other physics calculations, which merely creates more room for confusion.  Following their own recipe they have a little bit to say about how their integral was constructed:
+\begin{itemize}
+\item $G = U(N) \times U(N)$ 
+\item two chrial multiplets in the $(N, \overline{N})$ representation.
+\item two chrial multiplets in the $(N, \overline{N})$ representation (dual).
+\item $\mathrm{Tr} = \frac{k}{4\pi} (\mathrm{tr} - \hat{\mathrm{tr}}) $
+\end{itemize}
+As mathematicians, I don't have to provide just one proof or definition.  There's always talk about ``the mathematical definition" we can have many. \\ \\
+\textbf{Conjecture \#1}  $Z$ is finite. \\ \\
+This conjecture is false, but at lease we have a provable statement. Up to now we have sound physical reasoning, but it's also speculative.  The integral might converge:
+$$ Z = \int d\lambda \, d\mu  \left( \prod_i e^{-ik\pi \, (\lambda_i^2 - \mu_i^2) } \right) 
+{ \color{black!10!white} \frac{ \prod_{i < j} 2 \sinh (\mu_i - \mu_j) \prod_{i < j} 2 \sinh (\lambda_i - \lambda_j)}{\prod_{i \neq j}  \big[ 2\cosh(\lambda_i - \mu_j) \big]^2 } } =
+\left[ \int d\lambda  \left( e^{-ik\pi \, |\lambda|^2  } \right) \right]^2  $$
+This looks oddly like the Gauss sum from number theory or the Fresel integral (which converges) and I've even found resources for that.  \\ \\
+Lastly, I don't have the resources to understand chiral multiplets at this time (these are representations of superalgebra).  By the Hilbert-Nullstellensatz or results of this kind we can study two kinds of geometric objects:
+\begin{itemize}
+\item maps of the object organized into charts
+\item the rings of observables living on the object
+\end{itemize}
+At a crucial step, the 3-manifold in Kapustin-Willet-Yaakov switches from flat space $\mathbb{R}^3$ to the 3-sphere $S^3$.  This is excellent physical intuition but mathematically it's a nightmare.
+
+\newpage
+
+\noindent If we find an observable like a chiral multiplet on a sphere, the underlying geometric object must be rather interesting: it's some kind of enriched $S^3$.  What is it?  I will just make something up:
+$$ S^3  \Big( \times U(N) \times U(\overline{N}) \Big) $$
+Maybe I should say it is a vector space with an action of $U(N)$.  I can never hope to solve the Chern-Simon's equations, what could this object be then?
+There needs to be some other way of thinking about these Chern-Simons-matter integrals that doesn't involve so much havy machinery. \\ \\
+While that is going on, I noticed the preponderance of infinite produts -- that we just ignore:
+$$ \det (bosons) = \prod_{i < j} \prod_{\ell = 1}^\infty \Big( (\ell+1)^2 + (\lambda_i - \lambda_j)^2 \Big)^{2 \ell (\ell + 2)}  $$
+Hopefully I typed it correctly. I don't know what a 1-loop determinant is and I have no plans of figuring it out. So I have to find some other way to understand this matrix integral that captures some of the localization process.
+
+\vfill
+
+\begin{thebibliography}{}
+
+\item Ofer Aharony, Oren Bergman, Daniel Louis Jafferis, Juan Maldacena \textbf{N=6 superconformal Chern-Simons-matter theories, M2-branes and their gravity duals} \texttt{arXiv:0806.1218}
+
+\item Anton Kapustin, Brian Willett, Itamar Yaakov \textbf{Exact Results for Wilson Loops in Superconformal Chern-Simons Theories with Matter}  \texttt{arXiv:0909.4559}
+\\ 
+\item Marcos Marino, Pavel Putrov \\ 
+\textbf{Exact Results in ABJM Theory from Topological Strings}  \texttt{arXiv:0912.3074} \\
+\textbf{ABJM theory as a Fermi gas} \texttt{arXiv:1110.4066}
+\item Nadav Drukker, Marcos Marino, Pavel Putrov \textbf{From weak to strong coupling in ABJM theory} \texttt{arXiv:1007.3837}
+\item Pavel Putrov, Masahito Yamazaki \textbf{Exact ABJM Partition Function from TBA} \texttt{arXiv:1207.5066}
+
+\item Marcos Marino \\ 
+\textbf{Lectures on non-perturbative effects in large N gauge theories, matrix models and strings} \texttt{arXiv:1206.6272} \\
+\textbf{Lectures on localization and matrix models in supersymmetric Chern-Simons-matter theories} \texttt{arXiv:1104.0783}
+
+
+\end{thebibliography}
+
+
+\end{document}
