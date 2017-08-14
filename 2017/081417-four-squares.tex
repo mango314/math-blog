@@ -95,7 +95,20 @@ $$ |a_n| < \big( c \, e^{2\pi} \big) \, n^{k/2} $$
 This is the bound that Hecke proved. \\ \\
 {\color{red!50!green}Exercise} \\ 
 $f$ is cusp $\leftrightarrow$ $f(z) = O(q)$ with $|q| = e^{-2\pi y }$ and $y \to \infty$.  \hfill This just says that $q \to 0$ is a cusp. \\ \\ \\
-\textbf{Return to Step \#2}: \dots
+\textbf{Return to Step \#2}: Let $f(z)$ be a modular form of weight $k$.  Then
+$$ \text{ord}_\infty (f) + \sum_{z \in \Gamma_0(4)}  \frac{1}{e} \, \text{ord} (f) = \frac{k}{12} $$ \dots
+
+\newpage
+
+\noindent This would be the contour for $\Gamma_0(1) = \text{SL}(2, \mathbb{Z}) \backslash \mathbb{H}$ \\\\
+How do we compute the volume of congruence groups?\\
+\includegraphics{modular-01.png} \\ \\
+In the case of $\Gamma_0(4)$ the region is exactly 6 times as large (as found by the proposition):
+$$ \text{Vol} \big( \Gamma_0(4) \backslash \mathbb{H}\big) = 6 \times \text{Vol} ( \text{SL}(2, \mathbb{Z}) \backslash \mathbb{H}) $$
+It would be reasonable to try to draw the region bounced by the two maps $z \mapsto z + 1$ and $z \mapsto - \frac{1}{4z}$.  We know the result should be contained in an infinite cylinder, but the second map cuts the region even more.  It's not hard, but a discussion is not readily available \\ 
+\includegraphics{modular-02.png} \\ \\
+\textbf{Proposition}\footnote{For $N = 4$ this would give n answer of $6$.  The above picture is the region for $\Gamma(4)$ not $\Gamma_0(4)$. } The coset representatives of $\Gamma_0(N)$ are in 1-1 bijection with $\mathbb{P}^1(\mathbb{Z}/ N \mathbb{Z})$. 
+
 \vfill
 
 \begin{thebibliography}{}
@@ -104,6 +117,8 @@ $f$ is cusp $\leftrightarrow$ $f(z) = O(q)$ with $|q| = e^{-2\pi y }$ and $y \to
 \item Don Zagier \textbf{Elliptic Modular Forms and their Applications} \\ \texttt{https://doi.org/10.1007/978-3-540-74119-0\_1}
 
 \item Jan Bruinier, Gerard Geer, G\"{u}nter Harder, Don Zagier. \\ \textbf{The 1-2-3 of Modular Forms} (Universitext) Springer, 2008.
+
+\item A000118:\textbf{	Number of ways of writing $n$ as a sum of $4$ squares; also theta series of lattice $\mathbb{Z}^4$} Onine Encyclopedia of Integer Sequences \texttt{https://oeis.org/A000118}
 
 
 \end{thebibliography}
