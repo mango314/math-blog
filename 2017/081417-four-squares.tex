@@ -52,6 +52,50 @@ In our case, $f(z) = q^{z^2}$, for $z \in i \mathbb{R}$ (and by analytic continu
 \textbf{Step \# 2} The space of modular forms of weight $2$ on $\mathbb{H}/\Gamma_0(4)$ is at most two-dimensional. \\ \\
 This is another whopper.
 
+
+\newpage
+
+\noindent \textbf{Step \#3} We find a basis of $M_2 \big(\Gamma_0(4)\big)$.  The two startfunctions do span:
+\begin{eqnarray*}
+\mathbb{G}_2 (z) &=& - \frac{1}{24} + \sum_{n=1}^\infty \sigma_1(n) \, q^n  = - \frac{1}{24} + q + 3q^2 + 4q^3 + 7q^4 + 6q^5 + \dots \\
+G_2(z) &=& - 4\pi^2 \mathbb{G}_2(z) = \frac{1}{2} \sum_{n \neq 0} \frac{1}{n^2}  + \frac{1}{2} \sum_{m \neq 0} \sum_{n \in \mathbb{Z}} \frac{1}{(mz+n)^2} \\
+\end{eqnarray*}
+This is related to Eisenstein series by a factor of $\zeta$.  If $k > 2$ we'd have:
+\begin{eqnarray*} G_k(z) &=& \zeta(k) E_k(z) \\ \\
+G_k(z) &=&  \frac{1}{2} \sum_{(m,n) \neq (0,0)} \frac{1}{(mz+n)^2}  \\
+ E_k(z) &=& \sum_{\gamma \in \Gamma_\infty \backslash \Gamma_1 } 1\big|_k \gamma 
+ = \frac{1}{2} \sum_{(c,d)=1} \frac{1}{(cz+d)^k}
+\end{eqnarray*}
+As $k \to 2$ did the extra terms just magically appear?  Zagier just says for $k > 2$ define it this way, for $k= 2$ define this special way.
+$$ \mathbb{G}^*_2(z) = G_2(z) - \frac{\pi}{2y} $$
+There's lot of exciting regularization issues going on here\dots letting $k = 2 + \epsilon$. \\ \\
+Here are three modular forms of weight $2$ on $\Gamma_0(4)$, that are \textbf{not} holomorphic:
+$$ \mathbb{G}^*_2(z), \mathbb{G}^*_2(2z) , \mathbb{G}^*_2(4z) $$
+Here are two holomorphic forms that's don't have the $y$-term.
+$$  \mathbb{G}^*_2(z) -  2\,\mathbb{G}^*_2(2z)  \; , \;  \mathbb{G}^*_2(2z) -  2\mathbb{G}^*_2\,(4z) $$
+and now our modular form of interest $\theta(z)^4$ fits into this space $M_2(\Gamma_0(4))$ as well.  By search:
+$$ \theta(z)^4 = 8 \big( \, \mathbb{G}^*_2(z) -  2\,\mathbb{G}^*_2(2z)  \, \big) + 16 \big( \,\mathbb{G}^*_2(2z) -  2\mathbb{G}^*_2\,(4z) \,\big)  $$
+This is essentially the \textbf{pigeonhole principle}. This turns a formula for the divisor function:
+$$ d_4(n) = 8 \,\sigma_1(n) - 32 \sigma_1\, (n/4) $$
+It's likely there are many more elementary identities of this kind waiting to be discovered. 
+
+\newpage
+
+\noindent What's so great, we have incorporated all the basic theorems into a single proof except for: \\ \\ \\
+\textbf{Theorem }Let $f(z)$ be a cusp form of weight $k$ on $\Gamma_1 = \mathrm{SL}(2, \mathbb{Z})$.  E.g. let $f(z) = \sum a_n \, q^n$.  Then:
+$$ a_n \leq C \, \sqrt{n^k}  $$
+for $n \geq 0$.  The constant $C$ can change with the $f$ (does not depend on $n$). \\ \\ \\
+The problem is our function $\theta(z)^4 = {\color{green!50!blue}\mathbf{1}} + 8 \, q + \dots $ is not cusp.  However, maybe we can find other related theta functions which have series expansion $\sum a_n \, q^n$ with $a_0 = 0$.  Let's proof this coefficients theorem \\ \\
+\textbf{Proof} We have the Fourier transform formula, integrating across a horocycle:
+$$ a_n = e^{2\pi n y} \int_0^1 f(x + iy) e^{- 2\pi i \, n x} \; dx  $$
+The geometry of the region dictates that we should have a bound for $f$:
+$$ \big|f(z)\big| < c \, y^{-k/2} $$
+Therefore $|a_n| <  c  \, y^{-k/2} \, e^{2\pi \ ny } $ A small leap here, if we set $y \asymp \frac{1}{n}$ we should have:
+$$ |a_n| < \big( c \, e^{2\pi} \big) \, n^{k/2} $$
+This is the bound that Hecke proved. \\ \\
+{\color{red!50!green}Exercise} \\ 
+$f$ is cusp $\leftrightarrow$ $f(z) = O(q)$ with $|q| = e^{-2\pi y }$ and $y \to \infty$.  \hfill This just says that $q \to 0$ is a cusp. \\ \\ \\
+\textbf{Return to Step \#2}: \dots
 \vfill
 
 \begin{thebibliography}{}
