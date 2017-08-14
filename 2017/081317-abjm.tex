@@ -100,6 +100,26 @@ While that is going on, I noticed the preponderance of infinite produts -- that 
 $$ \det (bosons) = \prod_{i < j} \prod_{\ell = 1}^\infty \Big( (\ell+1)^2 + (\lambda_i - \lambda_j)^2 \Big)^{2 \ell (\ell + 2)}  $$
 Hopefully I typed it correctly. I don't know what a 1-loop determinant is and I have no plans of figuring it out. So I have to find some other way to understand this matrix integral that captures some of the localization process.
 
+\newpage
+
+\noindent This seems to have been a big topic in 2011-12, so we are quite behind.  Marcos Marino helps us along.  First of all he concedes, details are missing in the research paper version.
+\begin{itemize}
+\item There is a thing called Chern-Simon's matter theory.  And it can be made to be supersymmetric:
+$$S = - \int d^3 x \mathrm{Tr} \left( A \wedge dA + \frac{2i}{3}A^3  - \overline{\lambda}{\lambda} + 2 D \sigma \right)  $$
+\item There is a procedure to find the ``partition" function of CS, involving a ``saddle-point" approximation to the Feynman (or Dirac) path-integral: $\sum e^{iS}$ and finding the 1-loop approximation.  This is called the ``perturbative" approach. 
+$$ Z (M) = \frac{1}{\text{vol}(\mathcal{G})} \int [\mathcal{D}A] \,e^{ikS} = \sum_{pt} Z^{(pt)}(M)$$
+There's no guarantee any of these expansions will converge to the exact answer.  Chern-Simon's theory is ``exactly solvable" and I don't know the reason they stop at 1-loop.
+$$ Z^{pt}(M) = Z_{\text{1-loop}}^{pt}(M) \left[  \sum_{\ell = 1}^\infty S_\ell^{pt} \, k^{-\ell} \right]  $$
+From Mathematical point of view, there's no reason this \textbf{semiclassical approximation} is guaranteed to work.  Or that this is the only acceptable way.  Reasoning about the correctness of these procedures is not likely to make us very popular\dots
+\item Sometimes we can get an exact answer (computed by other means)
+$$ Z(S^3) = \frac{1}{ (k+N)^{\frac{N}{2}}} \prod_{j=1}^{N-1} \left( \sin \frac{\pi j}{k+N} \right)^{N-j} \hspace{0.8in} $$
+and if we get $k \gg 1$ we get an approximate formula:
+$$  Z_{\text{1-loop}}(S^3) = k^{- \frac{N}{2}} \prod_{j=1}^{N-1} \left( \frac{2\pi j}{k} \right)^{N-j}
+= (2\pi)^{\binom{N}{2}} k^{ - \frac{1}{2}N^2} G_2(N+1) $$
+\end{itemize} 
+Do we buy the reasoning presented here?  There are certainly problems with it, but it does yield us answer, which is better than other situation. \\ \\
+Every time, Marino or Kapustin or Maldacena uses a formula, can we do something else?
+
 \vfill
 
 \begin{thebibliography}{}
@@ -117,6 +137,8 @@ Hopefully I typed it correctly. I don't know what a 1-loop determinant is and I 
 \item Marcos Marino \\ 
 \textbf{Lectures on non-perturbative effects in large N gauge theories, matrix models and strings} \texttt{arXiv:1206.6272} \\
 \textbf{Lectures on localization and matrix models in supersymmetric Chern-Simons-matter theories} \texttt{arXiv:1104.0783}
+
+\item Brian Willett \textbf{Localization on three-dimensional manifolds} \texttt{arXiv:1608.02958}
 
 
 \end{thebibliography}
