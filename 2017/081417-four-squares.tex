@@ -109,6 +109,36 @@ It would be reasonable to try to draw the region bounced by the two maps $z \map
 \includegraphics{modular-02.png} \\ \\
 \textbf{Proposition}\footnote{For $N = 4$ this would give n answer of $6$.  The above picture is the region for $\Gamma(4)$ not $\Gamma_0(4)$. } The coset representatives of $\Gamma_0(N)$ are in 1-1 bijection with $\mathbb{P}^1(\mathbb{Z}/ N \mathbb{Z})$. 
 
+
+\newpage
+
+\noindent Consulting a textbook: \\ \\
+\textbf{Proposition} The modular group at level $N$ is defined by:
+$$ \Gamma_0(N) \equiv \left\{  \left( \begin{array}{cc}
+a & b \\ c & d \end{array} \right) : c \equiv 0 \pmod N \right\}  $$
+In our case $N = 4$.  We are trying to draw: $\mathcal{F} = \mathbb{H}/\Gamma_0(4)$.  If I pick two generators:
+$$ z \mapsto z + 1,\; z \mapsto - \tfrac{1}{4z} \in \Gamma_0(4) \subseteq \text{PSL}_2(\mathbb{Z}) $$
+There are two ways to reason about the fundamental domain, $\mathcal{F}$.
+\begin{itemize}
+\item As a subgroup, we can compute the index $[\Gamma_0(4):\text{PSL}_2(\mathbb{Z})] \in \mathbb{N}$ in fact, there is a neat formula for that.  The fundamental region for $\Gamma_0(4)$ will be the union of copies of the regon for $\text{SL}_2(\mathbb{Z})$.
+\item I could try, from scratch, to draw the images of $z=i$ for every possible combination of $S: z \mapsto - \frac{1}{4z}$ and $T: z \mapsto z+1$.  Then, maybe I can find the Voronoi polygon of one of the points in the hyperbolic plane $\mathbb{H}$.  This is a good skill to have.
+\end{itemize} 
+These two methods will give different fundmamental domains.\\
+\includegraphics{modular-03.png} \\ 
+This is not the fundamental domain but it is kind of awesome.  It is the set of images:
+$$ \left\langle S:z \mapsto \frac{4}{z} ,\;  T:z \mapsto z + 1\right\rangle \, i \in \mathbb{H} $$
+The plot after using the correct map is a it calmer, but it raised a question that the fundamental domain was an infinite-sided polygon.  And that's something I'd rather not check.
+
+\newpage
+
+\noindent Or it could be a triangle.  It's a different triangle from the one you find in $\mathbb{H}/SL(2, \mathbb{Z})$ \\
+\includegraphics[width=4.5in]{modular-04.png} \\ 
+It is an infinite triangle, but it has finite hyperbolic area.  By Gauss-Bonnet theorem, or whatever:
+$$ \text{Vol}\big(\mathbb{H}/\Gamma_0(4)\big) = \int_{-1/2}^{1/2} \left[ \int^\infty_{\sqrt{1/4-x^2}} \frac{dy}{y^2} \right]dx =  \int_{-1/2}^{1/2}  \frac{dx}{\sqrt{1/4 - x^2}}
+= 2 \times tan^{-1}(x)\bigg|_{-\pi/2}^{\pi/2} = 2\pi = 6 \times \frac{\pi}{3}$$
+This really is six times the area of the $SL(2, \mathbb{Z})$ fundamental domain suggesting we are correct.  \\ \\
+\textbf{Next Time}: using this proof (or another) we hint at equidistribution of the 4-squares points, connections to Hopf fibration, Davenport's geometry of number's proof, and how these things should behave over the Adeles, $\mathbb{A}$.  That the proof uses the Weil conjectures suggests we should reap the many intermediate results first.
+
 \vfill
 
 \begin{thebibliography}{}
@@ -120,6 +150,7 @@ It would be reasonable to try to draw the region bounced by the two maps $z \map
 
 \item A000118:\textbf{	Number of ways of writing $n$ as a sum of $4$ squares; also theta series of lattice $\mathbb{Z}^4$} Onine Encyclopedia of Integer Sequences \texttt{https://oeis.org/A000118}
 
+\item Oliver Sargent, Uri Shapira \textbf{Dynamics on the space of 2-lattices in 3-space} \texttt{arXiv:1708.04464}
 
 \end{thebibliography}
 
