@@ -148,11 +148,50 @@ This really is six times the area of the $SL(2, \mathbb{Z})$ fundamental domain 
 
 \item Jan Bruinier, Gerard Geer, G\"{u}nter Harder, Don Zagier. \\ \textbf{The 1-2-3 of Modular Forms} (Universitext) Springer, 2008.
 
+\item Anton Deitmar \textbf{Automorphic Forms} (Universitext) Springer, 2013.
+
 \item A000118:\textbf{	Number of ways of writing $n$ as a sum of $4$ squares; also theta series of lattice $\mathbb{Z}^4$} Onine Encyclopedia of Integer Sequences \texttt{https://oeis.org/A000118}
 
 \item Oliver Sargent, Uri Shapira \textbf{Dynamics on the space of 2-lattices in 3-space} \texttt{arXiv:1708.04464}
 
 \end{thebibliography}
 
+\newpage
+
+\noindent \textbf{8/17}  We need to get a move-on, I'm afraid.  Here's a sentence from a paper of an old colleague of mine, that I'm considering reading.
+\begin{quotation} \noindent Let $\pi$ traverse a sequence of cuspidal automorphic representations of $\text{GL}_2$ with large prime level and bounded infinity type.
+\end{quotation}
+Number Theory at the professional level has become so modern I can no longer discern it's elementary counterparts.  Think about it, we had enough trouble writing down the boundary of the region $\mathbb{H}/\Gamma_0(4)$ we may also have trouble understandiong a group like:
+$$ \text{SL}_2(\mathbb{Q})\backslash \text{SL}_2(\mathbb{A})/\text{SL}_2(\hat{\mathbb{Z}})$$
+so while a textbook like Dietmar or Bump may put down all the foundations, all the ``elementary" parts (i.e. the good parts)  are left as exercises to the reader. \\ \\
+We need more modular forms.  Our resources are:
+\begin{itemize}
+\item Eisenstein series $\subseteq$ Poincar\'{e} series
+\item Theta functions
+\item Hecke Eigenfunctions
+\item Maa{\ss} waveforms 
+\end{itemize}
+Here is the definition I found for theta function by my friend.
+\begin{quotation}
+Let $\rho_\psi: \mathcal{S}(\mathbb{A})\to \mathcal{S}(\mathbb{A})$ be the Weil representation attached to $\psi\in \text{Mp}_2(\mathbb{A})$ (acting on Adelic Schwartz space).  For $\phi \in \rho_\psi$, the ``elementary" theta function:
+$$ \theta(\phi): \text{SL}_2(F)\backslash \text{Mp}_2(\mathbb{A}) \to \mathbb{C} $$
+is an automorphic form, we can even write down a nice concrete formula for it:
+$$\theta(\phi)(g) := \sum_{\alpha \in F} \Big(\rho_\psi(g)\Big)(\alpha) $$
+\end{quotation}
+This is a far cry from $\theta(z) = \sum_{n \in \mathbb{Z}} q^{n^2}$ but at least this style of writing makes the symmetry very very clear.  Perhaps. \\ \\
+Obviously, Paul Nelson and his teachers are correct.  I just wouldn't be able to tell you.\footnote{We will go back a few decades and examine space of modular forms constructed by Goro Shimura and some newer constructions by Don Zagier. Orthogonal to all mathematics, these papers were written in the 1970's and type-written in the 1970's.  These papers are written an a rather streamlined, mechanical style that makes it difficult to pick out the more salient features. They are very difficult to read: both the symbols are difficult to read and the mathematics is challenging.}   
+
+\newpage
+\noindent Let $n \in \mathbb{Z}$ be a positive integer, and $A$ is a positive definite $n \times n$ matrix\footnote{The term ``matrix" can be thought of a short-hand for the algebra spanned by $e_i \otimes e_i^*$ with $e_i \in V$ and $e_i^* \in V^*$.  There should be other algebras defined with other multiplications and they are written in this algebraic way without any matrix shorthand.  We should invent our own!} with entires in $\mathbb{R}$.  \\ \\
+Let $x \in \mathbb{R}^n$ and $P$ be a \textbf{spherical function} $P: \mathbb{R}^n \to \mathbb{C}$ with 
+$$ P(x) = \left\{ \begin{array}{lcc} 
+\text{constant} & \text{if} & \nu=0  \\ \\
+\displaystyle \sum_q \beta_q \;( \, q^T \, A \, x \,)^\nu & \text{if} & \nu>0
+\end{array} \right. $$
+These vector $q$ should have $q^T A q = 0$ if $\nu > 1$. I could type this $\langle q | A | q \rangle = 0$. Define $\theta(z;P)$ with
+$$ \theta(z;P) = \sum_{m \in h + N \mathbb{Z}^n} P(m) \cdot e 
+\Big( \tfrac{1}{2N^2} \cdot z \cdot (m^T A m)  \Big) $$
+Duke calls this $u$ instead of $P$.  It looks good that spherical harmonics $u \in L^2[S^n]$ should count as ``spherical functions" in this definition. \\ \\
+Despite being written in 1973, the idea of summing over close-to-random vectors $q \in S^n $ has a very modern flair to it.  The care in which Shimura is writing suggests his modular form construction does not always ``work".\footnote{It works!  It doesn't work!  This phrases changes every time we use it.  Yet, this is our way of connecting all the things\dots}
 
 \end{document}
