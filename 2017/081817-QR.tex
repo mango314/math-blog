@@ -1,0 +1,75 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+\usepackage{pifont}
+\usepackage{amsmath}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+\newcommand{\red}{\begin{tikz}[scale=0.25]
+\draw[fill=red, color=red] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\blue}{\begin{tikz}[scale=0.25]
+\draw[fill=blue, color=blue] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\green}{\begin{tikz}[scale=0.25]
+\draw[fill=green, color=green] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+
+\newcommand{\sq}[3]{\draw[#3] (#1,#2)--(#1+1,#2)--(#1+1,#2+1)--(#1,#2+1)--cycle;}
+\newcommand{\linebrk}{----------------------------------------------------------------------------------------------------------------------------------}
+
+
+\usepackage{tikz}
+
+\newcommand{\susy}{{\bf Q}}
+\newcommand{\RV}{{\text{R}_\text{V}}}
+
+\title{Tutorial : Quadratic Reciprocity}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{12.5}{15}\selectfont
+
+\maketitle
+
+\noindent Reciprocity Theorems: why do they happen?  why are they important?  Every time I see a proof of quadratic reciprocity it's usually at the end of a textbook just to show off all the ``concepts" we have learned.  For me, the argument's tell me it's true but if we are trying to solve the equiation:
+$$ x^2 \equiv p \pmod q $$
+it doesn't explain why $p \leftrightarrow q$ should be possible, why these numbers should be on equal footing.  And if we look at other ``reciprocity theorems"  can their proofs be told in ``elementary" language i.e. with numbers! \\ \\
+These days I find the Legendre symbol misleading.  Let's try another way:
+$$ \Big[ x^2 \equiv p \pmod q \Big] \leftrightarrow \Big[ x^2 \equiv q \pmod p \Big]  $$
+except this is not true when but $p = 4k+3$ and $q = 4k + 3$ then we have the opposite
+$$ \Big[ x^2 \equiv p \pmod q \Big] \leftrightarrow \Big[ x^2 \not\equiv q \pmod p \Big]  $$
+How is this applied in the real world?  I think that's an open question.  All I can say is that the concept of the integers $\mathbb{Z}$ becomes are scaffolding for understanding a chaotic world, that really has no intrinsic concept of number.\footnote{Why is there no \textbf{dynamical systems}  proof of Quadratic Reciprocity?  We will not discuss {\color{black!10!white}cryptrography} in any way, but maywe we could discuss \textbf{coding}  or \textbf{information theory}.  Just, number theory is to as ``applied" as one would like.  Philosophically it's about abstracting away from the real world something extremely pure.} \\ \\
+Can you come up with a better concept than $\mathbf{0}$ or better than $\mathbb{Z}$?  No. \\ \\ \\ \\
+Usually the justification is that Quadratic Reciprocity is connect to other branches of mathematics.  Let's try:
+$$ \big[ \text{fermat's little theorem(s)} \big]
+\to \big[ \text{QR} \big]
+\to \big[ \text{three squares} \big] 
+\to \big[ \text{Banach-Tarski paradox} \big]$$
+
+
+\newpage
+
+\noindent \textbf{A} Wikipedia has a separate page for \text{proofs} of Quadratic Reciprocity.  Let's try the willy-nilly Eisenstein proof, which I despise.
+
+\vfill
+
+\begin{thebibliography}{}
+
+\item Masanori Morishita \textbf{Knots and Primes} (Universitext) Springer, 2012.
+
+\item Nancy Childress \;\;\;\,\textbf{Class Field Theory} (Universitext) Springer, 2009.
+
+\item  Jared Weinstein \textbf{Reciprocity Laws and Galois Representations: Recent Breakthroughs} \\ 
+Bull. Amer. Math. Soc. 53 (2016), 1-39 \hfill \texttt{https://doi.org/10.1090/bull/1515} 
+
+\end{thebibliography}
+
+
+
+\end{document}
