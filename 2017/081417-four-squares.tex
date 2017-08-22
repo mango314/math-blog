@@ -192,6 +192,58 @@ These vector $q$ should have $q^T A q = 0$ if $\nu > 1$. I could type this $\lan
 $$ \theta(z;P) = \sum_{m \in h + N \mathbb{Z}^n} P(m) \cdot e 
 \Big( \tfrac{1}{2N^2} \cdot z \cdot (m^T A m)  \Big) $$
 Duke calls this $u$ instead of $P$.  It looks good that spherical harmonics $u \in L^2[S^n]$ should count as ``spherical functions" in this definition. \\ \\
-Despite being written in 1973, the idea of summing over close-to-random vectors $q \in S^n $ has a very modern flair to it.  The care in which Shimura is writing suggests his modular form construction does not always ``work".\footnote{It works!  It doesn't work!  This phrases changes every time we use it.  Yet, this is our way of connecting all the things\dots}
+Despite being written in 1973, the idea of summing over close-to-random vectors $q \in S^n $ has a very modern flair to it.  The care in which Shimura is writing suggests his modular form construction does not always ``work".\footnote{It works!  It doesn't work!  This phrases changes every time we use it.  Yet, this is our way of connecting all the things\dots} \\ \\
+\textbf{Exercise}  Let $u$ be a spherical harmonic, William Duke defines $\theta(z;u)$ as:
+$$ \theta(z;u) = \sum_{m \in \mathbb{Z}^3} u(m) \,e(z \,|m|^2 )  
+= \sum_{n \in \mathbb{Z}} n^{\ell/2} \, r_3(n)
+\left[  \frac{1}{r_3(n)} \sum_{\xi \in V_3(n)} u(\xi) \right] 
+e ( n\, z)$$
+This theta function is a holomorphic cusp form over $\Gamma_0(4)$.
+\begin{itemize}
+\item was Duke's definition consistent with Goro Shimura's definition?
+\item show this is invariant under $z \mapsto z + 1$ and $z \mapsto - \frac{1}{4z}$
+\item can this be expanded in terms of Eisenstein series?
+\end{itemize}
+
+\newpage
+
+\noindent \textbf{8/22} At this point, my knowledge of modular forms becomes really schematic.  I've already vented my frustrations that Number Theory and Modular Forms are different fields.\footnote{(which are of course seprated from Hyperbolic Geometry and Low Dimensional Topology).}  Our transformation formulas have both things:
+$$ \theta(z + 1 ) = \theta(z) \text{ and }\theta(-1/4z) = \sqrt{ 2 z\,i} \;\theta(z) $$
+\textbf{Figure 1} The fundamental domain of $\Gamma_0(4)$.  This is found in the 3-volume work of Mumford which he has made availble on the internet:\\
+\includegraphics[width=5in]{modular-05.png} \\
+and he even draws the cusps for you, so we don't have to guess to much what $\Gamma_\infty \backslash \Gamma_0(4)$ should behave like.\footnote{This does not get us out of working out these infinite group problems in the future.  Every single time.}
+
+\newpage
+
+\noindent \textbf{Figure 2} Mumford address the sum of 4-squares problem in much the same way we did.  \\
+\includegraphics[width=5in]{modular-06.png} \\
+
+\newpage
+
+\noindent \textbf{Figure 2} Mumford outlines the philosophy of modular forms and doesn't waste any time.  But he supplies us a lot of detail how he's doing to turn theta functions $\to$ modular forms.  And while $E_4, G_4$ are safely convergent, he spends time worrying about $E_2$.  This is regularization. \\
+\includegraphics[width=5in]{modular-07.png} \\
+The theta and zeta functions are related by a Mellin transform.  So maybe the prime number theorem (at least the pole of $\zeta(s)$ at $s = 1$) could be turned into a statement about theta functions \\
+\newpage
+
+\noindent \textbf{Figure 3}  Theta functions observe many many formulas.  They are exact if difficult to look at.  Perhaps we want approximations after all?  If we keep all the terms at least there is symmetry.  Are we OK with almost-symmetry? \\
+\includegraphics[width=5in]{modular-08.png} \\
+
+\newpage
+
+\noindent \textbf{Figure 4}  Mumford tells us to use the Horocycle flow. This is just getting started. \\
+\includegraphics[width=5in]{modular-09.png} \\
+
+\newpage
+
+\noindent \textbf{Figure 5} It's not just clear from Mumford.  There's level of obviousness that this is the way to go. \\
+\includegraphics[width=6in]{modular-10.png} \\
+
+\newpage
+
+\noindent \textbf{Figure 6} Mumford offers us the most general modular form identity he could think of at the time (at least be willing to discuss).  Credits Kashiwara-Vergne instead of Goro Shimura.  I think this is due to the lack of internet, so it's still likely these (overlapping) communitites found the result at separate times.\\
+\includegraphics[width=6in]{modular-12.png} \\
+\noindent \textbf{Figure 7} By his own admission, his list of formulas is incomplete.  He get us started, a-la 1978.  \\ \\ 
+Mumford's discussion was well-informed involving Fuchsian groups such $\Gamma_0(N)$, hyperbolic space $\mathbb{H}$ and the Adeles $\mathbb{A}$.  He does geometry, he does geometry he does algebra It's unlikely a comparison of these points of view can be exhausted.\\
+\includegraphics[width=7in]{modular-11.png} \\
 
 \end{document}
