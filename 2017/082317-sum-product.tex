@@ -110,9 +110,29 @@ then our subgroup is free, $\langle H_1, H_2 \rangle = H_1 \ast H_2 \simeq F_2$}
 One thing we notice is that ping-pong ``works" (i.e. produces free groups or expander graphs?) only for $3 \times 3$ and not for $2 \times 2$.  Another possiblity is that the group we are studying isn't free (there are relations).  This is not a bad thing, $SL(2, \mathbb{Z})$ is not free, there's a relation:
 $$ SL_2\,(\, \mathbb{Z}\,) \simeq \big\langle S, T: S^2 = (ST)^3 = 1 \big\rangle \simeq \big( \mathbb{Z}/2\mathbb{Z} \big) \ast \big( \mathbb{Z}/3\mathbb{Z} \big) $$
 and for a general number field, $F$, $SL_2( \mathcal{O}_F)$ for the ring of integers $\mathcal{O}_F$ can be an open problem.  Therefore, we conclude, $SL(2, \mathbb{Z})$ can house rather complicated objects. \\ \\
-\textbf{\#2 Sum-Product Theorem} \dots \\ \\
+I should remark this is a case of the \textbf{Tits alternative}. 
+\begin{quotation}\noindent 
+\textbf{\color{red!50!white}Veresion \#2} {\color{green!50!blue}$SO(3)$ contains a copy of the free group on two generators.} \\ \\
+{\color{green!60!blue} Our candidate free group will be the the standard 3-4-5 triangle.  Since $3^2 + 4^2 = 5^2$ we have
+$$ \left\langle \left(\begin{array}{crc}
+\frac{3}{5} & -\frac{4}{5} & 0 \\
+\frac{4}{5} & \frac{3}{5} & 0 \\
+0 & 0 & 1 \end{array}\right),
+\left(\begin{array}{crr}
+1 & 0 & 0 \\
+0 & \frac{3}{5} & -\frac{4}{5}  \\
+0 & \frac{4}{5} & \frac{3}{5}  \end{array}\right) \right\rangle \subseteq SO_3(\mathbb{Q}) $$
+and we resort to 5-adic numbers to choose our ping-pong sets:
+\begin{itemize}
+\item $A_\pm= 5^\mathbb{Z} \cdot \{ (x,y,z) \in \mathbb{Z}^3, x \pm 3y \in 5 \mathbb{Z} ,  z \in 5 \mathbb{Z}  \}$
+\item $B_\pm = 5^\mathbb{Z} \cdot \{ (x,y,z) \in \mathbb{Z}^3, z \pm 3y \in 5 \mathbb{Z} ,  z \in 5 \mathbb{Z}  \}$
+\end{itemize}
+and our set is $X =A_- \cup A_+ \cup B_- \cup B_+ \cup \{ (0,1,0)\} $ and this is our \textbf{ping-pong} set!
+}\end{quotation} 
+So our ping-pong style proofs involve finding a ``tennis court" and playing a game! \\\\
+\textbf{\#2 Sum-Product Theorem}  This is the dumbest-sounding theorem I have ever heard of. \\ \\
 \textbf{\#2 Approximate Groups} \dots \\ \\
-\textbf{\#3 Do these two overlap?} \dots \\ \\
+\textbf{\#3 Do these two overlap?} I guess not. \\ \\
 
 \vfill
 
