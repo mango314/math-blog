@@ -1,0 +1,88 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{ifthen}
+
+\usepackage{pifont}
+\usepackage{amsmath}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+\newcommand{\red}{\begin{tikz}[scale=0.25]
+\draw[fill=red, color=red] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\blue}{\begin{tikz}[scale=0.25]
+\draw[fill=blue, color=blue] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\green}{\begin{tikz}[scale=0.25]
+\draw[fill=green, color=green] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+
+\newcommand{\sq}[3]{\draw[#3] (#1,#2)--(#1+1,#2)--(#1+1,#2+1)--(#1,#2+1)--cycle;}
+\newcommand{\linebrk}{----------------------------------------------------------------------------------------------------------------------------------}
+
+
+\usepackage{tikz}
+
+\newcommand{\susy}{{\bf Q}}
+\newcommand{\RV}{{\text{R}_\text{V}}}
+
+\title{Tutorial : DAHA}
+\date{}
+\begin{document}
+
+\fontfamily{qag}\selectfont \fontsize{12.5}{15}\selectfont
+
+\maketitle
+
+\noindent Over the years algebra of increasing complicated-ness have emerged that might generalize the permutation group $S_n$ or other basic represetation theory object.   I recently had a professor snap at me:
+\begin{quotation}
+If you do discover another algebra that has a comparable utility and richness as linear algebra, please do let the rest of us know. In the meantime, you might take a look at the answers to this question\footnote{https://mathoverflow.net/questions/35988/why-were-matrix-determinants-once-such-a-big-deal}\dots \\ \\
+EDIT: There are interesting variants of the determinant, such as the Pfaffian, the permanent, the tropical determinant, or immanants, which may be thought of as arising from slightly different algebraic foundations than classical linear algebra (e.g. supercommutative algebra, tropical algebra, etc.). However, these variants, as fascinating as they are, are not nearly as broadly useful to modern mathematics as the classical determinant.
+\end{quotation} 
+Arguably, he is right.  These algebras while they are rich and fascinating, are not as broadly useful as just plain-old matrices.  In the modern (very succinct) language we'd write matrix math in a sentence:
+$$ \text{End}(V) \simeq V^* \otimes V $$
+And all the algebras I seem to find will take this decomposition as a starting point.  Over course of discussion I asked myself \textbf{Where do matrices come from?}  There are two possible answers:
+\begin{itemize}
+\item simultaneous equations have been around since ancient China and rediscovered over 2000 years
+\item matrices are an invention of mathematician Arthur Cayley in order to handle groups of linear substitutions
+\end{itemize}
+One lesson here is that we are pretty much doomed to re-invent the wheel.  Over and over.  Each time with a head start.  
+
+\newpage \noindent \textbf{Problem Set}
+
+\begin{quotation}\textbf{\#1}(Babylon) There are two fields whose total area is 1800 square yards. One produces grain at the rate of 2/3 of a bushel per square yard while the other produces grain at the rate of 1/2 a bushel per square yard. If the total yield is 1100 bushels, what is the size of each field?
+\end{quotation}
+\begin{quotation}\textbf{\#2}(China) There are three types of corn, of which three bundles of the first, two of the second, and one of the third make 39 measures. Two of the first, three of the second and one of the third make 34 measures. And one of the first, two of the second and three of the third make 26 measures. How many measures of corn are contained of one bundle of each type?
+\end{quotation}
+\vspace{12pt}Matrix algebra is a rather clunky tool that solves all of our problems.  However, if you believe that is true, why don't we take time to trace our modern calculations to their ancient origins.  We don't!  \\ \\
+Rank-nullity, Cayley-Hamilton, the idea of Dimension.  And these are just the starting point of many profound things.  Even if all they do is clarify ideas that were availble to us long ago. \\ \\
+\textbf{A Healthy Dose of Skepticism} \\ \\
+The algebras are great and profound, just maybe not necessary.\footnote{I would argue the person who told me about matrix algebra is wrong, that an analogue of these ``SUSY" geometric constructions have already existed in the 20th century, the 19th century and perhaps before that.} We should read and enjoy and continue. \\ \\
+Andre's paper seems to be as good a place to start as any.  He constructs from kind of algebra:
+$$ \mathcal{A} \cap \Lambda = \mathbb{Q}(q,t)[x_1, x_2, \dots]^{\text{Sym}} $$
+These algebras have some rather compliated results, which, may detract from their usefulness.  But we learn as much as we can.
+
+\vfill
+
+\begin{thebibliography}{}
+\item Ivan Cherednik \\
+\textbf{Introduction to double Hecke algebras} \texttt{arXiv:math/0404307} \\
+\textbf{Jones polynomials of torus knots via DAHA} \texttt{arXiv:1111.6195}
+
+\item Andrei Negut \\
+\textbf{The m/n Pieri rule} \texttt{arXiv:1407.5303} \\
+\textbf{Shuffle algebras associated to surfaces} \texttt{arXiv:1703.02027}
+
+\item Sergei Gukov, Pavel Putrov, \\
+w/ Du Pei, Cumrun Vafa \hspace{1em} \textbf{BPS spectra and 3-manifold invariants} \hspace{3.5em} \texttt{arXiv:1701.06567} \\
+w/ Marcos Marino \hspace{3.5em} \textbf{Resurgence in complex Chern-Simons theory} \texttt{arXiv:1605.07615} \\
+w/ Cumrun Vafa \hspace{4em} \textbf{Fivebranes and 3-manifold homology} \hspace{3.5em}\texttt{arXiv:1602.05302} 
+\end{thebibliography}
+
+
+
+\end{document}
