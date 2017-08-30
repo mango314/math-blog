@@ -131,6 +131,23 @@ and our set is $X =A_- \cup A_+ \cup B_- \cup B_+ \cup \{ (0,1,0)\} $ and this i
 }\end{quotation} 
 So our ping-pong style proofs involve finding a ``tennis court" and playing a game! \\\\
 \textbf{\#2 Sum-Product Theorem}  This is the dumbest-sounding theorem I have ever heard of. \\ \\
+Emmanuel Breuillard put the origin of approximate groups with the Sum-Product Theorem:
+\begin{quotation}\noindent \textbf{\color{orange!60!red!20!white} Thm } 
+{\color{orange!80!black}Let} $\mathbb{F}_p$ {\color{orange!80!black}be a finite field with} $p$ {\color{orange!80!black}elements (where }$p$ {\color{orange!80!black}is prime). They for every} $\delta > 0$ {\color{orange!80!black}there is an} $\epsilon > 0$ {\color{orange!80!black}(which does not depend on} $p${\color{orange!80!black}) such that:}
+$$ |S \times S| + |S+S| \geq |S|^{1+\epsilon}  $$
+{\color{orange!80!black}for every subset} $|S| \subset \mathbb{F}_p$ {\color{orange!80!black}such that }$p^\delta < |S| < p^{1-\delta}${\color{orange!80!black}.}
+\end{quotation}
+For me it is not so easy to picture what this set $S$ could look like.  In a sense, we'll never be told what numbers $\delta$ or $\epsilon$ should be.  It just says 
+\begin{quotation} \noindent Give me $\epsilon$ $\to$  find $\delta$ such that $S+S$ or $S\times S$ is growing. And this is only for sets which that do not have just a few elements or all of $\mathbb{F}_p$.\end{quotation}
+and approximate group will start here.  I can't even turn this statement into a hypothesis to test.  I can't connect it to other number theory facts I have learned.  Very basic but I don't know what it means.  Here's another, due to Helfgott:
+\begin{quotation}\noindent 
+For every $\epsilon$ we can find a $\delta$ such that $|S \times S \times S| \geq |S|^{1+\epsilon}$ for every generating set $S$ of $SL_2(\mathbb{Z}/p\mathbb{Z})$ such that $|S|< |SL_2(\mathbb{Z}/p\mathbb{Z})|^{1-\delta} $
+\end{quotation} Commendible.  What do you mean this was only discovered in 2008?  I said to myself the following:  consider the expansion of sine:
+$$ \sin x \approx x - \frac{x^3}{3!} + \frac{x^3}{5!} = 
+x - \frac{x \times x \times x}{1 \times  2\times 3 } + \frac{x \times x \times x \times x \times x}{1 \times  2\times 3 \times 4 \times 5}$$
+How many instances of $+$ and $\times$ and $\div$ have we done? And if we are using floating-point arithmetic, we are losing accuracy every step of the way.  What happens if we use a million of these?  \\\\
+That error will be pseudo-random, but maybe the result will be in tact.  \\\\
+I don't know if I could have articulated the result as nicely as Helfgott or Tao or Bourgain, but if definitely know if I had proposed such a thing I'd be laughed out of the room.\footnote{In fact, yes.}
 \textbf{\#2 Approximate Groups} \dots \\ \\
 \textbf{\#3 Do these two overlap?} I guess not. \\ \\
 
@@ -138,7 +155,7 @@ So our ping-pong style proofs involve finding a ``tennis court" and playing a ga
 
 \begin{thebibliography}{}
 
-\item \dots
+\item Emmanuel Breulliard \textbf{A brief introduction to approximate groups} from: ``Thin Groups and Superstrong Approximation" (MSRI Publications, \textbf{61}) 2013.
 
 \end{thebibliography}
 
