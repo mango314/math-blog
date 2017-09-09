@@ -1,0 +1,74 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+%\usepackage{pifont}
+\usepackage{amsmath}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+\newcommand{\red}{\begin{tikz}[scale=0.25]
+\draw[fill=red, color=red] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\blue}{\begin{tikz}[scale=0.25]
+\draw[fill=blue, color=blue] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\green}{\begin{tikz}[scale=0.25]
+\draw[fill=green, color=green] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+
+\newcommand{\sq}[3]{\draw[#3] (#1,#2)--(#1+1,#2)--(#1+1,#2+1)--(#1,#2+1)--cycle;}
+
+\usepackage{tikz}
+
+\newcommand{\susy}{{\bf Q}}
+\newcommand{\RV}{{\text{R}_\text{V}}}
+
+\title{Scratchwork: Theta Functions}
+\date{}
+\begin{document}
+
+%\fontfamily{qag}\selectfont \fontsize{12.5}{15}\selectfont
+
+\sffamily
+
+\maketitle
+
+\noindent William Duke's proof that the solutions to $n = a^2 + b^2 + c^2$ become equidistributed as $n \to \infty$ takes a quarter of a page:
+\begin{itemize}
+\item Goro Shimura shows there are many theta functions, each invariant under $\Gamma_0(4)$
+$$ \theta(z;u) = \sum_{m \in \mathbb{Z}^3} u(m) \, e(z |m|^2) =
+\sum_{n > 0} n^{\ell / 2}\, r_3(n) \left[ \frac{1}{r_3(n)} \sum_{\xi \in V_3(n)} u(\xi) \right] e ( n z)  $$
+one for each spherical Harmonic $u \in L^2( S^2)$. Here $|m|^2 = m_1^2 + m_2^2 + m_3^2$ and $V_3(n) = \#\{ (a,b,c): a^2 + b^2 + c^2 = m \}$.
+\item Henryk Iwaniec offers a bound for the Fourier coffients of cusp forms. 
+$$ a_n \ll_{k, \epsilon} n^{k/2 - 2/7 + \epsilon} $$
+These are tending to zero if we fix a tolerance  ($\epsilon$) and a ``weight" of modular form ($k$).
+\item Combining Iwaniec and Shimura's result\footnote{and an estimate of Siegel, which I haven't even looked at, $r_3(n) \gg_\epsilon \sqrt{n^{1-\epsilon}} $.} we obtain an estimate for the sphere averages
+$$  \frac{1}{r_3(n)} \sum_{\xi \in V_3(n)} u(\xi) \ll_{u,\epsilon} n^{-1/28 + \epsilon} $$
+This bound depends on the spherical harmonic ($u$) and the tolerance ($\epsilon$).  And we need $n \not \equiv 7 \pmod 8$.  
+\end{itemize}
+There have been many surprises along the way learning this topic.  And I have problems with a lot of this discussion, because these are professors talking to other professors.  Slowly turning these objections into contributions of my own! 
+\begin{itemize}
+\item $\theta(z)$ is $\Gamma_0(4)$ invariant not $SL(2, \mathbb{Z})$ invariant.   As subgroups the index $[SL(2, \mathbb{Z}): \Gamma_0(4)] = 6 $.  For the record $\Gamma_0(4) \simeq \langle z \mapsto z + 1, z \mapsto - \frac{1}{4z}\rangle$ while $SL(2, \mathbb{Z}) \simeq \langle z \mapsto z + 1, z \mapsto - \frac{1}{z}\rangle$.  These are like continued fractions $a = [ a_0; a_1, \dots, a_n] $ all of whose digits are multiples of $4$.
+\item $\theta(z)$ is \textit{not} a cusp form, but if $\deg u > 0$ then $\theta(z;u)$ \textbf{is} a cusp form.  The Fourier series \textit{is} the $q$-series as $q = e^{2\pi i t}$ is the change of variables.
+$$ \theta(z; u) = 0 + a_1 \, q + a_2 \, q^2 + \dots $$
+\item Even though we are studying equidistribution of solutions to an equation $f(x) = n$ we don't necessarily study the existence of {\color{green} one} solution. After reading Serre's \textbf{Course on Arithemtic} (GTM \#85) we learn that the existence of one solution is a rather deep problem.  Lastly, I don't think it's ``done" by the time we discuss equidistribution. 
+\item I didn't know what the symbol ``$\ll$" meant.  $1 \ll 100$ and also $100 \ll 1$.  Here's one more: $10^{100} \ll x$ since *eventually* $x > 10^{100}$.  These are things we learn in beginning math classes, but sometimes a brand new symbol is introduced and we have to do it again.
+\end{itemize}
+
+\newpage
+
+\noindent Then I find out all of this is slightly out of date.  This one pricked my last nerve.  I believe, in the process of verifying Duke's claim (leaning me through Iwaniec and Shimura and Walspurger and even more) we have made new lemmas.  One of them is definitnely new.\\ \\
+OK.  Here's a problem statement: let's try to find the constant to go with the $\ll$ sign:
+$$  \left[ a_n  \ll n^{k/2- 2/7 + \epsilon} \right] \to \left[ a_n  <  C \, n^{k/2- 2/7 + \epsilon}\right]$$
+The constant $C$ is not known (probably because nobody cares) if we fix ($\epsilon$) and  ($k$). \\ \\
+Shimura's constructions are the start of the \textbf{theta correspondence}, and I'm choosing to use the out-of-date version that doesn't use any of Waldspurger's technology.  Duke makes no use of the adeles, $\mathbb{A}$; any strategy involving them will be new.  Iwaniec makes heavy use of Eisenstein series and it's rather mysterious:
+$$ [\text{theta functions}] \to [\text{Eisenstein series}] $$
+Iwaniec says it works, making such a kind of map, risk-free, but do we really understand it?  I don't immediately have a problem that is unkown about it.  The more we unpack, the scarier it gets.
+$$ [\text{Kloosterman sums}] \quad\big|\big|\quad [\text{Bessel functions}] $$
+Do we really understand this?  In the case of 4-squares, the proof involves the Weil conjectures, yet in 3-squares this just falls out of some very tricky averaging procedures, that I do not wish to replicate.\footnote{at this time} \\ \\
+This discussion has created some deep and lingering doubts: do I understand Weyl's equidistrubiton criterion \textit{for spheres} or requirements for Poisson summation?  Do I know what it was so important that $\theta(z;u)$ was a \textbf{holomorphic} cusp form, or how to get number-theoretic information out of that?  Not really.
+\end{document}
