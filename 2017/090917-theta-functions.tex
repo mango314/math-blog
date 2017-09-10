@@ -70,5 +70,44 @@ $$ [\text{theta functions}] \to [\text{Eisenstein series}] $$
 Iwaniec says it works, making such a kind of map, risk-free, but do we really understand it?  I don't immediately have a problem that is unkown about it.  The more we unpack, the scarier it gets.
 $$ [\text{Kloosterman sums}] \quad\big|\big|\quad [\text{Bessel functions}] $$
 Do we really understand this?  In the case of 4-squares, the proof involves the Weil conjectures, yet in 3-squares this just falls out of some very tricky averaging procedures, that I do not wish to replicate.\footnote{at this time} \\ \\
-This discussion has created some deep and lingering doubts: do I understand Weyl's equidistrubiton criterion \textit{for spheres} or requirements for Poisson summation?  Do I know what it was so important that $\theta(z;u)$ was a \textbf{holomorphic} cusp form, or how to get number-theoretic information out of that?  Not really.
+This discussion has created some deep and lingering doubts: do I understand Weyl's equidistrubiton criterion \textit{for spheres} or requirements for Poisson summation?  Do I know what it was so important that $\theta(z;u)$ was a \textbf{holomorphic} cusp form, or how to get number-theoretic information out of that?  Not really. \\ \\
+\textbf{\color{blue!50!black!60!white} Waldspurger Formula} \\ \\
+Another, equally vague, proof of equidistribution comes from the study of torus integrals, but what kind of torus?  As a collection of points on the sphere $G_d = \{ (a,b,c): a^2 + b^2 + c^2 = d\} \subseteq X = S^2 $ we could assign a probability measure for each number $d \in \mathbb{Z}$, and compute averages with respect to this probability measure:
+$$ \int_{S^2} \phi \, \mu_d = \frac{1}{r_3(n)} \sum_{(a,b,c) \in G_d} \phi \left( \frac{a}{\sqrt{d}},\frac{b}{\sqrt{d}},\frac{c}{\sqrt{d}} \right) $$
+There's some measure $\mu_d$ that magically when you integrate against it returns the sphere averages.  The equidstirbution statement now looks very terse:
+$$ \lim_{d \to \infty} \mu_d =  \mu $$
+where $\mu$ is the Lebesgue measure on the 2-sphere $X = S^2$.  To me, Lebesgue measure means that despite equidistribution, interesting sets may occur on the way as $d \to \infty$.   Weak-* convergence measns:
+$$W(\phi, d) := \int_X \phi \, \mu_d \to 0 \text{ as } |d| \to \infty $$
+as we let $\phi$ range over an fixed orthogonal basis of continuous functions\footnote{no step functions!!} $\phi \in L_0^2(X, \mu)$.   In our case, these are \textbf{spherical harmonics}.
+
+\newpage
+
+\noindent The Weyl averages could be written as an ``integral" over a two-sided quotient of Torus.
+$$ W(\phi, d) = \int_{T_d(\mathbb{Q}) \backslash T_d(\mathbb{A}) / K_{T_d}} \phi (z_d . t ) \, dt$$
+The exericse would be to understand what this torus could be; The paper I was reading had a typo.  The torus is described using ``restriction of scalars".  Let $K = \mathbb{Q}(\sqrt{d})$:
+$$    T_d := \mathrm{Res}_{K /\mathbb{Q}}(\mathbb{G}_m \big) / \mathbb{G}_m$$
+which measures how much bigger $\mathbb{G}_m$ is over $K$ than over $Q$.  And it would be great if we knew a definition of $\mathbb{G}_m$.  In fact, it's not just a group it's a \textbf{functor} from the category from (the oppososite category) of $\mathbb{Q}$-schemes to the category of groups:
+\begin{eqnarray*} 
+\mathrm{Res}_{K/\mathbb{Q}} : (\mathbb{Q}\text{-}\textbf{scheme})^{\text{op}} &\to& \textbf{Group} \\
+\mathrm{Res}_{K/\mathbb{Q}} \, X(S) &=& X( S \times_\mathbb{Q} K)  
+\end{eqnarray*}
+where $\mathbb{G}_m$ is the multiplicative group. And then I need a definition of $K_{T_d}$. \\ \\
+\dots \\ \\
+If we keep going, there is the Waldspurger formula finally:
+$$ | W(\varphi, d)|^2 = c_{\varphi, d} \; \frac{L(\pi, \frac{1}{2} ) \; L (\pi \times \chi_d , \frac{1}{2})}{L(\chi_d, 1)^2 \, \sqrt{d}} $$
+where $\varphi$ is a ``new cuspform" - the $L^2$ normalized newvector in some automorphic representation $\pi$.  And where $\pi'$ [sic] is the $GL_2$ automorphic respresentation corresponding to $\pi$ by the Jacquet-Langlands correspondence, and $c_{\varphi, d}$ is a number. \\ \\
+The Waldspurger formula is used in conjunction with a \textbf{subconvexity bound} 
+$$ \bigg[ L(\pi \times \chi_d, \frac{1}{2}) \ll_\pi |d|^{1/2 - \delta} \bigg]\text{ therefore } \bigg[W(\phi, d) \to 0 \text{ as } d \to \infty \bigg]$$
+My problem with this reductionist point of view is that someone has to be responsible for placing these abstract results back into a context.\footnote{\texttt{https://en.wikipedia.org/wiki/Reductionism}}  Fortunately, there is one and Akshay Venkatesh and his colleagues have developed the {\color{purple!50!green}sparse equidistribution} framework for solving this type of problem. \\ \\
+Unfortunately we have left out a lot of details.  As long as we focus on the basics, there are several textbooks that have emerged since 2005.  I like representation theory and geometry so there are at least two textbooks\footnote{Thus as research topics trickle down into graduate-level teaching, first textbooks written for new, cutting-edge courses may make their way into Universitext.}
+\begin{itemize}
+\item Anton Deitmar \textbf{Automorphic Forms} Universitext, 2013.
+\item Françoise Dal'Bo  \textbf{Geodesic and Horocyclic Trajectories} Universitext, 2011.
+\item Akshay Venkstesh \textbf{Sparse equidistribution problems, period bounds, and subconvexity} \\ \texttt{arXiv:math/0506224} Annals of Mathematics, 172 (2010), 989-1094
+\end{itemize}
+
+\newpage
+
+\noindent \textbf{Comprehension Check} Is $\displaystyle \theta(z, u)= \sum_{m \in \mathbb{Z}^3} u(m) e(z|m|^2)$ an automorphic form?  What is the representation? \\ \\
+\textbf{Getting Ahead of Ourselves}  Are solutions to $n = a^2 + b^2 + c^2$ points on a quaternion Shimura variety?
 \end{document}
