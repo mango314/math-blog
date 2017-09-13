@@ -109,5 +109,78 @@ Unfortunately we have left out a lot of details.  As long as we focus on the bas
 \newpage
 
 \noindent \textbf{Comprehension Check} Is $\displaystyle \theta(z, u)= \sum_{m \in \mathbb{Z}^3} u(m) e(z|m|^2)$ an automorphic form?  What is the representation? \\ \\
-\textbf{Getting Ahead of Ourselves}  Are solutions to $n = a^2 + b^2 + c^2$ points on a quaternion Shimura variety?
+We could set $u$ to be some spherical harmonic.  There $u(x,y,z) \equiv 1$.  Skip.  There is $u(x,y,z) = \frac{z}{r}$, so let's try a schematic there:
+$$ \frac{1}{r_3(n)} \sum_{x^2 + y^2 + z^2 = n} z = 0 $$
+The answer is always zero because for every solution $(x,y,z)$ I can find $2^3 = 8$ other solutions $(\pm \,x, \pm \,y, \pm \,z)$. \\ 
+OK so we really just want the first ``octant" here,and we could have a sign $S^2 \to \{ 1, -1\}$ that exactly matches the sign of $(x,y,z)$, so that $u(x,y,z) \times \text{sgn} \geq 0$.  \\ \\
+Moving on, second degree offers our first chance at a non-trivial sum:
+$$ \frac{1}{r_3(n)} \sum_{x^2 + y^2 + z^2 = n } (x + iy)^2 
+ = \frac{1}{r_3(n)} \sum_{x^2 + y^2 + z^2 = n } \big( x^2 - y^2 \big) 
+{\color{black!10!white}\;+\;\frac{1}{r_3(n)} \sum_{x^2 + y^2 + z^2 = n } 2i\, xy} = 0 $$
+There are a few more symmetries we hadn't considered.  We could map a solution $(x,y,z) \mapsto (y,x, z)$.  We could write this as a $3 \times 3$ matrix:
+$$ \left( \begin{array}{crc} 0 & -1 & 0 \\
+1 & 0 & 0 \\ 0 & 0 & 1 \end{array}\right)
+\left( \begin{array}{c}x \\ y \\ z \end{array}\right)
+= \left( \begin{array}{r}-y \\ x \\ z \end{array}\right) $$
+This group has a name $SO(3, \mathbb{Z}/2\mathbb{Z})$ sometimes written as
+$SO(3, \mathbb{Z}_2)$ or $SO(3, \mathbb{F}_2)$. Mentally, we are considering these symmetries as part of $SO(3, \mathbb{R})$, the group of
+all rotations in physical space.\footnote{It's almost tautolitical: if you rotate the thing once and then again you get another rotation.  You should prove in 3D space that two rotations become a \textit{single} rotation with a particular axis.} and we need to take a moment to specify how these {discrete} group of symmetries embed to a {continuous} group of symmetries. \\ \\
+In any case, that average is also zero and we could multiply by $\text{sign}(x^2 - y^2) = \text{sign}(x-y) \,\text{sign}(x+y)$.  Likewise:
+$$\begin{array}{lclcc}
+\displaystyle \frac{1}{r_3(n)} \sum_{x^2 + y^2 + z^2 = n } (x + iy) \, z &=& \displaystyle \frac{1}{r_3(n)} \sum_{x^2 + y^2 + z^2 = n } (x + iy) \, (-z) &=& 0 \\
+\displaystyle \frac{1}{r_3(n)} \sum_{x^2 + y^2 + z^2 = n } (2z^2 - x^2 - y^2) &=&
+\displaystyle \frac{1}{r_3(n)} \sum_{x^2 + y^2 + z^2 = n } (2z^2 - z^2 - z^2) &=& 0
+\end{array}$$  
+and basically we have done all five degree-2 spherical harmonics $u \in \big\{ Y^{-2}_2, Y^{-1}_2, Y^{0}_2, Y^{1}_2, Y^{2}_2 \big\}$, and all of the averages vanish $\mathbb{E}(u) = 0$.  Let's try degree 4:
+$$\frac{1}{r_3(n)} \sum_{x^2 + y^2 + z^2 = n } (x + iy)^4
+ = \frac{1}{r_3(n)} \sum_{x^2 + y^2 + z^2 = n } \big( x^4 - 6\,x^2 y^2 + y^4 \big)  \stackrel{?}{\neq} 0 $$
+I don't know this one off the top of my head.  Each step of the way we have to continue to refine what we mean by ``evaluate". In any case, Duke does not really discuss any of this, and what could we do with the normalization of $ \frac{3}{16} \sqrt{\frac{35}{2\pi}} $?. \\ \\
+The rotation group is beginning to feature in our discussion (but not really modular forms).  Different kinds of $SO_3$ are being used:
+\begin{eqnarray*}
+SO_3(\mathbb{Z}) &\subseteq& SO_3(\mathbb{R}\,) \\
+SO_3(\mathbb{Z}) &\subseteq& SO_3(\mathbb{Z}_2)
+\end{eqnarray*} 
+where $\mathbb{Z}_2$ could be the 2-adic numbers? And so $SO_3$ becomes a \textbf{functor} as well. \\ \\
+Back to 3-squares, overall. Is this such a fundamental problem?  All of this is about a growing sphere in a cubic lattice:
+$$ \sqrt{n} \times \big\{ x^2 + y^2 + z^2 = 1 \big\} \subset \mathbb{Z}^3 $$
+and looking at the various angles.  What could be more basic than that? \\\\
+The ``representation" of $SO_3$ (at least over $\mathbb{R}$) is not terribly exicing:
+$$ SO_3 \circlearrowright \Big\{ (x-iy)^2,\; (x-iy)z,\; (2z^2 - x^2 - y^2),\;
+ (x-iy)z, \;(x+iy)^2  \Big\}$$
+and it's highly, endlessly constructive to verify this that $SO_3$ is rotating these things.  The discussion over $\mathbb{Z}_p$ needs discussion as well, eventually. \\ \\
+There's an extensive literature on modular forms, but I can never get the discussion I am looking for.  And I'm still working on that, but this is why I'm proposing this more direct approach that this moment. \\\\
+\textbf{Getting Ahead of Ourselves}  Are solutions to $n = a^2 + b^2 + c^2$ points on a quaternion Shimura variety? \\ \\
+How do we construct the complex numbers?  We have this problematic equation 
+$$ \big\{ x^2 + 1 = 0 \big\} = \varnothing $$
+and so we create this imaginary number $x = \sqrt{-1}$ and build an arithmetic out of that.  This could have been done with matrices:
+$$ x + i\, y \mapsto \left( \begin{array}{cr} x & -y \\ y & x \end{array} \right) $$
+and the $2 \times 2$ matrix arithmetic behaves the same way as the complex numbers.  How about $4 \times 4$? we have the \textbf{quaternions}:
+$$ x + \textbf{i}\, y + \textbf{j}\, z + \textbf{k}\, w \mapsto \left(
+\begin{array}{rrrr} 
+x & -y & z & -w \\
+y & x & w & z \\
+-z & w & -x & y \\
+-w & -z & -y & -x \end{array}
+\right)$$
+Despite being 4-dimensional, this was a way of discussion rotations in 3D space and calculating with them, until the early 20th century. \\ \\
+There's no multiplication for $3 \times 3$ numbers. We'd like to say:
+$$ \textbf{i}\, x +\textbf{i}\, y +\textbf{i}\, z  \mapsto \;? $$
+but there's no right hand side. This quaternion space is called, $(B_2^\infty)^\times$ or something.\\ \\
+A quick google serach for {\color{purple}quaternionic shimura varities} returns many extensive resources at an undesirable level of abstraction. 
+ Or just google {\color{green!50!purple}Shimura varities}. Same. They feel that ``formulas" or polynomial sections are no longer very meaningful so they resort to the language of varities and divisors, in order to express the information they want, leaving me totally lost.  \\ \\There could be our lemma: the definition of Shimura variety is very complicated but we name an instance where the calculation can be done quite easily. \hfill  Blah Blah Blah.\\ \\
+\noindent \textbf{Comprehension Check \#2} (Weyl Equidstribution on $S^2$). The discussion of spherical harmonics on Wikipedia is rather extensive.\footnote{}\\ \\
+Let's propose a defintin of ``sign" for points on the sphere.  Umm\dots let's pick the $x$-axis:
+\begin{eqnarray*}
+S^2 &\to& \{ -1, 1 \} \\
+(x,y,z) & \mapsto &  
+\left\{ 
+\begin{array}{rc} x & x > 0 \\ -x & x < 0 \end{array} 
+\right.
+\end{eqnarray*}
+This is ``absolute value" rather than sign.  Just some notion of size. Unfortunately this function is \textbf{discontinuous} at $x = 0$ which is now a circle instead of a point:
+$$  \big\{  x = 0 \big\}  \cap \big\{ x^2 + y^2 + z^2 = 1\big\} = \left[ \;
+\begin{tikz} \draw (0,0) circle (0.25); \end{tikz} \hookrightarrow \mathbb{R}^3 \;\right] $$
+and we get a hoop embedded in some kind of 3-space.  \\ \\
+How do we account for this ``jumping" behavior of functions on the sphere?  This set up can become very rich and quite varied. \\ \\  
+\noindent \textbf{Comprehension Check \#3} (Automorphic Forms) Hopefully, getting started. 
 \end{document}
