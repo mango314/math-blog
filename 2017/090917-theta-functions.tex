@@ -191,5 +191,37 @@ $$ N(X) \leq c X $$
 This is not the circle problem.  In the case that $K = \mathbb{Q}$, we are counting $\# \{ (a,b): b^2 - 4a \leq X \}$ and very schematically:
 $$ b \approx \sqrt{X} \text{ and } 1+2+3+\dots + \sqrt{X} \approx \frac{1}{2}\, X $$
 and this result could be extended to all number fields $K$ and another interesting case could be $[L:K] = 3$.  \\ \\
-Why did I confuse this for the Gauss circle problem?
+Why did I confuse this for the Gauss circle problem?  In the field $\mathbb{Q}(i)$ the ring of integers is $\mathbb{Z}[i]$ and it has a norm, $N(a+bi) =  a^2 + b^2$ and we could have that:
+$$ N(X) = \# \{ a+bi \in \mathbb{Z}[i]: N(a+bi) < X \} \leq \pi X $$
+I use the same letter twice.  And it's reasonable to believe this should hold for any number field.  Perhaps we ought to focus on primes:
+$$ \frac{\# \{ \mathfrak{p} \in \mathbb{Z}[i]: N(\mathfrak{p}) < X \text{ and } \mathfrak{p}= e^{i(\theta \pm \epsilon)} \}}{\# \{ \mathfrak{p} \in \mathbb{Z}[i]: N(\mathfrak{p}) < X \}} = 2\epsilon$$ 
+so that primes in $\mathbb{Z}[i]$ are evenly distributed in the complex plane.  If you draw the picture  this is self-evident, but that's what number theory is:  {\color{orange!50!black}elaborate proofs of self-evident statements}. \\ \\
+I am trying to get at the Sato-Tate equidistribution formula.   That formula is very general. Sato-Tate can be proven over number fields, and for various classes of modular forms, in situations were we don't even know what these number sequences are.\footnote{These ``what is"-type questions are dangerious at this level.  It means I get to define an invariant of some kind - probably something really dull - that captures what the definition of \textbf{is} is.} perhaps I am looking for a sequence of numbers defined over $\mathbb{Z}$ which is the norm or real part of some counting problem over a number field.  That could make sense to me. 
+
+\newpage 
+
+\noindent If we try to use modular forms, let $u(x) = x_1^4 - 6 x_1^2 x_2^2 + x_2^4$ be a spherical harmonic.  Then
+$$ \theta(z; u) = \sum_{m \in \mathbb{Z}^3}  u(m) e(z |m|^2) = \sum_{n \geq 0} \left[ \sum_{m_1^2 + m_2^2 + m_3^2 = n} u(m) \right] e(n \, z)$$
+is a holomorphic cusp form of weight $k=\frac{3}{2} + 4 = \frac{11}{4} $.  There are two bounds we can use:
+\begin{itemize}
+\item Hecke $a_n \leq C \, n^{k/2}  $ in our case $C \, n^{11/8} $.
+\item Trivial \;\;$a_n \ll_{k, \epsilon} n^{k/2 - \frac{1}{4} + \epsilon} $
+which plays out to $n^{9/8}$
+\item Iwaniec $a_n \ll_{k, \epsilon} n^{k/2 - \frac{2}{7} + \epsilon} $ 
+which plays out to $n^{61/56}$.
+\end{itemize}
+Surely these are the fundamental constants of nature.  In the general terms we could rescale so that:
+$$ \frac{a_n}{n^{\ell/2} \, r_3(n)} = n^{ \big( \frac{1}{2}(\frac{3}{2}+ \ell) - \frac{1}{4} + \epsilon \big) - \big( \ell/2 + \frac{1}{2}\big)} = n^\epsilon$$
+here I'm putting that $r_3(n) \approx \sqrt{n}$ a formula which I pulled out of hat.  So it's a tie.  And with the Iwaniec formula -- if you believe any of that -- brings you just over the edge. \\ \\
+Really? Let's use our example choice of $u(x)$ the Weyl fraction says:
+$$ \frac{1}{n^2\sqrt{n}} \sum_{m_1^2 + m_2^2 + m_3^2 = n} \big( \, m_1^4 - 6 m_1^2\, m_2^2 + m_2^4 \,\big) \ll n^{\epsilon} \text{ or } n^{-\frac{1}{28} + \epsilon} $$
+we do have powerful means at our disposal, do you believe this is the best we can do?  Even for a single $u \in L^2(S^2)$ this could be the record.  This is stated out modular forms; we will use modular forms and even adeles $\mathbb{A}$ but I wanted a version were all possible approaches have equal footing
+\begin{itemize}
+\item modular forms / harmonic analysis
+\item dynamical systems
+\item additive combinatorics / sumsets
+\item probabilistic method
+\end{itemize}
+Deep recent theory shows all three approaches are more or less analogous or equivalent.  I don't know if anybody does the ``footwork" of passing between one approach or another, but I am certainly willing to waste my time finding such equivalences.\footnote{Odds are one approach is currently slightly better than the other and by passing between them we push them towards equilibrium.} \\ \\
+To me, when I was a beginner, all of these look the same.  And that intuition basically still stands.
 \end{document}
