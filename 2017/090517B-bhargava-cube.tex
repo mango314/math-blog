@@ -5,7 +5,7 @@
 \usepackage{xcolor}
 \usepackage{graphicx}
 
-\usepackage{pifont}
+%\usepackage{pifont}
 \usepackage{amsmath}
 
 \newcommand{\off}[1]{}
@@ -27,14 +27,38 @@
 \newcommand{\susy}{{\bf Q}}
 \newcommand{\RV}{{\text{R}_\text{V}}}
 
-\title{Scratchwork: Bhargava Cubes}
+\title{Scratchwork: Geometry of Numbers}
 \date{}
 \begin{document}
 
-\fontfamily{qag}\selectfont \fontsize{12.5}{15}\selectfont
+%\fontfamily{qag}\selectfont \fontsize{12.5}{15}\selectfont
+
+\sffamily
 
 \maketitle
 
-\noindent \dots
+\noindent As I read attempting to read Manjul Bhargava's papers, a few problems emerge:
+\begin{itemize}
+\item I don't know some of the groups definitions that he refers to
+\item I don't know what he is calling ``geometry of numbers"
+\item I don't know what the big deal is about class numbers.  Or why his contrubtions were so crucial.
+\end{itemize}
+Geometry of Numbers has been around since Hermann Minkowski, and there's even the book, written in academic 19th century German \textit{Geometry der Zahlen}.  And who knows?  Perhaps that bounds have improved since then, \dots there is the book of Cassels in the mid 20th century.  This area - when I learned it - amounded to a ``cute proof" that should be solve using more robust methods - and then Manjul won a Field's medal with it in 2014.\footnote{1) that is my personal opinion, and usually when you ask someone suddenly everyone changes their position \dots 2) I have look at him in person, maybe one or two-odd times in my life. }\\ \\
+The geometry of numbers proof (e.g. Davenport) that $n = a^2 + b^2 + c^2 + d^2$ uses lattices over $\mathbb{R}^4$. However the proof that $p = 4k+1 = a^2 + b^2$ uses a mix of mod $p$ arithmetic -- over $(\mathbb{Z}/p\mathbb{Z})^2$ to define (an essentially random) lattice over $\mathbb{R}^2$.  So, we are going to combine the two objects:
+$$  $$
+At this point $p$ is still generic, so it's safe to say we are solving the ``family" equations $x^2 + y^2 = n$ \textbf{at all primes p}.
+$$ X = \{ x^2 + y^2 - n = 0 \} \to \big( \mathbb{Z}/p\mathbb{Z} \times \mathbb{R} \big)^2 $$
+and we are looking for lattices in this mixed geometirc object.  And if we have $X(\mathbb{Z}/p\mathbb{Z})$ and $X(\mathbb{R})$ we could even have:
+$$ X(\mathbb{Z}_p) \to \dots \to X(\mathbb{Z}/p^{k+1}\mathbb{Z}) \to X(\mathbb{Z}/p^k \mathbb{Z}) \to \dots \to X(\mathbb{Z}/p \mathbb{Z})  $$
+While looking at the scheme $X(\mathbb{Z})$ at one place $p$ is not enough if we look at a generic place $p$ \textit{as well as} $p = \infty$ we can have
+$$ X(\mathbb{Z}) ``\simeq" X(\mathbb{Z}_p) \cap X(\mathbb{R})$$
+and maybe this is sufficient.  
+\vfill
+
+\begin{thebibliography}{}
+\item Manjul Bhargava \dots
+\end{thebibliography}
+
+
 
 \end{document}
