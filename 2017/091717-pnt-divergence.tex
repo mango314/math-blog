@@ -1,0 +1,91 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+%\usepackage{pifont}
+\usepackage{amsmath}
+
+
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+\newcommand{\red}{\begin{tikz}[scale=0.25]
+\draw[fill=red, color=red] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\blue}{\begin{tikz}[scale=0.25]
+\draw[fill=blue, color=blue] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\green}{\begin{tikz}[scale=0.25]
+\draw[fill=green, color=green] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+
+\newcommand{\sq}[3]{\draw[#3] (#1,#2)--(#1+1,#2)--(#1+1,#2+1)--(#1,#2+1)--cycle;}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.markings}
+
+\newcommand{\susy}{{\bf Q}}
+\newcommand{\RV}{{\text{R}_\text{V}}}
+
+\title{Scratchwork: Prime Number Theorem}
+\date{}
+\begin{document}
+
+%\fontfamily{qag}\selectfont \fontsize{12.5}{15}\selectfont
+
+\sffamily
+
+\maketitle
+
+\noindent Let's go straight for the Analytic Theorem. 
+\begin{quotation}Let $f(t)$ with $t \geq 0$ be a bounded and locally integrable function and suppose that the function
+$$ g(z) = \int_0^\infty f(t) \, e^{-zt} \, dt \text{ with }\mathrm{Re}(z) > 0 $$
+extends holomorphically to $\mathbb{Re}(z) \geq 0$.  Then $\int_0^\infty f(t)\, dt$ and it equals $g(0)$.
+\end{quotation}
+On the one hand the language is standard, but the wording might be of some concern.  
+\begin{itemize}
+\item $f: \mathbb{R} \to \mathbb{C}$ is defined only on the real axis $\mathbb{R}$ and it is bounded $ |f(t)| < M$ always.
+\item $g(z) = \int_0^\infty f(t) e^{-zt} dt$ is the \textbf{Laplace transform} extended to complex arguments $z \in \mathbb{C}$. 
+\item ``Locally integrable" is what we mean by ``integrable" when we forget the domain of definition is $\mathbb{R}$ or $\mathbb{R}_{\geq 0}$;  Our example of a \textbf{locally integrable} function that is not \textbf{integrable}  is:
+$$ f(x) = 1 \text{ for all }x \in \mathbb{R} $$
+In fact, $\int_a^b f(x) = b - a$ however $\int_\mathbb{R} f(x)= \infty$.  Another excellent example is:
+$$ f(x) = \left\{
+\begin{array}{cc}
+\frac{1}{x} & x \neq 0 \\ \\
+0 & x = 0 \end{array}
+ \right. $$
+This funciton is not locally integrable at $x = 0$, no neighborhood has of $x=0$ has a integral $\int_{[-\epsilon, \epsilon]} f(x) \notin \mathbb{R} $ does not even converge to a number. \\ \\ Could $\int_{[-\epsilon, \epsilon]} f(x) $ be something more exotic than a number?  It is a \textbf{distribution} and in fact there is the \textbf{Cauchy Principal Value}. 
+\item The theorem is designed with a specific choice of $f(t)$ in mind, it is:
+$$ f(t) = \theta(e^t) e^{-t} - 1 = \frac{1}{e^{t}} \bigg[\, \sum_{p \leq e^{t}} \log p \, \bigg] -1 $$
+and then the Laplace transform is the zeta function (rather Dirichlet series) that we know stuff about:
+$$ g(z) =  \frac{1}{z+1}\,\Phi(z+1) - \frac{1}{z} = 
+\frac{1}{z+1} \sum_p \frac{\log p}{p^s} - \frac{1}{z} $$
+so the question is whether we can extract information about $f(t)$ from $g(z)$:
+$$ \left[ \sum_p \frac{\log p}{p^s} \right] \to \left[ \sum_{p \leq x} \log p \right]$$
+
+
+\end{itemize}
+
+\newpage
+
+\noindent Hopefully that explains a bit what Zagier Theorem (or Newman's Theorem) was designed to do and why where was a need in the first place.  There are these two measures of ``size" and we'd like to explain why one is related to the other. \\ \\
+What could go wrong with the limit:
+$$ \left[ g(z) = \int_0^\infty f(t) \, e^{-zt} \, dt\right] \stackrel{?}{\to} \left[ g(0) = \int_0^\infty f(t) \, dt \right] $$
+\textbf{What goes wrong with plugging in $z = 0$?}   There was a great textbook called ``Counterexamples in Analysis" and every sentence in this discussion requires about a dozen counterexamples.  At least I need them, this counterfactual reasoning is very very difficult to me.\footnote{Analysis would become my best subject because I knew I had to allocate the most time.} When I did analysis proofs, I would write a ``wishful thinking" proof or a ``bad" argument, and then gradually turn all the wrong steps into correct steps by accounting for all the exceptions that could occur. \\ \\
+\textbf{Bad Proof \#1} Laplace transforms are always \textit{very} well-behaved.  
+$$ g(z) = \int_0^\infty f(t) \, e^{-zt} \, dt \;\; \tikz { \draw[thick,->] (0,0)--(0.75,0);} \;\; g(0) = \int_0^\infty f(t) \, dt $$
+This is what we just said.  By {\color{blue!50!orange} continuity }, this limit should hold, for all $f: \mathbb{R} \to \mathbb{C}$.
+\vfill
+
+\begin{thebibliography}{}
+
+\item Don Zagier ``On Newman's Short Proof of the Prime Number Theorem" American Mathematical Monthly, Vol 104 No 8, Oct 1997.
+
+\item Gelbaum, Olmstead. \textbf{Counterexamples in Analysis} Holden Day, 1965 / Dover , 2003.
+
+\end{thebibliography}
+
+\end{document}
