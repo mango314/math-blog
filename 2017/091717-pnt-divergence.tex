@@ -77,7 +77,45 @@ $$ \left[ g(z) = \int_0^\infty f(t) \, e^{-zt} \, dt\right] \stackrel{?}{\to} \l
 \textbf{What goes wrong with plugging in $z = 0$?}   There was a great textbook called ``Counterexamples in Analysis" and every sentence in this discussion requires about a dozen counterexamples.  At least I need them, this counterfactual reasoning is very very difficult to me.\footnote{Analysis would become my best subject because I knew I had to allocate the most time.} When I did analysis proofs, I would write a ``wishful thinking" proof or a ``bad" argument, and then gradually turn all the wrong steps into correct steps by accounting for all the exceptions that could occur. \\ \\
 \textbf{Bad Proof \#1} Laplace transforms are always \textit{very} well-behaved.  
 $$ g(z) = \int_0^\infty f(t) \, e^{-zt} \, dt \;\; \tikz { \draw[thick,->] (0,0)--(0.75,0);} \;\; g(0) = \int_0^\infty f(t) \, dt $$
-This is what we just said.  By {\color{blue!50!orange} continuity }, this limit should hold, for all $f: \mathbb{R} \to \mathbb{C}$.
+This is what we just said.  By {\color{blue!50!orange} continuity }, this limit should hold, for all $f: \mathbb{R} \to \mathbb{C}$. \\ \\
+\textbf{CounterExample \#1} $z = 0$ seems just slightly outside of the domain of $\{ \text{Re}(z) > 0\}$.  How could it matter? \\
+Let's build a counterexamples: two functions: $g_1, g_2 : \Omega \subseteq \mathbb{C} \to \mathbb{C}$ such that:
+\begin{itemize}
+\item $g_1(z)$ and $g_2(z)$ are holomorhpic on $\{ \text{Re}(z) > 0 \}$
+\item $g_1(z) = g_2(z)$ agreeing on $\{ \text{Re}(z) > 0 \}$
+\item $g_1(0) \neq g_2(0)$
+\end{itemize} 
+Amazingly this counterexample does not exist. If two holomorphic functions agree on any open, however small, they are identical everywhere.  \\
+\textbf{Example \#2} The log function can be extended to complex numbers and has a definition as Laplce transform:
+$$ \Gamma(z+1) = \int_0^\infty e^{-w} w^z \, dw  $$
+This has a pole at $z = -1$ since $\log 0 = -\infty$.  Then $\log 1 = 0$ but we have:
+$$ \log e^{i\theta} = i\theta \text{ for }\theta \in \mathbb{R} \text{ so that } \log 1 = 0, 2\pi i, 4\pi i, \text{etc.}$$
+\textbf{Example \#3} The zeta function is an infinite series, but it can also be analytic continued:
+\begin{eqnarray*}
+\zeta(z) &=& \frac{1}{1^z} + \frac{1}{2^z} + \dots \\ \\
+\zeta(z) &=& \frac{1}{\Gamma(z)} \int_0^\infty \frac{w^z}{e^w - 1} \, \frac{dw}{w}
+\end{eqnarray*}
+This formula is only true for $\mathrm{Re}(z) > 1$ for example:
+$$ \zeta(\tfrac{1}{2}) \neq 1 + \frac{1}{\sqrt{2}} + 
++ \frac{1}{\sqrt{3}} + \dots  = \infty $$
+It's very easy to take such a thing for granted we will take the series for $\zeta(\frac{1}{2}) \in \mathbb{R}$ and assign it a number.
+
+\newpage 
+
+\noindent \textbf{Special Case \#3} Example \#3 is important because of our choice of $g$:
+\begin{eqnarray*} g(z) &=& \frac{1}{z} \sum_p \frac{\log p}{p^z} - \frac{1}{z-1} 
+ \;\;\;\Bigg|_{z=1} = \sum_p \frac{\log p}{p} - \big[ \,\infty \,\big] \\ \\
+&\stackrel{pnt}{=}& \int_0^\infty \left[ \frac{1}{e^t} \sum_{p < e^t} \log p - 1 \right] \, dt \\ \\
+&=& \int_0^\infty \left[\;\;\;\;\,  \sum_{p < x} \log p - 1 \right] \, dx = \int_0^\infty f(t) \, dt\end{eqnarray*}
+A big part of PNT was to ``regularize" a modest $[\infty] - [ \infty]$ diverent infinite sum, and then relate it to an average over all $p < x$ as $x \to \infty$. \\ \\
+\textbf{Example \#2} If $z \in \mathbb{R}_{\geq 0}$ a real positive number, then freshman calculus integral holds like this:
+$$ \int_0^\infty e^{-zt} \, dt = \frac{1}{z} $$
+This integral can be extended to all of $z \in \mathbb{C}$ or at least $z \in \{  \mathrm{Re}(z) \geq 0\}$.  Then
+$$ F(z) = \int_0^\infty e^{-zt} \, dt - \frac{1}{z}  \stackrel{?}{=} 0 $$
+and this function is regular for $\mathrm{Re(z)} > 0$ and $F(z) = 0$ for all $z \in \mathbb{R}$.   We can't quite say ``=" zero, but ``equal, under appropriate condition" which could mean anything, really. \\ \\
+These analytic continuation discussions, trying to get formulas to take values outside of their original domain, lead to the concept of a \textbf{sheaf} of holomorphic functions.  We get the notions like \textbf{Riemann surfaces} and \textbf{germs} and the branch cover or the \textbf{universal cover}.  \\ \\
+Newmna's proof is slightly oblique, and it's not quantitative, but it's short and it does lead to the Prime Number Theorem (with no rate of convergence).  To me, the big challenge is relate information abou the zeta function $\zeta(s)$ to information about the primes $\sum_{p < x} \log p$ and to continue we need to read past the ``proof" sign. \\ \\
+\textbf{Bad Proof \#2} \dots 
 \vfill
 
 \begin{thebibliography}{}
