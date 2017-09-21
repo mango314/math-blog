@@ -115,7 +115,37 @@ $$ F(z) = \int_0^\infty e^{-zt} \, dt - \frac{1}{z}  \stackrel{?}{=} 0 $$
 and this function is regular for $\mathrm{Re(z)} > 0$ and $F(z) = 0$ for all $z \in \mathbb{R}$.   We can't quite say ``=" zero, but ``equal, under appropriate condition" which could mean anything, really. \\ \\
 These analytic continuation discussions, trying to get formulas to take values outside of their original domain, lead to the concept of a \textbf{sheaf} of holomorphic functions.  We get the notions like \textbf{Riemann surfaces} and \textbf{germs} and the branch cover or the \textbf{universal cover}.  \\ \\
 Newmna's proof is slightly oblique, and it's not quantitative, but it's short and it does lead to the Prime Number Theorem (with no rate of convergence).  To me, the big challenge is relate information abou the zeta function $\zeta(s)$ to information about the primes $\sum_{p < x} \log p$ and to continue we need to read past the ``proof" sign. \\ \\
-\textbf{Bad Proof \#2} \dots 
+\textbf{Bad Proof \#1a} Clearly $g(z)$ is holomorphic.  Let's write out the Laplace transform:
+$$ g(z) = \int_0^\infty f(t) e^{-zt} \, dt $$
+If $f(z)$ is bounded and holomorphic, then $g(z)$ is holomorphic.  By continuity, $g(0) = \lim_{z \to 0} g(z)$. 
+$$ \lim_{z \to 0} g(z) = \lim_{z \to 0} \int_0^\infty f(t) e^{-zt} \, dt = \int_0^\infty f(t) \, dt $$
+The first equality is trivially true since $z \neq 0$ (or $\mathrm{Re}(z) \geq 0$) and the second integral is clearly true.\footnote{since it's also holomorphic} \\ \\
+\textbf{Counterexample \#2a} Our counterexample is $\boxed{f(z) = 1}$ If $z \in \mathbb{R}_{\geq 0}$ a real positive number, then freshman calculus integral holds like this:
+$$ \int_0^\infty \mathbf{1} \, e^{-zt} \, dt = \frac{1}{z} $$
+This integral can be extended to all of $z \in \mathbb{C}$ or at least $z \in \{  \mathrm{Re}(z) \geq 0\}$.  Then
+$$ F(z) = \int_0^\infty \mathbf{1} \, e^{-zt} \, dt - \frac{1}{z}  \stackrel{?}{=} 0 $$
+and this function is regular for $\mathrm{Re(z)} > 0$ and $F(z) = 0$ for all $z \in \mathbb{R}$. I'm being slightly awful. \\ \\
+\textbf{Bad Proof \#2} If we integrate over a finite domain, that Laplace transform will be holomorphic as well:
+$$ g_T(z) = \int_0^T f(t) e^{-zt} \, dt  $$
+We could say ``compact support" and integrate over all $t \geq 0$ and later it may be useful to write it out in this formal way. \\ \\
+If $f(t)$ is bounded and holomorphic, $g_T(z)$ is holomorphic as well.  And finally:
+$$ \lim_{z \to 0} g_T(z) = g_T(0) $$
+This is \textbf{Cauchy integral formula} or possibly Morera theorem.  It remains to prove the exceedingly obvious:
+$$ \lim_{T \to \infty} g_T(0) = g(0) $$
+It seems to be a modest change of limits.  If $f(t)$ is holomorphic, i.e. $f(z + dz) = f(z) + f'(z) \, dz$ and bounded $|f(z)| < M$ then we could have:
+$$ \lim_{T \to \infty} \, \lim_{z \to 0} \int_0^T f(t) \, e^{-zt} \, dt
+= \lim_{z \to 0} \, \lim_{T \to \infty} \int_0^T f(t) \, e^{-zt} \, dt $$ 
+and this is obviously true. \\ \\
+\textbf{Bad Proof \#3} The previous proof is problematic since we are trying to connect $g(0)$ to the limit of integrals 
+\begin{itemize}
+\item near $z = 0$ we could $g(z) \to g(0) $
+\item near $z = 0$ we could say  $\int_0^\infty f(t)\, e^{-zt} \, dt \to \int_0^\infty f(t) \, dt $
+\item away from $z \neq 0$ we could say $\int_0^\infty f(t)\, e^{-zt} \, dt = g(z) $
+\end{itemize}
+and we can't connect information \textit{away} from $z = 0$ to information \textit{near} $z=0$.  This is why we could use Cauchy integral formula:
+$$ g(0) = \frac{1}{2\pi i } \oint_C g(z) \, \frac{dz}{z}$$
+where $C = 0 + \epsilon S^1 = \big\{ \epsilon \, e^{2\pi i} \, \theta : 0 < \theta < 2\pi \big\}$ and we'll let $\epsilon = T$ and $T \to \infty$ and we could be done. \\ \\
+( to be continued ... )
 \vfill
 
 \begin{thebibliography}{}
