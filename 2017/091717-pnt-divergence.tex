@@ -146,6 +146,29 @@ and we can't connect information \textit{away} from $z = 0$ to information \text
 $$ g(0) = \frac{1}{2\pi i } \oint_C g(z) \, \frac{dz}{z}$$
 where $C = 0 + \epsilon S^1 = \big\{ \epsilon \, e^{2\pi i} \, \theta : 0 < \theta < 2\pi \big\}$ and we'll let $\epsilon = T$ and $T \to \infty$ and we could be done. \\ \\
 ( to be continued ... )
+
+\newpage
+
+\noindent We can recover $g(0)$ from nearby points in a number of ways: this is the magic property of holomorphic functions.  This is why we celebrate when we find them:
+$$ g(0) = \frac{1}{2\pi i } \oint_C g(z) \, e^{zT} \, \left( 1 + \frac{z^2 }{R^2}\right)  \frac{dz}{z}$$
+The right hand side has three inputs:
+\begin{itemize}
+\item $C = \{  z = R \, e^{2\pi i \theta}: 0 < \theta < 2\pi \}$ a circle centered at $z_0 = 0$
+\item The radius of the circle $R \to \infty$ which turn into a mollifier $1 + (z/R)^2$. \\
+This is necessary since I lied about the contour it's really: 
+$$C'= \partial \Big( \{ |z| < 1\} \cap \{ \mathrm{Re}(z) > -\delta \} \Big) $$
+but Zagier is making it too complacted let's just let $C = R \, S^1$ be a circle.
+\item The limit of the (finite) Laplace transform $T$ which is also tending to infinity, $T \to \infty$.
+\end{itemize}
+So I am going to improve on Zagier's approach a little bit and take out that ridiculous factor:
+\begin{eqnarray*} g(0) &=& \frac{1}{2\pi i } \oint_C g(z) \, e^{zT} \, \frac{dz}{z} \\ 
+&=& 
+\frac{1}{2\pi i } \oint_C \left[ \int_0^\infty f(t)\, e^{-zt} \, dt 
+\right]  \, e^{zT} \, \frac{dz}{z}
+\end{eqnarray*}
+and I have set $T = \infty$ because Zagier is being completely ridiculous.  This is just the Laplace transform, but now the ray is pointing in different directions.  We are integrating over the lines $ e^{i\theta} \mathbb{R} \subset \mathbb{C} $ and taking the average. \\ \\
+\textbf{Trivial New Lemma}  $g(z)$ is the Borel transform of the partial sums $\sum \log p$. ( I could try to publish this. ) \\ \\
+\textit{Proof:} Borel summation is a way to add together badly divergent series, such as $\sum n! = 1 + 2! + 3! + \dots $ However we need authoritative source; we use Sauzin [3].  Borel summation has been around since 1900, but now it's less controversial.\footnote{Especially after seeing the horrifying divergences in Quantum Field Theory, these seem rather tame.} GH Hardy discusses both the Prime Number Theorem, Euler-Maclaruin Summation and the Borel transform in his textbook \textbf{Divergent Series}, which was published after he died.
 \vfill
 
 \begin{thebibliography}{}
@@ -153,6 +176,8 @@ where $C = 0 + \epsilon S^1 = \big\{ \epsilon \, e^{2\pi i} \, \theta : 0 < \the
 \item Don Zagier ``On Newman's Short Proof of the Prime Number Theorem" American Mathematical Monthly, Vol 104 No 8, Oct 1997.
 
 \item Gelbaum, Olmstead. \textbf{Counterexamples in Analysis} Holden Day, 1965 / Dover , 2003.
+
+\item David Sauzin \textbf{Introduction to 1-summability and resurgence} \texttt{arXiv:1405.0356}
 
 \end{thebibliography}
 
