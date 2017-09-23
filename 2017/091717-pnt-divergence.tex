@@ -169,6 +169,68 @@ So I am going to improve on Zagier's approach a little bit and take out that rid
 and I have set $T = \infty$ because Zagier is being completely ridiculous.  This is just the Laplace transform, but now the ray is pointing in different directions.  We are integrating over the lines $ e^{i\theta} \mathbb{R} \subset \mathbb{C} $ and taking the average. \\ \\
 \textbf{Trivial New Lemma}  $g(z)$ is the Borel transform of the partial sums $\sum \log p$. ( I could try to publish this. ) \\ \\
 \textit{Proof:} Borel summation is a way to add together badly divergent series, such as $\sum n! = 1 + 2! + 3! + \dots $ However we need authoritative source; we use Sauzin [3].  Borel summation has been around since 1900, but now it's less controversial.\footnote{Especially after seeing the horrifying divergences in Quantum Field Theory, these seem rather tame.} GH Hardy discusses both the Prime Number Theorem, Euler-Maclaruin Summation and the Borel transform in his textbook \textbf{Divergent Series}, which was published after he died.
+
+\newpage
+
+\noindent \textbf{Sauzin's Version} part of why I know there should be a divergent series approach to PNT stems from a footnote in Sauzin's paper and alternatively it was in Hardy's book ``Divergent Series" but neither of them fill in the details.  In this note (if I ever clean it up) we try to explain what is being ``regularized". \\ \\
+He defines the Laplace transform (at angle $\theta = 0$) by an integral from $[0, +\infty)$, where the direction of infinity matters a lot now:
+$$ (\mathcal{L}^0 \phi)(z) = \int_0^{+\infty} e^{-z\zeta} \phi(\zeta) \, d\zeta $$
+He assumes $\phi: \mathbb{R}^+ \to \mathbb{C}$ is continuous, we just assume locally integrable (i.e. that the integration $\int_a^b \phi(t) \, dt \in \mathbb{R}$ will in fact return a number), and a condition:
+$$ |\phi(t)|\leq A \, e^{c \, t} \text{ we settle for } |phi(t)| \leq A$$
+and the integral ``makes sense" for the complex half plane:
+$$ \Pi_0 := \{ z \in \mathbb{C} : \mathrm{Re}(z) > 0\} $$
+We know that $\mathcal{L}^0\phi$ is holomorphic on $\Pi_0$ but not on the slightly larger area:
+$$ \Pi_0' := \{ z \in \mathbb{C} : \mathrm{Re}(z) \geq 0\} $$
+\textbf{Lemma \# 1} We can take a Laplce tranform:
+\begin{eqnarray*}
+\mathcal{L}^0(\zeta^n/n!) (z) &=& z^{-(n+1)} \\
+\mathcal{L}^0(\zeta^{\nu-1}/\Gamma(\nu))&=& z^{-\nu} \\ \\
+\int_0^{+\infty} e^{-s} s^n \, ds&=& n!
+\end{eqnarray*}
+The last one is the only one I ever use, but the middle one points an extension.\\ \\
+\textbf{Lemma \#2}
+\begin{eqnarray*}
+\mathcal{L}^0 (-t\phi) &=& d\phi/dz\\
+\mathcal{L}^0 (e^{-ct}\phi) &=& \phi(z+c) \\
+\mathcal{L}^0(1 \ast \phi) &=& z^{-1}\phi(z)\\
+\mathcal{L}^0 (d\phi/dt) &=& z (\mathcal{L}^0 \phi)(z) - \phi(0)\\
+\end{eqnarray*}
+What that, Sauzin phrases the Zagier-Newman lemma quite nicely:
+$$  \lim_{T \to \infty} \int_0^T \phi(t) \, dt = (\mathcal{L}^0 \phi)(0)$$
+Despite having a general formula that works for all $\mathrm{Re}(z) > 0$ there was not guarantee it worked for $z = 0$. \\
+Then you are referred to his paper so we never get a statement of what is being regularized, or whether 1-summation techniques are actually used. \\ \\
+Zagier uses:
+$$ g(0) = \frac{1}{2\pi i} \oint g(z) \, \frac{dz}{z} 
+= 
+\frac{1}{2\pi i} \oint 
+\left[ \int_0^\infty e^{-zt} \, f(t) \, dt \right] \, \frac{dz}{z} 
+= 
+\frac{1}{2\pi i} \int_0^{2\pi}  \int_0^\infty e^{- R te^{i\theta}} \, f(t) \, dt  \, d\theta  $$
+
+\newpage
+
+\noindent Sauzin makes a distinction between a function, the power series that can represent it and it's asymptotic expansion:
+\begin{itemize}
+\item $\hat{\phi}:\mathbb{R}^+ \to \mathcal{C} $ (the original function
+\item $\phi := \mathcal{L}^0 \hat{\phi}$ (the Laplace transform)
+\item $\tilde{\phi}(z) := \mathcal{B}^{-1}\hat{\phi}$
+\end{itemize}
+The Borel transform is just defined as an algebraic rule:
+$$
+\mathcal{B}: \tilde{\varphi} = \sum_{n=0}^\infty 
+a_n \, z^{-(n+1)} \to \hat{\varphi} = \sum_{n=0}^\infty a_n \frac{\zeta^n}{n!}
+ $$
+(his use of the letter $\zeta$ is not convenient for us). $\mathcal{B}: z^{-1} \mathbb{C}[[z^{-1}]] \to \mathbb{C}[[\zeta]]$ is just an algebraic rule changing one formula (an infinite power series) into another.  These things don't have to be ``holomorphic" or have any other nice behavior.  Later Sauzin will prove that $\mathcal{B}$ and $\mathcal{L}^\theta$ should behave nicely to each other:
+$$ \mathcal{L}^0 \hat{\varphi}(z)\sim_1 \mathcal{B}^{-1}\hat{\varphi}(z) \text{ uniformly for }z \in \Pi_0 = \{ \mathrm{Re}(z) > 0 \} $$
+This is called a ``1-Gevrey asymptotic expansion" and the operator $\mathcal{L}^0 \circ \mathcal{B}$ is called \textbf{Borel-Laplace summation}. \vfill
+\noindent \textbf{\color{green!50!orange}Prime Number Theorem} We wish to regularize the sum:
+$$ \int_0^\infty \left[ \frac{1}{x}\sum_{p < x} \log p \right] \, dx \; \sim_1 \; \sum_p \frac{\log p}{p} $$
+Resurgence lets us formula subtract off the infinite parts $\mathcal{L}^0(1) = 1/z$ (or we guess ahead of time), and the prime number theorem falls out of this.
+$$ \int_0^\infty e^{-st} \left[ \frac{1}{x}\sum_{p < x} \log p \right] \, dx \; \sim_1 \; \frac{1}{s}\sum_p \frac{\log p}{p^s} $$
+and we expand around $s = 1 + \epsilon e^{i\theta}$ (possibly with $\epsilon \to \infty$, which makes absolutely no sense at all). \hfill $\square$ \\ \\
+Remark: $ \sum \frac{\log p}{p^s} - \frac{1}{s} $ is holomorphic for $\mathrm{Re}(s)\geq 1$ no extra poles, except $s=1$ (which we subtracted out). \\ 
+This is where we used $\zeta(1 + it) \neq 0$ and showed that $g(z)$ is holomorphic for $\mathrm{Re}(z) \geq 1$ (not just $\mathrm{Re}(z) > 1$)
+
 \vfill
 
 \begin{thebibliography}{}
