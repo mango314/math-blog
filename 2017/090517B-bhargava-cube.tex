@@ -86,14 +86,63 @@ or we could state it as some type of product
 $$ H^1(k, G) \to \prod_v H^1(k_v, G) $$
 In our case $k = \mathbb{Q}$, $[X] = \{  x^2 - 2y^2 = 0\}$ and $G $ is basically the map $(x,y) \mapsto (y/2, x)$.  This amonunts to saying that for two relatively prime numbers $m, n \in \mathbb{Z}$ we could try to solve by unique factorization.
 $$  $$
-All these homology theories are (sometimes useful) layers that we put over real calculations and real things that are happening.  \'{E}tale cohomology over $\mathrm{Spec} k$ is Galois cohomology, so we could stop here and I will. \\ \\
+All these homology theories are (sometimes useful) layers that we put over real calculations and real things that are happening.  There is a torsor cohomology $H^1(X, G)$ where we could discuss classes of torsors\footnote{Can't they just say ``group action"?} over $X$. \'{E}tale cohomology over $\mathrm{Spec} k$ is Galois cohomology, so we could stop here and I will. \\ \\
 We ought to discuss $p = a^2 + b^2$ a bit (btw I'm using notes of Brian Conrad on desent).
+
+\newpage
+
+\noindent \textbf{09/28} Let's try to read one of Manjul's abstracts:
+\begin{quotation}
+We develop {\color{blue!50!gray}geometry-of-numbers} methods to count orbits in \textbf{prehomogeneous vector spaces}
+having bounded invariants over any global field. As our primary example, we apply these techniques to determine, for any base global field F of characteristic not 2, the {\color{red!50!gray}density of discriminants} of field extensions of degree at most 5 over $F$.
+\end{quotation}
+
+No idea\dots Let's try reading the first page.  Or two: 
+\begin{quotation}
+Let F denote a global number or function field. A fundamental problem in arithmetic statistics
+is to determine the densities of discriminants of field extensions of F having a fixed degree n over F.
+The case of $n = 2$ when $F = \mathbb{Q}$ (and the case of $n = 1$ for all F!) are trivial. When $n = 3$, even the
+case $F = \mathbb{Q}$ is highly nontrivial and is a celebrated result of Davenport-Heilbronn [29]. Surprisingly,
+even the case $n = 2$ is nontrivial for more general F and is a result of Datskovsky-Wright [27], who
+also settle the case of $n = 3$ for general global fields F having characteristic not 2 or 3. The cases $n = 4$
+and 5 for $F = \mathbb{Q}$ were carried out in [6, 7].
+\end{quotation}
+and then it hit me.  Do I have the same concerns as Manjul?  That's unlikely.  I hardly know the guy nor his style of mathmatics.  OK.  Are these two problems the same?
+\begin{itemize}
+\item density of discriminants 
+\item sum of squares, $p = a^2 + b^2$
+\end{itemize}
+The second question ``Fermat's theorem" has evolved to the question of whether a prime $\mathfrak{p}$ splits in a given field, $L$.  The culmination of Abelian class field theory the Kronecker-Weber theorem is no longer a statement about diophantine equations - an equation with numbers in it... In fact I don't really know what it says. \\ \\ 
+The discriminant question merely asks about various extensions $F \subseteq L$ with $[L:F] = 2 \text{ or } 3$.  How can we index all the number fields $L$ that extend $F$?  And then we'd have to reason about the Galois groups of each of them, or mentally sort them by Galois group.\\ \\
+There's a bit of a social problem I'll just outline: within mathematics (ignoring 90\% of the world) the fraction of people \textit{learning} Class Field Theory is quite small.  Either they know it or they don't.  The number of fraction learning Elementary Number Theory is quite large; there's always somebody (this could be overestimate).  So\dots Class Field Theory no longer looks like baby math.  It could, but nobody does the conversion.  Maybe it's too complicated to write down.\footnote{We can quantify this: On Math.Stackexchange there are 28K questions on \texttt{elementary-number-theory} and 3.7K questions on \texttt{algebraic-number-theory}.  As far as ``learners" go maybe an 1/8th of student proceed beyond Basic Number Theory.  As beginners talk to each other and advanced students talk to each other, there's probably very little energy spent taking advanced statements and making them elementary.  There's just no incentive. } \\ \\
+It doesn't really matter because Manjul has done both types of questions and made substantial progress on them! Here are the two kinds of problems:
+\begin{itemize}
+\item $N(X; G)$ count number fields $K/\mathbb{Q}$ of degree $n$ and Galois group $G$ 
+\item find fields $K/\mathbb{Q}$ where a prime $p \in \mathcal{O}_\mathbb{Q} = \mathbb{Z}$ splits in a certain way
+\end{itemize}
+Hopefully, {\color{green!50!orange} Geometry of Numbers}, can help us pose and solve many problems of these kinds!
+
 \vfill
 
 \begin{thebibliography}{}
-\item Manjul Bhargava \dots
+\item Manjul Bhargava, Arul Shankar, Xiaoheng Wang \textbf{Geometry-of-numbers methods over global fields I: Prehomogeneous vector spaces} \texttt{arXiv:1512.03035}
 \end{thebibliography}
 
+\newpage
 
-
+\noindent Let's observe Manjul's theorem from 2005:
+\begin{quotation}
+Let $N_4(\xi, \eta)$ be the number $S_4$ quartic fields $K$ having $4-2i$ real embeddings such that $\xi < \mathrm{Disc}(K) < \eta$.
+\begin{itemize}
+\item $\displaystyle \lim_{X \to \infty} \frac{N_4^{(0)}(\;\;\,0,X)}{X}=
+\frac{1}{48}\prod_p (1 + p^{-2} - p^{-3} - p^{-4})$
+\item $\displaystyle \lim_{X \to \infty} \frac{N_4^{(1)}(-X,0)}{X}=
+\frac{1}{8} \prod_p(1 + p^{-2} - p^{-3} - p^{-4})$
+\item $\displaystyle \lim_{X \to \infty} \frac{N_4^{(2)}(\;\;\,0,X)}{X}=
+\frac{1}{16} \prod_p (1 + p^{-2} - p^{-3} - p^{-4}) $
+\end{itemize}
+\end{quotation}
+I hadn't realized (up to a fraction) it's the same number three different times:
+$$ \pi^* := \prod_p \Big(1 + p^{-2} - p^{-3} - p^{-4} \Big)$$ 
+For whatever reason, nature is picking out this number.  In the future this number may occupy the same importance as $\pi^2/6 = \prod_p (1 - 1/p^2)$.
 \end{document}
