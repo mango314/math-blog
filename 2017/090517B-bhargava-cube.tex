@@ -144,5 +144,45 @@ Let $N_4(\xi, \eta)$ be the number $S_4$ quartic fields $K$ having $4-2i$ real e
 \end{quotation}
 I hadn't realized (up to a fraction) it's the same number three different times:
 $$ \pi^* := \prod_p \Big(1 + p^{-2} - p^{-3} - p^{-4} \Big)$$ 
-For whatever reason, nature is picking out this number.  In the future this number may occupy the same importance as $\pi^2/6 = \prod_p (1 - 1/p^2)$.
+For whatever reason, nature is picking out this number.  In the future this number may occupy the same importance as $\pi^2/6 = \prod_p (1 - 1/p^2)$. \\ \\
+The reality is we don't know very much about Galois groups.  Here's a polynomial and it's Galois group:
+\begin{itemize}
+\item $f(x) = x^4 - x^3 - x^2 + x + 1 $ and $G = D_4 $ \hspace{1em} with $D = -^2 \,3^2 \,13^1 $
+\item $f(x) = x^4 - x^3 + x^2 - x + 1 $ and $G = C_4 $ \hspace{1.1em} with $D = -^2 \, 5^3 $
+\item $f(x) = x^4 - x^2 + 1 $ and $G = V_4 $ \hspace{5.2em} with $D = -^2 \, 2^4 \, 3^2 $
+\item $f(x) = x^4 - x^3 + 2 x + 1 $ and $G = D_4 $ \hspace{2.5em} with $D = -^2 \, 2^4 \, 3^2 $
+\item $f(x) = x^4 - x^3 + x^2 - x + 1 $ and $G = C_4 $ \hspace{1em} with $D = -^2 \, 3^3 \, 7^1 $
+\item $f(x) = x^4 - x^3 + 2\,x^2 + x + 1 $ and $G = V_4 $ \hspace{0.5em} with $D = -^2 \, 3^2 \, 5^2 $
+\item $f(x) = x^4 - x + 1 $ and $G = S_4 $ with $D = -^2 \, 229^2 $
+\end{itemize}
+These are taken from work of Jones and Roberts.\footnote{A database of number fields \texttt{arXiv:1404.0266}} Many of these Galois Groups don't look the part. How would have thought that $x^4 - x^3 + 2\,x^2 + x + 1$ would be the Viergruppe $ C_2  \times C_2$.  I wonder what are the substitutions $ x \mapsto \,? $ that generate this group?  \\ \\
+Galois Theory does not mean very much to me, if we can't find the Galois group of a polynomial.  I am asking for too much.  One goal as we read Manjul's results is to try to make them more concrete (at the expense of their profound generality).  His theorem is very very difficult and we're just going to do some exercise around them, and hopefully understand the cube a little better \\
+ \begin{tikzpicture}[scale=1]
+\draw (0,0)--(1,0)--(1,1)--(0,1)--cycle; 
+\draw (0.707,0.707)--(1.707,0.707)--(1.707,1.707)--(0.707,1.707)--cycle; 
+\draw (0,0)--(0.707, 0.707)--(0.707,1.707)--(0,1)--cycle;
+\draw (1,0)--(1.707, 0.707)--(1.707,1.707)--(1,1)--cycle;
+\draw (0,0)--(1,0)--(1.707, 0.707)--(0.707,0.707)--cycle;
+\draw (0,1)--(1,1)--(1.707, 1.707)--(0.707,1.707)--cycle; \end{tikzpicture}
+
+\newpage
+
+\noindent Let $p$ be a fixed prime, and let $K$ run through the $S_4$-quartic fields in which $p$ does not ramify, fields being ordered by the size of the discriminants.  Then the Artin symbol takes values:
+$$ \left( \frac{K_{24}}{p}\right)
+= \Big[\langle e \rangle 
+,\, \big\langle (12) \big\rangle
+,\, \big\langle (123) \big\rangle
+,\, \big\langle (1234) \big\rangle
+,\, \big\langle (12)(34) \big\rangle \Big] = [\,1:6:8:6:3\,]$$
+{\color{orange!50!green}\textbf{Why does everyone pretend this is settled}}\textbf{ ??} Why do Abstract Algebra teachers pretend we know how to do Galois Theory, when we can do little more than recite the insolvability of the quintic. \\ \\
+In any case, we could conjecture the splitting type of a prime $p$ in a quartic field, could be proven using geometry-of-numbers in the same way that we should that $p = 4k+1 $ implies $p = a^2 + b^2 = (a+bi)(a-bi)$. There could be examples of descent.
+
+\begin{thebibliography}{} 
+\item John W. Jones, David P. Roberts \textbf{A database of number fields} \texttt{arXiv:1404.0266}
+\item Manjul Bhargava, Piper Harron. \textbf{The equidistribution of lattice shapes of rings of integers in cubic, quartic, and quintic number fields} \texttt{ arXiv:1309.2025}
+\item Manjul Bhargava \\
+\textbf{A positive proportion of plane cubics fail the Hasse principle} \texttt{arXiv:1402.1131}
+\textbf{The density of discriminants of quartic rings and fields} Volume 162, Issue 2, 1031-1063 (2005)
+\item M. Bhargava, J. E. Cremona, T. A. Fisher, N. G. Jones, J. P. Keating \textbf{What is the probability that a random integral quadratic form in n variables has an integral zero?} \texttt{arXiv:1502.05992}
+\end{thebibliography}  
 \end{document}
