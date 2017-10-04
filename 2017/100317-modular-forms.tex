@@ -1,0 +1,100 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+%\usepackage{pifont}
+\usepackage{amsmath}
+
+
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+\newcommand{\red}{\begin{tikz}[scale=0.25]
+\draw[fill=red, color=red] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\blue}{\begin{tikz}[scale=0.25]
+\draw[fill=blue, color=blue] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\green}{\begin{tikz}[scale=0.25]
+\draw[fill=green, color=green] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+
+\newcommand{\sq}[3]{\draw[#3] (#1,#2)--(#1+1,#2)--(#1+1,#2+1)--(#1,#2+1)--cycle;}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.markings}
+
+\newcommand{\susy}{{\bf Q}}
+\newcommand{\RV}{{\text{R}_\text{V}}}
+
+\title{Scratchwork: Eisenstein Series}
+\date{}
+\begin{document}
+
+%\fontfamily{qag}\selectfont \fontsize{12.5}{15}\selectfont
+
+\sffamily
+
+\maketitle
+
+\noindent There's this paper which gives an estimate in terms of theta functions, and then the same concept in terms of automorphic representations.  It took so much energy to learn the first one, that I could barely get into the second.  Uh\dots he says it's the Burgess bound, he says it's the theta correspondence.  It's missing all sorts of constants, one papers written entirely in French, nobody has a clear explanation.  \\ \\
+The modular forms textbook does not have that many examples, so I chose theta functions. There are only a few theta functions, I found \textit{even more} theta functions. He uses eisenstein series.  I found \textit{even more} eisenstein series, and Hilbert modular forms adn the works.  The research paper immediately uses automorphic forms and L-functions.   \\ \\
+What's missing is (yet another person) slowly connecting all the pieces, as if they were LEGO's.  If you look back, to mid 19th century the pre-cursors to modular forms were always there. I found in a library today, works of Weber, Kronecker, Fricke, Klein, Tannery, Ferrers, Darboux, and etc. The language of varieties and divisors was just getting started if they could think of it at all.  There was classical functions, without understanding the representation theory -- the symmetries motivating them.  \\ \\
+With that pep talk, let's do some math.  $\theta(z) = \sum_{n \in \mathbb{Z}} q^{n^2}$ is invariant under two maps $z \mapsto z + 1$ and $z \mapsto - \frac{1}{4z}$ (where $q = e^{2\pi i \, z }$); this group is called $\Gamma_0(4)$ and we have $[SL(2, \mathbb{Z}):\Gamma_0(4)] = 6$.  The recipe for Eisenstein series looks like this:
+$$ E(z,s) = \sum_{\gamma \in \Gamma_\infty \backslash \Gamma} \mathrm{Im}(\gamma \, z)^s \quad\text{w/}\quad \mathrm{Im}(\gamma s) = \frac{\mathrm{Im}(z)}{|cz+d|^2}$$
+Yes, I need the formula. Our choice is $\Gamma = \Gamma_0(4)$. It remains to find this quotient $\Gamma_\infty \backslash \Gamma_0(4)$.  By definition:
+\begin{eqnarray*}
+\Gamma_0(4) &=& \left\{ \left( \begin{array}{cc} a & b \\ c & d\end{array} \right): c \equiv 0 \pmod 4 \right\} \\ \\
+\Gamma_\infty      &=& \left\{ \left( \begin{array}{cc} 1 & x \\ 0 & 1\end{array} \right): x \in \mathbb{Z} \right\} 
+\end{eqnarray*}
+If instead we used $\Gamma_0(1) \simeq SL(2, \mathbb{Z})$, the cusps are indexed by relatively prime pairs of integers (a.k.a. ``reduced fractions").
+\begin{eqnarray*}
+\Gamma_{0,\infty} \backslash \Gamma_0 &=& \big\{ \pm (x,y) \in \mathbb{Z}^2 / \{\pm 1\} : \text{gcd}(x,y) = 1  \big\}  \\ \\
+\Gamma_{0, \infty}    \left( \begin{array}{cc} a & b \\ c & d\end{array} \right)    &\mapsto& \pm(c,d)
+\end{eqnarray*}
+As usual, the argument is really basic but I haven't done it yet, and if we set $\Gamma = \Gamma_0(4)$,  I can't find it in any textbook.  We'd have $ad-bc = 1$ and 
+$$  \left(\begin{array}{cc} 1 & x \\ 0 & 1\end{array} \right)\left( \begin{array}{cc} a & b \\ c & d\end{array} \right)  = \left(\begin{array}{cc} a+cx & b+dx \\ c & d\end{array} \right) $$
+
+\newpage
+
+\noindent It's been a long time since I've done abstract algebra computations, but I'd guess that (as \textbf{cosets}):
+$$  \big[ \Gamma_\infty \backslash \Gamma_0(4) : \Gamma_\infty \backslash \text{SL}(2, \mathbb{Z}) \big]  = \big[ \Gamma_0(4) : \text{SL}(2, \mathbb{Z}) \big] = 6 $$
+I also remember finding that $\Gamma_0(4) \simeq \Gamma(2)$, which looks crazy but I did a change of variables:
+$$ \left[ z \mapsto z + 1, z \mapsto - \frac{1}{4z} \right] \stackrel{z \mapsto 2z}{\to} 
+\left[ z/2 \mapsto z/2 + 1, z/2 \mapsto - \frac{1}{4(z/2)} \right] 
+= \left[ z \mapsto z + 2, z \mapsto - \frac{1}{z} \right]$$
+This could be done using a similarity transform (I'm not even checking the other one):
+$$ \left( \begin{array}{cc} \frac{1}{2} & 0 \\ 0 & 2\end{array} \right)^{-1} \left( \begin{array}{cc} 1 & 1 \\ 0 & 1\end{array} \right) \left( \begin{array}{cc} \frac{1}{2} & 0 \\ 0 & 2\end{array} \right) = \left( \begin{array}{cc} 1 & 2 \\ 0 & 1\end{array} \right)  $$
+Mostly I'm just scrared it'll be wrong.  But look\dots um\dots 
+$$ \left( \begin{array}{cc} \frac{1}{2} & 0 \\ 0 & 2\end{array} \right)^{-1} \left( \begin{array}{rc} 0 & 1 \\ -4 & 0\end{array} \right) \left( \begin{array}{cc} \frac{1}{2} & 0 \\ 0 & 2\end{array} \right) = \left( \begin{array}{rc} 0 & 1 \\ -1 & 0\end{array} \right)  $$
+That's a funny way of writing the identity matrix.  That's because this is $\text{PSL}_2(\cdot)$.  Can I find 6 cosets? A long time ago I learned Bezout theorem:
+$$ \text{gcd}\,(c,d) = \text{min} \, \big\{ cx + dy > 0 : x, y \in \mathbb{Z} \big\} $$
+Our's is a little different.  Under the restriction that $ c \equiv 0 \pmod 4$ how many classes can we get for this ``line"?
+$$ (a,b) + x \, (c,d) \in \mathbb{Z}^2 \text{ for } x \in \mathbb{Z}$$
+You get six chances to write things in $SL(2, \mathbb{Z})$ that are not in $\Gamma_0(4)$ what could they be?
+$$
+\left( \begin{array}{cc} 1 &  0 \\  0 & 1\end{array} \right),\; 
+\left( \begin{array}{cc} 1 &  0 \\  1 & 1\end{array} \right),\; 
+\left( \begin{array}{cc} 1 &  1 \\  0 & 1\end{array} \right),\; 
+\left( \begin{array}{rc} 0 &  1 \\ -1 & 0\end{array} \right),\; 
+\left( \begin{array}{rc} 1 &  0 \\ -1 & 1\end{array} \right),\; 
+\left( \begin{array}{cr} 1 & -1 \\  0 & 1\end{array} \right) 
+ \in \Gamma(2) \simeq \Gamma_0(4)$$
+Not quite right.
+\vfill
+
+\begin{thebibliography}{}
+
+\item Anton Deitmar \textbf{Automorphic Forms} (Unirsitext ) Springer, 2013.
+
+\item Philipp Fleig, Henrik P. A. Gustafsson, Axel Kleinschmidt, Daniel Persson. \textbf{Eisenstein series and automorphic representations} \texttt{ arXiv:1511.04265}
+
+\end{thebibliography}
+
+
+
+\end{document}
