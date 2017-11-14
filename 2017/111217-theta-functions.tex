@@ -91,7 +91,85 @@ so we need to do a careful evaluation of the Fourier transform. I have no idea w
 
 \begin{thebibliography}{}
 
-\item PW Atkins \textbf{Physical Chemistry}
+\item PW Atkins, Julio de Paula. \textbf{Physical Chemistry} (10th ed.) WH Freeman, 2014.
+
+\end{thebibliography}
+
+\newpage
+
+\noindent \textbf{11/13} To focus our discussion we need to pick an example.  Let $u(a,b) = a^2 - b^2$ be harmonic function.
+$$ \theta(z;u) = \sum (a^2 - b^2) \, e^{2\pi i (a^2 + b^2 )\,z } $$
+This is a theta function, and cusp form on $\Gamma_0(4)$.  That is the very first thing I learned.
+\begin{center}
+$\text{ theta functions } \subseteq \text{ modular forms }$  
+\end{center}
+I don't really know what a ``modular form" is anyway or a ``cusp form" anyway.\footnote{but they've been studied for decades at a level of abstraction that is out of reach}  For now, it means the values $z = 0, \frac{1}{2}, \infty$ matter \textit{a lot}.  Our exercise is to show - in example other than the original theta function - is that Poisson summation is holding:
+$$ \sum_{n \in \mathbb{Z}} e^{- \pi n^2 \, t} =  \frac{1}{\sqrt{t}} \sum_{n \in \mathbb{Z}} e^{-\pi n^2 /t} $$
+and modular invariance follow from \textbf{analytic continuation}, $t \in \mathbb{R}$ to $z \in \mathbb{C}$.  How do I teach - quickly and without too much complication - the modular invariance of $\theta(z;u)$? \\ \\
+Not knowing anything about Fourier transforms we could write down the two-variables formula:
+$$ 
+\sum_{(m,n) \in \mathbb{Z}^2} e^{- \pi ( m^2 + n^2 ) \, t} =  \frac{1}{t} 
+\sum_{(m,n) \in \mathbb{Z}^2} e^{- \pi ( m^2 + n^2 ) /t} $$
+and - waving my hands a lot - if we weight by a harmonic polyonomial $u(m,n) = m^2 - n^2$ has degree $\deg u = 2$ then 
+$$ 
+\sum_{(m,n) \in \mathbb{Z}^2} (m^2 - n^2 )\, e^{- \pi ( m^2 + n^2 ) \, t} =  \frac{1}{t^2} 
+\sum_{(m,n) \in \mathbb{Z}^2} (m^2 - n^2 )\, e^{- \pi ( m^2 + n^2 ) /t} $$
+and whenever we have a harmonic polynomial $u(x,y)$.  And we get an endless supply of cusp forms to test other conjectures on.  For example, $\theta(z;u) \in L^2 (\Gamma_0(4) \backslash \mathbb{H}) $. \\ \\
+We could deduce this formula from \textbf{Poisson summation} and the ``rules" of Fourier transform.
+\begin{itemize}
+\item If $f \in \mathcal{S}(\mathbb{R})$ \hspace{1.2em} then $\sum_{n \in \mathbb{Z}} f(n) = \sum_{n \in \mathbb{Z}} \widehat{f}(n)$.
+\item If $f(x) = e^{-\pi x^2 }$ then $\widehat{f}(\xi) = f(\xi)$ and $\int_\mathbb{R} e^{-\pi x^2} \, dx = 1$.
+\item If $f \in \mathcal{S}(\mathbb{R})$ \hspace{1.2em} then $(-2\pi i x) f(x) \to \frac{d}{d\xi} \widehat{f}(\xi)$
+\end{itemize}
+I don't know if Schwartz class is the best object for Fourier analysis -- certainly real signals are not guaranteed to decay in the way it resuires -- but it's the most natural in this particular niche.  \\ \\
+Later I might try to extend to Adeles, $\mathcal{S}(\mathbb{A})$, and we'd have to ask how to extend the modular surface to adeles:
+$$ \mathbb{H}\simeq \text{SL}(2, \mathbb{R})/\text{SO}(2, \mathbb{R}) 
+\hspace{0.25in}\text{ and }\hspace{0.25in}
+\text{SL}(2, \mathbb{Z})  \backslash \mathbb{H}\simeq \text{SL}(2, \mathbb{Z}) \backslash \text{SL}(2, \mathbb{R})/\text{SO}(2, \mathbb{R})$$
+Number theory also take a very broad view of what ``Fourier coefficients" actually are -- views which have no elementary or engineering counterparts.  If we use ``\textit{Strong Approximation}":
+$$ \text{T}^1 \big( \text{SL}(2, \mathbb{Z} ) \backslash \mathbb{H} \big) \simeq \text{SL}(2, \mathbb{Z})   \backslash \text{SL}(2, \mathbb{R})  
+\simeq \text{SL}(2, \mathbb{Q})/\text{SO}(2, \mathbb{A})   $$
+This is fine and wonderful: the theory of modular forms has been extending way beyond our original problem.  To the point of getting completely lost.
+
+\newpage
+
+\noindent \textbf{Ex.} Let's set $f(x,y) = (x^2 - y^2) \, e^{- \pi (x^2 + y^2 )\,t}$ and let's build the statement of Poisson summation in this case:
+$$\sum_{(m,n) \in \mathbb{Z}^2} f(m,n) = 
+\sum_{(m,n) \in \mathbb{Z}^2} \widehat{f}(m,n)$$
+I know the general ``shape" of the equation I should get, but not the constants.\footnote{It may not even be true, but I admired Richard Feynman for getting all of this constants right, including factors of $\pm 1$.  He was also a Putnam Fellow, before doing Physics graduate school at Princeton.  These says we are critical of this same guy, Richard Feynman for his ``path integral" which cannot be defined\dots} At least, let $g(x) = e^{-\pi x^2}$:
+$$ \left[ \, \int_\mathbb{R} e^{-\pi x^2} \, dx = 1 = \hat{g}(0) \right] \to 
+\left[ \, \int_\mathbb{R} e^{-\pi x^2} \, e^{2\pi i \, n x} \, dx = e^{- \pi n^2} = \hat{g}(n) \right] $$
+Hopefully that wasn't too circular,  but if we rescale, $g(x \sqrt{t}) = e^{\pi x^2 \, t} $ the Fourier transform behaves nicely under dilation:
+$$ \left[ \, \int_\mathbb{R} e^{-\pi x^2} \, e^{2\pi i \, n x} \, dx = e^{- \pi n^2} = \hat{g}(n) \right] \to 
+\left[ \, \int_\mathbb{R} e^{-\pi x^2 \, t} \, e^{2\pi i \, n x} \, dx = \frac{1}{\sqrt{t}} e^{- \pi n^2 / t} = (1/\sqrt{t}) \, \hat{g}(n/\sqrt{t}) \right] $$
+and out comes the Poisson Summation formula (in one variable):
+$$ \sum_{n \in \mathbb{Z}} g(n) =   \sum_{n \in \mathbb{Z}} e^{\pi  n^2 \, t} =    \sum_{n \in \mathbb{Z}} \hat{g}(n) =  \frac{1}{\sqrt{t}} \sum_{n \in \mathbb{Z}} e^{\pi  n^2 / t} $$
+we need a \textit{weighted} Poisson summation formula in \textit{two} variables. \\ \\
+Can we use the Fourier transform rules to solve our main problem?
+\begin{eqnarray*} 
+f_0(x,y) = e^{- \pi (x^2 + y^2 )} \hspace{0.7in} &\to& \hat{f}_0(\xi,\eta) = e^{- \pi (\xi^2 + \eta^2 )}\\
+f_1(x,y) = e^{- \pi (x^2 + y^2 )\,t} \hspace{0.65in} &\to& 
+\hat{f}_1(\xi,\eta) =  \left( \frac{1}{\sqrt{t}} \right)^2 \hat{f}_0(\xi/\sqrt{t},\eta/\sqrt{t}) = \frac{1}{t} e^{- \pi (\xi^2 + \eta^2 )/t} \\
+f_2(x,y) = (x^2 - y^2) \, e^{- \pi (x^2 + y^2 )\,t} &\to& 
+\hat{f}_2(\xi, \eta) = \frac{1}{(-2\pi i)^2}\left( \frac{d^2}{d\xi^2} - \frac{d^2}{d\eta^2} \right)\hat{f}_1(\xi, \eta)
+= \frac{1}{t^2} (\xi^2 - \eta^2) e^{- \pi (\xi^2 + \eta^2 )/t}
+\end{eqnarray*}
+Then we obtain the formula on the previous page:
+$$ 
+\sum_{(m,n) \in \mathbb{Z}^2} (m^2 - n^2 )\, e^{- \pi ( m^2 + n^2 ) \, t} =  \frac{1}{t^2} 
+\sum_{(m,n) \in \mathbb{Z}^2} (m^2 - n^2 )\, e^{- \pi ( m^2 + n^2 ) /t} $$
+Note there are two indexes floating around.  $(m,n) \in \mathbb{Z}^2$ counting lattice points and $t \in \mathbb{R}$.  These are Fourier series in \textit{one} variable.  Our question is about the decay of Fourier coefficients in 4-variables (and 3 variables):
+$$ \theta(u;z) = \sum_{m \in \mathbb{Z}^4} u(m) e^{- \pi  |m|^2 \,z} = f(z) = \sum a_n \, e^{2\pi i \, z } $$
+Can we get $\theta(u;z)$ to look like an $f(z)$ ? We'd like to show that $a_n = o(n)$ or even $O(n^{-1/28})$.  And so our formulas will go under even more strutiny.  For now let's look on the right side: Stein's Fourier analysis textbook is holding strong even as I whack it on quite advanced material. 
+\vfill
+
+\begin{thebibliography}{}
+
+\item Elias Stein, Rami Shakarchi.  \textbf{Fourier Analysis: An Introduction}. (Princeton Lectures in Analysis I), Princeton University Press, 2003.
+
+\item Don Zagier ``Elliptic Modular Forms and Their Applications" from \textbf{1-2-3 of Modular Forms} (Universitext) Springer, 2008.
+
+\item Phillip Fleig, Henrik Gustaffson, Axel Kleinschmidt, Daniel Persson.  \textbf{Eisenstein Series and Automorhpic Reresentations} \texttt{arXiv:1511.04265}
 
 \end{thebibliography}
 
