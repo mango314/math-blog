@@ -1,0 +1,68 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+%\usepackage{pifont}
+\usepackage{amsmath}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+\newcommand{\red}{\begin{tikz}[scale=0.25]
+\draw[fill=red, color=red] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\blue}{\begin{tikz}[scale=0.25]
+\draw[fill=blue, color=blue] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\green}{\begin{tikz}[scale=0.25]
+\draw[fill=green, color=green] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+
+\newcommand{\sq}[3]{\draw[#3] (#1,#2)--(#1+1,#2)--(#1+1,#2+1)--(#1,#2+1)--cycle;}
+
+\usepackage{tikz}
+
+\newcommand{\susy}{{\bf Q}}
+\newcommand{\RV}{{\text{R}_\text{V}}}
+
+\title{Scratchwork: Pythagorean Quadruples}
+\date{}
+\begin{document}
+
+%\fontfamily{qag}\selectfont \fontsize{12.5}{15}\selectfont
+
+\sffamily
+
+\maketitle
+
+\noindent If real-world data and computations are noisy, full of errors, and \textit{never} integers, why study Number Theory?  Is there a way to sift out $\mathbb{Z}$ from the chaos of the world? \\ \\
+From ancient times, we know to solve Pythagoras equation in integers:
+$$ \big[ x^2 + y^2 = z^2 \big] \to \big[ x = m^2 - n^2 , y = 2mn , z = m^2 + n^2 \big]  $$
+and we could merge this into a single formula in $\mathbb{Z}[m,n]$ that ``works" for all $m,n \in \mathbb{Z}$:
+$$  \big(m^2 - n^2\big)^2 + \big(2mn\big)^2 = \big(m^2 + n^2 \big)^2$$
+The left and right sides are homogenous polynoials of 4-th degree.  And one could ask if we have two equations $f(\vec{x}) = g(\vec{x})$ that agree for all $\vec{x} \in \mathbb{Z}^2$ if $f \equiv g$ as elements of $\mathbb{Z}[\vec{x}]$.  I think the answer is maybe false. \\ \\
+\textbf{1903} We know how to solve the Pythagoras equation in 4 variables:
+$$ a^2 + b^2 + c^2 = d^2 $$
+and a solution can be obtained \\ \\
+\textbf{2013} It was hard to believe that if we replace the coefficient with a $2$, the question was not resolved until four years ago:
+$$ a^2 + b^2 + 2\, c^2 = d^2  $$
+How is that even possible?  All they do is count solutions $r_{1,1,2}(n^2)$, using modular forms of some kind.  Another approach could have been using the Hasse principle, or String Approximation. \\ \\
+My question about the ``tree" of solution is about the orthogonal group:
+$$ O \big( a^2 + b^2 + 2\, c^2 - d^2 , \mathbb{Z} \big)  $$
+and I guess this type of problem is wide open.  The Pythagorean triples looks like this:
+$$ O(2,1, \mathbb{Z}) = O \big( a^2 + b^2 - c^2  , \mathbb{Z} \big)  \simeq \Gamma(2)$$
+And they start to talk about Lorenzian spaces, since right triangles in $\mathbb{R}^2$ are null vectors (elements of the light cone)  in $\mathbb{R}^{2,1}$.  Here we have the exact sequence:
+$$ 1 \to \Gamma(2) \to \text{SL}(2, \mathbb{Z}) \to SL(2, \mathbb{Z}_2) \to 1$$
+Perhaps I should say $\mathbb{Z}/2\mathbb{Z}$ instead of $\mathbb{Z}_2$.
+
+\vfill
+
+\begin{thebibliography}{}
+
+\item Shaun Cooper, Heung Yeung Lam.  \textbf{On the diophantine Equation $\mathbf{n^2 = x^2 + b\, y^2 + c\, z^2}$} Journal of Number Theory 133 (2013) 719–737
+ 
+\end{thebibliography}
+
+\end{document}
