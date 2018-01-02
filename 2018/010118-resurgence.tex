@@ -57,11 +57,57 @@ These functions are still very versatile and could become a number of things.  A
 The asymptotic series is just the Taylor-expansion around $g = 0$.   If $|g| \ll 1$ we have this formula:
 $$ Z(g) \stackrel{?}{\simeq} \sqrt{2\pi} \left[ 1 + \frac{g}{2} + \frac{9}{8}g^2 + \dots \right]$$
 except we're now concerned this formula is no longer true for $g \notin \mathbb{R}$.  We could hashtag this \texttt{[sequences-and-series]} and consult our freshman analysis textbooks.  And a world of complications will unfold\dots
+
 \vfill
 
 \begin{thebibliography}{}
 
-\item Aleksey Cherman, Peter Koroteev, Mithat Ünsal.  \textbf{Resurgence and Holomorphy: From Weak to Strong Coupling} \texttt{arXiv:1410.0388}
+\item Aleksey Cherman, Peter Koroteev, Mithat \"{U}nsal.  \textbf{Resurgence and Holomorphy: From Weak to Strong Coupling} \texttt{arXiv:1410.0388}
+ 
+\end{thebibliography}
+
+\newpage
+
+\noindent \textbf{1/2} Instead of Abramowitz and Stegun, I searched through \textbf{Watson}'s \textit{Treatise on the Theory of Bessel Functions}, where they discuss $J_0(z)$ instead of $I_0(z)$.
+$$ J_0(z) = \frac{1}{2\pi} \int_0^{\pi}  \cos \big(z \cos \theta \big) \, d\theta $$
+and the Bessel function satisfies the Bessel differential equation:
+$$ z^2 \frac{d^2 y}{dz^2} + z \frac{dy}{dz} + z^2 y = 0 $$
+These differential equations are often present in problems with rotational symmetry.  But also they deal with the representation theory of $\text{SL}(2, \mathbb{R})$, which is not discussed in Watson's book.\\ \\ \\
+The Bessel function can be expressed in terms of the Legendre polynomials (which are always about the sphere, $x^2 + y^2 + z^2 = 1$).
+$$ \lim_{n \to \infty} P_n\big( \cos \frac{z}{n}\big) = J_0(z) $$
+These always have to do with Laplaces equation on spherically symmtric functions:
+$$ \nabla f = \frac{\partial^2 f}{\partial x^2}
++ \frac{\partial^2 f}{\partial y^2}
++ \frac{\partial^2 f}{\partial z^2} = 0 $$
+and this way we have obtained elements of both the $\text{SO}(3)$ and $\text{SL}(2, \mathbb{R})$ functions.  Since Cherman and Koroteev and \"{U}nsal talk about $I_0(z)$ and not $J_0(z)$ we can find an asymptotic for that:
+$$ \lim_{n\to \infty} P_n \Big( \frac{n^2+z^2 }{n^2 - z^2 } \Big) = I_0(2z) $$
+These connections are important because I am trying to find other sequences of steps leading to their derivation.
+$$ P_n( \cos \theta) = \cos^2 (\theta/2)\; {}_2F_1 (-n,-n;1;-\tan^2 \frac{1}{2}\theta)$$
+Therefore classical functions are an endless labyrinth, and we can always obtain novel symmetries. \\ \\ \\
+In order to look for a quick solution we have:
+$$ \lim_{n \to \infty} P_n (\cos \theta/n) = \frac{1}{\pi} \int_0^\pi e^{iz \, \cos \phi} \, d\phi = J_0(z)$$
+and hopefully this can lead to an asymptotic series.  Without further ado, we find on p.203 the asymptotic they derive:
+$$ I_0(z) \sim \frac{e^z}{\sqrt{2\pi z}} \sum_{m=0}^\infty \frac{(-1)^m (0,m)}{(2z)^m}
++ i\, \frac{e^{-z}}{\sqrt{2\pi z}} \sum_{m=0}^\infty \frac{ (0,m)}{(2z)^m} $$
+So wherever we aim, we can always find more formula of this type:
+\begin{itemize}
+\item How bad are the asymptotic series?  Can we fix them numbers in $\mathbb{R}$ ?
+\item Is there continuity as we pass from $|z| \ll 1$ to $|z| \gg 1$ ?  
+\item How about $z = \epsilon S^1$ moves around a small circle?
+\end{itemize}
+I have not been able to check why they feel Picard-Fuchs equations and Schwinger-Dyson equations are related.
+
+\newpage
+
+\noindent \"{U}nsal and his colleagues offer a good discussion of resurgence in several papers, and for exponential integrals there are notes and lectures of Konsevich that I have not looked at.  These high priests decree that a particular statement is ``old" or ``new", so what are they working on?  Resolving \textbf{divergences in quantum field theory} is the open problem which should lead to certifiably new insight.
+
+\vfill
+
+\begin{thebibliography}{}
+
+\item Gerald V. Dunne, Mithat \"{U}nsal  \textbf{Resurgence and Trans-series in Quantum Field Theory: The $\mathbb{C}P^{N-1}$ Model} \texttt{arXiv:1210.2423}
+
+\item Maxim Kontsevich \textbf{Exponential Integral} \texttt{https://www.youtube.com/watch?v=tM25X6AI5dY}
  
 \end{thebibliography}
 
