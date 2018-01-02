@@ -1,0 +1,68 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+%\usepackage{pifont}
+\usepackage{amsmath}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+\newcommand{\red}{\begin{tikz}[scale=0.25]
+\draw[fill=red, color=red] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\blue}{\begin{tikz}[scale=0.25]
+\draw[fill=blue, color=blue] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\green}{\begin{tikz}[scale=0.25]
+\draw[fill=green, color=green] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+
+\newcommand{\sq}[3]{\draw[#3] (#1,#2)--(#1+1,#2)--(#1+1,#2+1)--(#1,#2+1)--cycle;}
+
+\usepackage{tikz}
+
+\newcommand{\susy}{{\bf Q}}
+\newcommand{\RV}{{\text{R}_\text{V}}}
+
+\title{Scratchwork: Divergent Series}
+\date{}
+\begin{document}
+
+%\fontfamily{qag}\selectfont \fontsize{12.5}{15}\selectfont
+
+\sffamily
+
+\maketitle
+
+\noindent These gentlemen start off with a nice \textit{classical} analysis of the Bessel funtion.  These were surprising to me, but the formulas are quite old.
+$$ Z(g) = \frac{1}{\sqrt{g}} \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} dx \, e^{- \frac{1}{2g} (\sin x)^2} 
+= \frac{\pi}{\sqrt{g}} e^{-\frac{1}{4g}} I_0(\frac{1}{4g})$$
+These formulas are related to the \textit{asymptotic expansion} of the Bessel funtion, but they can also considered a 0+0 dimensional quantum field theory. Later we have another variant of this expansion:
+$$ Z(\xi) = \sqrt{\xi} \int_{-\pi}^{\pi}e^{-2\xi (\sin \phi)^2} d\phi 
+= \int_{\mathcal{C}} \frac{e^{-\xi x}}{\sqrt{(1+x)(1-x)}}\, dx$$
+We can show, using \textbf{variation of paramters} of some kind or another that $Z$ solves the Bessel differential equation:
+$$ Z_*(\xi) = A \, I_0(\xi) + B \, K_0 (\xi)$$
+This was revolutionary to me, but involves Riemann surface geomtry already discussed in the 19th century.  
+\begin{itemize}
+\item Do professors still study such integrals?
+\item How is this different from ``asymptotic series"?  What is wrong with these formulas?
+\item Is there a 0+1 dimensional quantum field theory? Where did these equations fit?
+\end{itemize}
+One hint we have is the next integral these gentelemen compute, curresponding to an elliptic curve:
+$$ Z(\zeta, \xi) = \int \frac{e^{-x\xi}}{\sqrt{x(1 - (1 - \zeta)x)(1 + \zeta x)}} \, dx$$
+These functions are still very versatile and could become a number of things.  And as they get more and more complex, we have theories about them, but their specific properties are less and less well-known. \\ \\
+The asymptotic series is just the Taylor-expansion around $g = 0$.   If $|g| \ll 1$ we have this formula:
+$$ Z(g) \stackrel{?}{\simeq} \sqrt{2\pi} \left[ 1 + \frac{g}{2} + \frac{9}{8}g^2 + \dots \right]$$
+except we're now concerned this formula is no longer true for $g \notin \mathbb{R}$.  We could hashtag this \texttt{[sequences-and-series]} and consult our freshman analysis textbooks.  And a world of complications will unfold\dots
+\vfill
+
+\begin{thebibliography}{}
+
+\item Aleksey Cherman, Peter Koroteev, Mithat Ünsal.  \textbf{Resurgence and Holomorphy: From Weak to Strong Coupling} \texttt{arXiv:1410.0388}
+ 
+\end{thebibliography}
+
+\end{document}
