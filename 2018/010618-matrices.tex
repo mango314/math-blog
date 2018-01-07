@@ -1,0 +1,105 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+%\usepackage{pifont}
+\usepackage{amsmath}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+\newcommand{\red}{\begin{tikz}[scale=0.25]
+\draw[fill=red, color=red] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\blue}{\begin{tikz}[scale=0.25]
+\draw[fill=blue, color=blue] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\green}{\begin{tikz}[scale=0.25]
+\draw[fill=green, color=green] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+
+\newcommand{\sq}[3]{\draw[#3] (#1,#2)--(#1+1,#2)--(#1+1,#2+1)--(#1,#2+1)--cycle;}
+
+\usepackage{tikz}
+
+\newcommand{\susy}{{\bf Q}}
+\newcommand{\RV}{{\text{R}_\text{V}}}
+
+\title{Scratchwork: Gaussian Integral}
+\date{}
+\begin{document}
+
+%\fontfamily{qag}\selectfont \fontsize{12.5}{15}\selectfont
+
+\sffamily
+
+\maketitle
+
+\noindent Matrix identities are infinite. \\ \\
+\textbf{Ex.} In 2003, Fyodorov and Strahov found an identity for $N \times N$ Hermitian Gaussian random matrix, $H$ and let $D(z) = \det (z - H)$ be the characteristic polynomial.  Let $u_1, \dots, u_d \in \mathbb{C} \backslash \mathbb{R}$ and $v_1, \dots v_d \in \mathbb{C}$. 
+$$ 
+\left\langle 
+\frac{D(v_1) \dots D(v_d)}{D(u_1) \dots D(u_d)}\right\rangle = 
+\det \left( \frac{1}{u_i - v_j} \right)^{-1} \cdot
+\det \left\langle \frac{1}{u_i - v_j} \frac{D(v_j)}{D(u_i)} \right\rangle
+$$
+This is a comparison of two $d \times d$ matrices, which are themselves expectation of another random process.  \\ \\
+This is my blog, we can work out the numerous proofs that have emerged between the years 2000-2005.  This offers a springboard into various things. \\ \\
+\textbf{Ex.} The latest moviation I can think of for studying the Gaussian comes from Mochizuki:
+$$
+\textbf{Gaussians} \to \dots \to \text{Degrees of Arithemtic Line Bundles} \to \dots \to \text{Teichmuller Theory} \to \dots \to \textbf{IUT} $$
+I always wondered what makes the Gaussian special.  Whenenever we want to ``solve" something we do a sequences of manipulations (preserving all information) or approximations (losing some info) and deform our old problem into an example we're more familiar with. \\ \\
+{ \color{black!50!white} \textbf{Theory}}
+All problem solving consists of these types of approximations and deformations.  The shape that Mochizuki offers us is just the one:
+$$
+\left(
+\int_{\mathbb{R}} e^{-x^2/2} \, dx \right) \left( \int_{\mathbb{R}} e^{-y^2/2} \, dy  \right) 
+= \int_{\mathbb{R} \times \mathbb{R}}
+e^{-(x^2 + y^2)} \, dx dy 
+= \left(\int_0^\infty r \, dr e^{r^2/2} \right) \left( \int_{[0, 2\pi]} d\theta\right) = 2\pi $$
+and we extracted several ideas from this solutions including but not limited to:
+\begin{itemize}
+\item change of variables
+\item differential maps
+\item jacobians
+\item fibrations
+\item seperation of variables
+\item probability
+\end{itemize}
+and Mochizuki says there's even more\dots there's almost all of number theory.  As a babe step, he feels the theta function is a kind of ``Gaussian":
+$$ \theta(z) = \sum_{n \in \mathbb{Z}} e^{2\pi i \, n^2 z}  $$
+There are many many theta functions and these form a mess called the theory of ``Abelian varieties".  The theory of Gaussians looks to me like the following decomposition:
+$$ \mathbb{R}^2 = \mathbb{R} \times \mathbb{R} 
+= \Big( \mathbb{R}_{\geq 0} \times S^1 \Big)  \cup \{ 0 \} $$
+is this something I just made up or is it functorial?  It's not a common way to think about the Gaussian.  Within the mathematical community (a small group of people) there are a wide range of opinions, and it will still be unconventional. \\ \\
+Mochizuki -- who is quite controversial already -- is telling us to hit there.  I'd take his word for it. Then, we become like him. \\ \\
+\textbf{Ex.} A few more examples from Knot theory.
+$$
+\mathcal{Z}_{\text{CS}}(S^3; q)
+= \frac{1}{N!} \int \prod_{i=1}^N
+\frac{dx_i}{2\pi} e^{\frac{1}{2g}x_i^2}\prod_{i < j}^N \left( 2 \sinh \frac{x_i - x_j}{2} \right)^2 $$
+This is Gaussian integral.  Go!
+\vfill
+
+\begin{thebibliography}{}
+
+\item Gerald V. Dunne, Mithat \"{U}nsal  \textbf{Resurgence and Trans-series in Quantum Field Theory: The $\mathbb{C}P^{N-1}$ Model} \texttt{arXiv:1210.2423}
+
+\item Maxim Kontsevich \textbf{Exponential Integral} \texttt{https://www.youtube.com/watch?v=tM25X6AI5dY}
+ 
+\end{thebibliography}
+
+\begin{thebibliography}{}
+
+\item Alexei Borodin, Grigori Olshanski, Eugene Strahov \textbf{Giambelli compatible point processes}
+\texttt{arXiv:0505021}
+
+\item Bertrand Eynard, Taro Kimura. \textbf{Towards U(N|M) knot invariant from ABJM theory
+}
+\texttt{arXiv:1408.0010}
+
+\end{thebibliography}
+
+\end{document}

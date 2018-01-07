@@ -6,6 +6,7 @@ want to use my answers in your problem sets.
 
 * Additive Combinatorics (Tao + Vu)
 * Lectures on K-theoretic computations in enumerative geometry (Okounkov)
+* 3264 and All That (Joe Harris + David Eisenbud)
 * (many others)
 
 These are textbooks that are written with students in mind.  All the time
