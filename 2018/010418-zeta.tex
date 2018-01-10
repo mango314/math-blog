@@ -1,0 +1,76 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+%\usepackage{pifont}
+\usepackage{amsmath}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+\newcommand{\red}{\begin{tikz}[scale=0.25]
+\draw[fill=red, color=red] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\blue}{\begin{tikz}[scale=0.25]
+\draw[fill=blue, color=blue] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\green}{\begin{tikz}[scale=0.25]
+\draw[fill=green, color=green] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+
+\newcommand{\sq}[3]{\draw[#3] (#1,#2)--(#1+1,#2)--(#1+1,#2+1)--(#1,#2+1)--cycle;}
+
+\usepackage{tikz}
+
+\newcommand{\susy}{{\bf Q}}
+\newcommand{\RV}{{\text{R}_\text{V}}}
+
+\title{Scratchwork: Motives}
+\date{}
+\begin{document}
+
+%\fontfamily{qag}\selectfont \fontsize{12.5}{15}\selectfont
+
+\sffamily
+
+\maketitle
+
+\noindent One computation we can all enjoy doing is the Basel problem, posed in 1644 by Pietro Mengoli and solved by Leonhard Euler in 1735 (with a ``rigorous" proof by 1741):
+$$ 1 + \frac{1}{2^2} + \frac{1}{3^2} + \dots = \frac{\pi^2}{6} $$
+It took about a century for the first full solution to come about and it was still just a mathematical oddity.  250 years later, it has avalanched into one of the most important formulae in the literature. \\\\
+I have also been interested in solving $\zeta(-1)$ and we have this much newer formula:
+$$ 1 + 2 + 3 + 4 + \dots ``=" - \frac{1}{12} $$
+Do people study these objects as grown-ups?  Mostly, I have seen that any time we get an explicit anwser about an infinite series, either it ``factors" through this these two, or the geometric series formula and a handful or others.  \\ \\
+There are about 15 proofs in the workbook of Robin Chapman called ``Evaluating $\zeta(2)$".  It's basically a guided tour of all of mathematics.  Maybe\dots all ``really symmetric" mathematics.  Every time you got an exact answer it went trough this one (or a few others). \\ \\
+I was able to find a few conjectures about $\zeta_F(2)$ and $\zeta_F(4)$ and $\zeta_F(-1)$.  Evaluating these objects can be ``done" in the sense that you can get a numerical answer.  Yet, the conjectures (Bloch-Kato, Birch-Tate, Zagier,\dots) are very very difficult to state.  And in many cases we know they have ``special values" but we can't write down the series - ever.  Therefore \textit{statements} of these special-values formulas are still needed. \\ \\
+I'm not driving the point home enough. OK.   Let $F = \mathbb{Q}(i)$.  I am going to wrtie own a Dirichlet series:
+$$ \zeta_F(s) = \sum_{a,b \geq 0} \frac{1}{(a^2 + b^2)^s} $$ 
+Discussions of this were not very constructive.  There is a quick way to evaluate the answer and then commentors have derided my question as ``basic" or ``repetetive".  There is no longer the variet of answers as before.\\ \\
+Then I tried: $F = \mathbb{Q}(\sqrt{2})$, and more of the same problems occur:
+$$ \zeta_{Q(\sqrt{2})} = \sum_{a,b \geq 0} \frac{1}{\big(a^2 - 2\, b^2\big)^2} $$
+After asking around, I learned this has a major problem, since $a^2 - 2b^2 = 1$ infinitel many times, we have a divergent series.  This isn't the definition of $\zeta_F$ in this case anyway, instead we're supposed to sum over \textit{ideals} of  $(a + b \sqrt{2}) \subseteq \mathbb{Z}[\sqrt{2}]$.
+
+\newpage
+
+\noindent Ideal computations in abstract algebra start off looking off like the typical algebraic manipulation of symbols.  Maybe, these often encode things like \textbf{Euclidean geometry} or the \textbf{Pigeonhole principle}.  Haven't really tried to hard in this regard.  \\ \\
+The conjectures I have seen regarding $\zeta_F(2)$ and $\zeta_F(-1)$ are very very difficult to state. \\ \\
+\textbf{Q \& A} \\
+Are these people doing all this work for their health?  No. \\
+Are these people working too hard?  Somewhat. \\
+Are there easier to state conjectures and examples within this framework?  Maybe. 
+
+\vfill
+
+\begin{thebibliography}{}
+
+\item Chapman \textbf{Evaluating $\zeta(2)$} \texttt{[various google]}
+
+\item Alexander Goncharov \textbf{Zagier's Conjecture on $\zeta_F(4)$} \texttt{https://youtu.be/GI\_{}ah1U0xjw}
+
+\item Spencer Bloch, Kazuya Kato. \textbf{L-functions and the Tamagawa Numbers of Motives}
+ 
+\end{thebibliography}
+
+\end{document}
