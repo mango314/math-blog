@@ -7,6 +7,9 @@ want to use my answers in your problem sets.
 * Additive Combinatorics (Tao + Vu)
 * Lectures on K-theoretic computations in enumerative geometry (Okounkov)
 * 3264 and All That (Joe Harris + David Eisenbud)
+* [N=2 Supersymmetric Dynamics for Pedestrians](https://arxiv.org/abs/1312.2684) (Yuji Tachikawa) 
+* [ESL](https://web.stanford.edu/~hastie/ElemStatLearn/) Elements of Statistical Learning 
+* [ISL](http://www-bcf.usc.edu/~gareth/ISL/) 
 * (many others)
 
 These are textbooks that are written with students in mind.  All the time
