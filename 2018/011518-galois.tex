@@ -1,0 +1,89 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+%\usepackage{pifont}
+\usepackage{amsmath}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+\newcommand{\red}{\begin{tikz}[scale=0.25]
+\draw[fill=red, color=red] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\blue}{\begin{tikz}[scale=0.25]
+\draw[fill=blue, color=blue] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\green}{\begin{tikz}[scale=0.25]
+\draw[fill=green, color=green] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+
+\newcommand{\sq}[3]{\draw[#3] (#1,#2)--(#1+1,#2)--(#1+1,#2+1)--(#1,#2+1)--cycle;}
+
+\usepackage{tikz}
+
+\newcommand{\susy}{{\bf Q}}
+\newcommand{\RV}{{\text{R}_\text{V}}}
+
+\title{Scratchwork: Motives}
+\date{}
+\begin{document}
+
+%\fontfamily{qag}\selectfont \fontsize{12.5}{15}\selectfont
+
+\sffamily
+
+\maketitle
+
+\noindent I have been learing from these wonderful notes of Brian Conrad (UConn) but I'm coming to different conclusions about his own material.  He doesn't like the conclusions I've been coming to.  I'm gingerly telling him that . \\ \\
+\textbf{Prop} The Galois Group of $x^3 - 3x - 1$ is $A_3 = \{ (1),(123),(132) \} $. \\ \\
+The even permutations of three elements - there are only three of them.  The roots are: $r, r^2 - r - 2, -r^2 + 2$. \\ \\
+In order to do polynomial manipulations, I used \texttt{sympy}, a Python language polynomial manipulation tool.  Certainly Galois didn't have that available to him.   You merely add an import statement like: \\ \\
+\texttt{from sympy import *} \\ \\
+and then you have to identify the correct functions.  I need to write some polynomial congruences\dots the \textit{remainders} of in polynomial division. Our number field is:
+$$ K = \mathbb{Q}[x]/(x^3 - 3x - 1)$$ 
+and we have $[K:\mathbb{Q}] = 3$ and the Galois group has $|A_3|= 3$ elements.  Therefore the map $r \mapsto r^2 - r - 2$ can be represented as a $3 \times 3$ matrix:
+$$\begin{array}{ccccc}
+1 & \mapsto & 1 \\
+x & \mapsto & x^2 - x - 2 \\
+x^2 & \mapsto & - x^2 + 2
+\end{array}  :
+\left[ 
+\begin{array}{rrr} 1 &  0 & 0 \\
+-2 & -1 & 1 \\ 2 & -1 & 0\end{array}\right]
+\left[ \begin{array}{l} 1 \\ x \\ x^2 \end{array}\right]$$
+and the other element of the Galois group $r \mapsto - r^2 + 2$ can be represented as another $3 \times 3$ matrix.
+$$\begin{array}{ccccc}
+1 & \mapsto & 1 \\
+x & \mapsto & - x^2 + 2 \\
+x^2 & \mapsto  & x^2 - x - 2 
+\end{array}  :
+\left[ 
+\begin{array}{rrr} 1 &  0 & 0 \\
+2 & 0 & -1 \\ 4 & 1 & -1\end{array}\right]
+\left[ \begin{array}{l} 1 \\ x \\ x^2 \end{array}\right]$$
+what remains to check this is is a representation of $A_3$:
+$$ \left[ 
+\begin{array}{rrr} 1 &  0 & 0 \\
+-2 & -1 & 1 \\ 2 & -1 & 0\end{array}\right]^3 =  \left[ 
+\begin{array}{rrr} 1 &  0 & 0 \\
+2 & 0 & -1 \\ 4 & 1 & -1\end{array}\right]^3 = 
+\left[ 
+\begin{array}{rrr} 1 &  0 & 0 \\
+0 & 1 & 0  \\ 0 & 0 & 1 \end{array}\right]$$ 
+This is not to be taken for granted that these matrices behave.\footnote{and always lots of interesting mistake} \\\\
+The goal is to get these computations to look visually nice enough to fit on a placard.  I have told you every cubic (only Galois group $A_3$) leads this kind of triangle in 3 dimensional space, using only integers.  So maybe there is a way of feeling Galois theory with Euclidean geomtry?  He did not like that.
+
+\vfill
+
+\begin{thebibliography}{}
+
+\item Brian Conrad \textbf{Galois Groups of Cubics and Quartics} \\ \texttt{http://www.math.uconn.edu/\~{}kconrad/blurbs/galoistheory/cubicquartic.pdf}
+ 
+\end{thebibliography} 
+
+Next time $S_3$ cubic extensions, now $[K:\mathbb{Q}]= 6$.
+
+\end{document}
