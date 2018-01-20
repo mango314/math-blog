@@ -5,6 +5,8 @@
 \usepackage{xcolor}
 \usepackage{graphicx}
 
+% zeta functions of cubic fields
+
 %\usepackage{pifont}
 \usepackage{amsmath}
 
@@ -84,6 +86,28 @@ The goal is to get these computations to look visually nice enough to fit on a p
  
 \end{thebibliography} 
 
-Next time $S_3$ cubic extensions, now $[K:\mathbb{Q}]= 6$.
+\noindent Next time $S_3$ cubic extensions, now $[K:\mathbb{Q}]= 6$. \\ \\
+\textbf{1/20} The discriminant of a polynomial is easy to define if we look only at the roots.  This comes from a time when people tried to solve equations by hand:
+$$  (x- a)(x - b)(x-c)
+= x^3 - (a+b+c)x^2 + (ab+bc+ca)x - abc$$
+and we need a condition for these three roots to be distinct, we obtain:
+$$ (a-b)(b-c)(c-a) = \left|
+\begin{array}{ccc} 
+1 & a & a^2 \\
+1 & b & b^2 \\
+1 & c & c^2 \end{array} \right| $$
+Another useful invariant is called the ``resultant" which involves sytems of equations.  In the 19th century, being a mathematician meant being very good at manipulating these kinds of algebraic expressions.  In the 20th century we have gone the opposite extreme seeking more conceptual approaches.  In the 21st centery everything is becoming quite ``catgorial", so far. \\ \\
+I am arguing that doing explicit computations, by hand without the aid of a computer, has never gone away.  That computers can do a lot of heavy lifing for us but mostly we are still on our own. \\ \\
+I had wondered for a bit about symmetric polynomials and if they tell us information.  Galois' original letters from when he was a teenager are available online (in French) without a trip to the library - he uses symmetric polynomials in a rather creative way and I always wondered how he stated his result. Conrad uses a theorem  that comes out of nowhere. \\ \\
+There's also this inequality:
+$$  \frac{a+b+c}{3} \geq \sqrt[3]{abc} $$
+Our polynoial was: $x^3 - 3x - 1 $ so that $a+b+c = 0$ and $abc = 1$.  We learn that:
+$$ \left[ 0= \frac{0}{3} \right] \geq \left[ \sqrt[3]{1} = 1 \right] $$
+This is good.  We have shown that $\mathbf{0 \geq 1}$. Did we know that the roots $a> 0$ or $b > 0$ or $c > 0$, or that $a,b,c \in \mathbb{R}$ ? \\  \\
+We need to check where Conrad found his theorems. And we need a source of ``totally real" number fields.  Even if the Galois group is $\mathbb{Z}/3\mathbb{Z}$ such as $K = \sqrt[3]{3}$, there will be other problems.  We get a variant of Pell equation:
+$$ N(a + b\sqrt[3]{3} + c\sqrt[3]{9})
+= a^3 + 3b^3 + 9 c^3 - 9abc = 1 $$
+While it's possible that ``norms" are negative, in this field we also caution this equation has infinitely many integer solutions.
 
+\vfill
 \end{document}

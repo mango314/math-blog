@@ -5,6 +5,8 @@
 \usepackage{xcolor}
 \usepackage{graphicx}
 
+% do zeta functions of quadratic number fields and motives
+
 %\usepackage{pifont}
 \usepackage{amsmath}
 
@@ -59,7 +61,35 @@ The conjectures I have seen regarding $\zeta_F(2)$ and $\zeta_F(-1)$ are very ve
 \textbf{Q \& A} \\
 Are these people doing all this work for their health?  No. \\
 Are these people working too hard?  Somewhat. \\
-Are there easier to state conjectures and examples within this framework?  Maybe. 
+Are there easier to state conjectures and examples within this framework?  Maybe. \\
+\hrule \vspace{6pt}
+\noindent The Zeta function over number fields should be a basic object.  Here's the Zeta function for all number fields:
+
+$$ \zeta_K(s) = \sum_{\mathfrak{a}} \frac{1}{N(\mathfrak{a})^s}
+= \prod_{\mathfrak{p}} \frac{1}{1 - N(\mathfrak{p})^{-s} } $$
+where the sum is over integral ideals $\mathfrak{a} \subseteq \mathcal{O}(K)$, and $\mathfrak{p}\subseteq \mathcal{O}(K)$ are the prime ideals.  In fact, since this is 21st century, let's give you the zeta function for \textit{schemes}:
+$$  \zeta(s) = \prod_{P \in \text{Spec}(\mathbb{Z})} 
+\frac{1}{1 - \#(P)^{-s} }  = \prod_{p \in \mathbb{Z}} 
+\frac{1}{1 - p^{-s} }$$
+Semantically, we are reading the symbol ``$\in$" in a funny way, now are are only including \textit{closed} points of the scheme, $\text{Spec}(\mathbb{Z})$.  Wait, aren't all ``points" closed in topology?  The symbols ``$\prod$" and ``$\in$" are being used in different ways.  Nonetheless, we get a unified definition of zeta function for all number fields, using schemes:
+$$ \zeta_K(s) = \zeta_{\text{Spec}\mathcal{O}(K)}(s)
+= \prod_{p \in \text{Spec}\mathcal{O}(K) } \frac{1}{1 - N(p)^{-s}}$$
+and we could easily write a zeta function over all schemes as the product over all closed points.  Except, in a real setting I could never decide whether such a point is ``closed".
+$$ \zeta_X(s) = \prod_{x \in X} \frac{1}{1 - \#(x)^{-s}} $$
+The machinery of algebraic number theory makes sense as long as you say within certain boundaries.  As soon as you try to ``evaluate" all the pecularities of numbers - of $\mathbb{Z}$ - re-emerage.  Schemes are great because what if I decide that $\mathbb{Z}$ is not a realistic model of the world.  Instead I am going to build a number theory from the set of times my bus arrives.  In mathematical modeling, we are forcing things to be integers that aren't via ``rounding". \\ \\
+So\dots all our choices of zeta function so far, are slightly wrong:
+$$\sum_{a,b \geq 0} \frac{1}{\big(a^2 - 2\, b^2\big)^2} \text{ or }
+\sum_{a,b > 0} \frac{1}{\big(a^2 - 2\, b^2\big)^2}\text{ or }
+\sum_{ab \geq 0} \frac{1}{\big(a^2 - 2\, b^2\big)^2}
+\text{ or }
+\sum_{(a+b\sqrt{2}) \subseteq \mathbb{Z}[\sqrt{2}]} \frac{1}{\big(a^2 - 2\, b^2\big)^2} $$
+The last one might be correct.  At least I don't write the same term infinitely many times.  There is some pressure here:  Zagier's theorem says:
+$$ \text{vol}(\mathbb{H}^3 / \Gamma) = \zeta_K(2) $$
+where $\Gamma$ is a ``torsion-free subgroup of finite index" of $\text{PSL}_2( \mathcal{O}_{K})$.  The other disclaimer is that $K$ must be a ``totally real" number field.  None of this is convincing because I still cannot verify the left and right sides.\footnote{Once I ask questions like these... many colleagues merely point me to a computer.  And then I want to know how \textit{it} works.  Another problem could be that I need to specify what I mean by this word ``evaluate", since it's no longer agreed upon -- since I am disagreeing with almost everybody I need to come up with my own definition.}
+
+\newpage
+
+\noindent  To say anything more, we need to learn about the splitting of primes in Galois extensions.  This type of discussion is transverse, to the discussions given in many papers.  We are making a sandwich with a slices of bread, lettuce, tomato, ham, mustard and another slice of bread.
 
 \vfill
 
@@ -70,7 +100,9 @@ Are there easier to state conjectures and examples within this framework?  Maybe
 \item Alexander Goncharov \textbf{Zagier's Conjecture on $\zeta_F(4)$} \texttt{https://youtu.be/GI\_{}ah1U0xjw}
 
 \item Spencer Bloch, Kazuya Kato. \textbf{L-functions and the Tamagawa Numbers of Motives}
- 
+
+\item Francis Brown \textbf{Dedekind Zeta Motives over Totally Real Fields} \texttt{arXiv:0804.1654} \\
+MathOverflow \textbf{Intuition for Zagier's Theorem} \texttt{https://mathoverflow.net/q/223277/1358}
 \end{thebibliography}
 
 \end{document}
