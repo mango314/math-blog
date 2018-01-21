@@ -101,13 +101,163 @@ I am arguing that doing explicit computations, by hand without the aid of a comp
 I had wondered for a bit about symmetric polynomials and if they tell us information.  Galois' original letters from when he was a teenager are available online (in French) without a trip to the library - he uses symmetric polynomials in a rather creative way and I always wondered how he stated his result. Conrad uses a theorem  that comes out of nowhere. \\ \\
 There's also this inequality:
 $$  \frac{a+b+c}{3} \geq \sqrt[3]{abc} $$
-Our polynoial was: $x^3 - 3x - 1 $ so that $a+b+c = 0$ and $abc = 1$.  We learn that:
+Our polynomial was: $x^3 - 3x - 1 $ so that $a+b+c = 0$ and $abc = 1$.  We learn that:
 $$ \left[ 0= \frac{0}{3} \right] \geq \left[ \sqrt[3]{1} = 1 \right] $$
 This is good.  We have shown that $\mathbf{0 \geq 1}$. Did we know that the roots $a> 0$ or $b > 0$ or $c > 0$, or that $a,b,c \in \mathbb{R}$ ? \\  \\
 We need to check where Conrad found his theorems. And we need a source of ``totally real" number fields.  Even if the Galois group is $\mathbb{Z}/3\mathbb{Z}$ such as $K = \sqrt[3]{3}$, there will be other problems.  We get a variant of Pell equation:
 $$ N(a + b\sqrt[3]{3} + c\sqrt[3]{9})
 = a^3 + 3b^3 + 9 c^3 - 9abc = 1 $$
 While it's possible that ``norms" are negative, in this field we also caution this equation has infinitely many integer solutions.
+\newpage
 
-\vfill
+\noindent Here's a result that Avila and Delecroix report that enable us to produce totally real cubics.  Start with three matrices:
+
+$$ 
+A = \left[
+\begin{array}{ccc} 
+1 & 0 & 0 \\
+1 & 1 & 0 \\
+1 & 0 & 1
+\end{array} \right] \;
+B = \left[
+\begin{array}{ccc} 
+1 & 1 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 1
+\end{array} \right] \;
+C = \left[
+\begin{array}{ccc} 
+1 & 0 & 1 \\
+0 & 1 & 1 \\
+0 & 0 & 1
+\end{array} \right] $$
+These matrices correspond to basic operations you can do on sets of three numbers:
+$$ (a,b,c) \mapsto (a,a+b,a+c) \text{ or }  (a+b,b,a+c) \text{ or }  (a+c,b+c,c)$$
+This has to do with the ``fully subtractive" continued fraction algorithm.  We've written additions.  Let's try the inverse operation:
+$$ 
+\left[
+\begin{array}{ccc} 
+1 & 0 & 0 \\
+1 & 1 & 0 \\
+1 & 0 & 1
+\end{array} \right]^{-1}
+= \left[
+\begin{array}{rcc} 
+1 & 0 & 0 \\
+-1 & 1 & 0 \\
+-1 & 0 & 1
+\end{array} \right] $$
+Any time you multiply these three matrices, and include each of $A$, $B$, $C$, you get a number that is \textbf{Pisot}.\footnote{Why did I say ``totally real"?  Pisot numbers can have imaginary complex conjugates.}  These numbers are elements of $\mathbb{C}$ and we could study the diophantine properties of these numbers (basically... different types of ``rounding").  These matrices guarantee us a single real root $\lambda$ with $|\lambda | < 1$.  \\ \\
+Let's just multily them and enjoy the result:
+$$ 
+ABC = \left[
+\begin{array}{ccc} 
+1 & 0 & 0 \\
+1 & 1 & 0 \\
+1 & 0 & 1
+\end{array} \right] \left[
+\begin{array}{ccc} 
+1 & 1 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 1
+\end{array} \right] \;\left[
+\begin{array}{ccc} 
+1 & 0 & 1 \\
+0 & 1 & 1 \\
+0 & 0 & 1
+\end{array} \right]
+= 
+\left[
+\begin{array}{ccc} 
+1 & 1 & 2 \\
+2 & 1 & 3 \\
+1 & 1 & 3
+\end{array} \right] $$
+and we could have characteristic polynomilal of cubics:
+\begin{eqnarray*}
+\left|
+\begin{array}{lll} 
+1 -x& 1 & 2 \\
+2 & 1-x & 3 \\
+1 & 1 & 3-x
+\end{array} \right| 
+&=&  x^3 -(1+1+3)x^2 +\left( \left|
+\begin{array}{cc}
+1 & 3 \\ 1 & 3 \end{array} \right|
++ 
+\left|
+\begin{array}{cc}
+1 & 2 \\ 1 & 3 \end{array} \right| 
++
+\left|
+\begin{array}{cc}
+1 & 1 \\ 2 & 3 \end{array} \right|\right) x -
+\left|
+\begin{array}{ccc} 
+1 & 1 & 2 \\
+2 & 1 & 3 \\
+1 & 1 & 3
+\end{array} \right| \\ \\
+&=& x^3 - 5 x^2 + 2x + 1
+\end{eqnarray*}
+This will suffice for our search for Galois theory examples. \\ \\  With cubic fields, there are only a few outcomes $S_3$ or $A_3 \simeq \mathbb{Z}/3\mathbb{Z} = C_3$ or $\mathbb{Z}/3\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z} \simeq \mathbb{Z}/6\mathbb{Z}$. \\\\ If we can do the examples more carefully we have an endless supply of Galois groups to calculate. \\ \\
+\noindent \textbf{Ex} The period $(1, \sqrt[3]{2}, \sqrt[3]{4})$ of the Brun continued fraction algorithm is worked out in [Brun54].  It is 19.  This can be checked using decimals or algebraically storing the algebraic numbers as vectors.  Our triple is then itself a $3 \times 3$ matrix.  No matter which direction you pick, this type of estimate pushes the limits our or integer storage as our approximations become very accurate.
+
+\begin{thebibliography}{}
+
+\item Artur Avila, Vincent Delecroix \textbf{Some monoids of Pisot matrices}  \texttt{arXiv:1506.03692}
+\item Viggo Brun \textbf{Algorithmes Euclidiens Pour Trois et Quatre Nombres}, Congr. Math. Scand. XIII, (1957), 45–64 \texttt{http://jolivet.org/timo/docs/Brun\_{}algo.pdf}
+ 
+\end{thebibliography} 
+
+\newpage 
+
+\noindent Galois Theory could be approach from different perspectives not in textbooks:
+\begin{itemize}
+\item symmetric functions
+\item module theory
+\item diophantine approximation
+\item dynamical systems
+\end{itemize}
+Especially the last one, turning algebraic numbers into dynamical systems could offer a new perspective. \\ \\
+The polynomial $x^3 - x - 1$ has Galois group $S_3$ and spits into linear factors in the field 
+$$K = \mathbb{Q}[x,y]/(x^3 - x - 1,y^2 + 23)$$
+My question had been, if the Galois group is $S_3$ what are the three objects that are permuted?   \begin{itemize}
+\item perhaps I've got the splitting field wrong? perhaps I'm using the wrong definition?
+\item can we approximate the roots in some way?
+\item how to primes split in this number field?
+\end{itemize}
+In any case, I believe there are three objects being permuted with the cubic $x^3 - x - 1$ and maybe we can find them.  Do we recall any linear algebra over $\mathbb{Q}$?  Linear algebra works over any field, but we tent to prefer fields that are algebraically complete.
+$$ K \simeq 
+\mathbb{Q}\cdot 1 \oplus 
+\mathbb{Q}\cdot x \oplus 
+\mathbb{Q}\cdot x^2 \oplus 
+\mathbb{Q}\cdot y \oplus 
+\mathbb{Q}\cdot xy \oplus
+\mathbb{Q}\cdot x^2 y   $$
+As an abelian group $\mathbb{Q}$ is infinitely gerated -- the generators are all prime numbers -- yet we are claining \textbf{dimension = $1$}.  How shall we represent $x$ in this basis?
+$$ x \mapsto
+\left[ 
+\begin{array}{l||ccc|ccc}
+ & 1 & x & x^2 & y & xy & x^2 y \\ \hline\hline 
+ 1 &  0 & 1 & 0 & 0 & 0 & 0 \\
+ x &  0 & 0 & 1 & 0 & 0 & 0 \\
+ x^2 & 1 & 1 & 0 & 0 & 0 & 0 \\ \hline
+ y & 0 & 0 & 0 & 0 & 1 & 0 \\
+ xy & 0 & 0 & 0 & 0 & 0 & 1 \\
+ x^2 y & 0 & 0 & 0 & 1 & 1 & 0 
+\end{array}\right] $$
+and there's similar matrix for $y$:
+$$ y \mapsto
+\left[ 
+\begin{array}{l||ccc|ccc}
+ & 1 & x & x^2 & y & xy & x^2 y \\ \hline \hline
+ 1 &  0 & 0 & 0 & 1 & 0 & 0 \\
+ x &  0 & 0 & 0 & 0 & 1 & 0 \\
+ x^2 & 0 & 0 & 0 & 0 & 0 & 1 \\ \hline
+ y & -23 & 0 & 0 & 0 & 0 & 0 \\
+ xy & 0 & -23 & 0 & 0 & 0 & 1 \\
+ x^2 y & 0 & 0 & -23 & 0 & 0 & 0 
+\end{array}\right] $$
+and we have a representaion of $S_3$ in $6 \times 6$ matrices, once we find the appropriate images of $x$.  We also know that symmetric polynomials in 3 variables are all going to remain in $\mathbb{Q}$ or possibly even $\mathbb{Z}$, so we can always expect lots of cancellations to occur.  Is that knowledge ever an advantage?
 \end{document}
