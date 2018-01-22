@@ -1,0 +1,95 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+% zeta functions of cubic fields
+
+%\usepackage{pifont}
+\usepackage{amsmath}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+\newcommand{\red}{\begin{tikz}[scale=0.25]
+\draw[fill=red, color=red] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\blue}{\begin{tikz}[scale=0.25]
+\draw[fill=blue, color=blue] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\green}{\begin{tikz}[scale=0.25]
+\draw[fill=green, color=green] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+
+\newcommand{\sq}[3]{\draw[#3] (#1,#2)--(#1+1,#2)--(#1+1,#2+1)--(#1,#2+1)--cycle;}
+
+\usepackage{tikz}
+
+\newcommand{\susy}{{\bf Q}}
+\newcommand{\RV}{{\text{R}_\text{V}}}
+
+\title{Scratchwork: Trapezoid Rule}
+\date{}
+\begin{document}
+
+%\fontfamily{qag}\selectfont \fontsize{12.5}{15}\selectfont
+
+\sffamily
+
+\maketitle
+
+\noindent The basis for numerical integration is something like the trapezoid rule.  Between that and the midpoint rule, is how we picture integration in calculus.  Regardless of whether it's accurate. \\ \\
+And we've check many times that the estimate is OK. \\ \\
+\textbf{Thm} If $f$ is continuous, then for each integer $n > 0$ the integral of $f$ is approximated by:
+$$ T_n(f) = \frac{b-a}{2n} (
+f_0(x_0) + 2f(x_1) + 2f(x_2) + \dots + 2f(x_{n-1})
++ f(x_n) ) $$
+where $x_i = a + \frac{i}{n}(b-a)$ and $0 \leq i \leq n$.  And if $f$ twice differentiable, and $f''(t) \leq M$ for $t \in [a,b]$ then:
+$$ E_n^T(f) = \left|\, T_n(f) - \int_a^b f(t) \, dt \,\right| \leq \frac{(b-a)^3}{12n^2}M $$
+Certainly the error tends to zero as the partitions get smaller.  I didn't know the decay was was $O(n^{-2})$.
+$$
+\bigg[\, f \in [\texttt{continuous}] \,\bigg] 
+\to \bigg[\, T_n(f) \to \int_a^b f(x) \, dx \,\bigg]  $$
+What do we mean by ``is approximated by"?  In vernacular language we'll just say ``close" or ``near".  In research mathematics, we might just say $\asymp$ or $\approx$ or $\ll$.  Another observation is that we are approximating a continuous object by a lattice:
+$$  a + \frac{b-a}{n} \;\Big(\mathbb{Z}\cap [0,n]\Big) \approx [a,b] \subseteq \mathbb{R}$$
+The trapezoid rule forms the basis of our notion of integration.  What does the fine print look like?
+\begin{itemize}
+\item many calculus textbooks don't ever proof the trapezoid rule.\\
+it may be a more realistic model for how we do computations. the integral is a ``limiting" behavior.  
+\item Once we prove this in a numerical methods class - I had to look in the computer science department - it was buried in a chapter on Quadrature formulas. 
+\item If I use the definition Riemann integral at all, it's using the partition evenly splitting into $n$ parts and letting $n \to \infty$.  it could be that the content of using the Riemann integral is that it is defined for \textit{all} partitions of $\mathbb{R}$. 
+\end{itemize}
+
+\vfill
+
+\begin{thebibliography}{}
+
+\item D. Cruz-Uribe and C. J. Neugebauer \textbf{An Elementary Proof of Error Estimates for the Trapezoidal Rule} \texttt{ http://www.jstor.org/stable/3219088}
+ 
+\end{thebibliography} 
+
+\newpage
+
+\noindent 
+
+Let's write the Trapezoid rule in a less precise way, emphasizing only the rate of convergence:
+$$ \bigg[\, f \in [\texttt{2nd derivative}] \,\bigg] 
+\to \Bigg[\,E_n^T(f) = \left|\, T_n(f) - \int_a^b f(t) \, dt \,\right| \ll \frac{1}{n^2}\, \Bigg] $$
+What does this hypothesis look like.  The second derivive can be defined many, many ways.  Here is one:
+$$ f''(x) \approx  \frac{f(x+\delta)-2f(x)+f(x-\delta)}{\delta^2}$$
+and now we saying the second derivative is continuous.  This involes the values of $f''$ nearby $x$ (``at" $x = x_0 + \pm \epsilon$):
+$$ f(x+\delta + \epsilon)-2f(x + \epsilon)+f(x-\delta + \epsilon) \approx f(x+\delta)-2f(x)+f(x-\delta)$$
+This hypothesis already involved evaluating $f$ at 6 different points over and over.  And we are using arithmetic sequences all over the place.  Sequences such as: $ 1 + 3 \mathbb{Z} = 1,4,7,10,\dots $ and these are group orbits. \\ \\
+Here is another statement of the Trapezoid rule:
+$$  E_n^T(f) = \left|\, T_n(f) - \int_a^b f(t) \, dt \,\right| \leq \frac{(b-a)^3}{12n^2}M = \frac{(b-a)^3}{8} ||f''||_{2, [a,b]} $$
+and he gets a different constant.
+
+\vfill
+
+\begin{thebibliography}{}
+
+\item L. Ridgeway Scott \textbf{Numerical Analysis} Princeton University Press, 2011.
+ 
+\end{thebibliography} 
+\end{document}
