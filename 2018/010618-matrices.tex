@@ -102,4 +102,87 @@ This is Gaussian integral.  Go!
 
 \end{thebibliography}
 
+\newpage
+
+\noindent Where were we? The Fyodorov-Strahov integral as many many proofs.  We can try ourselves and compare with other arguments.  The formulas have two parameters, we are integrating over $N \times N$ Hermitian matrices and there are $d$ points, regardless of the size of matrix.  \\ \\
+\textbf{1} To the best of my knowledge the $d = 1$ case is degenerate:
+$$ \left\langle \frac{D(v)}{D(u)} \right\rangle 
+=  \left(\frac{1}{u-v} \right)^{-1} \cdot 
+\left\langle \frac{1}{u-v} \frac{D(v)}{D(u)} \right\rangle $$
+without evaluating anything at all, there is a cancellation.  We recall that $\langle \cdot \rangle$ is a linear operator.  It looks like this:
+$$ \langle X \rangle = c^{-1} \langle cX \rangle  = (c^{-1}c) \langle X \rangle $$
+This argument looks rather trivial, as long as we stay in the sandbox where it's guaranteed to work. The miracle, is that it will continue to do work for us in other circumstances. \\\\ However, we did not evaluate $\langle X\rangle$. We haven't even explained that $D(\cdot)$ is the characteristic polynomial. The Wick formula was like that, we evaluated moments in terms of other moments.  \\ \\
+\textbf{2} As we move forward, we will quickly run out of variables.  
+$$
+\left\langle 
+\frac{D(v_1)D(v_2)}{D(u_1) D(u_2)}
+\right\rangle 
+= \left| 
+\begin{array}{cc}
+\frac{1}{u_1 - v_1} & \frac{1}{u_1 - v_2} \\ \\
+\frac{1}{u_2 - v_1} & \frac{1}{v_1 - v_2}  \end{array}\right|^{-1}  \;\;
+\left| 
+\begin{array}{cc}
+\left\langle \frac{1}{u_1 - v_1} \frac{D(v_1)}{D(u_1)} \right \rangle & 
+\left\langle \frac{1}{u_1 - v_2} \frac{D(v_2)}{D(u_1)} \right \rangle \\ \\
+\left\langle \frac{1}{u_2 - v_1} \frac{D(v_1)}{D(u_2)} \right \rangle & 
+\left\langle \frac{1}{u_2 - v_2} \frac{D(v_2)}{D(u_1)} \right \rangle  \end{array}\right|$$
+I have not seen any of the standard\footnote{``standard" means maybe 20 people in the world have done it and maybe a few people more could do it if they had time.  And they don't have time.} proofs yet.
+  Mutually alien copies means we should do the intgral twice and multiply them:
+\begin{eqnarray*}
+\left\langle 
+\frac{D(v_1)D(v_2)}{D(u_1) D(u_2)}
+\right\rangle^2
+ &=&
+\left\langle 
+\frac{D(v_1)D(v_2)}{D(u_1) D(u_2)}
+\right\rangle 
+\left\langle 
+\frac{D(v_1)D(v_2)}{D(u_1) D(u_2)}
+\right\rangle \\ \\
+&=& \left\langle \frac{\det (v_1 - H_1)\det (v_2 - H_1)}{
+\det (u_1 - H_1)\det (u_2 - H_1)} \right\rangle \cdot
+\left\langle \frac{\det (v_1 - H_2)\det (v_2 - H_2)}{
+\det (u_1 - H_2)\det (u_2 - H_2)} \right\rangle \\ \\
+&=& 
+\left\langle \frac{\det (v_1 - H_1)\det (v_2 - H_1)}{
+\det (u_1 - H_1)\det (u_2 - H_1)} \cdot \frac{\det (v_1 - H_2)\det (v_2 - H_2)}{
+\det (u_1 - H_2)\det (u_2 - H_2)} \right\rangle 
+ \end{eqnarray*} 
+Next, it depends on how badly we want to solve the problem.  Or do we wish to explore.  The resources available on $2 \times 2$ matrices, vastly outnumber the results we actually use.  E.g. $\det(\cdot)$ is a homomorphism:
+$$ \det(AB) = (\det A )(\det B) \hspace{0.25in}\text{and}\hspace{0.25in} \det(A\, A^{-1}) = \det(I_{N \times N}) = 1$$
+The complex numbers $\mathbb{C}$ are a very idealized context compared to measurements we actually use.  There are now 8 variables floating around. \\ \\
+What would be the outcome of this result?  The RHS is the product of a $2 \times 2$ matrix and a $2\times 2 $ matrix of $2 \times 2$ matrices.  
+$$ (V \wedge V) \oplus \Big((V \otimes V) \wedge (V \otimes V)\Big) $$
+Perhaps I should write $\wedge$ instead of $\otimes$ in different places.  The first factor has $2^2 = 4$ entries, the second factor has $2^4 = 16$ entries.   And maybe we need to invent a new symbol. 
+
+\newpage
+
+\noindent $\to$ \textbf{1} what does this look like if I try to evaluate the integral from $1$.  We are looking for the general shape: 
+\begin{eqnarray*}
+\left\langle 
+\frac{\det (u - H)}{\det (v - H)} \right\rangle^2 
+&=& \left\langle 
+\frac{\det (u - H_1)}{\det (v - H_1)} \right\rangle
+\left\langle 
+\frac{\det (u - H_2)}{\det (v - H_2)} \right\rangle \\\\
+&=& \int dH_1 \, dH_2 \; e^{\mathrm{tr}(H_1^2) + \mathrm{tr}(H_2^2)} \;
+\frac{\det (u - H_1)}{\det (v - H_1)} \cdot
+\frac{\det (u - H_2)}{\det (v - H_2)} 
+\end{eqnarray*}
+Do I remember any linear algebra at all?   There is a formula for the charactristic polynomial of $2 \times 2$ matrix:
+$$ \det (x - A) = x^2 - x\,\mathrm{tr}(A) + \det A $$
+It's even worthwhile to write down the characteristic polynomial of $3 \times 3$ matrix:
+$$ x^3 - \mathrm{tr}(A) \, x^2 + \frac{1}{2} \left[  \mathrm{tr}^2(A) - \mathrm{tr}(A^2)\right]\,x
+- \frac{1}{6} \left[
+\mathrm{tr}^3(A) + 2\, \mathrm{tr}(A^3) - 3 \,\mathrm{tr}(A) \mathrm{tr}(A^2)
+ \right] =0$$
+Fortunately, we can imagine that if we diagonalize $H_1$ and $H_2$ then maybe we can diagonalize $u - H_1$ and $v - H_2$.  We obtain two copies of the unitary group, and another Gaussian integral:
+$$
+\int dH  \; e^{\mathrm{tr}(H^2) } \;
+\frac{\det (u - H)}{\det (v - H)} 
+= \int d\lambda_1\, d\lambda_2 \; e^{-(\lambda_1^2 + \lambda_2^2)} \; \left[ \;
+(\lambda_1 - \lambda_2)^2 \; \frac{(u - \lambda_1)(u - \lambda_2)}
+{(v - \lambda_1)(v - \lambda_2)} \;\right]$$
+This is not working out the way I wanted it to.
 \end{document}
