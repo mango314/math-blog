@@ -1,0 +1,105 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+% zeta functions of cubic fields
+
+%\usepackage{pifont}
+\usepackage{amsmath}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+\newcommand{\red}{\begin{tikz}[scale=0.25]
+\draw[fill=red, color=red] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\blue}{\begin{tikz}[scale=0.25]
+\draw[fill=blue, color=blue] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\green}{\begin{tikz}[scale=0.25]
+\draw[fill=green, color=green] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+
+\newcommand{\sq}[3]{\draw[#3] (#1,#2)--(#1+1,#2)--(#1+1,#2+1)--(#1,#2+1)--cycle;}
+
+\usepackage{tikz}
+
+\newcommand{\susy}{{\bf Q}}
+\newcommand{\RV}{{\text{R}_\text{V}}}
+
+\title{Scratchwork: Square Roots}
+\date{}
+\begin{document}
+
+%\fontfamily{qag}\selectfont \fontsize{12.5}{15}\selectfont
+
+\sffamily
+
+\maketitle
+
+\noindent Let $\mathbb{Q}_5$ be the 5-adic numbers.  And since $2^2 + 1 \equiv 0 \pmod 5$ we have that $\sqrt{1} \in \mathbb{Q}_5$. \\ \\
+$\text{PGL}_2(\mathbb{Q}_5)\simeq \text{SO}_3(\mathbb{Q}_5)$ with the map:
+$$ \left[
+\begin{array}{cc} a & b \\ c & d \end{array}
+ \right] \mapsto
+ \left[
+\begin{array}{lc|lc|lc} & ad+bc & \sqrt{-1} &(ac+bd)& & bd-ac \\ \hline
+& & & \\
+ -\sqrt{-1}& (ab+cd) & \frac{1}{2}&(a^2 + b^2 + c^2 + d^2) &  \frac{1}{2}\sqrt{-1}& (a^2 - b^2 + c^2 - d^2) \\ 
+ & & & \\ \hline
+ -& (ab-cd) & \frac{1}{2}\sqrt{-1}&(c^2 + d^2 - a^2 - b^2) & \frac{1}{2}& (a^2 - b^2 - c^2 + d^2 ) \end{array}
+ \right]   
+  $$
+If we specialize to the shift matrix we obtain a value:
+$$
+\left[
+\begin{array}{cc} 1 & t \\ 0 & 1 \end{array}
+ \right] \mapsto
+  \left[
+\begin{array}{rrr} 1 & \sqrt{-1} \,t & t \\
+- \sqrt{-1}\,t & 1 + \frac{1}{2}\,t^2 & -\frac{1}{2}\sqrt{-1} \, t^2 \\
+-t & -\frac{1}{2}\sqrt{-1}\,t^2 & 1 - \frac{1}{2}\,t^2 \end{array}
+ \right]   
+ $$
+This shows some kind of polynomial divergence.  The actual map looks like this:
+$$
+\left[
+\begin{array}{c} 
+x \\
+y \\ 
+z \end{array} \right] \mapsto
+\left[
+\begin{array}{c} 
+x  - t(\sqrt{-1} y + z)\\
+-\sqrt{-1} t x + (1 + \frac{1}{2}t^2) y + \sqrt{-1}(- \frac{1}{2}t^2)z \\  
+xt + \sqrt{-1}(- t^2/2)y + (1 - \frac{1}{2}t^2)z  \end{array} \right] $$
+and this is a group-action from the $5$-adic sphere to itself:
+$$\{ x^2 + y^2 + z^2 = 1 \} \times \mathbb{Q}_5 \to \{ x^2 + y^2 + z^2 = 1 \} $$
+The 3-sphere itself can be regarded as an orbit:
+$$ S^2 = \{ x^2 + y^2 + z^2 = 1 \} = \text{SO}_3(\mathbb{Q}_5) / \text{SO}_2(\mathbb{Q}_5) $$ 
+and now I have to check this fits into the machine correctly.  If not, we always have Cauchy-Squartz inequality and the pigeonhole principle. \\ \\
+The sphere (or the hyperboloid of two sheets) has clear sections, namely any element of $\mathbb{Q}_5[x,y,z]$ (e.g. $x^2 - y^2$ or $z^2$ ) and the mixing of the horocycle flow shoudl tell us that the inner product of these should be tending to zero.  Or the norm of the average of these things is tending to zero.  Something like that. 
+\begin{eqnarray*}
+x &=& \cos \theta \cos \phi \\
+y &=& \cos \theta \sin \phi \\
+z &=& \sin \theta
+\end{eqnarray*}
+Over $\mathbb{R}$ these variables would look like the spherical coordinates.
+\vfill
+\begin{thebibliography}{}
+
+
+ 
+\end{thebibliography}
+\newpage
+
+\noindent Let's count the solutions to $x^2 + y^2 + z^2 = 1$ in $\mathbb{Z}/5\mathbb{Z}$.  Out of a possible $5 \times 5 \times 5 = 125$ values, this equation is going to carve out one degree of freedom.  So there should only be $25$, however, since we have freedom to choose the sign of our solutions, there should be $(\pm x, \pm y, \pm z)$ for each solution.  $8 \times 25 = 150$ solutions.  This is not a good upper bound. \\ \\
+Over $\mathbb{Z}/5^k \mathbb{Z}$ how any solutions could there be?
+$$ \# X(\mathbb{Z}/5^k \mathbb{Z})  < 8 \times (5^k)^2  \asymp 5^{2k} \ll 5^{3k}$$
+and this will tend to zero just by the properties of numbers.  And this enables us to solve over $\mathbb{Z}_5$ since the $5$-adic numbers are an inverse limit:
+$$ \lim_{\longrightarrow} \mathbb{Z}/5^k \mathbb{Z} = \mathbb{Z}_5 $$ 
+However, the shear slow we have writeen is define over $\mathbb{Q}_5$ which are the fractions of $\mathbb{Z}_5$. \\ \\
+This counting style also works for $\mathbb{Q}_7$ but we have that $\sqrt{-1} \notin \mathbb{Q}_7$ in fact.  So instead of the adeles, we can only consider half of the places: $$\prod_{p=4k+1} \mathbb{Q}_p$$
+\end{document}
