@@ -1,0 +1,169 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+% zeta functions of cubic fields
+
+%\usepackage{pifont}
+\usepackage{amsmath}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+\newcommand{\red}{\begin{tikz}[scale=0.25]
+\draw[fill=red, color=red] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\blue}{\begin{tikz}[scale=0.25]
+\draw[fill=blue, color=blue] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\green}{\begin{tikz}[scale=0.25]
+\draw[fill=green, color=green] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+
+\newcommand{\sq}[3]{\draw[#3] (#1,#2)--(#1+1,#2)--(#1+1,#2+1)--(#1,#2+1)--cycle;}
+
+\usepackage{tikz}
+
+\newcommand{\susy}{{\bf Q}}
+\newcommand{\RV}{{\text{R}_\text{V}}}
+
+\title{Scratchwork: $\zeta_K(2)$ with $K = \mathbb{Q}(\sqrt{2})$}
+\date{}
+\begin{document}
+
+%\fontfamily{qag}\selectfont \fontsize{12.5}{15}\selectfont
+
+\sffamily
+
+\maketitle
+
+\noindent For today's warmup problem we show that $x = \sqrt{2} + \sqrt{3}$ is an algebric number.  Certainly we have that $\sqrt{2}$ and $\sqrt{3}$ are algebraic numbers, since:
+$$ (\sqrt{2})^2 - 2 = 0 \text{ and }(\sqrt{3})^2 - 3 = 0 $$
+and it seems plausible that the sum of two algebraic numbers is an algebraic number, but I can't think of the polynomial.  Let's do some trial an error:
+\begin{itemize}
+\item $1 = 1$
+\item $\sqrt{2}+ \sqrt{3} = \sqrt{2} + \sqrt{3}$
+\item $(\sqrt{2}+\sqrt{3})^2 = 5 + 2 \sqrt{6}$
+\item $(\sqrt{2}+\sqrt{3})^3 = (2+3 \times 3) \sqrt{2}+(3+3 \times 2)\sqrt{3} = 11 \sqrt{2} + 9 \sqrt{3}  $
+\item $(\sqrt{2}+\sqrt{3})^4 = 2 \times 2 + 3 \times 3 + 6 \times 6 +  4 \times ( 2 + 3  ) \times  \sqrt{6}
+ = 49 + 20 \sqrt{6} $
+\end{itemize}
+I am not sure if I made an arthmetic error.  Let me check these with a computer:
+\begin{verbatim}
+>>> ( 5 + 2*6**0.5 ) - ( 2**0.5 + 3**0.5 )**2 
+
+-1.7763568394002505e-15
+
+>>> (49 + 20*6**0.5) - ( 2**0.5 + 3**0.5 )**4 
+
+-2.842170943040401e-14
+\end{verbatim}
+These decimal errors are just somewhat scary, but at least we obtain statements like:
+$$ \big|(\sqrt{2}+\sqrt{3})^4 - ( 49 + 20 \sqrt{6}) \big| < 10^{-12}$$
+in fact the difference is zero. However, that thing we called ``$\sqrt{2}$" or ``$\sqrt{3}$" was likely something else anyway, with even a small error. \\ \\
+What if we used integers?  Let's try representing the $\sqrt{2}$ and $\sqrt{3}$ as $2 \times 2$ matrices:
+$$ \sqrt{2} = \left[
+\begin{array}{cc} 0 & 2 \\ 1 & 0\end{array} \right]
+\text{ and }
+\sqrt{3} = \left[
+\begin{array}{cc} 0 & 3 \\ 1 & 0\end{array} \right]
+$$
+and these aren't the only representations either.  Let's merge these into a single matrix:
+$$ \sqrt{2} \otimes 1  =
+\left[\begin{array}{cc} 0 & 2 \\ 1 & 0\end{array} \right] \otimes \left[\begin{array}{cc} 1 & 0 \\ 0 & 1\end{array} \right] \mapsto 
+\left[
+\begin{array}{cc|cc} 0 & 2 & 0 & 0 \\ 1 & 0 & 0 & 0\\ \hline
+0 & 0 & 0 & 2 \\ 0 & 0 & 1 & 0\end{array} \right]
+$$
+$$ 1 \otimes \sqrt{3}   =
+\left[\begin{array}{cc} 1 & 0 \\ 0 & 1\end{array} \right] \otimes
+\left[\begin{array}{cc} 0 & 3 \\ 1 & 0\end{array} \right]   \mapsto 
+\left[
+\begin{array}{cc|cc} 0 & 0 & 3 & 0 \\ 0 & 0 & 0 & 3 \\ \hline
+1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0\end{array} \right]
+$$
+\newpage
+
+\noindent These matrices come out of nowhere:
+\begin{verbatim}
+>>> import numpy as np
+>>> a = np.array([[0,2,0,0],[1,0,0,0],[0,0,0,2],[0,0,1,0]])
+>>> b = np.array([[0,0,3,0],[0,0,0,3],[1,0,0,0],[0,1,0,0]])
+\end{verbatim}
+but they come out with answers related to what we obtained before:
+\begin{verbatim}
+>>> np.dot(a+b,a+b)
+array([[ 5,  0,  0, 12],
+       [ 0,  5,  6,  0],
+       [ 0,  4,  5,  0],
+       [ 2,  0,  0,  5]])
+
+>>> f = lambda x : np.dot(x,a+b)
+>>> f(f(a+b))
+array([[ 0, 22, 27,  0],
+       [11,  0,  0, 27],
+       [ 9,  0,  0, 22],
+       [ 0,  9, 11,  0]])
+       
+>>> f(f(f(a+b)))
+array([[ 49,   0,   0, 120],
+       [  0,  49,  60,   0],
+       [  0,  40,  49,   0],
+       [ 20,   0,   0,  49]])
+\end{verbatim}
+Running these tensor product comutations backwards, are we sure this map is true?
+$$ \left[
+\begin{array}{cc|cc} 
+        49&   0&   0& 120\\
+         0&  49&  60&   0\\ \hline
+         0&  40&  49&   0\\
+        20&   0&   0&  49 \end{array}\right]
+\mapsto 
+\left( 
+49\left[\begin{array}{cc} 1 & 0 \\ 0 & 1\end{array} \right] \otimes \left[\begin{array}{cc} 1 & 0 \\ 0 & 1\end{array} \right]
++
+20 \left[\begin{array}{cc} 0 & 2 \\ 1 & 0 \end{array} \right] \otimes \left[\begin{array}{cc} 0 & 3 \\ 1 & 0\end{array} \right]
+ \right)^{\otimes 2}
+$$
+I was able to find this answer because I know the answer already and I'm making up the rules as I go along.  In fact, we have re-construted the \textbf{tensor product} and the $\mathbb{Z}$-\textbf{module}. \\ \\
+Later, this perfect algebric description should also have a defect, since we'll observe that $\overline{\mathbb{Q}(\sqrt{2}+\sqrt{3})} = \mathbb{R}$ and wonder how that is happening.
+
+Here is more code:
+\begin{verbatim}
+>>> f1 = lambda a,b,c,d : a + b*2**0.5 + c*3**0.5 + d*6**0.5
+>>> f2 = lambda a,b,c,d : a - b*2**0.5 + c*3**0.5 - d*6**0.5
+>>> f3 = lambda a,b,c,d : a + b*2**0.5 - c*3**0.5 - d*6**0.5
+>>> f4 = lambda a,b,c,d : a - b*2**0.5 - c*3**0.5 + d*6**0.5
+>>> g = lambda a,b,c,d: np.round( f1(a,b,c,d)*f2(a,b,c,d)*f3(a,b,c,d)*f4(a,b,c,d)).astype(int)
+>>> [g(a,b,c,d) for a in range(5) for b in range(5) for c in range(5) for d in range(5)]
+
+\end{verbatim}
+Then we obtain some silly factorizations like this:
+$$-23 = 
+(2 + \sqrt{2}+\sqrt{3})\times
+(2 - \sqrt{2}+\sqrt{3})\times
+(2 + \sqrt{2}-\sqrt{3})\times
+(2 - \sqrt{2}-\sqrt{3}) $$
+\newpage
+
+\noindent Let's restrict our attention to subfields 
+$[\mathbb{Q}(\sqrt{2},\sqrt{3}):\mathbb{Q}(\sqrt{2})]=2$.  This is also a quadratic extension, with the base field $K = \mathbb{Q}(\sqrt{2})$.  By the same token we have another quadratic extension $[\mathbb{Q}(\sqrt{2},\sqrt{3}):\mathbb{Q}(\sqrt{3})]=2$. \\ \\
+We could ask about the ring of integers, $\mathcal{O}_L$ with $L = \mathbb{Q}(\sqrt{2}, \sqrt{3})$ and solve the quadratic equations:
+$$ x^2 + (a_0 + a_1 \sqrt{2})x + (b_0 + b_1 \sqrt{2}) = 0 $$
+with $x = x_0 + x_1 \sqrt{2} + x_2 \sqrt{3} + x_3 \sqrt{6}$ (or the basis of your choice).  The discriminant condition determines a variety:
+$$ 
+\sqrt{(a_0 + a_1 \sqrt{2})^2 - 4 (b_0 + b_1 \sqrt{2}) }
+\in \mathbb{Q}(\sqrt{2}, \sqrt{3})$$
+Even for the extension $[\mathbb{Q}(i):\mathbb{Q}] = 2$ I don't remember how this works, why this would obtain the ring of integers $\mathbb{Z}[i]$ (or even that this is closed under addition, that if $a \in \mathbb{Z}[i]$ and $b \in \mathbb{Z}[i]$ then $a+b \in \mathbb{Z}[i]$. 
+\newline \newline
+--- --- --- --- --- --- --- --- 
+--- --- --- --- --- --- --- --- 
+--- --- --- --- --- --- --- --- 
+--- --- --- --- --- --- ---
+\newline \newline
+The goal of today's talk is much more modest, to write down the zeta function $\zeta_K(2)$ with $K = \mathbb{Q}(\sqrt{2})$.  This barely requires understanding the primes in $\mathbb{Z}[\sqrt{2}]$, since all we care about are the norms and ideal classes.  However, na\"{i}vely I don't know what those are, just integers and maybe complex conjugates.  So a certain amount of trial and error must occur. \\ \\
+Also in elementary school the multiplication and division tables $2 \times 3 = 6$ were \textit{memorized}.  And we spent 5 or 6 years in school developing the appropriate notions of number and applying them.  High school learning to apply these ideas in general, in college applying this knowledge to other subjects.  It suggests that even in 4 years of university we can't learn very much. \\ \\
+Then after all this we complain that $\mathbb{Z}$ wasn't a very good concept of number at all, but we have to build up to that.
+\end{document}
