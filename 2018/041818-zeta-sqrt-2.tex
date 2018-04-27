@@ -166,4 +166,49 @@ Even for the extension $[\mathbb{Q}(i):\mathbb{Q}] = 2$ I don't remember how thi
 The goal of today's talk is much more modest, to write down the zeta function $\zeta_K(2)$ with $K = \mathbb{Q}(\sqrt{2})$.  This barely requires understanding the primes in $\mathbb{Z}[\sqrt{2}]$, since all we care about are the norms and ideal classes.  However, na\"{i}vely I don't know what those are, just integers and maybe complex conjugates.  So a certain amount of trial and error must occur. \\ \\
 Also in elementary school the multiplication and division tables $2 \times 3 = 6$ were \textit{memorized}.  And we spent 5 or 6 years in school developing the appropriate notions of number and applying them.  High school learning to apply these ideas in general, in college applying this knowledge to other subjects.  It suggests that even in 4 years of university we can't learn very much. \\ \\
 Then after all this we complain that $\mathbb{Z}$ wasn't a very good concept of number at all, but we have to build up to that.
+
+\newpage
+
+\noindent \textbf{4/27} Back to work.  We're going to build a zeta function for all integers in $\mathbb{Z}[\sqrt{2}]$.  These rings no longer totally agree.  If I say ``$\mathbb{Q}(\sqrt{2})$ is the set of all quotients of $\mathbb{Z}[\sqrt{2}]$" then we have an equation like this:
+$$  \frac{m_1 + n_1 \sqrt{2}}{m_2 + n_2 \sqrt{2}} = a + b \sqrt{2} \text{ with }(m_1, m_2, n_1, n_2) \in \mathbb{Z}^4
+\text{ and }a,b \in \mathbb{Q}$$
+In that case we could solve for both $a$ and $b$ and we obtain a map:
+$$(m_1, m_2, n_1, n_2) \in \mathbb{Z}^4
+\mapsto (a,b) = \left(\frac{m_1 m_2 + 2 n_1 n_2}{m_2^2 - 2 n_2^2},
+\frac{m_1 n_2 +  m_2 n_1}{m_2^2 - 2 n_2^2} \right)\in \mathbb{Q}^2 $$
+These rational numbers could be slopes of line lines.  We could arrange all these possible sloes in a circle:
+$$
+\cos^2 \theta + \sin^2 \theta
+= (a + b \sqrt{2})^2 + 
+(c + d \sqrt{2})^2 = 
+\big(a^2 + c^2 + 2b^2 + 2d^2\big)
++ \sqrt{2}\big(2ab + 2cd\big)
+ = 1 + 0 \sqrt{2}  $$
+I needed to consult the definition.  The \textbf{Dedekind Zeta function} of a number field (such as $K = \mathbb{Q}(\sqrt{2})$) is the sum over integral ideals of $K$.  And I don't quite know enough ring theory to decide what those are.  There's a bit of Euclidean geometry there\dots 
+$$ \zeta_K(s) = \sum_a \frac{1}{N(a)^s} $$
+as $(a) = (a_1 + a_2 \sqrt{2}) \subseteq K$ varies over the integral ideals, with $a_1, a_2 \in \mathbb{Z}$.  An alternative definition is as the product over all primes:
+$$ \zeta_K(s) = \prod_p \frac{1}{1 - N(p)^s} $$
+Detailed examinations of these zeta functions exist in the literature, but what matters is our own understanding.  Do we know what prime numbers $\mathfrak{p} \in \mathbb{Z}$ look like in this ring?  Books do, I don't:
+\begin{itemize}
+\item $(\sqrt{2}+ 1)(\sqrt{2}-1) = 1$ and this means the same prime can apper infinitely many times. 
+\item $ (2\sqrt{2} + 1)(2\sqrt{2} - 1) = 7 \in \mathbb{Z}$ this means that prime numbers can split in two.
+\end{itemize}
+By quadratic reciprocity we know how primes split over this field. 
+However, these two theorems: quadratic reciprocity and sum of two squares theorem, I don't know if I take them for granted:
+$$ p = x^2 + 2y^2 \text{ iff }\{ x: x^2 \equiv 2\pmod p\} \neq \varnothing \text{ iff } p \equiv \pm 1 \pmod 8 $$
+and this is a fairly well-studied but somewhat random sequence.  Every time I learn a new number, it's quite informative:
+\begin{verbatim}
+  7,  17,  23,  31,  41,  47,  71,  73,  79,  89,  97, 
+103, 113, 127, 137, 151, 167, 191, 193, 199, 223, 233, 
+239, 241, 257, 263, 271, 281, 311
+\end{verbatim}
+These are cute, but every time I get a fact like this, I need to check the logic, and also every time we have even a basic question over $\mathbb{Z}[\sqrt{2}]$ it factors through one like this.  What if we try to compute the GCD of $31$ and $41$:
+$$ \frac{31}{41} = \frac{7 + 3 \sqrt{2}}{9 + 5 \sqrt{2}}\times
+\frac{7 - 3 \sqrt{2}}{9 - 5 \sqrt{2}}$$
+To me, these multiplication facts are much more interesting than the actual answer. What if we run the Euclidean algorithm on the first two factors:
+$$ 9 + 5 \sqrt{2} 
+ = a(7 + 3 \sqrt{2}) + b $$
+ with some ``small" $a,b$.  Do we know the answer?  We take as a given that the answer can be found, but we don't really know.  Do we know an isomorphism:
+ $$ \mathbb{Z}[\sqrt{2}]/(7 + 3 \sqrt{2})\mathbb{Z}[\sqrt{2}] \simeq \mathbb{F}_{31} = \mathbb{Z}/31 \mathbb{Z} $$
+ It's not instantly obvious to me.  This is clearly a statement about lattices and requires Euclidean geometry, or Fermat's little theorem.
 \end{document}
