@@ -211,4 +211,112 @@ $$ 9 + 5 \sqrt{2}
  with some ``small" $a,b$.  Do we know the answer?  We take as a given that the answer can be found, but we don't really know.  Do we know an isomorphism:
  $$ \mathbb{Z}[\sqrt{2}]/(7 + 3 \sqrt{2})\mathbb{Z}[\sqrt{2}] \simeq \mathbb{F}_{31} = \mathbb{Z}/31 \mathbb{Z} $$
  It's not instantly obvious to me.  This is clearly a statement about lattices and requires Euclidean geometry, or Fermat's little theorem.
+ 
+\newpage
+ 
+\noindent Here's quotation from a paper by Adler I found that talks about decimals:
+
+\begin{quotation} {\color{black!50!blue} The decimal expansion of real numbers, familiar to us all, has a
+dramatic generalization to representation of dynamical system orbits by symbolic
+sequences. The natural way to associate a symbolic sequence with an
+orbit is to track its history through a partition. But in order to get a useful
+symbolism, one needs to construct a partition with special properties. In this
+work we develop a general theory of representing dynamical systems by symbolic
+systems by means of so-called Markov partitions }\\ \\
+\textbf{Symbolic Dynamics and Markov Parititions} \\
+Bulletin of the American Mathematical Society, Vol 35, No 1. Jan 1998, 1-56 \end{quotation}
+In section three, two examples are worked out:
+
+\begin{itemize}
+\item $x \mapsto 2x$
+\item $x \mapsto \left(\begin{array}{cc} 1 & 1 \\ 0 & 1 \end{array}\right) $
+\end{itemize}
+They find partitions of $\mathbb{R}^2$ (or $S^1 \times S^1$) that behave nicely with respect to these multiplications.  For our discussion of $\mathbb{Q}(\sqrt{2})$ the map is $ \times (1 + \sqrt{2})$
+$$ (1 + \sqrt{2})(a + b \sqrt{2}) = (a + 2b) + \sqrt{2}(a+b) \text{ or }
+\left(\begin{array}{cc} 1 & 2 \\ 1 & 1 \end{array}\right) $$
+This is another multiplication we might use in the context of number theory and dynamical systems. A ``\textbf{number}" will be encoded by a trajectory in this dynamical system that we'll call the ``\textbf{digits}".  Our decimal system is expressed in terms of the dynamical system $\times 10$, using a slightly imperfect map $\{ 1, 2, \dots , 10\}^\mathbb{Z} \to \mathbb{R}$ 
+$$ \sqrt{2} = 1.4142135623730951 $$
+When I think of ``Additive Combinatorics" I wonder how carries of addition behave under this system.  That's not quite what they mean, but it's fair fame.  It's just the books will lead you in a different direction. \\ \\
+Why is the map $\times (1 + \sqrt{2})$ going to be such big deal. We've shown that Pell equation solutions are ambiguous -- they're infinite:
+$$ x^2 - 2 y^2 = 14 \text{ with } (x,y) = \{(4,1), (8,5), \dots \}  $$
+I found this number with a computer, but we can use number theory to reason about patterns in the output of our program. \\ \\
+How many orbits of solutions to pell equaion $(x + y \sqrt{2})\times (1 + \sqrt{2})^\mathbb{Z}$ sppear when solving $x^2 - 2y^2 = n$  ? And we can look them up on a table, eventually I found \texttt{https://oeis.org/A035185} and we could show that:
+$$ \Big|  \big\{ (x,y): x^2 - 2y^2 = 98 \big\} \big/ (1 + \sqrt{2})^\mathbb{Z} \Big| = 3 $$
+Still haven't check this with a computer.  How do you separate the three orbits of infinitely many solutions? \\ \\
+However at least on paper there's an easy answer:
+$$ \sigma_{\sqrt{2}}(n) = \#\big\{ r | n : n \equiv 1,7 \pmod 8 \big\} - \#\big\{ r | n : n \equiv 3,5 \pmod 8 \big\} $$
+if I even wrote it correctly.
+
+\newpage
+
+\noindent \textbf{5/8} We'd decided to model the action of $\times (1 + \sqrt{2})$ on pairs of numbers $\mathbb{Z}^2$ as a $2 \times 2$ matrix:
+$$ \left[ \begin{array}{cc} 1 & 2 \\ 1 & 1 \end{array} \right] $$
+This is not the only one it could be.  Also, there could be action on $\mathbb{Q}^2$ or $\mathbb{C}^2$, but beware, these could even be other $\mathbb{Q}$-torus.  What is going to be a well-behave set of lines with respect to this matrix?  So we have to find the eigenvectors:
+$$ \left[ \begin{array}{cc} 1 & 2 \\ 1 & 1 \end{array} \right]
+\left[ \begin{array}{c} a \\ b \end{array} \right] 
+= \lambda \left[ \begin{array}{c} a \\ b \end{array} \right] $$
+Then if we subtract both sides, we get the characteristic equation of the matrix:
+$$
+ \left| \begin{array}{cc} 1 - \lambda & 2 \\ 1 & 1 - \lambda \end{array} \right|
+ = \lambda^2 - \big(1 + 1 \big)\lambda + \big(1 \cdot 1 - 1 \cdot 2 \big)
+ = \lambda^2 - 2 \lambda - 1 = 0$$
+and there are two solution which are called the ``Silver numbers"
+$$ \lambda = \frac{2 \pm \sqrt{(-2)^2 - 4(1)(-1)}}{2} = 1 \pm \sqrt{2} $$
+To find the eigenvectors we could try different things:
+\begin{eqnarray*} a + 2b &=& (1 \pm \sqrt{2})a \\
+ b &=&  \pm\frac{ 1}{\sqrt{2}}\,a \\ \\
+ \left[ \begin{array}{c} a \\ b \end{array} \right]  &=& \left[ \begin{array}{r} \pm \sqrt{2} \\ 1 \end{array} \right] 
+\end{eqnarray*}
+This is beginner exercise in linear algebra and the next step is not much more technical.  We are going to build Markov partition with respect to this matrix.  Notice that $1 - \sqrt{2} < 0$. \\ \\
+\begin{tikzpicture}
+
+\draw[fill=black!20!white, opacity=0.5] (0,0)--(1.4142,1)--(0,2)--(-1.4142,1)--cycle;
+\draw[fill=black] (0,2) circle (0.05);
+
+\draw[fill=blue!20!white, opacity=0.5] (0,0)--(1.4142 + 2*1,1.4142 + 1)--(0+2*2,0+2)--(-1.4142 + 2*1,-1.4142 + 1)--cycle;
+\draw[fill=black] (0+2*2,0+2) circle (0.05);
+
+\draw[->] (0,0)--(3,0);
+\draw[->] (0,0)--(0,3);
+\end{tikzpicture} \\
+Next can we write down the rectangles so that the matrix map acts perfectly?  Perhaps if we write the equation over:
+$$ ( 1 + \sqrt{2})^2 = 2 \times (1 + \sqrt{2}) + 1 $$
+and maybe it will be easier if I use the diagonal matrix (and we can slant it later):
+$$ \left[ \begin{array}{cc} \sqrt{2}+1 & 0 \\ 0 &  \sqrt{2} - 1\end{array} \right] $$
+and perhaps we should act on the torus $[0,1] \times [0,1]$ 
+$$ (x,y) \mapsto \Big( \{(\sqrt{2}+1) \times x \}, \{(\sqrt{2}-1) \times y \} \Big) $$
+Constructing the actual Markov partition seems to be a bit of an art:
+\newpage
+
+\noindent There's arrows everywhere in this thing.  Still no good answer,\dots \\ \\
+\begin{tikzpicture}[scale=2]
+
+\begin{scope}[xshift=0]
+\draw[->, line width =2] (0,0)--(2,0);
+\draw[->, line width =2] (0,0)--(0,2);
+\node at (1,-0.15) {$1$};
+\node at (-0.15,1) {$1$};
+
+\draw[fill=black!25!white, opacity=0.5] (0,0)--(1,0)--(1,1)--(0,1)--cycle;
+
+\end{scope}
+
+\begin{scope}[xshift=4cm]
+\draw[->, line width =2] (0,0)--(2,0);
+\draw[->, line width =2] (0,0)--(0,2);
+
+\node at (1,-0.15) {$1$};
+%\node at (2,-0.15) {$1$};
+\node at (2.414,-0.15) {$1+\sqrt{2}$};
+\node at (-0.15,1) {$1$};
+
+\draw[fill=black!25!white, opacity=0.25] (0,0)--(1,0)--(1,1)--(0,1)--cycle;
+\draw[fill=black!10!white, opacity=0.25] (1,0)--(2,0)--(2,1)--(1,1)--cycle;
+\draw[fill=black!25!white, opacity=0.25] (2,0)--(3,0)--(3,1)--(2,1)--cycle;
+\draw[fill=black!25!white, opacity=0.5] (0,0)--(2.414,0)--(2.414,0.414)--(0,0.414)--cycle;
+\draw[fill=black] (2.414, 0) circle (0.025);
+\end{scope}
+
+\end{tikzpicture}
+
 \end{document}
