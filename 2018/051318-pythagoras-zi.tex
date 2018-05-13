@@ -1,0 +1,56 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+% zeta functions of cubic fields
+
+%\usepackage{pifont}
+\usepackage{amsmath}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+\newcommand{\red}{\begin{tikz}[scale=0.25]
+\draw[fill=red, color=red] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\blue}{\begin{tikz}[scale=0.25]
+\draw[fill=blue, color=blue] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\green}{\begin{tikz}[scale=0.25]
+\draw[fill=green, color=green] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+
+\newcommand{\sq}[3]{\draw[#3] (#1,#2)--(#1+1,#2)--(#1+1,#2+1)--(#1,#2+1)--cycle;}
+
+\usepackage{tikz}
+
+\newcommand{\susy}{{\bf Q}}
+\newcommand{\RV}{{\text{R}_\text{V}}}
+
+\title{Scratchwork: Pythagorean Triples over $\mathbb{Z}[i]$}
+\date{}
+\begin{document}
+
+%\fontfamily{qag}\selectfont \fontsize{12.5}{15}\selectfont
+
+\sffamily
+
+\maketitle
+
+\noindent The equation $x^2 + y^2 = 1$ defines what we might call a \textbf{variety}.  Here it's just a circle.  Our decision to use Cartesian coordinates, algebra and equations, to describe Euclidean geometry, leads to all sorts of complications.  Attempts to finalize what we might call a variety leads to all sorts of difficult \textbf{commutative algebra} and ultimately \textbf{schemes}.  \\ \\
+Taking for granted a minute that circles are a meaningful concept and that we should use algebra and geometry, we observe the variety $X = \{ x^2 + y^2 - 1 = 0\}$ has a rational paramterization.
+$$ t \in \mathbb{Q}  \longrightarrow (x,y) = \left( \frac{1-t^2}{1 + t^2}, \frac{2t}{1+t^2} \right) \in \mathbb{Q}^2 $$
+And we can think of fractions as pairs of integers $\frac{m}{n} \in \mathbb{Q}$ or as pairs of integers up to proportion\footnote{Yet another word we can scrutinize.  What are we calling ``proportionate"? } $[m:n] \in P\mathbb{Z}^2$.  Therefore we can solve an equation over integers: $a^2 + b^2 = c^2$ over $\mathbb{Z}$:
+$$ (a,b,c) = (m^2 - n^2, 2mn, m^2 + n^2) \in \mathbb{Z}^3$$ 
+The machinery of algebra tells us that all we required is that $K = \mathbb{Q}$ is a field.  Therefore we could also try to solve the Pythagoras equation over $\mathbb{Z}[i]$ or $\mathbb{Z}[\sqrt{2}]$ and solve it in the same way. \\ \\
+What happens if we write the thing down we could write $a = a_1 + i a_2$ etc. and find:
+$$ (a_1 + i a_2)^2 + (b_1 + i b_2)^2 = (c_1 + i c_2)^2 $$
+and we learned we could seprate the real and imaginary components and find two equations:
+\begin{eqnarray*}
+(a_1^2 - a_2^2) + (b_1^2 - b_2^2)  &=& (c_1^2 - c_2^2) \\
+2a_1 a_2 + 2 b_1 b_2 &=& 2 c_1 c_2 
+\end{eqnarray*}
+which is the intersection of two conic sections.  And here because of the structure of $\mathbb{Z}[i]$ we can expect a spectactular reduction.  Is that all?
+\end{document}
