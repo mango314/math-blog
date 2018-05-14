@@ -52,5 +52,90 @@ and we learned we could seprate the real and imaginary components and find two e
 (a_1^2 - a_2^2) + (b_1^2 - b_2^2)  &=& (c_1^2 - c_2^2) \\
 2a_1 a_2 + 2 b_1 b_2 &=& 2 c_1 c_2 
 \end{eqnarray*}
-which is the intersection of two conic sections.  And here because of the structure of $\mathbb{Z}[i]$ we can expect a spectactular reduction.  Is that all?
+which is the intersection of two conic sections.  And here because of the structure of $\mathbb{Z}[i]$ we can expect a spectactular reduction.  Is that all? \\ \\ 
+Let's find a few solutions.  The algebra is meaningful if we can find a few number solutions.  Let $m = i$ and $n = 1+i$.  Then:
+$$ \begin{array}{ccccl} m^2 - n^2 &=& (i)^2 - (1+i)^2 &=& -1 - 2i \\
+2mn &=& i \times (1+i) &=& -1 + i \\
+m^2 + n^2 &=& (i)^2 + (1+i)^2 &=& -1 + 2i \end{array}$$
+Then, using the same algebra identity we used over $\mathbb{Z}$ we obtain another Pythagoras formula:
+$$ (1 +2i)^2 + (1 - i)^2 = (1 - 2i)^2  $$
+What kind of shape is this?  Is it a right triangle?  What is a ``complexified" right triangle?  
+
+\newpage \noindent
+
+Also we can encode $i = \sqrt{-1}$ as a $2 \times 2$ matrix:
+$$ \sqrt{-1} = \left[ \begin{array}{cr} 
+0 & -1 \\ 1 & 0\end{array} \right] $$
+Does our Pythagoras equation look any better as relation on $2 \times 2$ matrices?
+$$
+\left[ \begin{array}{rr} 
+1 & -2 \\ 2 & 1\end{array} \right]^2 + 
+\left[ \begin{array}{rr} 
+1 & 1 \\ -1 & 1\end{array} \right]^2 =
+\left[ \begin{array}{rr} 
+1 & 2 \\ -2 & 1\end{array} \right]^2  $$
+Exact matrix identities like this should be pretty rare.  Pythagoras theorem is a machine that consistently produces equations like this. The square-root operator has no guarantee of falling in the integer $2 \times 2$ matrices: $\sqrt{A} \stackrel{?}{\in} \text{GL}_2(\mathbb{Z})$.\\ \\
+Are there other $2 \times 2$ matrices such that $A^2 = 1$?  I can find an invertible matrix $B \in \text{GL}_2(\mathbb{Z})$ and we always obtain: 
+$$ (BAB^{-1})(BAB^{-1}) = (BA)(B^{-1}B)(A^{-1}B^{-1}) = (BA)I_{2 \times 2}(BA)^{-1} = I_{2 \times 2} $$
+If these matrices were perfectly associative, if the transformations we were considering perfectly mapped two variables into two other variables, if $A^{-1}$ is exactly the inverse of $A$, then our formula always works. Let's try:
+$$B = 
+\left[ \begin{array}{rr} 
+3 & 4 \\ 2 & 3\end{array} \right] \in \text{GL}_2(\mathbb{Z}) \text{ and }B^{-1} = \left[ \begin{array}{rr} 
+3 & -4 \\ -2 & 3\end{array} \right] \in \text{GL}_2(\mathbb{Z})
+ $$
+Then we can multiply the matrices:
+$$ BAB^{-1} = 
+\left[ \begin{array}{rr} 
+3 & 4 \\ 2 & 3\end{array} \right] \times
+\left[ \begin{array}{cr} 
+0 & -1 \\ 1 & 0\end{array} \right] \times
+\left[ \begin{array}{rr} 
+3 & -4 \\ -2 & 3\end{array} \right] = \dots = 
+\left[ \begin{array}{rr} 
+17 & -24 \\ 12 & -17\end{array} \right]  \in \text{GL}_2(\mathbb{Z})
+$$
+In the process of computing a square root, for $2 \times 2$ matrices, we obtain approximate square roots of integers over $\mathbb{Z}$:
+$$ 1 = 17 \times 17 - 12 \times 24 = \bigg( 17^2 - 2 \times 12^2 \bigg)  $$
+and these were the types of considerations that I'm hoping can motivate theory of modular forms and dynamical systems to other people.
+
+\newpage \noindent Using {\tt numPy} we can multiply $2 \times 2$ matrices as a dot product operation:
+
+\begin{verbatim}
+Python 2.7.12 (default, Dec  4 2017, 14:50:18) 
+[GCC 5.4.0 20160609] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import numpy as np
+
+>>> B = np.array([[3,4],[2,3]])
+>>> A = np.array([[0,-1],[1,0]])
+>>> C = np.dot(B,A)
+
+>>> D = np.dot(C, np.linalg.inv(B))
+>>> D
+array([[ 18., -25.],
+       [ 13., -18.]])
+>>> D.astype(int)
+array([[ 17, -24],
+       [ 12, -17]])
+>>> np.dot(D,D)
+array([[ -1.00000000e+00,  -2.84217094e-14],
+       [ -1.06581410e-14,  -1.00000000e+00]])
+
+\end{verbatim}
+Using {\tt Sympy} we can obtain the same answer, staying within the realm of integers.
+\begin{verbatim}
+Python 2.7.12 (default, Dec  4 2017, 14:50:18) 
+[GCC 5.4.0 20160609] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from sympy import *
+>>> B = Matrix([[3,4],[2,3]])
+>>> A = Matrix([[0,-1],[1,0]])
+>>> B*A*B**(-1)
+Matrix([
+[18, -25],
+[13, -18]])
+\end{verbatim}
+Our computers can never really behave like $\mathbb{R}$ or $\mathbb{Z}$ but for the moment $10^{-14}$ scale errors do not qualitatively change our answers. 
+
+\newpage \noindent We do not even scratch the surface.  We notes that computing $\sqrt{2}$ motivates finding a circle on the modular surface $\text{SL}_2(\mathbb{Z}) \backslash \mathbb{H}$ or even $ \Gamma_0(4)\backslash \mathbb{H}$.  And then we can study Maa\b. forms or theta functions.
 \end{document}
