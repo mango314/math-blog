@@ -1,0 +1,61 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+% zeta functions of cubic fields
+
+%\usepackage{pifont}
+\usepackage{amsmath}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+\newcommand{\red}{\begin{tikz}[scale=0.25]
+\draw[fill=red, color=red] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\blue}{\begin{tikz}[scale=0.25]
+\draw[fill=blue, color=blue] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\green}{\begin{tikz}[scale=0.25]
+\draw[fill=green, color=green] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+
+\newcommand{\sq}[3]{\draw[#3] (#1,#2)--(#1+1,#2)--(#1+1,#2+1)--(#1,#2+1)--cycle;}
+
+\usepackage{tikz}
+
+\newcommand{\susy}{{\bf Q}}
+\newcommand{\RV}{{\text{R}_\text{V}}}
+
+\title{Scratchwork: Quaternionic Shimura Varieties}
+\date{}
+\begin{document}
+
+%\fontfamily{qag}\selectfont \fontsize{12.5}{15}\selectfont
+
+\sffamily
+
+\maketitle
+
+\noindent We are going to try to parse whatever we can in one of the latest editions of Advances in Mathematics.  My theory is that a lot of these papers at least start off about things we are familiar with.  Too much symbolic manipulation makes me a bit critical that we've lost track. 
+\begin{quotation}
+The aim of this paper is to compare arithmetic intersection numbers on Shimura varieties attached to inner forms of $\text{GL}_2$ over a real quadratic field $F$. \\ \\
+To illustrate our approach, first consider the arithmetic volume of a Shimura variety attached to an inner form of $\text{GL}_2$ over $\mathbb{Q}$. \\ \\ 
+\dots \\\\
+We begin with a division quaternion algebra $B$ over $F$  whose discriminant $D_B := (p_1,\dots,p_r)\cdot\mathcal{O}_F$ is a non-empty product of split rational primes.
+\end{quotation}
+While I may be grossly underestimating the difficulty of such a task, I feel there should be instances where the problem is easy to state and describe.  Even if solving is a ton of work.\footnote{Then I have a job.} Even when they solve it, they understate the meaning so much it's just totally lost.\\ \\
+
+
+\vfill
+
+\begin{thebibliography}{}
+
+\item Gerard Freixas i Montplet, Siddarth Sankaran "Twisted Hilbert modular surfaces, arithmetic intersections and the Jacquet–Langlands correspondence" Advances in Mathematics
+Volume 329, 30 April 2018, Pages 1-84
+
+\end{thebibliography}
+
+\end{document}
