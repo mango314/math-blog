@@ -1,0 +1,67 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+% zeta functions of cubic fields
+
+%\usepackage{pifont}
+\usepackage{amsmath}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+\newcommand{\red}{\begin{tikz}[scale=0.25]
+\draw[fill=red, color=red] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\blue}{\begin{tikz}[scale=0.25]
+\draw[fill=blue, color=blue] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\green}{\begin{tikz}[scale=0.25]
+\draw[fill=green, color=green] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+
+\newcommand{\sq}[3]{\draw[#3] (#1,#2)--(#1+1,#2)--(#1+1,#2+1)--(#1,#2+1)--cycle;}
+
+\usepackage{tikz}
+
+\newcommand{\susy}{{\bf Q}}
+\newcommand{\RV}{{\text{R}_\text{V}}}
+
+\title{Scratchwork: Duistermaat Heckman Formula}
+\date{}
+\begin{document}
+
+%\fontfamily{qag}\selectfont \fontsize{12.5}{15}\selectfont
+
+\sffamily
+
+\maketitle
+
+\noindent If Physics describes everything and Gauge Theory describes all of physics, then Gauge Theory should map to everything.  The original scope of Gauge Theory is particle physics and trying to describe everything going on there.  In order to build a computer or store a light bulb, we need to study the various fundamental particles. \\ \\ 
+A ``particle" at this level of formality is a solution to a partial differential equation - which could have many unexpected symmetries.  Or these PDE solutions could appear in unexpected places.  One of the tenets of this theory is that studying such solutions is fundamentally a good thing. \\ \\
+In 1982, we have the Duistermaat-Heckman formula\dots $M$ is a symplectic manifold of dimension $2n$. There's a symplectic form $\omega$.  There's a Hamiltonian $U(1)$ action and the moment map $\mu$.  The fixed points of the of the $U(1)$ action are called $x_i$ and $e(x_i)$ is the produt of the weights of the $U(1)$ action on the tangent space at $x_i$.
+$$ \int_M \frac{\omega^n}{n!}\, e^{-\mu} = \sum \frac{e^{-\mu(x_i)}}{e(x_i)} $$ 
+We get there was no Duistermaat-Heckman formula before 1980.  As for Symplectic geometry:
+\begin{quotation}
+Symplectic geometry has its origins in the Hamiltonian formulation of classical mechanics where the phase space of certain classical systems takes on the structure of a symplectic manifold. \\ \\
+The term "symplectic" is a calque of "complex", introduced by Weyl (1939, footnote, p.165); previously, the "symplectic group" had been called the "line complex group".  (Wikipedia)
+\end{quotation}
+The most basic symplectic manifold is $\mathbb{R}^2$ with $\omega = dp \wedge dq$ and the $U(1)$ action could be a rotation 
+$$\left[\begin{array}{cr} \cos \theta & -\sin \theta \\ \sin \theta & \cos \theta \end{array} \right] $$
+The variable $p$ was called "\textit{position}" and the variable $q = \dot{p}$ was called "\textit{momentum}" and therefore $p \leftrightarrow q$ form a position-momentum pair.  Then in quantum mechanics this ``symplectic pairing" gets quantized:
+$$ x \leftrightarrow i\hbar\frac{d}{dx} $$
+One-dimensional particle motion is also described by something called a ``Hamiltonian" which is just the kinetic plus potential energy $H = T + U$.  In fact, for any manifold $M$ we could have a cotangent bundle $T^\ast M$ and these are always symplectic manifolds.   \\ \\
+Hopefully, we can continue to unfurl the definitions of the Duistermaat-Heckman formula.
+\vfill
+
+\begin{thebibliography}{}
+
+\item Vasily Pestun, Maxim Zabzine. 
+"Introduction to localization in quantum field theory" \texttt{arXiv:1608.02953}
+
+\item Yuji Tachikawa "N=2 supersymmetric dynamics for pedestrians" \texttt{arXiv:1312.2684}
+\end{thebibliography}
+
+\end{document}
