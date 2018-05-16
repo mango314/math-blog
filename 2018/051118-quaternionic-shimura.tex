@@ -47,7 +47,30 @@ To illustrate our approach, first consider the arithmetic volume of a Shimura va
 We begin with a division quaternion algebra $B$ over $F$  whose discriminant $D_B := (p_1,\dots,p_r)\cdot\mathcal{O}_F$ is a non-empty product of split rational primes.
 \end{quotation}
 While I may be grossly underestimating the difficulty of such a task, I feel there should be instances where the problem is easy to state and describe.  Even if solving is a ton of work.\footnote{Then I have a job.} Even when they solve it, they understate the meaning so much it's just totally lost.\\ \\
-
+\textbf{5/16} Because we waited, we get for free, a 1000 pages book on Quaternions by John Voight\footnote{\textit{Quaternion algebras}, current version (v.0.9.12, March 29, 2018).
+ https://math.dartmouth.edu/~jvoight/quat.html}.  Between sections 1 and 2 we obtain the definitions we are looking for:
+\begin{itemize}
+\item $B$ is a totally indefinite division quaternion algebra
+\item $\mathbf{G}(\mathbb{R}) \simeq \{ (A_1, A_2) \in \text{GL}_2(\mathbb{R}) \times 
+\text{GL}_2(\mathbb{R}): \det A_1 = \det A_2 \}$
+\item $X = \{ (z_1, z_2) \in \mathbb{C}^2 : \text{Im}(z_1) \cdot \text{Im}(z_2) > 0 \}$
+\item There's a group action of $\textbf{G}(\mathbb{R})$ by fractional linear transformations:
+$$  (A_1, A_2) \cdot (z_1, z_2) = \left( \frac{a_1 z_1 + b_1}{c_1 z_1 + d_1}, 
+\frac{a_2 z_2 + b_2}{c_2 z_2 + d_2} \right) $$
+\end{itemize}
+Now there's two objects.  The {\color{blue!10!orange}{\textbf{complex twisted Hilbert modular surface}}} and the {\color{blue!10!green!80!black}{\textbf{quaternionic Shimura curve}}}.
+\[ M_K := \textbf{G}(\mathbb{Q}) \bigg\backslash \Big[ X \times \big(
+\textbf{G}(\mathbb{A}_{\mathbb{Q},f})  / K\big) \Big] \tag{{\color{blue!10!orange}{$\ast$}}} \]
+and we're not even ready to discuss the other space.  Many thing here the author has stated as defintions can be turned back into \textit{exercises}  or even \textit{theorems}.   This jargon ``arithmetic intersections" should mean two equations we have in the arithmetic object we are describing\dots arrangements of the fractions over various number systems.  \\ \\
+What do you think he means by $\mathbb{R}/\log | \mathbb{Q}^\times|$ could this object exist outside of number theory?  \\ \\
+Continuing, let $\mathbb{H}^\pm = \{ z \in \mathbb{C} : \text{im}(z) \neq 0 \}$ be the union of the upper and lower half planes.   
+$$ \Big[ \textbf{G}_1 = \text{Res}_{F/\mathbb{Q}} B_1^\times \Big] \to \Big[ \textbf{G}_1(\mathbb{R}) \simeq \mathbb{H} \times \text{GL}_2(\mathbb{R}) \Big]$$
+And for the time being we have to parrot these identities because the authors are moving so quickly.  There is a group action:
+$$ (h, \left( \begin{array}{cc} a & b \\ c & d \end{array} \right)) z = \frac{az+b}{cz+d} $$
+and then we can define the quaternionic Shimura variety:
+\[ S = \textbf{G}_1(\mathbb{Q}) \Big\backslash \big[ \mathbb{H}^\pm \times 
+( \textbf{G}_1(\mathbb{A}_{\mathbb{Q},f}) / K_1) \big]  \tag{{\color{blue!10!green!80!black}{$\ast$}}} \]
+I'll concede the author sort-of knows what these definitions are.  When the authors talk about a ``canonical model" not only am I not sure, I'm not even interested.  However I do know what is \textbf{fractional linear transformation} and a \textbf{quaternion}.  I even know slightly what is a {\color{black!70!white}\textbf{Todd class}}.  And so we keep reading.
 
 \vfill
 
