@@ -137,5 +137,38 @@ Matrix([
 \end{verbatim}
 Our computers can never really behave like $\mathbb{R}$ or $\mathbb{Z}$ but for the moment $10^{-14}$ scale errors do not qualitatively change our answers. 
 
-\newpage \noindent We do not even scratch the surface.  We notes that computing $\sqrt{2}$ motivates finding a circle on the modular surface $\text{SL}_2(\mathbb{Z}) \backslash \mathbb{H}$ or even $ \Gamma_0(4)\backslash \mathbb{H}$.  And then we can study Maa\b. forms or theta functions.
+\newpage \noindent We do not even scratch the surface.  We notes that computing $\sqrt{2}$ motivates finding a circle on the modular surface $\text{SL}_2(\mathbb{Z}) \backslash \mathbb{H}$ or even $ \Gamma_0(4)\backslash \mathbb{H}$.  And then we can study Maa\ss. forms or theta functions. \\ \\
+\textbf{Sum of Three Squares} \\ \\
+One way to ask for trouble is to ask for details about the proof of the sum of three squares formula.  We know from Legendre (or Lagrange) that:
+$$ n = a^2 + b^2 + c^2 \text{ with }a,b,c \in \mathbb{Z} \leftrightarrow n \neq 4^k(8\ell+7) \in \mathbb{Z} $$
+by 1987 Iwaniec and Duke had shown - through rather severe means - that as $n \to \infty$, these solutions become equidistributed on the sphere.  For any $V \subseteq S^2$:
+$$ \lim_{n \to \infty} \frac{\frac{1}{\sqrt{n}} \big\{ (a,b,c): a^2 + b^2 + c^2 = n  \big\} \cap V}{n} = \mu(V) $$
+I have many many doubts about the proof.  Their argument is certainly correct, and I can verify the result overall with a calculator.  So what's the problem?  There are many intermediate steps that I must take on faith in order to declare this result to be proven.  Who needs mathematical proof anyway?  I can always check the result with a calculator.  \\ \\
+Number Theory is great at teasing out philosophical points like these.\footnote{Mathematics is the Queen of the Sciences, and Number Theory is the Queen of Mathematics.}  When I make a telephone call, did I use the Nyquist bound?\footnote{\texttt{https://en.wikipedia.org/wiki/Nyquist\%E2\%80\%93Shannon\_sampling\_theorem}}  Or any Fourier Analysis at all?  Did the electrician handling the wires .  How does my phone recontruct my telephone call from invisible signals, literally from thin air? Let $x : \mathbb{R} \to \mathbb{C}$:
+\begin{eqnarray*}
+\hat{x}(t) &:=& \int_{\mathbb{R}} x(t) \,e^{2\pi i \, ft}\,dt \\ 
+x(t) &=& \sum_{T \in \mathbb{Z}} T \cdot \hat{x}(nT) \, e^{-2\pi i \, n  f T}
+\end{eqnarray*}
+We don't ask any of these questions and we don't have to if we want to make that phone call.  As soon as we want to fix the wires, or create our own wireless nework, or design our own WiFi protocol, we almost need to make these considerations.
+\\ \\
+This formula is \textit{known} why do we need to prove it again? \\
+We can find it on a calculator why do we need to prove it? \\
+Someone else did the work already, why do I need to do it over?? \\
+Why is my word not good enough? \\ \\
+Maybe, when I try to study these equations - which I thought I was suppsed to be doing anyway - I have calld bullshit on everybody.  These statements are always true, but very hard to prove.  They contain an infinite amount of information. Are these statements isolated phenomenon?  Can I make them into someone useful? \\ \\
+Back to earth.  We have a highly \textit{non-trivial} statement about the equidistribution of the set of points on the sphere.  There are even modern theorems that tell us that \textit{patterns} should exist in such random point-sets.  We are told that:
+$$ \theta(z;u) = \sum_{m \in \mathbb{Z}^3} u(m) \, e(z|m|^2) $$
+is a holomorphic $\Gamma_0(4)$ cusp form of degree $k = \ell + \frac{3}{2}$ where $m$ is a Spherical Harmonic of degree $\ell$. \\ \\
+One day I attempted to write down such a cusp form.  What is a cusp form anyway? Automorhic forms specialists love their jargon and when you ask to many questions, they merely call you incompetent and move on.
+$$ \theta(z; u = x_1^2 - x_2^2) = \sum_{m \in \mathbb{Z}^3} \big( m_1^2 - m_2^2 \big) \, e(z|m|^2) $$
+In fact it is zero.  It is zero because we have that $m_1 \leftrightarrow m_2$ then $\theta(z;u) = - \theta(z;u)$.  Somewhat more methodically we have that $(m_1,m_2, m_3) \mapsto (\pm m_1, \pm m_2, \pm m_3)$ is an action of $\big(\mathbb{Z}/2\mathbb{Z}\big)^3$ on $\mathbb{Z}^3$ and this induces a group action on the space of modular forms. \\ \\
+These is also equidistribution of rational points on the sphere acted on by $\text{SO}_3(\mathbb{Q})$ and we could quantify that, or even $S$-arithemtic points in $\text{SO}_3\big(\mathbb{Z}[\frac{1}{5}]\big)$ as argued by Benoist and Oh around 2012.  Here we say that $X = \{ x^2 + y^2 + z^2 = 1\}$ is variety or something like that.  Finally we recoganize that: $\big(\mathbb{Z}/2\mathbb{Z}\big)^3 \subseteq \text{SO}_3(\mathbb{Z})$.  The rotation group of integers is rather small, only 24 elements. \\ \\
+Humans make mistakes and we have bigger, more exotic number systems to describe.
+$$ u = \frac{3}{16} \sqrt{\frac{1}{\pi}}  \frac{1}{r^4}\Big( 35z^4 - 30\, z^2 \, r^2 +3 \, r^4 \Big)$$
+then here is another modular form.  It doesn't look very elegant and the $\Gamma_0(4)$ invariance is less than obvious.
+$$ \theta(z;u) =  \frac{3}{16} \sqrt{\frac{1}{\pi}} \sum_{m \in \mathbb{Z}^3} \frac{35\,m_3^4 
+- 30 \,m_3^2 \,\big(m_1^2 + m_2^2 + m_3^2\big) + 3 \,\big(m_1^2 + m_2^2 + m_3^2\big)^2 }{ \Big( m_1^2 + m_2^2 + m_3^2 \Big)^2} \, e(z\,|m|^2) $$
+The cusp forms have to with the limit $\theta(x + 0i; u) = 0$ for $x + 0i\in \mathbb{Q}\subseteq \mathbb{H}$.  The cusps of $\Gamma_0(4)$ are not exactly $\mathbb{Q}$.  They are fractions $\frac{p}{q} \in \mathbb{Q}$ with either $4 | p $ or $4 | q$.   So these are the ``singular" fractions $\pmod 4$, right?  Since these are $\frac{0}{4}$ or $\frac{4}{0} $ in the Farey Fractions. \\ \\
+It was very difficult to find a $\theta(z;u)$ that wasn't zero.  I don't even know the normalization constant for: $u(x,y,z) = xy (7z^2 - r^2) $.  Do we know what is $ \int u(z)^2 \, dS$, here?  Lots of these exmples are zero, but if we take square of the examples listed on wikipedia to ensure positivity.  So he barely says anything about what's going on within $L^2(S^2)$ except that it's graded by degree.  And then he uses a bound from another place. \\ \\
+So these proofs have been exceedingly polite.
 \end{document}
