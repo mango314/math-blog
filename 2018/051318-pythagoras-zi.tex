@@ -170,5 +170,49 @@ $$ \theta(z;u) =  \frac{3}{16} \sqrt{\frac{1}{\pi}} \sum_{m \in \mathbb{Z}^3} \f
 - 30 \,m_3^2 \,\big(m_1^2 + m_2^2 + m_3^2\big) + 3 \,\big(m_1^2 + m_2^2 + m_3^2\big)^2 }{ \Big( m_1^2 + m_2^2 + m_3^2 \Big)^2} \, e(z\,|m|^2) $$
 The cusp forms have to with the limit $\theta(x + 0i; u) = 0$ for $x + 0i\in \mathbb{Q}\subseteq \mathbb{H}$.  The cusps of $\Gamma_0(4)$ are not exactly $\mathbb{Q}$.  They are fractions $\frac{p}{q} \in \mathbb{Q}$ with either $4 | p $ or $4 | q$.   So these are the ``singular" fractions $\pmod 4$, right?  Since these are $\frac{0}{4}$ or $\frac{4}{0} $ in the Farey Fractions. \\ \\
 It was very difficult to find a $\theta(z;u)$ that wasn't zero.  I don't even know the normalization constant for: $u(x,y,z) = xy (7z^2 - r^2) $.  Do we know what is $ \int u(z)^2 \, dS$, here?  Lots of these exmples are zero, but if we take square of the examples listed on wikipedia to ensure positivity.  So he barely says anything about what's going on within $L^2(S^2)$ except that it's graded by degree.  And then he uses a bound from another place. \\ \\
-So these proofs have been exceedingly polite.
+So these proofs have been exceedingly polite. \\
+
+\fontsize{20}{15}\selectfont
+
+\noindent $\mathbf{\Gamma_0(4)}$ \\
+
+\fontsize{12.5}{12.5}\selectfont
+
+
+\noindent To the best of my reading one of the punchlines is that we don't know fractions nearly as well as we thought.  Here's the definition of a congruence subgroup.
+$$ \Gamma(N) = \left\{ \left( \begin{array}{cc} a & b \\ c & d\end{array} \right)\in \text{SL}_2(\mathbb{Z}): 
+\left( \begin{array}{cc} a & b \\ c & d \end{array} \right)  \equiv 
+\left( \begin{array}{cc} 1 & 0 \\ 0 & 1 \end{array} \right) \pmod N \right\} $$
+What about $\text{SL}_2(\mathbb{Z}[i])$ ? Here's another congruence subgroup:
+$$ \Gamma_0(N) =
+\left\{ \left( \begin{array}{cc} a & b \\ c & d\end{array} \right)\in \text{SL}_2(\mathbb{Z}): 
+\left( \begin{array}{cc} a & b \\ c & d \end{array} \right)  \equiv 
+\left( \begin{array}{cc} a & b \\ 0 & d \end{array} \right) \pmod N \right\} $$
+These objects look almost self-explanatory since we could take any solution to $ad-bc=1$ and move forward. \newpage
+\noindent Let's take two prime numbers $p = 31$ and $q = 43$.   Bezout's theorem says we can find $a,b \in \mathbb{Z}$ such that:
+$$ \left| \begin{array}{cc} p & a \\ q & b \end{array} \right| = p \times b - a \times q = 1$$
+The \textbf{Euclidean algorithm} which is well studied over $\mathbb{Z}$ gives us (in a rather ugly layout):
+\begin{eqnarray*}
+43 &=& 31 \times 1 + 12 \\ 
+31 &=& 12 \times 2 + 7  \\
+12 &=&  7 \times 1 + 5  \\
+7  &=&  5 \times 1 + 2  \\
+5  &=&  2 \times 2 + 1  \\
+2  &=&  2 \times 1 + 0
+\end{eqnarray*}
+Fortunately for us, this algorithm terminates.  In real life, $31, 43 \in \mathbb{Z}$ would not be perfect integers.  Desptite having the entire Euclidean algorithm in front of me, I'm still tempted to use Guess and Check\footnote{What algorithm does ``guess-and-check" correspond to here?  Is it Breadth-First Search, Greedy Algorithm, Knapsack Problem?  I wish I knew my computer science jargon better.}
+$$ \frac{31}{43} = [0;1,2,1,1,2,1] $$
+The reconstruction is not instant to me.
+\begin{eqnarray*} \big( 43 \times 1 \big)- \big(31 \times 1 \big) &=& 12 \\
+\big(31 \times 3 \big) - \big( 43 \times 2 \big)= 31 - \Big( \big( 43 \times 1 \big)- \big(31 \times 1 \big) \Big) \times 2 &=& 7 \\ 
+\big( 43 \times 3  \big)- \big( 31 \times 4\big) = \Big(\big( 43 \times 1 \big)- \big(31 \times 1 \big)\Big) - \Big(\big(31 \times 3 \big) - \big( 43 \times 2 \big) \Big) \times 1 &=& 5 \\ 
+\big( 31 \times 7 \big) - \big(43 \times 5 \big)  = \Big( \big(31 \times 3 \big) - \big( 43 \times 2 \big) \Big) - \Big( \big( 43 \times 3  \big)- \big( 31 \times 4\big) \Big) \times 1&=& 2  \\ 
+\big( 31 \times 11 \big) - \big(43 \times 8 \big)  = \Big( \big(31 \times 3 \big) - \big( 43 \times 2 \big) \Big) - \Big( \big( 43 \times 3  \big)- \big( 31 \times 4\big) \Big) \times 2 &=& 1\end{eqnarray*}
+Should we check this with a calculator?  I did and it's correct.  Now I have said that my Python computer, using it's own method, the above computation is correct..  What happens when we encode a taylor series, and we're using infinitely many elementary school operations, so many that we lose track? While computers are helpful, Number Theory starts to turn into ways to play tricks on the computer.  While they don't know modular forms or algebraic number theory, they canon case of $n$-digit multiplication or addition with carries, is just another algorithm to a Theoretical Computer Scientist. \\ \\
+What would happen if we didn't have the Euclidean algorithm memorized? \footnote{Knowing an algorithm is something like having a computer on hand.  Searching for a pair of socks, crossing the street, drinking a beer.  These are all computations.} \\ \\
+Our final result, a solution to $ad-bc = 1$ is extremely informative.  This identity carries several bits of information.
+$$ \left| \begin{array}{rr} 31 & 11 \\ 43 & 8 \end{array} \right|  = \big( 31 \times 11 \big) - \big(43 \times 8 \big)  = 1 $$
+However, we may have left the realm of $\Gamma(2)$ or $\Gamma_0(4)$.  At least $\Gamma(2)$ has an easy reading in terms of fractions. $\frac{31}{68}$ is a reduce fraction.  Can we find:
+$$ 31 \times b   - 68 \times (2 \times a) = 1 \quad\text{ with }\quad a \in \mathbb{Z} $$
+Does some kind of Euclidean algorithm still hold?  In a fairly advanced textbook, theorem mechanically states that $[\Gamma(2): \text{SL}_2(\mathbb{Z})]=2^3 \times (1 - \frac{1}{2^2}) = 6$.  This will fall out of \textbf{First isomorphism theorem} which we should state and use.  Apparently, I don't know how to fix Euclid's algorithm in this case, or my isomorphism theorems anymore.
 \end{document}
