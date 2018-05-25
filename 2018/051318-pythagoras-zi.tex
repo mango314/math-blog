@@ -215,4 +215,42 @@ $$ \left| \begin{array}{rr} 31 & 11 \\ 43 & 8 \end{array} \right|  = \big( 31 \t
 However, we may have left the realm of $\Gamma(2)$ or $\Gamma_0(4)$.  At least $\Gamma(2)$ has an easy reading in terms of fractions. $\frac{31}{68}$ is a reduce fraction.  Can we find:
 $$ 31 \times b   - 68 \times (2 \times a) = 1 \quad\text{ with }\quad a \in \mathbb{Z} $$
 Does some kind of Euclidean algorithm still hold?  In a fairly advanced textbook, theorem mechanically states that $[\Gamma(2): \text{SL}_2(\mathbb{Z})]=2^3 \times (1 - \frac{1}{2^2}) = 6$.  This will fall out of \textbf{First isomorphism theorem} which we should state and use.  Apparently, I don't know how to fix Euclid's algorithm in this case, or my isomorphism theorems anymore.
+
+\newpage
+
+\noindent It's hard to see the generalization with the basic example.  It's too familiar.  $\mathfrak{p}_1 = 9 + 4i$ and $\mathfrak{p}_2 = 9 + 16i$ are primes.  With computer I found that these are the only primes $\mathfrak{p} \in 1 + 8 \mathbb{Z}[i]$ with $N(\mathfrak{p}) = \mathfrak{p}\overline{\mathfrak{p}} < 1000$, there are only three! 
+\begin{itemize}
+\item  $9 + 16i$
+\item  $17 + 8i$
+\item $25 + 16i$ (how is it that $\mathfrak{q} = 5^2 + 4^2 \times i \in \mathbb{Z}$ is a prime?)
+\end{itemize}
+and Dirichlet's Unit Theorem - I am guessing holds for all number fields, and so there are infinitely many Gaussian prime numbers in the list.  And here is the command for that:
+\begin{verbatim}
+ for(a=1,sqrtint(10000),for(b=1,sqrtint(10000),p=64*(a^2+b^2)+16*a+1;
+ if(isprime(p)&&p<10000,print([8*a+1+8*b*I,p]),)))
+\end{verbatim}
+As a programmer I question the PARI/GP code used here, but at least we get started.  This could probably have been coded with only \texttt{Python} and \texttt{numpy}.  There are about 30 such primes with norms less than $10^5$.  Norm is such an overused word here, they are not even Euclidean.  \\ \\ 
+We could have pairs of relatively prime numbers in $\mathbb{Z}[i]$ and there's even a Euclidean algorithm, still.  So there is such a thing as $\text{SL}_2(\mathbb{Z}[i])$.  And it could even have a congruence group such as $\text{SL}_2(\mathbb{Z}[i])(9+4i)$ and this could have it's own special continued fraction problem.  If we have two fractions, we could try something:
+$$ \frac{\mathfrak{p}}{\mathfrak{q}_1 \times \mathfrak{q}_2} = \frac{(9+16i)}{(9+4i) \times (2+i)} \in \mathbb{Q}(i)$$
+How can we create such an object?
+$$ \Gamma\big(9+4i\big) = \text{SL}_2\big(\mathbb{Z}[i]\big)(9+4i) =  \left\{ \left( \begin{array}{cc} a & b \\ c & d \end{array} \right) : 
+\left( \begin{array}{cc} a & b \\ c & d \end{array} \right)  \equiv 
+\left( \begin{array}{cc} 1 & 0 \\ 0 & 1 \end{array} \right)  \pmod{9+4i}  \right\} $$
+The ending diophantine equation should look identical to the $\mathbb{Z}$ case (maybe I'm writing, Number Theorists have such elaborate protocols, I don't even care):
+$$  (9+16i) \times b - (9+4i)^2 \times (2+i) \times a = 1 $$
+What's new is the steps we're allowed to use in the Eucludean algorithm have changed somewhat.  
+$$ a = (9+4i) \times q \times b + r$$
+It seems rather unlikely we could obtain a smaller number this way.  What about the fraction $\frac{9}{16}$ and we'd like to see that:
+$$16 = 9 \times 2 - 2 \text{ however } \left|\begin{array}{rr} 16 & 9 \\
+7 & 4 \end{array}\right| = 16 \times ( 2 \times 2) - 9 \times 7 = 1 $$ 
+and the matrix we have obtained is in $\Gamma(2)$ and it's even in $\Gamma(4)$ but I can't find it as a factorization of ``generating elements" that stay within the group.
+$$
+\left[\begin{array}{rr} 16 & 9 \\
+7 & 4 \end{array}\right] \to
+\left[\begin{array}{rr} 16 - 9 & 9 \\
+7 -4 & 4 \end{array}\right] = 
+\left[\begin{array}{rr} 7 & 9 \\
+3 & 4 \end{array}\right] \notin \Gamma(2), \Gamma(4)
+ $$
+Row operations, \textit{themselves} encode elements of $\text{SL}_2(\mathbb{Z})$ so a single row operation is not enough to stay within a congruence group like $\Gamma(2)$ or $\Gamma(4)$.  The question become can we ever find a path to the identity matrix, while remaining in this group? And what row operations do they represent?
 \end{document}
