@@ -1,0 +1,122 @@
+\documentclass[12pt]{article}
+%Gummi|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+% zeta functions of cubic fields
+
+%\usepackage{pifont}
+\usepackage{amsmath}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+\newcommand{\red}{\begin{tikz}[scale=0.25]
+\draw[fill=red, color=red] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\blue}{\begin{tikz}[scale=0.25]
+\draw[fill=blue, color=blue] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+\newcommand{\green}{\begin{tikz}[scale=0.25]
+\draw[fill=green, color=green] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
+
+\newcommand{\sq}[3]{\draw[#3] (#1,#2)--(#1+1,#2)--(#1+1,#2+1)--(#1,#2+1)--cycle;}
+
+\usepackage{tikz}
+
+\newcommand{\susy}{{\bf Q}}
+\newcommand{\RV}{{\text{R}_\text{V}}}
+
+\title{Scratchwork: Symmetric Polynomials}
+\date{}
+\begin{document}
+
+%\fontfamily{qag}\selectfont \fontsize{12.5}{15}\selectfont
+
+\sffamily
+
+\maketitle
+
+\noindent Where do symmetric polynomials come from?  The starting points are almost too obvious to even mention. \\ \\
+\textbf{Ex.} Find a cubic polynomial $f(x) = x^3 + ax^2 + bx + c$ such that $f(0)=1$ and $f(1) = 2$, $f(2) = 3$. \\ \\
+These constraints leads to simultaneous equations for the number $a,b,c$:
+$$\begin{array}{rcrcrcrcc}
+    &   &    &   &    &  & c &=& 1 \\
+ 1  & + &  a & + & b  &+ & c &=& 2 \\
+ 8  & + & 4a & + & 2b &+ & c &=& 3 
+\end{array}$$
+A polynomial is just a made-up device that mathematicians use to solve equations anwyay.  Why might such a thing be natural?  If you're a believer in the Newton Leibniz calculus, there was the Taylor series expansion from 1715 or so:
+$$ f(x+a) = f(x) + f'(x) a + f''(x) \frac{a^2}{2} + f'''(x) \frac{a^3}{6}\dots $$
+As long as you have enough derivatives.  We are going to extrapolate nearby values basic on what we know at a single point, with \textit{zero} knowledge of $f$. \\ \\
+So we have matrix equation:
+$$
+\left[ 
+\begin{array}{rrr}  0 & 0 & 1 \\
+ 1 & 1 & 1 \\
+ 4 & 2 & 1 \end{array}\right]
+\left[ 
+\begin{array}{r} a \\
+b  \\
+c  \end{array}\right] = 
+\left[ 
+\begin{array}{r} 1 \\
+1  \\
+-5 \end{array}\right] 
+ $$
+We seem to be on the right track.  Cram\'{e}r's rule first appears in 1750 but we've likely had simultaneous equations before that.  First of all there is a single equation:
+$$ c = 1  \quad\text{and}\quad 
+\left[ 
+\begin{array}{rr} 
+ 1 & 1  \\
+ 4 & 2 \end{array}\right]
+\left[ 
+\begin{array}{r} 
+b  \\
+c  \end{array}\right] = 
+\left[ 
+\begin{array}{r} 
+0 \\
+-6 \end{array}\right] 
+$$
+We only have two variables. So let's just solve them:
+$$ 
+a = \frac{
+\left| 
+\begin{array}{rr} 
+ 0 & 1  \\
+ -6 & 2 \end{array}\right|
+}{\left| 
+\begin{array}{rr} 
+ \;\;\;1 & 1  \\
+ 4 & 2 \end{array}\right|} = \frac{6}{-2}=-3
+\quad\text{and}\quad
+ b = \frac{
+ \left| 
+\begin{array}{rr} 
+ 1 & 0  \\
+ 4 & -6 \end{array}\right|
+ }{\left| 
+\begin{array}{rr} 
+ 1 & 1  \\
+ 4 & \;\;\,2 \end{array}\right|} = \frac{-6}{-2}=3$$
+and now like good students we should restate our answer.  The polynomial should be:
+$$ f(x) = x^3 -3x^2 + 3x + 1$$
+Additionally, we observe that Taylor series motivates order of operations:
+$$ f(3) = 1 \times\big(3 \times 3 \times 3\big) - 3 \times \big(3 \times 3\big) + 3 \times \big(3\big) + 1 $$
+This is just a sketch of how the grade school operations could have emerged. 
+
+\newpage 
+\noindent 
+We can talk for a moment about the formulas of Viete. 
+$$ (x-a)(x-b)(x-c) = x^3 - (a+b+c)x^2 + (ab+bc+ca)x -abc $$
+Then if we have a cubic equation which is very difficult to solve, we can still get information about the average behavior of the numbers:
+$$ x^3 - 3x^2 + 3x + 1$$
+and perhaps we can find the sum of the squares of the roots:
+$$ a^2 + b^2 + c^2 = 
+(a+b+c)^2 - 2 \times (ab + bc + ca) = (-3)^2 - 2 \times 3 = 3 $$
+These things hide  in front of your face.  They're almost too obvious to state.\footnote{Is there a technical term for this??} \\ \\
+\textbf{Ex.} Are the roots of $f(x)$ all real numbers? (1 real) + (2 imaginary)?  Find $a^4 + b^4 + c^4$. \\ \\
+\textbf{Ex.} Derive Taylor's formula to 4th order.  $(x,y)=(0,0)$ is a point on the lemniscate: $(x^2 + y^2)^2 - 2(x^2 - y^2)=0$. \\ What are some nearby points?  Can we get an exact answer?\footnote{Gabriel Cram\'{e}r ``Introuction a L'Analyse des Lines Courbes Algebraiques" \\ \texttt{https://archive.org/details/bub\_gb\_gtKvSzJPOOAC}} 
+\end{document}
