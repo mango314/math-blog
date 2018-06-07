@@ -1,13 +1,13 @@
 \documentclass[12pt]{article}
-%Gummi|065|=)
+%Gumm{\color{blue}i}|065|=)
 \usepackage{amsmath, amsfonts, amssymb}
 \usepackage[margin=0.5in]{geometry}
 \usepackage{xcolor}
 \usepackage{graphicx}
 
-% zeta functions of cubic fields
+% zeta funct{\color{blue}i}ons of cub{\color{blue}i}c f{\color{blue}i}elds
 
-%\usepackage{pifont}
+%\usepackage{p{\color{blue}i}font}
 \usepackage{amsmath}
 
 \newcommand{\off}[1]{}
@@ -15,42 +15,38 @@
 
 \newcommand{\two }{\sqrt[3]{2}}
 \newcommand{\four}{\sqrt[3]{4}}
-\newcommand{\red}{\begin{tikz}[scale=0.25]
-\draw[fill=red, color=red] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
-\newcommand{\blue}{\begin{tikz}[scale=0.25]
-\draw[fill=blue, color=blue] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
-\newcommand{\green}{\begin{tikz}[scale=0.25]
-\draw[fill=green, color=green] (0,0)--(1,0)--(1,1)--(0,1)--cycle;\end{tikz}}
 
-\newcommand{\sq}[3]{\draw[#3] (#1,#2)--(#1+1,#2)--(#1+1,#2+1)--(#1,#2+1)--cycle;}
+
+
+
 
 \usepackage{tikz}
 
 \newcommand{\susy}{{\bf Q}}
 \newcommand{\RV}{{\text{R}_\text{V}}}
 
-\title{Scratchwork: Symmetric Polynomials}
+\title{Scratchwork: Symmetr{\color{blue}i}c Polynom{\color{blue}i}als}
 \date{}
 \begin{document}
 
-%\fontfamily{qag}\selectfont \fontsize{12.5}{15}\selectfont
+%\fontfam{\color{blue}i}ly{qag}\selectfont \fonts{\color{blue}i}ze{12.5}{15}\selectfont
 
 \sffamily
 
 \maketitle
 
-\noindent Where do symmetric polynomials come from?  The starting points are almost too obvious to even mention. \\ \\
-\textbf{Ex.} Find a cubic polynomial $f(x) = x^3 + ax^2 + bx + c$ such that $f(0)=1$ and $f(1) = 2$, $f(2) = 3$. \\ \\
-These constraints leads to simultaneous equations for the number $a,b,c$:
+\noindent Where do symmetr{\color{blue}i}c polynom{\color{blue}i}als come from?  The start{\color{blue}i}ng po{\color{blue}i}nts are almost too obv{\color{blue}i}ous to even ment{\color{blue}i}on. \\ \\
+\textbf{Ex.} F{\color{blue}i}nd a cub{\color{blue}i}c polynom{\color{blue}i}al $f(x) = x^3 {\color{green}\,\times\,} ax^2 {\color{green}+} bx {\color{green}+} c$ such that $f(0)=1$ and $f(1) = 2$, $f(2) = 3$. \\ \\
+These constra{\color{blue}i}nts leads to s{\color{blue}i}multaneous equat{\color{blue}i}ons for the number $a,b,c$:
 $$\begin{array}{rcrcrcrcc}
     &   &    &   &    &  & c &=& 1 \\
- 1  & + &  a & + & b  &+ & c &=& 2 \\
- 8  & + & 4a & + & 2b &+ & c &=& 3 
+ 1  & {\color{green}+} &  a & {\color{green}+} & b  &{\color{green}+} & c &=& 2 \\
+ 8  & {\color{green}+} & 4a & {\color{green}+} & 2b &{\color{green}+} & c &=& 3 
 \end{array}$$
-A polynomial is just a made-up device that mathematicians use to solve equations anwyay.  Why might such a thing be natural?  If you're a believer in the Newton Leibniz calculus, there was the Taylor series expansion from 1715 or so:
-$$ f(x+a) = f(x) + f'(x) a + f''(x) \frac{a^2}{2} + f'''(x) \frac{a^3}{6}\dots $$
-As long as you have enough derivatives.  We are going to extrapolate nearby values basic on what we know at a single point, with \textit{zero} knowledge of $f$. \\ \\
-So we have matrix equation:
+A polynom{\color{blue}i}al {\color{blue}i}s just a made{\color{red}-}up dev{\color{blue}i}ce that mathemat{\color{blue}i}c{\color{blue}i}ans use to solve equat{\color{blue}i}ons anwyay.  Why m{\color{blue}i}ght such a th{\color{blue}i}ng be natural?  {\color{blue}i}f you're a bel{\color{blue}i}ever {\color{blue}i}n the Newton Le{\color{blue}i}bn{\color{blue}i}z calculus, there was the Taylor ser{\color{blue}i}es expans{\color{blue}i}on from 1715 or so:
+$$ f(x{\color{green}+}a) = f(x) {\color{green}+} f'(x) a {\color{green}+} f''(x) \frac{a^2}{2} {\color{green}+} f'''(x) \frac{a^3}{6}\dots $$
+As long as you have enough der{\color{blue}i}vat{\color{blue}i}ves.  We are go{\color{blue}i}ng to extrapolate nearby values bas{\color{blue}i}c on what we know at a s{\color{blue}i}ngle po{\color{blue}i}nt, w{\color{blue}i}th \text{\color{blue}i}t{zero} knowledge of $f$. \\ \\
+So we have matr{\color{blue}i}x equat{\color{blue}i}on:
 $$
 \left[ 
 \begin{array}{rrr}  0 & 0 & 1 \\
@@ -63,9 +59,9 @@ c  \end{array}\right] =
 \left[ 
 \begin{array}{r} 1 \\
 1  \\
--5 \end{array}\right] 
+{\color{red}-}5 \end{array}\right] 
  $$
-We seem to be on the right track.  Cram\'{e}r's rule first appears in 1750 but we've likely had simultaneous equations before that.  First of all there is a single equation:
+We seem to be on the r{\color{blue}i}ght track.  Cram\'{e}r's rule f{\color{blue}i}rst appears {\color{blue}i}n 1750 but we've l{\color{blue}i}kely had s{\color{blue}i}multaneous equat{\color{blue}i}ons before that.  F{\color{blue}i}rst of all there {\color{blue}i}s a s{\color{blue}i}ngle equat{\color{blue}i}on:
 $$ c = 1  \quad\text{and}\quad 
 \left[ 
 \begin{array}{rr} 
@@ -78,45 +74,45 @@ c  \end{array}\right] =
 \left[ 
 \begin{array}{r} 
 0 \\
--6 \end{array}\right] 
+{\color{red}-}6 \end{array}\right] 
 $$
-We only have two variables. So let's just solve them:
+We only have two var{\color{blue}i}ables. So let's just solve them:
 $$ 
 a = \frac{
 \left| 
 \begin{array}{rr} 
  0 & 1  \\
- -6 & 2 \end{array}\right|
+ {\color{red}-}6 & 2 \end{array}\right|
 }{\left| 
 \begin{array}{rr} 
  \;\;\;1 & 1  \\
- 4 & 2 \end{array}\right|} = \frac{6}{-2}=-3
+ 4 & 2 \end{array}\right|} = \frac{6}{{\color{red}-}2}={\color{red}-}3
 \quad\text{and}\quad
  b = \frac{
  \left| 
 \begin{array}{rr} 
  1 & 0  \\
- 4 & -6 \end{array}\right|
+ 4 & {\color{red}-}6 \end{array}\right|
  }{\left| 
 \begin{array}{rr} 
  1 & 1  \\
- 4 & \;\;\,2 \end{array}\right|} = \frac{-6}{-2}=3$$
-and now like good students we should restate our answer.  The polynomial should be:
-$$ f(x) = x^3 -3x^2 + 3x + 1$$
-Additionally, we observe that Taylor series motivates order of operations:
-$$ f(3) = 1 \times\big(3 \times 3 \times 3\big) - 3 \times \big(3 \times 3\big) + 3 \times \big(3\big) + 1 $$
-This is just a sketch of how the grade school operations could have emerged. 
+ 4 & \;\;\,2 \end{array}\right|} = \frac{{\color{red}-}6}{{\color{red}-}2}=3$$
+and now l{\color{blue}i}ke good students we should restate our answer.  The polynom{\color{blue}i}al should be:
+$$ f(x) = x^3 {\color{red}-}3x^2 {\color{green}+} 3x {\color{green}+} 1$$
+Add{\color{blue}i}t{\color{blue}i}onally, we observe that Taylor ser{\color{blue}i}es mot{\color{blue}i}vates order of operat{\color{blue}i}ons:
+$$ f(3) = 1 {\color{blue}\,\times\,}\big(3 {\color{blue}\,\times\,} 3 {\color{blue}\,\times\,} 3\big) {\color{red}-} 3 {\color{blue}\,\times\,} \big(3 {\color{blue}\,\times\,} 3\big) {\color{green}+} 3 {\color{blue}\,\times\,} \big(3\big) {\color{green}+} 1 $$
+Th{\color{blue}i}s {\color{blue}i}s just a sketch of how the grade school operat{\color{blue}i}ons could have emerged. 
 
 \newpage 
 \noindent 
-We can talk for a moment about the formulas of Viete. 
-$$ (x-a)(x-b)(x-c) = x^3 - (a+b+c)x^2 + (ab+bc+ca)x -abc $$
-Then if we have a cubic equation which is very difficult to solve, we can still get information about the average behavior of the numbers:
-$$ x^3 - 3x^2 + 3x + 1$$
-and perhaps we can find the sum of the squares of the roots:
-$$ a^2 + b^2 + c^2 = 
-(a+b+c)^2 - 2 \times (ab + bc + ca) = (-3)^2 - 2 \times 3 = 3 $$
-These things hide  in front of your face.  They're almost too obvious to state.\footnote{Is there a technical term for this??} \\ \\
-\textbf{Ex.} Are the roots of $f(x)$ all real numbers? (1 real) + (2 imaginary)?  Find $a^4 + b^4 + c^4$. \\ \\
-\textbf{Ex.} Derive Taylor's formula to 4th order.  $(x,y)=(0,0)$ is a point on the lemniscate: $(x^2 + y^2)^2 - 2(x^2 - y^2)=0$. \\ What are some nearby points?  Can we get an exact answer?\footnote{Gabriel Cram\'{e}r ``Introuction a L'Analyse des Lines Courbes Algebraiques" \\ \texttt{https://archive.org/details/bub\_gb\_gtKvSzJPOOAC}} 
+We can talk for a moment about the formulas of V{\color{blue}i}ete. 
+$$ (x{\color{red}-}a)(x{\color{red}-}b)(x{\color{red}-}c) = x^3 {\color{red}-} (a{\color{green}+}b{\color{green}+}c)x^2 {\color{green}+} (ab{\color{green}+}bc{\color{green}+}ca)x {\color{red}-}abc $$
+Then {\color{blue}i}f we have a cub{\color{blue}i}c equat{\color{blue}i}on wh{\color{blue}i}ch {\color{blue}i}s very d{\color{blue}i}ff{\color{blue}i}cult to solve, we can st{\color{blue}i}ll get {\color{blue}i}nformat{\color{blue}i}on about the average behav{\color{blue}i}or of the numbers:
+$$ x^3 {\color{red}-} 3x^2 {\color{green}+} 3x {\color{green}+} 1$$
+and perhaps we can f{\color{blue}i}nd the sum of the squares of the roots:
+$$ a^2 {\color{green}+} b^2 {\color{green}+} c^2 = 
+(a{\color{green}+}b{\color{green}+}c)^2 {\color{red}-} 2 {\color{blue}\,\times\,} (ab {\color{green}+} bc {\color{green}+} ca) = ({\color{red}-}3)^2 {\color{red}-} 2 {\color{blue}\,\times\,} 3 = 3 $$
+These th{\color{blue}i}ngs h{\color{blue}i}de  {\color{blue}i}n front of your face.  They're almost too obv{\color{blue}i}ous to state.\footnote{{\color{blue}i}s there a techn{\color{blue}i}cal term for th{\color{blue}i}s??} \\ \\
+\textbf{Ex.} Are the roots of $f(x)$ all real numbers? (1 real) {\color{green}+} (2 {\color{blue}i}mag{\color{blue}i}nary)?  F{\color{blue}i}nd $a^4 {\color{green}+} b^4 {\color{green}+} c^4$. \\ \\
+\textbf{Ex.} Der{\color{blue}i}ve Taylor's formula to 4th order.  $(x,y)=(0,0)$ {\color{blue}i}s a po{\color{blue}i}nt on the lemn{\color{blue}i}scate: $(x^2 {\color{green}+} y^2)^2 {\color{red}-} 2(x^2 {\color{red}-} y^2)=0$. \\ What are some nearby po{\color{blue}i}nts?  Can we get an exact answer?\footnote{Gabr{\color{blue}i}el Cram\'{e}r ``{\color{blue}i}ntrouct{\color{blue}i}on a L'Analyse des L{\color{blue}i}nes Courbes Algebra{\color{blue}i}ques" \\ \texttt{https://arch{\color{blue}i}ve.org/deta{\color{blue}i}ls/bub\_gb\_gtKvSzJPOOAC}} 
 \end{document}
