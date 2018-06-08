@@ -115,4 +115,49 @@ $$ a^2 {\color{green}+} b^2 {\color{green}+} c^2 =
 These th{\color{blue}i}ngs h{\color{blue}i}de  {\color{blue}i}n front of your face.  They're almost too obv{\color{blue}i}ous to state.\footnote{{\color{blue}i}s there a techn{\color{blue}i}cal term for th{\color{blue}i}s??} \\ \\
 \textbf{Ex.} Are the roots of $f(x)$ all real numbers? (1 real) {\color{green}+} (2 {\color{blue}i}mag{\color{blue}i}nary)?  F{\color{blue}i}nd $a^4 {\color{green}+} b^4 {\color{green}+} c^4$. \\ \\
 \textbf{Ex.} Der{\color{blue}i}ve Taylor's formula to 4th order.  $(x,y)=(0,0)$ {\color{blue}i}s a po{\color{blue}i}nt on the lemn{\color{blue}i}scate: $(x^2 {\color{green}+} y^2)^2 {\color{red}-} 2(x^2 {\color{red}-} y^2)=0$. \\ What are some nearby po{\color{blue}i}nts?  Can we get an exact answer?\footnote{Gabr{\color{blue}i}el Cram\'{e}r ``{\color{blue}i}ntrouct{\color{blue}i}on a L'Analyse des L{\color{blue}i}nes Courbes Algebra{\color{blue}i}ques" \\ \texttt{https://arch{\color{blue}i}ve.org/deta{\color{blue}i}ls/bub\_gb\_gtKvSzJPOOAC}} 
+
+\newpage 
+
+\noindent \textbf{6/8} While that's not nearly enough motivation, let's say I have a cubic polynomial, $f(x) = x^3 + ax^2 + bx + c$.  How do we distinguish between these two cases:
+\begin{itemize}
+\item $f(x) = 0$ for three numbers $x_1, x_2, x_3  \in \mathbb{R}$ (the ``totally real" case)
+\item $f(x) = 0$ for one number $x_1 \in \mathbb{R}$ and two complex conjugate numbers $x_2, \overline{x_2} \in \mathbb{C}$.
+\end{itemize}
+Jumping ahead of ourselves, let's enumerate the possibilities for the Galois group:
+\begin{itemize}
+\item $S_3$ the group of permutations on three letters
+\item $A_3$ the group of (even) permutations in $S_3$
+\item $C_3$ the cyclic group on three symbols (like a wheel)
+\item $I = \{ e \}$ the group with one element.
+\end{itemize}
+And just like a calculator, there are procedures for finding the information we want about any given field and any given prime number.  There's even a few thousand pages of paper if you want to read them giving a few patterns in the behavior of these numbers.  
+\begin{itemize}
+\item $[\mathbb{Q}(\sqrt[3]{2}):\mathbb{Q}]= 3$.  Every number can be written as $x = a + b \sqrt[3]{2} + c \sqrt[3]{4}$.  This is related to the equation $x^3 - 2 = 0$. This field is \textbf{not} Galois.  $\frac{6}{3} = 2$ so we need a \textit{quadratic} extension $K$ over $\mathbb{Q}(\sqrt{2})$ so that $[K:\mathbb{Q}] = 6$.
+$$ x^2 + ax + b = 0$$
+How do you feel about the quadratic formula if we know additionally that $a,b \in \mathbb{Q}(\sqrt[3]{2})$? 
+\item  The polynomial $x^3 - x - 1$ is called the ``plastic number".  It is also a \textit{Pisot} number in that $x_1 \in \mathbb{R}$ and $|x_1| > 1$ while $|x_2|, |x_3| < 1$.  How do we verify such information for ourselves?  What is the Galois group of $\mathbb{Q}(x)/\mathbb{Q}$?  (It's in fact, $S_3$.)
+\end{itemize}
+We should be leary, that even for such basic examples, we have to use a computer.  And the entire existing literature is full of such a doubt. \\ \\
+\textbf{Q} Could we feel out the Galois group of a cubic using the averages of the coefficints, e.g. $f_n= x_1^n + x_2^n + x_3^n \in \mathbb{Z}$.  Even thought we can't solve for $x_1, x_2, x_3 \in \mathbb{C}$ we could use the Vi\'{e}te polynomials to get the various averages of the roots.
+\begin{itemize}
+\item $a = x_1 + x_2 + x_3$
+\item $b = x_1x_2 + x_2x_3+x_3x_1$
+\item $c = x_1x_2x_3$
+\end{itemize}
+In the case of a quadratic, the sequence $f_n = x_1^n + x_2^n$ yields a kin of the Fibonacci numbers.  And there's an exhaustic literature there, which nonetheless has open questions (somewhat on the deep end).  So we even have a guess what the numbers are like. \\ \\
+\textbf{Q}: We have that $\overline{\mathbb{Q}(\sqrt[3]{2})} = \mathbb{R}$ (the ``closure" of the set of rational numbers with respect to the absolute value $|\cdot|$ how can we best approximate numbers like $\sqrt{2}, \sqrt{3}, \sqrt[3]{5}$, $\pi$, etc.?
+$$ \frac{a_1 + \sqrt[3]{2}b_1+ \sqrt[3]{4}c_1}{a_2 + \sqrt[3]{2}b_2 +\sqrt[3]{4}c_2} = a + \sqrt[3]{2}b +\sqrt[3]{4}c $$  
+with $(a_1, b_1, c_1), (a_2, b_2, c_2) \in \mathbb{Z}^3$ and $a,b,c \in \mathbb{Q}$. Tautologically, the fractions can be written in the left way or the right way, but how do we feel about such a map?
+
+\newpage
+
+\begin{thebibliography}{}
+\item Artur Avila, Vincent Delecroix. \textbf{Some monoids of Pisot matrices} \texttt{arXiv:1506.03692}
+\end{thebibliography} 
+
+\noindent \textbf{6/10} Other than Galois Theory and Numerical Analysis do we have other candidates for usages of symmetric polynomials\dots ? These arise in combinatorics and probability.  Let's have probability distribution $1 = p_1 + p_2 + \dots + p_n$.  Then perhaps we could try to compute the moments:
+$$ \mathbb{E}[x_k] = p_1^k + \dots + p_n^k $$
+This is a symmetric polynomial.  Therefore, all expectation values are symmetric in the probabilities.  If we have information about the distribution, the numbers $\{ 1, \dots, n\}$ start to look different.  If we had a random permutation:
+$$ 1 \mapsto (1,2,3), 2 \mapsto (1,3,2), 3 \mapsto (2,1,3), 4 \mapsto (2,3,1), \dots $$
+Then perhaps there is other symmetry.  These symmetries are decidedly bland and look trivial -- literally like a $\mathbf{0}$ -- and yet have profound consequences.
 \end{document}
