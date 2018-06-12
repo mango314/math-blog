@@ -1,0 +1,61 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+% zeta funct{\color{blue}i}ons of cub{\color{blue}i}c f{\color{blue}i}elds
+
+%\usepackage{p{\color{blue}i}font}
+\usepackage{amsmath}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+
+
+
+
+
+\usepackage{tikz}
+
+\newcommand{\susy}{{\bf Q}}
+\newcommand{\RV}{{\text{R}_\text{V}}}
+
+\title{Scratchwork: Law of Large Numbers}
+\date{}
+\begin{document}
+
+%\fontfam{\color{blue}i}ly{qag}\selectfont \fonts{\color{blue}i}ze{12.5}{15}\selectfont
+
+\sffamily
+
+\maketitle
+
+\noindent It's time to review the law of large numbers. Blankly: it says that our observations tend towards the mean.  That is a rather baroque statement, but I needed to do it cold.\footnote{
+In the real world -- when I had a job, I wanted to model a process using ``coin-flips".  In fact my job was to guess at the outcome of the football season each week.  Each each week, there is an event.  And the outcome is either ``win" or ``loss" but what are the odds of success? Perhaps we'd use a Bernoulli random variable $X \in \{ 0,1\}$ with $\mathbb{P}(X=1) = p$ and $\mathbb{P}(X=0) = 1-p$.  And I said to myself all I had to do is estimate $p \in [0,1]$.  Within a year, I was fired. \\ \\
+A football game is a fairly well-thought out process.  The actions are deliberate.  There's a mix of strategy and last-minute thinking.  I think we keep record of the result after each quarter and the final outcome of the game.  These things are not so random after all! \\ \\
+Worse, there's no good way to separate the deliberate elements and the chance elements.  People are very good at aggregating information like news, collectively they can put express a range of opinions.\\} \\ \\
+Now here's statement from the Terry Tao blog.\footnote{\texttt{https://terrytao.wordpress.com/2015/10/23/275a-notes-3-the-weak-and-strong-law-of-large-numbers/}}  He's very detailed about use usage and discussion of the construct of $\mathbb{R}$:
+\begin{quotation}
+\noindent Let $X_1, \dots, X_n$ be an iid sequence of copies of an absolutely integrable random variable $X$.  
+\begin{itemize}
+\item converges in probability (Weak)
+\item converges weakly (Strong)
+\end{itemize}
+The emperical average converges to the statistical average: $\frac{1}{n}(X_1 + \dots + X_n) \to \mathbf{E}(X)$
+\end{quotation}
+Failing to apply LLN correctly has a name, and has been studied.  Applying Law of Large Numbers where it egregiously doesn't apply (and filling in the gaps later) has a name.  On and On and On. \\ \\
+Where did we use Law of Large Numbers? The conclusions of LLN are so obvious, we hardly give it much thought.
+
+\vfill
+
+\begin{thebibliography}{}
+
+\item 
+
+\end{thebibliography}
+\end{document}
