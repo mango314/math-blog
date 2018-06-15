@@ -1,0 +1,129 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+% zeta funct{\color{blue}i}ons of cub{\color{blue}i}c f{\color{blue}i}elds
+
+%\usepackage{p{\color{blue}i}font}
+\usepackage{amsmath}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+
+
+
+
+
+\usepackage{tikz}
+
+\newcommand{\susy}{{\bf Q}}
+\newcommand{\RV}{{\text{R}_\text{V}}}
+
+\title{Scratchwork: $\mathbb{Q}$-torus computations}
+\date{}
+\begin{document}
+
+%\fontfam{\color{blue}i}ly{qag}\selectfont \fonts{\color{blue}i}ze{12.5}{15}\selectfont
+
+\sffamily
+
+\maketitle
+
+\noindent There's no reason why we can't solve the Pythagorean triples over the Gaussian integers, $\mathbb{Z}[i]$:
+$$  a^2 + b^2 = c^2 \to (a,b,c) = (m^2 - n^2 , 2mn, m^2 + n^2) \text{ with }m,n \in \mathbb{Z}[i]$$
+Perhaps these will be slightly more remarkable if we write the $2 \times 2$ matrices (now over $\mathbb{Z}$):
+$$ \left[
+\begin{array}{rr} 
+a_1 & -a_2 \\ a_2 & a_1\end{array}
+ \right]^2 + \left[
+\begin{array}{rr} 
+b_1 & -b_2 \\ b_2 & b_1\end{array}
+ \right]^2 = \left[
+\begin{array}{rr} 
+c_1 & -c_2 \\ c_2 & c_1\end{array}
+ \right]^2 $$
+The real part and the imaginary part could be equated for the intersection of two quadrics in six variables:
+\begin{eqnarray*}
+a_1^2 - a_2^2 + b_1^2 - b_2^2 &=& c_1^2 - c_2^2 \\
+a_1 a_2 + b_1 b_2  &=&  c_1 c_2
+\end{eqnarray*}
+Lastly we could think of these solution points as elements of a single matrix group:
+$$ \text{SO}_2(x^2 + y^2, \mathbb{Q}) \subset \text{SO}_2(x^2 + y^2, \mathbb{Q}(i)) $$
+Reconstructing the quaternions $\mathbb{H}$ essentially, we could merge the two rotations into a single object (a 4D rotation?)
+$$ \left( 
+\left[
+\begin{array}{rr} 
+a_1 & -a_2 \\ a_2 & a_1\end{array}
+ \right] , \left[
+\begin{array}{rr} 
+b_1 & -b_2 \\ b_2 & b_1\end{array}
+ \right] \right) \in \text{SO}_2 \oplus \text{SO}_2 \mapsto 
+ \left[
+ \begin{array}{rr|rr}
+ a_1 & -a_2 & -b_1 & b_2 \\
+ a_2 & a_1 & -b_2 & -b_1 \\ \hline
+ b_1 & -b_2 & a_1 & -a_2 \\ 
+ b_2 & b_1 & a_2 & a_1  \end{array}
+  \right] \in \text{SO}_4
+$$
+We can choose one of many torus actions, ``rotating" the different solutions of Pythagorean triples:
+$$ (a_1 + a_2i + 0j + 0k)(b_1 + b_2 i + (b_3+b_4i)j) = \dots
+= (a_1 b_1 - a_2 b_2 ) + (a_1 b_2 + a_2 b_1)i + (a_1 b_3 - a_2 b_4)j + (a_1 b_4  + a_2b_3 )ij   $$
+This was one of many choices to embed the Pythagorean triples as a set of $4 \times 4$ matrices:
+$$ a_1 + a_2i \mapsto 
+\left[
+ \begin{array}{rr|rr}
+ a_1 & -a_2 & 0 & 0 \\
+ a_2 & a_1 & 0 & 0 \\ \hline
+ 0 & 0 & a_1 & -a_2 \\ 
+ 0 & 0 & a_2 & a_1  \end{array}
+  \right] $$
+For that matter, once we have an embedding, why not take a quotient group.  Yet another torus of rank $1$:
+$$ \text{SO}_2(\mathbb{Q}(i)) \big/  \text{SO}_2(\mathbb{Q}) $$ 
+Because of the minus sign these don't really feel like the Pythagoras equations we are used to.  We didn't do much with them anyway, so does it matter.  However, we have:
+$$ \text{SO}_3(x_1^2 + x_2^2 + x_3^2 + x_4^2, \mathbb{Q}) \subseteq \text{SO}_3(\mathbb{R}) $$
+These rational 3-sphere rotations could be quite important and have many distinct rational tori.
+
+\newpage
+
+\noindent One paper asks us to compute $F \otimes \mathbb{R}$ for a \textit{totally real field} e.g. $F = \mathbb{Q}(\sqrt[3]{2})$.  This extension is \textbf{not} Galois. We can represent the multipication in this field $(F, \times)$ as a kind of matrix algebra:
+$$ 1 \mapsto 
+\left[ \begin{array}{ccc} 
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \end{array} \right]
+\text{ and }
+\sqrt[3]{2} \mapsto 
+\left[ \begin{array}{ccc} 
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+2 & 0 & 0 \end{array} \right]  \text{ and }
+\sqrt[3]{4} \mapsto \left[ \begin{array}{ccc}  
+0 & 0 & 1 \\ 2 & 0 & 0 \\ 0 & 4 & 0 \end{array}
+\right] $$
+Perhaps it should bother us a little that these $3 \times 3$ matrices are also considered elements of $\mathbb{R}$.  How do we make sense of a statement such as this one?
+$$ 3 <  1 + \sqrt[3]{2} + \sqrt[3]{4}  $$
+Since $[F:\mathbb{Q}]= 3$ these are \textit{rational} vector spaces:
+$$ \mathbb{Q}(\sqrt[3]{2}) = 1 \, \mathbb{Q} \oplus \sqrt[3]{2} \, \mathbb{Q}\oplus \sqrt[3]{4} \, \mathbb{Q} $$
+and the tensor produce is at least easy to calculate on paper:
+$$ F \otimes \mathbb{R} 
+= \mathbb{Q}(\sqrt[3]{2}) \otimes \mathbb{R}
+\simeq \big( \mathbb{Q} \oplus \mathbb{Q} \oplus \mathbb{Q} \big) \otimes \mathbb{R}
+\simeq (\mathbb{Q} \otimes \mathbb{R} ) \oplus (\mathbb{Q} \otimes \mathbb{R} ) \oplus  (\mathbb{Q} \otimes \mathbb{R} ) 
+\simeq \mathbb{R} \oplus \mathbb{R} \oplus \mathbb{R} = \mathbb{R}^3 $$
+These computations are somwhat ``categorial" since they don't tell us \textit{which} isomorphisms map what to what. \\ \\
+Really we'd have $F \subseteq \mathbb{R}$ so does it make sense that $\text{PGL}_2(F)\subseteq \text{PGL}_2(\mathbb{R})$ should be some kind of $2 \times 2$ matrix with elements in $F$ or a $6 \times 6$ matrix with elements in $\mathbb{Q}$?  Maybe this is why we need a notion of ``isomorphism" since we've lost track of two pieces of algebra that should mean the same thing.  
+\vfill
+
+\begin{thebibliography}{}
+
+\item \dots
+
+\end{thebibliography}
+\end{document}
