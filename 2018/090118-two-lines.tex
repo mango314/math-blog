@@ -1,0 +1,75 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+% zeta funct{\color{blue}i}ons of cub{\color{blue}i}c f{\color{blue}i}elds
+
+%\usepackage{p{\color{blue}i}font}
+\usepackage{amsmath}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+
+
+
+
+
+\usepackage{tikz}
+
+\newcommand{\susy}{{\bf Q}}
+\newcommand{\RV}{{\text{R}_\text{V}}}
+
+\title{Scratchwork: Intersecton of Two Lines}
+\date{}
+\begin{document}
+
+%\fontfam{\color{blue}i}ly{qag}\selectfont \fonts{\color{blue}i}ze{12.5}{15}\selectfont
+
+\sffamily
+
+\maketitle
+
+\noindent In geometry class, we learn the Cramer rule for the intersection two lines.
+\begin{eqnarray*}
+a_1 x + b_1 y &=& c_1 \\
+a_2 x + b_2 y &=& c_2
+\end{eqnarray*}
+And so the intersection of these two lines can be found with a \textbf{determinant} of a $2 \times 2$ matrix:
+$$ x = \frac{\left|\begin{array}{cc} c_1 & b_1 \\ c_2 & b_2 \end{array} \right|}{\left|\begin{array}{cc} a_1 & b_1 \\ a_2 & b_2 \end{array} \right|} \quad\text{and}\quad 
+y = \frac{\left|\begin{array}{cc} a_1 & c_1 \\ a_2 & c_2 \end{array} \right|}{\left|\begin{array}{cc} a_1 & b_1 \\ a_2 & b_2 \end{array} \right|} $$
+In a Linear Algebra course - or a Geometry course - one might check that $a,b,c \in \mathbb{R}$ means our solutions $(x,y) \in \mathbb{R}^2$.  We don't have that for an integer problem $a,b,c \in \mathbb{Z}$ the solution remains in integers $(x,y) \in \mathbb{Z}^2$. \\ \\
+Since the $+$ and $\times$ operations we do aren't too fancy, we can do Linear Algebra over a field such as $K = \mathbb{Q}$ or $K = \mathbb{C}$.   In addition, let's use a tiny bit of Exterior Algebra taken from a Geometry textbook. \\ \\
+\textbf{Thm}
+The points $A$, $B$ and $C$ are collinear if and only if $ A \wedge B + B \wedge C + C \wedge A = 0$. \\ \\
+In our case, the equation has one line \boxed{$Ax + By = C$}\;.  In that case, we can write the Cramer rule in an more condensed way:
+$$ Ax + By = C \to A \wedge (Ax + By)  = (A \wedge B) y = (A \wedge C) \to y = \frac{A \wedge C}{A \wedge B} $$
+And a similar formula for $x$.  Is it okay to write the coordinate value of $x$ and $y$ as the ratio of two areas.  The geometric objects look kind of funny but OK.
+$$ \text{[number]} = \frac{\text{[area]}}{\text{[area]}} $$
+This is not outrageous.  Pedeo gives a careful derivation of the wedge product of two vectors:
+$$ u \wedge v = (x_1 E_1 + x_2 E_2) \wedge (y_1 E_1 + y_2 E_2) = (x_1 y_2 - x_2 y_1) (E_1 \wedge E_2) $$
+where $E_1, E_2 \in \mathbb{R}^2$ are unit vectors in the plane.  \\ \\
+There are even more intersection formulas like this.  Two planes in Four dimensions intersect (generically) at a point. 
+$$ \mathbb{R}^2 \cap \mathbb{R}^2 = \{ pt \} \text{ in } \mathbb{R}^4 $$
+Since all we're doing is linear algebra, this still could work over $\mathbb{Q}$ we'd have $\mathbb{Q}^2 \cdot \mathbb{Q}^2 = [pt] \subseteq \mathbb{Q}^4$.  This is the beginnings of intersection theory and a lot of sheafy things could occur.
+
+\vfill
+
+\begin{thebibliography}{}
+
+\item Joe Harris \textbf{Algebraic Geometry: A First Course} (GTM \#133) Springer, 1992.
+
+\item  Gabriel Cram\`{e}r \textbf{Introduction \`{a} l'Analyse des Lignes Courbes Algébriques} \\ \texttt{https://archive.org/details/bub\_{}gb\_{}HzcVAAAAQAAJ}
+
+\item Dan Pedoe.  \textbf{Geometry: A Comprehensive Course} Dover, 1970.
+
+\end{thebibliography}
+
+
+
+\end{document}
