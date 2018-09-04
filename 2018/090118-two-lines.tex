@@ -47,16 +47,62 @@ In a Linear Algebra course - or a Geometry course - one might check that $a,b,c 
 Since the $+$ and $\times$ operations we do aren't too fancy, we can do Linear Algebra over a field such as $K = \mathbb{Q}$ or $K = \mathbb{C}$.   In addition, let's use a tiny bit of Exterior Algebra taken from a Geometry textbook. \\ \\
 \textbf{Thm}
 The points $A$, $B$ and $C$ are collinear if and only if $ A \wedge B + B \wedge C + C \wedge A = 0$. \\ \\
-In our case, the equation has one line \boxed{$Ax + By = C$}\;.  In that case, we can write the Cramer rule in an more condensed way:
+In our case, the equation has one line \boxed{$Ax + By = C$}\;.  We can write the Cramer rule in an more condensed way:
 $$ Ax + By = C \to A \wedge (Ax + By)  = (A \wedge B) y = (A \wedge C) \to y = \frac{A \wedge C}{A \wedge B} $$
 And a similar formula for $x$.  Is it okay to write the coordinate value of $x$ and $y$ as the ratio of two areas.  The geometric objects look kind of funny but OK.
 $$ \text{[number]} = \frac{\text{[area]}}{\text{[area]}} $$
-This is not outrageous.  Pedeo gives a careful derivation of the wedge product of two vectors:
+This is not outrageous.  Pedoe gives a careful derivation of the wedge product of two vectors:
 $$ u \wedge v = (x_1 E_1 + x_2 E_2) \wedge (y_1 E_1 + y_2 E_2) = (x_1 y_2 - x_2 y_1) (E_1 \wedge E_2) $$
 where $E_1, E_2 \in \mathbb{R}^2$ are unit vectors in the plane.  \\ \\
 There are even more intersection formulas like this.  Two planes in Four dimensions intersect (generically) at a point. 
 $$ \mathbb{R}^2 \cap \mathbb{R}^2 = \{ pt \} \text{ in } \mathbb{R}^4 $$
 Since all we're doing is linear algebra, this still could work over $\mathbb{Q}$ we'd have $\mathbb{Q}^2 \cdot \mathbb{Q}^2 = [pt] \subseteq \mathbb{Q}^4$.  This is the beginnings of intersection theory and a lot of sheafy things could occur.
+
+\newpage
+
+\noindent Algebraic geometry could be done over any field $K$, such as $K = \mathbb{Q}(i)$ or possibly $K = \mathbb{Q}(\sqrt{2})$.  Let's check two ways of writing fractions in $\mathbb{Q}(i)$:
+$$ \frac{a_1}{b_1} + \sqrt{-1} \frac{a_2}{b_2} = \frac{c_1 + \sqrt{-1}d_1}{c_2 + \sqrt{-1}d_2} \in \mathbb{Q}(i) $$
+What assures us that the first way of writing rationals it the same as the second one?  There should be ``highly algebraic" way connecting the two.
+$$ (a,b) \mapsto (c,d) $$
+This map is called ``birational" or something.  Clearly they will repreent the same thing, the \textbf{affine plane} or $\mathbb{A}^1$. \\ \\
+If we wanted to change from one notation to the other we ``just" clear denominators.
+$$ \frac{c_1 + \sqrt{-1}d_1}{c_2 + \sqrt{-1}d_2} = 
+\frac{c_1 + \sqrt{-1}d_1}{c_2 + \sqrt{-1}d_2} \cdot \frac{c_2 - \sqrt{-1}d_2}{c_2 - \sqrt{-1}d_2} 
+= \frac{(c_1 c_2 + d_1 d_2) + \sqrt{-1}(c_2 d_1 - c_1 d_2)}{c_2^2 + d_2^2 }$$
+Then we can try looking at less convient systems such as de Moivre's theorem:
+$$  p + \sqrt{-1}q  = \sqrt{p^2 + q^2} \times  \exp \big[i \theta \big] \text{ with } \theta = \tan^{-1} \frac{p}{q}  $$
+When we add two of these numbers, we have not left this domain.
+$$ \hspace{0.5in}
+\sqrt{p_1^2 + q_1^2} \; \text{exp} (i\,\theta_1) +
+\sqrt{p_2^2 + q_2^2} \; \text{exp} (i\,\theta_2) =
+\sqrt{(p_1+p_2)^2 + (q_1+q_2)^2} \, \exp \Big (i \tan^{-1} (\tan \theta_1 + \tan \theta_2) \Big)
+ $$
+ and if we multipy them we get another bunch of trigonometric identities:
+ $$ \sqrt{p_1^2 + q_1^2} \; \text{exp} (i\,\theta_1) \times
+\sqrt{p_2^2 + q_2^2} \; \text{exp} (i\,\theta_2) 
+= \sqrt{(p_1p_2 -q_1q_2)^2 + (p_1q_2 + p_1q_2)^2} \; \text{exp} \big[i\,\big( \theta_1 + \theta_2)\big] $$
+What do we even mean ``put into context"?  Or ``generlized"?  Even this is going to be made very preicse, even mechancial, at the expense that we'll barely know what we're talking about. \\ \\
+\textbf{Ex.} Does playing off the field extenion $\mathbb{Q} \to \mathbb{Q}(i)$ against the operations $+$ and $\times$ have a name? \\ \\
+\textbf{Ex.} How do we ``lift" GCD from $\mathbb{Q}$ to $\mathbb{Q}(i)$?  Can this be made functorial? \\ \\
+\textbf{Ex.} How do these field extensions interact with the geometry of circles?  Here are the change of variables formulas for the differentials:
+\begin{eqnarray}
+dr &=& \frac{x \, dx + y \, dy}{\sqrt{x^2 + y^2}} \\
+d\theta &=& \frac{x \, dy - y \, dx}{x^2 + y^2} \\ 
+(dr)^2 + (r \, d\theta)^2 &\in & \mathcal{O}_{\mathbb{A}^2}(-2) 
+\end{eqnarray}
+This was taken on the Wikipedia article on the Levi-Civita connection and \textbf{parallel transport}. How do we compare information from two different points on the circle or sphere? $D: T_{(x,y)} \to T_{(x,y)}$ ? I need to write down the sheaf to keep track of the algebraic object I am using to imitate the geometry I am doing here.  Real-world data, if only it had this much structure, right? \\ \\
+In  algebraic geometr, we can localize the tangent sheaf at a point to obtain $\mathcal{O}(-2)_{(x,y)}$.  This gives us the place to discuss the information  we are caring about.
+
+\newpage
+
+\noindent \textbf{Example} Even more tensor product identities to ponder (here we work over $\mathbb{Z}$ can we please generalize these to a number field $F$ ? )
+\begin{eqnarray*}
+\mathbb{Z}_a \otimes \mathbb{Z}_b&=& \mathbb{Z}_{\text{gcd}(a,b)} \\ 
+\mathbb{Q}(i) \otimes \mathbb{R} &=& \mathbb{R}^2 \\ 
+\overline{\mathbb{Q}} &=& \mathbb{R} \\ 
+\overline{\mathbb{Q}(\sqrt{2}, \sqrt{3})} &=& \mathbb{R}
+\end{eqnarray*}
+We have $\mathfrak{p}$-adic completitions of various kinds, and tensor prodcts, closures in Zariksi topology.  All of these are known to fit in a large categorical context. It's so tempting to rattle off these definitions as if we know something.
 
 \vfill
 
