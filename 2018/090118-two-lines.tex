@@ -109,8 +109,43 @@ This enable us to write down the wedge product as the alternating sum of two ten
 $$ a \wedge a = 0 \quad\text{and}\quad a \wedge b = - (b \wedge a)$$ 
 Our analogy-making machine may have an interpretation for one side and not the other.  How comfortable are we with an object such as 
 $$ \mathbb{Z}\wedge \mathbb{Z} = \Big\{ \tfrac{1}{2}(a \otimes b - b \otimes a ) : a, b, \in \mathbb{Z}  \Big\} $$
-This could help us describe some of nuance in a GCD computation or something.  In the middle a proof of the Chebyshev Theore or the Prime Number Theorm - when an analogous object no longer seems to exist - will we lose interest in such a neat generalization?
+This could help us describe some of nuance in a GCD computation or something.  In the middle a proof of the Chebyshev Theore or the Prime Number Theorm - when an analogous object no longer seems to exist - will we lose interest in such a neat generalization? \\ \\
+\textbf{Example} Let's work through the fact that $- \otimes \mathbb{R}$ as is an additve right-exact functor, where $R$ is a module.  This might even be worked out in an algebra textbook, such as Hungerford. \\ \\
+E.g. $R = \mathbb{Z}[x]$. All I can get for the moment is that $-\otimes \mathbb{Z}[x]$ is a functor.  Let's try:
+$$ 1 \longrightarrow \mathbb{Z} \oplus \mathbb{Z} \stackrel{ \times\left( \begin{array}{cc} 1 & 2 \\ 2 & 1 \end{array} \right)}{\longrightarrow}  \mathbb{Z} 
+\oplus \mathbb{Z} \longrightarrow
+(\mathbb{Z} \oplus \mathbb{Z}) / \Big( (1,2) \mathbb{Z} \oplus (2,1) \mathbb{Z} \Big) \longrightarrow 1$$
+This could be written more succinctly as complex numbers, if I admit the identification (as $\mathbb{Z}$-modules): $ \mathbb{Z} \oplus \mathbb{Z} \simeq \mathbb{Z}[i] \simeq \mathbb{Z}[x]/(x^2 +1)$.
+$$ 1 \longrightarrow \mathbb{Z}[i]  \stackrel{ \times (2+i)}{\longrightarrow}  \mathbb{Z}[i]  \longrightarrow \mathbb{Z}[i]/\big(2+i\big)\mathbb{Z}[i] \longrightarrow 1$$
+It might be less than obvious there's even more isomorphisms, here between a 2D and 1D object:
+$$ \mathbb{Z}[i]/\big(2+i\big)\mathbb{Z}[i] \simeq \mathbb{Z}/5\mathbb{Z} $$
+I hope this works... I have now three objects in the category of $\mathbb{Z}$-modules, see if you can find them.
+$$ \big( \mathbb{Z}[i]/\big(2+i\big)\mathbb{Z}[i] \big)\otimes \mathbb{Z}[x] \simeq \big(\mathbb{Z}/5\mathbb{Z} \big)\otimes \mathbb{Z}[x] $$
+The isomorphism could be written $\leftrightharpoons$ or something like that.  It has a $\rightarrow$ and a $\leftarrow$.  Does anyone buy this?
 
+\newpage
+
+\noindent Let's revisit Cramer rule with complex numbers.  We are trying to solve a system of equation:
+\begin{eqnarray*}
+a_1 x + b_1 y &=& c_1 \\
+a_2 x + b_2 y &=& c_2
+\end{eqnarray*}
+And so the intersection of these two lines can be found with a \textbf{determinant} of a $2 \times 2$ matrix:
+$$ x = \frac{\left|\begin{array}{cc} c_1 & b_1 \\ c_2 & b_2 \end{array} \right|}{\left|\begin{array}{cc} a_1 & b_1 \\ a_2 & b_2 \end{array} \right|} \quad\text{and}\quad 
+y = \frac{\left|\begin{array}{cc} a_1 & c_1 \\ a_2 & c_2 \end{array} \right|}{\left|\begin{array}{cc} a_1 & b_1 \\ a_2 & b_2 \end{array} \right|} $$
+If $a,b,c \in \mathbb{C}$, we're still in variety-land \dots $\mathbb{A}^1(\mathbb{C})$ is an affine variety.
+$$ x = \frac{C \wedge B}{A \wedge B} = \frac{(C_1 + i C_2)\wedge (B_1 + i B_2)}{(A_1 + i A_2)\wedge (B_1 + i B_2)} 
+= \frac{[(C_1 \wedge B_1) - (C_2 \wedge B_2)] + i [
+(C_1 \wedge B_2)+ (C_2 \wedge B_1)]}{
+[(A_1 \wedge B_1)- (A_2 \wedge B_2)] + i [(A_1 \wedge B_2)+ (A_2 \wedge B_1)]}$$
+This is a complex number and therefore it has a real and imaginary part.
+$$ x = \frac{
+\big[ (C_1 \wedge B_2)+ (C_2 \wedge B_1)\big]\big[(A_1 \wedge B_1)- (A_2 \wedge B_2)\big]
++ 
+\big[(C_1 \wedge B_1) - (C_2 \wedge B_2)\big]\big[(A_1 \wedge B_2)+ (A_2 \wedge B_1)\big]
+}{
+\big[(A_1 \wedge B_1)- (A_2 \wedge B_2)\big]^2 +  \big[(A_1 \wedge B_2)+ (A_2 \wedge B_1)\big]^2} $$
+while this looks impressive, it also indicates a lack of understanding.  First we make a mess, and then we do understanding.
 \vfill
 
 \begin{thebibliography}{}
