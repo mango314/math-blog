@@ -1,0 +1,70 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+% zeta funct{\color{blue}i}ons of cub{\color{blue}i}c f{\color{blue}i}elds
+
+%\usepackage{p{\color{blue}i}font}
+\usepackage{amsmath}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+
+\newcommand{\two }{\sqrt[3]{2}}
+\newcommand{\four}{\sqrt[3]{4}}
+
+
+
+
+
+\usepackage{tikz}
+
+\newcommand{\susy}{{\bf Q}}
+\newcommand{\RV}{{\text{R}_\text{V}}}
+
+\title{Scratchwork: Mean Value Theorem}
+\date{}
+\begin{document}
+
+%\fontfam{\color{blue}i}ly{qag}\selectfont \fonts{\color{blue}i}ze{12.5}{15}\selectfont
+
+\sffamily
+
+\maketitle
+
+\noindent Do we understand the Mean Value Theorem at all? Let's try studying an example with sine. 
+$$ f(b) + f(a) = (b-a)f'(c) \text{ with } b > c > a $$
+This is used when we want to do a linear approxmation, which we usually write as:
+$$ f(x+h) \approx f(x) + f'(x)\times h$$
+Do we know what these operations are $+$ and $\times$?  And can we qualify this symbol $\approx$? And we still haven't set $f(x) = \sin x$.
+$$ \sin (\theta +h) \approx \sin \theta + h \times \cos \theta $$
+and haven't told you that $\sin'\theta = \cos \theta$.  It's just something that we religiously beleive.  These are, for example, the $x$ and $y$ coordinate charts of a circle
+$$ x^2 + y^2 = 1 \text{ let's write } x = \cos \theta \text{ and } y = \sin \theta $$
+as if we've never seen these objects in our lives.\footnote{Later, we might try to replace this with another algebraic curve.  It could even be birational to a circle.  To an algebraic geometer this might be dull.  Here's an example $(x,y) = (\cos 2\theta, \sin 3\theta)$ is an algebraic curve.} \\ \\
+The mean value theorem let's use quantitative versions:
+$$ f'(x) \approx \frac{1}{2h}\big( f(x+h) - f(x-h) \big) + \frac{h^2}{2} \times \max_{[x-h , x+h]} |f''(c)|$$
+Let's look at a table of exact values of sine:
+\begin{itemize}
+\item $ \sin 72^\circ = \sqrt{\frac{1}{8}(5 + \sqrt{5})}$
+\item $ \sin 75^\circ = \frac{\sqrt{2}}{4} \big( \sqrt{3}+1 \big)$ and $ \cos 75^\circ = \frac{\sqrt{2}}{4} (\sqrt{3}-1) $
+\item $ \sin 78^\circ = \frac{1}{8}(\sqrt{30 + 6 \sqrt{5}} + \sqrt{5}-1)$
+\end{itemize}
+These angles are in increments of $3^\circ  = \frac{\pi}{120}$ radians.  And very innocently put in the values:
+\begin{eqnarray*}
+\cos 75^\circ &=& \frac{60}{\pi}\times (\sin 78^\circ - \sin 72^\circ) + (\frac{\pi}{120})^2 \times |\sin(?)| \\ \\
+\frac{\pi}{60} \times \frac{\sqrt{2}}{4} \times (\sqrt{3}-1) &=&   \Big[\frac{1}{8}(\sqrt{30 + 6 \sqrt{5}} + \sqrt{5}-1)\Big]
+- \Big[\sqrt{\frac{1}{8}(5 + \sqrt{5})}\Big]  \pm \frac{1}{4} \times \frac{\pi}{60}
+\end{eqnarray*}
+Not that $|\sin \theta| < 1$. Not quite Ramanujan level, but it's less than obvious.\footnote{There will be times when $|\sin \theta| < 1$ less than sufficient.  See if we can find ways to bootstrap such inequalities?  For the moment\dots}
+\begin{thebibliography}{}
+
+\item \dots
+
+\end{thebibliography}
+
+
+
+\end{document}
