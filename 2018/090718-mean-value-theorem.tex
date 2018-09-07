@@ -56,9 +56,27 @@ These angles are in increments of $3^\circ  = \frac{\pi}{120}$ radians.  And ver
 \begin{eqnarray*}
 \cos 75^\circ &=& \frac{60}{\pi}\times (\sin 78^\circ - \sin 72^\circ) + (\frac{\pi}{120})^2 \times |\sin(?)| \\ \\
 \frac{\pi}{60} \times \frac{\sqrt{2}}{4} \times (\sqrt{3}-1) &=&   \Big[\frac{1}{8}(\sqrt{30 + 6 \sqrt{5}} + \sqrt{5}-1)\Big]
-- \Big[\sqrt{\frac{1}{8}(5 + \sqrt{5})}\Big]  \pm \frac{1}{4} \times \frac{\pi}{60}
+- \Big[\sqrt{\frac{1}{8}(5 + \sqrt{5})}\Big]  \pm \frac{1}{2} \times (\frac{\pi}{120})^3
 \end{eqnarray*}
 Not that $|\sin \theta| < 1$. Not quite Ramanujan level, but it's less than obvious.\footnote{There will be times when $|\sin \theta| < 1$ less than sufficient.  See if we can find ways to bootstrap such inequalities?  For the moment\dots}
+
+\newpage
+
+\noindent Here's a stencil for the second derivative.  Matching stencil's to their estimates goes back to a time when we didn't have calculators at our disposal.
+$$ f''(x) \times 2h \approx f(x+h) - 2f(x) + f(x-h) $$
+And our previous values of $\sin$ have already been computed:
+$$ 3^\circ \times (-\sin 75^\circ) \approx 
+\sin 72^\circ - 2 \sin 75^\circ + \sin 78^\circ $$
+and we have exact algebraic values for all three angles by some miracle.
+$$ \frac{\pi}{120} \times (-\frac{\sqrt{2}}{4} \sqrt{3}+ 1)= \sqrt{\frac{1}{8}(5 + \sqrt{5}} - 2 \times (\frac{\sqrt{2}}{4}\sqrt{3}+1) + \frac{1}{8}(\sqrt{30 + 6 \sqrt{5}} + \sqrt{5}-1) \pm \frac{1}{6} \left(\frac{\pi}{120}\right)^3 $$
+and we can do some rearranging.  These are mysterious classical identities one might have studied in the 1700's.
+$$ \hspace{0.555in} \left( 2 - \frac{\pi}{120}\right) \times \left( \frac{\sqrt{2}}{4} \sqrt{3} + 1 \right) = 
+\sqrt{\frac{1}{8} \left( 5 + \sqrt{5} \right)} + \frac{1}{8} \left( \sqrt{30 + 6 \sqrt{5}} + \sqrt{5}-1 \right)\pm \frac{1}{6} \left(\frac{\pi}{120}\right)^3   $$
+How do we \textbf{check} such a computation?  A computer uses a \texttt{float} data type which some kind of $\mathbb{R}$-like object build on the shift map $T: x \mapsto 10 \, x$.  And the edge cases can be handled by various types of rounding, such as $\displaystyle \{ x \} = \min_{n \in \mathbb{Z}}|x - n|$.  In order to punch these things to a calculator we'd replace $\sqrt{2}$ by $\sqrt{2} \pm 10^{-8}$ or an even more precise error. \\ \\
+These \textit{may} be adequate for our job. There might even be very simple algebraically distinct expressions that agree to this decimal error.  Enough to fool our calculators. \\ \\
+\textbf{Ex.} Do we know how to compute this floor function $\lfloor 10^4 (\sqrt{2} + \sqrt{3})\rfloor$ ?
+
+\vfill
 \begin{thebibliography}{}
 
 \item \dots
