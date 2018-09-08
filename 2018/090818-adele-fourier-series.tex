@@ -1,0 +1,71 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+
+\title{Scratchwork: Fourier Series on $\mathbb{A}$}
+\date{}
+\begin{document}
+
+%\fontfam{\color{blue}i}ly{qag}\selectfont \fonts{\color{blue}i}ze{12.5}{15}\selectfont
+
+\sffamily
+
+\maketitle
+
+\noindent Let's try to come to terms with fourier series on $\mathbb{Q}$ and Fourier series on $\mathbb{A}$.  Fourier Analylsis textbooks quite thoroughly discuss Fourier series over the circle $S^1$ or over the real line $\mathbb{R}$.  They might even discuss Discrete Fourier Analysis on $\mathbb{Z}/p\mathbb{Z}$ and the Fast Fourier Transform.\\ \\
+When we invoke a Fourier analysis theorem - in context - it's likely to reduce to properties of $\mathbb{R}$ (or another set of numbers) as an ordered set and the interval arithmetic that we are using.   E.g. when we say a $\widehat{f}(\xi)$ is continuous in $\xi$. \\ \\
+Some people might consider it trivial that Pythagorean triples can be indexed by two numbers:
+$$ a^2 + b^2 = c^2 \text{ then } a = m^2 - n^2, b = 2mn, c = m^2 + n^2 $$
+This looks OK. It reduces to a single algebraic identity that works in just about any ring $m, n \in R$ 
+$$ (m^2 - n^2)^2 + (2mn)^2 = (m^2 + n^2)^2 $$
+This means we have a paramterization of rational points on the circle related to Pythagoras:
+$$ x^2 + y^2 = 1 \text{ then } (x,y) = (\frac{a}{c}, \frac{b}{c}) \text{ with }a^2 +b^2 = c $$
+This is even an affine variety over $\mathbb{Q}$ (possibly we already need to say ``scheme").  We could define the sheaf of regular functions:
+$$ \mathcal{O}_X \text{ for } X(\mathbb{Q}) \text{ where } X = \{ x^2 + y^2 - 1 = 0 \}$$
+These are but highly formal restatements of what we had done in high school.  To all it a variety or scheme is to invoke something like the Nullstellensatz:
+$$ p(x) = 0 \text{ on }\{ x^2 + y^2 - 1 = 0 \} \to p(x) \in \mathbb{Q}[x,y](x^2 + y^2 - 1) $$
+These might not even be true as stated.  \\ \\
+Fourier Analysis on the Adeles is then no small feat.  Can we write down test functions to take the Fourier analysis.  What is $C^\infty$ or ``smooth" mean in this setting?
+\begin{itemize}
+\item $(x,y) = (a/c,b/c) \mapsto a^4 + b^4 + c^4$
+\item $(x,y) = (a/c,b/c) \mapsto \sigma(a) + \sigma(b) - \sigma(c)$ where $\sigma(n) = \sum_{m|n} 1$ is the divisor function.
+\end{itemize}
+These funcitons would be very badly chatotic (e.g. \textit{nowhere} continuous) on our circle $X(\mathbb{Q})$, so how can we grapple with this? \\ \\
+It seems that Fourier Analysis over $\mathbb{A}$ can be no less informative then that over the real number line $\mathbb{R}$ or the circle $S^1$ and yet we don't do as much in this setting.  It suggests something should drastically simplify here?
+
+\newpage
+
+\noindent To get us started, let's notice that $\mathbb{R}$ is finitely generated $S^1$ is finitely generated (just rotations and shifts).  Also $\mathbb{Z}$ is finintely generated. Yet $\mathbb{Q}$ is \textit{not} finitely generated and neither is $SO(2, \mathbb{Q})$. 
+$$ SO(2, \mathbb{Q}) \simeq \big(\mathbb{Z}/2\mathbb{Z}\big)\times \prod_{p = 4k+1} \big(\mathbb{Z}/p\mathbb{Z}\big) $$
+showing that there are infinitely many $p = 4k+1$ primes is from a non-trivial theorem of Dirichet. \\ \
+And we're in good position to try some actual Fourier Analysis.
+
+\vfill
+\begin{thebibliography}{}
+
+\item Anton Dietmar\textbf{Automorphic Forms} (Universitext)  Springer, 2012.
+
+\item Joe Harris \\ 
+\textbf{Algebraic Geometry} \hspace{0.52in}(GTM \#133)  Springer, 1992. \\
+\textbf{The Geometry of Schemes} (GTM \#197) Springer, 2000.
+
+\item Elias Stein \textbf{Fourier Series} (Princeton Lectures in Analysis \#1) Princeton University Press, 2003.
+
+\item Ernest J. Eckert \textbf{The Group of Primitive Pythagorean Triangles} Mathematics Magazine, Vol. 57, \#1  \\
+Lin Tan \textbf{The Group of Rational Points on the Unit Circle}  Mathematics Magazine Vol. 69, \#3  
+
+
+\end{thebibliography}
+
+
+
+\end{document}
