@@ -46,8 +46,16 @@ It seems that Fourier Analysis over $\mathbb{A}$ can be no less informative then
 
 \noindent To get us started, let's notice that $\mathbb{R}$ is finitely generated $S^1$ is finitely generated (just rotations and shifts).  Also $\mathbb{Z}$ is finintely generated. Yet $\mathbb{Q}$ is \textit{not} finitely generated and neither is $SO(2, \mathbb{Q})$. 
 $$ SO(2, \mathbb{Q}) \simeq \big(\mathbb{Z}/2\mathbb{Z}\big)\times \prod_{p = 4k+1} \big(\mathbb{Z}/p\mathbb{Z}\big) $$
-showing that there are infinitely many $p = 4k+1$ primes is from a non-trivial theorem of Dirichet. \\ \
-And we're in good position to try some actual Fourier Analysis.
+showing that there are infinitely many $p = 4k+1$ primes is from a non-trivial theorem of Dirichet.\\ 
+$$  \zeta_{\mathbb{Z}[i]}(s) = \left( \frac{1}{1 - \frac{1}{2^s}}\right)
+\times \left( \prod_{p = 4k+1} \frac{1}{1 - \frac{1}{p^s}}\right)^2
+\times \left( \prod_{p = 4k+3} \frac{1}{1 - \frac{1}{p^{2s}}}\right)$$
+And we're in good position to try some actual Fourier Analysis. \\ \\
+\textbf{Exercise} What are the odds of two numbers $a = a_1 + i a_2$ and $b = b_1 + i b_2$ to be relatively prime, i.e. $\text{gcd}(a,b) = 1$.  We could try running through the Euclidean algorithm over many pairs of complex numbers. \\ \\
+\textbf{Example} By Ostrowski Theorem (or unique factorization) we have the product of the $p$-adic valuations is equal to $1$:
+$$ x^2 + y^2 = 1 \to (x,y) = (a/c,b/c) \text{ with } a^2 + b^2 = c^2 \to \prod_p |a^4 + b^4 + c^4 |_p = 1 $$
+where we could let $p$ run over the primes in $\mathbb{Q} \cup \infty$ or even the primes in $\mathbb{Q}(i) \cup \infty$.  In $\mathbb{Q}(\sqrt{2})$ there are two infinite places since we could have:
+$$ |a + b \sqrt{2}|_1 = a + b \sqrt{2} \text{ or } |a + b \sqrt{2}|_1 = a - b \sqrt{2}$$
 
 \vfill
 \begin{thebibliography}{}
