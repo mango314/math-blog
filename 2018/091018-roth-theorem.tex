@@ -1,0 +1,69 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+
+\title{Scratchwork: Proof of Roth's Theorem}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+\noindent Let's review two different statement's of Roth's Theorem. \\ \\
+\#\textbf{1} Suppose that $A \subset \{ 1, 2, \dots, N \} $ contains no non-trivial three-term arithmetic progressions then 
+$$ |A| = O \left( \frac{N (\log \log N)^5}{\log N} \right)  $$\\ \\
+\#\textbf{2} Let $A$ be a subset of the integers $\mathbb{Z}$ whose upper density 
+$$ \overline{\delta}(A) := \limsup_{N \to \infty} \frac{|A \cap [-N,N]|}{2N+1} $$ 
+is positive.  Then $A$ contains infinitely many arithmetic progressions $a, a+r, a+2r$ of length
+three with $a \in \mathbb{Z}$ and $r > 0$.\\ \\
+This theorem seems to be an example -- a vehicle -- for discussing Fourier analysis with it's advantages and limitations.    The starting point in all three arguments is usually to take three observables $f,g,h$ and to compute an average of some kind:
+$$ \mathbb{E} \big[f(a)g(a+r)h(a+2r)\big] = \sum_{\alpha \in \mathbb{Z}/N\mathbb{Z}}\widehat{f}(\alpha) \,\widehat{g}(-2\alpha)\,\widehat{h}(\alpha) $$
+The Fourier estimates that are done, are surprising but tend to be complete within a few pages.  \\ \\
+The statements are totally different.  One is quantitative and the other is fairly soft. One difficulty in using this theorem is that these sequences of numbers could be literally anything, as long as something is recurrent.  Obtaining a number sequence that was \textit{relevant} to a problem at hand is a challenge.\footnote{Since most of number theory is not stated in this way.  So it's not clear if this is just a nice market or if this is something we can always do.} \\ \\
+The 4AP version of this requires \textbf{Ergodic Theory} or \textbf{Quadratic Fourier Analysis}. \\ \\
+It seems like an overstatement to say that Fourier Analysis is equivalent to counting three-term arithmetic sequences in a data set.  And I lacked the imagination to find sequences $A \subseteq \mathbb{Z}$ that really test these theorems.  Is Algebra just a game of semantics?  The construct of $\mathbb{Z}$ is an ideal or an average of the different types of modelling that goes on in Engineering or Science or Political Theory or Music. \\ \\
+The existence of these papers is convincing enough to me that somebody check this theory is consistent.  I'm at least trying to use Higher Order Fourier Analysis to solve other problems in Number Theory. \\ \\
+\textbf{Example} The Prime Number Theorem could be stated as a sum of the van Mangoldt function
+$$ \sum_{n \leq x} \Lambda (n) =  x \big(1 + o(1)\big) $$
+The object on the left is a step-function of some kind and proofs of this theorem use the Riemann-Stieltjes integral and Mellin Transforms.  Can we experiment with different consequences of this linearity?
+$$ \sum_{x_0 \leq m \leq x_1} \sum_{y_0 \leq n \leq y_1} \Lambda(m)\Lambda (n) =  (x_1 - x_0)(y_1 - y_0) \big(1 + o(1)\big) $$
+Here I have taken the cartesian product of the range of the primes and obtained something bi-linear.
+$$ \big(1 + o(1)\big)^2 = 1 + o(1) $$
+Looks a tiny bit like scheme theory.  Since the primes are evenly spaced, can we shift the primes in one interval to another?
+$$ \sum_{m \leq x} \Big[ \Lambda(m+a) - \Lambda(m+b) \Big] = \sum_{a < m < a + x}\Lambda(m) - \sum_{b < m < b + x}\Lambda(m) = x \big( 1 + o(1) \big) - x \big( 1 + o(1) \big) = o(x)$$
+The counting measure on one interval was linear and the counting measure on the other interval was a negative line, so the total measure on this space should be close to zero everywhere. \\ \\
+\textbf{Example} Another statement that uses the prime number theorem is to say the Farey Fractions $\mathfrak{F}_N = \{ 0 < \frac{a}{c} < 1 : \text{gcd}(a,c) = 1 \} \subseteq [0,1]$ are \underline{uniformly} dense in the number line.\footnote{Martin Huxley \textbf{On the Distribution of Farey Points I} Acta Arithmetica Vol. 18 \# 1 281-287. \texttt{https://eudml.org/doc/204990} } Could the arguments from Roth's Theorem be used to solve a problem like this? \\ \\
+There is also $\overline{\{ \frac{p}{q}: p < q \}} = [0,1]$ that fractions made of primes are (only) dense in $[0,1]$. And for Gaussian primes in $\mathbb{Z}[i]$. \\ \\
+This is time for a small dose of algebraic geometry that we're dealing with the affine line $\mathbb{A}$ over over $\mathbb{Q}$ or $\mathbb{Q}(i)$ and the density of points there.  And the theory of \textbf{height functions}.  E.g. $ht(\frac{3}{5}) = max(|3|,|5|) = 5$.
+\vfill
+\begin{thebibliography}{}
+
+\item Tom Sanders \textbf{On Roth's theorem on progressions} \texttt{arXiv:1011.0104} \\
+Annals of Mathematics (2) 174 (2011), no. 1, 619-636
+
+\item Ernie Croot, Olof Sisask. \textbf{A probabilistic technique for finding almost-periods of convolutions} \texttt{arXiv:1003.2978} Geometry and Functional Analysis 20 (2010), 1367-1396.
+
+\item Ben Green 
+\textbf{Approximate groups and their applications} \texttt{arXiv:0911.3354} 
+\item WT Gowers \textbf{Generalizations of Fourier analysis, and how to apply them} \\
+\texttt{arXiv:1608.04127} Bulletin of the American Mathematical Society, Vol 54 \#1 (2017) 1-44.
+\item Terence Tao \textbf{Higher Order Fourier Analysis} (Graduate Studies in Fourier Analysis \#142) \\
+\texttt{https://terrytao.files.wordpress.com/2011/03/higher-book.pdf} \\
+\item Andrea D'Agnolo, Masaki Kashiwara \textbf{A microlocal approach to the enhanced Fourier-Sato transform in dimension one} \texttt{arXiv:1709.03579
+}
+
+\end{thebibliography}
+
+
+
+\end{document}
