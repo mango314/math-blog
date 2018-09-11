@@ -64,6 +64,24 @@ Annals of Mathematics (2) 174 (2011), no. 1, 619-636
 
 \end{thebibliography}
 
+\newpage
 
+\noindent \textbf{9/11} The idea of doing ``Fourier Analysis" on sets other than lattices is credited to Jean Bourgain around the year 2000. We start to work on the next best thing: a \textit{Bohr set}.  Let $G$ be a finite Abelian group, and $\Gamma \subseteq \widehat{G}$ be a set of frequencies (which are elements of the dual group).  $\delta \in [0,2]$.
+$$ B = \{ x \in G : | 1 - \gamma(x) | \leq \delta_\gamma \text{ for all } \gamma \in \Gamma \}  $$
+Sanders expects some maturity on part of is readers.  Let's try $G = \mathbb{Z}/p\mathbb{Z}$ and therefore also $\widehat{G} \simeq \mathbb{Z}/p\mathbb{Z} $.  Try $\delta \in \frac{1}{2}$ and $\Gamma = \{ n_1, n_2 \}$ for two numbers $0 \leq m,n < p$. 
+$$ B = \Big\{ x \in \mathbb{Z}/p\mathbb{Z} : \big| 1 - e^{ \frac{2\pi im}{ p} x } \big| \leq  \frac{1}{2}  \Big\} \cap \Big\{ x \in \mathbb{Z}/p\mathbb{Z} : \big| 1 - e^{ \frac{2\pi in}{ p} x } \big| \leq  \frac{1}{2}  \Big\}  $$
+In fact we could also have $G = \mathbb{Z}/p\mathbb{Z} \times \mathbb{Z}/q\mathbb{Z}$ and the dual group $\widehat{G}$ is the same group.  The \textbf{rank} is the size of $\Gamma$  and here the rank is $k = |\Gamma| = |\{ n_1, n_2\}| = 2$.  Sanders defines a dimension of a Bohr set:
+$$ \mu_G( B_{2\rho}) \leq 2^d \mu_G(B_\rho) \text{ for all } \rho \in (0,1] $$
+so we'd like to know how the ``measure" of the set $B_\rho$ grows with the size of the dots in the points around $B_1$.  This looks like a moot point if we set $\mu_G$ to be the counting measure.  In fact, Sanders says let $\mu_G $ is the Haar probability measre on $G$.   \\ \\
+Is ther a cases of Borh sets where the rank is different than its dimension?
+\vfill
+\begin{thebibliography}{}
+
+\item Tom Sanders \textbf{On Roth's theorem on progressions} \texttt{arXiv:1011.0104} \\
+Annals of Mathematics (2) 174 (2011), no. 1, 619-636
+
+\item Ernie Croot, Olof Sisask. \textbf{A probabilistic technique for finding almost-periods of convolutions} \texttt{arXiv:1003.2978} Geometry and Functional Analysis 20 (2010), 1367-1396.
+
+\end{thebibliography}
 
 \end{document}
