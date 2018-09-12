@@ -73,7 +73,18 @@ $$ B = \Big\{ x \in \mathbb{Z}/p\mathbb{Z} : \big| 1 - e^{ \frac{2\pi im}{ p} x 
 In fact we could also have $G = \mathbb{Z}/p\mathbb{Z} \times \mathbb{Z}/q\mathbb{Z}$ and the dual group $\widehat{G}$ is the same group.  The \textbf{rank} is the size of $\Gamma$  and here the rank is $k = |\Gamma| = |\{ n_1, n_2\}| = 2$.  Sanders defines a dimension of a Bohr set:
 $$ \mu_G( B_{2\rho}) \leq 2^d \mu_G(B_\rho) \text{ for all } \rho \in (0,1] $$
 so we'd like to know how the ``measure" of the set $B_\rho$ grows with the size of the dots in the points around $B_1$.  This looks like a moot point if we set $\mu_G$ to be the counting measure.  In fact, Sanders says let $\mu_G $ is the Haar probability measre on $G$.   \\ \\
-Is ther a cases of Borh sets where the rank is different than its dimension?
+Is there a case of a Bohr sets where the rank is different than its dimension? \\ \\
+Do we need to read to carefully if $G$ is a finite Abelian group?  In that case, $L^1(G) \simeq L^2(G)$.  They are these same finite dimensional vector space, but we have different norms $||v||_1 \asymp ||v||_2$ for any $v \in L^1(G)$. \\ \\
+I'll skip his definition of regularity for the moment.  Maybe we can parrot the definitions of spectrum and relative entropy.    Let $\mu$ be a probablity measure on $G$ (not just Haar measure) and $\epsilon \in (0,1]$.  The spectrum of $f$ with respect to $\mu$ is
+$$ \text{Spec}_\epsilon (f, \mu) := \big\{ \gamma \in \widehat{G}: |(f\, d\mu)^\wedge(\gamma)| \geq \epsilon || f||_{L^1(\mu)}  \big\} $$ 
+Here is a definition of entropy that's different than Shannon entropy.  Here it is the size of the largest subset (of frequencies) $\Lambda \subset \Gamma$
+$$ \int \prod_{\lambda \in \Lambda} \big( 1 + \text{Re}\omega(\lambda) \lambda \big) \, d\mu \leq \exp{K} \text{ for all } \omega: \Lambda \to \mathbb{D}$$ 
+Sanders continues with some gestures with how rank and entropy are related to Bohr sets.  It is written in an extremely dense way that could take some time to unpack. \\ \\
+\textbf{Thm} If $f \neq 0$ and $f \in L^1(\mu)$ then $\text{Spec}_\epsilon(f, \mu)$ has $(1, \mu)$ has relative entropy $O(\epsilon^{-2} \log 2 ||f||_{L^2(\mu)} ||f||_{L^1(\mu)}^{-1} $. \\ \\
+How do we feel about an expression like that?
+$$ \frac{1}{\epsilon^2} \Big[\log \sqrt{a^2 + b^2 } - \log(|a| + |b|) \Big] $$
+Just to define numbers this way is saying that Bohr sets could have very complicated spectra, unusual fractal properties and irregular counts of 3-AP's. \\ \\
+\textbf{Example} Using alternative definition $\{ \lfloor n \sqrt{2} \rfloor : n \in \mathbb{Z}  \} = 1, 2, 4, 5, 7, 8, 9, 11, 12, 14\dots$ is a Bohr set of $\mathbb{Z}$.
 \vfill
 \begin{thebibliography}{}
 
