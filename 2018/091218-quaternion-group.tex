@@ -1,0 +1,143 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+\newcommand{\one}{\mathbf{1}}
+\newcommand{\ii}{\mathbf{i}}
+\newcommand{\jj}{\mathbf{j}}
+\newcommand{\kk}{\mathbf{k}}
+
+\title{Scratchwork: Symmetric Polynomials}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+\noindent The quaternions are a number system defined by three rules of multiplication.  They generalize complex numbers:
+$$ \one \times \one = \one \text{ and } \ii \times \jj = \kk \text{ and } \ii \times \ii = -\one $$
+These multiplications can we completed to form a group of order $8$.
+$$
+\begin{array}{r||rr|rr||rr|rr}
+ \times & \one & \ii & \jj & \kk & -\one & -\ii & -\jj & -\kk \\ \hline
+\one  & \one & \ii & \jj & \kk & -\one & -\ii & -\jj & -\kk \\
+\ii & \ii & -\one & \kk & -\jj & -\ii & \one & -\kk & \jj \\ \hline 
+\jj & \jj & - \kk & -\one & \ii & - \jj & \kk & \one & -\ii  \\
+\kk & \kk & -\jj & -\ii & \one & -\kk & \jj & \ii & -\one \\ \hline \hline
+-\one & -\one & -\ii & -\jj & -\kk & \one & \ii & \jj & \kk\\
+-\ii & -\ii & \one & -\kk & \jj & \ii & -\one & -\kk & -\jj\\ \hline
+-\jj & -\jj &  \kk & \one & -\ii &  \jj & -\kk & -\one & \ii  \\
+-\kk & -\kk & \jj & \ii & -\one & \kk & -\jj & -\ii & \one
+\end{array}
+ $$
+It looks like there are eight things being multiplied, so we made an $8 \times 8$ table.  There are eight things being permuted in 8 possible ways:
+$$ \{ \one , \ii , \jj, \kk, -\one, -\ii, -\jj, -\kk \} $$
+It may even be possible to whittle this down to four - with the inclusion of a minus sign $(-\one)$.  
+\begin{eqnarray*}
+-\one \times \one &=& -\one \\
+-\one \times \ii  &=& -\ii \\
+-\one \times \jj  &=& -\jj \\
+-\one \times \kk  &=& -\kk
+\end{eqnarray*}
+Cayley's Theorem says every group can be placed into a permutation group.  We could call the elements of this group $\{1, 2, \dots, 8\}$. 
+$$
+\one \mapsto \left[\begin{array}{cccccccc} 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
+ 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8  \end{array} \right]
+ $$
+ and now we replace with different rows of the multiplication table:
+ 
+\begin{eqnarray*}
+\ii &\mapsto& \left[\begin{array}{cccccccc} 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
+ 2 & 5 & 4 & 7 & 6 & 1 & 8 & 3  \end{array} \right] \\ \\
+\jj &\mapsto& \left[\begin{array}{cccccccc} 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
+3 & 8 & 5 & 2 & 7 & 4 & 1 & 6 \end{array} \right] \\ \\
+\kk &\mapsto& \left[\begin{array}{cccccccc} 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
+4 & 7 & 6 & 1 & 8 & 3 & 2 & 5 \end{array} \right] 
+\end{eqnarray*}
+The rule for $(-\one)$ looks a little bit complicated.  For the time being switch the first and second half.
+$$
+\one \mapsto \left[\begin{array}{cccccccc} 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
+5 & 6 & 7 & 8 & 1 & 2 & 3 & 4   \end{array} \right]
+ $$ 
+\newpage 
+\noindent There's even other ways of representing the quaternion group.  Here's the more usual $2 \times 2$ matrices (in case you're scared of Quaternion objects).
+$$
+\one \mapsto \left[ \begin{array}{cc} 1 & 0 \\ 0 & 1 \end{array} \right] \;
+\ii \mapsto \left[ \begin{array}{cc} i & 0 \\ 0 & i \end{array} \right]  \;
+\jj \mapsto \left[ \begin{array}{rr} 0 & 1 \\ -1 & 0 \end{array} \right]  \;
+\kk \mapsto \left[ \begin{array}{rr} 0 & i \\ i & 0 \end{array} \right] $$
+It could even be instructive to write out the full $8 \times 8$ matrices:
+$$  \one \to \left[ \begin{array}{cccccccc} 
+1 & \cdot & \cdot  & \cdot  & \cdot  & \cdot  & \cdot  & \cdot  \\
+\cdot & 1 & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot \\
+\cdot & \cdot & 1 & \cdot & \cdot & \cdot & \cdot & \cdot \\
+\cdot &\cdot & \cdot & 1 \cdot & \cdot & \cdot & \cdot & \cdot \\
+\cdot & \cdot & \cdot & \cdot & 1 & \cdot & \cdot & \cdot \\
+\cdot & \cdot & \cdot & \cdot & \cdot & 1 & \cdot & \cdot  \\
+\cdot & \cdot &  \cdot & \cdot & \cdot & \cdot &  1 & \cdot \\
+\cdot & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot &  1 \end{array} \right]$$
+That one was not too informative let's try the other three.   
+$$\ii \to \left[ \begin{array}{cccc|cccc}
+\cdot & 1 & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot \\
+\cdot & \cdot & \cdot & \cdot & 1 & \cdot & \cdot & \cdot \\
+\cdot & \cdot & \cdot & 1 & \cdot & \cdot & \cdot & \cdot \\
+\cdot & \cdot & \cdot & \cdot & \cdot & \cdot & 1 & \cdot \\ \hline 
+\cdot & \cdot & \cdot & \cdot & \cdot & 1 & \cdot & \cdot \\
+1 & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot \\
+\cdot & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot & 1 \\
+\cdot & \cdot & 1 & \cdot & \cdot & \cdot & \cdot & \cdot  \end{array}\right] \text{ and } \jj \to 
+\left[ \begin{array}{cccc|cccc}
+\cdot & \cdot & 1 & \cdot & \cdot & \cdot & \cdot & \cdot \\
+\cdot & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot & 1 \\
+\cdot & \cdot & \cdot & \cdot & 1 & \cdot & \cdot & \cdot \\
+\cdot & 1 & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot \\ \hline 
+\cdot & \cdot & \cdot & \cdot & \cdot & \cdot & 1 & \cdot \\
+\cdot & \cdot & \cdot & 1 & \cdot & \cdot & \cdot & \cdot \\
+1 & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot \\
+\cdot & \cdot & \cdot & \cdot & \cdot & 1 & \cdot & \cdot  \end{array}\right]
+\text{ and }
+\kk \to 
+\left[ \begin{array}{cccc|cccc}
+\cdot & \cdot & \cdot & 1 &  \cdot & \cdot & \cdot & \cdot \\
+\cdot & \cdot & \cdot & \cdot & \cdot & \cdot &  1 & \cdot \\
+\cdot & \cdot & \cdot & \cdot & \cdot & 1  & \cdot & \cdot \\
+ 1 & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot \\ \hline 
+\cdot & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot & 1  \\
+\cdot & \cdot & 1 & \cdot & \cdot & \cdot & \cdot & \cdot \\
+\cdot & 1 & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot \\
+\cdot & \cdot & \cdot & \cdot & 1 & \cdot & \cdot & \cdot  \end{array}\right]
+$$
+Do we lose any information by writing them as  $4 \times 4$ matrices?
+$$\one \to \left[ \begin{array}{cccc} 1 & \cdot & \cdot & \cdot \\ 
+\cdot & 1 & \cdot  & \cdot \\ 
+\cdot & \cdot & 1 & \cdot \\
+\cdot & \cdot & \cdot & 1  \end{array} \right] \text{and}\; -\one \to \left[ \begin{array}{cccc} -1 & \cdot & \cdot & \cdot \\ 
+\cdot & -1 & \cdot  & \cdot \\ 
+\cdot & \cdot & -1 & \cdot \\
+\cdot & \cdot & \cdot & -1  \end{array} \right] \text{and}\;
+\ii \to \left[
+\begin{array}{cccc} \cdot & 1 & \cdot & \cdot \\ 
+-1 & \cdot & \cdot & \cdot \\ 
+\cdot & \cdot & \cdot & 1 \\
+\cdot & \cdot & -1 & \cdot \end{array} \right] \text{and}\;
+\jj \to \left[ \begin{array}{cccc} \cdot & \cdot & 1 & \cdot \\
+\cdot & \cdot & \cdot & -1 \\ 
+-1 & \cdot & \cdot & \cdot  \\ 
+\cdot & 1 & \cdot & \cdot \end{array}\right] $$
+So we've now found three different representations of the quaternion algbra as matrices of various sizes $2 \times 2$ and $4 \times 4$ and $8 \times 8$.  It seems like we can keep going\dots 
+\begin{thebibliography}{}
+
+\item \dots
+
+\end{thebibliography}
+
+\end{document}
