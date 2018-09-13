@@ -15,7 +15,7 @@
 \newcommand{\jj}{\mathbf{j}}
 \newcommand{\kk}{\mathbf{k}}
 
-\title{Scratchwork: Symmetric Polynomials}
+\title{Scratchwork: Induced Representations}
 \date{}
 \begin{document}
 
@@ -134,9 +134,85 @@ $$\one \to \left[ \begin{array}{cccc} 1 & \cdot & \cdot & \cdot \\
 -1 & \cdot & \cdot & \cdot  \\ 
 \cdot & 1 & \cdot & \cdot \end{array}\right] $$
 So we've now found three different representations of the quaternion algbra as matrices of various sizes $2 \times 2$ and $4 \times 4$ and $8 \times 8$.  It seems like we can keep going\dots 
+
+\vfill 
+
+
+
+
+\vfill
+
 \begin{thebibliography}{}
 
 \item \dots
+
+\item Sir William Rowan Hamilton \\ 
+\textbf{Elements of quaternions} \texttt{https://archive.org/details/elementsofquater00hamirich} \\
+\textbf{Lectures on quaternions} \texttt{https://archive.org/details/lecturesonquater00hami}
+
+\end{thebibliography}
+
+\newpage
+
+\noindent \textbf{9/13} At this moment, we're going to invoke the machinery of Group Representations.  We know for a fact there are $\mathbf{4}$ irreducible one-dimensional group representations.  
+\begin{eqnarray*}
+\one & \stackrel{\phi}{\mapsto} & 1 \in \mathbb{C} \\
+\ii  & \mapsto & \pm 1 \text{ or } \pm i \in \mathbb{C}\\
+\jj  & \mapsto & \pm 1 \text{ or } \pm i \in \mathbb{C}\\
+\kk  & \mapsto & \phi(\ii) \times \phi(\kk)
+\end{eqnarray*}
+and one more representation as $2 \times 2$ matrices, which are defined over $\mathbb{C}$ as well.
+$$ 
+\one \mapsto \left[ \begin{array}{cc} 1 & 0 \\ 0 & 1 \end{array} \right] \;
+\ii \mapsto \left[ \begin{array}{cc} i & 0 \\ 0 & i \end{array} \right]  \;
+\jj \mapsto \left[ \begin{array}{rr} 0 & 1 \\ -1 & 0 \end{array} \right]  \;
+\kk \mapsto \left[ \begin{array}{rr} 0 & i \\ -i & 0 \end{array} \right] $$ 
+and then we are told, in a sense, we have all the group representations we will ever need. 
+$$ |Q_8| = 8 = 2 \times 2 + 4 \cdot (1 \times 1) = \dim (2 \times 2) + 4 \cdot \dim (1 \times 1) $$
+Here's what Wikipedia has to say about Schur's Lemma:
+\begin{quotation}
+\noindent In mathematics, Schur's lemma is an elementary but extremely useful statement in representation theory of groups and algebras. In the group case it says that if $M$ and $N$ are two finite-dimensional irreducible representations of a group $G$ and $\phi$ is a linear transformation from $M$ to $N$ that commutes with the action of the group, then either $\phi$ is invertible, or $\phi = 0$. An important special case occurs when $M = N$ and $\phi$ is a self-map.
+\end{quotation}
+To call Schur's lemma ``elementary" is to risk missing an opportunity, I think.  Nope I don't believe it for second. \\ \\
+How can I cast doubt?  Here's a brand new representation I just made up, using polynomials.  Any $2 \times 2$ matrix becomes a map linear map
+$$ 
+ \left[ \begin{array}{cc} a & b \\ c & d \end{array} \right] : (x,y) \mapsto (ax+by, cx+dy)  $$ 
+This can be done to polynomials as well.  Let's only allow quadratic terms $x^2, xy, y^2$.  Then:
+\begin{eqnarray*}
+x^2 &\mapsto& (ax+by)^2 \\
+xy  &\mapsto& (ax+by)(cx+dy) \\
+y^2 &\mapsto& (cx+dy)^2
+\end{eqnarray*}
+This linear map preserves the vector space of polynomials $\mathbb{C}[x^2, xy, y^2]$.  So we have a three-dimensional representation of the quaternions.
+\begin{eqnarray*} \ii &\mapsto& 
+\left[\begin{array}{ccc}
+x^2 &\mapsto& -x^2 \\
+xy  &\mapsto& -xy \\
+y^2 &\mapsto& -y^2
+\end{array}\right] = \left[ \begin{array}{rrr} -1 & 0 & 0 \\ 0 & -1 & 0 \\ 0 & 0 & -1\end{array}\right] \\ \\
+\jj &\mapsto& 
+\left[\begin{array}{ccc}
+x^2 &\mapsto& y^2 \\
+xy  &\mapsto& xy \\
+y^2 &\mapsto& x^2
+\end{array}\right] \;\;\; = \left[ \begin{array}{rrr} 0 & 0 & 1 \\ 0 & 1 & 0 \\ 1 & 0 & 0\end{array}\right] \\ \\
+\kk &\mapsto& 
+\left[\begin{array}{ccc}
+x^2 &\mapsto& y^2 \\
+xy  &\mapsto& xy \\
+y^2 &\mapsto& x^2
+\end{array}\right] \;\;\; = \left[ \begin{array}{rrr} 0 & 0 & -1 \\ 0 & 1 & 0 \\ -1 & 0 & 0\end{array}\right]
+\end{eqnarray*} 
+Schur's Lemma tells us our $3 \times 3$ representation is a direct sum of 1D representations $\mathbb{C}[x^2, xy, y^2] = \mathbb{C} \oplus \mathbb{C} \oplus  \mathbb{C}$.
+\vfill
+
+\begin{thebibliography}{}
+
+\item William Fulton \textbf{Representation Theory: A First Course} Springer, 1991.
+
+\item Benjamin Steinberg \textbf{Representation Theory of Finite Groups} 
+
+\item Ben Green \textbf{What is\dots an Approximate Group} 
 
 \end{thebibliography}
 

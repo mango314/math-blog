@@ -1,0 +1,44 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+
+\title{Scratchwork: Configuration Spaces and \'{E}tale Cohomology}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+\noindent One way to get representations of the Symmetric group $S_n$ is to use configuration space, e.g. of Points or Lines.
+\begin{eqnarray*}
+X_n(\mathbb{C}) &=& \big\{ (z_1, \dots, z_n) \big| z_i \in \mathbb{C} \text{ and } z_i \neq z_j\big\} \\
+X_n(\mathbb{C}) &=& \big\{ (L_1, \dots, L_n) \big| L_1 \text{ line in } \mathbb{C}^n \;\; L_1, \dots, L_n \text{ linearly independent} \big\} 
+\end{eqnarray*}
+Before I even try to learn the main ``new" results of the paper, the authors remark that it's easy to compute these homologies by hand:
+$$ H^0(\mathbb{C}\mathbf{P}^2)= \mathbb{Q} \text{ and }
+H^2(\mathbb{C}\mathbf{P}^2)= \mathbb{Q} \text{ and }
+H^4(\mathbb{C}\mathbf{P}^2)= \mathbb{Q} $$
+and from this they will deduce the number of points in the counting formula:
+$$ |\mathbf{P}^2(\mathbb{F}_q)| = q^2 + q + 1  $$
+and this is true for any prime power $q$.   A more interesting result about ``twisted cohomology" is that
+$$ H^1\big(\text{Conf}_n(\mathbb{C}); \wedge^2 \mathbb{Q}^n \big) \simeq \mathbb{Q} \text{ for }n \geq 4 $$
+This is already an astonishing amount of information.
+\vfill
+
+\begin{thebibliography}{}
+
+\item Thomas Church, Jordan S. Ellenberg, Benson Farb. \textbf{Representation stability in cohomology and asymptotics for families of varieties over finite fields} \texttt{arXiv:1309.6038}
+
+\end{thebibliography}
+
+\end{document}
