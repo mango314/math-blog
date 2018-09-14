@@ -55,7 +55,20 @@ Then the prime number theorem amounts to showing that $A = 1$ and also showing t
 $$ A = \lim_{x \to \infty} \sum_{n < x} \Lambda(n) \text{ and } \frac{\zeta'(s)}{\zeta(s)} = \sum_{n > 0} \Lambda(n) \, n^{-s}$$
 These facts are coming from nowhere and the original questions I have are being lost in the shuffle. \\ \\
 This is starting to remind me of a criminal case, where the majority of cases get plea-bargained and very few cases actually go to trial. \\ \\
-
+\textbf{Thm} Let $a: \mathbb{R} \to \mathbb{C}$ be a function.  And let it's Laplace transform be:
+$$ \alpha(s) = \int_0^\infty e^{-us} da(u) $$
+\begin{itemize}
+\item $a$ is non-negative and increasing
+\item $r(s) := \alpha(s) - \frac{c}{1-s}$ extends to a continuous function in the close half-plane $s = \sigma + i \tau$ with $\sigma \geq 1$ \\ \\
+For example, this is saying that $\alpha(s)$ - the Laplace transform of $a(u)$ - has a pole at $s = 1$.  
+\end{itemize}
+Then
+$$ \int_0^x 1 \, da(u) = c \, e^x + o(e^x) $$
+This doesn't even look like a Dirichlet series.  We might like to check that the change of variables $a(u) = A(e^u)$ turns this exponential series into a Dirichlet series and the Laplace transform into a Mellin transform.  \\ \\
+\textbf{Thm}
+$$ \bigg[ \alpha(s) = \sum_{n=1}^\infty a_n n^{-s} \bigg]\quad\text{and}\quad
+\bigg[\alpha(s) - \frac{c}{s-1} \text{ is continuous on }\sigma\geq 1\bigg] \to \bigg[\sum_{n < x} a_n = c \, x + o(x)\bigg] $$ 
+None of this is convincing.  The guy is certainly correct.
 \vfill
 \begin{thebibliography}{}
 
@@ -63,7 +76,9 @@ This is starting to remind me of a criminal case, where the majority of cases ge
 
 \item Alina Cojocaru, M. Ram Murty \textbf{An Introduction to Sieve Methods and Their Applications} \\ (London Mathematical Society Student Texts \#66) Cambridge University Press, 2006.
 
-\item Adolf Hildebrand \textbf{The prime number theorem via the large sieve} Volume 33, Issue 1 June 1986 , pp. 23-30.
+\item Adolf Hildebrand \textbf{The prime number theorem via the large sieve} Mathematika Volume 33, Issue 1 June 1986 , pp. 23-30.
+
+\item Hugh Montgomery, Robert Vaughn. \textbf{Multiplicative Number Theory I: The Classical Theory} (Cambridge Studies in Advanced Mathematics \#97) Cambridge University Press, 2006.
 
 \end{thebibliography}
 
