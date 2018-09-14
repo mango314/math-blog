@@ -1,0 +1,70 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+
+\title{Scratchwork: Riemann-Lebesgue Lemma}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+\noindent \textbf{9/14} I've been trying to look at the Prime Number Theorem and how it is proven.  By the time the proof is done, the result looks nothing like a statement about numbers.  Let's see a few:
+\begin{itemize}
+\item $\pi(x) = \{ \# p < x \}  \sim \frac{x}{\log x} $
+\item $\displaystyle \sum_{n < x} \Lambda (n) = x \,\big(1 + o(1)\big)$
+\item $\text{lcm} \{ 1, 2, \dots, x\} \asymp e^x $
+\end{itemize} 
+The first statement makes the primes look ``random".  The second statement suggests the arrangement of primes in $\mathbb{Z}$ approach an almost linear pattern.  We can even interpret the sum as the least-common-multiple of the integers and get an exponential growth pattern. \\ \\
+\textbf{Q} How carefully do we have to look in order to prove the prime number theorem?
+The original motivation for the van Mangoldt function comes from counting the prime divisors of the factorial function:
+$$ p^? \big| 1 \times 2 \times 3 \times \dots \times n = n! $$
+We have that near 1850's Chebyshev identifies some useful functions to solving this problem:
+\begin{itemize}
+\item $\displaystyle  \theta(x) = \sum_{p < x} \log p \asymp x$
+\item $\displaystyle  \psi(x) = \sum_{n < x} \Lambda(n) \asymp x$
+\item $\displaystyle  \pi(x) = \sum_{p < x}  1 \asymp \frac{x}{\log x}$
+\end{itemize}
+Between the 1890's and the 1920's stronger statements about the prime number theorem were proven.  The proofs get draconian, and it's unclear that we are reaping the benefits of all our hard work. \\ \\
+\textbf{Q} How do dull uninformative estimates combine into more informative approximations?  \\
+\textbf{Q} Can the Prime Number Theory be read as a Group Theory problem?  Or a Geometry problem? \\ \\
+I can't guarantee you these are new, but who cares?  There are proofs of PNT as recently as 1986 - this problem seems to be uses as a benchmark, against which we can test different techniques.  The authors seem determined to lead you astray.  Here's one of the ``main ideas":
+$$ \sum_{p \leq x} \log^2 p + \sum_{pq \leq x} \log p \log q= 2x \log x + O(x)$$
+However, the subsequent steps are so difficult that I could never figure out what they mean.  What property of $\mathbb{Z}$ did we just figure out?  To me this is a danger of being too results-oriented.
+
+\newpage 
+
+\noindent Overwhelmingly, the starting point is the unique factorization of integers over $\mathbb{Z}$, which gets locked up into the Euler product:
+$$ \zeta(s) =  \sum_{n > 0} \frac{1}{n^s} = \prod_p \left( 1 - \frac{1}{p^s} \right)^{-1}$$
+This fact gets checked very carefully.  We know the value of $\zeta(2)$ or $\zeta(-1)$.  Here ``knowing" means that $\zeta(2) \in \pi^2 \mathbb{Q}$ and in fact the fraction is $\frac{1}{6}$.  Over another number field $\mathbb{Q}(\sqrt{d})$ it's an open question what those fractions are.  If the class number is high enough we can't even write down unique factoriztion.  \\ \\
+Another part is the Harmonic series is divergent.  This is encoded as the value of the zeta function at $s=1$
+$$ \zeta(1) = \sum_{n > 0} \frac{1}{n} = \infty $$
+and ``near" $s=1$ the value is still convergent.  E.g. $\zeta(1 + \epsilon)$ and as a holomorphic function near the pole there's an asymptotic expansion:
+$$ \zeta(1 + s) = \frac{A}{s-1} + \dots  $$
+Then the prime number theorem amounts to showing that $A = 1$ and also showing that:
+$$ A = \lim_{x \to \infty} \sum_{n < x} \Lambda(n) \text{ and } \frac{\zeta'(s)}{\zeta(s)} = \sum_{n > 0} \Lambda(n) \, n^{-s}$$
+These facts are coming from nowhere and the original questions I have are being lost in the shuffle. \\ \\
+This is starting to remind me of a criminal case, where the majority of cases get plea-bargained and very few cases actually go to trial. \\ \\
+
+\vfill
+\begin{thebibliography}{}
+
+\item Thomas A. Hulse, M. Ram Murty \textbf{Bertrand's Postulate for Number Fields} \texttt{arXiv:1508.00887}
+
+\item Alina Cojocaru, M. Ram Murty \textbf{An Introduction to Sieve Methods and Their Applications} \\ (London Mathematical Society Student Texts \#66) Cambridge University Press, 2006.
+
+\item Adolf Hildebrand \textbf{The prime number theorem via the large sieve} Volume 33, Issue 1 June 1986 , pp. 23-30.
+
+\end{thebibliography}
+
+\end{document}
