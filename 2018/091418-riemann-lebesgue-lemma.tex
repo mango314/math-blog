@@ -82,4 +82,18 @@ None of this is convincing.  The guy is certainly correct.
 
 \end{thebibliography}
 
+\noindent \textbf{9/15} I don't remember what I was going to say.  At some point the proof of the Wiener-Ikehara Tauberian theorem uses the Riemann-Lebesgue Lemma.  That one says: \\ \\
+\textbf{Thm} If $f$ is (Riemann) integrable on the circle, then $\hat{f}(n) \to 0$ as $|n| \to \infty$. Here's another way of putting it:
+$$ \int_0^{2\pi} f(\theta) \, \sin (N\theta) \, d\theta \text{ as } N \to \infty $$
+Sounds totally natural.  A function has a Fourier series and the Fourier coefficients should always tend to zero.  No!  \\ \\
+\textbf{Thm} Let $f$ be an (Riemann) integrable function on the circle with $f \sim \sum_{n \in \mathbb{Z}} a_n e^{in\theta}$ then we have:
+\begin{itemize}
+\item $\displaystyle \frac{1}{2\pi}\int_0^{2\pi} | f(\theta) - S_N(f)(\theta)|^2 \, d\theta \to 0 $ as $N \to 0$.  The mean-square convergence of Fourier series.   We could say that the $L^2$ norm $||f - S_N(f)||_{L^2(S^1)} \to 0$.  Or we could call this a ``variance" of some kind.  Pythagoras' theorem $a^2 + b^2 = |a \mathbf{i} + b \mathbf{j}|^2$ is an $L^2$ norm of a 2D space.  So this is a highly geometric statement, even though it may be about noise or something.
+\item Parseval's identity
+$$ \sum_{n \in \mathbb{Z}} |a_n|^2 = \frac{1}{2\pi}\int_0^{2\pi} |f(\theta)|^2 \, d\theta $$
+this is exactly Pythagoras' theore in infinite dimensional space.
+\item Bessel Inequality.  $ \sum |a_n|^2 \leq ||f||^2$.  The Hilbert space $\ell^2(\mathbb{Z})$ is somewhat larger than the space of Riemann-integrable functions on the circle.   It's possible to find a sequence of numbers $a_n$ with no Riemann integrable function $f(\theta) = \sum a_n e^{in\theta}$. In order to define $L^2(S^1)$ we really need Lebesgue measure. 
+\end{itemize} 
+
+
 \end{document}

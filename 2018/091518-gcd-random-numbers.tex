@@ -1,0 +1,54 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+
+\title{Scratchwork: $\zeta(2)$ and Random Processes}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+\noindent \textbf{9/15} Is there any connection between special values of zeta function probability?  There's the statistic that the odds of two random numbers being relatively prime is $\zeta(2)^{-1} = \frac{6}{\pi^2} \approx \frac{2}{3}$.  This could turn into a question about what other fundamental constants we know and why $\pi$ is such an important number. \\ \\
+\textbf{Q} What are the odds of having $\text{gcd}(a,b) = 1$ for two numbers $a,b \in \mathbb{Z}[i]$ ?  Here there is still a Euclidean algorithm and so the answer should be:
+$$ \zeta_{\mathbb{Z}[i]} (2) =  \zeta(2) L(2, \chi_4) = \left(1 - \frac{1}{2^{-2}} \right) \prod_p \left( 1 - \frac{1}{p^{-4}}\right) \prod_p \left( 1 - \frac{1}{p^{-2}} \right)^2
+ = \sum_{m+in } \frac{1}{(m^2 + n^2)^2} $$
+and we can obtain a complete solution by compiling data from various sources.  These can be considered Artin L-functions with a $\rho = triv$ and $\rho = sign$ part. \\ \\
+What's going to happen is we solve one problem and we inadventently solve many others, because that's real life. \\ \\
+Bourgade, Fujita and Yor offer a proof of the value of $\zeta(2)$ by examining the Cauchy distribution:
+$$ d\mu(x) = \frac{dx}{\pi(1+x^2)} $$
+We also need the product of two Cauchy distributions.  These integrals shouldn't be taken for granted:
+$$ d\nu(x) = \frac{2 \log|x|}{\pi^2(x^2 - 1)} $$
+Then we can take the absolute value of the Cauchy distribution and take the log of that
+\begin{equation} |\mathbb{C}_1| \stackrel{law}{=} e^{\frac{\pi}{2}C_1} \text{ with }\mathbb{E}\big( e^{i\lambda C_1} \big) = 
+\mathbb{E}\big( e^{i\lambda \log |\mathbb{C}_1|} \big) = \frac{1}{\cosh \lambda} \end{equation}
+The proof of the values of the zeta function is a little bit tautological:
+$$ 1 = \mathbb{E}[1] = \frac{8}{\pi^2} \big( 1 - \frac{1}{2}\big) \zeta(2) $$
+and we know for a fact there is something (close to) random about the factorization of prime numbers.  We feel like GCD is a more even-handed phenonenon to work with and there's something random about those too!
+\vfill
+\begin{thebibliography}{}
+
+\item Paul Bourgade, Takahiko Fujita, and Marc Yor \textbf{Euler's formulae for $\zeta(2n)$ and products of Cauchy variables} Electronic Communications in Probability Volume 12 (2007), paper no. 9, 73-80.
+
+\item Robin Chapman \textbf{Evaluating $\zeta(2)$} \texttt{https://empslocal.ex.ac.uk/people/staff/rjchapma/etc/zeta2.pdf}
+
+\item L Pace \textbf{Probabilistically Proving that $\zeta(2) = \frac{\pi^2}{6}$}
+American Mathematical Monthly, Vol. 118 Issue 7, 2011
+
+\item Lars Holst \textbf{Probabilistic proofs of Euler identities}
+Journal of Applied Probability
+Vol. 50, No. 4s, pp. 1206-1212
+
+\end{thebibliography}
+
+\end{document}
