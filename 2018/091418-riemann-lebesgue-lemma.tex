@@ -94,6 +94,55 @@ $$ \sum_{n \in \mathbb{Z}} |a_n|^2 = \frac{1}{2\pi}\int_0^{2\pi} |f(\theta)|^2 \
 this is exactly Pythagoras' theore in infinite dimensional space.
 \item Bessel Inequality.  $ \sum |a_n|^2 \leq ||f||^2$.  The Hilbert space $\ell^2(\mathbb{Z})$ is somewhat larger than the space of Riemann-integrable functions on the circle.   It's possible to find a sequence of numbers $a_n$ with no Riemann integrable function $f(\theta) = \sum a_n e^{in\theta}$. In order to define $L^2(S^1)$ we really need Lebesgue measure. 
 \end{itemize} 
+\textbf{9/16} The proof of WT theorem uses Fubini Theorem.  Let $f, g \in L^1(\mathbb{R})$ be two Lebesgue integrable functions then $f*g$ is Lebesgue integrable.  $\widehat{f*g}= \widehat{f}*\widehat{g}$.  These theorems weren't for free when we learned them with Riemann integration, what makes us think we understand them with Lebesgue measure?  Yet
+$$ \Big[ f, g \in L^1(\mathbb{R}) \Big] \to \Big[ f * g \in L^1(\mathbb{R}) \Big] $$
+Let's put it another way, in the process of using the Fourier transform (or the Mellin Transform) did our function stop being Riemann integrable.  I'm oddly curious how the thing fails to have an integral. \\ \\
+Riemann integration was a strong condition it says the partition didn't matter as long as $||\Delta x|| \to 0$, for example that
+$$ \frac{1}{N} \sum_{n=1}^N \left(\frac{n}{N}\right)^2 = \frac{1}{3}  + o(1) \text{ but also } \frac{1}{N} \sum_{n=1}^N \{ n \sqrt{2} \}^2 = \frac{1}{3}  + o(1)$$
+There should even be some information in the permutation used to put the set $ \{ \{ n \sqrt{2}\} : 0 < n < N \}$ back into order.  As long as the size of the mesh tends to zero any increasing sequence, any partition of $[0,1]$ will do. \\ \\
+Let's observe that the map $x \mapsto e^x$ turns the Laplace transform into the Mellin Transform:
+$$ \left[ \alpha(s) = \int_0^\infty e^{-us} \, d\Big[\sum_{n < e^x} a_n \Big] =  \sum a_n \, e^{-nx}\right] \to \left[ \alpha(s) = \int_1^\infty v^{-s} \, d\Big[\sum_{n < v} a_n \Big] = \sum a_n \, n^{-s}\right] $$
+Because the derivative of a step function is a dirac-delta function.  We have a sum functions like this:
+$$ 1_{x > 0} = \left\{ 
+\begin{array}{cc} 0 & x < 0 \\ 
+1 & x > 0\end{array}\right. \to \frac{d}{dx} (1_{x > 0}) = \delta_0(x)
+= \left\{ 
+\begin{array}{cc} 0 & x \neq 0 \\ 
+?? & x = 0\end{array}\right.$$
+Derivative is zero almost everywhere.  We are mostly concerned with the place where the derivative is not zero.  It's undefined. \\ \\
+Depending on whether you do Mellin or Fourier transform\dots one is transform of the other. 
+$$ \alpha(x) = \sum \Lambda(n) \, e^{-nx} \text{ or } \alpha(s) = \Lambda(n) \, n^{-s} $$
+As arithemtic functions we have that $\Lambda * \mu = \log $ this is the M\"{o}bius transform.  We are lost in a sea of transforms:
+$$ \beta(x) = \sum_{n > 0}  \log (n)\, e^{-nx} \text{ or } \alpha(s) = \sum_{n > 0}\log(n) \, n^{-s} $$
+The rest of the proof seems to fish around for a variant of the Laplace transfor (or of exponential series) that is band-limited.  That occupies a finite amount of frequency space.
+\begin{itemize}
+\item $\displaystyle \Delta_T(x) = T \left( \frac{\sin \pi T x /2}{\pi T x / 2} \right)^2 $ (Fej\'{e}r Kernel)
+\item $\displaystyle J_T(x) = \frac{3T}{4} \left( \frac{\sin \pi T x /2}{\pi T x / 2} \right)^2 $ (Jackson Kernel)
+\end{itemize}
+Stein - offers us that if $f$ is of moderate decrease, e.g. $|f(x)| \leq \frac{A}{1 + x^2} $ such as $f(x) = e^x 1_{x < 0} $.
+$$ \int_{-R}^R \left( 1 - \frac{|\xi|}{R} \right)\hat{f}(\xi) e^{2\pi i \, x \xi} d\xi = (f * \mathcal{F}_R)(x) $$
+I'm now completely sure I don't understand this at all.  Here's a sample exercise:
+$$ \frac{1}{\pi} \sum_{n \in \mathbb{Z}} \frac{t}{t^2 + n^2} = \sum_{n \in \mathbb{Z}} e^{-2\pi t |n|}$$
+This hint is that using Poisson summation $f(x) = t/\pi(x^2 + t^2)$ maps to $\hat{f}(\xi) = e^{- 2\pi t |\xi|}$.  At this point Stein refers us to an Information Theory or Signal Processing textbook. \\ \\
+\textbf{Q}: Does the Fejer or Jackson kernel have a Mellin transform cousin?
+\vfill
+\begin{thebibliography}{}
 
+\item Elias Stein, Rami Shakarchi. \textbf{Analysis I: Fourier Analysis} (Princeton Lectures on Analysis \#1) Princeton Univesity Press, 2003.
+\newpage
+
+\noindent Why should we expect Lebesgue integrable functions from prime number theory?  As the number $n \gg 1$ is larger, it's harder and harder to check these numbers are prime.  I can safely compute 7 or 8 digit primes on my laptop.  Is it clear that \textbf{48112959837082048697} is a prime?  Is it that critical that our numbers perfectly multiply? \\ \\ 
+Here are some prime numbers {\color{orange!70!black}5099}   {5101}   {\color{orange!70!black}5107}   {5113}   {\color{orange!70!black}5119}   {5147}   {\color{orange!70!black}5153}   {5167}   {\color{orange!70!black}5171}   {5179}.  The Dirichlet series looks awfully sparse:
+$$ f(t) = 
+5099^{-it} +
+5101^{-it} +
+5107^{-it} +
+5113^{-it} +
+5119^{-it} +
+5147^{-it} $$
+Even moderately sized prime numbers, I'm not sure we've ever studied them very carefully except to get this theoretical result.  \\ \\
+\textbf{Q} Find $a, b \in \mathbb{Z}$ such that $5101 = a^2 + b^2$.   Also $5101 = a^2 + 5b^2$.  And $5107 = a^2 + 3b^2$.  The angle $\theta = tan^{-1}(\frac{a}{b}) \notin \pi \mathbb{Q}$ keeps changing and is quite important. 
+
+\end{thebibliography}
 
 \end{document}
