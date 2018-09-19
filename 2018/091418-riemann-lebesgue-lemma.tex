@@ -129,7 +129,10 @@ This hint is that using Poisson summation $f(x) = t/\pi(x^2 + t^2)$ maps to $\ha
 \begin{thebibliography}{}
 
 \item Elias Stein, Rami Shakarchi. \textbf{Analysis I: Fourier Analysis} (Princeton Lectures on Analysis \#1) Princeton Univesity Press, 2003.
-\newpage
+
+\item Martin Vetterli, Jelena Kovacevi\'{c}, Vivek Goyal \textbf{Foundations of Signal Processing} \texttt{http://www.fourierandwavelets.org/} 
+
+\end{thebibliography}
 
 \noindent Why should we expect Lebesgue integrable functions from prime number theory?  As the number $n \gg 1$ is larger, it's harder and harder to check these numbers are prime.  I can safely compute 7 or 8 digit primes on my laptop.  Is it clear that \textbf{48112959837082048697} is a prime?  Is it that critical that our numbers perfectly multiply? \\ \\ 
 Here are some prime numbers {\color{orange!70!black}5099}   {5101}   {\color{orange!70!black}5107}   {5113}   {\color{orange!70!black}5119}   {5147}   {\color{orange!70!black}5153}   {5167}   {\color{orange!70!black}5171}   {5179}.  The Dirichlet series looks awfully sparse:
@@ -141,8 +144,48 @@ $$ f(t) =
 5119^{-it} +
 5147^{-it} $$
 Even moderately sized prime numbers, I'm not sure we've ever studied them very carefully except to get this theoretical result.  \\ \\
-\textbf{Q} Find $a, b \in \mathbb{Z}$ such that $5101 = a^2 + b^2$.   Also $5101 = a^2 + 5b^2$.  And $5107 = a^2 + 3b^2$.  The angle $\theta = tan^{-1}(\frac{a}{b}) \notin \pi \mathbb{Q}$ keeps changing and is quite important. 
+\textbf{Q} Find $a, b \in \mathbb{Z}$ such that $5101 = a^2 + b^2$.   Also $5101 = a^2 + 5b^2$.  And $5107 = a^2 + 3b^2$.  The angle $\theta = tan^{-1}(\frac{a}{b}) \notin \pi \mathbb{Q}$ keeps changing and is quite important. \\ \\
+Let's move the thing an inch further and try to state what is called the Hecke equistribution theorem.  Fermat's Theorem says that a prime can be written as the sum of two squares if it's one more than a multiple of four.  Fermat was a laywer and a mathematician, why shouldn't we just take his word for it? \\ \\
+\textbf{Ex} If $p = 4k+1$ is a prime number, then $p = a^2 + b^2$.  What happens if the number fails to be prime? Let $q \in 4\mathbb{Z}+3$ 
+\begin{eqnarray*}
+p \;\; &=& a^2 + b^2 \\
+pq \;\, &\notin& \square + \square \\
+pq^2 &=& (aq)^2 + (bq)^2
+\end{eqnarray*}
+The sum-of-two-squares problem, splits the primes in $\mathbb{Z}$ into two regions $\{\mathbf{yes}\}$ and $\{\mathbf{no}\}$.  And we get a sort of times table:
+$$ 
+\begin{array}{c|cc}
+\times & \mathbf{Y} & \mathbf{N} \\ \hline
+\mathbf{Y}       & \mathbf{Y} & \mathbf{N} \\ 
+\mathbf{N}       & \mathbf{N} & \mathbf{Y}    \end{array}$$  
+and we could complete $\mathbb{Z}$ to include multiplivative inverses... we could write as $\mathbb{Z} \times \mathbb{Z}^{-1} = \mathbb{Q}$ as would be done in a \textbf{commutative algebra} textbook.  Then it might make sense to ask if a rational number can be written as the sum of two rational squares. $\frac{p}{q} = (a/b)^2 + (a/b)^2$. \\
+In fact, even the property of being an integer $x \stackrel{?}{\in} \mathbb{Z} \subseteq \mathbb{Q}$ seems a little bit odd, and could have a $\times$ table like the one we are seeing. \\ \\
+\textbf{Q} Show that as $p \to \infty$ and $p = a^2 + b^2$ the angle $\theta = \tan^{-1}(a/b) \in [0,1]$ is equidistributed.  So I guess there's curve $(p,a,b) \in \mathbb{Z} \oplus \mathbb{Z} \oplus \mathbb{Z} = \mathbb{Z}^3$ and we want to study properties a map from this curve to the circle $S^1 = \mathbb{R}/\mathbb{Z}$. \\ \\
+The usual basis is $e^{inx}$ with $n \in \mathbb{Z}$.  Instead we could try $e^{i\omega x}$ with $\omega = \tan^{-1} \frac{a}{b} \in \mathbb{R}/\mathbb{Z}$ where $a,b \in \mathbb{Z}$.  These are very funny wavelengths, indeed.
+
+\newpage
+
+\noindent 
+ 
+\vfill
+
+\begin{thebibliography}{}
+
+\item M. F. Atiyah, I.G. McDonald \textbf{Commutative Algebra} (Addison-Wesley Series in Mathematics) CRC Press, 1994.
+
+\item Edmund Hlawka, Johannes Schoi\ss{}engeier, Rudolf Taschner  \textbf{Geometric and Analytic Number Theory} (Universitext) Springer, 1991. 
 
 \end{thebibliography}
+
+\noindent Let's try anything: is $e^{2\pi i n x}$ orthogonal to $e^{2\pi i (\tan^{-1}\frac{4}{5})x}$?  Then
+$$ \langle e^{2\pi i n x} |e^{2\pi i (\tan^{-1}\frac{4}{5})x}  \rangle = \int_0^1 e^{2\pi i (\tan^{-1}\frac{4}{5})x} e^{-2\pi i n x} \, dx =  \frac{ e^{2\pi i (\tan^{-1} \frac{4}{5}) - n} - 1 }{2\pi i \big(\tan^{-1} \frac{4}{5} - n \big)} \neq 0$$
+This number does not mean much to us, but isn't this the one we'd use to write the Gr\"{o}ssencharaker in $\mathbb{Z}[i]$ ? 
+$$ \zeta_{\mathbb{Q}(i)}(s) = \left( 1 - \frac{1}{2^s} \right)
+\times \left( 1 - \frac{1}{3^s} \right)^2 
+\times \left( 1 \;{\color{red}\mathbf{+}}\; \frac{1}{5^{2s}} \right) 
+\times \left( 1 - \frac{1}{7^s} \right)^2
+\times \left( 1 - \frac{1}{{11}^s} \right)^2
+\times \left( 1 - \frac{1}{13^{2s}} \right) \times \dots  $$
+These elements $\exp(2\pi i \, \theta \tan^{-1} \frac{a}{b})$ are not even a basis.  And so diophantine problems turn into measure theory.  Aren't we having trouble?
 
 \end{document}
