@@ -79,4 +79,30 @@ we've used nothing but familiar household objects and the equations describe a n
 
 \end{thebibliography}
 
+\newpage
+
+\noindent We've been fiddling with the Prime Number Theorem.  It starts to get really confusing.  We are trying to estimate:
+$$ A(x) =  \sum_{n < x} \Lambda(n) \quad\text{ so that }\quad \alpha(s) = \int_1^\infty x^{-s} \, d A(x) = \sum_{n=0}^\infty \Lambda(n) \, n^{-s} $$
+This is a Mellin transform.  We are using the Riemann Stieltjes integral, since there are lots of jumps.  $d[1_{x < 0}] = \delta_0(x)$ e.g. using theory of distributions.  The numbers are primes:
+$$ \Lambda(n) = \left\{ \begin{array}{rl} \log p & x = p^k \\ \\ 0 &  \text{otherwise} \end{array} \right. $$
+Originally we have an exponential series insted of a Dirichlet series and we are using a Laplace transform:
+\[ \alpha(s) = \int_0^\infty e^{-xs} \, da(x) = \sum_{n=0}^\infty \Lambda(n) \, e^{-ns} \text{ with }a(x) = A(e^x) = \sum_{n < e^x} \Lambda(n) \tag{$\ast$} \]
+The theoretical version deals with this version in the middle.  We could even have power series, the most normal-looking:
+$$ a(x) = \sum_{n=0}^\infty \Lambda(n) \, x^n $$
+The reason why the Van Mangoldt function was so important is because it was the GCD of the first $n$ numbers:
+$$ e^{\sum_{n < x} \Lambda(n) } = \text{LCM}(\{1,2,\dots, x\})$$
+and $\Lambda$ is the M\"{o}bius transform of the logarithm.  We can turn one into the other by summing over the divisors:
+$$ \log n = \sum_{m|n} \Lambda(n) \text{ or }\log = \Lambda * 1 \quad\text{ and }\quad \Lambda(n) = \sum_{m|n} \log(m) \text{ or } \Lambda = \log * 1 $$
+Now we read the proof.  We need a ``copy" of the exponential function $e^x$ (we're even afraid to call it that... $E(x)$) that is compactly supported in Foureir space.  The exponent function is definitely not.
+$$ E(x) = \left\{ \begin{array}{cc} e^x & x < 0 \\ 0 & x > 0 \end{array} \right. $$
+This function has a discontinuity at zero the right-limit $E(0^-) = 1$ and left-limit $E(0^+)=0$.  This function has a Fourier transform:
+$$ \hat{E}(t) = \int_{-\infty}^0 e^{x - tx} \, dx = \frac{1}{1-t}$$
+The reason that we need a compactly-supported cousin of the expoenntial function the pole at $t=1$. 
+\begin{itemize}
+\item $\displaystyle \Delta_T(x) = T \left( \frac{\sin \pi T x}{\pi T x} \right)^2$ \;\;Fejer \;\;\, Kernel over $\mathbb{R}$.  
+\item $\displaystyle J_T(x) = \frac{3T}{4} \left( \frac{\sin \pi \frac{T}{2} x}{\pi \frac{T}{2} x}\right)^4$ Jackson Kernel over $\mathbb{R}$
+\end{itemize}
+One way to think of all these function is that these things all approxiate boxes of area $1$:
+$$ \Delta_T(x) \approx J_T(x) \approx  1_{|x| < \frac{1}{T}} \times T $$
+These Kernels arise from doubts as to whether the Fourier series of a function converges to itself.  No engineer in his right mind questions that, but we have a counter-example on the previous page.
 \end{document}
