@@ -1,0 +1,67 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+
+\title{Scratchwork: Infinite Products}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+\noindent \textbf{9/24} Here, let's try working backwards from the answer.  These numbers tend to be infinite products ``regularized" in some way.  Here is one:
+$$ Z = \prod_{n \in \mathbb{Z}} \prod_{j=0}^\infty \frac{j+|m| + 1 - \frac{r}{2} - \frac{1}{\tau} (2\pi i n - i \alpha)}{
+j+|m| + 0 + \frac{r}{2} + \frac{1}{\tau} (2\pi i n - i \alpha)} $$ 
+\textbf{Exercise} Here's another (possibly equivalent?) infinite product.  Let, $q= e^{-\tau}$ and $z = e^{i\tau \alpha}$:
+$$ Z = e^{-i \pi m^2/2} \big(q^{1-r/2} \, z^{-1} \big)^{|m|/2} \prod_{j=0}^{\infty} 
+\frac
+{  \;\;\;1 -  q^{1-r/2 +|m|/2 +j} \; z^{-1}}
+{1 - q^{0+r/2 +|m|/2 +j} \; z} $$
+\textbf{Hint} Have to consult a textbook: 
+\begin{itemize}
+\item $(z;q) := \prod_{j=0}^\infty (1 - zq^j) $ (this is a notation)
+\item $\prod_{n \in \mathbb{Z}} (2\pi i n + z) = e^{-z/2} ( 1 - e^z ) $
+\end{itemize}
+These numbers were obtained from a highly symmetric infinite dimensional object, but all we have is an ambiguous product of numbers. These computations are done rather expeditiously and my goal is just to check the logic for my own personal interest and to look for any missed opportunities.  
+\begin{quotation}\noindent \textbf{Thm} Given an sequence $\{ a_n \}$ of complex numbers with $|a_n| \to \infty$ as $n \to \infty$, there exists an entire function $f$ that vanishes at $z= a_n$ and nowhere lse.  Any other such entire function is of the form $f(z) e^{g(z)}$.\end{quotation}
+\begin{quotation}\noindent \textbf{Thm} Suppose that $f$ is entire and has growth order $\rho_0$.  let $k$ be the integer so that $k \leq \rho_0 < k+1$.  If $a_1, a_2, \dots$ are the (non-zero) zeros of $f$ then:
+$$ f(z) = e^{P(z)} z^m \prod_{n=1}^\infty E_k(z/a_n) $$
+where $P$ is a olynomial of degree $\leq k$ and $m$ is the order of the zero of $f$ at $z = 0$.
+\end{quotation}
+I am not here to check their logic.  Surely their answers are 100\% correct.  If you have a specific function it could be easier to prove it from scratch:
+$$ \sin \pi z = z \prod_{n=1}^\infty \left( 1 - \frac{z^2}{n^2} \right) 
+\quad\text{and}\quad
+\pi \cot \pi z = \sum_{n = -\infty}^\infty \frac{1}{z+n} = \frac{1}{z} + \sum_{n=1}^\infty \frac{2z}{z^2 - n^2} $$
+\begin{quotation}\noindent \textbf{Thm} (Jensen) Let $\Omega$ be an open set that contains the closure of a disc $D_R$ and suppose that $f$ is holomorhic in $\Omega$, $f(0) \neq 0$ and $f$ vanishes nowhere on the circle $C_R$.  If $z_1, \dots, z_N$ denote the zeros of $f$ inside the disc.  Then
+$$ \log|f(0)| = \sum_{k=1}^N \log \left( \frac{|z_k|}{R}\right) 
++ \frac{1}{2\pi} \int_0^{2\pi} \log |f(Re^{i\theta})| \, d\theta $$\end{quotation}
+Stein's textbook is one of the few places I know that tells you a straight story.  His proofs earmark steps you might take with less rigorous calculations to yield just a little more.
+
+\vfill
+
+\begin{thebibliography}{}
+
+\item \textbf{Localization techniques in quantum field theories} \\ 
+\texttt{https://arxiv.org/abs/1608.02952} \\ 
+\texttt{https://arxiv.org/src/1608.02952/anc/LocQFT.pdf}
+
+\item Vladimir Zorich \textbf{Mathematical Analysis I, II} (Universitext) Springer, 2015, 2016.
+
+\item Eberhard Freitag \textbf{Complex Analysis I, II} (Universitext) Springer, 2009, 2011.
+
+\item Elias Stein \textbf{Analysis I / II } Fourier Analysis / Complex Analysis (Princeton Lectures in Analysis) Princeton University Press, 2003.
+
+\item Tudor Dimofte, Davide Gaiotto, Sergei Gukov \textbf{3-Manifolds and 3d Indices} \texttt{arXiv:1112.5179}
+
+\end{thebibliography}
+\end{document}
