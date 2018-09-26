@@ -63,5 +63,43 @@ Stein's textbook is one of the few places I know that tells you a straight story
 
 \item Tudor Dimofte, Davide Gaiotto, Sergei Gukov \textbf{3-Manifolds and 3d Indices} \texttt{arXiv:1112.5179}
 
+\end{thebibliography} 
+
+\noindent \textbf{9/26} Even more random formulas because we don't know any better.  Here is the ABJM partition function:
+$$ Z(N,k) = \frac{1}{N!} \int \frac{d^N \mu}{(2\pi)^N} \frac{d^N \nu}{(2\pi)^N} 
+\frac{
+\prod_{i < j} \left[ 2\sinh \left( \frac{\mu_i - \mu_j}{2} \right)\right]^2 
+\prod_{i < j} \left[ 2\sinh \left( \frac{\nu_i - \nu_j}{2} \right)\right]^2 }{ 
+\prod_{i,j  } \left[ 2\cosh \left( \frac{\mu_i - \nu_j}{2} \right)\right]^2 } \exp \left[ \frac{ik}{4\pi} (\mu^2 - \nu^2) \right]  $$
+A few remarks about this integral:
+\begin{itemize}
+\item it is called the ABJM partition function on the 3-sphere $S^3$ with gauge group $SU(N)$ -- there could be other partition function on other three-manifolds
+\item This matrix integral arises as an infinite-dimensional path integral - localization reduces this to a finite dimensional ``matrix integral" - a 0-dimensional path integral (i.e. over a point). 
+\item Although the formula doesn't specify, we're guessing the domain of integration is $(\mu, \nu) \in \mathbb{R}^N \times \mathbb{R}^N$.
+\item What is the value of this integral?  E.g. $Z(2,k)$ ?
+\end{itemize}
+If we evaluate the thing for ourselves, it's very unlikely that we'll repreat too many of the existing computations. \\ \\
+\textbf{Q} What was the infinite dimensional object we integrated over? \\ 
+
+\noindent Here are some values of the ABJM partition function (as found by Putrov and  Yamazaki)
+$$ Z \Big( N=1 , k=1 \Big) = \frac{1}{4} \text{ and } Z(2,1) = \frac{1}{16\pi}
+\text{ and } Z(3,1) = \frac{-3+\pi}{64\pi}$$
+Here another evaluation of ABJM partition functions for $U(2)_k \times U(2)_{-k}$:
+$$ Z\Big(N=2,k=1\Big) = \frac{1}{\pi} \text{ and }Z(2,2) = \frac{1}{2\pi^2} 
+\text{ and }Z(3,2) = \frac{1}{3}-\frac{1}{\pi}
+\text{ and }Z(5,2) = \frac{10 - 8 \sqrt{5}}{25} - \frac{1}{\pi}$$
+It looks like up top $Z(\cdot, 6)$ has been computed.  Regardless, given the effort to produce these numbers it's worth looking into the intermediate objects that were constructed.  Mainly, for now these numbers are needed to validate that $\mathbb{R}^N \times \mathbb{R}^N$ is the correct domain of integration.
+\vfill
+
+\begin{thebibliography}{}
+
+\item Pavel Putrov, Masahito Yamazaki \textbf{Exact ABJM Partition Function from TBA} \hfill \texttt{arXiv:1207.5066}
+
+\item Yasuyuki Hatsuda, Sanefumi Moriyama, Kazumi Okuyama \\ \textbf{Exact Results on the ABJM Fermi Gas} \hfill \texttt{arXiv:1207.4283} \\ 
+\textbf{Instanton Effects in ABJM Theory from Fermi Gas Approach}\hfill \texttt{arXiv:1211.1251}
+
+\item  Kazumi Okuyama \textbf{A Note on the Partition Function of ABJM theory on $S^3$} \hfill \texttt{arXiv:1110.3555}
+
 \end{thebibliography}
+
 \end{document}
