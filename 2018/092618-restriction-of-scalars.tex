@@ -1,0 +1,53 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+
+\title{Scratchwork: $\mathbb{G}_m$ Multiplicative Group Functor}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+\noindent \textbf{9/26} I'm sure the definition is saying something.  For now, the multiplicative group of $\mathbb{Q}$ is $\mathbb{Q}^\times$.  We know that:
+$$ \frac{2}{3} \times \frac{5}{7} = \frac{2 \times 5}{3 \times 7} = \frac{10}{21} $$
+Do we leverage this kind of fact in any practical way? Both of these fractions were approximations or limits or some kind.  Neither of these were \textit{exactly} $\frac{2}{3}$ or $\frac{5}{7}$.  \\ \\
+The complex number fractions $\mathbb{Q}(i)$ also have a multiplicative group $\mathbb{Q}(i)^\times$.  Here's a factorization:
+$$ \frac{1}{2+i} \times \frac{1}{2-i} = \frac{1}{5} $$
+What are the generators of these multiplicative groups?  By unique factorization we'd have that the numerator and denominator should be products of prime numbers.  
+$$ \mathbb{Q}^\times \subseteq \prod_p \mathbb{Z} = 2^\mathbb{Z} \oplus 3^\mathbb{Z} \oplus 5^\mathbb{Z} \oplus \dots $$
+The multiplicative group of the Gaussian numbers also be written as the sum of copies of the integers:\footnote{This factorization was not free.  It rested on Quadratic Reprocity, which we barely know.  It's in all the Number Theory textbooks, which we hardly read. We even have tools to study such type of bluffing, such as Probability Theory or Game Theory.}
+$$ \mathbb{Q}(i)^\times \subseteq \prod_p \mathbb{Z} = (1+i)^\mathbb{Z} \oplus 3^\mathbb{Z} \oplus \big( (2+i)^\mathbb{Z} \oplus (2-i)^\mathbb{Z} \big) \oplus 7^\mathbb{Z} \oplus \dots $$
+Since we didn't worry to much about exact values, hopefully we have some consistent way of deciding when two fractions are ``close" to one another.\\ \\
+Here are two ways of writing numbers in $\mathbb{Q}(i)$ let's check they are the same:
+$$ \frac{a}{b} + i \frac{c}{d} \leftrightarrow \frac{a+bi}{c+di} = \frac{(ac-bd) + i (ad+bc)}{c^2 + d^2}\text{ so that } [a:b] = [ac-bd:c^2 + d^2] \text{ and }[c:d]=[ad+bc:c^2 + d^2] $$
+This map should be an isomorphism or a ``birational map" or whatever the term might be. \\ \\
+$\mathbb{Q}(i)$ is a vector space over $\mathbb{Q}$. Then $\mathbb{Q}(i) \otimes \mathbb{R}\simeq (\mathbb{Q} \oplus \mathbb{Q}) \otimes \mathbb{R} =
+(\mathbb{Q} \oplus  \mathbb{R} ) \oplus (\mathbb{Q} \otimes \mathbb{R} ) \simeq 
+\mathbb{R}  \oplus \mathbb{R}  $ This formalizes that we could draw the Gaussian number fractions on a flat space (such a table) but it's not the only way.  Our very use of the symbols ``$\otimes$" and ``$\oplus$" are hinting at a more general way. \\ \\
+When we say that the multipliative group $\mathbb{G}_m$ is a \textbf{functor}.  Here's a map $\phi: \mathbb{Q} \to \mathbb{Q}(i)$ with $\phi:x \mapsto (2+i) x$.  Then:
+$$ \mathbb{G}_m : \Big[ \, \phi:x \mapsto (2+i) x \, \Big] \to \Big[ \, \mathbb{G}_m(\phi): x \mapsto (2+i) x  \Big] $$
+This is now a map $\mathbb{Q}^\times \to \mathbb{Q}(i)^\times$.  I know there's some content here somewhere\dots
+\vfill
+
+\begin{thebibliography}{}
+
+\item JS Milne \textbf{Algebraic Groups} \texttt{https://www.jmilne.org/math/CourseNotes/iAG200.pdf}
+
+\item Jurgen Neukirch \textbf{Algbraic Number Theory} (Grundlehren der
+mathematischen Wissenschaften \#322) Springer, 1999.
+
+\item Vladimir Platonov, Andrei Rapinchuk \textbf{Algebraic Groups and Number Theory} (Pure and Applied Mathematics \#139) Academic Press, 1999.
+
+\end{thebibliography}
+\end{document}
