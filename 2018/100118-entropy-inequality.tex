@@ -1,0 +1,50 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+
+\title{Scratchwork: Entropy Inequalities}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+\noindent Our goal is to understand a little bit better how Entropy works and Entropy Inequalities.  If $X$ is a random variable with outcomes $0$ and $1$ , and $\mathbb{P}(X=0) = p$ and $\mathbb{P}(X=1) = q$ then
+$$ H(X) = - \big( p \log p + q \log q \big) $$
+However, this is kind of an odd thing to say.  What makes this combination of logarithm so special.  There's something universal about it.  Here is the Binomial Theorem (or Demoivre Laplace) (or weak AEP):
+$$ \binom{n}{k} p^k q^{n-k}  \approx 
+\frac{1}{\sqrt{2\pi n pq}} \left( \frac{np}{k}\right)^k \left( \frac{nq}{n-k}\right)^{n-k} $$
+in the case that $\frac{k}{n} \approx p$. Let's try two somewhat correlated random variables:
+$$
+\begin{array}{r|cc} 
+ & Y=0 & 1 \\ \hline
+X=0 & a & b \\
+1 & c & d \\
+\end{array} \text{ with }a+b+c+d=1,a+b=p,a+c=q$$
+Then $X$ and $Y$ are not independent random variables.  The entropy inequalities have:
+$$
+H(X)+H(Y) - H(X,Y) = 
+p \log p + q \log q - \big( a \log a + b \log b + c \log c + d \log d \big) \geq 0 $$ 
+Weak Asymptotic Equipartition Property states, that if $\mathbf{X}=(X_1, \dots, X_n)$ is a sequence of outcomes: 
+$$ - \frac{1}{n} \log p(\mathbf{X}) 
+= - \frac{1}{n}\log \binom{n}{k} p^k q^{n-k} \stackrel{\frac{k}{n} \approx p }{\longrightarrow} H(X) = - \big( p  \log p + q \log q \big) $$
+These are real statements with real confusion and real results.  So these need to be checked more carefully.
+\vfill
+\begin{thebibliography}{}
+
+\item Edward Witten \textbf{https://arxiv.org/abs/1805.11965} \texttt{arXiv:1805.11965} 
+\item Raymond Leung \textbf{Information Theory and Network Coding} Springer, 2008.
+
+\end{thebibliography}
+
+\end{document}
