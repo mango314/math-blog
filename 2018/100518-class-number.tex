@@ -1,0 +1,37 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+
+\title{Scratchwork: Class Field Theory}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+\noindent One common mistake is to say the ring of integers of $K =  \mathbb{Q}(\sqrt{-5})$ is $\mathbb{Z}[\sqrt{-5}]$.  In fact it's $\mathbb{Z}[\frac{1+\sqrt{-5}}{2}]$. This example is important because it's the first time we observe the failure of unique factorization in ``integers":
+$$2 \times 3 = (1 + \sqrt{-5}) \times (1 - \sqrt{-5}) $$
+Despite being quite well-known, I feel this is the kind of result that needs to be checked very carefully.  Number Theory in particular, is known to re-arrange obvious facts in shocking ways:
+$$ \left( \frac{1 + \sqrt{-5}}{2} \right)^2 = \frac{1}{4} + \sqrt{-5} - \frac{5}{4} 
+= 2 \times \left( \frac{1 + \sqrt{-5}}{2} \right) - 2 \times 1$$
+What's so special about the $\sqrt{-5}$ that we obtain a number field with class number $h(K)=2$ ? \\ \\
+\textbf{Ex} Factor the numbers $1 \leq n \leq 100$ in each of the two orders, $\mathcal{O}_1 = \mathbb{Z}\left[ \frac{1 + \sqrt{-5}}{2}\right]$ and $\mathcal{O}_2 = \mathbb{Z}[\sqrt{-5}]$. \\ \\
+\textbf{Ex} Show that the ring of integers of $\mathbb{Q}(\sqrt{-5})$ is $\mathbb{Z}\left[ \frac{1 + \sqrt{-5}}{2}\right]$.
+\vfill
+\begin{thebibliography}{}
+
+\item Henri Cohen \textbf{Computational Number Theory in Relation with L-Functions} \texttt{arXiv:1809.10904}
+
+\end{thebibliography}
+
+\end{document}
