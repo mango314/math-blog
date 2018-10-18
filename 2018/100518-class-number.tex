@@ -194,4 +194,129 @@ I might choose $K = \mathbb{Q}(x)/(x^3 - x - 1)$ or $K = \mathbb{Q}(\sqrt{8})$ o
 
 \end{thebibliography}
 
+\newpage 
+
+\noindent \textbf{10/18}  Let's try to fix the error from last week. \\
+\begin{itemize}
+\item $(2) = 2\mathbb{Z} \oplus 2\sqrt{-5}\mathbb{Z}$
+\item $(3) = 3\mathbb{Z} \oplus 3\sqrt{-5}\mathbb{Z}$
+\item $(1+\sqrt{-5}) = (1 + \sqrt{-5})\mathbb{Z} \oplus (5 - \sqrt{-5})\mathbb{Z}$
+\item $(1-\sqrt{-5}) = (1 - \sqrt{-5})\mathbb{Z} \oplus (5 + \sqrt{-5})\mathbb{Z}$
+\end{itemize}
+We may as well write these ideals as $(2,0)\oplus(0,2)$, $(3,0)\oplus(0,3)$,
+$(1,1)\oplus(5,-1)$ and $(1,-1)\oplus(5,1)$. \\
+
+\begin{tikzpicture}[scale=1]
+
+\begin{scope}
+
+
+\foreach \a in {0,0.5,...,6}{
+	\draw[black!25!white] (\a, 0)--(\a,6*1.0);
+}
+
+\foreach \a in {0,0.5,...,6}{
+	\draw[black!25!white] (0,\a*1.0)--(6,\a*1.0);
+}
+
+\foreach \a in {0,...,6}{
+	\draw (\a, 0)--(\a,6*1.0);
+}
+
+\foreach \a in {0,...,6}{
+	\draw (0,\a*1.0)--(6,\a*1.0);
+}
+
+\draw[line width=2] (0,0)--(0,6*1.0);
+\draw[line width=2] (0,0)--(6,0);
+
+\draw[fill=black] (0,0*1.0) circle (0.1);
+\draw[fill=black] (2,0*1.0) circle (0.1);
+\draw[fill=black] (4,0*1.0) circle (0.1);
+\draw[fill=black] (6,0*1.0) circle (0.1);
+
+\draw[fill=black] (0,2*1.0) circle (0.1);
+\draw[fill=black] (2,2*1.0) circle (0.1);
+\draw[fill=black] (4,2*1.0) circle (0.1);
+\draw[fill=black] (6,2*1.0) circle (0.1);
+
+\draw[fill=black] (0,4*1.0) circle (0.1);
+\draw[fill=black] (2,4*1.0) circle (0.1);
+\draw[fill=black] (4,4*1.0) circle (0.1);
+\draw[fill=black] (6,4*1.0) circle (0.1);
+
+\draw[fill=black] (0,6*1.0) circle (0.1);
+\draw[fill=black] (2,6*1.0) circle (0.1);
+\draw[fill=black] (4,6*1.0) circle (0.1);
+\draw[fill=black] (6,6*1.0) circle (0.1);
+
+
+\draw (0,0*1.0) circle (0.2);
+\draw (3,0*1.0) circle (0.2);
+\draw (6,0*1.0) circle (0.2);
+
+\draw (0,3*1.0) circle (0.2);
+\draw (3,3*1.0) circle (0.2);
+\draw (6,3*1.0) circle (0.2);
+
+\draw (0,6*1.0) circle (0.2);
+\draw (3,6*1.0) circle (0.2);
+\draw (6,6*1.0) circle (0.2);
+
+\end{scope}
+
+\begin{scope}[xshift=10cm]
+
+
+\foreach \a in {0,0.5,...,6}{
+	\draw[black!25!white] (\a, 0)--(\a,6*1.0);
+}
+
+\foreach \a in {0,0.5,...,6}{
+	\draw[black!25!white] (0,\a*1.0)--(6,\a*1.0);
+}
+
+\foreach \a in {0,...,6}{
+	\draw (\a, 0)--(\a,6*1.0);
+}
+
+\foreach \a in {0,...,6}{
+	\draw (0,\a*1.0)--(6,\a*1.0);
+}
+
+\draw[line width=2] (0,0)--(0,6*1.0);
+\draw[line width=2] (0,0)--(6,0);
+
+\draw[fill=black] (0,0*1.0) circle (0.1);
+\draw[fill=black] (1,1*1.0) circle (0.1);
+\draw[fill=black] (2,2*1.0) circle (0.1);
+\draw[fill=black] (3,3*1.0) circle (0.1);
+\draw[fill=black] (4,4*1.0) circle (0.1);
+\draw[fill=black] (5,5*1.0) circle (0.1);
+\draw[fill=black] (6,6*1.0) circle (0.1);
+
+\draw[fill=black] (6,0*1.0) circle (0.1);
+\draw[fill=black] (0,6*1.0) circle (0.1);
+
+\draw (0,0) circle (0.2);
+\draw (6,6) circle (0.2);
+
+\draw (0,6*1.0) circle (0.2);
+\draw (1,5*1.0) circle (0.2);
+\draw (2,4*1.0) circle (0.2);
+\draw (3,3*1.0) circle (0.2);
+\draw (4,2*1.0) circle (0.2);
+\draw (5,1*1.0) circle (0.2);
+\draw (6,0*1.0) circle (0.2);
+
+\end{scope}
+
+\end{tikzpicture} \\ \\
+A quick look at this diagram shows that the LCM of $2$ and $3$ is $6$.  But this is also the LCM of $1 + \sqrt{-5}$ and $1-\sqrt{-5}$ is $6$.  This tells us our bookkeeping methods need to get supplemented quite a bit. \\ \\
+How and why do continued fractions occur?  Did we get all the mileage we can out of such a construction?  If we complain these objects are useless, maybe it's possible to design a better one.  \\ \\ 
+Let's try an example over $\mathbb{Z}$.  Hoping, maybe it can be extended to $\mathbb{Z}[\sqrt{-5}]$.  We can show that since $\pi < 5 $ there is no GCD in this domain.  Euclidean geometry doesn't just finish\dots what's left of that?   \\ \\
+\textbf{Thm} Let $\theta$ and $Q> 1$ be real.\footnote{What's coming is yet another very thorough check of the construction of $\mathbb{R}$.  It's supposed to look and feel like a ruler, more or less.  Was the thing you measured even flat?? Did you have all the numbers in between $2$ and $3$ ?} There is an integer such that $0 < q < Q$ and $||q \theta|| < Q^{-1}$. \\ \\
+\textit{Proof \#1} \dots \\ \\ 
+\textit{Proof \#2} \dots \\ 
+
 \end{document}
