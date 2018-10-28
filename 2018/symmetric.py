@@ -68,3 +68,14 @@ a**4*b**2/(a**2*b - a*b**2 + a*c**2 + b**2*c - b*c**2 - c**3) - a**2*b**4/(a**2*
 ... 
 >>> simplify(det(A)/det(B))
 a**2*b + a**2*c + a*b**2 + 2*a*b*c + a*c**2 + b**2*c + b*c**2
+
+#summary
+>>> def det(((a,b,c),(d,e,f),(g,h,i))):
+...     return a*e*i + b*f*g + c*d*h - c*e*g - a*f*h - b*d*i
+>>> def A(x,y,z):
+...     return ((a**x,b**x,c**x),(a**y,b**y,c**y),(a**z,b**z,c**z))
+>>> simplify(det(A(2,1,0))/det(B))
+1
+>>> simplify(det(A(4,2,0))/det(B))
+a**2*b + a**2*c + a*b**2 + 2*a*b*c + a*c**2 + b**2*c + b*c**2
+
