@@ -319,4 +319,78 @@ Let's try an example over $\mathbb{Z}$.  Hoping, maybe it can be extended to $\m
 \textit{Proof \#1} \dots \\ \\ 
 \textit{Proof \#2} \dots \\ 
 
+\newpage
+
+\noindent \textbf{11/14}  Let's try to parse these definitions from Chapter III \\ \\
+\textbf{Def} A \textit{prime}  $\mathfrak{p}$ of an algebraic number field $K$ is a clas of equivalent valuation of $K$. 
+\begin{itemize}
+\item the non-archimedian equivalence classes are called \textit{finite primes}.
+\item the archmedian equivalence classes are called \textit{infinite primes}.
+\end{itemize}
+This is the start of a bunch of jargon that we have to learn, but we grin and bear it. \\ \\
+$\mathbb{Q}(\sqrt{2})$ has {\color{green!75!black} \textbf{two}} infinite places $|a+b\sqrt{2}|_1 = |a + b \sqrt{2}|$ and $|a+b\sqrt{2}|_2 = |a - b \sqrt{2}|$.  \\ \\
+$\mathbb{Q}$ has only \textbf{one} infinite place, $|a|= |-a| = a$ when $a > 0$.\footnote{This is a great time to start wondering if $\mathbb{Q}$ is even the most natural construct.  We count things, don't we?  And we talk about fairness and proportion?  Yet, do fractions really describe the way we allocate goods, or (mentally) divide things into parts?  Are \textbf{positive} and \textbf{negative} really the only two signs a value can have...? \\ \\
+E.g. $[a-b] = (a,b)/(1,-1)$ as vectors in $\mathbb{R}^2$.} \\ \\
+The primes in the number field $\mathbb{Q}(i)$ can be arranged in a sort of number line.\\ \\
+\begin{tikzpicture}
+\draw[fill=black] (0,0) circle (0.1);
+\draw[fill=black] (1,0) circle (0.1);
+\draw[fill=black] (2, 0.5) circle (0.1);
+\draw[fill=black] (2,-0.5) circle (0.1);
+\draw[fill=black] (3,0) circle (0.1);
+\draw[fill=black] (4,0) circle (0.1);
+\draw[fill=black] (5, 0.5) circle (0.1);
+\draw[fill=black] (5,-0.5) circle (0.1);
+\draw[fill=black] (6,0) circle (0.1);
+
+\node at (0, 0.5) {2};
+\node at (1, 0.5) {3};
+\node at (2, 1.25) {$2+i$};
+\node at (2,-1.25) {$2-i$};
+\node at (3, 0.5) {7};
+\node at (4, 0.5) {11};
+\node at (5, 1.25) {$2+3i$};
+\node at (5,-1.25) {$2-3i$};
+\node at (6, 0.5) {17};
+
+\draw (0,-0.5)--(0,-2);
+\draw (1,-0.5)--(1,-2);
+\draw (3,-0.5)--(3,-2);
+\draw (4,-0.5)--(4,-2);
+\draw (6,-0.5)--(6,-2);
+\draw (2,-0.25)--(2, 0.25);
+\draw (5,-0.25)--(5, 0.25);
+
+\begin{scope}[yshift=-3cm]
+\draw[fill=black] (0,0) circle (0.1);
+\draw[fill=black] (1,0) circle (0.1);
+\draw[fill=black] (2,0) circle (0.1);
+\draw[fill=black] (3,0) circle (0.1);
+\draw[fill=black] (4,0) circle (0.1);
+\draw[fill=black] (5,0) circle (0.1);
+\draw[fill=black] (6,0) circle (0.1);
+
+\node at (0, 0.5) {2};
+\node at (1, 0.5) {3};
+\node at (2, 0.5) {5};
+\node at (3, 0.5) {7};
+\node at (4, 0.5) {11};
+\node at (5, 0.5) {13};
+\node at (6, 0.5) {17};
+\end{scope}
+
+
+\end{tikzpicture} \\ \\
+There are two primes over $5$ in $\mathbb{Q}$ we have $\mathfrak{p}_1 = 2+i$ and $\mathfrak{p}_2 = 2-i$ with $\mathfrak{p}_1 | 5$ and $\mathfrak{p}_2 | 5$. \\ \\
+Now the book says we can assign a (canonical) homomorphism $v_\mathfrak{p}: K^\times \to \mathbb{R}$ and all the absolute values solve something like unique factorization: \\\\
+\textbf{Prop} For any $a \in K^\times$ we have $|a|_{\mathfrak{p}}= 1$ for almost all $\mathfrak{p}$.  Also, $\displaystyle \prod_{\mathfrak{p}} |a|_{\mathfrak{p}} = 1 $ \\ \\
+Any surprises there, that no number is the product of infinitely many primes? We could construct those thing as well, with enough imagnation.  The object might even be realistic in some ways. \\ \\
+How do fractions work over number fields, such as $\mathbb{Q}(i)$ or $\mathbb{Q}(\sqrt{-5})$ or $\mathbb{Q}(\sqrt{2})$?  Is it safe to assume they work exactly the same way?
+\begin{itemize}
+\item $J(\mathcal{O})$ is the group of fractional ideals of $K$
+\item $P(\mathcal{O})$ is the group of principal fractional ideals of $K$
+\item $Pic(\mathcal{O}) =  J(\mathcal{O})/P(\mathcal{O})$ is the \textbf{ideal class group} of $K$
+\end{itemize}
+I really need to get an undergraduate algebra textbook because I'm rusty on all of this.  A definition like this means that perhaps we could have a fractional ideal in a number field, that's not principal.  Indeed $|Cl_{\mathbb{Q}(\sqrt{-5})}|=2$.  That result doesn't mean much at the moment, until we do more it's just a bunch of talk.
+
 \end{document}
