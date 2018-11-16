@@ -393,4 +393,44 @@ How do fractions work over number fields, such as $\mathbb{Q}(i)$ or $\mathbb{Q}
 \end{itemize}
 I really need to get an undergraduate algebra textbook because I'm rusty on all of this.  A definition like this means that perhaps we could have a fractional ideal in a number field, that's not principal.  Indeed $|Cl_{\mathbb{Q}(\sqrt{-5})}|=2$.  That result doesn't mean much at the moment, until we do more it's just a bunch of talk.
 
+\newpage
+
+\noindent More definition. A \textbf{replete ideal} of $K$ is an element of the group
+$$ J(\overline{\mathcal{O}}) := J(\mathcal{O}) \times \prod_{\mathfrak{p}|\infty} \mathbb{R}^\times_+ $$
+These ``replete ideals" factor into a produc of finite and infinite places:
+$$ \mathfrak{a} = \mathfrak{a}_f \cdot \mathfrak{a}_\infty =  
+\prod_{p | \infty} \mathfrak{p}^{\nu_{\mathfrak{p}}} \times \prod_{p \nmid \infty} \mathfrak{p}^{\nu_{\mathfrak{p}}} $$
+A \textbf{replete divisor} (or \textbf{Arakelov divisor}) is a formal sum (here $\nu_p \in \mathbb{Z}$) and $\nu_p \in \mathbb{R}$ for $p | \infty$ and $\nu_\mathfrak{p} = 0$ for almost all $\mathfrak{p}$.
+$$  D = \sum_{\mathfrak{p}} \nu_{\mathfrak{p}} \mathfrak{p}  $$
+For example, instead of writing the factorization $105 = 3 \times 5 \times 7$ we could write a divisor:
+$$ 105 = 1 \times (3) + 1 \times (5) + 1 \times (7) $$ 
+here the prime ideals $(3), (5) , (7) \subseteq \mathbb{Q}^\times$.  I'm getting ahead of myself.  There is a canonical homomorphism:
+$$ \text{div}: K^\times \to \text{Div}(\overline{\mathcal{O}})  $$
+and we have computed that $\text{div}(105) = (3) + (5) + (7)$.  Next define the \textbf{replete divisor class group} (or \textbf{Chow group}):
+$$ CH^1(\overline{\mathcal{O}}) = \text{Div}(\overline{\mathcal{O}})/P(\overline{\mathcal{O}})$$
+next we have the degree map
+\begin{eqnarray*}
+\text{deg} &:& \text{Div}(\overline{O}) \to \mathbb{R} \\ 
+ &:&D \mapsto \sum_\mathfrak{p} \nu_{\mathfrak{p}} \log N(\mathfrak{p}) 
+\end{eqnarray*} 
+abstractly, Neukirch says this is a continuous homomorphism\footnote{over which topology?} which is going to merge the unit group and the ideal class group:
+$$ \text{deg}: CH^1(\overline{\mathcal{O}}) \to \mathbb{R} $$
+One of the benefits of this abstraction is that the arithmetic of number fields is going to get very very organized.  We can use \textit{exact sequences}: \\ \\
+\textbf{Thm} The group $CH^1(\overline{\mathcal{O}})^0$ is compact.
+$$ 0 \to H/\Gamma \to CH^1(\overline{\mathcal{O}})^0 \to CH^1(\mathcal{O}) \to 0 $$
+We need numbers !!!
+\vfill
+
+\begin{thebibliography}{}
+
+\item J\"{u}rgen Neukirch \textbf{Algebraic Number Theory} (Grundlehren der mathematischen Wissenschaften \#322) Springer, 1999.
+
+
+\item Mak Trifkovi\'{c} \textbf{Algebraic Theory of Quadratic Numbers} (Universitext) Springer, 2013.
+
+\item Jarvis Frazer \textbf{Algbraic Number Theory} (Universitext) Springer, 2014.
+
+\item Daniel Marcus \textbf{Number Fields} (Universitext) Springer, 2018.
+\end{thebibliography}
+
 \end{document}
