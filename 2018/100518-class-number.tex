@@ -418,10 +418,20 @@ $$ \text{deg}: CH^1(\overline{\mathcal{O}}) \to \mathbb{R} $$
 One of the benefits of this abstraction is that the arithmetic of number fields is going to get very very organized.  We can use \textit{exact sequences}: \\ \\
 \textbf{Thm} The group $CH^1(\overline{\mathcal{O}})^0$ is compact.
 $$ 0 \to H/\Gamma \to CH^1(\overline{\mathcal{O}})^0 \to CH^1(\mathcal{O}) \to 0 $$
-We need numbers !!!
+We need numbers !!! \\ \\
+\textbf{Ex} A real quadratic number field $\mathbb{Q}(\sqrt{d})$ is Euclidean (and therefore class number is $1$) if $d \in \{5, 8, 12, 13, 17, 21, 24, 28, 29, 33, 37, 41, 44, 57, 73, 76  \}$.  I doubt anyone has tried it, although we take for granted we could run such a computation on a computer.\footnote{We are saying that some square-root computations involving $\sqrt{d}$ always behave a certain way.  How do GCD computations work here?  For two ideals we'd have $\text{gcd}(\mathfrak{a},\mathfrak{b}) = \mathfrak{a} + \mathfrak{b}$, and $\text{lcm}(\mathfrak{a},\mathfrak{b})=\mathfrak{a} \cap \mathfrak{b}$.} \\ 
+\textbf{Ex} 
+\begin{itemize}
+\item $K = \mathbb{Q}(\sqrt{6})$ \hspace{15pt}has class number $h=1$.
+\item $K = \mathbb{Q}(\sqrt{-5})$ \hspace{5pt}has class number $h=2$.
+\item $K = \mathbb{Q}(\sqrt{-23})$ has class number $h=3$.
+\item $K = \mathbb{Q}(\sqrt{-47})$ has class number $h=5$.
+\end{itemize}
 \vfill
 
 \begin{thebibliography}{}
+
+\item Helmut Koch \textbf{Algebraic Number Theory} 
 
 \item J\"{u}rgen Neukirch \textbf{Algebraic Number Theory} (Grundlehren der mathematischen Wissenschaften \#322) Springer, 1999.
 
@@ -431,6 +441,18 @@ We need numbers !!!
 \item Jarvis Frazer \textbf{Algbraic Number Theory} (Universitext) Springer, 2014.
 
 \item Daniel Marcus \textbf{Number Fields} (Universitext) Springer, 2018.
+
+\end{thebibliography}
+
+\begin{thebibliography}{}
+
+\item Henri Cohen, Karim Belabas \textbf{Modular Forms in Pari/GP} \texttt{arXiv:1810.00547}
+\item Henri Cohen \\ 
+\textbf{Expansions at Cusps and Petersson Products in Pari/GP} \texttt{arXiv:1809.10908
+ } \\
+\textbf{An Introduction to Modular Forms} \texttt{arXiv:1809.10907} \\
+\textbf{Computational Number Theory in Relation with L-Functions} \texttt{arXiv1809.10904}
+
 \end{thebibliography}
 
 \end{document}
