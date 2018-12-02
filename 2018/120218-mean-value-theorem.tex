@@ -1,0 +1,56 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+
+\title{Scratchwork: Mean Value Theorem + Bifurcation Theory}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+\noindent Do we know the implicit function theorem? \\ \\
+\textbf{Thm} Suppose that $F: \mathbb{R}^k \times \mathbb{R} \to \mathbb{R}$ with $(\lambda, x) \to F(\lambda,x)$ is a $C^1$ function (with one derivative) solving:
+$$ F(0,0) = 0 \text{ and }\frac{\partial F}{\partial x}(0,0) \neq 0 $$
+There are constants $\delta > 0$ and $\eta > 0$ and a $C^1$ function:
+\begin{itemize}
+\item $\psi: \{ \lambda: ||\lambda|| < \delta \} \to \mathbb{R}$
+\item $\psi(0) = 0$ and $F(\lambda, \psi(\lambda)) = 0$ for $||\lambda|| < \delta$
+\end{itemize}
+If there is a $(\lambda_0, x_0) \in \mathbb{R}^k \times \mathbb{R}$ such that $||\lambda_0|| < \delta$ and $|x_0| < \eta$ and solved $F(\lambda_0, x_0)$ then $x_0 = \psi(\lambda_0)$. \\ \\
+What do bifurcations describe? And what do they look like? \\ \\
+\textbf{Ex} Co-dimension one vector field dependeing on two parameters.
+$$ \dot{x} = \lambda_1 + \lambda_2 x + x^2 $$
+\textbf{Ex} Here is a perturbation of the vector field $f(x) = x^2$ - on $T_1(\mathbb{R})$ :
+$$ \dot{x} = \lambda^2 + 2a\lambda x + x^2 $$
+How does a mere shifting of the arrows change the qualitative flow of the vector field? \\ \\
+\textbf{Ex} How about this two-parameter bifurcation of the vector field $f(x) = \frac{1}{6}x^3$:
+$$ \dot{x} = \mu_1 + \mu_2^2 \, x + \mu_2 \frac{1}{2}x^2 - \frac{1}{6}x^3 $$
+Bifurctions like these should matter a lot because we can try to compute Euler charactistics this way (e.g. the Poincar\'{e}-Hopf theorem).  Or conversely (and more practical) we are confronted with a large complicated information, and the Euler characteristic is the only think we know and we can obtain an invariant.\\ \\
+\textbf{Q} What happens in a more serious setting? In gauge theory we might consider maps from $\mathbb{R}^4$ to $U(1)$ or to another group like $G = SU(2)$.  I don't think I have ever seen a differential equation solved in this setting.  Can bifurcations occur there? \\ \\
+The only vector bundle on $\mathbb{R}^4$ is the trivial vector bundle $\mathbb{R}^4 \times U(1)$.  However, there could be other 4-manifolds where other structures can happen.  We could start by consulting a differential geometry book, or even a $K$-theory text.
+\vfill
+\begin{thebibliography}{} 
+
+\item Jack Hale, H\"{u}seyin Ko\c{c}ak \textbf{Dynamics and Bifurcations} (Texts in Applied Mathematics) Springer, 1991.
+
+\item David Tong \textbf{Lectures on Gauge Theory} \texttt{http://www.damtp.cam.ac.uk/user/tong/gaugetheory.html}
+
+\item Mark J.D. Hamilton \textbf{Mathematical Gauge Theory} (Universitext) Springer, 2017.
+
+\end{thebibliography}
+
+
+
+
+\end{document}
