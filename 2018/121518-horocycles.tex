@@ -1,0 +1,65 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+
+\title{Scratchwork: Horocycles}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+\noindent Let's try to understand a little better what it means that the horocycle flow is mixing. \\ \\
+\noindent \textbf{Thm 11.22} Let $\Gamma \leq \text{SL}_2(\mathbb{R})$ be a lattice.  Then the action of $\text{SL}_2(\mathbb{R})$ on $X = \Gamma \backslash \text{SL}_2(\mathbb{R})$ is mixing.  \\ \\
+These groups represent an equivalence class of number systems.  For simplicity we choose two: $\text{SL}_2(\mathbb{Z})\backslash \text{SL}_2(\mathbb{R})$ and $\Gamma_0(4) \backslash \text{SL}_2(\mathbb{R})$ with:
+$$ \text{SL}_2(\mathbb{Z}) = \left\{ \left( 
+\begin{array}{cc} a & b \\ c & d \end{array}\right) : ad-bc = 1 \right\} \text{ and }\Gamma_0(4) = \text{SL}_2(\mathbb{Z}) \cap \left\{ 
+\left( 
+\begin{array}{cc} a & b \\ c & d \end{array}\right)  \equiv \left( 
+\begin{array}{cc} * & * \\ 0 & * \end{array}\right) \pmod 4 \right\} $$
+while it looks self-evidence to solve the equation in brackets, finding a solution over $\mathbb{Z}$ already requires continued fractions. Theorem 11.22 is about the entire $\text{SL}_2(\mathbb{R})$ which contains both the geodesic flow and the horocycle flow. Here is a statement about only horocycles.\\ \\
+\textbf{11.15} Let $\Gamma \leq \text{SL}_2(\mathbb{R})$ be a lattice.  Let $g \in \text{SL}_2(\mathbb{R})$ be an element that is not conjugate to an element of $\text{SO}(2)$.  Then $R_g$ acts ergodically $(X, \mathcal{B}_X, m_x)$. \\ \\
+Here $m_X$ is the Haar measure on $\text{SL}_2(\mathbb{Z})\backslash \text{SL}_2(\mathbb{R})$, and $\mathcal{B}_X$ is a Borel $\sigma$-algebra of measurable sets on $X$. \\ \\
+It seems in the process of doing functional analysis and measure rigidity, we're not placing too much emphasis on basic Eucliean geometry or examples.  Or perhaps I'm missing something. \\ \\
+What is a \textbf{horocycle} anyway?\footnote{Wikipedia \texttt{https://en.wikipedia.org/wiki/Horocycle}} 
+\begin{quotation} \noindent In hyperbolic geometry, a horocycle (Greek: ὅριον + κύκλος — border + circle, sometimes called an oricycle, oricircle, or limit circle) is a curve whose normal or perpendicular geodesics all converge asymptotically in the same direction. It is the two-dimensional example of a horosphere (or orisphere).
+\begin{itemize}
+\item Through every pair of points there are two horocycles.
+\item No three points of a horocycle are on a line, circle or hypercircle.
+\item A straight line, circle, or hypercircle cuts a horocycle in at most two points
+\item a regular \textbf{apeirogon} is circumscribed by either a horocycle or a hypercycle.
+\item The perpendicular bisector of a chord of a horocycle is a normal of the horocycle and it bisects the arc subtended by the chord.
+\end{itemize}
+In the Poincar\'{e} disk model of the hyperbolic plane, horocycles are represented by circles tangent to the boundary circle, the centre of the horocycle is the ideal point where the horocycle touches the boundary circle.
+
+The compass and straightedge construction of the two horocycles through two points is the same construction of the CPP construction for the Special cases of Apollonius' problem where both points are inside the circle.
+\end{quotation}
+A cursory look through Wikipedia gives a lot of information, and should motivate a look through a good Geometry textbook.  
+
+\vfill
+\begin{thebibliography}{} 
+
+\item Brian Marcus \textbf{The horocycle flow is mixing of all degrees} Inventiones Mathematicae, Vol 46 \#3 201-209.
+
+\item Manfred Einsiedler, Thomas Ward. \textbf{Ergodic Theory: with a view towards Number Theory} \\GTM \#259 Springer, 2011.
+
+\item Marina Ratner \\ 
+\textbf{Factors of Horocycle Flows}  Ergodic Theory and Dynamical Systems  Vol. 2, \#3-4 pp.465-489, 1982 \\
+\textbf{Horocycle Flows, Joinings and Rigidity of Products} Annals of Mathematics Vol. 118, No. 2 pp. 277-313 (1983)
+
+\end{thebibliography}
+
+
+
+
+\end{document}
