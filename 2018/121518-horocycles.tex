@@ -44,12 +44,24 @@ In the Poincar\'{e} disk model of the hyperbolic plane, horocycles are represent
 
 The compass and straightedge construction of the two horocycles through two points is the same construction of the CPP construction for the Special cases of Apollonius' problem where both points are inside the circle.
 \end{quotation}
-A cursory look through Wikipedia gives a lot of information, and should motivate a look through a good Geometry textbook.  
+A cursory look through Wikipedia gives a lot of information, and should motivate a look through a good Geometry textbook.  \\ \\
+
+\noindent \textbf{12/17} What kind of issues could we address this way?  An element of $\text{SL}_2(\mathbb{Z})$ would have four integers $a,b,c,d \in \mathbb{Z}$ with $ad-bc = 1$.  
+$$ \frac{a}{c} - \frac{b}{d} = \frac{1}{cd} < \frac{1}{\text{max}\{c,d\}^2} $$
+This equation says, for example that always $\text{gcd}(a,c) = 1$ and we could solve with continued fractions  (another thing we'll call into question). Ergiodicity of the horocycle flow intuitively implies that:
+$$ 
+\overline{\left[ \begin{array}{cr} 1 & t \in \mathbb{R} \\ 0 & 1 \end{array} \right]
+\left[ \begin{array}{cc} a & b \\ c & d \end{array} \right] \text{SL}_2(\mathbb{Z})} = \text{SL}_2(\mathbb{R}) $$
+Because of human error, even if I have four integers $a,b,c,d \in \mathbb{Z}$ with a small amount of error.  Suppose I make a mistake in one of them.  
+$$ (a + \epsilon) (d + \epsilon) - (b + \epsilon)( = 1 $$
+What if the number $(a,c)$ were not quite relatively prime?  Could we take the derivative of the GCD function with respect to one of the variables? 
+$$ \frac{d}{da} \Big[ \text{gcd}(a,c) \Big]  = \lim_{|\epsilon| \to 0} \frac{\text{gcd}(a + \epsilon,c) - \text{gcd}(a,c)}{\epsilon} $$
+Does a statement like this even make sense?  It's good enough for now.
 
 \vfill
 \begin{thebibliography}{} 
 
-\item Brian Marcus \textbf{The horocycle flow is mixing of all degrees} Inventiones Mathematicae, Vol 46 \#3 201-209.
+\item Brian Marcus \textbf{The horocycle flow is mixing of all degrees} Inventiones Mathematicae, Vol 46 \#3 201-209 (1978)
 
 \item Manfred Einsiedler, Thomas Ward. \textbf{Ergodic Theory: with a view towards Number Theory} \\GTM \#259 Springer, 2011.
 
