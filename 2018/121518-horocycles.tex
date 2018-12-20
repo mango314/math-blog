@@ -56,8 +56,48 @@ Because of human error, even if I have four integers $a,b,c,d \in \mathbb{Z}$ wi
 $$ (a + \epsilon) (d + \epsilon) - (b + \epsilon)( = 1 $$
 What if the number $(a,c)$ were not quite relatively prime?  Could we take the derivative of the GCD function with respect to one of the variables? 
 $$ \frac{d}{da} \Big[ \text{gcd}(a,c) \Big]  = \lim_{|\epsilon| \to 0} \frac{\text{gcd}(a + \epsilon,c) - \text{gcd}(a,c)}{\epsilon} $$
-Does a statement like this even make sense?  It's good enough for now.
+Does a statement like this even make sense?  It's good enough for now. \\ \\
 
+\noindent \textbf{12/20} Why even bother stating formally the mixing of the horocycle flow.  Can we even state two lattices in $\text{SL}_2(\mathbb{R})$ that are close to one another (approximate).  Let's find two matrices that solve $ad-bc = 1$:
+$$ \left[ \begin{array}{cc} \sqrt{2} & 0 \\ 0 & \frac{1}{\sqrt{2}} \end{array} \right] \quad\text{and}\quad
+\left[ \begin{array}{cc} 2 & \sqrt{3} \\ \sqrt{3} & 2 \end{array} \right] $$
+since we have $\sqrt{2} \times \frac{1}{\sqrt{2}} = 1$ and yet $2 \times 2 -3 = 1$.  These two matrices are not adjacent $\sqrt{2} \approx 1.414$ (at least, as an element of $\mathbb{R}$).  Perhaps we could find a number $\epsilon \approx 0$ with:
+\begin{eqnarray*} \det  \left[ \begin{array}{cc} \sqrt{2}-\epsilon & \epsilon \\ \epsilon & \frac{1}{\sqrt{2} }+ \epsilon   \end{array} \right]
+&=& 1 - \epsilon \, \big( \frac{1}{\sqrt{2}} - \sqrt{2} \big) - 2\;\epsilon^2 = 1 \\
+\epsilon &=&  \frac{1}{2} \big( \sqrt{2} - \frac{1}{\sqrt{2}}  \big) \end{eqnarray*}
+And the second one is even more confusing.  It's also easy.  Why don't we try a more systmatic approach.  Using the $NAK$ decomposition of the $2\times2$ invertible matrices:
+$$
+\left[ \begin{array}{cc} \sqrt{a} & 0 \\ 0 & \frac{1}{\sqrt{a}} \end{array} \right] \times
+\left[ \begin{array}{cc} 1 & b \\ 0 & 1 \end{array} \right] \times
+\left[ \begin{array}{rr} c & -d \\ d & c \end{array} \right] \text{ with }c^2 + d^2 =1$$
+So now we have an easy way to construct $2 \times 2$ matrices with entires in $\mathbb{R} \backslash \mathbb{Z}$.  Let $b = 0$, and $c = \epsilon$ and $d = \sqrt{1 - \epsilon^2}$.  
+$$ \left[ \begin{array}{cc} \sqrt{a} & 0 \\ 0 & \frac{1}{\sqrt{a}} \end{array} \right] \times
+\left[ \begin{array}{rr} \sqrt{1 - \epsilon^2} & -\epsilon \\ \epsilon & \sqrt{1 - \epsilon^2} \end{array} \right] $$
+where we observe that $\sqrt{1-\epsilon^2} \approx 1 - \frac{1}{2} \epsilon^2 + O(\epsilon^4)$ a statement which is also up for veritication.  In particular, when is $\sqrt{1 - \epsilon^2} \in \mathbb{Q}$.  In words, we want rational points on the circle that are close to $(1,0)$.  Notice that:
+$$ 1^2 + 0^2 = 1^2 \text{ so then } (1-\epsilon^2)^2 + \epsilon^2 = 1 + O(\epsilon^4) $$
+This is a not an acceptable result.  Not right now.  This also look like a bit of a scheme result, we could have $\mathbb{R}[\epsilon]/(\epsilon^4)$ and this is a \textbf{scheme}.  We could organize our request into a form or a cylinder set:
+\begin{eqnarray*}
+c^2 + d^2 &=& 1 \\
+(c,d) &\in& \mathbb{Q}^2\\
+(c,d) & \approx & (0,1) \\ \vspace{8pt}
+&\text{or}& \\ \vspace{8pt}
+|c| & < & \epsilon \\
+|d| & > & 1 - \epsilon
+\end{eqnarray*}
+and we could be more specific with our choice of " $\approx$ " (what we'd call a topology).\footnote{There's an obvious topology on $\mathbb{R}$ but our attempts to smell out solutions over $\mathbb{Q}$ (where our circle is now a \textit{scheme}) will lead us to other completions such as $\mathbb{Q}_p$.}  Using the Pythagoras formula we could have:
+$$ (c,d) = \left( \frac{m^2 - n^2}{m^2 + n^2}, \frac{2mn}{m^2 + n^2} \right) \stackrel{m \gg 1, n=1}{\longrightarrow} \left(  
+\frac{m^2 - 1}{m^2 + 1}, \frac{2m}{m^2 + 1}\right)\approx (1,0) $$  
+All that's left is to cobble together the numbers to get a result.  
+$$ \left[ \begin{array}{cc} \sqrt{a} & 0 \\ 0 & \frac{1}{\sqrt{a}} \end{array} \right] 
+\times
+\left[ \begin{array}{rr} \frac{m^2 - 1}{m^2 + 1} & -\frac{2m}{m^2 + 1} \\ 
+\frac{2m}{m^2 + 1} & \frac{m^2 - 1}{m^2 + 1}  \end{array} \right] \stackrel{a=3,m=10}{=}
+ \left[ \begin{array}{cc} \sqrt{2} & 0 \\ 0 & \frac{1}{\sqrt{2}} \end{array} \right] 
+\times
+\left[ \begin{array}{rr} \frac{99}{101} & -\frac{20}{101} \\ \\
+\frac{20}{101} & \frac{99}{101}  \end{array} \right]
+$$
+If we want to reason about the numbers we are getting we have to dig a little deeper.  At the moment all we want is two nearby elements of $\text{SL}(2, \mathbb{R})$.
 \vfill
 \begin{thebibliography}{} 
 
