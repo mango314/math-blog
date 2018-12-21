@@ -97,7 +97,46 @@ $$ \left[ \begin{array}{cc} \sqrt{a} & 0 \\ 0 & \frac{1}{\sqrt{a}} \end{array} \
 \left[ \begin{array}{rr} \frac{99}{101} & -\frac{20}{101} \\ \\
 \frac{20}{101} & \frac{99}{101}  \end{array} \right]
 $$
-If we want to reason about the numbers we are getting we have to dig a little deeper.  At the moment all we want is two nearby elements of $\text{SL}(2, \mathbb{R})$.
+If we want to reason about the numbers we are getting we have to dig a little deeper.  At the moment all we want is two nearby elements of $\text{SL}(2, \mathbb{R})$. \\ \\
+\textbf{Iwasawa Decomposition} There even a formula for splitting a $g$ into $ank$:
+\begin{eqnarray*}
+\underline{a}\left[ \begin{array}{cc} a & b \\ c & d \end{array} \right]  &=& 
+\left[ \begin{array}{cc} \frac{1}{\sqrt{c^2+d^2}} & 0 \\ 0 & \sqrt{c^2 + d^2} \end{array} \right]  \\
+\underline{n}\left[ \begin{array}{cc} a & b \\ c & d \end{array} \right]  &=& 
+\left[ \begin{array}{cc} 1 & ac+bd \\ 0 & 1 \end{array} \right]  \\
+\underline{k}\left[ \begin{array}{cc} a & b \\ c & d \end{array} \right]  &=& 
+\frac{1}{\sqrt{c^2 + d^2}}\left[ \begin{array}{rr} d & -c \\ c & d \end{array} \right]  
+\end{eqnarray*}
+and for the 100th time, we remind ourselfs that $\mathbb{H} = G/K = \text{SL}_2(\mathbb{R})/\text{SO}_2(\mathbb{R})$.  What remains is to apply these group-actions to geometry problems. \\ \\
+\textbf{Row Operations} The two main operations we use to simplify matrices are to add one row to another and then to switch.
+$$ \left[ \begin{array}{cc} 1 & 1 \\ 0 & 1 \end{array} \right]\left[ \begin{array}{cc} a & b \\ c & d \end{array} \right]
+= \left[ \begin{array}{rr} a+c & b+d \\ c & d \end{array} \right] \text{ and }
+\left[ \begin{array}{rr} 0 & -1 \\ 1 & 0 \end{array} \right]\left[ \begin{array}{cc} a & b \\ c & d \end{array} \right]
+= \left[ \begin{array}{rr} -c & -d \\ a & b \end{array} \right]$$
+and these two matrices generate $\text{SL}_2(\mathbb{Z})$.  It is simplistic and reductionist to say that's all there is to it, but it gets us started.
+\newpage
+
+\noindent \textbf{Lattice Reduction} How to tell if two Lattices are the Same? If we write down the symbol: $G = \text{SL}_2(\mathbb{Z}) \backslash \text{SL}_2(\mathbb{R})$ we need a way of telling if two elements are the same.  Lattice reduction problems are NP-complete in general and we get lucky in the case of $\text{SL}_2(\mathbb{Z})$ since we can write down two generators.  \\ \\
+The elements of $\text{SL}_2(\mathbb{Z}) \backslash \text{SL}_2(\mathbb{R})$ are \textbf{cosets}.  We take a single group element $g \in \text{SL}_2(\mathbb{R})$ and multipy by all of $\text{SL}_2(\mathbb{Z})$. 
+$$  \left[ \begin{array}{cc} 1 & t \\ 0 & 1 \end{array} \right]\left[ \begin{array}{cc} \sqrt{2} & 0 \\ 0 & \frac{1}{\sqrt{2}} \end{array} \right]  \quad\text{and}\quad
+\left[ \begin{array}{cc} 1 & t \\ 0 & 1 \end{array} \right]\left[ \begin{array}{cc} \sqrt{2} & 0 \\ 0 & \frac{1}{\sqrt{2}} \end{array} \right]
+\left[ \begin{array}{rr} 1 - \frac{1}{101} & - \frac{2 \times 10}{101} \\ \\ \frac{2 \times 10}{101} & 1 - \frac{1}{101} \end{array} \right]$$
+The arithmetic is getting bulkier and bulkier and we eventually defer to a calculator.  Let's write down the coset:
+$$  \left[ \begin{array}{cc} 1 & t \\ 0 & 1 \end{array} \right]\left[ \begin{array}{cc} \sqrt{2} & 0 \\ 0 & \frac{1}{\sqrt{2}} \end{array} \right]
+\left[ \begin{array}{cc} a & b \\ c & d \end{array} \right] 
+= 
+\left[ \begin{array}{cc} 1 & t \\ 0 & 1 \end{array} \right]
+\left[ \begin{array}{cc} a \sqrt{2} & b \sqrt{2} \\ c\frac{1}{\sqrt{2}} & d\frac{1}{\sqrt{2}} \end{array} \right] 
+= \left[ \begin{array}{rr} 
+a \sqrt{2} + t\,c\frac{1}{\sqrt{2}} & b \sqrt{2} + t \, d\frac{1}{\sqrt{2}}  \\ 
+c\frac{1}{\sqrt{2}} & d\frac{1}{\sqrt{2}} \end{array} \right]  $$
+Having written down the orbits, begin to have a small ultimatum:
+\begin{itemize}
+\item We don't know group theory as well as we thought.
+\item We don't know arithmetic as well as we thought.
+\end{itemize}
+Every time we compute the GCD of two numbers $(a,b)$ and they turn out to be relatively prime, we get two more number $(c,d)$ with $ad-bc=1$.  Thereore, $\text{SL}_2(\mathbb{Z})$  \\ \\
+This is extremely simplistic, this is just a way it.  This is telling us the arithemtic of $\text{SL}_2(\mathbb{Z})$ is much harder than it looks.\footnote{The books take basic arithemtic problems and turn them into spectal theory, but somewhere the original problem is getting lost the shuffle.} \\ \\  In fact, if we let $t \in \mathbb{R}$ be a generaic variable, haven't we written an element of the cohomology that everybody is talking about?  $H^1(\text{SL}_2(\mathbb{Z}))$ Certainly it's has to do these computation and then it turns into the previous dilemma. 
 \vfill
 \begin{thebibliography}{} 
 
