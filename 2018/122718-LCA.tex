@@ -1,0 +1,41 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+
+\title{Scratchwork: ``Locally Compact Abelian" Groups}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+\noindent This harmonic analysis jargon ``Locally Compact Abelian" groups appears basically all over number theory in a very abstract form.  Here are the two examples I can think of immediately: $\mathbb{R}$ and $\mathbb{Q}_p$.  Harmonic analysis is generalization of Fourier Analysis to abstract groups, such as $SO(3)$ the rotations of a three-dimensional object and many other kinds of symmetry.\footnote{When do we study a group action?  Usually this means the object was not \text{a priori} symmetric!  A cube can be rotated in three-dimensional space by $SO(3)$ elements, and we can study the remainder that's leftover.} \\ \\
+In our case, there is an isomorphism (as group) in Number Theory
+$$ \mathbb{Q}^\times = \prod_p p^{\mathbb{Z}} \quad\text{and}\quad
+\mathbb{Q}(i)^\times = \prod_\mathfrak{p} \mathfrak{p}^{\mathbb{Z}} $$
+In fact all the $F^\times$ are isomorphic for any number field $F$.  That cannot be right.  On the left the primes are $p \in \mathbb{Z}$ and on the right $\mathfrak{p} \in \mathbb{Z}[i]$ and for little more than grade school arithmetic, we have that primes $p \in 4\mathbb{Z}+1$ factor into $p = \mathfrak{p}_1\mathfrak{p}_2$ E.g. $13 = (2+3i)\times(2-3i)$ or $17 = (4+i)\times (4-i)$. Therefore both number fields share the primes in $p \in 4\mathbb{Z}+3$. So we need one extra thing to distinguish between $\mathbb{Q}^\times$ and $\mathbb{Q}(i)^\times$, that is a \textbf{topology}. \\ \\
+Have you seen Fourier analysis on $\mathbb{Q}^\times$ or $\mathbb{Q}(i)^\times$?  These not compact, since we can find Cauchy sequences $x \to \sqrt{2}$ or $\sqrt{3} \notin \mathbb{Q}^\times$.  So how can we define a derivative $f'(x) = 2x$.
+$$ f'(x) = \lim_{|\epsilon| \to } \frac{f(x + \epsilon) - f(x)}{\epsilon} $$
+Therefore we need to find a space where this derivative makes any kind of sense at all.  I think we have some freedom here.  Why is this thing $f'(x)$ even a number? \\ \\
+Since I didn't study Munkres' textbook carefully (and all the pathological but nifty examples) we just settle for asking, which number $x \in \mathbb{Q}^\times$ or $x \in \mathbb{Q}(i)^\times$ solve $x \approx 0$ ? Which numbers are close to zero?  And our number theory tool is called \textbf{strong approximation}.  So there is in fact some ambiguity in the statement $x \to \sqrt{2}$ in a manner that is important to Number Theory.\footnote{Don't just call their bluff, there should hopefully be a good reason.}
+\vfill
+\begin{thebibliography}{} 
+
+\item 
+
+\end{thebibliography}
+
+
+
+
+\end{document}
