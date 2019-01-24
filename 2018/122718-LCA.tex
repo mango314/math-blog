@@ -49,8 +49,19 @@ $$ \Big\{ (a,b,c) \in \mathbb{Q} : \Big( \frac{a}{c}\Big)^2 + \Big(\frac{b}{c}\B
 We would have to ``solve" the equation - and at this level it's harder and hard to means - and then we have to do GCD computations over and over.  And we could let $f(N)$ be the number of points in this set.  \\ \\
 Let's try one more.  Here's a circle which clearly has points over $\mathbb{R}$ and yet is vacuous over $\mathbb{Q}$:
 $$ x^2 + y^2 = 3 $$
-No rational points whatsover.  Since $\{ 0^2, 1^2\} + \{ 0^2 , 1^2 \}  = \{ 0,1,2\}$ using a tiny amount of sumset theory.  We've shown that $3 \notin \square$.  We have shown a circle in $\mathbb{R}^2$ that has successfully avoided all of $\mathbb{Q}^2$.  Nothing particularly wrong with that, but maybe we can quantify how close to points in $\mathbb{Q}^2$ we can get.
-
+No rational points whatsover.  Since $\{ 0^2, 1^2\} + \{ 0^2 , 1^2 \}  = \{ 0,1,2\}$ using a tiny amount of sumset theory.  We've shown that $3 \notin \square$.  We have shown a circle in $\mathbb{R}^2$ that has successfully avoided all of $\mathbb{Q}^2$.  Nothing particularly wrong with that, but maybe we can quantify how close  we can get to points in $\mathbb{Q}^2$. \\ \\
+As a temporary fix we could even completely solve this problem.  We know that prime numbers split as the sum of two squares $p = a^2 + b^2$ iff $p = 4k+1$.  This is related to the field extension $E/F$ with $E = \mathbb{Q}(i)^\times$ and $F = \mathbb{Q}$.  We could study the two groups $E^\times /(E^\times)^2$ and $F^\times/(F^\times)^2$.  We can even study $E^\times / F^\times  = \mathbb{Q}(i)^\times/\mathbb{Q}^\times$.  Our next helper is unique factorization.  
+$$ \mathbb{Q}(i)^\times / \mathbb{Q}^\times \simeq 
+\left( \prod_{p = 4k+1} (p^\mathbb{Z}\oplus p^\mathbb{Z}) \times \prod_{p = 4k+3} p^\mathbb{Z} \right) / \prod_p p^\mathbb{Z} \simeq \prod_{p = 4k+1} p^\mathbb{Z}$$
+And let's check that our perfect square group also has some kind of unique factorziation going on:
+$$ \mathbb{Q}^\times/(\mathbb{Q}^\times)^2 \simeq \prod_p p^\mathbb{Z} / \prod_p p^{2\mathbb{Z}} \simeq \prod_p p^{\mathbb{Z}/2\mathbb{Z}} $$
+We've had to pay several people off in order to get this wonderful reult:
+\begin{itemize}
+\item unique factorization of primes in $\mathbb{Z}$ and $\mathbb{Z}[i]$ and the GCD.
+\item Fermat's theorem $p = a^2 + b^2$ and Geometry of numbers or Dirichlet's Pigeonhole principle
+\item topology of numbers (uncharted territory).  a few books on the topic in the bibliography
+\end{itemize}
+The reason these are ``topological groups" is that we need to decide when two of these numbers are ``close" to each other in some sense.  And these priems could get complicated too... can we stil run these objects into a compuer when $p = 4409$ or $6613$?  How about $p = 961,748,941$?  And ĺike to tie into modern themes like \textbf{approximte groups} and \textbf{dynamical systems}. \\ \\ Eventually these numbers are too big and we have to settle for approximate algorithms and estimates of runtimes.  The very way we encode numbers into the computer will get called into question.
 \vfill
 \begin{thebibliography}{} 
 
