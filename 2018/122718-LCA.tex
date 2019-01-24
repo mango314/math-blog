@@ -35,7 +35,33 @@ Since I didn't study Munkres' textbook carefully (and all the pathological but n
 
 \end{thebibliography}
 
+\newpage
+
+%\noindent \textbf{01/20/19} Let's try to write solutions to the sum of three squares as a ``torus" orbit of some kind.  The number $\sqrt{d}$ could be embedded into the quaternions.  $ \mathbb{Q}(\sqrt{n}) \to \mathbb{H}$. Let $a^2 + b^2 + c^2 = n$, then $a \mathbf{i} + b \mathbf{j} + c \mathbf{k} \in \mathbb{H} $, with the correct norm.  Then there is even a way to turn quaternions into $3 \times 3$ matrices.  $\mathbb{Q}(\sqrt{n}) \to \mathbb{H} \to \text{SO}(3)$.  The rotation action $ $.
+
+\noindent \textbf{01/24/19} One very easy ``topological" group, or ``Locally Compact Abelian" group should be $\mathbb{Q}^\times/(\mathbb{Q}^\times)^2$, the rational numbers modulo the perfect squares.  Why such a thing.  Let's consider a variety of some kind:
+$$ V_1  = \{ x^2 + y^2 = a \}  \text{ and } V_2 = \{ x^2 + y^2 = ab^2 \}$$
+The map $(x,y) \mapsto (bx,by)$ takes the small circle to the larger circle, so we call them \textit{birational equivalent}.\footnote{Algebraic geometry is such that every time we make such a call, it merely becomes an invitation to check an endless hierarchy of exceptions.  And it's OK.  There are plenty of authoritive resources at varying levels.}  So we can say that $V(a) \equiv V(ab^2)$ for $a,b \in \mathbb{Q}$.  And more basically, $a  \equiv ab^2$ .  Therefore our conic sections (mostly circles) are equivalence classes $[a] \in \mathbb{Q}^\times/(\mathbb{Q}^\times)^2$. \\ \\
+What kind of observables can we study here?  I'd like to count the rational points on this circle of a given height.  For example:
+$$ \{ x^2 + y^2 = 1 \} $$
+The rational points here correspond to \textbf{Pythagorian triples}  or to \textbf{right triangles}.  It's very unlikely that you've seen a proof of Pythagoras theorem.  There are several hundred and they all say slightly different things about triangles.  We would like the points in this circle of bounded height:
+$$ \Big\{ (a,b,c) \in \mathbb{Q} : \Big( \frac{a}{c}\Big)^2 + \Big(\frac{b}{c}\Big)^2 = 1 \text{ and } |a|,|b|,|c| < N \text{ and } (a,b)=(a,c)=1\Big\} $$
+We would have to ``solve" the equation - and at this level it's harder and hard to means - and then we have to do GCD computations over and over.  And we could let $f(N)$ be the number of points in this set.  \\ \\
+Let's try one more.  Here's a circle which clearly has points over $\mathbb{R}$ and yet is vacuous over $\mathbb{Q}$:
+$$ x^2 + y^2 = 3 $$
+No rational points whatsover.  Since $\{ 0^2, 1^2\} + \{ 0^2 , 1^2 \}  = \{ 0,1,2\}$ using a tiny amount of sumset theory.  We've shown that $3 \notin \square$.  We have shown a circle in $\mathbb{R}^2$ that has successfully avoided all of $\mathbb{Q}^2$.  Nothing particularly wrong with that, but maybe we can quantify how close to points in $\mathbb{Q}^2$ we can get.
+
+\vfill
+\begin{thebibliography}{} 
+
+\item Manfred Einsiedler, Thomas Ward.  \textbf{Ergodic Theory with a view towards Number Theory} (Graduate Texts in Mathematics \#259).  Springer, 2011.
+
+\item Philippe Gille, Tam\'{a}s Szamuely. \textbf{Central Simple Algebras and Galois Cohomology}  (Cambridge Studies in Advanced Mathematics \#165).  Cambridge Uniersity Press, 2017.
 
 
+\item Pierre Guillot. \textbf{A Gentle Course in Local Class Field Theory} Cambridge University Press, 2018. 
+
+
+\end{thebibliography}
 
 \end{document}
