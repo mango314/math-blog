@@ -80,7 +80,9 @@ The reason these are ``topological groups" is that we need to decide when two of
 \textbf{1} $\mathbb{Q}(\sqrt{d})$ is an object where we adjoin the $\sqrt{d}$ to rationals.  The example I usually give as to why these might be confusing objects:
 $$  \frac{a}{b} + \frac{c}{d} \sqrt{d} = \frac{a + b \sqrt{d}}{c + d \sqrt{d}} = \frac{(a+b\sqrt{d})(c - d \sqrt{d})}{c^2 - d \, d^2}$$
 Let's try type-setting this correctly.
-$$  \frac{a}{b} + \frac{c}{d} \sqrt{m} = \frac{a + b \sqrt{m}}{c + d \sqrt{m}} = \frac{(a+b\sqrt{m})(c - d \sqrt{m})}{c^2 - m \, d^2}$$
+$$  \frac{a}{b} + \frac{c}{d} \sqrt{m} = \frac{a + b \sqrt{m}}{c + d \sqrt{m}} 
+= \frac{(a+b\sqrt{m})(c - d \sqrt{m})}{(c+d \sqrt{d})(c - d\sqrt{m})}
+= \frac{ \big(ac- m\, bd\big) + \sqrt{m}\big(bc - ad \big)}{c^2 - m \, d^2}$$
 That formula can't possibly be right, but it can be fixed.  Here's another example.  Since $\sqrt{d} \in \mathbb{R}$ is a real number, 
 $$ \overline{\mathbb{Q}} = \mathbb{R} \text{ but also } \overline{\mathbb{Q}(\sqrt{d})}= \mathbb{R} \text{ and even } \overline{\mathbb{Q}} = \mathbb{Q}_p \text{ for all primes }p \in \mathbb{Z} $$
 $\mathbb{R}$ could be thought of as the ``completion" of $\mathbb{Q}$ at the prime $p = \infty$.  We'd have $\mathbb{R} = \mathbb{Q}_\infty$.  The field $\mathbb{Q}(\sqrt{d})$ is even worse since it has \textit{two} infinite places.
