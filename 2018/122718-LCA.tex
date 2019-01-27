@@ -37,7 +37,6 @@ Since I didn't study Munkres' textbook carefully (and all the pathological but n
 
 \newpage
 
-%\noindent \textbf{01/20/19} Let's try to write solutions to the sum of three squares as a ``torus" orbit of some kind.  The number $\sqrt{d}$ could be embedded into the quaternions.  $ \mathbb{Q}(\sqrt{n}) \to \mathbb{H}$. Let $a^2 + b^2 + c^2 = n$, then $a \mathbf{i} + b \mathbf{j} + c \mathbf{k} \in \mathbb{H} $, with the correct norm.  Then there is even a way to turn quaternions into $3 \times 3$ matrices.  $\mathbb{Q}(\sqrt{n}) \to \mathbb{H} \to \text{SO}(3)$.  The rotation action $ $.
 
 \noindent \textbf{01/24/19} One very easy ``topological" group, or ``Locally Compact Abelian" group should be $\mathbb{Q}^\times/(\mathbb{Q}^\times)^2$, the rational numbers modulo the perfect squares.  Why such a thing.  Let's consider a variety of some kind:
 $$ V_1  = \{ x^2 + y^2 = a \}  \text{ and } V_2 = \{ x^2 + y^2 = ab^2 \}$$
@@ -75,4 +74,44 @@ The reason these are ``topological groups" is that we need to decide when two of
 
 \end{thebibliography}
 
+\newpage
+
+\noindent \textbf{01/27/19} Let's try to write solutions to the sum of three squares as a ``torus" orbit of some kind.  The number $\sqrt{d}$ could be embedded into the quaternions.  $ \mathbb{Q}(\sqrt{n}) \to \mathbb{H}$. Let $a^2 + b^2 + c^2 = n$, then $a \mathbf{i} + b \mathbf{j} + c \mathbf{k} \in \mathbb{H} $, with the correct norm.  Then there is even a way to turn quaternions into $3 \times 3$ matrices.  $\mathbb{Q}(\sqrt{n}) \to \mathbb{H} \to \text{SO}(3)$.   \\ \\
+\textbf{1} $\mathbb{Q}(\sqrt{d})$ is an object where we adjoin the $\sqrt{d}$ to rationals.  The example I usually give as to why these might be confusing objects:
+$$  \frac{a}{b} + \frac{c}{d} \sqrt{d} = \frac{a + b \sqrt{d}}{c + d \sqrt{d}} = \frac{(a+b\sqrt{d})(c - d \sqrt{d})}{c^2 - d \, d^2}$$
+Let's try type-setting this correctly.
+$$  \frac{a}{b} + \frac{c}{d} \sqrt{m} = \frac{a + b \sqrt{m}}{c + d \sqrt{m}} = \frac{(a+b\sqrt{m})(c - d \sqrt{m})}{c^2 - m \, d^2}$$
+That formula can't possibly be right, but it can be fixed.  Here's another example.  Since $\sqrt{d} \in \mathbb{R}$ is a real number, 
+$$ \overline{\mathbb{Q}} = \mathbb{R} \text{ but also } \overline{\mathbb{Q}(\sqrt{d})}= \mathbb{R} \text{ and even } \overline{\mathbb{Q}} = \mathbb{Q}_p \text{ for all primes }p \in \mathbb{Z} $$
+$\mathbb{R}$ could be thought of as the ``completion" of $\mathbb{Q}$ at the prime $p = \infty$.  We'd have $\mathbb{R} = \mathbb{Q}_\infty$.  The field $\mathbb{Q}(\sqrt{d})$ is even worse since it has \textit{two} infinite places.
+$$ |a+b\sqrt{d}|_1 = |a + b \sqrt{d}| \in \mathbb{R} \text{ and }|a+b\sqrt{d}|_2 = |a - b \sqrt{d}| \in \mathbb{R} $$
+In fact it's customary to plot them in a grid according to two different sets of projections either:
+$$ a + b\sqrt{d} \to (a,b) \in \mathbb{Q}^2 \subseteq \mathbb{R}^2 \text{ or }(a + b \sqrt{d}, a - b \sqrt{d}) \in \mathbb{R}^2 $$
+No surprises there either. The second grid is useful when we want to find that $\mathbb{Z}[\sqrt{d}]^\times$ is cyclic.\footnote{That is not technically true, it depends on $d \in \mathbb{Z}$. $[\textbf{not technically true}] \notin [true, false]$ It's not always true that $\mathcal{O}\big( \mathbb{Q}(\sqrt{d})\big) \simeq \mathbb{Z}[\sqrt{d}]$.  It's only true about half the time, and .  Unique factorization in $\mathbb{Q}(\sqrt{d})$ and in $\mathbb{Q}(\sqrt{-d})$ always fails for $D > 100$. } \\ \\
+We have that the completion $\overline{\mathbb{Q}}$ of $\mathbb{Q}$ could be $\mathbb{Q}_p$ or $\mathbb{R} = \mathbb{Q}_\infty$  depending on our choice of "norm".  Tricky but not surprises there either. Are we OK that $|15|_5 = \frac{1}{5}$ and yet $|15|_\infty = |15|$? \\ \\
+\textbf{2} Todays surprise is that we can embed $\mathbb{Q}(\sqrt{d})^\times \to \mathbb{H}^\times$ as a multiplicative subset of the quaternions. 
+\begin{eqnarray*}
+1 &\mapsto& 1 \\
+\sqrt{m} &\mapsto& a \,\mathbf{i} + b \,\mathbf{j}+c\,\mathbf{k} \text{ for }a^2 + b^2 + c^2 = m
+\end{eqnarray*}
+And I know of a standard way to turn quaternions into either $2 \times 2$ complex matrices or $3 \times 3$ real matrices.  First:
+$$ a_0 + a_1 \, i + a_2 \, j + a_3 \, k \mapsto \left[ 
+\begin{array}{rr} a_0 + a_1 \, \textbf{i} & a_2 + a_3 \, \textbf{i} \\
+- a_2 + a_3 \, \textbf{i} & a_0 - a_1 \, \textbf{i} \end{array}\right]$$
+with the additional integer constraint that $a_1^2 + a_2^2 + a_3^2 = m$. \\ \\
+Then we turn into a rotation. I get this formula from Wikipedia:
+$$a_0 + a_1 \, i + a_2 \, j + a_3 \, k
+\mapsto \left[ \begin{array}{cccc}
+a_0^2 + a_1^2 - a_2^2 - a_3^2 & 2(a_1 a_2 - a_0 a_3) & 2(a_0 a_2 + a_1 a_3) \\
+-2(a_1 a_2 - a_0 a_3) & a_0^2 - a_1^2 + a_2^2 - a_3^2 & 2(a_2 a_3 - a_0 a_1) \\
+-2(a_0 a_2 + a_1 a_3) & -2(a_2 a_3 - a_0 a_1) & a_0^2 - a_1^2 - a_2^2 + a_3^2 \end{array} \right] \in \text{SO}_3(\mathbb{R}) $$
+This is a lot of information to keep track of.  $\mathbb{R}$ has already uncountable infinite elements, and such commplexity, so how can we understand the rotation group? \\ \\
+Everything here is \textbf{more or less}.  
+\begin{itemize}
+\item $20$ minutes more or less
+\item $5$ inches more or less.  
+\item $150$ kilograms more or less.
+\end{itemize}
+None of these exotic topologies really matter.  Just $\mathbb{R}$ or the faux $\mathbb{R}$ that we're using on our cash registers and calculators.
+  Perhaps we could start to theorize about the spaces we are measuing.  We could define a map $ \mu: X \to \mathbb{R}$.  For any reasonable subset $X \subseteq \mathbb{R}$.  Here $X$ is just the thing we are measuring and $\mu$ is the subset.  What could go wrong with that? 
 \end{document}
