@@ -5,6 +5,7 @@
 \usepackage{xcolor}
 \usepackage{graphicx}
 \usepackage{amsmath}
+\usepackage{hyperref}
 
 \newcommand{\off}[1]{}
 \DeclareMathSizes{20}{30}{20}{18}
@@ -115,5 +116,36 @@ Everything here is \textbf{more or less}.
 \item $150$ kilograms more or less.
 \end{itemize}
 None of these exotic topologies really matter.  Just $\mathbb{R}$ or the faux $\mathbb{R}$ that we're using on our cash registers and calculators.
-  Perhaps we could start to theorize about the spaces we are measuing.  We could define a map $ \mu: X \to \mathbb{R}$.  For any reasonable subset $X \subseteq \mathbb{R}$.  Here $X$ is just the thing we are measuring and $\mu$ is the subset.  What could go wrong with that? 
+  Perhaps we could start to theorize about the spaces we are measuing.  We could define a map $ \mu: X \to \mathbb{R}$.  For any reasonable subset $X \subseteq \mathbb{R}$.  Here $X$ is just the thing we are measuring and $\mu$ is the subset.  What could go wrong with that?  \\ \\
+In fact, we could do just a bit more from our torus action $\mathbb{Q}(\sqrt{m})^\times \to \text{SO}_3(\mathbb{R})$. 
+$$x \, a_0 + y \,\big( a_1 \, \mathbf{i} + a_2 \, \mathbf{j} + a_3 \, \mathbf{k}\big)
+\mapsto \left[ \begin{array}{cccc}
+x^2 \, a_0^2 + y^2 \big(a_1^2 - a_2^2 - a_3^2\big) & 2\big(y^2 \, a_1 a_2 - xy \, a_0 a_3\big) & 
+2\big(xy\,a_0 a_2 + y^2\,a_1 a_3\big) \\
+-2\big( y^2 \, a_1 a_2 - xy \, a_0 a_3\big) & x^2 \, a_0^2  + y^2 \,\big(- a_1^2 + a_2^2 - a_3^2 \big) & 2\big( y^2\, a_2 a_3 -  xy \, a_0 a_1\big) \\
+-2\big(xy \, a_0 a_2 + y^2 \, a_1 a_3\big) & -2\big( y^2 \, a_2 a_3 - xy \, a_0 a_1\big) & x^2 \, a_0^2 + y^2 \big(- a_1^2 - a_2^2 + a_3^2 \big) \end{array} \right]  $$
+A rather bland collection of quadrics.  We notice as $x, y \in \mathbb{Q}$ vary, this group is abelian.  We can (mostly) set $x = 1$ and get a map from $\mathbb{Q}(\sqrt{m})^\times / \mathbb{Q}^\times$ to rotations.  And set $a_0 = 1$ if desired. \\ \\
+The multiplication in this group
+\begin{eqnarray*} (a+b\sqrt{m})(c+d\sqrt{m}) &=& ac \times (1 + \frac{b}{a}\sqrt{m})(1+\frac{d}{c}\sqrt{m}) \\
+&=& ac \times \left( 1 + \frac{b \times d}{a \times c} \times m \right) + \sqrt{m} \left( \frac{b}{a} + \frac{d}{c} \right) \\
+&\equiv&  (1 + q_1q_2) + \sqrt{m}( q_1 + q_2) \\ \\
+&\equiv & 1 + \sqrt{m}\, \frac{q_1 + q_2}{1 + q_1q_2}  \\ 
+&\equiv & 1 + \sqrt{m}\, \frac{\tan \theta_1 + \tan \theta_2}{1 + \tan \theta_1 \, \theta_2} \\
+&\equiv& 1 + \sqrt{m} \, \tan (\theta_1 + \theta_2)\end{eqnarray*}
+For any $m$ we've chosen how naturally the quotient group $\mathbb{Q}(\sqrt{m})^\times/\mathbb{Q}^\times$ can be discuss using tangent of angles of the lattice points in $\mathbb{Z}^2$.  Computations like this suggest we have \textit{forgotten} mathematics in the 20th and 21st centuries. \\ \\
+\textbf{Exercise} What conic did we generate in the $3 \times 3$ matrix above?  Prove or disprove: it's a great circle. \\ \\
+Let's try\dots there's a homomorphism $\phi: \mathbb{R}^\times \to \text{SO}_3(\mathbb{R})$. Using ``topology" we could complete $\mathbb{R}^\times$ to a circle. A homomorphism $S^1 \to \text{SO}_3(\mathbb{R})$, suggests the whole orbit of integer points $a^2 + b^2 + c^2 = m$ with $a,b,c \in \mathbb{Z}$ should it on a single circle.  That can't possibly be right.
+\vfill
+\begin{thebibliography}{} 
+
+\item John Voight \textbf{Quaternion Algebras} (current version (v.0.9.14, July 7, 2018)) \texttt{https://bit.ly/2CPZQEG}
+\item Sir William Rowan Hamilton \\ 
+\textbf{Elements of Quaternions} \texttt{https://archive.org/details/elementsofquater00hamirich/} \\
+\textbf{Lectures on Quaternions} \texttt{https://archive.org/details/bub\_{}gb\_{}TCwPAAAAIAAJ/}
+\item Peter Guthrie Tait. \textbf{An Elementary Treatise on Quaternions.} \\ \texttt{https://archive.org/details/anelementarytre02taitgoog/} 
+\item Akshay Venkatesh, Philippe Michel.  
+\textbf{Equidistribution, L-functions and ergodic theory}  \\
+\url{http://www.icm2006.org/proceedings/VolII/contents/ICMVol_219.pdf} 2006.
+ 
+\end{thebibliography}
 \end{document}
