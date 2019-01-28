@@ -1,0 +1,126 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+
+\title{Scratchwork: Approximate Groups}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+\noindent Does the mathematical definition of ``group" capture our notion of symmetry? Let's find an Abstract Algebra textbook and see what definition they gave us.
+\begin{quotation}
+A \textbf{group} is an ordered pair of a set $G$ and one binary operation on that set $G$ such that 
+\begin{itemize}
+\item the operation is associative 
+\item there is an identity element
+\item every element $x \in G$ has an inverse
+\end{itemize}
+\end{quotation} 
+Symmetry of what?  A physical objec definitely has a symmetry.  But also we were saying two things are interchangeable.  10 people walking in a room without collision.  Are the people interchangeable?  Man $\leftrightarrow$ Woman? Adult $\leftrightarrow$ Child? It all depends\dots In that case, we can try to measure how much our situation fails to be symmetric. \\ \\
+What does ``associative" mean here?  I usually remember it as $a \times (b \times c) = (a \times b) \times c$.  The book says ``\textbf{associativity} avoids unseemly proliferations of products".  Can we even describe the symmetries in question?  It's the same if it goes this way or that way.  Set inclusion can be a very hard problem\dots just ask anyone who loses their keys.  When is $x \in G$?\\ \\
+\noindent Next we consider that we can \textbf{never} write down a number exactly.  How can we write down the elements of our group if they're not exact.
+$$ \left[\begin{array}{rrr} 
+0 & -1 & 0 \\ 
+1 & 0 & 0 \\
+0 & 0 & 1\end{array} \right]\left[ 
+\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & \cos 1^\circ & -\sin 1^\circ \\
+0 & \sin 1^\circ & \cos 1^\circ \end{array}\right] \approx 
+\left[\begin{array}{rrr} 
+0 & -1 & 0 \\ 
+1 & 0 & 0 \\
+0 & 0 & 1\end{array} \right]\left[ 
+\begin{array}{rrr}
+1 & 0\;\;\;\;\, & 0\;\;\;\;\, \\
+0 & 1 - (\frac{\pi}{360})^2 & -\frac{\pi}{360}\;\;\; \\
+0 & \frac{\pi}{360}\;\;\; & 1 - (\frac{\pi}{360})^2\end{array}\right]
+\approx 
+$$
+We have neither the time nor the space to evaluate these exactly.  The price we pay is that we have to hope something covers the cost.  Let's try writing a different approximate $90^\circ$ rotation.  Here we use $\cos \theta \approx 1 - \theta^2$ and $\sin \theta \approx \theta$ (in radians).   
+$$R_{90^\circ} \approx \left[\begin{array}{rrr} 
+\frac{1}{10} & -1 + \frac{1}{10^2} & 0 \\ \\ 
+1 - \frac{1}{10^2} & \frac{1}{10} & 0  \\ \\
+0 & 0 & 1\end{array} \right] = 
+\left[\begin{array}{rrr} 
+\frac{1}{10} & \frac{99}{100} & 0 \\ \\ 
+\frac{99}{100} & \frac{1}{10} & 0  \\ \\
+0 & 0 & 1\end{array} \right]  $$
+This is no longer a rotation.  It changes the angle of the frame slightly and in an unpredictable way.  So we are really testing our ability to measure things... in this case what two matrices are ``close" or ``nearby" or ``almost" or ``good enough". 
+$$ \left[\begin{array}{rrr} 
+0 & -1 & 0 \\ 
+1 & 0 & 0 \\
+0 & 0 & 1\end{array} \right]\left[ 
+\begin{array}{ccr}
+1 & 0 & 0 \\
+0 & \frac{99}{101} & -\frac{20}{101} \\
+0 & \frac{20}{101} & \frac{99}{101} \end{array}\right] $$
+And that is how we'll build our approximate groups for now.  We can just define rotations of angle $\theta = \tan^{-1}\frac{1}{10}$ or the angle of our choice.  $A = R_{x,90^\circ} \times R_{y, \pm \theta}$ and there is our approximate group.
+\newpage
+
+\noindent Here's the definition given in 2013 for an approximate group: \\ \\
+Let $K \geq 1$ be a parameter, $G$ be a group and $A \subseteq G$ be a finite subset.  We sa that $A$ is a $K$-approximate subgrop of $G$ if 
+\begin{itemize}
+\item $1 \in A$
+\item $A$ is symmetric $A = A^{-1}$
+\item there is a symmetric set $X$ of size at most $K$ such that $AA \subset XA$.
+\end{itemize}
+Since I can't seem to quite get Breuillard-Tao's definition perfectly correct, the example is my own. In our case $G = \text{SO}_3(\mathbb{R})$.  $K$ is just a number that allows us to describe how much error we can tolerate of this symmetry. \\ \\
+\textbf{Proposition} There is an absolute constant $C > 0$ such that, given a finite set $A$ in an ambient group $G$ and parameter $K \geq 1$, the following conditions are roughly equivalent:
+\begin{itemize}
+\item $|AA| \leq K|A|$
+\item $|AAA| \leq K|A|$
+\item $\{(a,b,c,d) \in A \times A \times A \times A \big| ab=cd\} | \geq |A|^3/K$
+\item $\{ (a,b) \in A \times A: ab \in A\}|\leq |A^2|/K$
+\item $A$ is a $K$-approximate group of $G$.
+\end{itemize}
+It doesn't seem terribly deep to show these approximate group definitions are the same and we were able to generate our own examples.  The equations we have to solve look really really dumb.  We are good to go!
+\vfill
+\begin{thebibliography}{} 
+
+\item Emannuel Breuillard \textit{A Brief introduction to Approximate Groups} 
+\textbf{Thing Groups and Super Strong Approximation} MSRI Publications (Vol \#61), 2013. 
+
+\item Ben Green. \textbf{What is\dots an Approximate Group} Notices of the American Mathematical Society. \\  Volume 59, Issue 05. May, 2012.
+
+\item Wikipedia ``Double Coset" \texttt{https://en.wikipedia.org/wiki/Double\_{}coset} 
+
+\item Rudolf Lidl, G\"{u}nter Pilz.  \textbf{Applied Abstract Algebra} (Undergraduate Texts in Mathematics) Springer, 1998.
+
+\item David R. Finston, Patrick J. Morandi. \textbf{Abstract Algebra: Structure and Application} (Springer Undergraduate Texts in Mathematics and Technology) Springer, 2014.
+
+\item Gregory T. Lee \textbf{Abstract Algebra: An Introductory Course} (Springer Undergraduate Mathematics Series) Springer, 2018.
+
+\item Pierre Antoine Grillet. \textbf{Abstract Algebra} (Graduate Texts in Mathematics \#242) Springer, 2007.
+
+
+\end{thebibliography}
+
+\newpage
+
+\noindent The thing is so clear\dots what kind of objects can we explicitly model that both can be calculated and yet only have approximate symmetry.  Natural objects definintely have approximate symmetry and then we gently nudge them over to $\mathbb{Z}$ or the ideal number system of our choice.  Within Mathematics, approximate symmetry can also occur. Let's try to read off a few examples from papers. \\ \\
+
+\vfill 
+
+\begin{thebibliography}{}
+
+\item Ilya Khayutin \textbf{Joint Equidistribution of CM Points} \texttt{arXiv:1710.04557} \\
+Annals of Mathematics,  Vol. 189 \#1.  January, 2019.
+
+\item Menny Aka, Manfred Einsiedler, Andreas Wieser \textbf{Planes in four space and four associated CM points} \texttt{arXiv:1901.05833}
+
+\end{thebibliography}
+
+\end{document}
