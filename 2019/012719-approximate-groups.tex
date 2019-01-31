@@ -111,15 +111,35 @@ It doesn't seem terribly deep to show these approximate group definitions are th
 \newpage
 
 \noindent The thing is so clear\dots what kind of objects can we explicitly model that both can be calculated and yet only have approximate symmetry.  Natural objects definintely have approximate symmetry and then we gently nudge them over to $\mathbb{Z}$ or the ideal number system of our choice.  Within Mathematics, approximate symmetry can also occur. Let's try to read off a few examples from papers. \\ \\
+\textbf{\#1} Let $\square = \{ x^2 : x \in \mathbb{Z}\}$.  Another way, $\square = f(\mathbb{Z})$ for $f(x) = x^2$ is a ``map".  \\ \\
+In 2016, some estimates were obtained about gaps in the sequence of numbers $\square + \sqrt{d} \, \square$ with $d \in \mathbb{Z}$.  \\ \\
+Proposition: just notice that by Weyl's law (which they do not prove for us), if we place the numbers $x^2 + \alpha \, y^2 $ in order:
+$$ \#\{ j :  \lambda_j \leq X \} = \{ \# (m,n) : m^2 + \alpha \, n^2 \leq X \} \sim \frac{\pi}{4 \sqrt{\alpha}} X  $$
+Weyl's law is applicable here because this is eigenvalues of Hamiltonian 
+$$  H =  \frac{\partial^2 }{\partial x^2} + \frac{\partial^2 }{\partial y^2} \text{ and }E \in \{ m^2 + \alpha n^2 \} $$
+We need to say this is quantum free particle Hamilontian on a rectangle of aspect ratio $1 \times \alpha \in \mathbb{R} \otimes \mathbb{R}$.  Their paper will not even discuss the eigenfunctions.  \\ \\
+\textbf{Thm} If the squared aspect ratio is a quadratic irrationality of the form $\alpha = \sqrt{r}$ with $r \in \mathbb{Q}$ then 
+$$ \delta(\alpha, N) = \text{min} \{ \lambda_{i+1} - \lambda_i : 1 \leq i < N \} \ll \frac{1}{N^{1-\epsilon}} $$ 
+Next, if we type this with a compuer is there a formula for $\lambda_n$ ? Certainly, $\lambda = m^2 + \alpha \, n^2 $  but now the $(m,n) \in \mathbb{Z}^2$ are badly scrambled and yet not totally random. Let's take our best guess.  Let $N \asymp X$:
+$$ \{ \lambda_i : 1 \leq i < N \} \asymp
+\{ (m,n): m^2 + \alpha \, n^2 \leq X \} \asymp \mathbb{Z} $$
+We've walked right into it!  We've walked into a nice project. :-) These numbers behave more-or-less like the real number line $\mathbb{Z}$ where each point has been moved around slightly.\footnote{There was no reason \textit{a priori} to hold each number perfectly at $\mathbb{Z}$ in the first place.  The first thing we do is mentally force things into the number line.} We can find numbers $(m_1, n_1), (m_2, n_2) \in \mathbb{Z}$ with 
+$$ \big| (m_1^2 - m_2^2) -  \alpha \, (n_1^2 - n_2^2) \big| \ll \frac{1}{N^{1-\epsilon}} $$
+What has changed about our numbers are the local statistical properties.  What is going to happen to operations like $+$ and $\times$ ? What happens to Taylor's formula $f(x + \frac{1}{N}) \approx f(x) + \frac{1}{N}f'(x)$ ? Here $x = m^2 + \alpha \, n^2$.  Numbers don't just magically stop working because we failed to round things.  You'll continue too if things aren't quite perfect. \\ \\
+I reiterate, this was figured out in 2016.
 
 \vfill 
 
 \begin{thebibliography}{}
 
+\item Valentin Blomer, Jean Bourgain, Maksym Radzwill, Zeev Rudnick. \textbf{Small Gaps in the Spectrum of the Rectangular Billiard} \texttt{arXiv:1604.02413}
+
 \item Ilya Khayutin \textbf{Joint Equidistribution of CM Points} \texttt{arXiv:1710.04557} \\
 Annals of Mathematics,  Vol. 189 \#1.  January, 2019.
 
 \item Menny Aka, Manfred Einsiedler, Andreas Wieser \textbf{Planes in four space and four associated CM points} \texttt{arXiv:1901.05833}
+
+\item Michael Magee \textbf{Arithmetic, Zeros, and Nodal Domains on the Sphere} \texttt{arXiv:1310.7977}
 
 \end{thebibliography}
 
