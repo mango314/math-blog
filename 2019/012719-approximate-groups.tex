@@ -133,9 +133,30 @@ Random waves should have arithemtic statistical properties. Here are two example
 
 \includegraphics[scale=0.5]{wavefunction-01.png}
 \includegraphics[scale=0.5]{wavefunction-02.png} \\ \\
-
-\textbf{\#2} Random spherical harmonics go down similarly.  Some authoritative person says solutions to $a^2 + b^2 + c^2 = n$ equidistribute on the sphere $S^2$, what happens to all the information in the middle?
-
+\textbf{\#2} Random spherical harmonics go down similarly.  Some authoritative person says solutions to $a^2 + b^2 + c^2 = n$ equidistribute on the sphere $S^2$, what happens to all the information in the middle? \\ \\
+The main theorems of the paper: \\ \\
+{\textbf{Theorem}} Let $l$ be even and $\mathcal{B}_l$ be the orthonormal basis of $\mathcal{H}_l$ eigenfunctions.  Then for any $\epsilon > 0$ we have he lower bound for the total number of domains amongst members of $\mathcal{B}_l$.
+$$ \sum_{\phi \in \mathcal{B}_l } \mathcal{N}(\phi)  \gg_\epsilon l^{\frac{5}{4} - \epsilon} $$
+{\textbf{Corollary}} (The number of nodal domains on average).  With everything as in the Theorem, we have for the expected number of nodal dimains amongst members of $\mathcal{B}_l$, for any $\epsilon > 0$ 
+$$ \mathbb{E}_{\mathcal{B}_l} \big(  \mathcal{N}(\phi) \big) = 
+\frac{1}{|\mathcal{B}_l|} \sum_{\phi \in \mathcal{B}_l} \mathcal{N}(\phi) \gg_\epsilon l^{\frac{1}{4} - \epsilon}  $$
+{\textbf{Theorem}} (The number of nodal domains grows uniformly).  Assuming the \underline{generalied Lindel\"{o}f hypothesis}, for any $\epsilon > 0$ we have
+$$ \mathcal{N}(\phi) \gg_\epsilon l^{\frac{1}{12} - \epsilon} $$
+where $l$ is even and $\phi \in \mathcal{H}_l^{\mathcal{O}^\times}$ is a Hecke eigenfunction. \\ \\
+This was published in 2015 in Communications in Mathematical Physics.
+\begin{itemize}
+	\item $Z(f) = \{ v \in S^2 : f(v) = 0 \} = f^{-1}(0)$ that's it, the pre-image of zero. \\ 
+	The number of nodal domains (which here is a collection of circles) is $\mathcal{N}(f)$.
+	\item How does $\mathcal{N}(f)$ change as $f$ varies?  The theorem of Courant\footnote{Courant and Hilbert \textit{Mathods of Mathematical Physics, Volume 1}, 1966.} says $\mathcal{N}(f) \leq (l+1)^2$.  This is called an ``upper bound" in Mathematics since we are saying that $A \leq B$ for two numbers $A$ and $B$. Magee proves a lower bound, for a very specific class of eigenfunctions $\phi$ which are just very special functions $\phi: S^2 \to \mathbb{R}$.
+	\item The term ``Hecke operator" in this context means, $\mathcal{O}(m) := \{ \gamma \in \mathcal{O}: n(\gamma) = m \}$ is a collection of rings of integers. And here's operator in Hilbert space (a matrix):
+	$$ T_m: L^2(S^2) \to L^2(S^2) \text{ with }
+	[T_m f](x) = \sum_{\gamma \in \mathcal{O}(m)} f(\gamma.x) $$
+	These are called ``Brandt matrices" as discussed by Eichler in 1973.  These eigenfunctions might be easy to compute, since $L^2(S^2)$ for the sphere decomposes by the degree of the polynomial:
+	$$ L^2(S^2) = \overline{\bigoplus_l} \mathcal{H}_l $$
+	where $\mathcal{H}_l$ is the space of $(2l+1)$-dimensional functions on $S^2$ -- the degree $l$ homogeneous harmonic polynomials on $\mathbb{R}^3$.  This is the eigenspace of the spherical Laplacian $\Delta = \Delta_{S^2}$ with eigenvalue $l \times (l+1)$. \\ \\
+And these operators are related to the Hecke operators on $\Gamma_0(2)\backslash \mathbb{H}$ in hyperbolic space (and to automorphic functions).   
+\end{itemize}
+At the moment, the theorem has no truth value -- it is sometimes true and someimes false -- since we cannot state the correct function  $ \phi \in L^2(S^2)$ in the space of sphiercal harmonics.
 \vfill 
 
 \begin{thebibliography}{}
@@ -147,7 +168,8 @@ Annals of Mathematics,  Vol. 189 \#1.  January, 2019.
 
 \item Menny Aka, Manfred Einsiedler, Andreas Wieser \textbf{Planes in four space and four associated CM points} \texttt{arXiv:1901.05833}
 
-\item Michael Magee \textbf{Arithmetic, Zeros, and Nodal Domains on the Sphere} \texttt{arXiv:1310.7977}
+\item Michael Magee \textbf{Arithmetic, Zeros, and Nodal Domains on the Sphere} \texttt{arXiv:1310.7977} \\
+\textit{Communications in Mathematical Physics} Sepbember 2015, Volume 338, Issue 3, pp. 919-951.
 
 \end{thebibliography}
 
