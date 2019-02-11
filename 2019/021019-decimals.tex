@@ -1,0 +1,62 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+
+\title{Scratchwork: Decimals}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+\noindent At this point in my mathematical training, I take for granted that $\mathbb{R}$ is the number system that we all use.  That $\mathbb{R}^2$ is the Euclidean plane.  In order to represent numbers in $\mathbb{R}$ we should use decimals.  Yet, when we solve equations we use Taylor series expansions or Fourier expansions or something less common.  And finally, we turn our answer into a decimal representation of a number in $\mathbb{R}$. \\ \\
+We write in the decimal system base 10. We spend a few years learning a few idosyncracies of these basic operaions.  Even type-setting decimal addiion and multiplication can be a chore.  
+$$ 
+\begin{array}{rrrr} 
+  & 4 & \hspace{-3pt}{}^12 & 3 \\
++ & 7 & 5 & 8 \\ \hline
+ 1 & 1 & 8 &1
+\end{array} $$
+A modern \textit{dynamical systems} view point is that we are studying the dynamics of the map $T: a \to (10 \times a) \% 1$ on the real number line $\mathbb{R}/\mathbb{Z}$. We multiply by 10 and then remove the integer part.   This requires an input the definition of a function: $f(x) = x \% 1 $ or sometimes written $\{ x \} $ with some bit of fastidiousness
+$$ f(x) = \{ x \}   \stackrel{?}{=}  \min_{n \in \mathbb{Z}} | x - n|  $$
+This definition is wrong since it returns $\{ \frac{5}{4}\} = \frac{1}{4}$ but also $\{\frac{7}{4}\} = \frac{1}{4}$, since $\frac{7}{4} - 2  = - \frac{1}{4} $.  So a careful definition of $f(x)$ is missing. \\ \\
+\textbf{Exercise} Find a correct definition of $f(x) = \{ x\}$. \\ \\
+At the moment all I have is this annoying defintion: $\text{min}\;A$ with $A= \{ x - n : n \in \mathbb{Z} \text{ and } x > n \}$.  And later we could ask what ``$a > b$" even means? And ``$n \in A$"?  At some point we'll become too lazy to even check. \\ \\
+An insepction of the properties of $\mathbb{R}$ like this happens when we get stuck.  In addition to base $b = 10$ we could have binary $b = 2$ with digits $\{ 0, 1\}$, so that $15_{10} = 1111_2$.  There is even base systems for irrational base, so we could have silver ratio base $b = 1 + \sqrt{2}$ or Golden ratio base $b= \frac{1 + \sqrt{5}}{2}$. \\ \\
+The map $a \mapsto \big[ (1 + \sqrt{2}) \times a \big] \% 1$ would have two outcomes:
+\begin{itemize}
+\item $0 < (1 + \sqrt{2}) \times a  < 1 $ so that $0 < a < \sqrt{2}-1$.
+\item $1 < (1 + \sqrt{2}) \times a  < 2 $ so that $\sqrt{2}-1 < a < 1 $.
+\end{itemize}
+Then we have a partition of $[0,1)$ that behaves nicely under the dynamical system $T$ just described.  We have a binary decimal system with digits $\{ 0, 1\}$ just as before but with some unusual properties.  So what exceptional number shall we give?  Let's try $3$:
+$$1  + \sqrt{2} < \mathbf{3} < (1 + \sqrt{2})^2 = 1 + 2 + 2 \times \sqrt{2} = 3 + 2 \sqrt{2} $$
+So this number would have two digits before the decimal place, $3 = 1\_\,.\_\,\_\dots$
+I'm not even sure if the decimal terminates.The next digit would be:
+$$ 3 - (1 + \sqrt{2}) = 2 - \sqrt{2} \stackrel{?}{<} 1 + \sqrt{2} $$
+and we'd like to do this without peeking\dots without reverting to the decimal system, as any calculator does.\footnote{And at some point we could inspect the how our calculators implement the decimal system.}
+\vfill 
+
+\begin{thebibliography}{}
+
+\item Michael Coornaert. \textbf{Topological Dimension and Dynamical Systems} (Universitext) Springer, 2015.
+
+\item Michael Field. \textbf{Essential Real Analysis} (Springer Undergraduate Texts in Analysis) Springer, 2017.
+
+%\item David Williams \textbf{Probability with Martingales} (Cambridge Matematical Textbooks) Cambridge University Press, 1991 / 2011.
+
+\item Manfred Einsiedler, Thomas Ward. \textbf{Ergodic Theory: with a view towards Number Theory} \\GTM \#259 Springer, 2011.
+
+
+\end{thebibliography}
+
+\end{document}
