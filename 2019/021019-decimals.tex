@@ -43,7 +43,23 @@ $$1  + \sqrt{2} < \mathbf{3} < (1 + \sqrt{2})^2 = 1 + 2 + 2 \times \sqrt{2} = 3 
 So this number would have two digits before the decimal place, $3 = 1\_\,.\_\,\_\dots$
 I'm not even sure if the decimal terminates.The next digit would be:
 $$ 3 - (1 + \sqrt{2}) = 2 - \sqrt{2} \stackrel{?}{<} 1 + \sqrt{2} $$
-and we'd like to do this without peeking\dots without reverting to the decimal system, as any calculator does.\footnote{And at some point we could inspect the how our calculators implement the decimal system.}
+and we'd like to do this without peeking\dots without reverting to the decimal system, as any calculator does.\footnote{And at some point we could inspect the how our calculators implement the decimal system.} \\ \\
+\textbf{Ex}  Using Pythagoras theorem we can find that $5^2 + 12^2 = 13^2$ what happens if we write them out in decimals.  First as fractions: $(\frac{5}{13})^2 + (\frac{12}{13})^2 = 1$.  Then let's try out the decimals:
+\begin{itemize}
+\item $\frac{5}{13} = 0.\overline{384615}_{\;10} = \frac{384615}{9999999} $ (this fraction is exact)
+\item $\frac{12}{13} = 0.\overline{923076}_{\;10} = \frac{923076}{9999999}$
+\end{itemize}
+There's a long division problem using $\div$ if we try to find the repeating decimal.  \\ \\
+The fraction equality is \textit{exact} $5 \times (10^7 - 1) = 13 \times 384615$. This could motivate us to find result such as Fermat's Little Theorem, that $p \,\big|\, a^p - a $ or now we have a dynamical system $T: b \mapsto a \times b $, and now it says that $T^p$ as a fixed point or that $T^p - T$ has a non-trivial kernel (in Linear Algebra-speak). E.g. 
+$$ 
+\left[ \begin{array}{cc} 1 & 2 \\ 3 & 4 \end{array} \right]^p - 
+\left[ \begin{array}{cc} 1 & 2 \\ 3 & 4 \end{array} \right] \equiv 0 \pmod p $$
+Is that correct?  If we diagonalize this matrix we get two algebraic numbers, $x^2 - (1+4)x + (1 \times 4 - 2 \times 3) = 0 $ giving $x = \frac{5 \pm \sqrt{33}}{2}$.  Then we are asking if $7$ ``divides"  $(\frac{5 \pm \sqrt{33}}{2})^7 - (\frac{5 \pm \sqrt{33}}{2})$ and things like that.\\ \\
+Our use of the quadratic formula starts to look bad.  Our symbol $\sqrt{x}$ means $f^{-1}(x)$ with $f(x) = x^2$.  The notation $\sqrt{a}$ is the thing that solves $x^2 = a$.  We are looking for the number that solves $x^2 - 5x - 2 = 0$.  
+  \\ \\
+\textbf{Note} Why do we need to inspect $\mathbb{R}$ so carefully?  Tayĺor's Theorem is going to call for infinitely many steps involvin $+$ and $-$ and $\times$ and $\div$:
+$$ f(x + \epsilon) = f(x) + \epsilon \times f'(x) + \frac{\epsilon^2}{2} \times f''(x) + \dots  $$
+This is also a dynamical system.  Trivially, $T : x \mapsto x + 1$ so that $T^\epsilon f(x) = f(x+\epsilon)$, so we are moving the thing slightly to the left.
 \vfill 
 
 \begin{thebibliography}{}
@@ -55,6 +71,8 @@ and we'd like to do this without peeking\dots without reverting to the decimal s
 %\item David Williams \textbf{Probability with Martingales} (Cambridge Matematical Textbooks) Cambridge University Press, 1991 / 2011.
 
 \item Manfred Einsiedler, Thomas Ward. \textbf{Ergodic Theory: with a view towards Number Theory} \\GTM \#259 Springer, 2011.
+
+\item Steve Smale. \textbf{The Fundamental Theorem of Algebra and Complexity Theory} Bulletin of the American Matematical Society, Vol. 4 No. (1) 1-36.
 
 
 \end{thebibliography}
