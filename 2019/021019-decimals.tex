@@ -50,7 +50,10 @@ and we'd like to do this without peeking\dots without reverting to the decimal s
 \item $\frac{12}{13} = 0.\overline{923076}_{\;10} = \frac{923076}{9999999}$
 \end{itemize}
 There's a long division problem using $\div$ if we try to find the repeating decimal.  \\ \\
-The fraction equality is \textit{exact} $5 \times (10^7 - 1) = 13 \times 384615$. This could motivate us to find result such as Fermat's Little Theorem, that $p \,\big|\, a^p - a $ or now we have a dynamical system $T: b \mapsto a \times b $, and now it says that $T^p$ as a fixed point or that $T^p - T$ has a non-trivial kernel (in Linear Algebra-speak). E.g. 
+The fraction equality is \textit{exact} $5 \times (10^7 - 1) = 13 \times 384615$.  Also if we were to use decimals:
+$$ (0.384615)^2 + (0.923076)^2 =  0.999998000001 \approx 1 - 10^{-6} $$
+The first equality might be exact.  Do we really wish to use the shift-map $T:x \mapsto 10\times x$ here? \\ \\
+This could motivate us to find result such as Fermat's Little Theorem, that $p \,\big|\, a^p - a $ or now we have a dynamical system $T: b \mapsto a \times b $, and now it says that $T^p$ as a fixed point or that $T^p - T$ has a non-trivial kernel (in Linear Algebra-speak). E.g. 
 $$ 
 \left[ \begin{array}{cc} 1 & 2 \\ 3 & 4 \end{array} \right]^p - 
 \left[ \begin{array}{cc} 1 & 2 \\ 3 & 4 \end{array} \right] \equiv 0 \pmod p $$
