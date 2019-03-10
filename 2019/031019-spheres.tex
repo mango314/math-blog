@@ -1,0 +1,45 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+
+\title{Scratchwork: Lagrange Sum of Four Squares Theorem}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+\noindent Lagrange's equation says we can solve $x^2 + y^2 + z^2 + w^2 = n$ for any $n \in \mathbb{Z}$.  Hasse's principle, says as a quadratic form we need only solve this equation in $\mathbb{Z}/p\mathbb{Z}$ for each prime $p$.  This requires an infinite amount of work, since how do we find all roughly $10^6/6 \log 10 \approx 70,000 $ primes between $1 \times 10^6 < p < 2 \times 10^6$ ?  The limiting space if we do all possible modular aritemtics is
+$$  \{ x^2 + y^2 + z^2 + w^2 = n \}(X) \text{ with} X = \mathbb{R} \text{ or }\mathbb{Q} \text{ or } \mathbb{A}$$
+Exact numbers can occur when we count rearrangements of things we've alread decided are separate and countable.  Such as:
+$$ \binom{n}{2} = \big\{ (m,n) : 0 \leq a < b < n \big\} =  \frac{ n \times (n-1)} {2} \in \mathbb{Z}$$
+The left side is an integer because it always counts the number of things, but how did we know the right side counted anything?
+\begin{eqnarray*}
+x^2 + y^2 + z^2 + w^2 &\in& n + 7 \mathbb{Z}\\
+x^2 + y^2 + z^2 + w^2 &\in& n + 13 \mathbb{Z}
+\end{eqnarray*}
+These are two open sets in $\mathbb{Z}_7$ and $\mathbb{Z}_{13}$. A sample solution of both congruences in $\mathbb{Z}/7\mathbb{Z} \times \mathbb{Z}/13\mathbb{Z}$ is 
+$$ (0,0,0,1) \oplus (0,1,1,0) = (0, 14, 14 , 78 )$$
+I have not yet exploted such obvious things as $x^2 > 0$ always because now we are playing with $p$-adic integers.  Here we have an isomorphism:
+$$ \mathbb{Z}/13\mathbb{Z} \oplus \mathbb{Z}/7\mathbb{Z} \simeq \mathbb{Z}/91\mathbb{Z}  $$
+Called the Chinese remainder theorem. 
+\\ \\
+
+\begin{thebibliography}{}
+
+\item \dots
+
+
+\end{thebibliography}
+
+\end{document}
