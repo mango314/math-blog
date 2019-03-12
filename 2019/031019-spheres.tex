@@ -37,9 +37,64 @@ Called the Chinese remainder theorem.
 
 \begin{thebibliography}{}
 
-\item \dots
+\item Tom Apostol \\
+\textbf{Introduction to Analytic Number Theory} (Undergraduate Texts in Mathematics) Springer, . \\
+\textbf{Modular Forms and Diriclet Series in Number Theory} (Graduate Texts in Mathematics \#41) Springer, .
 
 
 \end{thebibliography}
 
+\newpage
+
+\noindent $\theta(z) = \sum_{n \in \mathbb{Z}} q^{n^2}$.  Then we have $(\theta(z))^4 = \sum_{n \in \mathbb{Z}} r_4(n) q^n $.  For any spherical harmonic $u(z)$ we can define $\theta(z;u)$.  What are the indpendent spherical harmonics of degree $6$?
+\begin{itemize}
+\item $a^6 + b^6 + c^6 + d^6$
+\item $a^4 b^2 + (\text{permutations})$
+\item $a^2 b^2 c^2 + (\text{permutations})$.
+\end{itemize}
+\textbf{03/12} For the millionth time, we try to check the invariance properties of the theta function.  Here's statement from Stein's textbook:\\ \\
+\textbf{Thm} (Poisson Summation Formula) If $f \in \mathcal{S}(\mathbb{R})$, then
+$$ \sum_{n \in \mathbb{Z}} f(x+n) = \sum_{n \in \mathbb{Z}} \hat{f}(n) e^{2\pi i \, n x} $$
+In particular, setting $x = 0$ we have:
+$$ \sum_{n \in \mathbb{Z}} f(n) = \sum_{n \in \mathbb{Z}} \hat{f}(n) $$
+This rests on another theorem from Chapter 2 of Book I. \\ \\ 
+\textbf{Thm} Suppose that $f$ is an integrable function on the circle with $\hat{f}(n) = 0$ for all $n \in \mathbb{Z}$.  Then $f(\theta_0) = 0$ whenver $f$ is {\color{green!50!blue!90!black}\textbf{continuous}} at the point $\theta_0$.  \\ \\
+These theorems look tautological we have that $\big[\hat{f}(n) \equiv 0\big] \to \big[f(x) \equiv 0\big]$.  Then we have the disclaimer that we could have $f(x) \neq 0$ if $f(x)$ is not continuous there. \\ \\
+\textbf{Corollary} If $f$ is continuous on the circle and $\hat{f}(n) = 0$ for all $n \in \mathbb{Z}$, then $f = 0$. \\ \\
+\textbf{Exercises}
+\begin{itemize}
+\item Let $f: \mathbb{R} \to \mathbb{R}$ be continuous.  Is $\displaystyle g(x) = \sum_{n \in \mathbb{Z}} f(x+n)$ continuous? Show that $f \in \mathcal{S}(\mathbb{R})$ is enough to show that $g$ is continuous.
+\item When is it acceptable to exchange the sum and integral sign?  $\sum \int = \int \sum $ as operators.  Observe:
+$$ \int_0^1 \left[ \sum_{n \in \mathbb{Z}}  f(x+n) \right]e^{-2\pi i mx} \, dx = 
+\sum_{n \in \mathbb{Z}} \left[ \int_0^1 f(x+n) e^{-2\pi i m x} \, dx \right] $$
+Is this acceptable for all $f \in S(\mathbb{R})$? Show that Schwartz class is sufficient  here. 
+\item  
+\end{itemize}
+One way to look at all this uncertainty (or doubt) is that we have a lot of options and controls that we just don't fully understand.  The two main examples of periodization in the textbook:
+\begin{itemize}
+\item $\displaystyle \sum_{n \in \mathbb{Z}} \frac{1}{x+n} = \pi \cot \pi x $ (this series is divergent, so we say $\displaystyle \sum_{n \in \mathbb{Z}} f(n) = \lim_{n \to \infty} \sum_{|n| < N} f(n)$ symmetrically). \\ 
+This was called ``partial fractions" in high school.  Partial fractions of the cotangent function.
+\item $\displaystyle \sum_{n \in \mathbb{Z}} \frac{1}{(x+n)^2} = \frac{\pi^2}{(\sin \pi x)^2} $ whenever $x \notin \mathbb{Z}$.
+\end{itemize}
+In all these cases ``$=$" has to be qualified each time.  This might catch up to us.\\ \\
+The reason we're going to check this so carefully is because we have now been told that:
+$$ \theta(s) = \sum_{n \in \mathbb{Z}} e^{-(\pi n^2)s} \text{ has }\theta(\frac{1}{s}) = \sqrt{s} \, \theta(s) \text{ for }s > 0$$
+This is in addition to $\theta((s+1)i) = -\theta(si)$.  In fact, we only have $z \in \mathbb{R}$ since we have not discussed \textbf{analytic continuation}, to $z \in \mathbb{C}$.  If we set $q = e^{2\pi i \, n z}$ we have that $\theta(z) = \sum q^{n^2/2}$ with $\theta(z+4) = \theta(z)$ and $\theta(1/s) = \sqrt{z} \theta(z)$. \\ \\
+If we can show this infinite sum $\sum f(x+n)$ is continuous in $x \in \mathbb{R}$ and that we can switch the integral $\int_0^1$ and the sum $ \sum_{n \in \mathbb{Z}}$ . \\ \\
+\textbf{Thm 4.1} Let $\{ K_n\}_{n=1}^\infty$ be a family of ``good kernels", and $f$ is an ``interable" function on the circle, then 
+$$ \lim_{n \to \infty} (f \ast K_n)(x) = f(x) $$
+whenever $f$ is continuous at $x$.  If $f$ is continous eerwhere, then the above limit is uniform.  Here $\{ K_n\}$ is called an \textbf{approximation to the indentity}.  In fact, physics papers, do not bother with approximations and merely write:
+$$ \delta(x) = \left\{ \begin{array}{cc} 0 & x \neq 0\\ 
+\infty & x = 0 \end{array} \right. 
+\text{ and } (f*\delta)(x) = \int f(x-y)\delta(y) \, dy = f(x)$$
+Except, $\delta(x)$ is not a function, it is a \textit{distribution}. \\ \\
+Can we zero in at $f(0)$ using only trigonometric polynomials? \\ \\
+Quite bluntly, $p(\theta) = \epsilon + \cos \theta$ and $p_k(\theta) = [p(\theta)]^k$.  Then, since $f(0)$ is continuous at $\theta = 0$, we choose $0 < \delta < \pi/2$ with $f(\theta) > f(0)/2$ whenever $|\theta| < \delta$.  Choose $\epsilon > 0$ (with $\epsilon \ll 1$, small) such that $|p(\theta)| < 1 - \epsilon / 2$ whenever $\delta \leq |\theta| \leq \pi$.  
+$$ \left\{ \begin{array}{cc} f(\theta) > \frac{1}{2} f(0) & 0 < |\theta| < \delta \\ \\ 
+|p(\theta)| < 1 - \frac{1}{2}\epsilon & \delta \leq |\theta| \leq \pi \end{array} \right. $$ 
+Let's check that such a $\delta$ exists.  We have that $f(0) > 0$ and that $f(\theta) \approx f(0)$ whenever $\theta \approx 0$, so then $f(\theta) > \frac{1}{2}f(0)$. 
+$$ |f(\theta) - f(0)| < \epsilon_1 \text{ whenever } |\theta| < \delta \text{ so that }
+f(\theta) - \frac{1}{2}f(0) = \Big(f(\theta) - f(0)\Big) + \frac{1}{2}f(0) > \frac{1}{2}f(0) - \epsilon_1 > 0 $$ 
+This is about half of the argument.  We can't quantify what ``continuous" means here without a further information about $f$. We will set $f(s) = e^{- (\pi n^2) s}$ and show it is it's own Fourier transform.  This still won't be sufficient to show the modular invariance of $\theta(z)$ for $z \in \mathbb{H}$. \\ \\
+We're saying there's something iffy about the Gaussian function, and the limits we are trying to state, that there are tiny differences with some kind of ``microscope".  We need Lebesgue measure (in Book III) to explain that $(\sin mx)^2 \approx \frac{1}{2}$ as $m \to \infty$ and  yet $|\sin mx| \approx 0 $ in that same limit.   All of these can be discussed as the topology of Hilbert space.
 \end{document}
