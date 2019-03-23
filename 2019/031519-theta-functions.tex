@@ -1,0 +1,82 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+
+\title{Scratchwork: Jacobi Triple-Product Formula}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+\noindent Comparing apples and oranges.  There is lots of discussion of theta functions in the literature.  How do we normalize our definitions?  Here's an examplle from Integrable Systems:
+$$ \theta_1(u;p) = \theta_1(u) = 2 p^{1/4} \sin u \prod_{n=1}^\infty 
+\big( 1 - 2 p^{2n} \cos 2u + p^{4n} \big)(1 - p^{2n}) $$
+These are called \textbf{elliptic theta functions}, and the branch of mathematics is called \textit{integrable systems}.   Here is anothe theta function:
+$$ \theta_4(u;p) = \theta_4(u) = \prod_{n=1}^\infty \big( 1 - 2 p^{2n-1} \cos 2u + p^{4n} \big) (1-p^{2n}) $$
+Why is this going to be so confusing.  Here's another definition of theta function.
+\begin{eqnarray*}
+\overline{\theta}_1( x | \tau) &=& 
+2 e^{i\pi \frac{\tau}{4}} \sin (x) \prod_{n=1}^\infty \big(1 - e^{2ix} e^{\pi i \tau (2n)}\big)\big(1 - e^{-\pi i x} e^{\pi i \tau (2n)}\big) \\ 
+\overline{\theta}_4( x | \tau) &=& \prod_{n=1}^\infty \big(1 - e^{2ix} e^{\pi i \tau (2n -1)}\big)\big(1 - e^{-\pi i x} e^{\pi i \tau (2n -1 )}\big)
+\end{eqnarray*} 
+and the Jacobi theta function, which is missing a factor of an infinite product.  
+$$ \theta_i(x|\tau) = \prod_{n=1}^\infty (1 - e^{2\pi i \tau n }) \theta_i(x|\tau) $$
+The same discussion tells is there are some modlarity transformations available to us:
+\begin{eqnarray*} 
+\theta_1(z|\tau + 1) &\stackrel{S}{=}& \exp \left( \frac{\pi i}{4} \right) \theta_1(z|\tau) \\ 
+\theta_1\left(z | - \frac{1}{\tau} \right) &\stackrel{T}{=}& -i \sqrt{- \tau i}\exp\left( - \frac{1}{\pi i} \tau z^2 \right) \theta_1(z\tau | \tau) \\
+\theta_1\left(z | \frac{\tau}{1-\tau}\right) &\stackrel{STS}{=}& \exp \left( \frac{\pi i }{4} \right)
+\sqrt{1 - \tau}  \exp\left( - \frac{1}{i\pi} (\tau - 1) \right) \theta_1 \big( z(\tau - 1) | \tau \big)  \end{eqnarray*}
+These formulas are unfortunately, very complicated have an unclear meaning as stated and we don't know where they come from.   Here's another source of examples:
+\begin{eqnarray*}
+\Theta(z|\tau) &=& \sum_{n = - \infty}^\infty e^{\pi i n^2 \tau} e^{2\pi i n z} \\
+\theta(\tau) &=& \sum_{n=-\infty}^\infty e^{\pi i n^2 \tau}, \tau \in \mathbb{H} \\
+\vartheta(t) &=& \sum_{n=-\infty}^\infty e^{-\pi n^2 t}, t > 0
+\end{eqnarray*}
+Between these three definitions, we get there is a symmetry within the set of perfect squares of integers $\square = \{ n^2 : n \in \mathbb{Z} \}$. 
+\newpage \noindent
+Here's a fourth, more varied definition of theta function which follows the same idea:
+$$ \theta(z; u) = \sum_{m \in \mathbb{Z}^3} u(m) e(|m|z) $$
+with $u$ is a spherical harmonic of degree $\ell$.  The Fourier coefficients are given by:
+$$ a(n) = n^{\ell/2} r_3(n) W_u(n) \quad\text{with}\quad W_u(n) = \frac{1}{r_3(n)} \sum_{\xi \in V_n} u(\xi) $$ 
+and we have that $\theta(z;u)$ is a holomorphic cusp form on $\Gamma_0(4)$.  \\ \\
+Let's see a statement of the Jacobi Triple Product formula. Here's the exercise in Apostol's \textbf{Modular Function and Dirichlet Series in Number Theory}.  
+$$ \theta(\tau) = 1 + 2\sum_{n=1}^\infty e^{\pi i n^2 \tau} = \sum_{n=-\infty}^\infty e^{\pi i n^2 \tau}  $$
+abcd.
+Here's the exercise in \textbf{Conformal Field Theory}.  
+$$ \dots $$
+Here's the exercise in Elias Stein's textbook on \textbf{Complex Analysis}. 
+\begin{eqnarray*}
+\Theta(z|\tau) &=& \sum_{n=-\infty}^\infty e^{\i i n^2 \tau} e^{2\pi i n z} \\
+\Pi(z|\tau) &=& \prod_{n=1}^\infty (1 - q^{2n}) (1 + q^{2n-1}e^{2\pi i z})(1 + q^{2n-1} e^{-2\pi i z}) \\ \\
+\Theta(z|\tau) &=& \Pi (z|\tau) 
+\end{eqnarray*}
+$\Theta$ is entire in $z \in \mathbb{C}$ and holomorphic in $\tau \in \mathbb{H}$. 
+\begin{itemize}
+\item $\Theta(z+1|\tau) = \Theta(z|\tau) $
+\item $\Theta(z+\tau|\tau) = \Theta(z|\tau) e^{- \pi i \tau} e^{-2\pi i z} $
+\item $\Theta(z|\tau) = 0 $ whenever $z \in \frac{1}{2}(1 + \tau) + \mathbb{Z} + \tau \mathbb{Z} $.
+\end{itemize} 
+$\Pi$ is entire in $z \in \mathbb{C}$ and holomorphic in $\tau \in \mathbb{H}$. 
+\begin{itemize}
+\item $\Pi(z+1|\tau) = \Pi(z|\tau) $
+\item $\Pi(z+\tau|\tau) = \Pi(z|\tau) e^{-\pi i \tau}e^{-2\pi i z } $
+\item $\Pi(z|\tau) = 0$ whenever $z \in \frac{1}{2}(1 + \tau) + \mathbb{Z} + \tau \mathbb{Z}$. 
+\end{itemize}
+\vfill
+\begin{thebibliography}{} 
+\item 
+\end{thebibliography}
+\end{document}
