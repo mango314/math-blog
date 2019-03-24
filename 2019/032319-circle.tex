@@ -1,0 +1,38 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+
+\title{Scratchwork: Circle Through Three Points}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+\noindent Let $(x_1, y_1), (x_2, y_2), (x_3, y_3) \in \mathbb{R}^2$ be three points on a map, the Euclidean plane.  We can find a single circle that passes through all three points by solving simultaneous equations.
+$$ \left|\begin{array}{cccc} 
+x_1^2 + y_1^2 & x_1 & y_1 & 1 \\
+x_2^2 + y_2^2 & x_2 & y_2 & 1 \\
+x_3^2 + y_3^2 & x_3 & y_3 & 1 \\
+x_1   + y_1   & x   & y   & 1 \\
+\end{array} \right| = 0 $$
+Why does this work?  The equation for the circle should be of the form:
+$$ A(x^2 + y^2) + Bx + Cy + D = 0 $$
+Here $[A:B:C:D] \in \mathbb{R}P^3$, and given three data points we can so solve for thee three points.  We can find the intersection of these three divisors. \\ \\
+\textbf{Ex} What is the center and radius of this circle? \\ \\
+\textbf{Ex} What happens if we move $(x_1, y_1)$ to a nearby point $(x_1 + \epsilon, y_1+\epsilon)$ what happens to the circle under this small change?
+\vfill
+\begin{thebibliography}{} 
+\item \dots 
+\end{thebibliography}
+\end{document}
