@@ -1,0 +1,63 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+%\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage[x11names, table]{xcolor}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{multicol}
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+%\usepackage{tikz}
+
+
+\title{Scratchwork: Multiplication}
+\date{}
+
+
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+\noindent 
+\textbf{Example} Furstenburg shows in 1967, that the only closed infinite subset of $\mathbb{R}/\mathbb{Z}$ invariant under  $S:(\cdot) \mapsto \cdot \times a$ and $T:(\cdot) \mapsto \cdot \times b$ is all of $\mathbb{R}/\mathbb{Z}$ itself.  For any irrational $\theta \notin \mathbb{Q}$, 
+$$ \overline{ \{ a^k \times b^\ell \times \theta : k, \ell \geq 0 \} } = \mathbb{R}/\mathbb{Z} $$
+I don't know how such a basic point could be under argument in this first place.  No non-expert would even question such a thing.  It takes a small bit of anaysis and topology to \textit{state} that the closure of an infinite set is something.  And then we need to consult a resource on ``commuting automorphisms", here $\theta \mapsto \theta \times a$ and $\theta \mapsto \theta \times b$. \\ \\ 
+For example, Let's find $k$ and $\ell$ such that $\big|2^k \times 3^\ell \times \sqrt{2} - \sqrt{3} \big| < 10^{-2}$.  These questions (even to me) seem like novelties, and each single case can be solved with a computer, given enough time and resources.\\ \\
+\textbf{Example} Weyl's Law (say for $H = \partial^2_x + \sqrt{n} \, \partial^2_y$) gives an estimate for the distribution of eigenvalues (in $\mathbb{R}$):
+$$ \# \{ j : \lambda_j < X \} = \# \{ (a,b) : a^2 + \sqrt{n} \, b^2 < X \} \sim
+\frac{\pi}{4 \sqrt{n}} X  $$ 
+We notice the distribution is approximately a line.  Perhaps we could find the ``doubling constant": 
+$$ A + A \approx k\, A $$ 
+The paper introduces all sorts of interesting measurable sets.  Starting with $\mu(\mathbb{Q}) = 0$ and yet $\overline{\mathbb{Q}} = \mathbb{R}$. The paper also computes the gaps:
+$$ \delta_{min}(N) = \min (\{\lambda_{i+1} - \lambda_i : 1 \leq i \leq N \})  $$
+Here the $\lambda_i$ are the sorted vales of $a^2 + \sqrt{n} \, b^2 \in \mathbb{Z}[\sqrt{n}]$.  Notice we do not even need all of $\mathbb{R}$ to define this thing. \\ \\
+Let's even take a step further and remind ourselves that the numbers $\overline{\{a^2 + b^2 - \sqrt{2} c^2 : a,b, c \geq 0 \}} = \mathbb{R}$ and we could have an exercise:
+$$ \big| a^2 + b^2 - \sqrt{2} c^2 \big| < 10^{-6} $$
+Finding such integers one time, is certainly tractable.  I think the difficulty is showing this can \textit{always} happen to arbitrary accuracy that requires the Ratner theory.  In other words, that there is something complicated about these numbers. \\ \\ 
+We have a dilemma, no matter how many times we use a computer, no matter how much data we have, we are no closer to a proof.  This problem and many others, originated in this use of computers, where $\mathbb{R}\approx 2^{-N}\,\mathbb{Z}$ where we only get $N = 20$ or $30$ decimal places and the addition is truncated towards the end. Maybe we can find other measurable subsets $X \subseteq \mathbb{R}$ that show why this elementary result might offer such difficulty.   \\ \\
+If we don't have enough decimal places, the approximate relation $a^2 + b^2 \approx \sqrt{2}c^2$ becomes an equality $a^2 + b^2 \mathbf{=} \sqrt{2}c^2$ or $\sqrt{2} = \frac{a^2+b^2}{c^2} \in \mathbb{Q}$.  This is a standard geometric exercise from Euclid that $\sqrt{2} \notin \mathbb{Q}$.
+
+\newpage \noindent
+Let's settle for a timeline.  
+\begin{multicols}{2}
+\noindent abc \vfill \null \columnbreak
+\noindent cdf
+\end{multicols}
+
+\begin{thebibliography}{} 
+\item Proofs that $\sqrt{2}\notin\mathbb{Q}$ \\
+\texttt{https://math.stackexchange.com/q/2382318}\\
+\texttt{https://math.stackexchange.com/q/451700} \\ \\ 
+Proof that $\sqrt{2}+\sqrt{3} \notin \mathbb{Q}$ \\
+\texttt{https://math.stackexchange.com/q/452078}\\ 
+\texttt{https://math.stackexchange.com/q/457382}
+\item \dots
+\item \dots
+\end{thebibliography}
+\end{document}
