@@ -44,11 +44,35 @@ We have a dilemma, no matter how many times we use a computer, no matter how muc
 If we don't have enough decimal places, the approximate relation $a^2 + b^2 \approx \sqrt{2}c^2$ becomes an equality $a^2 + b^2 \mathbf{=} \sqrt{2}c^2$ or $\sqrt{2} = \frac{a^2+b^2}{c^2} \in \mathbb{Q}$.  This is a standard geometric exercise from Euclid that $\sqrt{2} \notin \mathbb{Q}$.
 
 \newpage \noindent
-Let's settle for a timeline.  
-\begin{multicols}{2}
-\noindent abc \vfill \null \columnbreak
-\noindent cdf
-\end{multicols}
+%Let's settle for a timeline.  
+%\begin{multicols}{2}
+%\noindent abc \vfill \null \columnbreak
+%\noindent cdf
+%\end{multicols}
+abcd \\ \\
+\textbf{Example} For a generic irrational point, $x \notin \mathbb{Q}$, the orbit under $S: \theta \mapsto \{a \times \theta\}$ and $T: \theta \mapsto \{b \times \theta\}$ as elements of $\mathbb{R}/\mathbb{Z}$ is still a set of measure zero, yet it is dense in $\mathbb{R}/\mathbb{Z}$.
+$$ \overline{\{ a^k \times b^\ell \times x : k, \ell \geq 0 \}} = \mathbb{R}/\mathbb{Z} $$
+This is just like when $\mu(\mathbb{Q}) = 0$ and yet $\overline{\mathbb{Q}} = \mathbb{R}$, in its entirety.  Let's see a quantitative statement of this result:
+\begin{quotation}
+Let $a,b$ be multiplicative independent.  Suppose $\alpha \in \mathbb{R}/\mathbb{Z}$ be diophantine-generic; there exists $k$ such that
+$$ \Big|\alpha - \frac{p}{q}\Big| \geq q^{-k} \text{ with }q \geq 2,\;\;\; p, q \in \mathbb{Z} $$
+Then $\{ a^k \times b^\ell \times \alpha : 0 < k, \ell < N \}$ is $(\log \log N)^{-\kappa}$ dense in $\mathbb{R}/\mathbb{Z}$ for some constant $\kappa > 0$.
+\end{quotation}
+Even if we restrict to a single map, our entire decimal system is based on the map $T: \theta \mapsto 10 \times \theta$.  Here is a set of measure zero, where every other decimal is zero and the other numbers are in $\{1,2,\dots, 9\}$.
+$$ A = \{ 0.x_1\,0\,x_2\,0\,x_3\,0\dots : 1 \leq x_i \leq 9\} \text{ can we show that }A+A = \mathbb{R}/\mathbb{Z} $$
+We have that $\mu(A) = 0$ can we show that $\mu(A+A) > 0$?  Or let's construct a measurable function.  What happens if we stop after $N$ digits?
+$$ A_n = \{ 0.x_1\,0\,x_2\,0\,x_3\,0\,\dots\,0\,x_n: 1 \leq x_i \leq 9\} \text{ with }\mu(A_n) = \Big(1 - \frac{1}{10}\Big)^n \times \frac{1}{10^n} $$
+Then we could write down a measurable function by adding functions supported on these subsets in various ways:
+$$ f(x) = \sum \mathbf{1}_{A_n}(x) \quad\text{and}\quad g(x)= \sum_{n \text{ squarefree}} 2^n \mathbf{1}_{A_n}(x) $$ 
+I have not checked for convergence.  The next question would be $\mu( f^{-1}([0,\frac{1}{2}])$ this set is measurable. \\ \\
+What happens if we try to take derivatives of these functions?  We could try to find a limit $\frac{1}{\epsilon}(f(x+\epsilon) - f(x))$ for these functions which are roughly straight lines and have that $f'(x) \approx 1$.  \\ \\
+Given a dynamical system $T: X \to X$ we could define a smaller subset of the orbit: $\{ T^n x : n \text{ squarefree}\}$ and since the density of square-free numbers in $\mathbb{Z}$ is roughly $\frac{6}{\pi^2} \approx \frac{2}{3}$, we could have a shift-map related to these partial orbits.  This might already have a name, like an ``factor" or ``return-map". \\ \\ 
+The measurable sets in this paper of $\times a \times b$ are 
+$$ A_{M,N} = \Big\{ \{ 5^k \times 7^\ell  \times \sqrt{2} \} : 0 < k < M, 0 < \ell < N \Big\} + [-\epsilon, \epsilon] $$
+for small enough $0 < \epsilon \ll 1$. The paper seems to be concerned with deviations from uniformity (since that's what we expect) and attempting to quantify that. Here's a sample.  What can we say about this series?
+$$ h(x) = \sum_{M, N \geq 0} (-1)^{M+N} 1_{\mathbf{A}_{M,N}}(x) $$
+and any other imaginable statistic. What is the correct averaging factor?
+\vfill
 
 \begin{thebibliography}{} 
 \item Proofs that $\sqrt{2}\notin\mathbb{Q}$ \\
@@ -57,7 +81,10 @@ Let's settle for a timeline.
 Proof that $\sqrt{2}+\sqrt{3} \notin \mathbb{Q}$ \\
 \texttt{https://math.stackexchange.com/q/452078}\\ 
 \texttt{https://math.stackexchange.com/q/457382}
-\item \dots
+\item Commuting Automorphisms \\
+Jean Bourgain, Philippe Michel, Elon Lindenstrauss, Akshay Venkatesh \textbf{Some Effective Results in $\times a \times b$} Ergodic Theory and Dynamical Systems, Volume 29, Issue 6, December 2009, pp 1705-1722. \\
+Daniel J. Rudolph \textbf{$\times 2 \times 3$ invariant measures and entropy} Ergodic Theory and Dynamical Systems, Volume 10, Issue 2, June 1990, pp. 395-406. \\ 
+Harry Furstenburg \textbf{Disjointness in Ergodic Theory, Minimal Sets, and a Problem in Diophantine Approximation} Mathematical Systems Theory, March 1967, Volume 1, Issue 1, pp. 1-49.
 \item \dots
 \end{thebibliography}
 \end{document}
