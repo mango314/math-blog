@@ -1,0 +1,39 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+
+\title{Scratchwork: Pythagoras Theorem}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+\noindent Let $\vec{a}, \vec{b}, \vec{c} \in \mathbb{R}^3$ be vectors with $|\vec{a}|^2 + |\vec{b}|^2 + |\vec{c}|^2 = 1$.  Then $\vec{a} \times \vec{b}, \vec{b} \times \vec{c}, \vec{c} \times \vec{a}$ span the vector space $\mathbb{R}^3 \wedge \mathbb{R}^3 \simeq \mathbb{R}^3$.
+$$
+|  v \wedge w|^2 = |v_1 w_2 - v_2 w_1|^2 + |v_2 w_3 - v_3 w_1|^2 + |v_3 w_1 - w_3 v_1|^2  $$
+This looks an awful lot like the cross product with coordinates to me.  $v = v_1 \mathbf{i} + v_2 \mathbf{j} + v_3 \mathbf{k}$ and $w = w_1 \mathbf{1} + w_2 \mathbf{j} + w_3 \mathbf{k}$.  
+$$ 
+v \times w = \left|
+\begin{array}{ccc}
+v_1 & v_2 & v_3 \\ w_1 & w_2 & w_3 \\ \mathbf{i} & \mathbf{j} & \mathbf{k} \end{array} \right|
+= 
+(v_1 w_2 - v_2 w_1) \mathbf{i} + (v_2 w_3 - v_3 w_2)\mathbf{j} + (v_3 w_1 - v_1 w_2)\mathbf{k}
+$$
+Now we have the Pythagoras Theorem in 3-space again.  Dually this can be read as De Gua's Theorem on areas of Triangles.  The area of the \textit{parallelogram} squared is te sum of the squares of the areas of the projetions. \hfill $\square$.
+\vfill
+\begin{thebibliography}{} 
+\item \dots 
+\end{thebibliography}
+\end{document}
