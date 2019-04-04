@@ -31,7 +31,21 @@ v_1 & v_2 & v_3 \\ w_1 & w_2 & w_3 \\ \mathbf{i} & \mathbf{j} & \mathbf{k} \end{
 = 
 (v_1 w_2 - v_2 w_1) \mathbf{i} + (v_2 w_3 - v_3 w_2)\mathbf{j} + (v_3 w_1 - v_1 w_2)\mathbf{k}
 $$
-Now we have the Pythagoras Theorem in 3-space again.  Dually this can be read as De Gua's Theorem on areas of Triangles.  The area of the \textit{parallelogram} squared is te sum of the squares of the areas of the projetions. \hfill $\square$.
+Now we have the Pythagoras Theorem in 3-space again.  Dually this can be read as De Gua's Theorem on areas of Triangles.  The area of the \textit{parallelogram} squared is te sum of the squares of the areas of the projetions. \hfill $\square$. \\ \\
+This could be more meaningful in four dimensions.  Here, ``four dimensions" could mean two objects in flat space:
+$$ \mathbb{R}^4 \simeq \mathbb{R}^2 \oplus \mathbb{R}^2 $$
+Then we could take the wedge of two 4-vectors - this would model $([pt] \oplus [pt]) \wedge ([pt] \oplus [pt]) $.  It's hard to count the six degrees of freedom at the moment: 
+$$ \mathbb{R}^4 \vee \mathbb{R}^4 \simeq \mathbb{R}^6 $$
+What does Pythagoras' theorem say here? We have a Euclidean distance function on the set of pairs of points in the plane. Just two people standing in a room, with no restrictions.
+$$ |v \wedge w|^2 = 
+( v_1 w_2 - v_2 w_1)^2 +
+( v_1 w_3 - v_3 w_1)^2 +
+( v_1 w_4 - v_4 w_1)^2 +
+( v_2 w_3 - v_3 w_2)^2 +
+( v_2 w_4 - v_4 w_2)^2 +
+( v_3 w_4 - v_4 w_3)^2   $$
+The expression $|v \wedge w|$ still measures the area of the parallelogram spanned by 4-vectors $\vec{v}$ and $\vec{w}$. \\ \\ \\
+\textbf{Proposition} The vectors $A,B,C \in \mathbb{R}^2$ are collinear iff $A \wedge B + B \wedge C + C \wedge A = 0$.
 \vfill
 \begin{thebibliography}{} 
 \item \dots 

@@ -1,0 +1,46 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+
+\title{Tune-Up: Continuity}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+\noindent Here is the Poisson summation formula: \\ \\
+\textbf{Thm} If $f \in \mathcal{S}(\mathbb{R})$ then $\displaystyle \sum_{n \in \mathbb{Z}} f(n) = \sum_{n \in \mathbb{Z}} \hat{f}(n)$ and in fact $\displaystyle \sum_{n \in \mathbb{Z}} f(n+x) = \sum_{n \in \mathbb{Z}} \hat{f}(n) e^{2\pi i \, n x}$ for $x \in \mathbb{R}$. \\ \\
+Here $\mathcal{S}(\mathbb{R})$ is the \textbf{Schwartz space} of function on the real line.  \\ \\ 
+Schwartz space on $\mathbb{R}$ is the set of indefinintely differentiable functions, so that $f$ and all it's derivatives $f^{(n)}$ are rapidly decreasing: $\displaystyle \sup_{x \in \mathbb{R}} |x|^k | f^({\ell})(x)| < \infty $ for every $k, \ell > 0$.\\ \\
+\textbf{Proposition}
+\begin{itemize}
+\item $\displaystyle \sum_{n \in \mathbb{Z}} f(x+n) $ is continuous in $x \in \mathbb{R}$.
+\item $\displaystyle  \sum_{n \in \mathbb{Z}} \hat{f}(n)e^{2\pi inx}$ is continuous in $x \in \mathbb{R}$.
+\end{itemize}
+How do we decide when an infinite series is continous? Between the two statements we need information both about $f(n)$ and $\hat{f}(n)$ with $n \in \mathbb{Z}$.  So there's no free lunch here.\\ \\
+\textbf{Theorem} If $f \in \mathcal{S}(\mathbb{R})$ then $\hat{f} \in \mathcal{S}(\mathbb{R})$. \\ \\
+\textbf{Theorem} If $f(x) = e^{-\pi x^2}$ then $\hat{f}(\xi) = f(\xi)$.  Also $\int_{\mathbb{R}} e^{-\pi x^2 } \, dx = 1$. \\ \\  This will help us show that $s^{-1/2}\theta(1/s) = \theta(s)$ for $\theta(s) = \sum e^{-(\pi n^2) s}$ and $s > 0$. \\ \\
+\textbf{Theorem} If $f \in \mathcal{S}(\mathbb{R})$ then $\displaystyle f(x) = \int_\mathbb{R} \hat{f}(\xi) e^{2\pi i x\xi} \, d\xi$. \\ \\
+Despite all these theorems the only Schwartz functon we have so far is $f(x) = e^{- \pi x^2}$ and $\theta(s)$ is not in $\mathcal{S}(\mathbb{R})$. \\ \\
+\textbf{Definition} A function $f(x)$ is ``continuous" at the point $x$ if for all $\epsilon > 0$ there exists a $\delta > 0$ such that for all $x \in \mathbb{R}$ 
+$$ |x-a| < \delta \to |f(x) - f(a) | < \epsilon $$
+These nested quantifiers seem rather difficult to understand, and they're implicit in all our other theorems.  The math still works.  \\ \\
+\textbf{Example} The sequence of functions $f_n(x) = x^n - x^{2n}$ converges (but not uniformly) $f_n(x) \to 0$ on $[0,1]$.  Here we use a tiny bit of topology and say that $[0,1]$ is ``closed". \\ \\
+\textbf{M-test} If we can show $\sup_{x in E} |a_n(x)| < M_n$ and $\sum M_n$ converges then $\sum a_n(x)$ converges absolutely and uniformly on the set $E$. 
+\vfill
+\begin{thebibliography}{} 
+\item Vladimir Zorich \textbf{Mathematical Analysis I} (Universitext) Springer, 2015.
+\end{thebibliography}
+\end{document}
