@@ -39,6 +39,30 @@ $$ |x-a| < \delta \to |f(x) - f(a) | < \epsilon $$
 These nested quantifiers seem rather difficult to understand, and they're implicit in all our other theorems.  The math still works.  \\ \\
 \textbf{Example} The sequence of functions $f_n(x) = x^n - x^{2n}$ converges (but not uniformly) $f_n(x) \to 0$ on $[0,1]$.  Here we use a tiny bit of topology and say that $[0,1]$ is ``closed". \\ \\
 \textbf{M-test} If we can show $\sup_{x in E} |a_n(x)| < M_n$ and $\sum M_n$ converges then $\sum a_n(x)$ converges absolutely and uniformly on the set $E$. 
+\newpage 
+\noindent \textbf{4/10} Let's try an even easier exercise.  Show that if $f(x)$ is continuous and $g(x)$ is continuous, then $f(x) + g(x)$ is continuous.  For every epsilon $1 \gg \epsilon > 0$ (we're guessing that $\epsilon$ is a small nummber, e.g. $10^{-6}$), there exists a single $\delta > 0$ such that:
+$$ |x - x_0| < \delta \text{ implies }|f(x) - f(x_0)| < \epsilon \text{ and }|g(x) - g(x_0)| < \epsilon $$
+Think about it.  We are tring to say that since $x \approx x_0$ then $f(x) \approx f(x_0)$ and $g(x) \approx g(x_0)$.  This is okay as long as we are careful about the $\approx$ symbol.\footnote{Aready, in the modern ``Computer Science" age, already two doubts.  In typical colloquial English, the word ``implies" does \textbf{not} mean 100\% of the time.  Maybe the idea works for the case we have in mind and a few others, yet there could be exceptions.  Maybe 1\% exceptions and 99\% true, or 25\% exceptions and 75\% true.} Could we say that $x \asymp x_0$ implies that $f(x) \asymp f(x_0)$?  So, we can make this look very tempting. \\ \\
+Using the triangle inequality, we can combine information about $f(x)$ and $g(x)$ into a single object:
+$$ \big| \big(f(x)+g(x)\big) - \big(f(x_0) + g(x_0)\big) \big| < \underbrace{|f(x) - f(x_0)|}_{\epsilon} + \underbrace{|g(x) - g(x_0)|}_{\epsilon} < 2\epsilon $$
+This tells us, if condescendingly that $f(x) + g(x) \approx f(x_0) + g(x_0)$ whenever $x \approx x_0$. \\ \\
+Also, the counter examples given in the textbook all but leave the task to us.  We are on our own to find counter examples that are more meaningful to our specific situation.
+$$ f(x) = \frac{x}{|x|} = \left\{ 
+\begin{array}{rc} 
+1 & x > 0 \\
+? & x = 0 \\
+-1 & x < 0
+\end{array}\right. \text{ then } \lim_{x \to 0^+} f(x) = 1 \text{ and }\lim_{x \to 0^-}f(x) = -1 \text{ while }f(0) = \; ?$$
+This example, is OK.  Maybe we can even try to say that $f(0^\pm) = \pm 1$ and try to decide what the symbol $+1$ means?  Could we have $\pm 1 + \pm 1 = \pm 2$?  Since I already have a need, we could define a \textbf{ring} $\mathbb{Z}[\pm 1]$ with a reasonable-looking arithmetic.  
+$$ \sum_{n < x} 1 \approx x \text{ therefore } \sum_{n < x} \frac{n-\frac{1}{2}}{|n - \frac{1}{2}|} \approx x $$
+These statements are na\"{i}ve these statements are going to contractict themselves and lead into trouble.  Nature doesn't stop because it has mathematical contradictions.  \\ \\ 
+Another problem, we might not even \textit{observe}$f(x)$ at all times.  An \texttt{mp3}file or a \texttt{wav} file only has 44000 samples per second, which is sufficient or the human ear.  A move as 24 or 60 frames per second, and this is enough for our eyes. A picture is $500 \times 500$ pixels (or some other size).\\
+\newpage \noindent
+Here we have an average $ (Tf)(x) = \int_{[0,1]} f(x) \Big[ \sum_{0 < m,n < 10^2} \delta\big(x - (m^2 + \sqrt{2}n^2)\pmod 1 \big)\Big] \to \frac{1}{2}$ and this would be an instance of the Ergodic Theorem.  It seems, in the workforce, we have chosen mathematical proof \textbf{or} visualizaion \textbf{or} computer programming \textbf{or} numerical compution \textbf{or} business application.  \\
+\includegraphics{continuous-02.png}\\  
+\includegraphics{continuous-01.png}\\
+\includegraphics{continuous-03.png}\\  
+\includegraphics{continuous-04.png}\\
 \vfill
 \begin{thebibliography}{} 
 \item Vladimir Zorich \textbf{Mathematical Analysis I} (Universitext) Springer, 2015.
