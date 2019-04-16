@@ -69,9 +69,56 @@ Therefore line and parabola should do the job almost every single time.  Any fur
 
 \newpage \noindent The complex analysis textbook begins the same way.  Let $f(z) = z^2$.  Then 
 $$  f(z) = z^2 \text{ then } \frac{df}{dz} = \lim_{\Delta z \to 0} \frac{(z + \Delta z)^2 - z^2}{\Delta z} = 2z + O(\Delta z)$$
-We even have a sort of guarantee of how far our line is.  Let's try to check and makes sure we understand what $|\Delta z| \to 0$ really means.
+We even have a sort of guarantee of how far our line is.  Let's try to check and makes sure we understand what $|\Delta z| \to 0$ really means. \\ \\ 
+$z^2 = (x + iy)^2 = (x^2 - y^2) + i(2xy)$. \\ \\
+\begin{tikzpicture}
+
+\begin{scope}
+
+\draw[line width=3] (-4,0)--(4,0);
+\draw[line width=3] (0,-4)--(0,4);
+
+\foreach \a in {-4,-3.5,...,4}{
+	\draw (\a,-4)--(\a,4);
+	\draw (-4,\a)--(4,\a);
+}
+
+\foreach \a in {-3,...,3}{
+	\draw[line width =1.25] (\a,-4)--(\a,4);
+	\draw[line width =1.25] (-4,\a)--(4,\a);
+}
+
+\end{scope}
+
+\begin{scope}[scale=0.02, xshift=10cm]
+\foreach \a in {-10,-9,...,10}{
+	\foreach \b in {-10,-9.9,...,10}{
+		\draw (\a*\a - \b*\b ,2*\a*\b)--( {\a*\a-(\b+0.1)*(\b+0.1)} , {2*\a*(\b+0.1)});
+	}
+}
+
+\foreach \a in {-10,-9.9,...,10}{
+	\foreach \b in {-10,-9,...,10}{
+		\draw (\a*\a - \b*\b ,2*\a*\b)--( {(\a+0.1)*(\a+0.1)-\b*\b} , {2*\b*(\a+0.1)});
+	}
+}
+\end{scope}
+
+\end{tikzpicture} \\ \\
+Drawing this picture has cost a lot of computing time, and it still doesń t look quite right.  Perhaps I need to use an algorithm. 
 \vfill
 \begin{thebibliography}{} 
 \item Vladimir Zorich \textbf{Mathematical Analysis I} (Universitext) Springer, 2015.
 \end{thebibliography}
+
+\begin{tikzpicture}[scale = 0.5]
+
+\foreach \a in {-3,-2,...,3}{
+	\foreach \b in {-3,-2.9,...,3}{
+		%\draw (\a*\a - \b*\b, 2*{\a*\b} )--(0,0);
+		\draw (\a*\a - \b*\b ,2*\a*\b)--( {\a*\a-(\b+0.1)*(\b+0.1)} , {2*\a*(\b+0.1)});
+		\draw (\b*\b - \a*\a ,2*\a*\b)--( {\a*\a-(\b+0.1)*(\b+0.1)} , {2*\a*(\b+0.1)});
+	}
+}
+\end{tikzpicture}
 \end{document}
