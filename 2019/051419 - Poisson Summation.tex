@@ -1,0 +1,106 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+
+\title{Tune-Up: Poisson Summation}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+\noindent I wanted to understand the Four squares theorem a little better.  \\ \\
+\textbf{Theorem} (Lagrange) Every positive integer is the sum of four squares.  $n = a^2 + b^2 + c^2 + d^2 \in \mathbb{Z}$. \\ \\
+The number of representations of $n$ as the sum of four squares, call it $r_4(n)$.  This is also the coefficients of the power of the theta function $\theta(z)^4$.  This is a modular form of weight $2$ on $\Gamma_0(4)$. 
+\begin{itemize}
+\item $\displaystyle \theta(z) = \sum_{n \in \mathbb{Z}} q^{n^2} = 1 + 2q + 2q^2 + \dots $ and $\displaystyle \theta(z)^4 = \sum_{n \geq 0} r_4(n) \, q^n = 1 + 8q + 24q^2 + \dots $ OEIS .\footnote{\texttt{https://oeis.org/A000118}}
+\item The dimension of the space of Modular forms of weight 2 on $\Gamma_0(4)$ is at most $2$.  This requires some residue calculus and the shape of $\mathbb{H}/\Gamma_0(4)$.  There are no cusp forms at this at this level.  It is spanned by two Eisenstein series:
+\begin{itemize}
+\item[o] $\mathbb{G}_2(z)=- \frac{1}{24} + \sum_{n=1}^\infty \sigma_{1}(n) q^n
+= - \frac{1}{24} + q + 3q^2 + 4q^3 + \dots $ and $G_2(z) = - 4\pi^2 \mathbb{G}_2(z)$. \\
+\item[o] $\displaystyle \mathbb{G}_2^\ast(z) = \mathbb{G}_2(z) + \frac{\pi}{8\pi y}$ (this is a ``regularization").  These two functions $\mathbb{G}_2$ and $\mathbb{G}^*_2$ form a basis.
+\item[o] The three functions $\mathbb{G}^*_2(z)$, $\mathbb{G}^*_2(2z)$ and $\mathbb{G}^*_2(4z)$ span $M_2(\Gamma_0(4))$ so there must be a relation.\\
+\item[o] $\theta(z)^4 = 8(\mathbb{G}_2(z) - 2 \mathbb{G}_2(2z)) + 16(\mathbb{G}_2(2z) - 2 \mathbb{G}_2(4z))$ .
+\end{itemize}
+\end{itemize}
+\textbf{Theorem} $\theta(z)$ satisfies two functional equations.  $\theta(z+1) = \theta(z)$ and $\theta(- \frac{1}{4z}) = \sqrt{-2iz}\,\theta(z) $ for $z \in \mathbb{H}$.  \\ \\
+Zagier's article is unfortunately quite dense, so we'll supplement it with other sources. Here's is proof of the Four-Squares Theorem.\\ \\
+Stein.  Let's define the theta function for real numbers $s > 0$.  Then:
+$$ \theta(s) = \sum_{n = - \infty}^\infty e^{- \pi n^2 s}$$
+\textbf{Theorem} $s^{-1/2} \theta(1/s) = \theta(s)$ whenever $s > 0$. And this follows from Poisson summation formula and:
+$$ \mathcal{F}: [f:x \mapsto e^{-\pi s x^2}] \mapsto [\hat{f}:\xi \mapsto s^{-1/2} e^{-\pi\xi^2/s}] $$
+As a separate question we have to ask how $\theta(s)$ extends to $s \in \mathbb{C}$.  So there are two items to check:
+\begin{itemize}
+\item Poisson summation $\displaystyle \sum_{n \in \mathbb{Z}} f(n) = \sum_{n \in \mathbb{Z}} \hat{f}(n)$.
+\item Fourier transform is it's own Gaussian.  $f(x) = e^{-\pi s x^2}$ and $\hat{f}(\xi) = s^{1/2} e^{- \pi \xi^2 /s}$.
+\end{itemize}
+\newpage
+\noindent Step 1A: If $f \in \mathcal{S}(\mathbb{R})$. Then
+$\displaystyle \sum_{n \in \mathbb{Z}} f(x+n)$ is continuous and $\displaystyle \sum_{n \in \mathbb{Z}} \hat{f}(n) e^{2\pi i \, n x}$ is continuous. \\ \\
+Wouldn't we like to check the definition of continuity?  Let's see wha happens if we set $f(x) = e^{\pi sx^2}$. \\ \\
+Certainly $f(x) = e^{-\pi s x^2}\in \mathcal{S}(\mathbb{R})$.  Show that $\displaystyle \sum_{n \in \mathbb{Z}} e^{\pi n^2 s}$ is continuous and $\displaystyle  \frac{1}{\sqrt{s}} \sum_{n \in \mathbb{Z}}e^{- \pi n^2 / s} e^{2\pi i \, n x}$ is continuous. \\ \\
+Step 1B: We'd like to say that since the Fourier coefficients of two functions are the same, then the two functions are the same.  
+$$ \int_0^1 dx \, e^{- 2 \pi i n x}  \, \left[\sum_{n \in \mathbb{Z}} e^{\pi n^2 s}\right] \stackrel{?}{=} \int_0^1 dx \, e^{- 2\pi i n x} \, \left[\frac{1}{\sqrt{s}} \sum_{n \in \mathbb{Z}}e^{- \pi n^2 / s} e^{2\pi i \, n x}\right] $$
+Is it obvious this is true?  This still be checked in Step 2.  Even if we decide these two things are the same, do we have any other possible functions this could be? \\ \\
+\textbf{Thm} Suppose that $g$ is an integrable function on the circle with  
+$\hat{g}(n) = 0$ for all $n \in \mathbb{Z}$. 
+Then $g(\theta_0) = 0$ whenever $g$ is continuous
+``at" the point $\theta_0$. \\ \\
+\textit{Sketch} Let $p(\theta) = \epsilon + \cos \theta$ and $p_k(\theta) = [p(\theta)]^k$. And choose $B$ such that $|g(\theta)| \leq B$ for all $\theta$. Here $g(\theta) = f_1(\theta) - f_2(\theta)$ where we think $f_1 \equiv f_2$.  $g(\theta)$ is integrable on $S^1$ and so it is bounded.  
+$$ p_k(\theta) = [p(\theta)]^k = [1 + \epsilon \cos \theta]^k \approx \big[1 + \epsilon(1 - \frac{1}{2}\theta^2)\big]^k  \approx 1 + k \theta $$
+These Heuristic approximation are not in Stein's book.  In fact what we're really going for is $p_k(\theta) = [p(\theta)]^k \approx 1$.  \\ \\
+\textbf{Lemma} Suppose $f$ is integrable on the circle nd bounded by $B$.  Then there exists a sequence $\{ f_k\}_{k=1}^\infty$ of cintuou sfunctions on the circle so that 
+$$ \sum_{x \in [-\pi , \pi ]} |f_k(x) | \leq B
+\quad\text{and}\quad \int_{-\pi}^\pi (f(x) - f_k(x)| \, dx \to 0 $$
+another question will be how we even know that the Fourier transform approaches $f$.  It is not even true in many reasonable circumstances.  \\ \\
+When does $\displaystyle \sum_{|n| < N} \hat{f}(n) e^{2\pi i \, n x} \to f(x)$ in the limit?  There could be a pointwise convergence of a $\sup$ convergence or an $L^2$ convergence (e.g. using Pythagoras theorem). \\ \\
+Back to the proof.  It seems we have:  
+$$ \int_{[-\pi,\pi]} g(\theta) [p(\theta)]^k \, d\theta
+= \int_{[-\pi,\pi]} g(\theta) (1 + \epsilon \cos \theta)^k \, d\theta \approx g(0) $$
+This looks about right $p(\theta) = 1 + \epsilon \cos \theta \approx 1$ and $p_k(\theta) = [p(\theta)]^k = [1 + \epsilon \cos \theta]^k \approx 1$. A closer look:
+$$ (1 + \epsilon \cos \theta)^k \approx \left\{
+\begin{array}{cc} 
+(1 + \epsilon/2)^k & |\theta| < \eta \\ \vspace{6pt}
+(1 - \epsilon/2)^k & |\theta| > \delta \end{array} \right. $$
+where $p(\theta) = 1 + \epsilon \cos \theta \geq 1 + \epsilon/2$ for $|\theta| < \eta$ and $|p(\theta)| < 1 - \epsilon/2$ for $|\theta| \geq \delta$.  There's still a little bit of room left over, at least this is more specific than saying overall that $[p(\theta)]^k \approx 1$.  These angles are more-or-less $\theta = 60^\circ$ and $\theta = 120^\circ$.   There were two paramters to play with $k$ and $\theta$. \\ \\
+\textbf{Definition} A family of Kernels $\{ K_n(x) \}_{n=1}^\infty$ on the circle is said to be a family of \textbf{good kernels} if
+\begin{itemize}
+\item For all $n \geq 1$ $\displaystyle \frac{1}{2\pi} \int_{-\pi}^\pi K_n(x) \, dx = 1$
+\item There exists $M > 0$ such taht for all $n \geq 1$, $\displaystyle \int_{-\pi}^\pi |K_n(x) | dx \leq M $
+\item For every $\delta > 0$ then $\displaystyle \int_{\delta \leq |x| \leq \pi } |K_n(x) | dx \to 0 $ as $n \to \infty$.
+\end{itemize}
+\textbf{Theorem 4.1} Let $\{ K_n)\}_{n=1}^\infty$ be a famil of good kernels, and $f$ is an itegrable function on the circle.  Ten
+$$ \lim_{n \to \infty} (f \ast K_n)(x) = f(x) $$
+whenever $f$ is continuous at $x$.  If $f$ is continuous, then the above limit is uniform.  $\{K_n\}$ is called an \textbf{aproximation to the identity}.  Basically:
+$$ ( f \ast K_n)(x) = \frac{1}{2\pi} \int_{-\pi}^\pi f(x-y) K_n(y) \, dy \approx f(x) $$
+Let's see if we can verify the properties of a good Kernel with our very crude example: $[p(\theta)]^k = (1 + \epsilon \cos \theta)^k$.
+\begin{itemize}
+\item $\frac{1}{2\pi} \int [1 + \epsilon \cos \theta]^n \, dx \asymp \frac{1}{2\pi}\int 1 + (\sum \epsilon^k \cos k \theta)dx = 1 $ (so far so good)
+\item $\int_{-\pi}^\pi |[1 + \epsilon \cos \theta]^n|dx
+\leq \int_{-\pi}^{\pi} |1 + \epsilon|^n \, dx = 2\pi (1 + \epsilon)^n $.  We need $\epsilon \ll \frac{1}{n}$.
+\item For every $\delta > 0$, $\displaystyle \int_{\delta \leq |x| \leq \pi} |(1 + \epsilon \cos \theta)^n | \, dx \stackrel{?}{\to} 0 $. This looks false since $1 + \epsilon \cos \theta > 0$ for $\theta \in [-\frac{\pi}{2}, \frac{\pi}{2}]$.  
+\end{itemize}
+This is advantageous, since it says we can manoever Poisson summation and prove it using only very blunt tools, without an approximation to the identity, pointing at each value with our index finger and smudging a little bit.  Say, $g(x) \approx \frac{1}{1 + 2\epsilon}[g(x-\epsilon) + g(x) + g(x + \epsilon) ]$ in a very common sense way. \\ \\
+In Electrical engineering this would be called ``filter design".  In the long run, what can we say about the difference between the space average and the frequency average since we only have a finite amount of computing power.
+$$ \sum_{|n| < N} f(n + x) - \sum_{ |m| < M} \hat{f}(m) \, e^{2\pi i \, m x} \approx 0 $$
+What about that?
+\vfill
+
+\begin{thebibliography}{}
+
+\item Don Zagier, et. al. \textbf{The 1-2-3 of Modular Forms} Springer, 2008.
+\item Elias Stein \textbf{Fourier Analysis} (Princeton Lectures in Analysis, Book I) Princeton University Press, 2006.
+\end{thebibliography}
+
+\end{document}
