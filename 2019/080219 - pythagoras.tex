@@ -1,0 +1,54 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+
+\title{Tune-Up: Pythagoras Triples}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+I seem to confuse two slightly different problems in Number Theory: pythagoras triples and primes as the sum of two squares.  Without these, there's not much hope for anything else.   The more we solve it, the more we can ask questions about the various methods, which seem a bit arbitrary.  These advanced methods, seem to lump together entire classes of problems into a single bucket, without looking at any individual problem too carefully. \\ \\
+Ferma's Theorem says $p = a^2 + b^2$ if $p = 4k+1$.  This is true for $p \in \mathbb{Z}$.  In order to do such a thing, we have actually called on \textit{complex numbers} since we could say:
+$$ p = a^2 + b^2 = (a+bi)(a-bi) \in \mathbb{Z}[i] $$ 
+In that case, we could define this as a statement of \textbf{ideals} in $\mathbb{Z}[i]$.  We are trying to find the prime ideals $\mathfrak{p} \subset \mathbb{Z}[i]$.  
+$$ [ p \mathbb{Z}[i]: \mathbb{Z}[i]]  = [ p \mathbb{Z}[i] : (a + bi)\mathbb{Z}[i]] [(a + bi)\mathbb{Z}[i] : \mathbb{Z}[i]]$$
+So that $p = \mathfrak{p}\overline{\mathfrak{p}}$, with $\mathfrak{p} = a + bi \in \mathbb{Z}[i]$. We are counting the sizes of the ideals\\ \\
+A numerial example would to find a large prime number.   
+$$ 271 \times 271 + 476 \times 476 = 300017 $$ 
+and therefore we get a factorization of prime ideals.
+$$ \big[ 300017 \, \mathbb{Z}[i] : \mathbb{Z}[i]\big]
+ = \big[ 300017 \, \mathbb{Z}[i] : (271 + 476i)\mathbb{Z}[i]\big] \;
+ \big[ (271 + 476i) \mathbb{Z}[i] : \mathbb{Z}[i] \big]$$
+How does this neat and tidy world translate to the messy world of empirical data and statistics where nothing is certain?  Where $\mathbb{R}$ is no longer adequate, since these are just limits of sequences of other measurements. \\ \\
+Computationally, how would we try to find numbers $a, b \in \mathbb{Z}$ such that $a^2 + b^2 = p = 300017$ and how did we know it was a prime number? 
+\begin{itemize}
+\item $\sqrt{300017 - 178^2} \approx 518 $ in that it's off by a small amount  $\sqrt{p - a_1^2} = [\dots]   + 0.0087$
+\end{itemize}
+This is an \textit{approximation} type problem which gives us one more close solution in addition to the exact answer. 
+
+\vfill
+
+
+
+\begin{thebibliography}{}
+
+\item Yann Bugeaud {\textbf{Effective simultaneous rational approximation to pairs of real quadratic numbers}} \texttt{1907.10253}
+\item Ivan Nourdin, Giovanni Peccatti, Maurizia Rossi \textbf{Nodal Statistics of Planar Random Waves} \texttt{arXiv:1708.02281}
+\item Zeev Rudnick, Ezra Waxman \textbf{Angles of Gaussian Primes} \texttt{arXiv:1705.07498}
+\item Alexander Logunov, Eugenia Malinnikova \textbf{Nodal Sets of Laplace Eigenfunctions: Estimates of the Hausdorff Measure in Dimension Two and Three} \texttt{arXiv:1605.02595}
+\end{thebibliography} 
+
+\end{document}
