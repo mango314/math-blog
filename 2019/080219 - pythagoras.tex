@@ -415,7 +415,17 @@ Even more patterns.
 \item $\sqrt{ {\color{green!50!black}{1009873}} - 204\times 204 } \approx [...] + 0.000508$
 \end{itemize}
 \end{multicols}
-\noindent Even more skepitical than ever.
+\noindent Even more skepitical than ever.  These coincidences look really lame.  Wait till you see the statement.  We need prime numbers $p, q \in 4\mathbb{Z}+1$.  And clearly $p = a_1^2 + b_1^2$ and $q = a_2^2 + b_2^2$.  We also have:
+\begin{eqnarray*}
+ \sqrt{ p - (c_1^2 + d_1^2)}&=& M_0  + 10^{-3}M_1 + O(10^{-6})\\
+ \sqrt{ q - (c_2^2 + d_2^2)}&=& M_0' + 10^{-3}M_1 + O(10^{-6})
+\end{eqnarray*}
+we ask that $M_0, M_0', M_1 \in \mathbb{Z}$ with $M_0 \neq M_0'$ be different and $M_1 = M_1'$ are the same. Is this possible?  \\ \\
+All these coincidences and others we haven't thought of can be put into a single framework about the arithmetic of the circle $X = \{ x^2 + y^2 - 1 = 0\}$. We are looking for solutions over $\mathbb{Q}$ or solutions where $(x + iy)^2 \in \mathbb{Q}(i)$. We could state, more specifically what we mean by ``approximate" solutions -  $x^2 + y^2 - 1 \approx 0$ in fact these coincidences were found in order to check a time-saving measure.  Every time we figure something out, we consume time and space resources which may be greater than the original problem itself. \\ \\
+First of all we're asking that $p \approx c^2 + d^2$ (twice) then we're asking that the error term that's left over $0 < \sqrt{ \, p - (c^2 + d^2)\,} < 10^{-3}$ is small and amongst those we can find that $10^3 [ \sqrt{ p - (c^2 + d^2)}] \in \mathbb{Z}$ are the same.  \\ \\
+A fancy way could be to define \textbf{torus} (in this case, just a circle) $\mathbf{T} = \{ x^2 + y^2 = 1\} = \{ |z| = 1\} \subseteq \mathbb{Q}(i)^\times $.  This circle or torus becomes a ``functor" that chomps up a number system such as $\mathbb{Q}$ and turns into a group
+$\mathbf{T}(\mathbb{Q}) \subseteq \mathbb{Q}(i)^\times $ or $\mathbf{T}(\mathbb{R}) \subseteq \mathbb{C}^\times$.  The square roots of rational numbers form a number system as well $p =  z \overline{z} \in \mathbb{Q}^\times$.  All this information could be rescaled towards the unit circle over $\mathbb{R}$.  There's a tiny bit of measure theory.  Let $f(x) = \sqrt{x}$ and $g(x) = 10^3[x]$, then $ \{ x : (g \circ f)(x) = n   \} \cap \{ x : 0 < f(x) < 10^{-3} \} $ is measurable.  The behavior of primes should be ``random" enough to find infinintely many to fit into this basket. \\ \\
+A growing amount of information is in the statement ``$x < p < 2x $ is prime" which adds to the case for measure theory.
 \vfill
 
 
