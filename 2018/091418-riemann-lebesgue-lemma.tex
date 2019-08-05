@@ -161,11 +161,7 @@ $$
 and we could complete $\mathbb{Z}$ to include multiplivative inverses... we could write as $\mathbb{Z} \times \mathbb{Z}^{-1} = \mathbb{Q}$ as would be done in a \textbf{commutative algebra} textbook.  Then it might make sense to ask if a rational number can be written as the sum of two rational squares. $\frac{p}{q} = (a/b)^2 + (a/b)^2$. \\
 In fact, even the property of being an integer $x \stackrel{?}{\in} \mathbb{Z} \subseteq \mathbb{Q}$ seems a little bit odd, and could have a $\times$ table like the one we are seeing. \\ \\
 \textbf{Q} Show that as $p \to \infty$ and $p = a^2 + b^2$ the angle $\theta = \tan^{-1}(a/b) \in [0,1]$ is equidistributed.  So I guess there's curve $(p,a,b) \in \mathbb{Z} \oplus \mathbb{Z} \oplus \mathbb{Z} = \mathbb{Z}^3$ and we want to study properties a map from this curve to the circle $S^1 = \mathbb{R}/\mathbb{Z}$. \\ \\
-The usual basis is $e^{inx}$ with $n \in \mathbb{Z}$.  Instead we could try $e^{i\omega x}$ with $\omega = \tan^{-1} \frac{a}{b} \in \mathbb{R}/\mathbb{Z}$ where $a,b \in \mathbb{Z}$.  These are very funny wavelengths, indeed.
-
-\newpage
-
-\noindent 
+The usual basis is $e^{inx}$ with $n \in \mathbb{Z}$.  Instead we could try $e^{i\omega x}$ with $\omega = \tan^{-1} \frac{a}{b} \in \mathbb{R}/\mathbb{Z}$ where $a,b \in \mathbb{Z}$.  These are very funny wavelengths, indded.
  
 \vfill
 
@@ -176,16 +172,5 @@ The usual basis is $e^{inx}$ with $n \in \mathbb{Z}$.  Instead we could try $e^{
 \item Edmund Hlawka, Johannes Schoi\ss{}engeier, Rudolf Taschner  \textbf{Geometric and Analytic Number Theory} (Universitext) Springer, 1991. 
 
 \end{thebibliography}
-
-\noindent Let's try anything: is $e^{2\pi i n x}$ orthogonal to $e^{2\pi i (\tan^{-1}\frac{4}{5})x}$?  Then
-$$ \langle e^{2\pi i n x} |e^{2\pi i (\tan^{-1}\frac{4}{5})x}  \rangle = \int_0^1 e^{2\pi i (\tan^{-1}\frac{4}{5})x} e^{-2\pi i n x} \, dx =  \frac{ e^{2\pi i (\tan^{-1} \frac{4}{5}) - n} - 1 }{2\pi i \big(\tan^{-1} \frac{4}{5} - n \big)} \neq 0$$
-This number does not mean much to us, but isn't this the one we'd use to write the Gr\"{o}ssencharaker in $\mathbb{Z}[i]$ ? 
-$$ \zeta_{\mathbb{Q}(i)}(s) = \left( 1 - \frac{1}{2^s} \right)
-\times \left( 1 - \frac{1}{3^s} \right)^2 
-\times \left( 1 \;{\color{red}\mathbf{+}}\; \frac{1}{5^{2s}} \right) 
-\times \left( 1 - \frac{1}{7^s} \right)^2
-\times \left( 1 - \frac{1}{{11}^s} \right)^2
-\times \left( 1 - \frac{1}{13^{2s}} \right) \times \dots  $$
-These elements $\exp(2\pi i \, \theta \tan^{-1} \frac{a}{b})$ are not even a basis.  And so diophantine problems turn into measure theory.  Aren't we having trouble?
 
 \end{document}
