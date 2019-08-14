@@ -455,7 +455,10 @@ $$ \left[ \begin{array}{cr} \frac{3}{5} & -\frac{4}{5} \\ \\
 \frac{4}{5} & \frac{3}{5}\end{array} \right]^n $$   
 It's just a circle, it's rotating the circle.  We could also try $ \times \frac{5}{13} +  \frac{12}{13}i$.
 \item Here is a matching function over the integers: $ |\frac{m^2 - n^2}{m^2 + n^2} - \frac{1}{2}| \times |\frac{2mn}{m^2 + n^2} - \frac{1}{2}| \times 
-|\frac{m^2 - n^2}{m^2 + n^2} - \frac{1}{2}|_5 \times |\frac{2mn}{m^2 + n^2} - \frac{1}{2}|_5$ with $m, n \in \mathbb{Z}$ and we could try to iterate over some or all of the Pythagorean triples, in a natural way.
+|\frac{m^2 - n^2}{m^2 + n^2} - \frac{1}{2}|_5 \times |\frac{2mn}{m^2 + n^2} - \frac{1}{2}|_5$ with $m, n \in \mathbb{Z}$ and we could try to iterate over some or all of the Pythagorean triples, in a natural way. \\ \\
+Think about it, we are solving $a^2 + b^2 = c^2$ with $a \approx b$, or $|a - b| \ll 1$.  Example:
+$$ 11753^2 + 10296^2 = (5^6)^2 = (15625)^2 $$
+This is a little too miraculous.  That's why we would like approximation theory, for an even bigger miracle.
 \end{itemize}
 This problem could be very broad.  Every time we find a dense subset (or counting measure) on the unit circle, we could try these approximation problems. \\ \\
 \textbf{Q} Let $a^2 + b^2 = p$ be a solution over integers, so we are trying to approximate $(\frac{a}{\sqrt{p}}, \frac{b}{\sqrt{p}})$ which is a point in the unit circle over $\mathbb{R}$ with rational solutions to $x^2 + y^2 = 1$.  \\ \\
