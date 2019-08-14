@@ -438,4 +438,27 @@ A growing amount of information is in the statement ``$x < p < 2x $ is prime" wh
 \item Alexander Logunov, Eugenia Malinnikova \textbf{Nodal Sets of Laplace Eigenfunctions: Estimates of the Hausdorff Measure in Dimension Two and Three} \texttt{arXiv:1605.02595}
 \end{thebibliography} 
 
+\newpage
+
+\noindent \textbf{08.14} If we have a solution to $x^2 + y^2 = z^2$ in integers, then we have a solution to $x^2 + y^2 = 1$ in rationals.  In contract, if we try Fermat's problem $x^2 + y^2 = p$ and divide both sides by $p$ we obtain $(x/\sqrt{p})^2 + (y/\sqrt{p})^2 = 1$ and $x/\sqrt{p} \notin \mathbb{Q}$.  So we can measure that Fermat's theorem is a little it outside of the ``scope" of Pythagoras theorem.  The equation $x^2 + y^2 = 1$ over $\mathbb{R}$ is so broad, it contains both of them, without any further information about how they fit together with the same space. \\ \\
+\textbf{Q} Let's approximate the solution $(\frac{1}{\sqrt{2}})^2 + (\frac{1}{\sqrt{2}})^2 = 1$ using rational points in $x^2 + y^2 = 1$.  We could measure the distance over $\mathbb{R}$ ($p = \infty$ or $p = -1$) or possibly combined with a non-archimedian place $\mathbb{R} \times \mathbb{Q}_5$  ($p = \infty$ and $p = 5$). 
+\begin{itemize}
+\item Solve $x^2 + y^2 = 1$ with $x,y \in \mathbb{Q}$ and minimize $f(x,y) =  (x - \frac{1}{\sqrt{2}})^2 + (y - \frac{1}{\sqrt{2}})^2  $. 
+\item Since $\sqrt{2}$ is not an element of $\mathbb{Q}$, it might be easier to measure $x^2 - 2 \in \mathbb{Q}$ and $g(x,y) = (x^2 - \frac{1}{2})$. This doesn't seem quite right since $x^2 + y^2 - 1 \equiv 0$ identically. Let's try a multiplicative function:
+$$ g(x,y) = \text{max} \big( |x^2 - \tfrac{1}{2}| , |y^2 - \tfrac{1}{2}| \big) \in \mathbb{Q} $$
+This is not ideal.  Another possibility, we are looking at all rational maps from $X(\mathbb{Q}) \to \mathbb{Q}$ that maybe behave like distances. 
+\item Next we try to incorporate formation over the other place, such as $\mathbb{Q}_5$.
+$$ \text{max} \big( |x^2 - \tfrac{1}{2}| , |y^2 - \tfrac{1}{2}| \big) \times \text{max} \big( |x^2 - \tfrac{1}{2}|_5 , |y^2 - \tfrac{1}{2}|_5 \big)  \ll 1 $$
+This is clearly an element of $\mathbb{Q}$ and finding the highest power of $5$ dividing a rational number is an ``easy" problem.
+\item Finally we need some way of iterating over Pythagorean triples, or at least some of them.  Let's just try powers of a single solution $z \mapsto (\frac{3}{5} + \frac{4}{5} ) \times z$.  This map preserves the unit circle and it is \textit{ergodic}.
+$$ \left[ \begin{array}{cr} \frac{3}{5} & -\frac{4}{5} \\ \\
+\frac{4}{5} & \frac{3}{5}\end{array} \right]^n $$   
+It's just a circle, it's rotating the circle.  We could also try $ \times \frac{5}{13} +  \frac{12}{13}i$.
+\item Here is a matching function over the integers: $ |\frac{m^2 - n^2}{m^2 + n^2} - \frac{1}{2}| \times |\frac{2mn}{m^2 + n^2} - \frac{1}{2}| \times 
+|\frac{m^2 - n^2}{m^2 + n^2} - \frac{1}{2}|_5 \times |\frac{2mn}{m^2 + n^2} - \frac{1}{2}|_5$ with $m, n \in \mathbb{Z}$ and we could try to iterate over some or all of the Pythagorean triples, in a natural way.
+\end{itemize}
+This problem could be very broad.  Every time we find a dense subset (or counting measure) on the unit circle, we could try these approximation problems. \\ \\
+\textbf{Q} Let $a^2 + b^2 = p$ be a solution over integers, so we are trying to approximate $(\frac{a}{\sqrt{p}}, \frac{b}{\sqrt{p}})$ which is a point in the unit circle over $\mathbb{R}$ with rational solutions to $x^2 + y^2 = 1$.  \\ \\
+Rudnick and Waxman suggest looking at all primes, e.g. $10^5 < p < 2 \times 10^5$, solving $a^2 + b^2 = p$ and measuring the gaps between the angles $\theta = \tan^{-1} \frac{a}{b}$.  So\dots depending on how we look at it, there are infinitely many problems or just one or a few. 
+
 \end{document}
