@@ -1,0 +1,61 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+
+\title{Tune-Up: Holomorphic Functions}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+\noindent From the mathematician's point of view, Number Theory is so far along many of our questions should have thorough answers and still be quite accessible.  From the academic point of view, these cases were complete decades ago.  Nature might feel a bit differently, it's up to us to try them out. \\ \\
+\textbf{Thm} If $f \in \mathcal{S}(\mathbb{R})$, then
+$\displaystyle \sum_{n \in \mathbb{Z}} f(x+n) = \sum_{n \in \mathbb{Z}} \hat{f}(n) \, e^{- 2\pi i n x} $. \\ \\
+In particular, setting $x = 0$ we have: $\displaystyle \sum_{n \in \mathbb{Z}} f(n) = \sum_{n \in \mathbb{Z}}\hat{f}(n) $. \\ \\
+Stein's book is somewhat stringent.  The Schwartz space on $\mathbb{R}$ is the space of infinitely differentiable functions so that $f$ and all it's derivatives are rapidly decreasing.
+$$ \sup_{x \in \mathbb{R}} |x|^k \, |f^{\ell}(x)| < \infty \text{ for every } k, \ell \geq 0 $$
+Example is the Gaussian function $f(x) = e^{-x^2}$.  There should be a Fourier transform:
+$$ f(x) = \int_{\mathbb{R}} \hat{f}(\xi) \, e^{2\pi i x \xi} \, d\xi $$
+\textbf{Foundation} Hopefully we have some aggreement on the symbols $\frac{d}{dx}$ and $\int_{\mathbb{R}}$ or a choice of $f(x)$.   How do we handle uncertainty in the choice of $f$? \\ \\
+\textbf{Exercise (i)} Both sides are continuous.  We have that if $f \in \mathcal{S}(\mathbb{R})$ that 
+\begin{itemize}
+\item show that $\displaystyle \sum_{n \in \mathbb{Z}} f(x+n)$ is continuous. 
+\item show that $\displaystyle \sum_{n \in \mathbb{Z}} \hat{f}(n) \, e^{2\pi i \, n x}$ is continuous.
+\end{itemize}
+\textbf{Exercise (i')} Both sides are continuous.  We have that if $f \in \mathcal{S}(\mathbb{R})$ that 
+\begin{itemize}
+\item show that $\displaystyle \sum_{n \in \mathbb{Z}} e^{-\pi(x+n)^2}$ is continuous. 
+\item (optional) verify that $ f(x) = e^{- \pi s x^2} $ and 
+$\hat{f}(x) = \frac{1}{\sqrt{x}} e^{ - \pi \xi^2 / x } $.  The Gaussian is it's own Fourier transform. \\ 
+In fact $\mathcal{F}^4 = I$.
+\item show that $\displaystyle \sum_{n \in \mathbb{Z}} \frac{1}{\sqrt{x}} \, e^{- \pi n^2/x} \, e^{2\pi i \, n x}$ is continuous.
+\item Observe that $\displaystyle \sum_{n \in \mathbb{Z}} e^{-\pi(x+n)^2} = \sum_{n \in \mathbb{Z}} \frac{1}{\sqrt{x}} \, e^{- \pi n^2/x} \, e^{2\pi i \, n x}$ at least numerically.
+\end{itemize}
+Stein's book reviews the definition of ``integral" only the definition of $\int_{[0,1]}$ and $\int_\mathbb{R}$ and why they are numbers.  Even\dots what is ``continuity"?  What is $\mathbb{R}$?  These are not discussed in calculus class.  Contruction in $\mathbb{R}$ is done in the Analysis course. \\ \\
+The example in the book of Lighthill is:
+$$ 1 + 2 e^{-\pi} + 2 e^{-4\pi} + 2 e^{-9\pi} + \dots = 1 + 0.0864278 + 0.0000070 + (10^{-12}) + \dots $$
+This is done at a time when there very few computers, and the estimates are to very high accuracy.\footnote{When do we need measurements of high accuracy?} and everything else is left as ``an exercise for the interested reader".
+\vfill
+
+
+
+\begin{thebibliography}{}
+
+\item Stein \dots
+\item Lighthill \textbf{Fourier Analysis and Generalized Functions} \dots
+\item K\"{o}rner 
+\end{thebibliography}
+
+\end{document}
