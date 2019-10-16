@@ -1,0 +1,75 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+
+\title{Reading: Quadratic Forms}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+\noindent Let's try to read Margulis again\dots inhomogeneous quadratic forms, we've seen them before, what are they doing here?  \\ \\
+In year $628$, Brahmagupta studies equations of the form $x^2 - ny^2 = c$ and gets unnervingly accurate estimates of $\sqrt{67}$. This was translated to Arabic in the year $773$ and into Latin by the 12th century. Example:
+$$ \left| \sqrt{67} - \frac{48842}{5967} \right| < 2 \times 10^{-9} \quad\text{or}\quad 48842 \times 48842 - 67 \times 5967 \times 5967 = 1 $$
+The ``chakravala" method also solves the $61$ case:
+$$ (1766319049)^2 - 61 \times (226153980)^2 = 1 $$
+This is about 1000 years before Pell solves the equation with his name.
+\\ \\
+Gauss writes \textit{Disquisiciones Arithmeticae} in $1801$ (in Latin). \\ \\
+Grigori Margulis won the Fields Medal (in Mathematics) in 1978 and doesn't resolve the Oppenheim conjecture until 1986.  He discusses Lebesgue measure on the sphere (is $ds^2 = dx^2 + dy^2 + dz^2$ on the sphere $s = 1$ the only rotationally invariant, finitely additive measure on the sphere). \\ \\
+So \dots Quadratic forms, what are they doing here?
+\begin{quotation}\noindent \textbf{Thm} (1998) Let $Q$ be a quadratic form with signature $(p,q)$ with $p \geq 3$ and $q \geq 1$.  Suppose $Q$ is not proportional to a rational form.   Then for any interval 
+$$ N_{Q, \Omega} (a,b, T) \sim \lambda_{Q, \Omega} (b-a)T^{n-2} \text{ as } T \to \infty $$
+where $n = p+q$ and $\lambda_{Q, \Omega}$ as in [prior equation]. \\ \\
+Theorem 1.1 fails if $Q$ has signature $(2,2)$ and $(2,1)$.  Example, $N_{Q, \Omega}(a,b,T) = T^{n-2}(\log T)^{1-\epsilon} $, however these rational forms are very well approximated by split rational forms.\end{quotation}
+These definitions are bit dense and it already lacks the spirit of the kid's examples on the top of the page. The object in question is a single quadratic form, $Q$ and it's approximated by another quadratic form $Q' \approx Q$.  By graduate school we learn that quadratic forms are dime-a-dozen to such an extent that entire classes of them can be mapped to one another. \\ \\
+The two prototypes they give us are:
+\begin{itemize}
+\item $(p,q) = (2,2)$ or $Q(a,b,c,d) = ad-bc$ the ``determinant" and the space is $\text{SL}_2(\mathbb{R}) \times \text{SL}_2(\mathbb{R}) / \text{SO}(2) \times \text{SO}(2) $
+\item $(p,q) = (2,1)$ we let $x_1 x_3 - x_2^2 $ (a ``hyperboloid of one sheet", a conic section) be the standard form on $\mathbb{R}^3$, we have that $SO(2,1) \simeq \text{SL}_2(\mathbb{R})$. 
+\end{itemize}
+This language is generic and official and correct, it's just a little bit too generic for our taste. The rest of our work is to decide what this looks like when we give this to the kids\dots  \newpage
+\noindent My favorite examples are $Q = x_1^2 + \sqrt{2}\, x_2^2 - x_3^2 - \sqrt{3}\, x_4^2$ and $Q = x^2 + y^2 - \sqrt{2} \, z^2$.  These examples are considered ``known" by experts and yet my questions aren't answered and I don't have any way of presenting this to the kindergarten classroom. \\ \\ 
+The area of the parallelogram spanned by $(a,b), (c,d)$ is given by the determinant $ad-bc$.  Let's try $a = x_1 + x_3 $ and $b = x_1 - x_3$ and $c = \sqrt{2} x_2 - \sqrt{3} x_4$  and $d = \sqrt{2}x_2 + \sqrt{3}x_4$.  By standard rules of algebra these work.\\ \\
+We even get determinants when we try to verify that two numbers $a, b, \in \mathbb{Z}$ are ``relatively prime" (the standard school notion, convenient for classroom teaching) and the algorithm returns two other numbers $c, d \in \mathbb{Z}$ with $ad - bc = 1$.  By the time it reaches Grigori Margulis, the ideas of  ``quadratic forms" and "Number Theory" are firmly separated, for example, ``functional analysis" also has quadratic forms.  Quite severely, what's \textbf{addition} ?  \\ As soon as we choose a setting, our questions are either too specific or too generic.  Do you want the one or the many?  Does your point of view matter? \\ \\
+Fortunately, we expect all of these changes in perspective to be absorbed into the mathematics itself.  So that could be why at Margulis' level the issues are a bit more flexible, more granular or more pliable.  $8th$ grade is the maximum of the people we would like to engage here, beyond that it becomes another matter.  \\ 
+\tikz{ \draw (0,0) -- (19,0);} \\
+Let's try our example:  $Q = x_1^2 + \sqrt{2}\, x_2^2 - x_3^2 - \sqrt{3}\, x_4^2$. 
+\begin{quotation} \noindent 
+\textbf{Thm} Let $a_t$ and $K$ as in Theorem 4.1 Let $\Lambda$ be any lattice in $\mathbb{R}^4$.  Then for any $i = 1,3$ and any $\epsilon > 0$:
+$$ \sup_{t > 0} \int \alpha_i(a_t K \Lambda )^{2-\epsilon} < \infty  $$
+Hence there exists a constant $c$ dependending on $ \epsilon$ and $\Lambda$ such that for all $t > 0$ and $0 < \delta < 1$ 
+$$ | \{ k \in K : \alpha_i(a_t k \Lambda) > \frac{1}{\delta} \}| < c \, \delta^{2-\epsilon} $$
+Hint: [ Chebyshev's Theorem ]
+\end{quotation}
+These problems are not hard, but they are require attentive reading, good bookkeeping and a vivid imagination.  We are telling you that the numbers described by $Q$ get chaotic very quickly in a nice musical way, that approach randomness.  What do we mean by ``musical"?  For example, these numbers could be eigenvectors of the wave equation $$\square =  \frac{\partial^2}{\partial x_1^2} + \sqrt{2} \, \frac{\partial^2}{\partial x_2^2} - \frac{\partial^2}{\partial x_3^2}  - \sqrt{3} \, \frac{\partial^2}{\partial x_4^2}$$ on some shape that we call a ``torus".  Now say the thing isn't exactly flat here.  \\ \\
+What do these measurable sets look like?  ``Measurable" means we can measure it.  How much difference?  And ``where"?  These things are scattered about, yet it's more here and than there.  So we can measure and quantify how they are the same and different and maybe it's good enough to tell them apart.  What could $\square$ be confused for? \\ \\
+And how do we explain this to kindergarteners? 
+
+
+
+
+
+\vfill
+
+
+
+\begin{thebibliography}{}
+
+\item \dots 
+
+\end{thebibliography}
+
+\end{document}
