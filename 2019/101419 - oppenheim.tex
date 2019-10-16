@@ -56,7 +56,33 @@ Hint: [ Chebyshev's Theorem ]
 \end{quotation}
 These problems are not hard, but they are require attentive reading, good bookkeeping and a vivid imagination.  We are telling you that the numbers described by $Q$ get chaotic very quickly in a nice musical way, that approach randomness.  What do we mean by ``musical"?  For example, these numbers could be eigenvectors of the wave equation $$\square =  \frac{\partial^2}{\partial x_1^2} + \sqrt{2} \, \frac{\partial^2}{\partial x_2^2} - \frac{\partial^2}{\partial x_3^2}  - \sqrt{3} \, \frac{\partial^2}{\partial x_4^2}$$ on some shape that we call a ``torus".  Now say the thing isn't exactly flat here.  \\ \\
 What do these measurable sets look like?  ``Measurable" means we can measure it.  How much difference?  And ``where"?  These things are scattered about, yet it's more here and than there.  So we can measure and quantify how they are the same and different and maybe it's good enough to tell them apart.  What could $\square$ be confused for? \\ \\
-And how do we explain this to kindergarteners? 
+And how do we explain this to kindergarteners? \\ \\
+Let $G, H, K $ and $\{ a_t\}$ be chosen as in [ the previous section ] 
+\begin{itemize}
+\item $n = p + q = 2 + 2 = 4$.  $G = SL_4(\mathbb{R}) \rtimes \mathbb{R}^4$ and $\Gamma = SL_4(\mathbb{Z}) \rtimes \mathbb{Z}^4$ is a lattice.\footnote{At this level we could even try to explain what $\mathbb{Z}$ is or what $\mathbb{R}$ is.  The real world does not know what these objects are.  By graduate level, Margulis could say any theory we could up with turns into $\mathbb{Z} \subseteq \mathbb{R}$.  This just sounds like professor-speak.}  This is similar to the way $\mathbb{Z}$ is a lattice in $\mathbb{R}$.  So we could examine a ``number theory" of the $\mathbb{Z}$ that lives within $\mathbb{R}$.  
+\item $H = SL_2(\mathbb{R}) \times SL_2(\mathbb{R})$ and $K = SO(2) \times SO(2)$.  The matrix $a_t = (b_t, b_t)$ is a $4 \times 4$ matrix:
+$$  a_{2t} =  \left[ \begin{array}{cccc} e^{-t} & & & \\
+& e^{t} & & \\
+& & e^{-t} & \\
+& & & e^{t}  \end{array} \right] $$
+A great question here is why the exponential function is so important?  It arises as the limit of compound interest $(1 + \frac{t}{n})^n \to e^t$ and also $ \text{LCM} (\{ 1, 2, \dots, x\}) \asymp e^x $.  Why are we using the exponential map to describe relatively prime numbers?  Are we OK with that? There are multiplicative inverses:
+$$   \det \left[ \begin{array}{cc} 5 & \\ & \frac{1}{5} \end{array} \right] = 5 \times \frac{1}{5} = 1 $$
+As we run the GCD algorithm, the numbers get exponentially smaller, and the LCM algorithm the numbers get exponentially larger.  Wouldn't we like to see more discussion of this ?
+\item We have that $SO(2,2) \simeq SL_2(\mathbb{R}) \times SL_2(\mathbb{R})$.  The action $v \mapsto g_1 v g_2^{-1}$ leaves the area (``determinant") invariant.
+\end{itemize}
+Let $Q_\xi$ be a quadratic form of signature $(2,2)$ quadratic form which is ``Diophantine".  
+$$ \limsup_{t \to \infty} \int_K \tilde{f}(a_t k : \Lambda_{\mathfrak{q}\xi}) \nu(k) dk \leq \int_{G/\Gamma} \hat{f}(g) d\mu(g) \cdot \int_K \nu(k) \, dk  $$
+What are the shapes of these orbits? Can we draw them?  Do they look nice? More notations:
+\begin{itemize}
+\item $\mu$ is the $G$ invariant measure on $ G/ \Gamma$ and $\nu$ is a continuous function on $K$
+\item There seem to be different types of transforms we can do, such as $f \to \hat{f}$ and $f \to \tilde{f}$ and these could be \textbf{functorial}.  These are averages related to the lattice $\Lambda_\xi$ and a group element associated to $Q$.
+\end{itemize}
+There is an infinite amount of notation when you try to do this numerically or ``computationally".  Final warning, this paper has a lot of setting specific to him and we are responsible to turning it into what we need. These formulas look great at the level of math professor, they are not suitable to us.  The are guidelines.\footnote{in fact a ``guideline" is a literal piece of metal} 
+\begin{itemize}
+\item What are the key features of Margulis' argument?  And how do we feature them in a Kindergarten classroom? My best guess we are talking about features of the GCD and LCM algorithm in grade school, with the items spun around in some way.
+\item There are no pictures.
+\end{itemize}
+So anyway, all of this is grade school math in disguise.  Interesting, but rather complicated features of grade school math.
 
 
 
