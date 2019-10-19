@@ -84,8 +84,28 @@ There is an infinite amount of notation when you try to do this numerically or `
 \end{itemize}
 So anyway, all of this is grade school math in disguise.  Interesting, but rather complicated features of grade school math.
 
+\newpage
 
-
+\noindent \textbf{10/17} Let's use our $(2,2)$ signature quadratic form.  $Q(x) = x_1^2 + \sqrt{2} \, x_2^2 - x_3^2 - \sqrt{3} \, x_4^2 $. Let's get a list of symbols.
+\begin{itemize}
+\item $Q$ non-degenerate indefinite quadratic form on $\mathbb{R}^n$.  
+\item $\xi \in \mathbb{R}^n$ be a vector we get a second (inhomogeneous) quadratic form $Q_\xi(x) = Q(x + \xi)$.  What does ``rational" and ``irrational" quadratic form mean here?  
+\item $\nu$ be a continuous function from the sphere $\{ v \in \mathbb{R}^n : ||v|| = 1  \}$ to $\mathbb{R}$.   \\ $\Omega = \{ v \in \mathbb{R}^n: ||v ||  < \nu(v/||v||)   \}   $ and let $T\Omega$ be the dilate of $\Omega$ by the constant (or operator) $T$.
+\item Let's count the number of points of the quadratic form within a certain range.  
+$$ N_{Q, \xi, \Omega}(a,b,T) = \# \big\{ x \in \mathbb{Z}^n : x \in T\Omega \text{ and } a < Q_\xi(x) < b \big\} $$
+\item The inequality $||v|| < \nu(\frac{v}{||v||}) $ does something like ``polar coordinates" in high school, $\vec{v} = ( ||v||, \frac{v}{||v||})$ (as could be done by a manifold chart), and we are looking for points ``inside" the shape we've created.  $\Omega$ could be defined as the graph of the function, $\vec{u} = \frac{v}{||v||} \mapsto \nu(\vec{u})$. Over $\mathbb{R}$, perhaps this shape is an ellipsoid,
+$$ \text{Vol} (\{ x \in \mathbb{R}^n : x \in T\Omega  \text{ and } a < Q_\xi < b \})\sim \lambda_{Q, \Omega} (b-a)T^{n-2} $$
+The number could count how many independent eigenstates there are of a certain operator.  Alex Eskin, Grigori Margulis and Shahar Mozes show that:
+$$ N_{Q, \xi, \Omega}(a,b,T) \sim \lambda_{Q, \Omega} (b-a)T^{n-2}   $$
+The lattice points in the a (re-scaled) region of $\mathbb{R}^n$, with ``radii" within a certain range, scale linearly as the size of the interval, and as the $(n-2)$-th power of $T$.  
+\end{itemize}
+While the statement is very difficult, it's not something I would argue with. We are told the theorem fails for $Q$ with signature $(3,1)$ (such as $x^2 + y^2 + z^2 - w^2$), $(2,2)$ (such as $x^2 + y^2 - z^2 - w^2$).\\ \\
+As a sample, the freshmen analysis class has that $\mathbb{R}$ the limit of equivalence classes of Cauchy sequences $[\{ x_n\}]$ with $x_n \in \mathbb{Q}$, which are ratios of integers $x_n = \frac{a}{b} \in \mathbb{Q}$.  On the other than any pure rational number $\frac{m}{n}$ was probabiliy the limit of real numbers, or the limit of a many observations of which we attached an average (e.g. using an experiment). \\ \\
+We could try to read broader equivalence relations .  Do we know what ``$ \in $" means here, or ``$\leq$" ?  The continuous function $\nu$ can be drawn as a hypersurface in $\mathbb{R}^n \times \mathbb{R}$ diffeomorphic to $S^n \times \mathbb{R}$.  So there there are many  degrees of freedom here.  \\ \\
+Let's settle for the $(2,2)$ case.  We are referred to their result from $2005$: 
+$$ \# \Big(  \big\{ x \in \mathbb{Z}^n   \big\} \cap \big\{ x : ||x|| < T\, \nu( \tfrac{x}{||x||})  \big\} \cap \big\{ x:  a < Q(x)= x_1^2 + \sqrt{2}\,x_2^2 - \sqrt{3}\,x_3^2 - x_4^2 < b \big\} \Big)   \sim \lambda_{Q, \Omega} (b-a)T^{n-2} $$
+An idiotic example, is $\nu \equiv 1$, and $\Omega$ is a perfect sphere and $T\Omega$ is a sphere, and $\lambda_{Q, \Omega} \stackrel{?}{=}1$ (requires proof?).  \\ \\
+This seems to be the framework for a range of number theory problems.  Proving increasingly self-evident claims.  Statements, achieved with much difficulty.  All the items quite vague and open-ended.  The result is something like a number.
 
 
 \vfill
