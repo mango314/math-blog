@@ -20,7 +20,7 @@
 
 \maketitle
 
-\noindent Let's try to read Margulis again\dots inhomogeneous quadratic forms, we've seen them before, what are they doing here?  \\ \\
+\noindent Let's try to read Margulis again\dots inhomogeneous quadratic forms, we've seen thmem before, what are they doing here?  \\ \\
 In year $628$, Brahmagupta studies equations of the form $x^2 - ny^2 = c$ and gets unnervingly accurate estimates of $\sqrt{67}$. This was translated to Arabic in the year $773$ and into Latin by the 12th century. Example:
 $$ \left| \sqrt{67} - \frac{48842}{5967} \right| < 2 \times 10^{-9} \quad\text{or}\quad 48842 \times 48842 - 67 \times 5967 \times 5967 = 1 $$
 The ``chakravala" method also solves the $61$ case:
@@ -102,10 +102,11 @@ The lattice points in the a (re-scaled) region of $\mathbb{R}^n$, with ``radii" 
 While the statement is very difficult, it's not something I would argue with. We are told the theorem fails for $Q$ with signature $(3,1)$ (such as $x^2 + y^2 + z^2 - w^2$), $(2,2)$ (such as $x^2 + y^2 - z^2 - w^2$).\\ \\
 As a sample, the freshmen analysis class has that $\mathbb{R}$ the limit of equivalence classes of Cauchy sequences $[\{ x_n\}]$ with $x_n \in \mathbb{Q}$, which are ratios of integers $x_n = \frac{a}{b} \in \mathbb{Q}$.  On the other than any pure rational number $\frac{m}{n}$ was probabiliy the limit of real numbers, or the limit of a many observations of which we attached an average (e.g. using an experiment). \\ \\
 We could try to read broader equivalence relations .  Do we know what ``$ \in $" means here, or ``$\leq$" ?  The continuous function $\nu$ can be drawn as a hypersurface in $\mathbb{R}^n \times \mathbb{R}$ diffeomorphic to $S^n \times \mathbb{R}$.  So there there are many  degrees of freedom here.  \\ \\
-Let's settle for the $(2,2)$ case.  We are referred to their result from $2005$: 
+Let's settle for the $(2,2)$ case.  We are referred to their result from $2005$, it was already ``quantitative": 
 $$ \# \Big(  \big\{ x \in \mathbb{Z}^n   \big\} \cap \big\{ x : ||x|| < T\, \nu( \tfrac{x}{||x||})  \big\} \cap \big\{ x:  a < Q(x)= x_1^2 + \sqrt{2}\,x_2^2 - \sqrt{3}\,x_3^2 - x_4^2 < b \big\} \Big)   \sim \lambda_{Q, \Omega} (b-a)T^{n-2} $$
 An idiotic example, is $\nu \equiv 1$, and $\Omega$ is a perfect sphere and $T\Omega$ is a sphere, and $\lambda_{Q, \Omega} \stackrel{?}{=}1$ (requires proof?).  \\ \\
-This seems to be the framework for a range of number theory problems.  Proving increasingly self-evident claims.  Statements, achieved with much difficulty.  All the items quite vague and open-ended.  The result is something like a number.
+This seems to be the framework for a range of number theory problems.  Proving increasingly self-evident claims.  Statements, achieved with much difficulty.  All the items quite vague and open-ended.  The result is something like a number. \\ \\
+Two annals of mathematics papers we should be suspicious of succinct statement.
 
 
 \vfill
@@ -114,8 +115,45 @@ This seems to be the framework for a range of number theory problems.  Proving i
 
 \begin{thebibliography}{}
 
+\item Alex Eskin, Grigory Marguils, Shahar Mozes. \\
+\textbf{Quadratic Forms of Signature (2,2) and Eigenvalue Spacings on Rectangular 2-Tori} \\  Annals of Mathematics, 161 (2005), 679-725 \\ 
+\textbf{Upper Bounds and Asymptotics
+ in a Quantitative Version of the
+ Oppenheim Conjecture} \\  Annals of Mathematics, 147 (1998), 93-141
+\item Grigori Margulis, Amir Mohammadi. \\ \textbf{Quantitative Version of the Oppenheim Conjecture Inhomogeneous Quadratic Forms} \\ Duke Math. J.
+Volume 158, Number 1 (2011), 121-160. 
 \item \dots 
 
-\end{thebibliography}
+\end{thebibliography} 
+\noindent \textbf{10/20} Alex Eskin, Grigory Margulis and Shahar Mozes in 2005.  The Oppenheim conjecture  - proven by Margulis - shows that for a non-degenerate indefinite irrational quadratic form $Q$ in $n \geq 3$, the set $Q(\mathbb{Z}^n)$ is dense.  
+\begin{itemize}
+\item 1998 a quantative version is proven (except for signature $(2,2)$ and $(2,1)$)
+\item 2005 signature $(2,2)$ and $(2,1)$ are proven -- if we rule out the exceptional cases
+\end{itemize}
+Here are some the keywords given by the jstor computer.  [{\color{blue!50!green!50!black}{rectangles}}] [{\color{blue!50!green!50!black}{signatures}}] [{\color{blue!50!green!50!black}{lattices}}] [{\color{blue!50!green!50!black}{sine function}}] [{\color{blue!50!green!50!black}{eigenvalues}}] [{\color{blue!50!green!50!black}{vectors}}] [{\color{blue!50!green!50!black}{Mathematical theorems}}] [{\color{blue!50!green!50!black}{integers}}] [{\color{blue!50!green!50!black}{Diophantine sets}}] [{\color{blue!50!green!50!black}{coefficients}}]
+\begin{itemize}
+\item Let $\rho$ be a continuous positive function on the sphere $\{ v \in \mathbb{R}^n : ||v||=1 \}$ \\ 
+Ex: what is the definition of a \textbf{norm} or \textbf{metric} ?
+\item $\Omega = \{ v\in \mathbb{R}^n : ||v|| < \rho(\frac{v}{||v||})  \}$ and $T\Omega$ is the rescaling of $\Omega$ by the operator $T: x \mapsto ax$.
+\end{itemize}
+\begin{eqnarray*}
+\#\{ x \in \mathbb{Z}^n : x \in T\Omega \text{ and } a < Q(x) < b \} &\sim & \lambda_{Q, \Omega}(b-a)T^{n-2} \\
+\text{Vol}\{ x \in \mathbb{R}^n : x \in T\Omega \text{ and } a < Q(x) < b \} &\sim & \lambda_{Q, \Omega}(b-a)T^{n-2} 
+\end{eqnarray*}
+If the signature is $(2,2)$ or $(2,1)$ we have to rule out certain cases and the statement is still true. \\ \\
+Given a quadratic form, and any shape, we get an \textbf{approximate-line}.  How does this thing differ from a more evenly-spaced line, such as our ideal $\mathbb{Z}$?  If we set $A + B = \{ a + b: a \in A, b \in B\}$ then we can write $\mathbb{Z} + \mathbb{Z} = \mathbb{Z}$.  However, $Q(\mathbb{Z}^n) \approx \mathbb{R}$ and $Q(\mathbb{Z}^n) + Q(\mathbb{Z}^n) \neq \mathbb{Q}(\mathbb{Z}^n)$ and yet also $Q(\mathbb{Z}^n) + Q(\mathbb{Z}^n) \approx \mathbb{R}$.  What would we like to see, then?\\ \\
+And we have two different measures on theset of points, the counting measure over $\mathbb{Z}$ and distance measure $\mathbb{R}$.  In fact, the way we construct Lebesgue measure is to declare that $\mu([a,b]) = b-a$ and say that $\mu$ behaves nicely under unions and intersections.  \\ \\ 
+\dots  \\ \\
+We have a statement, and almost a modern approach to the thing that still retains the spirit of the thing for the kids.  The next step is we demolish the entire thing.  These are circles or circular shapes in Euclidean geometry.  The notion of $\mathbb{Q}$, assumes that we know a particular number to all digits accuracy. \\ \\
+How did that occur?  What is a number anyway?
+
+\vfill
+
+\begin{thebibliography}{}
+
+\item Ben Green \textbf{What is \dots an approximate group?} Notices of the AMS, \textbf{59} (5).
+
+\end{thebibliography} 
+
 
 \end{document}
