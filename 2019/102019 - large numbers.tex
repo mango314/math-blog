@@ -1,0 +1,87 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+
+\title{Scratchwork: The Law of Large Numbers}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+\noindent Let's collect as many proofs as we can of the \textbf{Law of Large Numbers}. \\ \\
+\textbf{Thm} Suppose that $X_1, X_2, \dots$ are independent random variables, and that for some constant $K$ in $[0, \infty)$, 
+$$ \mathbb{E}[X_k] = 0 \text{ and } \mathbb{E}[X_k^4] \leq K $$
+The odds that the average of these numbers tends to zero is $1$:
+$$ \mathbf{P}\bigg[ \frac{1}{n} \sum_{i = 0}^n X_i \to 0 \bigg] = 1$$
+Clarification, the event is $\{ \omega: \frac{1}{n} \sum X_i(\omega) \to 0\} $, if we constructed the probability space very carefully.  We could look at rare events such as, despite the average usually tending to zero, we could considtion that the empirircal average $S_n \to \frac{1}{2}$ or something small but definitively separate from zero, $S_n \to \frac{1}{100}$.  \\ \\
+More clarification.  What if the $X_i$ are not independent, maybe they are only ``loosely correlated" so that $\mathbb{E}[X_i X_j] \ll 1$. Or maybe these are pseudorandom, $X_n$ is an orbit of a group action in number theory.  \\ \\
+\textbf{Proof} Using the Binomial Formula, and {\color{red!50!orange!50!black}linearity of expectation} :
+$$ \mathbb{E}[S_n^4] = \mathbb{E}[(X_1 + \dots + X_n)^4] = \mathbb{E}[\sum_k X_k^4 + 6 \sum \sum_{i < j} X_i^2 X_j^2] $$
+The mixed terms, go away. Here $\binom{4}{2,2} = \frac{4}{2!2!}= 6 $ In fact, teh next line is:
+$$ \mathbb{E}[X_i X_j^3]  = \mathbb{E}[X_i X_j^2 X_k] = \mathbb{E} [X_i X_j X_k X_l] = 0 $$
+Here we use ``independence" and ``centering" that $\mathbb{E}[X_i] = 0$.  \\ \\
+In number theory problems we choose a specific sequence to study, usually elements of $\mathbb{Z}, \mathbb{Q}, \mathbb{R}$.  However, there is usually also a group element such as a quadratic form $Q$ or prime numbers $p \in \mathbb{Z}$. 
+\begin{itemize}
+\item $[\mathbb{E}[(X_i)^2] \leq \mathbb{E}[X_i^4] \leq K$ by \dots Cauchy-Schwarz inequality ?
+\item $\mathbb{E}[X_i^2 \, X_j^2] = \mathbb{E}[X_i^2] \mathbb{E}[X_j^2] \leq K  $
+\end{itemize}
+We've had to count the number of terms in our sequence:
+$$  \mathbb{E}[S_n^4] \leq n K + 3n(n-1)K \leq 3Kn^2 $$
+The next step involved the {\textbf{monotone convergence theorem}} we'd like to actually see some of the weirdness that could be implied here.\footnote{Monotone convegence theorem is used show convergence of some integers, $\lim \int f_n = \int \lim f_n $ which is \textit{false} for Riemann integrals.  What does it mean to have a result this extreme and never use it?  This seems wrong.  \\ \\
+Lots of normal grown-up human decision making involves us deciding that certain events are rare or will never occur.  Is that the only philosophy here?}
+$$ \bigg[ \mathbb{E} \sum (S_n/n)^4 \stackrel{?}{\leq} 3K \sum n^{-2}  < \infty \bigg] \to \bigg[ \textbf{P}\big[ \sum (S_n/n)^4 < \infty \big]=1 \bigg] \to \bigg[ \textbf{P}[S_n/n \to 0] = 1 \bigg] $$
+What does this mean that are sum is finite almost surely.  What are these probability zero points?  Remember that Number Theory studies functions over $\mathbb{Q}$ and $\mu(\mathbb{Q}) = \mathbb{R}$ as a measure zero subset of the real numbers.  These exceptions could be everywhere. \\ \\
+In the process of our proof of the Law of Large numbers, we computed an $\mathcal{L}^4$ norm.  We could talk about random or pseudo-random sequences of numbers.\footnote{Pseudorandom numbers usually involve a generator or ``seed" with lots of information either stored in the initial data itself or in the transition operator.  Group orbits can be quite complicated and this proves a great place to have shape and complexity.}  Without any specific example in mind, this proof is totally correct without any further questions.  The Law of Large numbers is a theoretical way of checking that loosely correlated observations about the world will tend to the average.\footnote{If they have more correlation (such as the weather) we now have \textbf{Ergodic theory}.  The mixing and diffusion of air, and the relation between temperature and pressure, are great examples from Chemistry. Elecrical Engineering could also have examples of random processes. } \\ \\
+\textbf{Tutorial} Monotone Convergence Theorem \\ \\
+\textbf{Tutorial} $\mathcal{L}^2$ spaces \\ \\
+Our use of the Cauchy-Schwartz inequality is not free.  Covariance and variance, are tightly related to Pythagoras' theorem and projection operators on Hilbert spaces.   \\ \\
+The only Hilbert space I have any chance at understanding is $L^2([0,1], dx)$ spanned by the $\sin$ and $\cos$ function. There is also $L^2(S^1, d\theta)$ spanned by $[\theta \mapsto e^{in\theta}]$.  Here they study the geometry of the Hilbert space $\mathcal{L}^2(\Omega, \mathcal{F}, \textbf{P})$.  Our probability space (and \dots our Hilbert space) depends on:
+\begin{itemize}
+\item the space of outcomes $\Omega$
+\item $\textbf{P}$ the probability measure
+\item also depends on the collection of ``measurable" events $\mathcal{F}$
+\end{itemize}
+This jargon could make sense if we saw a random process -- they're everywere -- the randomness seperates that is constantly separating us from a ``perfect" description of the world.  Things that we're uncertain about. \\ \\
+(MON) if $0 \leq X_n \uparrow X$, then $\mathbf{E}(X_n) \uparrow \mathbf{E}(X) \leq \infty$.   \\ \\
+(MON) if $f_n$ is a sequence of elements of $(m\Sigma)^+$ such that $f_n \uparrow f$ then $\mu(f_n) \uparrow \mu(f) \leq \infty$, or $\int f_n d\mu \to \int f d\mu$.  \\ \\
+These are limits of unions and intersections of measurable sets.  The integrals that we're thinking of could go seriously go astray when taking limits.  As a consolation, these examples are ubiquitous in physics, engineering, biology, economics and social sciences.  Think about where the measurable sets are in Sociology and what  could be doing there? \\ \\
+{\color{red!50!orange!50!black}Example}: level sets are measurable.  $f$ is ``integrable" (e.g. continuous) and $f^{-1}[a,b]$ is measurable. \\
+We need to able to say that $\{ \omega: 0 < n^{-1} \sum X_i < \epsilon\}$ is measurable\dots \\ \\
+{\color{red!50!orange!50!black}\textbf{Thm}} If $X$ and $Y$ are in $\mathcal{L}^2$ (square-integrable) then $XY \in \mathcal{L}^1$ (integrable) and the CS inequality is obviousy true: $|\textbf{E}(XY)| \leq \textbf{E}(|XY|) \leq ||X||_2 \ ||Y||_2$. \\ \\
+{\color{red!50!orange!50!black}\textbf{Thm}} If $X$ and $Y$ are in $\mathcal{L}^2$ then so is $X+Y$ and we have the triangle inequality, $||X+Y||_2 \leq ||X||_2 + ||Y||_2$. \\ \\
+Triangle inequalit not-so-innocent here.  And the Law of Large numbers requires an $\mathcal{L}^4$ norm, where the geometry is even less clear. \\ \\
+There seems to be a lot of uncertainty as to whether $\int X d\mu$ or $\textbf{P}[X]$ is even a number in the first place.  The answer could depend on how we approxmate $X$ and $\mu$.  Arrangements like these could appear in Combinatorics or Number Theory (e.g. pigeon-hole principle).  So this entire discussion is missing an input, just an interesting problem that we care about. \\ \\
+We need Monotone Convergence Theorem to prove the CS inequality.
+\begin{itemize}
+\item We could only consider $|X|$ and $|Y|$ and focus on $X \geq 0$ and $Y \geq 0$.
+\item Define ``cutoff" random variables $X_n = X \wedge n$ and $Y_n = Y \wedge n$ (``bounded").
+$$ 0 \leq \mathbb{E}[(aX_n + bY_n)^2] = a^2 \mathbb{E}[X_n^2] + 2ab \mathbb{E}[X_nY_n] + b^2 \mathbb{E}[Y_n^2] $$
+This is a {\color{red}quadratic form} in $a$ and $b$ (over the real numbers, which are themselves equivalences of classes of sequences of numbers or observations): 
+$$ \big[ 2 \mathbb{E}(X_n Y_n) \big]^2 \leq 4 \mathbb{E}[X_n^2] \mathbb{E}[Y_n^2] \leq 4 \mathbb{E}[X^2] \mathbb{E}[Y^2] $$ 
+\end{itemize}
+In court, how do we compare the ``lightness" of two measurments?  How do we measure the lightness or heaviness of quantitites or events or distributions? \\ \\
+Let $n \to \infty$, and our proof is complete by the Monotone Convergence Theorem.
+
+\vfill
+
+
+
+\begin{thebibliography}{}
+
+\item \dots 
+
+\end{thebibliography}
+
+\end{document}
