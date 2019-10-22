@@ -1,0 +1,98 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+
+\title{Reading: Sum of Squares}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+\noindent Let $g_1, g_2, \dots, g_k$ be elements of $SU(2)$.  We define an averaging operator from $L^2(SU(2)) \to L^2(SU(2))$.
+$$ Tf(x) = z_{g_1g_2\dots g_k} f(x) = \sum_{i=1}^k \Big( f(g_i x) + f(g_i^{-1}x) \Big) $$
+We say that $z$ has a \textbf{spectral gap} if $\lambda_1 < 2k$ -- we already have that $\lambda_0 = 2k$, since $T(\mathbf{1}) = 2k\cdot \mathbf{1}$. \\ \\
+\textbf{Thm} Let $\{ g_1, g_2, \dots, g_k\}$ be a set of elements of $SU(2)$ [ generating a free group ] and satisfying a [ non-commutative diophantine property ], then $z_{g_1, \dots, g_k}$ has a spectral gap. \\ \\
+\textbf{Proposition} If $g_1, \dots, g_k \in G \cap M_{2 \time 2}(\mathbb{\overline{Q}})$ then $g_1, \dots, g_k$ satisfies [non-commutative diophantine property]  \\ \\
+So this is great news, we don't have to read verys carefully at all.  Any rational entries, or algebraic numbers, thereof can lead to invertible $2 \times 2$ of this type and grab two or three of this kind, then there is spectral gap. We never need to specify the spectral property.\\ \\
+These are two IAS professors writing in a journal, so we need to start again.  Elements of $SU(2)$ are easy to write down:
+$$ \det \left[ \begin{array}{cr} a  & -b \\ \overline{b} & \overline{a} \end{array} \right] = |a|^2 + |b|^2 =
+a_1^2 + a_2^2 + b_1^2 + b_2^2 =  1 $$
+Two rational complex numbers $a = a_1 + a_2i$, $b = b_1 + b_2i \in \mathbb{Q}(i)$.  Let's try $(a, b) = \frac{1}{n}(x_1, x_2, x_3, x_4)$ then we are solving:
+$$ x_1^2 + x_2^2 + x_3^2 + x_4^2 = n^2 $$
+Let's try $n = 5$.  How do we solve such a think?  $x^2 \in  A = \{ 0,1,4,9,16 \}$.  Let's try four of them:
+$$ ( A + A + A + A ) \cap [0, 25] = [0, 25]$$
+A computer search says that $44, 51, 60 \notin A + A + A + A $ (do we call this $4A$ or $4 \cdot A$).  In order to solve the membership problem here, now we want to know exactly which elements are included in the set and which are not. (Why?)  The solution we have are:
+$$ 0^2 + 0^2 + 3^2 + 4^2 = 1^2 + 2^2 + 2^2 + 4^2 = 25 = 5^2 $$
+There now a defect every setp of the way.  What is $0$?  We are going to say that numbers - the $2 \times 2$ matrix elements - $x \approx 0$ or $x \asymp 0$.  Then we have our matrices:
+$$ 
+\left[ \begin{array}{rr} \frac{3}{5} +0i& - \frac{4}{5}+0i\\ \\ \frac{4}{5}+0i & \frac{3}{5}+0i\end{array} \right] , 
+\left[ \begin{array}{rr}  \frac{1}{5} + \frac{2}{5}i & \frac{2}{5} + \frac{4}{5}i\\ \\ 
+\frac{2}{5} - \frac{4}{5}i & \frac{1}{5} + \frac{2}{5}i  \end{array} \right]  \in SU(2) $$
+These are now elements of an ``algebraic group". There is no reason to pick the same denominator, there's no least-common-denominator here.  Let's try one more problem:
+$$ 0 \times 0 +  2 \times 2 + 3 \times 3 +  6  \times 6 \textbf{ = } 
+1 \times 1 + 3\times (4 \times 4)  \textbf{ = } 2 \times (2 \times 2) + 4 \times 4 + 5 \times 5 \textbf{ = } 7 \times 7 $$
+Searching for these solutions took some time and space resources.  Here's a schematic of the computer program:
+$$ \{ (a,b,c,d) : 0 \leq a ,b,c,d \leq 7 \} \cap \{ a^2 + b^2 + c^2 + d^2 = 7^2\} $$
+There are $7^4$ possible combinations and therefore $ 7^4 = 2401$ multiplications and $3 \times 7^4 < 7500$ additions to find numbers that fit this constraints.  \\ \\
+\dots My best guess is that these geometric objects that could be more natural to us, that would make more sense. \\ \\
+For now, we have the free group the two matrices on the previous page, and we'd like to see how close we can get to the trivial element.  This might be useful in another setting, which we haven't specified.  Here's the quaternion example:  
+$$ 1 + 2 \mathbf{i} + 2 \mathbf{j} + 4 \mathbf{k} \in \mathbb{H} $$
+So there are lots of quaternion algebras we could use, and also consider Lorenzo Sadun who is an expert on tilings.  Could be that both of them have not gotten far enough.  In a sense, we are looking for combinations of these matrices that still say within a certain norm.
+$$ A = \tfrac{1}{25}\big(1 + 2 \mathbf{i} + 2 \mathbf{j} + 4 \mathbf{k}\big) \text{ and }
+B = \tfrac{1}{49} \big( 0 + 2\mathbf{i} + 2 \mathbf{j} + 6 \mathbf{k}\big)  \text{ and }X \in \langle A,B\rangle \text{ such that } x_1^2 + x_2^2 + x_3^2 + x_4^2 < \epsilon $$
+We are looking for ``small" elements in the free group of quaternions.  We already know e.g. by the pigeon-hole principle this free group is dense, in $SU(2)$ or the rotation group $SO(3)$ and yet has a set of measure zero in Haar measure, $\mu(\langle A, B \rangle) = 0$.\\ \\
+\textbf{Exercise} Show this group is dense $\overline{\langle A, B \rangle} = SU(2)$.  How quick is the convergence? \\ \\
+\textbf{Non-commutative diphantine property} What did they come up with ? There is a word $W_m \in \langle g_1,  \dots , g_m \rangle  $ with $ ||W_m \pm  e|| \geq D^{-m}$ with a choice of norm on the space of $2 \times 2$ matrices:
+$$ \left|\left| \left[ \begin{array}{cc} a & b \\ c & d \end{array} \right] \right|\right| 
+= |a|^2 + |b|^2 + |c|^2 + |d|^2 $$  
+there's even a short-cut that $||g \pm e||^2 = 2 | \text{tr}(e) \mp 2|$. \\ \\
+\textbf{Diophantine} 
+\begin{itemize}
+\item $\mathbb{R}$ a number $\theta \in \mathbb{R}$ is called diophantine if $|k \theta - l | \geq C_1 k^{-C_2} $
+\item $SO(2)$ Let $g = e^{2\pi i \theta} \in SO(2)$, using some group theory $|g^k - 1| \geq C_1' k^{- C_2'}$
+\item Given diophantine $\theta_1, \dots, \theta_k$ for any word we have $|W_m -1| \geq C k^{- C} $ for some constants $C$.
+\item $SO(3)$ Given $3 \times 3$ real matrices generating a free subgroup, there's always a word:
+$$ || W - e || \leq \frac{10}{(2k-1)^{m/6}} $$
+This is where we use the pigeon-hole principle.  The spectral gap is decays exponentially in the number of generators, $D \asymp 2k$.
+\end{itemize}
+So any pair of rational $2 \times 2$ invertible complex matrices will have this diophantine property and using the pigeonhole-principle on the number of generators, there will be a spectral gap in their action on $L^2(SU(2))$.  \\ \\
+This paper establishes once and for all a lower bound on the size of a word in a group of $2 \times 2$ matrices with rational entries (in $\mathbb{Q}$) or algebraic number fields.\footnote{The generality of this article is a drawback and it's been really unclear how to proceed.  Invertible $2 \times 2$ and $3 \times 3$ matrices in all number fields, $\mathbb{Q}$ and $K = \mathbb{Q}(\alpha)$.  The tools are a bit draconian since they are trying to solve it once for all number fields in a relatively hasty way.  The argument seems to prove a line.  We can prove general relaionships how these answers change with the number field, example an exention $K \subseteq L$ with $[L:K] = 2$.  Or possibly, focus our discussion the diophantine properties of a specific number field.  The papers don't even say what this is ``useful" for.  So there is a lot of freedom.}
+
+\newpage
+
+\noindent  Irreducible representations of $G = SU(2)$ \dots what are these objects acting on?  The vector spaces were likely themselves solutions to ordinary differential equations (or beyond).  
+$$ \pi_N = \text{Sym}^N V $$
+where $V$ is the standard two-dimensional representation of $G$. The prototype example, is polynomials:
+$$ (x,y) \to (ax +by, cx + dy) \text{ with }\left[ \begin{array}{cc} a & b \\ c & d \end{array}\right] \in 
+G = SU(2)$$ 
+These three dimensional rotations, look like they happen from greatest common denominator problems or least common multiple.  The irreducible representatives are just the homogeneous polynomials.  E.g.
+$$ x^2 y^4 \mapsto \frac{1}{5^6}\big((1+2i)x + (2+4i) y\big)^2 \big((2-4i)x + (1+2i)y\big)^6 $$
+We will hire a computer program to solve these tedious computations.  The thing that start to look artifical is our very use of the symbols $+$, $-$ , $\times$ and the construction of fractions.  The result would be two $6 \times 6$ matrices and we could try to compute the eigenvectors or at least estimate the rate of convergence. 
+\\ \\
+How are we going to estimate the size of these things with a single blow?  Given a representation $\pi_N$ we would like to show for each element $z$ that 
+$$ \overline{\lim_{n \to \infty}} \, ||\pi_N(z)|| < ||z|| = 2k $$
+Here $z$ is the $N \times N$ matrix defined by the (arithmetic) averaging operator.  
+
+\vfill
+
+
+
+\begin{thebibliography}{}
+
+\item \dots 
+
+\end{thebibliography}
+
+\end{document}
