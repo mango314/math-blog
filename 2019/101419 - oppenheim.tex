@@ -155,5 +155,24 @@ How did that occur?  What is a number anyway?
 
 \end{thebibliography} 
 
+\newpage 
 
+\noindent \textbf{11/10/19} Quadratic forms and what are they doing here, at this level?   Let $Q(\vec{x}) = x_1^2 + \sqrt{2} x_2^2 - x_3^2 - \sqrt{3}x_4^2$.  Then we have that $\overline{Q(\mathbb{Z}^4)} = \mathbb{R}$.  This result of 1998 gives us a quantative reading of the Oppenheim conjecture.  Let's try $\{  |x^2| < T \} \cap \mathbb{Z}^4$ and we want to count the number of points in the interval as $T \to \infty$.
+$$ V^Q_{(a,b)}(\mathbb{R}) = \{ x \in \mathbb{R}^n : a < Q(x) < b \} $$
+Our expectation is that the number of points we have is \textit{linear} with the size of the interval and \textit{quadratic} in the size of the sphere, $T$  This is a type of \textbf{counting measure} and we are asking about it's convergence to, say Lebesgue measure.
+$$ V_{(a,b)}(\mathbb{Z}) \cap T \Omega \sim c_{Q,\Omega}(b-a)T^2 $$
+The theorem is that we can prove our expectations are correct for a constand $c$ that changes with the quadratic form $Q$ and shape $\Omega$.  The main result is that the constants and the rates of growth are always the same:
+\begin{eqnarray*}
+\text{Vol}(\{ V_{(a,b)}(\mathbb{R}) \cap T \Omega \}) &\sim& \lambda_{Q, \Omega} (b-a)T^2  \\
+|V_{(a,b)}(\mathbb{Z}) \cap T\Omega | & \sim & \lambda_{Q, \Omega}(b-a)T^2
+\end{eqnarray*}
+The growth rate along the integers and along the real numbers are the same.  Except in the signature $(2,2)$ or in $(2,1)$ which is the example which I have chosen.\footnote{These numbers were most likely \textit{eigenvalues} of the Laplacian on the torus, which is why they have to be so exact.  $\mathbb{R}$ is the set of spectra of operators.  } An example of a quadratic form with signature $(3,1)$ is $Q(\vec{x}) = x_1^2 + \sqrt{2} x_2^2 + x_3^2 - \sqrt{3}x_4^2$.  \\ \\
+Now we have seen the breadth and the scope of the proof of the Oppenheim conjecture and the statement of the quantitative oppenheim conjecutre.  How do these counting problems get turned into a discussion of the Ratner flow? \\ \\
+Let $f$ be a bounded function vanishing outside a compact subset:
+$$ f(x) = \left\{  \begin{array}{cl}  1 & |x|<T \text{ and }a < Q(x) < b \\ \\ 0 & \text{otherwise} \end{array} \right. $$
+Hopefully the intersection of a sphere and an ellipse is compact.  Both closed and bounded.  Next we want to count all the lattice points that solve this equation:
+$$ \tilde{f}(g) = \sum_{v \in \mathbb{Z}^4} f( gv) =\bigg|_{g=1} |V_{(a,b)}(\mathbb{Z}) \cap T\Omega| $$
+Now we have that our counting problem can be moved around with our elements of $g$.  For any bounded function $f$ of ``compact support" we have:
+$$ \tilde{f}(\Delta) < c \alpha(\Delta) $$
+a single bound for all functions, all counting problems of this type.
 \end{document}

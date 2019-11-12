@@ -46,7 +46,53 @@ In fact $\mathcal{F}^4 = I$.
 Stein's book reviews the definition of ``integral" only the definition of $\int_{[0,1]}$ and $\int_\mathbb{R}$ and why they are numbers.  Even\dots what is ``continuity"?  What is $\mathbb{R}$?  These are not discussed in calculus class.  Contruction in $\mathbb{R}$ is done in the Analysis course. \\ \\
 The example in the book of Lighthill is:
 $$ 1 + 2 e^{-\pi} + 2 e^{-4\pi} + 2 e^{-9\pi} + \dots = 1 + 0.0864278 + 0.0000070 + (10^{-12}) + \dots $$
-This is done at a time when there very few computers, and the estimates are to very high accuracy.\footnote{When do we need measurements of high accuracy?} and everything else is left as ``an exercise for the interested reader".
+This is done at a time when there very few computers, and the estimates are to very high accuracy.\footnote{When do we need measurements of high accuracy?} and everything else is left as ``an exercise for the interested reader".   \\ \\ 
+\textbf{10/30} Let's read the proof in Lighthill's book, which uses generalized functions, so this will look like the physics textbook.  We'd like to admit equations like this:
+$$ \lim_{t \to \infty}  \frac{1}{\sqrt{2\pi t}} \, e^{- x^2 / t} = \delta(x) $$
+The ``=" symbol breaks down, because it no longer behaves nicely if we change the value of $x$.  We only show one example, it can really break down. \\ \\
+\textbf{11/01} Let's try this again.  $f \in \mathcal{S}(\mathbb{R})$ e.g. $f(x) = e^{-x^2}$.  Then
+$$ \sum_{n \in \mathbb{Z}} f(x+n) = \sum_{n \in \mathbb{Z}} \hat{f}(n) e^{2\pi i \, n x} $$
+. \\
+Let's try using the Dirac bra-ket mnemonic that is useful to physicists:
+$$\sum_{n \in \mathbb{Z}} \langle f | x+n \rangle = \sum_{n \in \mathbb{Z}} \hat{f}(n) e^{2\pi i \, n x}  $$
+I can't think of a next step.  Let's try another. Looks like we shuffle information around the number line.  In fact, there's a subject called ergodic theory.  
+$$ \sum_{n \in \mathbb{Z}} f(x+n) = \sum_{n \in \mathbb{Z}} \left[ \int_0^1 \left( \sum_{m \in \mathbb{Z}} f(x+m)  \right) e^{-2\pi i n x } \; dx \right] e^{2\pi i n x} $$
+This logic is tautology and we have lost information about $\hat{f}(m)$. \\ \\
+If $f$ and $g$ are continuous ``on the circle", then we have $f(\theta) = g(\theta)$ if $\hat{f}(m) = \hat{g}(m)$ for all $m \in \mathbb{Z}$.  The are going to say, $f(\theta) - g(\theta) = 0$ if $\hat{f}(m) - \hat{g}(m)\equiv 0$. \\ \\
+The left side is using the ``method of images" and the right side the reconstructed signal using Fourier modes.  What happens if we use the Dirichlet Kernel, some sequence of functions $f_n \to f$ in some way.
+\begin{eqnarray*}
+S_N(f)(x) &=& \sum_{n = - N}^N \hat{f}(n) e^{in x}  \\
+&=& \sum_{n = -N}^N \left( \frac{1}{2\pi} \int_{-\pi}^\pi f(y) e^{-iny} dy \right) e^{in x} \\
+&=& \frac{1}{2\pi} \int_{-\pi}^\pi f(y) \left( \sum_{n = - N}^N e^{in(x-y)}\right) dy \\
+&=& (f * D_N)(x)
+\end{eqnarray*}
+This is a reminder of how we get Dirichlet kernel.  Convolution with Dirichlet kernel leads to partial sums from $-N$ to $N$:
+$$ D_N(x) = \sum_{n = -N}^N e^{inx} $$
+These definitions of Fourier transform are no longer for free.  The fact that we could attach a number to the integral sign for all integers $n$ is not trivial.  No matter how we partition the real line, $\mathbb{R}$.
+$$ \hat{f}(n) = \int_{-\pi}^\pi f(x) e^{inx} \, dx $$
+Why does this even converge to number? \\ \\
+\textbf{Thm} Let $\{ K_n\}_{n=1}^\infty$ be a fmaily of good kernels and $f$ be an integrable function on the circle.  Then 
+$$ \lim_{n \to \infty} (f * K_n)(x) = f(x) $$
+Interestingly it says that for finite $n$ we have that evaluating $f$  ``at" $x$ is the same as integrating $f*K_n$.
+$$ (f * K_n) (x) = \frac{1}{2\pi} \int_{-\pi}^\pi f(x-y) K_n(y) dy $$
+instead of evaluating $f$ ``at" $x = x_0$ we are evluating at nearbypoints $f(x \pm \epsilon)$ as well.  The proof of the good-kernels theorem is
+\begin{eqnarray*}
+(f * K_n)(x) - f(x) &=& \frac{1}{2\pi} \int_{-\pi}^\pi K_n (y) f(x-y) dy - f(x) \\ 
+&=& \frac{1}{2\pi} \int_{-\pi}^\pi K_n(y) \big[ f(x-y) - f(x)\big] dy 
+\end{eqnarray*}
+This is a very funny thing.  Imagine the convergence did not occur.  $f(x)$ is continuous so that $f(x\pm \epsilon)$ is always close to $f(x)$ itself.  $|f(x-y) - f(x) |< \epsilon$. \\ \\ 
+\textbf{Problem} Let $f(x) = 0$ when $x < 0$ and $f(x) > 1$ if $x \geq 0$.  One can construct Riemann integrable functions on $[0,1]$ that have a dense set of discontinuities.  Choose a countable dense sequence $\{ r_n\}$ on $[0,1]$.  Then show 
+$$ F(x) = \sum_{n = 1}^\infty \frac{1}{n^2} f(x - r_n) $$
+is ``integrable" (on $[0,1]$) and has discontinities at all the points $r_n$.  The hint is $f$ is monotonic and bounded, it's the sum of step functions, $0 \leq f \leq 1$, so that $0 \leq \sum f \leq \sum \frac{1}{n^2} < 2$.  This function could be difficult to draw and this was an easy way to create many of these.  Conversely, this thing is continuous at any point that's not in $[0,1] \backslash \{ r_n : n \in \mathbb{N}\}$.
+\begin{eqnarray*}
+|(f*K_n)(x) - f(x)| & \approx & \frac{1}{2\pi} \int_{|y|< \delta } |K_n(y)| |f(x-y) - f(x)| < \epsilon \; \frac{M}{2\pi} \\
+\end{eqnarray*}  
+Just like physicist we could ignore the error term we have created by using this approximation.  We have separated the convolution into a multiplication
+\begin{itemize}
+\item $\epsilon$ is the smallness of the error due to continuity
+\item $M$ is the error of the good kernel
+\item $2\pi$ is the circumference of the circle (which is implied). 
+\end{itemize}
 \vfill
 
 
