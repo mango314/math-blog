@@ -56,8 +56,16 @@ $$ \sum_{n \in \mathbb{Z}} f(x+n) = \sum_{n \in \mathbb{Z}} \hat{f}(n) e^{2\pi i
 Let's try using the Dirac bra-ket mnemonic that is useful to physicists:
 $$\sum_{n \in \mathbb{Z}} \langle f | x+n \rangle = \sum_{n \in \mathbb{Z}} \hat{f}(n) e^{2\pi i \, n x}  $$
 I can't think of a next step.  Let's try another. Looks like we shuffle information around the number line.  In fact, there's a subject called ergodic theory.  
-$$ \sum_{n \in \mathbb{Z}} f(x+n) = \sum_{n \in \mathbb{Z}} \left[ \int_0^1 \left( \sum_{m \in \mathbb{Z}} f(x+m)  \right) e^{-2\pi i n x } \; dx \right] e^{2\pi i n x} $$
-This logic is tautology and we have lost information about $\hat{f}(m)$. \\ \\
+$$ \sum_{n \in \mathbb{Z}} f(x+n) = \sum_{n \in \mathbb{Z}} \left[ \int_0^1 \left( \sum_{m \in \mathbb{Z}} f(m+y)  \right) e^{-2\pi i n y } \; dy \right] e^{2\pi i n x} $$
+This logic is tautology and we have lost information about $\hat{f}(m)$. In theory we could have switched the integral and the summation citing the  ``commutativity of operators". 
+$$ \sum_{n \in \mathbb{Z}} \int_{-\infty}^\infty f(y) \; e^{- 2\pi i m y} \; dy =  \sum_{n \in \mathbb{Z}} \left[ \int_0^1 \left( \sum_{m \in \mathbb{Z}} f(m+y)  \right) e^{-2\pi i n y } \; dy \right] e^{2\pi i n x} = 
+ \int_0^1 \left[ \; \sum_{n \in \mathbb{Z}}  \sum_{m \in \mathbb{Z}} f(m+y) \; e^{2\pi i n (x-y) } \; \right]  dy
+$$
+We are trying to re-arrange the proof in Stein's textbook to our liking.  He has done it without good kernels (Dirichlet kernel is not ``good", Fourier kernel is ``good" so we can take Cesaro averages):
+$$\sum_{n \in \mathbb{Z}} f(x+n) =  \int_0^1 \left[ \; \sum_{n \in \mathbb{Z}}  \sum_{m \in \mathbb{Z}} f(m+y) \; e^{2\pi i n (x-y) } \; \right]  dy  \quad\stackrel{\text{or}}{=}\quad 
+\sum_{n \in \mathbb{Z}}  \sum_{m \in \mathbb{Z}} \int_0^1  f(m+y) \; e^{2\pi i n (x-y) }   dy$$
+Why might these arguments not be valid?  This kind of exchange regularly appears in graduate physics papers which are more ``realistic". At least we have a goal.   \\ \\
+If my memory serves me well, this merely swaps the $x$ with the $y$.
 If $f$ and $g$ are continuous ``on the circle", then we have $f(\theta) = g(\theta)$ if $\hat{f}(m) = \hat{g}(m)$ for all $m \in \mathbb{Z}$.  The are going to say, $f(\theta) - g(\theta) = 0$ if $\hat{f}(m) - \hat{g}(m)\equiv 0$. \\ \\
 The left side is using the ``method of images" and the right side the reconstructed signal using Fourier modes.  What happens if we use the Dirichlet Kernel, some sequence of functions $f_n \to f$ in some way.
 \begin{eqnarray*}
@@ -93,6 +101,22 @@ Just like physicist we could ignore the error term we have created by using this
 \item $M$ is the error of the good kernel
 \item $2\pi$ is the circumference of the circle (which is implied). 
 \end{itemize}
+What would happen if $|\hat{f}(n) - \hat{g}(n) | < \epsilon$, that the Fourier series are ``close enough".  The two signals should certainly sound similar.  The Fejer kernel is about reconstructing $f$ from as many Fourier signals as we can find.  Let's try:
+$$ (f * g)(x) = \frac{1}{2\pi}\int_{-\pi}^\pi f(y)g(x-y) dy $$
+In our case could use the Dirichlet kernel (which we didn't require a good kernel)
+$$ D_N(x) = \sum_{n = -N}^N e^{inx} \text{ so that } S_N(f) (x) = \sum_{n = - N}^N \hat{f}(n) e^{inx} = \frac{1}{2\pi} \int_{-\pi}^\pi f(y) \left( \sum_{n = - N}^N e^{in(x-y)} \right) dy $$
+which is trigonometric polynomial. We have $k \asymp N$  and $D_N \asymp p_k$, so the proof becomes   
+$$ \left| \int_{|\delta| < \epsilon} f(\theta) p_k(\theta) d\theta \right| \leq 2\pi B (1 - \epsilon / 2)^k $$
+Using the Dirichlet kernel we are using ``linearity of integrals" to show two parts:
+\begin{itemize}
+\item As $N \to \infty$ we have $\int_{|\delta| < \epsilon} f(y) \, D_N(x-y) \, dy \approx f(y) $
+\item As $N \to \infty$ we have $\int_{|\delta| > \epsilon} f(y) \, D_N(x-y) \, dy \approx 0 $
+\end{itemize}
+\textbf{Thm} Let $\{ K_n \}_{n=1}^\infty$ be a family of good kernels, and $f$ an integrable function on the circle.  Then
+$$ \lim_{n \to \infty} (f * K_n)(x) = f(x) $$
+whenever $f$ is continuous at $x$.  If $f$ is continuous everywhere, the limit is uniform.  So $K_n$ is called an \textbf{approximation to the identity}, simplistically that $K_n \asymp 1$. \\ \\
+\textbf{Exercise:} For a really tricky funtion $(f*K_n)(x) \neq f(x)$.  Discontinuous?  $f \notin L^1$ ? $f \notin L^2$ ?
+
 \vfill
 
 
@@ -103,5 +127,9 @@ Just like physicist we could ignore the error term we have created by using this
 \item Lighthill \textbf{Fourier Analysis and Generalized Functions} \dots
 \item K\"{o}rner 
 \end{thebibliography}
+
+\newpage
+
+\noindent Let's try the Lebesgue theory proof in Katznelson since we're exhausted.  
 
 \end{document}
