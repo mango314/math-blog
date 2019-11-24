@@ -1,0 +1,52 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+
+\title{Reading: Arctic Circle Theorem}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+\noindent Let's read the statement of the \textbf{Artctic Circle Theorems}  how did the authors state it.  What were they concerned about?  \\ \\
+\textbf{Thm \#1}  Fix $\epsilon > 0$.  Then, for all sufficiently large $n$, all but an $\epsilon$ fraction of domino tilings of the Aztec diamond of order $n$ whill have a temperate zone whose boundary stays uniformly within distance $\epsilon n$ of the inscribed circle. \\ \\
+The proof is somewhat difficult to read. \\ \\
+For starts we have a collection of random shapes, and we need to discern the ``temperature" in different parts of the picture based on a single observation.  The temperate zone exists over the entire collection of shapes.  What does it mean to say that each shape (in this case, a tiling) is ``equally likely"? \\ How does one identify the ``frozen" region and the ``temperate" region? \\ \\
+The Arctic Circle Theorem can be reduced to a statement about the totally asymmetric exclussion process (TASEP). 
+$$ x^*(n) = \left\{ \begin{array}{cc} 1 & n \leq 0\\ 0 & n > 0\end{array} \right. $$
+\textbf{Thm \#2} Fix $\alpha \leq \beta$.  If one runs the exclussion process starting at state $x^*$, the number of particles in $[\alpha n , \beta n ]$ at time $n$, normalized by dividing by $n$, converges in probability to $h(\alpha) - h(\beta)$ where
+$$ h(x) = \left\{ \begin{array}{cr}  -x & x < - \frac{1}{2} \\ \\ \frac{1-x}{2} - \frac{1}{2}\sqrt{\frac{1}{2} - x^2} & |x| < \frac{1}{2} \\ \\ 0 & x > \frac{1}{2} \end{array} \right. $$
+There's even a question about which totally asymmetric exclusion process this could be.  This is a discrete-time process, .  The ``stochastic function" $x \stackrel{?}{\to} x'$ is now called a ``random process", a sequence of random variables where each state is connected to the previous one in some way.  This problem is solved \textit{before} we know what stochastic processes are, so there's lot of content. \\ \\
+This is a mix of geometry and computer science (and not a lot of Arithmetic).  One possibility to look at are \textbf{bin-packing} problems.  Also, these kind of interesting particle processes and phase transitions appear in Statistical Mechanics.  \\ \\
+Another challenge is to state this random process problem selecting only the parts that we need or are helpful.  Too much details can be a problem, too.  Here all the details carry a lot of weight, and maybe there is some negative space as well. \\ \\
+\textbf{Thm \#3} The translation-invariant, stationary probability measures on $\mathcal{X}$ are precisely those that an be expressed as convex combinations of the measures $\mu_d$ with $0 < d < 1$. \\ \\
+Here $\mathcal{X} = \{ 0, 1\}^{\mathbb{Z}}$.
+\begin{itemize}
+\item \textbf{translation-invariant} means $T^* \mu = \mu$.
+\item $M(\mathcal{X})$ is the set of probability measures on $\mathcal{X}$.
+\item a convex combination of the measure is defined by: $(\alpha \mu_1 + (1- \alpha)\mu_2 )(S) = \alpha \mu_1(S) + (1- \alpha)\mu_2(S)$
+\item \textbf{stationary} means for $\mu \in \mathcal{M}(\mathcal{X})$,  $P_\mu(x' \in A) = P_\mu(x \in A)= \mu(A)$.
+\end{itemize}
+The situation where we have to juggle the time-averages and space-aveages of the random process is called ``Ergodic theory".  We observe an area over time, or we take a single observation and compare different regions in the area.  There's no reason \textit{ a priori } two answers are nearly the same.  These are 2D random processes.
+
+\vfill
+
+\begin{thebibliography}{}
+
+\item Ben Green \textbf{What is \dots an approximate group?} Notices of the AMS, \textbf{59} (5).
+
+\end{thebibliography} 
+
+\end{document}
