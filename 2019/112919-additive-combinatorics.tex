@@ -43,8 +43,25 @@ What are the reasonable choices of $f$ ? This type of number theory is describin
 
 \newpage 
 
-\noindent \dots 
-
+\noindent If we look at the other result\dots \\ \\
+\textbf{Exercise} For a sequence $\{ x_n\}$ with $0 \leq x_n \leq 1$ of independent, uniformly distributed random variables then
+$$\lim_{N \to \infty} \frac{1}{N} \left\{ 1 \leq m \neq n \leq N : |x_m - x_n| \leq \frac{s}{N} \right\} = 2s $$
+This is known as ``Poissonian pair correlation" in the literature. \\ \\
+Our sequence of numbers $x_n$ is \textbf{not} random, in fact maybe a deterministic or pseudo-random sequence. \\ \\
+Pair correlation is one of the measures being used to count ``coincidences" of a general kind, that could happen in a dynamical system.   So this result explores connection between two concepts:
+$$ [\text{uniform distribution}] \stackrel{?}{\longleftrightarrow} [\text{Poisson pair correlation}]$$
+There are three separate statements that are considered:
+\begin{itemize}
+\item Let $\{ x_n\}_{n=1}^\infty$ be a sequence on $[0,1]$.  For all $s > 0$:
+$$ \lim_{N \to \infty} \frac{1}{N} \# \left\{ 1 \leq m \neq n \leq N : |x_m - x_n| \leq \frac{s}{N} \right\} = 2s $$
+then the sequence is uniformly distributed. 
+\item Let $\{ x_n\}_{n=1}^\infty$ be a sequence on $[0,1]$.  For all $s > 0$:
+$$ \lim_{N \to \infty} \frac{1}{N} \# \left\{ 1 \leq m \neq n \leq N : ||x_m - x_n||_\infty \leq \frac{s}{N} \right\} = 2s $$
+then the sequence is uniformly distributed. 
+\item Let $\{ x_n\}_{n=1}^\infty$ be a sequence on $[0,1]$.  For all $s > 0$:
+$$ \lim_{N \to \infty} \frac{1}{N} \# \left\{ 1 \leq m \neq n \leq N : ||x_m - x_n||_2 \leq \frac{s}{N} \right\} = 2s $$
+\end{itemize}
+Then the sequence is uniformly distributed. What does this say about numbers, and number sequences?  And why do we need three different statements?  Where did the classical Mathematics go?
 \vfill
 
 
@@ -55,6 +72,7 @@ What are the reasonable choices of $f$ ? This type of number theory is describin
 \item Stefan Steinerberger \textbf{Poissonian Pair Correlation in Higher Dimensions} \\ Journal of Number Theory 208 (2020) 47-58.
 \item Elias Stein \textbf{Real Analysis: Measure Theory, Integration and Hilbert Spaces} (Princeton Lectures in Analysis, III) Princeton University Press, 2005.
 \item Yitzak Katznelson \textbf{Harmonic Analysis} Dovr Publications, 1976.
+\item Manfred Einsiedler, Thomas Ward \textbf{Ergodic Theory with a View Towards Number Theory} (GTM \#259) Springer, 2011.
 \end{thebibliography}
 
 
