@@ -1,0 +1,61 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+
+\title{Tune-Up: Fubini Theorem}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+\noindent What is additive combinatorics and can we extract more common-sense statements from them?  For the time being, these are stated in a somewhat sophisticated manner.  \\ \\
+These two exercises, require Lebesgue integrals (that's how they are stated).  \\ \\
+\textbf{Ex \#1} Let $f \in L^1(\mathbb{R}) \cap L^2(\mathbb{R})$.  Show that:
+$$ \int_\mathbb{R} \int_\mathbb{R} f(x) f(x+t) dx dt \leq || f||^2_{L^1(\mathbb{R})} $$
+Hint: Fubini Theorem.  Here, ``$\int$" is Lebesgue integral. \\ \\
+\textbf{Ex \#2} For any $t \in \mathbb{R}$, 
+$$ \int_\mathbb{R} f(x) f(x+t) dx \leq || f||^2_{L^2(\mathbb{R})} $$
+Hint: Cauchy-Schwartz inequality. \\ \\
+The author is at Yale (this is the same department as Grigori Margulis and Richard Kenyon, for example.) Here's the toy example have about the autocorrelation of functions.  \\ \\
+\textbf{Proposition} Let $f \in L^1(\mathbb{R}) \cap L^2(\mathbb{R}) $ Then
+$$ \left|\left| \int_\mathbb{R} f(x) f(x+t) dt - \chi_{[-1,1]}(t) \right|\right|_{L^2(\mathbb{R})} \geq \frac{3}{10} $$
+Hint: The Fourier transform is unitary. \\ \\
+\textbf{Analogy} A set $A \subset \mathbb{Z}$ is a difference basis with respect to $n$ if 
+$$ \{ 1, 2, \dots, n \} \subseteq A - A $$
+What is the minimum size of $A$? This is an example due to Hungarian mathematicians Redei and Renyi.  Here is the trivial estimate:
+$$ n = \# \{ 1, 2, \dots, n \} \leq \# ( (A-A) \cap \mathbb{N}  ) \leq \binom{|A|}{2} \leq \frac{|A|^2}{2} $$
+therfore the size of the mimimum set is $|A| \geq \sqrt{2n} $. \\ \\
+\textbf{Exercise} (Half-of-Fubini) Let $f \in L^1(\mathbb{R})$, then 
+$$ \int_0^1 \int_\mathbb{R} f(x) f(x+t) dx dt \leq 0.5 ||f||^2_{L^1(\mathbb{R})} $$
+What are the reasonable choices of $f$ ? This type of number theory is describing patterns that we find spread out in physical space, and frequency space and interactions.
+
+\newpage 
+
+\noindent \dots 
+
+\vfill
+
+
+
+\begin{thebibliography}{}
+\item Richard C. Barnard, Stefan Steinerberger.  \textbf{Three Convolution Inequalities on the Real Line with Connections to Additive Combinatorics} Journal of Number Theory 207 (2020) 42-55.
+
+\item Stefan Steinerberger \textbf{Poissonian Pair Correlation in Higher Dimensions} \\ Journal of Number Theory 208 (2020) 47-58.
+\item Elias Stein \textbf{Real Analysis: Measure Theory, Integration and Hilbert Spaces} (Princeton Lectures in Analysis, III) Princeton University Press, 2005.
+\item Yitzak Katznelson \textbf{Harmonic Analysis} Dovr Publications, 1976.
+\end{thebibliography}
+
+
+\end{document}
