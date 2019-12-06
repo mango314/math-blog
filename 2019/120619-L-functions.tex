@@ -1,0 +1,83 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+
+\title{Reading: L-functions}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+\noindent Let's try to cobble together the exercise.  \\ \\
+\textbf{Example} (Soundarajan, 2000)\\  The squares of Dirichlet L-functions at $s = \frac{1}{2}$ average out (roughly) to a polynomial $Q$ of degree $3$.
+$$ {\sum_{0 \leq d \leq X}}^* \; L(\frac{1}{2}, \chi_{8d})^2 = X Q(\log X) + O(X^{\frac{5}{6} + \epsilon}) $$
+The cubes of Dirichlet L-functions at $s = \frac{1}{2}$ average out (roughly) to a polynomial $R$ of degree $6$.
+$$ {\sum_{0 \leq d \leq X}}^* \; L(\frac{1}{2}, \chi_{8d})^3 = X R(\log X) + O(X^{\frac{11}{12} + \epsilon}) $$
+\textbf{Example} (Young, 2009)\\  Let $\Phi: \mathbb{R}^+ \to \mathbb{R}$ be a smooth function of compact support.  \\ 
+The weighted average of the  squares of Dirichlet L-functions at $s = \frac{1}{2}$ average out (roughly) to a polynomial $Q$ of degree $3$.
+$$ {\sum_{0 \leq d \leq X}}^* \; L(\frac{1}{2}, \chi_{8d})^2 = X P(\log X) + O(X^{\frac{1}{2} + \epsilon}) $$
+The weighted average of the cubes of Dirichlet L-functions at $s = \frac{1}{2}$ average out (roughly) to a polynomial $R$ of degree $6$.
+$$ {\sum_{0 \leq d \leq X}}^* \; L(\frac{1}{2}, \chi_{8d})^3 = X R(\log X) + O(X^{\frac{3}{4} + \epsilon}) $$
+We do not even need to read the modern article.  Study of the ``mean value" .\\ \\
+Let's try to parse a few of the symbols here:
+\begin{itemize}
+\item What are ``fundamental discriminants"? $\displaystyle {\sum_{0 \leq d \leq X}}^*  $
+\item The shape of the result is: $\sum_{0 \leq d \leq X} f(d, X) = X (\log X)^3 + O(\sqrt{X})$, where $f: \mathbb{Z} \to \mathbb{R}$ is  function on the integers (itself an average of other functions). 
+\item What's wrong with $\zeta(\frac{1}{2}) \stackrel{?}{=} \sum \frac{1}{\sqrt{n}}$ (this is a divergent series), and also $L(\frac{1}{2}) = \sum \frac{\chi(n)}{\sqrt{n}} \neq 0$ ?
+\item Let's remind ourselves what are Dirichlet characters, $\chi_D(n) = (\frac{D}{n})$ \dots
+\item Why are the exponents like $O(X^\frac{3}{4})$ or $O(X^\frac{5}{6})$ difficult to optimize? What kind of hard problem to they represent that we can no longer describe them with a polynomial formula or even estimate their size?  
+\end{itemize}
+Fractals have fractional growth exponents.  \\ 
+These exponents represent classes of \textbf{arithmetic problems} that are difficult to predict and control.
+
+\newpage
+
+\noindent These ``analytic" formulas are blurry because they are averaging out highly chaotic arithemetic functions.  \\ \\
+Let's just scrape off the exercises from the page:\\ \\ 
+\textbf{Ex} The following identity is almost surely true:
+$$ \sum_{ab= \ell} \left( \frac{a}{b} \right)^s = \prod_{p | \ell} (p^{-s} + p^s) 
+= \prod_{p | \ell} (2 + s^2 \log^2 p + O(s^4)) = d(\ell) \left( 1 + \frac{s^2}{2} \sum_{p | \ell} \log^2 p + O(s^4) \right) $$
+\textbf{Ex} Show that (note here that $\mathbb{Q}^\times$ is a \textbf{group} where we consider all possible fractions, while $(\mathbb{Q}, + , \times)$ is the \textbf{field}):
+$$  \left( \frac{\Gamma( \frac{1}{4}+s)}{\Gamma(\frac{1}{4}} \right)^2 \left( \frac{16}{\pi}\right)^s
+\Gamma_1(s) \frac{ 4^s + 4^{-s} - \frac{5}{2}}{4^s}\zeta(2s)\zeta(2s+1) = \frac{1}{8s^2} + a_0 + O(s) $$
+What sequence of numbers might this correspond to? There are many, many answers here. For example, the Stirling formula $n! \asymp n^n e^{n \log n}$ suggests an answer.  So many that we just look at equivalence classes, $[a]$.  This would be a great time to review the concept of \textbf{Laurent series} as well as \textbf{Group Theory}. \\ \\
+Can we explain a bit what Prof. Soundarajan might have been doing? \\ \\
+\textbf{Lemma} (Heath-Brown, 1979) Let $N$ and $Q$ be positive integers and let $a_1, \dots, a_N $ be arbitrary complex numbers (e.g. $a_n = e^{\sqrt{2}n}$, exponents or ``characters".)  Let $S(Q)$ be a set of real primitive characters $\chi$ with conductor $\leq Q$.  Then
+$$ \sum_{\chi \in S(Q)} \left| \sum_{n \leq N} a_n \chi(n) \right|^2 \ll_\epsilon (QN)^\epsilon (Q+N) \sum_{n_1 n_2 = \square} |a_{n_1}a_{n_2}| $$
+for any $\epsilon > 0$.  Let $M$ be any positive integer, and for each $|m| \leq M $ write $4m = m_1 m_2^2 $ where $m_1 $ is a fundamental discriminant, and $m_2 $ is positive. Suppose the sequence $a_n$ satisfies $|a_n| \ll n^{\epsilon}  $.  Then 
+$$ \sum_{|m| \leq M} \frac{1}{m_2} \left| \sum_{n \leq N} a_n \left( \frac{m}{n}\right) \right|^2 \ll (MN)^\epsilon N(M+N) $$
+For example, $a_n \in \mathbb{Q}^\times$ be some result of multiplications and divisions $a_n \in \{0, 1, \dots, 9 , \times, \div\}^*$ (please write the automaton correctly) with $|a_n| \ll n^\epsilon$ (looks like $a_n \asymp 1$ ?) \\ \\
+We are throwing away increasing amounts of work to get these leading-term results. 
+\begin{itemize}
+\item Where is the information hiding??
+\item What did Number Theory look like before 1980 that this result is an improvement?
+\end{itemize}
+There are many ways to generate number sequences for example, $\mathbb{Q}^\times \to \mathbb{R}$ such as $\phi(\frac{m}{n}) = m$ is nowhere integrable, nowhere differentiable and violently chaotic.  Arithemetic functions are dime-a-dozen yet we have failed to produce even one. \\ \\
+\textbf{Thm} Jutila (1981) this is simpler, no less profound result:
+$$ \sum_{|d| \leq X} L(\frac{1}{2}, \chi_d) \sim c X \log X $$
+and for sum of squares
+$$ \sum_{|d| \leq X} |L(\frac{1}{2}, \chi_d)|^2 \sim c X (\log X)^3 $$
+\vfill
+
+
+
+\begin{thebibliography}{}
+\item Keiju Sono.  \textbf{The Second Moment of Quadratic L-functions} \\ Journal of Number Theory 206 (2020) 194-230
+\item Kannan Soundarajan \textbf{
+Nonvanishing of Quadratic Dirichlet L-Functions at $s = \frac{1}{2}$} \\ Annals of Mathematics 152 (2) (2000) 447-488.
+\end{thebibliography}
+
+
+\end{document}
