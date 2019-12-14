@@ -30,14 +30,56 @@ This theorem sounds great if we can decide on the meaning of a few terms:
 \item (geometric) genus
 \item ``rational"
 \end{itemize} 
-Are these close to the same terms we learned in high school?  Let $x = \cos 5\theta$ and $y = 1 + \sin 3 \theta$ find the equation $f(x,y) = 0$ or the ring $\mathbb{C}[x,y]$.  This math-speak has gone too far.
+Are these close to the same terms we learned in high school?  Let $x = \cos 5\theta$ and $y = 1 + \sin 3 \theta$ find the equation $f(x,y) = 0$ or the ring $\mathbb{C}[x,y]$.  This math-speak has gone too far. \\ \\
+The proof refers you to chapter 8.  That these are propositions suggests the amount of work proving these (given their starting points) was comparatively less.  \\ \\
+\textbf{Proposition VIII.2.15} Let $C$ be an irreducible smooth projective curve.  The following are equivalent.
+\begin{itemize}
+\item $C$ is isomorphic to $\mathbf{P}^1$.
+\item $C$ is of genus $0$.
+\item There is a point $P \in C$ such that $h^0 \mathcal{O}_C(P) \geq 2$.
+\item There are two distinct points $P, Q \in C$ such that the divisors $P$ and $Q$ are equivalent.
+\item The fraction field $K(C)$ is isomorphic to the field of rational fractions in one variable $k(T)$.  
+\end{itemize}
+Here $k$ is ``algebraically closed".  Example, $k = \mathbb{C}$. If $k = \mathbb{Q}$ (a field that is \textit{not} algebrically closed, or $k = \mathbb{Z}$ (a ``ring") then we could try to use a \textbf{scheme}. In fact, why are we even committed to those algebraic structures?  Maybe none of these fit, and those were all crutches until we could find a better idea. \\ \\
+Perrin's book is written to describe as much as it can within a finite amount of space.  There is an infinite amount of checking that can go on.  Lot's of those depend on our choices of mathematical frame.  \\ \\
+More terms, what is a \textbf{divisor}? and what is \textbf{genus}?  The book writes these statement after the \textbf{Riemann-Roch} theorem (e.g. trying to compute the \textbf{0}-th sheaf cohomology).  
 \vfill
 
 
 
 \begin{thebibliography}{}
 \item Daniel Perrin \textbf{Algebraic Geometry} (Universitext) Springer, 2008.
+\item Yuri Manin \textbf{Introduction to the Theory of Schemes}. (Moscow Lectures) Springer, 2018.
+\item Michael F. Atiyah, Ian G. McDonalt \textbf{Introduction to Commutative Geometry} Addison-Wesley, 1969.
+
 \end{thebibliography}
-
-
+\includegraphics[width=0.25\textwidth]{spirograph-01.png} \\
+\noindent Let's read after the \textit{proof} symbol.  The proof turns the five parts of the theorem into a sort of ``wheel" which could possibly be spun around.  Twirling the argument around this way seems secondary to proving the main objective.  This is certainy a proof objective, do you agree with this logical style? If we can turn the wheel $360^\circ$ then everything on the wheel is equivalent. 
+$$ \Big[ (A \to B) \text{ and } (B \to C) \text{ and } (C \to A) \Big] \to (A=B=C)   $$ 
+If we decide that $A, B, C$ are close enough to every be called equivalent, we have an \textbf{equivalence class} $[A] = [B] = [C]$.  So there is a reciprocity between the painfully obvious statements here, and the profoundness of the Riemann-Roch theorem, where we just want to know a tiny bit about that it even says.\\ \\
+$\mathbf{1} \to \mathbf{2}$  \quad\quad\quad\quad\quad\quad\quad [$C$ is isomorphic to $\mathbf{P}^1$.] $\to$ [$C$ is of genus $0$.] \\ \\
+The cohomology of sheaves on (empty) projective space, $\mathcal{O}_{\mathbb{P}^n}(d)$ which plays an important role in algebraic geometry. \\ \\
+\textbf{Theorem} Let $n\geq 1$ be an integer. 
+\begin{itemize}
+\item $H^0(\mathbb{P}^n, \mathcal{O}_{\mathbb{P}^n} (d) ) = S_d $ for all $d \in \mathbb{Z}$. \\ \\ Here $S_d$ the space of homogeneous polynomials of degree $d$ in $n+1$ variables.    
+\item $H^i(\mathbb{P}^n, \mathcal{O}_{\mathbb{P}^n})=0$ for $0 < i < n$ and all $d$.
+\item $H^n(\mathbb{P}^n, \mathcal{O}_{\mathbb{P}^n}(d) ) \simeq H^0\big(\mathbb{P}^n, - (d+n+1) \big)^{\vee} $ (as vector spaces)
+\end{itemize}
+These would be the starting point if you wanted to solve a specific ``classical" problem of interest, about specific curve or class of curves.  Here's a good frame for us, there's a theory of problem and then we control only one point, now the rest of the theory turns into another set of wheels, which turns into even more algebraic geometry.  Our entire discussion becomes a single trajectory in this category. It's OK. 
+\newpage
+\noindent These theorems offer us some (very small) guarantee of consistency, and they are often merely summarizing the previous discussions in the book.  Our objective is just the one from the chapter:
+\begin{quotation}
+\noindent We saw in the book’s introduction how useful it can be to have rational
+parameterisations of curves (notably for resolving Diophantine equations or
+calculating primitives). We then say the curve is rational. The aim of this
+chapter is to give a method for calculating whether or not a curve is rational.
+We will prove that this is equivalent to the (geometric) genus of the curve
+being zero and we will give methods for calculating this geometric genus.
+\end{quotation}
+The ``arithmetic genus" and the ``geometric genus" are discussed in separate chapters of this short book.  Just remember all of this is about curves and arithmetic.  \\ \\
+\textbf{Definition} Let $C$ be a curve ant $X$ be its normalization (``desingularization").  We call the arithmetic genus of $X$ the arithmetic genus of $C$. \\ \\
+\textbf{Theorem IX.2.1} Any irreducible curve is birationally equivalent to a smooth projective curve.  If $C$ is an irreducible projective curve, there is an irreducible \textit{smooth} projective curve $X$ and a morphism $ \pi: X \to C$ which is finite and birational.  We say that $X$ is the \textbf{desingularization} or \textbf{normalization} of $C$. \\ \\
+These equations might be impossible to write down, so it's unclear what the terms ``arithmetic" or ``geometry" are doing here.  Our original problem gets passed around we don't even quite remember.  This theorem seems to contain the entire book.  \\ \\
+This might be a good theory of mathematical literature, a very reasonable question leads to an argument that contains an entire chunk of the literature.  The claim must be very thin, merely scrambling the original question.  We might as well just randomly permute them. \\ \\
+Another question, what is $\mathbb{P}^1$ and what happens if $k$ is \textit{not} algebraically closed and the book no longer matters.  We still have to get things done and solve the question. 
 \end{document}
