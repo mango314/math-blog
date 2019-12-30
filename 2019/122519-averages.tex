@@ -68,7 +68,26 @@ In this example, I randomly filled in a  square pattern.  The average of this di
 \includegraphics[width=0.5\textwidth]{square-11.png} \\
 The proof tells us almost nothing.  It is reduced to an exercise in Linear algebra. In Monte-Carlo simulations we are looking for ``typical" or ``random behaviors" of somewhat hard to describe objects.  Features that are easy for humans to distinguish and yet difficult for computers.\\ \\
 \textbf{Step 1} Let $B = \{ U_Tg - g | g \in L^2_\mu  \} $.  We claim that $B^\perp = I = \{ g \in L^2_\mu : U_T g= g  \}$. \\ \\
-I take it there's a reciprocity between solving the equation $U_T g = g$ and looking at values of $U_T g - g$ as $g \in L_\mu^2$ varies in the Hilbert space.
+I take it there's a reciprocity between solving the equation $U_T g = g$ and looking at values of $U_T g - g$ as $g \in L_\mu^2$ varies in the Hilbert space. \\ \\
+If $U_T f = f $ then $f \in B^\perp$. If $f \in B^\perp$ then $U_T^* f = f$.  So, $||U_T f - f||_2 = 0$ and $f = U_T f$.  \\ \\ 
+Therefore $L^2_\mu = I \oplus \overline{B} $.  Any $f \in L^2_\mu$ splits as $f = P_T f + h $ with $h \in \overline{B}$. We claim that:
+$$ \frac{1}{N} \sum U^n_T  h \stackrel{L^2_\mu}{\to} 0 $$
+This would be clear for $h = U_T g - g \in B$, yet all we know is that $h \in \overline{B}$. \\ \\
+Let $g_i \in L_\mu^2$ be a sequence of $h_i = U_T g_i - g_i \to h$.  By the \textbf{triangle inequality}:
+$$ \left|\left| \frac{1}{N} \sum^{N-1}_{n=0} U_T^n h \right|\right|_2 \leq 
+\left|\left| \frac{1}{N} \sum^{N-1}_{n=0} U_T^n (h-h_i) \right|\right|_2 + 
+\left|\left| \frac{1}{N} \sum^{N-1}_{n=0} U_T^n h_i \right|\right|_2$$
+We can conventiently find $h_i \approx h$ and once we've found $h_i$, run the process $U_T$ for sufficiently long so that:
+\begin{itemize}
+\item $\displaystyle ||h - h_i||_2 < \epsilon $
+\item $\displaystyle \left|\left|\frac{1}{N} \sum_{n = 0}^{N-1} U_T^n h_i\right|\right|_2 < \epsilon $
+\end{itemize}
+Then using the example of triangle inequality we've just found (notice twice the error):
+$$ \left|\left|\frac{1}{N} \sum_{n = 0}^{N-1} U_T^n h_i\right|\right|_2 < \mathbf{2} \times \epsilon  $$
+so
+$$ \frac{1}{N} \sum_{n = 0}^{N-1} U_T^n h_i \to 0  $$
+for any $h \in \overline{B}$ and $N \to \infty$.  \hfill $\square$ \\ \\
+We've learned nothing.  OK, the \textbf{Mean Ergodic Theorem} says the ``average" of the mixing of a function $f$ by the linear operator $U_T f$ tends to the invariant subspace  (even though $T$ itself was highly \textit{non-linear}, in fact ``chaotic" or ``mixing"), basically a mix of cyclic behaviors.  Maybe also try to visualize what convegence in $L^2_\mu$ means, e.g. definitely \textbf{not} point-wise convergence.    
 \begin{thebibliography}{}
 
 \item  \dots 
