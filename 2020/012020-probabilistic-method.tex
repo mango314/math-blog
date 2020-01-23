@@ -92,9 +92,36 @@ Another great option is \dots our world doesn't stop because we find one or two 
 
 \newpage
 
+\noindent \textbf{01/22} \\ \\
+\textit{Hints}:
+\begin{itemize}
+\item $\mathbb{E}[X | X > 0] > 0$
+\item $\mathbf{P}(X > 0) + \mathbf{P}(X = 0) + \mathbf{P}(X > 0) = 1$
+\item Let $\mathbb{E}[X] = 0$ then $0 = \mathbb{E}[X | X > 0]\, \mathbf{P}(X > 0)
++ 0 + \mathbb{E}[X | X < 0]\, \mathbf{P}(X < 0 )$
+\item $ 1 > 0$
+\end{itemize}
+We are showing that:
+\begin{itemize}
+\item $\mathbf{P}(X > 0) + \mathbf{P}(X = 0) > 0$ or
+\item $\mathbf{P}(X < 0) < 1$
+\end{itemize}
+In fact we have a sort of ultimatum:
+\begin{itemize}
+\item $\mathbf{P}(X > 0) = 0$ and $\mathbf{P}(X < 0) = 0$ (and then $\mathbb{E}[X] = 0$)
+\item $\mathbf{P}(X > 0) > 0$ and $\mathbf{P}(X < 0) > 0$ (and then $\mathbf{P}(X \geq 0) > 0$)
+\end{itemize}
+So ...  \\ \\
+We are relying heavily on that $X$ and $\mathbb{E}[X]$ are \textit{numbers} (and their properties) and that $X$ is taking values in $\mathbb{R}$.  As math major and a scientist there is no other way.  \\ \\
+There's a recursive nature about this problem, turning into itself which sort of clumsy.  There's asymmetry between these kinds of relations (``$>$" vs. ``$\geq$") and (``$>$" vs. ``$<$"). \\ \\
+There's a question about \textbf{mathematical proof} and use randomly putting together formulas until we reach a result.  The end proof is a sort of a ``tree" as well. \\ \\
+... \\ \\
+Why go though such a headache?  I've seen first-moment menthod use non-trivially before.  It's likely also a description of how we actually \textit{solve} problems in general.  There's also \textit{second-moment} method. Pick one at random, let the process run and we find some statistic to show that our event occurs with positive chance. 
+\newpage
+
 \begin{thebibliography}{}
 
-\item Terence Tao, Van Vu.  \textbf{Additive Combinatorics} Cambridge University Press. \dots 
+\item Terence Tao, Van Vu.  \textbf{Additive Combinatorics} (Cambridge Advanced Studies in Mathematics \#105) Cambridge University Press, 2006.
 
 \end{thebibliography}
 
