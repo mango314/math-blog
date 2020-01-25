@@ -119,6 +119,32 @@ There's a question about \textbf{mathematical proof} and use randomly putting to
 Why go though such a headache?  I've seen first-moment menthod use non-trivially before.  It's likely also a description of how we actually \textit{solve} problems in general.  There's also \textit{second-moment} method. Pick one at random, let the process run and we find some statistic to show that our event occurs with positive chance. 
 \newpage
 
+\noindent \textbf{Answer Key} \textit{Markov's Inequality}.  Let $X$ be a non-negative random variable.  Then for any positive real $\lambda > 0$:
+$$ \mathbf{P}(X \geq \lambda) \leq \frac{\mathbb{E}(X)}{\lambda} $$
+Proof: we have the trivial inequality.  $X \geq \lambda \mathbf{I}(X \geq \lambda)$.
+\begin{itemize}
+\item if $X < \lambda$ the inequality says $X \geq 0$
+\item if $X \geq \lambda$ it says $X \geq \lambda$
+\end{itemize}
+Indeed if we take expectation of both sides, by \textbf{linearity of expectation} we get the result.  
+$$ \mathbb{E}[X] \geq \lambda \mathbb{P}(X \geq \lambda) $$
+Maybe if we drew a picture, the shape of this random variable could be more clear:\\
+\begin{tikzpicture}
+\draw[->] (-2,0)--(2,0);
+\draw[->] (0,-2)--(0,2);
+\node at (0.5,2) {$X$};
+\node at (2.5,0.5) {$\lambda$};
+\draw[dashed] (-2,1)--(2,1);
+\draw[line width=2] (-2,0)--(1,0);
+\draw[line width=2] (1,1)--(2,1);
+\draw[black!10!white] (1,0)--(1,1);
+\draw[fill=white] (1,0) circle (0.1);
+\draw[fill=white] (1,1) circle (0.1);
+\end{tikzpicture} \\ \\
+There's something self-referential about this pure mathematical framework.  These number systems are limits of what we measure in ``real life".  The notion of \textbf{5} or ``five" as  ``the thing after $4$" ... numbers are recursively defined.
+
+\vfill
+
 \begin{thebibliography}{}
 
 \item Terence Tao, Van Vu.  \textbf{Additive Combinatorics} (Cambridge Advanced Studies in Mathematics \#105) Cambridge University Press, 2006.
