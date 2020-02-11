@@ -1,0 +1,98 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\usepackage{fontspec}
+\usepackage{xcolor}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+%\setmainfont[Color=brown]{Linux Libertine}
+
+
+\title{Tune-Up: Differential Equations}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+{\fontsize{16pt}{16pt}\selectfont 
+
+\noindent Here's an easy differential equation to solve.  If we move at constant speed, the thing moves in a straight line.
+$$ \left[ \frac{dx}{dt} = 1 \right] \to \bigg[ x(t) = t + x_0 \bigg] $$
+Therefore, by \textbf{continuity} if the speed is ``close to" $1$ then the past should be ``close to" a straight line.
+$$ \left[ \frac{dx}{dt} \approx 1 \right] \to \bigg[ x(t) \approx t + x_0 \bigg] $$
+Let's test this logic.  Merely integrate both sides:
+\begin{eqnarray*} 
+ \frac{dx}{dt} &=& 1 + ``noise" \\ \\
+ \int \frac{dx}{dt} \, dt &=& \int \big( 1 + ``noise" \big) \, dt \\ \\
+ x(t) - x(0) &=& t + \int ``noise" \, dt
+\end{eqnarray*}
+What could this \textbf{noise} or \textbf{error} term look like ?  Maybe this is a highly deliberate feature, let's stick with the term ``noise".  
+$$ \frac{dx}{dt}  = 1 + 0.01 \times \sin (2\pi t) $$
+Integrate both sides\dots \\ \\
+Q: How did we know that integration was the reverse derivative?  
+$$ x(T) - x(0) = \int_0^T \frac{dx}{dt} \, dt = 
+\int_0^T \left[ 1 + 0.01 \times \sin (2\pi t)\right]\,dt = T + \frac{0.01}{2\pi}\cos (2\pi T) $$
+This actually looks correct.  The integral is actually pretty close to the original. 
+
+\newpage
+
+\noindent Let's try another example.  The books gives us the example of the exponential function describing compound growth and decay:
+$$ \frac{dx}{dt} = 1 \cdot x(t)  $$
+The novelty here was to ``cross-multiply" which - it's up for grabs why that's acceptable - 
+$$ \frac{dx}{x} = 1 \, dt $$
+Then we can take integral ``of both sides" -- why should we get the same result?  is our notion of equality that strong?
+$$ \log x(T) - \log x(0) =  \int_0^T \frac{ dx}{x} = \int_0^T 1 \, dt = T$$
+and if we take the exponent of both sides we can obtain the solution to the differential equation:
+$$ x(T) = x(0) e^T $$
+Let's remind ourselves if we are sure we accept this conclusion?
+$$  \frac{dx}{dt} = \frac{x(0)}{x(0)}  \lim_{\Delta t \to 0} \frac{e^{t+\Delta t} - e^t}{\Delta t} = x(t) = e^t $$
+Our acceptance of this solution to differential equation had other consequences.  Also, all our calculations relied on several abstractions.
+\begin{itemize}
+	\item the interal as an ``antiderivative"
+	\item the exponent function as the limit of other operations such as $(1 + \frac{t}{n})^n \to e^t$
+	\item 
+\end{itemize}
+The idea of checking these facts took a few hundred years to develop, so there's no rush. \\ \\
+Let's try reading the book which is done in it's baroque style\dots
+
+\newpage
+
+\noindent \textbf{Def 3.1.4}
+Let $\mathcal{V} = \mathcal{V}(S,T)$ be the class of functions
+$$f(t,\omega): [0, \infty) \times \Omega \to \mathbb{R} $$
+such that 
+\begin{itemize}
+\item $(t,\omega)\to f(t, \omega) $ is $\mathcal{B} \times \mathcal{F}$ measurable - $\mathcal{B}$ denotes the Borel $\sigma$-algebra on $[0, \infty)$
+\item $f(t, \omega)$ is $\mathcal{F}_t$-adapted; \quad\quad $\omega \to f(t,\omega)$ is $\mathcal{F}_t$-measurable.
+\item $E[\int_S^T f(t,\omega)^2 dt] < \infty $ (the integral is \textit{expected} to be finite)
+\end{itemize}
+The function $f$ depends on [time] and on any [random information] we have up to now. \\ \\
+This is a book on Financial Mathematics, so a great example could be just a {\color{blue}card game} (e.g. if the next card is a 5 or an Ace), watching the river and testing our expected payoffs for specific hands.  Unlike traders or bankers, I think we \textit{are} interested in the technicalities of measure theory over $\mathbb{R}$ and over $\mathbb{R}^2$ which is our simplistic view of 2D Geometry. \\ \\
+Let's see how this definition is used and turn into something we might actually care about \dots \\ \\
+\textbf{Thm} For [an elementary function] $\phi(t,\omega)$:
+$$ E \left[ \left( \int_S^T \phi(t,\omega) dB_t(\omega) \right)^2 \right] = E \left[ \int_S^T \phi(t, \omega)^2\, dt \right] $$
+The idea here is to approximte our adapted function $f \in \mathcal{V}(S,T)$ with elementary [random] functions $\phi$. \\ \\
+{\color{blue}\textbf{Randomness}} was just an abstraction. $dB_t$ is just an idealization of whatever limiting random walk proccess we actually choose.  Brownianian motion could be read as the integral of ``white noise" or the solution to the differential equation:
+$$ \frac{dB_t}{dt} = W_t $$
+These are wanting of a mathematical definition. \\ \\
+What might we use this result for? An example of what we might do is ``arbitrage" exploiting differences in market value of whatever is in our portfolio.  
+\vfill
+
+\begin{thebibliography}{}
+
+\item Bernt \O{}ksendal \textbf{Stochastic Differential Equations} (Universitex) Springer, 2003.
+
+\end{thebibliography}
+
+\end{document}
