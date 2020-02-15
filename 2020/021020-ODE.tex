@@ -107,6 +107,25 @@ $$\sum (\Delta B)^2 \to t$$
 It\^{o} integrals are martingales. \\ \\
 \textbf{Def} A \textit{filtration} $\mathcal{F}_t$ is\dots
 
+\newpage 
+
+\noindent \textbf{Def} A filtration is a family $\mathcal{M} = \{ \mathcal{M}_t : t \geq 0 \}  $ of $\sigma$-algebras $\mathcal{M}_t \subset \mathcal{F}$ such that:
+$$ \Big[ 0 \leq s < t \Big] \to \Big[ \mathcal{M}_s \subset \mathcal{M}_t \Big] $$
+A stochatic process is called a {\color{blue}\textbf{martingale}} with respect to a filtration if 
+\begin{itemize}
+\item $M_t$ is $\mathcal{M}_t$-measurable for all $t$
+\item $\mathbb{E}[|M_t|] < \infty $ for all $t$
+\item $\mathbb{E}[M_s|\mathcal{M}_t] = M_t$ for all $s \geq t$.
+\end{itemize}
+All of these definitions and theorems are shorthands for reasoning of some kind.  Suggests we re-examine definitions of {\color{orange}measurable set} and {\color{orange}conditional expectation}.  \\ \\ Example: We could condition on an event that occurs with probability $p = 10^{-5}$ and then the odds might change drastically.  We could condition on a random rare event such as a birthday or a hurricane or a meteor shower or a mechical failure. \\ \\
+\textbf{Def} The conditional expectation of $X$ given $\mathcal{H}$ is written $\mathbb{E}[X|\mathcal{H}]$.  It is the unique function from $\Omega$ to $\mathbb{R}^n$ satisfying:
+\begin{itemize}
+\item $\mathbb{E}[X| \mathcal{H}]$ is $\mathcal{H}$-measurable
+\item $\int_H \mathbb{E}[X| \mathcal{H}]\, dP = \int_H X \, dP $ for all $H \in \mathcal{H}$.
+\end{itemize}
+The existence and uniqueness of $\mathbb{E}[X|\mathcal{H}]$ comes from the Radon-Nikodym theorem. \\ \\
+\textbf{Example} $X_t = \int_0^t B_s \, dB_s$ is a martingale.
+
 \vfill
 
 \begin{thebibliography}{}
