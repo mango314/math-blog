@@ -1,0 +1,69 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\usepackage{fontspec}
+\usepackage{xcolor}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+%\setmainfont[Color=brown]{Linux Libertine}
+
+
+\title{Tune-Up: Four Squares}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+{\fontsize{16pt}{16pt}\selectfont 
+
+\noindent Let $g$ be elements of $SU(2)$ let's define an averaging operator $z : L^2(SU(2)) \to L^2(SU(2)) $ with 
+$$ z f(x) = \sum \big( f(gx) + f(g^{-1}x) \big)  $$
+These operators might have a \textbf{spectral gap} $\lambda (z_g) < 2k$.  Somewhat fancy, question asked in 1921 is whether Lebesgue measure is the unique finitely additive measure on $S^2$ (we could construct all sorts of measures -- notions of area or volume or mass -- on what is geometrically, a sphere). \\ \\
+\textbf{noncommutative diophantine property} we can find a universal constant $D$ such taht for any word $W \in \langle g \rangle$  of length $m$, the norms are greater then a certain size, 
+$$ || W_m \pm e || \geq D^{-m}  $$
+Using the a norm on $2 \times 2$ matrices:
+$$ \left| \left[ \begin{array}{cc}  a & b \\ c & d\end{array} \right] \right| = a^2 + b^2 + c^2 + d^2 $$
+\textbf{Exercise}  for the case in question we have an easy 
+$$ || g \pm e||^2 = 2 |\text{trace}(g) \mp 2| $$
+What were the main results:
+\begin{itemize}
+\item if $g \in SU(2) \cap M_{2 \times 2}(\overline{\mathbb{Q}})$ ($2 \times 2$ matrices with algebraic entries) then $z_g$ satisfies non-commutative diophantine property
+\item Let $\{ g_1, \dots, g_m\}$ be a set of elements in $SU(2)$ generating a free griph and satisfying [noncommuutative diophantine property] then $z$ has a spectral gap.
+\end{itemize}
+Just a reminder, irreducible representations $G = SU(2)$ are given by $\pi_n = \text{sym}^N(V) $ it's a linear map on the space of homogeneious polynomials:
+$$ (x,y) \mapsto (ax+by cx+dy) ,
+ \left[ \begin{array}{cc} a & b \\ c & d \end{array} \right] \in SU(2) $$ 
+abc
+$$ \pi_N (z) = \pi_N(g) + \pi_N(g^{-1}) + \dots +  \pi_N(g_m) + \pi_N(g_m^{-1}) $$ 
+In all of these theorems, something complex and chaotic occurs.  The first moves look pretty systematic, we are going to define point-measures on the compact lie group:
+$$ \nu = \frac{1}{2k} \sum \delta_g + \delta_{g^{-1}} $$
+in order to show that averages tend to a limit, we can use an \textbf{approximate identity}
+$$ P_\delta = 
+\frac { \chi_{B_{1, \delta}}} {|B(1, \delta)|} $$
+where $\delta \ll 1$ and $l \sim \log \frac{1}{\delta}$ and $\mu = \nu^{(l)} * P_\delta $ (density is bounded by $||P_\delta||_\infty \sim \delta^{-3} $).\\ \\
+\textbf{Lemma} ``$L^2$-flattening Lemma"
+\begin{itemize}
+\item $ \delta < ||\mu||_2 < \delta$
+\item $ || \mu * \mu ||< \delta^{\epsilon} ||\mu||_2 $
+\end{itemize}
+These number-theoretic averages -- this should be concrete and super-tangible -- is compared to \textbf{random walk} so we have to measure cost of comparing these number patterns to random.  We now have an infinite number of examples of free groups with $\overline{\langle g \rangle} \simeq SU(2)$ the sphere.  Before we take the limit, these objects are very close to perfectly symmetric so we an call them \textbf{approximate group}.
+\vfill
+
+\begin{thebibliography}{}
+
+\item Terence Tao, Van Vu.  \textbf{Additive Combinatorics} (Cambridge Advanced Studies in Mathematics \#105) Cambridge University Press, 2006.
+
+\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,58 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\usepackage{fontspec}
+\usepackage{xcolor}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+%\setmainfont[Color=brown]{Linux Libertine}
+
+
+\title{Tune-Up: Topological Groups}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+{\fontsize{16pt}{16pt}\selectfont 
+
+\noindent Number theory offers general results about numbers as true, how do we turn these into more actionable statements?
+$$  \mathbb{Z}_p = \lim_{\leftarrow} \mathbb{Z}/p^n \mathbb{Z}$$
+This result doesn't say anything about \textbf{decimal representation} of numbers or what \textbf{additive structur}  is.  Since when do we care about 20 digit numbers to exact precision and still have addition?  \\ \\
+Let $K$ be complete with respect to a discrete valuation.  There are homomorphism(s):
+\begin{itemize}
+\item $ \mathcal{O} \to \mathcal{O}/\mathfrak{p}^n $
+\item $ \mathcal{O}/\mathfrak{p} \leftarrow \mathcal{O}/\mathfrak{p}^2 \leftarrow \mathcal{O}/\mathfrak{p}^3 \leftarrow \dots $
+\item $\displaystyle \mathcal{O} \to \lim_{\longleftarrow} \mathcal{O}/p^n $
+\end{itemize}
+This gives us a whole slew of exotic \textbf{number systems} as \textbf{projective limits} of rings of various kinds.
+$$ \lim_{\longleftarrow} \mathcal{O}/\mathfrak{p}^n  = \big\{ (x_n) \in \prod_{n=1}^\infty \mathcal{O}/\mathfrak{p}^n : \lambda_n( x_{n+1}) = x_n  \big\}  $$
+\textbf{Proposition} The canonical mappings are isomorphisms and homeomorphisms:
+\begin{itemize}
+\item $\displaystyle \mathcal{O} \;\;\to \lim_{\longleftarrow} \mathcal{O}/\mathfrak{p}^n $
+\item $\displaystyle \mathcal{O}^\times \to \lim_{\longleftarrow} \mathcal{O}^\times/U^{(n)} $
+\end{itemize}
+The difference between $\mathbb{Z}_{10}$ possibly as $\displaystyle \lim_{\longleftarrow} \mathbb{Z}/{10}^n \mathbb{Z} \simeq \lim_{\longleftarrow} \mathbb{Z}/2^n \mathbb{Z} \times \lim_{\longleftarrow} \mathbb{Z}/5^n \mathbb{Z}$ and $\mathbb{R}$ is \dots  They have very different shapes, they are connected very different.
+
+\vfill
+
+\begin{thebibliography}{}
+
+\item Terence Tao, Van Vu.  \textbf{Additive Combinatorics} (Cambridge Advanced Studies in Mathematics \#105) Cambridge University Press, 2006.
+
+\item Atiyah McDonald's 
+
+\end{thebibliography}
+
+\end{document}
