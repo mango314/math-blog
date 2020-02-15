@@ -61,6 +61,8 @@ Our acceptance of this solution to differential equation had other consequences.
 \begin{itemize}
 	\item the interal as an ``antiderivative"
 	\item the exponent function as the limit of other operations such as $(1 + \frac{t}{n})^n \to e^t$
+	\item integral as a limit of Riemann sums
+	\item the differential equation as a dynamical system -- as a model of physical reality
 	\item 
 \end{itemize}
 The idea of checking these facts took a few hundred years to develop, so there's no rush. \\ \\
@@ -86,7 +88,25 @@ The idea here is to approximte our adapted function $f \in \mathcal{V}(S,T)$ wit
 {\color{blue}\textbf{Randomness}} was just an abstraction. $dB_t$ is just an idealization of whatever limiting random walk proccess we actually choose.  Brownianian motion could be read as the integral of ``white noise" or the solution to the differential equation:
 $$ \frac{dB_t}{dt} = W_t $$
 These are wanting of a mathematical definition. \\ \\
-What might we use this result for? An example of what we might do is ``arbitrage" exploiting differences in market value of whatever is in our portfolio.  
+What might we use this result for? An example of what we might do is ``arbitrage" exploiting differences in market value of whatever is in our portfolio.  \\ \\
+The textbook give us one tempting example.  Since we know calculus, we can find quite a few others using the It\^{o} lemma:
+$$ \int_0^1 B_t \, dB_t = \frac{1}{2}B_t^2  - \frac{1}{2} t $$
+Or a rearrangement we have that Brownian motion can be re-constructed from the random integral:
+$$ \frac{1}{2}B_t^2 = \frac{1}{2} t  + \int_0^t B_t \; dB_t  $$
+To compare with the classical integral the rule now looks slightly different;
+$$ \int t \, dt = \frac{1}{2} t^2 + const. $$
+Here we need to validate that random walks behave the way we expect (e.g. ``quadratic variation"), the result is a profound use of integration-by-parts.  What does graduate-level integration by parts look like?
+$$ d( \frac{1}{2}B_t^2) = \frac{1}{2} dt +  $$
+\textbf{Exercise} Prove directly from the definition of It\^{o} integrals:
+$$ \int_0^t B_t^2 \, dB_t = \frac{1}{3} B_t^3  - \int_0^t B_s \, ds $$
+\textbf{Exercise} $ B_t^3  - 3t \, B_t $ is a martingale. \\ \\
+I think just by completing the square we get some convincing arguments for the quadratic case:
+$$ \sum B \, \Delta B = \frac{1}{2}B^2  - \frac{1}{2} \sum (\Delta B)^2  = \frac{1}{2}B^2 - \frac{1}{2}t $$
+We have to argue that the quadratic variation of Brownian motion is growing linearly 
+$$\sum (\Delta B)^2 \to t$$
+It\^{o} integrals are martingales. \\ \\
+\textbf{Def} A \textit{filtration} $\mathcal{F}_t$ is\dots
+
 \vfill
 
 \begin{thebibliography}{}
