@@ -1,0 +1,71 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\usepackage{fontspec}
+\usepackage{xcolor}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+%\setmainfont[Color=brown]{Linux Libertine}
+
+
+\title{Tune-Up: Weak Mixing}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+{\fontsize{16pt}{16pt}\selectfont 
+
+\noindent 
+
+\noindent So if you have an average to compute, you might try to find a dynmical system and function (an ``observable") decide that it's ergodic, measure-preserving etc and show that the averages line up. \\ \\
+Often our limiting measure could be something very simple, like $(\mathbb{R}, dx)$ or $(S^1, d\theta)$ (the angles of a circle). Or we infer our answer from these simple answer (this is why we do integrals). \\ \\
+This is an example of an \textbf{interval exchange transformation}. 
+$$ T(x) = \left\{ 
+\begin{array}{c|c} 
+x + (\sqrt{3} + \sqrt{5}) & 0 < x < \sqrt{2}\quad \; \; \, \\
+x + (\sqrt{5} - \sqrt{3}) & \sqrt{2} < x < \sqrt{2} + \sqrt{3}\\
+x - (\sqrt{2} + \sqrt{3}) & \sqrt{2} + \sqrt{3} < x < \sqrt{2} + \sqrt{3} + \sqrt{5} \end{array} \right. $$
+Here is the graph of the function $x \mapsto T^{1000}(x)$. In fact, we need to be more specific we only sampled on a discrete set of points, $10^{-5}\mathbb{Z} \subseteq \mathbb{R}$ and we .  After a million points, we are testing the limits of my laptop computer or at least I have to make an explicit request to my computer, here using {\color{yellow!50!black}\texttt{Python 3}}.{\color{yellow!50!black}\texttt{6}}.{\color{yellow!50!black}\texttt{9}} \\ 
+\includegraphics[width=0.5\textwidth]{measure-05.png} \\ \\
+We can guess from the picture what the limiting measure $\mu$ might be.
+
+\newpage 
+
+\noindent The statements of the mean ergodic theorem (there's also a point-wise ergodic theorem) could be important or helpful. A measure-preserving system $(X, \mathcal{B}, \mu, T) $ is ergodic if and only iff 
+$$ \frac{1}{N} \sum_{n=0}^\infty f \circ T^n \longrightarrow_{L^2_\mu} \int f \, d\mu $$
+Here's another systement $(X, \mathcal{B}, \mu, T)$ is ergodic if and only if 
+$$ \frac{1}{N} \sum_{n=0}^\infty \langle f \circ T^n, g \rangle \to \int f \, d\mu \int g \, d\mu $$
+for any $f, g \in L^2_\mu$.  The book says we can optionally use set-theory that $(X, \mathcal{B}, \mu , T)$ is ergodic if 
+$$ \frac{1}{N} \sum_{n=0}^\infty \mu (A \cap T^{-n} B) \to \mu(A) \mu(B) $$
+these aveages are multiplicative \textit{in the limit}.  The definition of {\color{green!80!black}\textbf{mixing}} looks similar.
+$$ \mu (A \cap T^{-n} B) \to \mu(A) \mu(B) $$
+The \textbf{pre-images} are getting more and more shuffled until they are perfectly mixed \dots as mixed as they're ever going to get.  In fact, a (measure-preserving) dynamical system \\ \\
+Two very innocent-looking culprits:
+\begin{itemize}
+\item \textbf{shape}
+\item \textbf{area} (or ``volume" or ``measure")
+\end{itemize}
+If we try to balance things on a ``scale" what did we mean by that.  What were we measuring or counting?
+
+
+\vfill
+
+\begin{thebibliography}{}
+
+\item Manfred Einsiedler, Thomas Ward \textbf{Erodic Theory with a View Towards Number Theory} (GTM \#259) Springer, 2011.
+
+\end{thebibliography}
+
+\end{document}
