@@ -57,7 +57,34 @@ Two very innocent-looking culprits:
 \item \textbf{shape}
 \item \textbf{area} (or ``volume" or ``measure")
 \end{itemize}
-If we try to balance things on a ``scale" what did we mean by that.  What were we measuring or counting?
+If we try to balance things on a ``scale" what did we mean by that.  What were we measuring or counting? \\ \\
+\textbf{Def} A measure-preserving system $(X, \mathcal{B}, \mu, T)$ is \textit{weak-mixing} if 
+$$ \frac{1}{N} \sum |\mu(A \cap T^{-n} B)  - \mu(A) \mu(B)| \to 0 $$
+as $N \to \infty$ for all measurable sets $A, B \in \mathcal{B}$. \\ \\
+Ergodic theory is a topic developed in the 20th century and definitions of ``weak-mixing" and ``strong-mixing" were devised with something in mind that we'll hopefully figure out later.
+
+\newpage
+
+\noindent \textbf{Def} The following properties of the $(X, \mathcal{B}, \mu, T)$ are equivalent:
+\begin{itemize}
+\item $T$ is weakly mixing
+\item $T \times T$ is ergodic with respect to $\mu \times \mu$
+\item $T \times T$ is weakly mixing with respect to $\mu \times \mu$
+\item For any ergodic measure preserving system $(Y, \mathcal{B}_Y, \nu, S)$ the system
+$$ (X \times Y, \mathcal{B} \times \mathcal{B}_Y, \mu \times \nu, T \times S)$$
+is ergodic.
+\item The associated operator $U_T$ has no no-constant measurable eigenfunctions (that is, $T$ has continuous spectrum).  So if $f \in L^2_\mu$ then $(Tf)(x) = (f \circ T)(x)$ mapping functions to functions.
+\item For every $A, B \in \mathcal{B}$ there is a set $J_{A,B} \subseteq \mathbb{N}$ with density zero for which 
+$$ \mu(A \cap T^{-n} B) \to \mu(A) \mu(B) $$
+as $n \to \infty $ with $ n \notin J_{A,B}$ (for increasing values of $n$ avoiding a zero-density set).
+\item For every measurable set $A, B \in \mathcal{B}$:
+$$ \frac{1}{N} \sum_{n=0}^N | \mu(A \cap T^{-n}B) - \mu(A)\mu(B)|^2 \to 0 $$
+as $N \to \infty$.
+\end{itemize}
+So I don't know how the textbook proceeds without \textit{examples} of weak-mixing systems.  Maybe that's why it's called Ergodic Theory.  These definitions and the fact that they're equivalent will take a while to digest and to argue that these definitions are equivalent in some way. \\ \\
+\textbf{Example} what if we aren't sure about the location about the integers $\mathbb{Z} \subseteq \mathbb{R}$ or possibly or we only have an approximate value of $T$, let's say the first $10^5$ terms of the Fourier series.  So that ergodic, mixing weak-mixing has to be thought about considerably.  Maybe an easy literature search will provide an answer there. \\ \\
+The goal of the textbook is Szemeredi theorem and the mixing of the geodesic and horocycle flows on $\text{SL}_2(\mathbb{Z})\backslash \mathbb{H}$ which have to do with fractions.  There's a similar question there, since $\mathbb{Q}$ is dense in $\mathbb{R}$ and since our measurements are always prone to error, how did know which fracton was best? \\ \\
+It clearly says ``measure theory" and "Borel $\sigma$-algebra" and all we're doing is this tiny bit.
 
 
 \vfill
