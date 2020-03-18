@@ -1,0 +1,71 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\usepackage{fontspec}
+\usepackage{xcolor}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+%\setmainfont[Color=brown]{Linux Libertine}
+
+
+\title{Tune-Up: Decimals}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+{\fontsize{16pt}{16pt}\selectfont 
+
+\noindent 
+
+\noindent Why are such advanced professors writing about decimals\dots?  Let's see if we can put these results further within reach. \\ \\
+\textbf{Lemma} Let $\mu$ be a probablity measure on a finite set $S$, with $|S| = N$ and $H_\mu = \rho \log N$.  Let $\frac{\log 2}{\log N} < \delta <  \frac{1}{2}\rho$. There is a probablity measure $\mu \geq (\rho - \delta) \nu $ and $||\nu||_2^2 \leq 4 \rho^{-1} N^{-\delta} $. \\ \\
+We are guessing based on the reading the text that ``finite subsets" $S \subseteq \mathbb{R}/\mathbb{Z}$ yet the statement at the moment says probability measure on \textit{any} finite set.  In fact this section is called 	``notations and preliminaries". \\ \\
+Reading comprehension: how do we turn these into statements that actually make sense to us? Also their idea of ``finite" is worth remarking, that we could eventually break everything into \textbf{individual}  or \textbf{atomic} or \textbf{prime} parts.  Also finite here could mean $N = 10^{100}$ that's technically finite. \\ \\
+Let $\mu(\{ s\}) = w_s$. \\ \\
+Let $S_1 = \{ s \in S : w_s < 2 N^{-\delta} \}$ and $S_2 = S \backslash S_1$ and for $i = 1, 2$ let $\nu_i = (1/\mu(S_i)) \mu|_{S_i}$. \\ \\
+Write $\cdot$ as the partition of $S$ into singletons. 
+\begin{eqnarray*}
+\rho \log N &=& H_\mu = H_\mu ( \{ S_1, S_2\} ) + H_\mu( \cdot | \{ S_1, S_2\} ) \\ 
+&=& H_\mu( \{ S_1, S_2 \}) + \mu(S_1) H_{v_1} + \mu(S_2) H_{\nu_2} \\ 
+&\leq & \mu(S_1) \log N + \delta \mu(S_2) \log N + \mu(S_1) \log 2  
+\end{eqnarray*}
+Here $ \nu_1$ is supported on at most $N$ elements, so $H_{\nu_1}\leq \log N $. \\
+Here $ \nu_2$ is supported on at most $N^\delta/2$ elements, $ H_{\nu_2} \leq \delta \log N - \log 2$ \\ 
+Observe that $H_\mu(\{S_1, S_2\}) \leq \log 2 $. \\ \\
+Using these three entropy estimates, they measure  
+$$ \nu(S_1) \geq \frac{ \rho - \delta }{ 1 - \delta + \log 2 / \log N } > \rho - \delta $$
+The authors claim this is sufficient to prove the theorem by setting $\nu = \nu_1$ and observing
+$$ ||\nu||_2^2 \leq ||\nu||_\infty \leq 2 \mu (S_1)^{-1} N^{-\delta} \leq 4\rho^{-1} N^{-\delta} $$
+[exercise] \hfill $\square$ \\ \\
+$H_\mu$ denotes an \textbf{entropy} measure of some kind.  It's not in our best interst to copy this proof at least without thinking about what all the parts mean.  Most of the numbere theory doesn't happen until section 3. \\ \\
+\textbf{Effective Rudolph Theorem} Let $a, b$ be relatively prime integers.  Let $\mu$ be an arbitrary probability measure on $\mathbb{R}/\mathbb{Z}$ with entropy condition $H_\mu(\mathcal{P}_N) \geq \rho \log N $. There exist 
+\begin{itemize}
+	\item $\dots < \delta < \dots$ and $\dots < T < \dots$ and 
+	\item $f \in C^1(\mathbb{R}/\mathbb{Z})$ non-negative. 
+	\item $ 0 \leq s \leq \dots$ and $0 \leq t \leq \dots $  
+\end{itemize}  
+solving 
+$$ [a^s b^t .\mu](f) \geq (\rho - 3 \delta) \lambda(f) - \kappa  \, T^{-\delta/2} ||f'||_2 $$
+Here $||f'||_2^2 = \int_0^1 |f'(x)|^2 \, dx $. How does this build on the Chinese Remainder Theorem?  Why is intropy useful there? \\ \\
+Our use of equations if rather interesting here.  We are absolutely sure the left thing is the same as the right thing of the equation (that the two sides of the scale balance).  Or in ``real" calculations we are shuffling around approximations, we just get another example of this kind of theorem.  What if we are  using computers and the decimal points run out?  Then we still get another case of these.  
+
+\vfill
+
+\begin{thebibliography}{}
+
+\item Jean Bourgain, Elon Lindenstrauss, Philippe Michel, Akshay Venkatesh. \textbf{Some Effective Results of $\times a \times b$} Volume 29, Issue 6. December 2009 , pp. 1705-1722
+
+\end{thebibliography}
+\end{document}
