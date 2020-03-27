@@ -61,11 +61,63 @@ $$ [a^s b^t .\mu](f) \geq (\rho - 3 \delta) \lambda(f) - \kappa  \, T^{-\delta/2
 Here $||f'||_2^2 = \int_0^1 |f'(x)|^2 \, dx $. How does this build on the Chinese Remainder Theorem?  Why is intropy useful there? \\ \\
 Our use of equations if rather interesting here.  We are absolutely sure the left thing is the same as the right thing of the equation (that the two sides of the scale balance).  Or in ``real" calculations we are shuffling around approximations, we just get another example of this kind of theorem.  What if we are  using computers and the decimal points run out?  Then we still get another case of these.  
 
+\newpage
+
+\noindent \textbf{03/27} What does {\color{blue} \textbf{effective}} mean? The other question is on mathematical writing and \textit{statements}.  Here is the experimental observation:
+$$ \overline{\{ a^k \times b^\ell \times x : k, \ell \geq 0 \}} = \mathbb{R}/\mathbb{Z} $$ 
+These are specialists and have presented this observation as number theory, a statement about the decimal system.  Here $\overline{X}$ is the \textit{closure} of $X$ with respect to a certain topology (or notion of ``closeness").\\ \\
+\textbf{Rudolph-Johnson Theorem} 
+\begin{itemize}
+\item Let $\mu$ be a probablity measure on $\mathbb{R}/\mathbb{Z}$ invariant under $t_a$ and $t_b$
+\item Let $a,b$ be multiplicatively independent.
+\item \texttt{Suppose} $h_\mu( \times a) = \mu \log a $
+\end{itemize}
+Then $\mu \geq \eta \lambda$ for any $A \subset \mathbb{R}/\mathbb{Z}$ and $\mu(A) \geq \eta \lambda(A)$.  Here $\mu$ is \textit{any} probability measure, $\lambda = dx$ is Lebesgue measure (which may be an enormous amount of work to compute accurately, $\eta$ is a \textit{constant} -- what's that? \\ \\
+\textbf{Effective Rudolph-Johnson Theorem}
+\begin{itemize}
+\item Let $a,b$ be multiplicatively indpendent.
+\item $\mu$ be a probability measure on $\mathbb{R}/\mathbb{Z}$.  
+\item Entropy condition $H_\mu(\mathcal{P}_N) \geq \rho \log N $ for some $\rho > 0 $ $N > N_0(a,b)$
+\item $ 100/\log_a N \leq \delta \leq \rho/20 $ and $f \in C^1(\mathbb{R}/\mathbb{Z})$. 
+\end{itemize}
+There is an integer $m = a^sb^t < N$ so that
+$$ [m.\mu](f) \geq (\rho - 3\delta) \lambda(f) - \kappa_1 \log (N)^{-\kappa_2 \delta} ||f'||_2 $$
+where $\kappa_1, \kappa_2$ depend only on $a,b$.  We can't accept this.  We need to see what these constants and measures look like.  \\ \\
+\textbf{Effective Rudolph Theorem}
+\begin{itemize}
+\item Let $a,b$ be relatively prime integers.
+\item Let $\mu$ be an arbitrary probability measure on $\mathbb{R}/\mathbb{Z}$
+\item Suppose an \textit{entropy condition} $H_\mu(\mathcal{P}_N \geq \rho \log N$ for some $\rho > 0$ and $N > N_0(a,b)$
+\item Let $ \frac{10}{\log_a N} \leq \delta \leq \frac{\rho}{20}$ and $a^{20/\delta} \leq T \leq \frac{\delta}{4} \log_b(N)  $ and $f \in C^1(\mathbb{R}/\mathbb{Z})$.
+\end{itemize}
+Then there exist integers $s,t$ with 
+\begin{itemize}
+\item $ 0 \leq s \leq (1 - \delta) \log_a(N) $
+\item $ 0 \leq t \leq T$
+\item $[a^sb^t.\mu](f) \geq (\rho - 3\delta) \lambda(f) - \kappa T^{-\delta/2} ||f'||_2 $ 
+\end{itemize}
+Here $\kappa$ depends only on $a,b$ and $||f'||_2^2  = \int_0^1 |f'|^2 \, dt$  \\ \\
+Out of these difficult statements, we get more elementary statements. \\ \\
+\textbf{Thm} Let $a,b$ be multiplicatively independent with $(ab,N) = 1$ Then for any $m \in (\mathbb{Z}/N\mathbb{Z})^\times$ the set 
+$$ \{ a^k \times b^\ell \times \frac{m}{N} : 0 < k, l < 3 \log N\} $$
+This set is $\kappa (\log \log \log N)^{-\kappa/100} $ with depending only on $a,b$.  So we would spend the rest of the time looking for these scaling constants.  \\ \\
+These subsets of the integers seem to be highly chaotic, so complicated that we can barely estimate the entropy to describe them. \\ \\
+There are two different hypotheses:
+\begin{itemize}
+\item Let $a,b$ be \textbf{relatively prime}.
+\item Let $a,b$ be \textbf{multiplicatively independent}.
+\end{itemize}
+What are the inputs in such a theorem?  Why are the constaints so specific? What would we like to see instead?  
+
 \vfill
 
 \begin{thebibliography}{}
 
 \item Jean Bourgain, Elon Lindenstrauss, Philippe Michel, Akshay Venkatesh. \textbf{Some Effective Results of $\times a \times b$} Volume 29, Issue 6. December 2009 , pp. 1705-1722
+
+\item 
+
+\item
 
 \end{thebibliography}
 \end{document}
