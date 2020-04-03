@@ -1,0 +1,72 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\usepackage{fontspec}
+\usepackage{xcolor}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+%\setmainfont[Color=brown]{Linux Libertine}
+
+
+\title{Tune-Up: Strong Law of Large Numbers}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+{\fontsize{16pt}{16pt}\selectfont 
+
+\noindent When we do an experiment over and over -- something we don't know and can't quite place a formula to and can't quite figure out.  So we build an apparatus and observe the experiment with time.  Two common guesses:
+\begin{itemize}
+\item IID
+\item random variable
+\end{itemize}
+In order to identify a random variable, we are making a number of observation and trying to make a description.  Then IID abstraction, these random variables were not independent or identicaly distributed.  The observations and different times were certainly related. 
+  \\ \\
+\noindent \textbf{Thm} Let $X_1, X_2, \dots$ be IID random variables with $\mathbb{E}(|X_k|) < \infty$, for all $k$.  Define the ``total":
+$$ S_n := X_1 + X_2 + dots + X_n $$
+Then with $\mu := \mathbb{E}(X_k)$ be the expected value (the same for all numbers), define the ``average":
+$$ n^{-1} S_n \to \mu  \text{( almost surely )}$$
+Here ``almost surely" means \dots  \\ \\
+Let $Y_n$ be defined as in the previous lemma (\textbf{Komogorov Truncation Lemma}.  By property (ii) of that lemma, it's enough to show
+$$ n^{-1} \sum_{k \leq n} Y_k \to \mu \text{ ( almost surely )} $$
+Here $Y_n$ is the truncated random variable (to be less than a certain value).
+$$ Y_n = \left\{ \begin{array}{cc} X_n & \text{ if }|X_n| \leq n \\ 0 & \text{ if } |X_n| > n  \end{array}\right. $$
+Example, if $X_n$ is an indicator random variable $X_n = 0 \text{ or }1$, then $X_n = Y_n$ always. 
+$$ \mathbb{P}[Y_n = X_n \text{ eventually }] = 1 $$
+What could ``{\color{blue}\textbf{eventually}}" mean here ? \\ \\
+We have that
+$$ n^{-1} \sum_{k \leq n } Y_k = n^{-1} \sum_{n \leq n} \mathbb{E}(Y_k) + n^{-1} \sum_{k \leq n} \big( Y_k - \mathbb{E}(Y_k) \big) $$
+So we look at the truncated random variable, differences from our expectation there and then let $n \to \infty$.  We now move to the previous version of the Strong Law. \\ \\
+\textbf{Lemma} Let $W_n$ be a sequence of independnet random variables such that 
+\begin{itemize}
+\item $\mathbb{E}(W_n) = 0$ (centered)
+\item $\displaystyle \sum \frac{\text{Var}(W_n)}{n^2} < \infty$  (instead of $ \mathbb{E}(|X_k| < \infty $).
+\end{itemize}
+Then $\displaystyle n^{-1}\sum_{k \leq n} W_k \to 0 $ (almost surely). \\ \\
+We needed \textbf{Dominated Convergence Theorem} to say that $\mathbb{E}(Y_n) \to \mathbb{E}(X) = \mu$.  \\ \\ 
+Most of the work seems to have been in the Kolmogorov Truncation Lemma.  These are great placeholders before a more genuine careful look at sequences-and-series, \textbf{martingales} and independent of incrememts, e.g. Pythagoras formula:
+$$ \mathbb{E}(M_n^2) = \mathbb{E}(M_0^2) + \sum_{k=1}^n \mathbb{E}[(M_k - M_{k-1})^2] $$
+and $L^2$-bounded martingales, it's written $\mathcal{L}^2(\Omega, \mathcal{F}, \mathbb{P})$ so our choice of observables depends on the choice of probablity measure and also what events we choose to consider ``measurable" -- what were the starting points for our deductive reasoning?
+
+\noindent 
+
+\vfill
+
+\begin{thebibliography}{}
+
+\item \dots
+
+\end{thebibliography}
+\end{document}
