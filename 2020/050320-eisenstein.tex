@@ -1,0 +1,72 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\usepackage{fontspec}
+\usepackage{xcolor}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+%\setmainfont[Color=brown]{Linux Libertine}
+
+
+\title{Tune-Up: Eisenstein Series}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+{\fontsize{16pt}{16pt}\selectfont 
+
+\noindent Maybe the reason that recitation is such a important teaching technique \dots is we have no idea what anything is yet.  Hilbert space here is a theoretical object containing all the possible types of things we could imagine.  The other problem is build a ``new" one.   \\ \\
+\textbf{Thm} The Hilbert space $L^2(\Gamma \backslash \mathbb{H})$ is the orthogonal sum 
+$$ L^2(\Gamma \backslash \mathbb{H}) = \overline{\mathcal{C}(\Gamma \backslash \mathbb{H})} \oplus \overline{\mathcal{E}(\Gamma \backslash \mathbb{H})} $$
+of the closures of $\mathcal{C}(\Gamma \backslash \mathbb{H})$ and $\mathcal{E}(\Gamma \backslash \mathbb{H})$ (the space of incomplete Eisenstein series).  \\ \\
+There's an infinite amount of content here.  Why did we choose these particular abstractions in the first place?  Maybe we like Number Theory or Hyperbolic Geometry. 
+\begin{itemize}
+\item What does ``incomplete" or ``closure" mean here?
+\item In many parts of the chapter $\Gamma = \text{SL}_2(\mathbb{Z})$ can also be congruence group $\Gamma_0(N)$.
+\end{itemize}
+\textbf{Argument} \\ \\
+* This proof (as usual) rests on a previous lemma and a bunch of definitions.   \\ \\
+* The strip $\{ z \in \mathbb{H}: |x| < \frac{1}{2} \} $ is fundamental domain for $\Gamma_\infty$. \\ \\
+* \textbf{Ex} Let $f \in L^2(\Gamma \backslash \mathbb{H}) $.  Use the Cauchy-Schwartz inequality and the finiteness of the area of $D$ (the fundamental domain of $\text{SL}_2(\mathbb{Z}) \backslash \mathbb{H} = \{ |x| < \frac{1}{2} \} \cap \{ |z| < 1  \}$) to show that $|f|$ is integrable in $D$.
+\begin{eqnarray*}
+\langle f , E(\cdot | \psi) \rangle  &=& \frac{1}{2} \int_D f(z) \sum_{\gamma \in \Gamma_\infty \backslash \Gamma} \overline{\psi}(\text{im}(\gamma z)) \, d\mu(z)  \\ 
+&=& \frac{1}{2} \sum_{\gamma \in E} \int_{\gamma D} f(z) \overline{\psi}(y) \, d\mu(z) = \int_S f(z) \overline{\psi}(y) \, d\mu(z) \\ 
+&=& \int_0^{+\infty} \left( \int^{+\frac{1}{2}}_{-\frac{1}{2}} f(z) \, dx  \right) \overline{\psi}(y) \, y^{-2} dy
+\end{eqnarray*}
+The inner term $(\cdot)$ is the  Fourier series (notice integral with respect to $dx$. 
+$$ \langle f , E (\cdot | \psi) \rangle = \int_0^{+\infty}  f_0(y) \overline{\psi} (y) y^{-2} dy  $$
+Assume\footnote{[Totally unrealistic thing.]} that $f \perp \mathcal{E}(\Gamma \backslash \mathbb{H})$ -- that $f$ is ``orthogonal" to $\mathcal{E}(\Gamma \backslash \mathbb{H})$.
+\textbf{Ex} Prove the two statements are equivalent.
+\begin{itemize}
+\item * is 0 for all $\psi$
+\item $f \in \overline{ \mathcal{C} (\Gamma \backslash \mathbb{H}})$
+\end{itemize}
+Thus concludes the proof \hfill $\square$ \\ \\
+Group theory offers us nice succinct arguments for why something can or cannot (eventually) occur. That doesn't mean we know what any of the details look like.
+\begin{itemize}
+\item $d\mu(z)$ is the Lebesgue measure in $\text{SL}_2(\mathbb{Z}) \backslash \mathbb{H}$.  So there is both group theory and measure theory even when we were just starting out with fractions.
+\item What are we using \textbf{Eisenstein} series for?  And why are they ``incomplete"?
+\item The use of ``closures" and functional anaysis for what are basically number theory and geometry of circles problems. What are $\overline{\mathcal{C}(\Gamma \backslash \mathbb{H}})$ and $\overline{\mathcal{E}(\Gamma \backslash \mathbb{H}})$?
+\end{itemize}
+Intersetingly we retain the Dirac bra-ket notion $\langle a | b \rangle $ or the inner product notation $\langle , \rangle$.
+
+\vfill
+
+\begin{thebibliography}{}
+
+\item \dots
+
+\end{thebibliography}
+\end{document}
