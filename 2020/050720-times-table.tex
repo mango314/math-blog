@@ -1,0 +1,72 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\usepackage{fontspec}
+\usepackage{xcolor}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+%\setmainfont[Color=brown]{Linux Libertine}
+
+
+\title{Tune-Up: Times Tables}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+{\fontsize{16pt}{16pt}\selectfont 
+
+\noindent  \textbf{Problem Statement} \\ \\
+If you consider $N$ randomly chosen integers from $1$ to $x$  - - - $N$ random elements of the set $\{ 1, 2, \dots x\}$ - - - how large should $N$ be so that with high problability we can take a bunch of the numbers we have just chosen, multiply them and get a perfect square? \\ \\
+\textbf{Goal} Factor large integers. \\ \\
+\noindent This is a difficult problem to resolve.  Let's choose $x = 100$ and $N = 5$ there are $\binom{x}{N} = \binom{100}{5}  < 100^5 = 10^{10} $.  The exact number of $5$ element subsets of $\{ 1, \dots, 100\}$ is 
+$$ \# \{ subsets\} = \binom{100}{5} = \frac{100 \times 99 \times 98 \times 97 \times 96}{5 \times 4 \times 3 \times 2 \times 1} = 75287052.0 \approx   7.5 \times 10^8 $$
+The symbol we are using ``$\approx$" deserves a lot of qualitifcation given the level of journal we are reading there.  There are many possible notions of ``closeness" we could define here, example: [agree in the first 3 digits, so that $300 \approx 30.0$.]  This is a silly notion of closeness yet if we do enough consistency checks, this too could also be viable. \\ \\
+The set of subsets of $\{ 1, \dots, x\}$ is there a more natural element of saying this?  Here's some examples:
+$$ \Big\{ \{ 5, 10, 15, 20, 25\}, \{ 73, 74, 75, 76, 77 \}, \{ 30, 40, 50, 60, 70 \} \Big\}  \subseteq \Big\{ \mathbf{5} \to \{ 1, \dots , 10^2 \} \Big\} $$
+The we are defining a $\times$-like function $\times: \{ \text{subsets} \} \to \mathbb{Z}$.  Using a quick computer search here's nice example:
+$$ \big| \sqrt{21 \times 31 \times 71 \times 74 \times 79 } - 16438 \big| < 10^{-2}$$
+This requires us to have a \textbf{metric} on $\mathbb{Q}$ that completes to $\mathbb{R}$ (or to some other interesting topological space!) Let's roll the dice again:
+$$ \sqrt{44 \times 119 \times 132 \times 153 \times 189} = 141372 + \mathbf{0} $$
+This is accurate to all decimal places.  Our most basic example of a profinite group is $\mathbb{R}$ itself.  Why could the decimal systmem with carries matter so much?
+$$ \sqrt{28 \times 30 \times 42 \times 49 \times 180} = 17640 + \mathbf{0} $$
+Exact results again.  Are three decimal places sufficient for the problem we just described?  No.
+$$ \Big| \sqrt{14 \times 59 \times 109 \times 197 \times 198} - 59261 \Big| < 10^{-3} $$
+so with a computer we can somehow get a nice approximate result.  All of our work is hidden in the computer program itself. 
+\begin{verbatim}
+import numpy as np
+
+N = 200
+n = np.arange(N) + 1
+
+for t in range(10000):
+    # this method doesn't ensure DISTINCT random integers
+    m = n[ (N*(np.random.random(5))).astype(int)]
+    y = np.product(m)
+    if (y**0.5 % 1) < 0.001:
+        if (y**0.5 % 1) > 0:
+            print(m, y, y**0.5)
+\end{verbatim}
+So we have yet to look under the hood.  In some cases, merely checking for prime numbers -- I have yet to specify how we decided a number was a perfect square.  E.g. 
+$$ 3511866204 \in \square $$
+Really the test for squares in $\mathbb{Z}$ is to check that $n/p^2 \in \mathbb{Z}$ and yet $n/p \notin \mathbb{Z}$.  How do we tell our computer to do the times tables? How does our computer even know what decimal digits are? \\ \\ Even if we do all that, how much heat are we generating getting these results?  So we could let $N = 10^{100}$ and we have to decide how much integers there is to get a perfect square.
+
+\vfill
+
+\begin{thebibliography}{}
+
+\item \dots
+
+\end{thebibliography}
+\end{document}
