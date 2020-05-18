@@ -65,6 +65,63 @@ Really the test for squares in $\mathbb{Z}$ is to check that $n/p^2 \in \mathbb{
 $$ \big| \sqrt{2 \times 87 \times 159 \times 188 \times 212 \times 221} - 7929139 \big| < 10^{-4} $$
 Professional hints: one the authors is specialist in {\color{ blue}\textbf{random graph theory}} and {\color{blue}\textbf{functional analysis}}}.  So why are things so bad?  It's just that we are consuming more and more paper trying to get exact multiplication results out of large numbers.  Any time we did an approximation -- settled for a ``close" result -- any time we made a choice of algorithms we could have done ten other ways.  It's OK.
 
+\newpage
+
+{ \fontsize{16pt}{16pt} \selectfont
+
+\noindent \textbf{05/18} Let's find an example with 4-digit numbers:
+$$ \sqrt{1071 \times 2626 \times 3491 \times 3699 \times 4555\times 8181 \times 8298 } \in \mathbb{Z}  $$
+It looks like the answer is $\sqrt{\dots} = 1224323517$.  This result is \textbf{false}.  What does that mean?  What's so bad about this result?  Depending on how we measure it, this result could be acceptable.
+$$ \Big|  \sqrt{1071 \times 2626 \times 3491 \times 3699 \times 4555\times 8181 \times 8298 } - 1224323517 \Big| <  1 \times 10^{-4} $$
+We also have error in the other direction.  The mistakes are consistently at least this big.
+$$ \Big|  \sqrt{1071 \times 2626 \times 3491 \times 3699 \times 4555\times 8181 \times 8298 } - 1224323517 \Big| >  7 \times 10^{-5}$$
+With a computing machine of some kind (in this case, just a laptop -- a pocket calculator could also suffice), meaningful \textit{highly non-trivial} example of numbers \textit{approximately} in $\square$ can be generated.  \\ \\
+Numbers are mostly shorthands or representations of physical ideas or concepts or observations. Even symbols like ``$<$" and ``$>$" need to be reviewed.
+\begin{itemize}
+\item  How much work is the computer doing to generate these examples?
+\item  How do we know the computer is not lying to us?
+\item The typical program (e.g. solve $a \times b$) asks for resources like this:
+\begin{itemize}
+\item we have a bunch of $5$-digit numbers
+\item we need $1000$ additions
+\item we need $3000$ multiplications
+\end{itemize}
+Then we get a result.  What did the steps in the middle look like?
+\item What's the difference between a result that´s ``close enough" and an outright ``lie".  Solving a problem can be used to lie in other settings.  
+\end{itemize}  
+
+\begin{verbatim}
+RuntimeWarning: invalid value encountered in power
+  if (y**0.5 % 1) < 0.0001:
+untimeWarning: invalid value encountered in double_scalars
+  if (y**0.5 % 1) < 0.0001:
+
+\end{verbatim}
+So we are approaching needle-in-haystack territory and yet the computer finds the examples just fine.  The computing machine or collection of machines that produce a result together.
+$$ \Big| \sqrt{ 1940 \times 2001 \times 2287 \times 4189 \times 4441 \times 6699 \times 8162 } - 2671434353 \Big| < 10^{-6} $$
+This is a \$1000000 result (not really).  The error message says we're running out of space doing our computation. 
+
+\newpage 
+
+How much space are we using with these numbers $713 6561 5023 8854 5640 < 10^{20}$ so we needed this number to be exact to 20 decimal place.  We are sure this problem has some slack somewhere, yet the usual places don't work.  
+\begin{itemize}
+\item Can we benefit from our failed attempts to solve the problem?
+\item If we complain the result is not exact, describe the [opposite of exact]
+\item What if we run out of space resources or time resources in the middle of the problem?
+\end{itemize}
+Our search for solutions is example of \textbf{martingale} problem.  We criterion for solution which is difficult to solve exactly, so we randomly search for solutions and stop when our solution is close enough. \\ \\
+Let's try this problem with complex numbers which are now called Gaussian integers.  
+$$ \Big| \sqrt{(90 + 13i) \times (30 + 17i) \times (15 +92i) \times (85 + 46i) \times (32 + 37i)} - \big(  \big) \Big| < 10^{-2}  $$
+When all we do take the answer, we throw away the wrapper, the shipping information and ton of valuable information.  The answer for now is 
+\begin{eqnarray*} \sqrt{\dots} &\approx& 5194 + 36808i \\
+\sqrt{\dots} & \in & 10^{-2} \{ |z| < 1 \} + \mathbb{Z}[i] 
+\end{eqnarray*}
+This shape is just a lattice with circles everywhere.  Number Theorists are so confident their examples work and they're dime-a-dozen that they might prefer to work abstractly or in coded fashion.
+
+
+\noindent 
+ 
+}
 \vfill
 
 \begin{thebibliography}{}
