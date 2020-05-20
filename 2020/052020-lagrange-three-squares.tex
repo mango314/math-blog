@@ -1,0 +1,62 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\usepackage{fontspec}
+\usepackage{xcolor}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+%\setmainfont[Color=brown]{Linux Libertine}
+
+
+\title{Tune-Up: Times Tables}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+{\fontsize{16pt}{16pt}\selectfont 
+
+\noindent  \textbf{Problem Statement} \\ \\
+\dots  \\ \\
+Let's read their conjecture.   \\ \\
+\textbf{Conjecture} The normalized counting measure on the finite set}
+$$ \mathcal{J}_D = 
+\big\{ (L, [L(\mathbb{Z})], [L^+(\mathbb{Z})], [\Lambda_{a_1(L)},, [\Lambda_{a_2(L)}] : L \in \mathcal{R}_D \big\} \subseteq \text{Gr}(\mathbb{R}) \times \mathcal{X}_2^4 $$
+equidistributes ot the uniform probability measure on $\text{Gr}_{2 \times 4} (\mathbb{R}) \times \mathcal{X}_2^4$ as $D \to \infty$ with $D \in \mathbb{D}$.  That is:
+$$ 
+\frac{1}{\mathcal{J}_D}
+\sum_{x \in \mathcal{J}_D}
+\delta_x \to m_{\text{Gr}_{2 \times 4} \times \mathcal{X}_2^4}  
+$$ 
+in the weak*-topology where $m_{\text{Gr}_{2 \times 4}}$ is the probability measure obtained from an $SO(4)$ invariant maesure on $\text{Gr}_{2 \times 4}(\mathbb{R})$ and an 
+$\text{SL}_2(\mathbb{R})$-invariant measure on $\mathbb{H}^2$ \\ \\
+There's an infinite amount of geometric background here.
+\begin{itemize}
+	\item E.g. what does weak* convergence of measures look like?
+	\item $SO(4)$-invariant measureis usually given careful discussion in Lie algebra textbooks for some reason.
+\end{itemize}
+Here's what they actually prove (with congruence conditions).  Resting on this conjecture (like a table) we could try to do a lot of numerical experimentation. \\ \\
+\textbf{Theorem} (Equidistribution) Let $p,q$ be any two odd primes.  The normalized counting measure on the (finite set) $\mathcal{J}_D$ equidistributes to uniform probability measure on 
+$ \text{Gr}_{2 \times 4} (\mathbb{R}) \times \mathcal{X}_2^4$ 
+as $D \in \mathbb{D}$ goes off to infiity while $D$ has the dditional conditions $-D \in (\mathbb{F}_P^\times)^2$ and $-D \in (\mathbb{F}_q^\times)^2$.  \\ \\
+These innocent counting-measure problems have been argued using modular forms (in particular Maass forms).  Results of this type have only been around since the 1950's.   This is also a common story where result is ``known" as far as academics are concerned which means almost nothing at this point.
+\vfill
+
+\begin{thebibliography}{}
+
+\item Manfred Einsiedler, Elon Lindenstrauss \textbf{Joinings of Higher Rank Torus Actions on Homogeneous Spacs} \texttt{arXiv:1502.05133}
+\item Manfred Einsiedler, Manuel Luethi, Nimish Shah \textbf{Priitive Rational Points on Expanding Horocycles in Products of the Modular Surface with the Torus} \texttt{arXiv:1901.03078} 
+\item Manny Aka, Manfred Einsiedler, Andreas Wieser \textbf{Planes in Four-Space and Four Associated CM Points} \texttt{arXiv:1901.05833}
+\end{thebibliography}
+\end{document}

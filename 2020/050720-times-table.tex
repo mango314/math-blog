@@ -116,9 +116,29 @@ When all we do take the answer, we throw away the wrapper, the shipping informat
 \begin{eqnarray*} \sqrt{\dots} &\approx& 5194 + 36808i \\
 \sqrt{\dots} & \in & 10^{-2} \{ |z| < 1 \} + \mathbb{Z}[i] 
 \end{eqnarray*}
-This shape is just a lattice with circles everywhere.  Number Theorists are so confident their examples work and they're dime-a-dozen that they might prefer to work abstractly or in coded fashion.
-
-
+This shape is just a lattice with circles everywhere.  Number Theorists are so confident their examples work and they're dime-a-dozen that they might prefer to work abstractly or in coded fashion. \\ \\
+\textbf{05/20} What could the martingale be here in this setting.  These results are particular clumsy. \\ \\
+\textbf{Lemma} (1960) Let $X_1, \dots, X_n$ be independent Bernoulli random variables and let $X:= \sum X_i$ then 
+$$ \sum_{k \geq 0} \Big| \mathbb{P}(X=k) - \frac{e^{-\mu} \mu^k}{k!} \Big| \leq 2 \sum p_i^2 $$
+where $p_i = \mathbb{P}(X_i = 1)$ and $\mu := \mathbb{E}[X] = \sum p_i$.   \\ \\
+This result was proven in {\color{red!90!white} \textbf{1960}} which is a bit of a flag.  Secondly, the prime factors in the numbers $\{ 1, \dots, 10^5\}$ are not quite independent, so Berounlli trials is never the accurate model.  \\ \\
+The distance between results of Beroulli random variables and results about prime factors tends to have to do with values of the zeta functions.  We note in the text the symbols $M(z)$ and $\mathcal{M}(z)$.  \\ \\ 
+\textbf{Lemma} Let $z \in \dots$, if $K(z)$ is true
+$$ \mathbb{P}(d(z) = k | \mathcal{F}_z) = \frac{(1 + o(1))^k}{k!} e^{-m(z)/z} \left( \frac{m(z)}{z} \right)^k + \frac{O(1)}{z} $$
+That $d(z)$ is close to that of a Poisson random variable. Let's read their outline.
+\begin{itemize}
+	\item Fix $\eta > 0$ and $x \gg 1$.
+	\item $N = \eta J(x)$ 
+	\item $[x] := \{ 1, 2, \dots, x\} $
+	\item Choose $(a_1, \dots, a_N)$ $N$ elements of $[x]$ inependently ad uniformly at random (with replacement!)
+	\item $N \times \pi(x)$ $0-1$ matrix $A$
+	\begin{itemize}
+		\item $A_{ij}=1$ iff the jth prime $q_j$ occurs and odd number of times in the prime factorization of $a_i$
+	\end{itemize}
+\end{itemize}
+So to find $I \subseteq {N}$ such that 
+$\prod_I a_i \in \square$ 
+enough to find a set of rows of $A$ such that the column sums within the rows are even.  Therefore an indefinite number of prime factorizations is done in converting the $n$-tuple into the hypergraph matrix.
 \noindent 
  
 }
@@ -126,7 +146,7 @@ This shape is just a lattice with circles everywhere.  Number Theorists are so c
 
 \begin{thebibliography}{}
 
-\item \dots
-
+\item Paul Balister, B\'{e}la Bollob\'{a}s Robert Morris. \textbf{The Sharp Threshold for Making Squares} 
+Annals of Mathematics, Vol 188 No 1 (July 2018) pp. 49-143
 \end{thebibliography}
 \end{document}
