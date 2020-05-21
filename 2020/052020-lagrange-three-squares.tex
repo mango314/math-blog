@@ -17,7 +17,7 @@
 %\setmainfont[Color=brown]{Linux Libertine}
 
 
-\title{Tune-Up: Times Tables}
+\title{Tune-Up: Lagrange 3-Squares Theorem}
 \date{}
 \begin{document}
 
@@ -27,10 +27,16 @@
 
 {\fontsize{16pt}{16pt}\selectfont 
 
-\noindent  \textbf{Problem Statement} \\ \\
-\dots  \\ \\
+\noindent  \textbf{Problem Statement} For a rational two-dimensional subspace $L$ of $\mathbb{R}^4$ the discriminant of $L$ is the square of the co-volume of $L \cap \mathbb{Z}^2$ in $L$:
+$$ \text{disc}(L) = \text{vol}(L / (L \cap \mathbb{Z}^4)^2 \in \mathbb{N} $$
+For any $D \in \mathbb{N}$ let $\mathcal{R}_D$ be the finite set of rational planes of discriminant $D$ (which is a subset of the real Grassmanian 
+$\text{Gr}_{2 \times 4}(\mathbb{R})$.\\ \\
+\textbf{Theorem}(Folklore, 1930s ?) $\mathcal{R}_D$ is non-empty iff
+$$ D \in \mathcal{D} := \big\{ D \in \mathbb{N} : D \not \equiv 0,7,12,15, \pmod {16} \big\} $$
+This is analogous to Legendre's theorem of sums of three squares, and works in the early 20th century on the sums of four squares.  
+\\ \\
 Let's read their conjecture.   \\ \\
-\textbf{Conjecture} The normalized counting measure on the finite set}
+\textbf{Conjecture}(2019) The normalized counting measure on the finite set
 $$ \mathcal{J}_D = 
 \big\{ (L, [L(\mathbb{Z})], [L^+(\mathbb{Z})], [\Lambda_{a_1(L)},, [\Lambda_{a_2(L)}] : L \in \mathcal{R}_D \big\} \subseteq \text{Gr}(\mathbb{R}) \times \mathcal{X}_2^4 $$
 equidistributes ot the uniform probability measure on $\text{Gr}_{2 \times 4} (\mathbb{R}) \times \mathcal{X}_2^4$ as $D \to \infty$ with $D \in \mathbb{D}$.  That is:
@@ -50,7 +56,18 @@ Here's what they actually prove (with congruence conditions).  Resting on this c
 \textbf{Theorem} (Equidistribution) Let $p,q$ be any two odd primes.  The normalized counting measure on the (finite set) $\mathcal{J}_D$ equidistributes to uniform probability measure on 
 $ \text{Gr}_{2 \times 4} (\mathbb{R}) \times \mathcal{X}_2^4$ 
 as $D \in \mathbb{D}$ goes off to infiity while $D$ has the dditional conditions $-D \in (\mathbb{F}_P^\times)^2$ and $-D \in (\mathbb{F}_q^\times)^2$.  \\ \\
-These innocent counting-measure problems have been argued using modular forms (in particular Maass forms).  Results of this type have only been around since the 1950's.   This is also a common story where result is ``known" as far as academics are concerned which means almost nothing at this point.
+These innocent counting-measure problems have been argued using modular forms (in particular Maass forms).  Results of this type have only been around since the 1950's.   \\ \\
+Results due to Maass himself show that $(L, L(\mathbb{Z})) $ are equidistributed for rational planes with equidistribution up to $D$. 
+\begin{itemize}
+\item $L(\mathbb{Z}):= L \cap \mathbb{Z}^4$
+\end{itemize}
+\textbf{Exercise} Let $L = \{ \frac{3}{5}x + \frac{4}{7} + \frac{5}{11}z + \frac{6}{13}w = 0  \}\cap \{ \frac{1}{7}x + \frac{2}{11} + \frac{6}{5}z + \frac{7}{13}w = 0  \}\subseteq \mathbb{Q}^4$. 
+\begin{itemize}
+\item Solve the equation in rational numbers $\mathbb{Q}$.
+\item  Is $L(\mathbb{Z}) = \varnothing$ ? 
+\item Find the co-volue $[L: (L \cap \mathbb{Z}^4)]$.
+\end{itemize}
+This one exercise should already illustrate the complexity of the equation involved, before we ask about a limiting statement.
 \vfill
 
 \begin{thebibliography}{}
@@ -59,4 +76,5 @@ These innocent counting-measure problems have been argued using modular forms (i
 \item Manfred Einsiedler, Manuel Luethi, Nimish Shah \textbf{Priitive Rational Points on Expanding Horocycles in Products of the Modular Surface with the Torus} \texttt{arXiv:1901.03078} 
 \item Manny Aka, Manfred Einsiedler, Andreas Wieser \textbf{Planes in Four-Space and Four Associated CM Points} \texttt{arXiv:1901.05833}
 \end{thebibliography}
+}
 \end{document}
