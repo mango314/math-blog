@@ -1,0 +1,53 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\usepackage{fontspec}
+\usepackage{xcolor}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+%\setmainfont[Color=brown]{Linux Libertine}
+
+
+\title{Tune-Up: Maxwell Equations}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+{\fontsize{16pt}{16pt}\selectfont 
+
+\noindent  Maxwell's  equations are the culmination of the Electricity and Magnetism course in freshman physics.  They are typically studied again in intermediate course and in graduate course.  How do we go from these set of equations to the VCR or light bulb or whatever electronic device we are using?  \\ \\
+Maxwell's equations are known to have a lot of symmetry, what are the usage of that.  Here are the four equations in ``integral" form:
+\begin{itemize}
+\item $\displaystyle \oint_{\partial \Omega} \mathbf{E}\cdot d\mathbf{S} = \frac{1}{\epsilon_0} \int_\Omega \rho \, dV $ (Gauss' Law)
+\item $\displaystyle \oint_{\partial \Omega} \mathbf{B} \cdot d\mathbf{S} = 0 $ (Gauss' Law for Magnetism)
+\item $\displaystyle \oint_{\partial \Sigma} \mathbf{E} \cdot d\mathbf{l} = - \frac{d}{dt} \int_\Sigma \mathbf{B} \cdot d \mathbf{S}$ (Maxwell-Faraday equation)
+\item $\displaystyle \oint_{\partial \Sigma} \mathbf{B} \cdot d \mathbf{l} = 
+\mu_0 \left( \int \int_\Sigma \mathbf{J} \cdot d\mathcal{S} + \epsilon_0 \frac{d}{dt} \int \int_{\Sigma} \mathcal{E} \cdot d\mathcal{S} \right) $
+\end{itemize}
+My understanding is observing the phenomena of electricity and magnetism in nature had led to the formal study of Electricity and Magnetism, which led to modernization of geometry with conversation laws and topology. \\ \\
+Let's check the example of curl:
+$$ \int_{\partial \Sigma} \mathbf{B} \cdot d\ell = \int \int_{\Sigma} (\nabla \times \mathbf{B}) \cdot d\mathbf{S} $$
+This is standard multivariate calculus exercise.  Yet if we compare to physical realty instantaneous doubts emerge.  What are we called $\partial \Sigma$.  Your light buld doesn't know what that is.
+}
+\vfill
+
+\begin{thebibliography}{}
+
+\item Wikipedia ``Maxwell's Equations" 
+
+\item Jackson, Purcell, Griffiths
+
+\end{thebibliography}
+\end{document}

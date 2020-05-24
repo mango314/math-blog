@@ -1,0 +1,56 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\usepackage{fontspec}
+\usepackage{xcolor}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+%\setmainfont[Color=brown]{Linux Libertine}
+
+
+\title{Tune-Up: GCD}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+{\fontsize{16pt}{16pt}\selectfont 
+
+\noindent  How does the GCD of Number theory map to Chaos Theory ? \\ \\
+First of all number theory handles numbers to arbitrary accuracy.  That is itself an ideal.  When we said $\sqrt{2}$ we means the number $a$ such that $a  \times a = 2$ and we realize that no fraction $a = \frac{p}{q}$ is every going to solve this. \\ \\
+If we say $\sqrt{2} \pm 10^{-3}$ here are now an infinte number of fractions and possiby even some very good estmatimes.  $|\sqrt{2} - \frac{99}{70}| < 10^{-4}$ approximations like these have been around (on some place of the globe) for for the past 4000 years.  So lastly we are looking for very ``efficient" estimates of this kind, estimates that are unusually good compared to the job they were trying to do. \\ \\
+So even the rational numbers $\mathbb{Q}$ are build from 
+\begin{itemize}
+\item Ratios of numbers of $\mathbb{Z}$.  When did we care about ``ratio" or  ``proportion"?  
+\item $\mu(\mathbb{Q}) = 0$ subset of measure zero in $\mathbb{R}$
+\item rational numbers emerging out of piles of observations of the ``real world".  (Refer to previous two steps). 
+\end{itemize}
+We're stuck because we're losing motiation and our result heavily depends on our choice of motive.  Then maybe later on, the characters again look like $\mathbb{Q}$ and $\mathbb{R}$ and $\mathbb{Z}$.  Our approimation of a data stream as $\mathbb{Z}$ lost a lot of information which we may try to recover at some point.  \\ \\
+So there's lot of philosophy here.  Without further ado, this result goes back to only 1926 with improvements in the 1940's.
+$$ \frac{1}{\phi(n)} \sum_{(k,n) = 1} f(\frac{k}{n}, \frac{\overline{k}}{n} \to \int_{\mathbb{T}^2} f(x,y) dm(x,y)$$
+Look at that.  The choice of Euler phi function $\phi$ is regardless of how we chose to extract our ideal number line $\mathbb{Z}$ from the messy ``real world" of obversations that aren't even numbers.  They are experimental averages that change with the weather. \\ \\
+In 2016, we get interpretation of this result as geometric problem involving sphere packings, ``horospheres" with chaotic orbits.  It's unlikely we've had enough time as a civilization to absorb what all of this meant.  For example, the 2016 paper asks if certain horocycle flow obits are \textbf{closed} and argues in the affirmative.  This object must be pretty complicated.\\ \\
+Here the lattice is $\Gamma = \textbf{SL}_2 (\mathbb{Z})$ 
+and the group is $G = \text{SL}_2(\mathbb{R})$ as we've said many times.  Now I have to try to map our number theory problem into this group action $\Gamma \backslash G$ framework.  There doesn't seem to be a universal way, this is just reflective of how we have choices in the matter.
+}
+\vfill
+
+\begin{thebibliography}{}
+
+\item Manfred Einsiedler, Manuel Luethi, Nimish Shah. \textbf{Primitive Rational Points on Expanding Horocycles in Products of the Modular Surface with the Torus} \texttt{arXiv:1901.03078}
+
+\item 
+
+\end{thebibliography}
+\end{document}
