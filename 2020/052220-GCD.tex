@@ -42,7 +42,32 @@ $$ \frac{1}{\phi(n)} \sum_{(k,n) = 1} f(\frac{k}{n}, \frac{\overline{k}}{n} \to 
 Look at that.  The choice of Euler phi function $\phi$ is regardless of how we chose to extract our ideal number line $\mathbb{Z}$ from the messy ``real world" of obversations that aren't even numbers.  They are experimental averages that change with the weather. \\ \\
 In 2016, we get interpretation of this result as geometric problem involving sphere packings, ``horospheres" with chaotic orbits.  It's unlikely we've had enough time as a civilization to absorb what all of this meant.  For example, the 2016 paper asks if certain horocycle flow obits are \textbf{closed} and argues in the affirmative.  This object must be pretty complicated.\\ \\
 Here the lattice is $\Gamma = \textbf{SL}_2 (\mathbb{Z})$ 
-and the group is $G = \text{SL}_2(\mathbb{R})$ as we've said many times.  Now I have to try to map our number theory problem into this group action $\Gamma \backslash G$ framework.  There doesn't seem to be a universal way, this is just reflective of how we have choices in the matter.
+and the group is $G = \text{SL}_2(\mathbb{R})$ as we've said many times.  Now I have to try to map our number theory problem into this group action $\Gamma \backslash G$ framework.  There doesn't seem to be a universal way, this is just reflective of how we have choices in the matter. \\ \\
+\textbf{05/26} In this particular paper there are the notations:
+\begin{itemize}
+\item $G = \text{SL}_2(\mathbb{R})$ 
+\item $\Gamma = \text{SL}_2(\mathbb{Z})$
+\end{itemize}
+Ostensibly these are the groups of $2 \times 2$ matrices with real and integer entries.  So we can look at upper-triangular matrices:
+$$  U = 
+\left\{ \left( \begin{array}{cc} 1 & t \\ 0 & 1\end{array}\right) : t \in \mathbb{R} \right\}$$
+and the lower triangular matrices:
+$$  V = 
+\left\{ \left(\begin{array}{cc} 1 & 0 \\ t & 1\end{array}\right) : t \in \mathbb{R} \right\}$$
+They also list the diagonal matrices:
+$$  A = 
+\left\{ \left(\begin{array}{cc} n & t \\ 0 & \frac{1}{n} \end{array}\right) : n  \in \mathbb{Z} \right\} \text{ or }
+\left\{ \left(\begin{array}{cc} y & t \\ 0 & \frac{1}{y} \end{array}\right) : n  \in \mathbb{R} \right\}$$
+These groups describe linear transformations in the Euclidean plane such as translations and rotations and perspective transforms (e.g. from Projective Geometry).  So These geometric objects have rich historical and cultural context. \\ \\
+These results are part of a larger program to connect number theory and geometry and dynamical systems and this seems to be fairly modern idea even though we can backtrack and find lots of historical examples.  This doesn't seem to be the prevailing way of thinking.  We have to think about what these objects are the \textbf{horospheres}. \\ \\
+\textbf{Exercise} $\text{SL}_2(\mathbb{R} \times \mathbb{Q}_p) \simeq \text{SL}_2(\mathbb{R}) \times \text{SL}_2(\mathbb{Q}_p) $ (this is ``functorial" property of special linear group, it also places number theory and Eucliden geometry on equal footing). \\ \\
+\textbf{Exercise} $\text{SL}_2(\mathbb{Z}[\frac{1}{p}]) $ is a lattice in $\text{SL}_2(\mathbb{R} \times \mathbb{Q}_p)$.  Example:
+$$ a_p = \left( \left(\begin{array}{cc} p & 0 \\ 0 & p^{-1} \end{array} \right), \left(\begin{array}{cc} p & 0 \\ 0 & p^{-1} \end{array} \right)\right) $$
+What does ``lattice" mean in this setting?
+\newpage
+\noindent \textbf{Example} $\mathbb{Z}[\frac{1}{p}] \backslash \mathbb{Q}_p$  is an arithmetic ``extension" of the torus $\mathbb{T} = \mathbb{Z} \backslash \mathbb{R} $. \\ \\
+\textbf{Q} Why do we need $p$-adic Sobolev norms to discuss averages of the GCD function? \\ \\
+These objects are stated in generality yet judging from the writing, nobody is sure what these arithmetic objects are.0522
 }
 \vfill
 
