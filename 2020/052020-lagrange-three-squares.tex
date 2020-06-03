@@ -65,9 +65,32 @@ Results due to Maass himself show that $(L, L(\mathbb{Z})) $ are equidistributed
 \begin{itemize}
 \item Solve the equation in rational numbers $\mathbb{Q}$.
 \item  Is $L(\mathbb{Z}) = \varnothing$ ? 
-\item Find the co-volue $[L: (L \cap \mathbb{Z}^4)]$.
+\item Find the co-volume $[L: (L \cap \mathbb{Z}^4)]$.
 \end{itemize}
-This one exercise should already illustrate the complexity of the equation involved, before we ask about a limiting statement.
+This one exercise should already illustrate the complexity of the equation involved, before we ask about a limiting statement. \\ \\
+\noindent \textbf{05/22} Like all research papers there are lots of notations and not necessarily a story.  What makes a good ``arc" of a story? This could be either a narrative in the movie or court case or the trajectory of research article.  How do we decide the accuracy of the storytelling?  In different situations we may gauge the quality of the story-telling in different ways.  \\ \\ 
+{\color{blue}\textbf{Example}} Consider the circle $\{ |z| =1 \}$ and we consider the rotation $z \mapsto z \times \frac{1}{5}(3 + 4i)$ which is a rotaton by $\theta = \tan^{-1} (\frac{3}{4})$.  How do we know what is $\tan^{-1} \big[ \frac{1}{5}(3+4i) \big]^{10^6}$?  To find this number exactly we would need to compute $5^{10^6}$ and do the appropriate division problem.  \\ \\
+What is the circle is only \textit{approximate}  and we get $X = \{ |z| = 1 + o(1) \}$ ? Now we have that $  \mu( X \cap e^{i\theta} X) = 0 $ the two curves intersect at a finite number of points (generically). Is anyone bothered by this?  Of course not, the curve is approximately circular.  Or we can have a \textit{map} that is ``approximately" a rotation.  These led to Devil's staircase type problems. \\ \\
+There is also $S^1(\mathbb{Q})$ with $\{ a^2 + b^2 = 1: (a,b) \in \mathbb{Q}\} \subseteq \mathbb{Q}^2$ which is the content of Pythagoras theorem.  This circle paramterizes right triangles, and th rotations map to transformations in the Euclidean plane.  So there is lot of action here.  \newpage
+
+\noindent \textbf{Example}(2019) We could adjoin fractions to the ring of integers and see how arithmetic behaves under these rings.  $\mathbb{Z}[\frac{1}{3}]$ and $\mathbb{Z}[\frac{1}{5}, \frac{1}{7}]$.  \\ \\
+We are hoping that our cirle $S^1$ is an example of a [semi-simple algebraic group defined over $\mathbb{Q}$].  The theorem of Borel and Harish-Chandra has that our solutions to th Pythagoras problem form a ``lattice" in the other group: $S^1(\mathbb{Z}[\frac{1}{5}]) < S^1(\mathbb{R}) \times S^1(\mathbb{Q}_5)$. \\ \\
+These group-theoretic statements are enormous, they are like dump-trucks and cranes and fork-lifts of number theoretic results.  We can define {\color{green!70!black} class-number one} as 
+$$ S^1(\mathbb{Q}_5) = S^1(\mathbb{Z}[\tfrac{1}{5}]) \oplus  S^1(\mathbb{R} \times \mathbb{Z}_5)) $$
+At least we have a true-false type statement we an waste our time with\dots \\ \\
+\textbf{06/03} Every step of the way there's equations to solve.  Let $L$ be a rational plane, consider two lattices:
+\begin{itemize}
+\item $L(\mathbb{Z}) = L \cap \mathbb{Z}^4$
+\item $L^\perp (\mathbb{Z}) = L^\perp \cap \mathbb{Z}^4$
+\item a rotation $k_L \in \text{SO}_4(\mathbb{R})$ moving $L \mapsto \mathbb{R}^2 \times \{ (0,0)\}$ and $L^\perp \mapsto \{ (0,0)\} \times \mathbb{R}^2$.
+\end{itemize} 
+Exercise: let $L = \{ \frac{3}{5} x + \frac{2}{3}y + \frac{2}{5}z + \frac{1}{7}w = 0 \}$ solve $L(\mathbb{Z})$ and $L^\perp(\mathbb{Z})$ and the rotation $k_L \in \text{SO}_4(\mathbb{R})$. \\ \\
+These abstract formulations might try to ``unify" problems from elementary number theory.  
+\begin{itemize}
+\item $L = \mathbb{R}(1+i)\oplus \mathbb{R}(i+j) $ the lattice $L(\mathbb{Z})$ has ``associated" quadratic form $Q|_{L(\mathbb{Z})} = 2x^2 + 2xy + 2y^2$
+\item $L = \mathbb{R}(1+2i)\oplus \mathbb{R}(j+3k)$ is associated with $\mathbb{Q}|_{L(\mathbb{Z})} = 5x^2 + 10y^2$.
+\end{itemize}
+
 \vfill
 
 \begin{thebibliography}{}
@@ -75,6 +98,7 @@ This one exercise should already illustrate the complexity of the equation invol
 \item Manfred Einsiedler, Elon Lindenstrauss \textbf{Joinings of Higher Rank Torus Actions on Homogeneous Spacs} \texttt{arXiv:1502.05133}
 \item Manfred Einsiedler, Manuel Luethi, Nimish Shah \textbf{Priitive Rational Points on Expanding Horocycles in Products of the Modular Surface with the Torus} \texttt{arXiv:1901.03078} 
 \item Manny Aka, Manfred Einsiedler, Andreas Wieser \textbf{Planes in Four-Space and Four Associated CM Points} \texttt{arXiv:1901.05833}
+\item Prasolov-Rapinchuk \textbf{Algbraic Groups and Number Theory} 1991/1994.
 \end{thebibliography}
 }
 \end{document}
