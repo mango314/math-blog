@@ -61,7 +61,13 @@ The triangle ineqality has a logarithmic form:
 $$ \log \frac{|V^{-1}W|}{|V|^{1/2}|W|^{1/2}} 
 \leq \log \frac{|U^{-1}V|}{|U|^{1/2}|V|^{1/2}} + \log \frac{|U^{-1}W|}{|U|^{1/2}|W|^{1/2}}$$
 \end{itemize}
-Rusza's triangle inequality was appliled with all three set's being identical $U = V = W = A$.  In fact, that's the entire argument.
+Rusza's triangle inequality was appliled with all three set's being identical $U = V = W = A$.  In fact, that's the entire argument. \\ \\
+So are have not made any spacifications like $G = \mathbb{Z}^2$ or $G = SU(2)$ or $G = \text{SL}_2(\mathbb{Z}[i])$ or $G = (\text{SL}_2(\mathbb{Z}) \backslash \text{SL}_2(\mathbb{R})[5]$ or anything else.  These were deduced abstractly from our guess on how the notion of multipicaton $\times$ or of how mirrors actually work. \\ \\
+\textbf{Counterexample} Let $H$ be a finite group and let $G = H \ast \langle x \rangle$ (which is called the \textbf{free product}) of $H$ with the infinite cyclic group (basically a copy of $\mathbb{Z}$, e.g. how many times we do something).  Let $A = H \cup \langle x \rangle$ (this is called the ``union").  Then 
+\begin{itemize}
+\item $|A^2| \leq 3 |A|$ and yet
+\item $HxH \subseteq A^3$ and $|HxH| = |H|^2 \asymp |A|^2$ these sets have the same number of elements without being the same set.  Their definitions look similar too.
+\end{itemize}
 
 \vfill
 
