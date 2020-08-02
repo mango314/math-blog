@@ -43,7 +43,25 @@ These looking into the axioms of group theory.  There are several instances of g
 $x \mapsto 3x + 2y \text{ and }y \mapsto 4x + 3y $
 \item groups of transformations of physical objects (e.g. symmetries of square)
 \end{itemize}
-These symmetries in general were approximate since there was an enormous amount of work move and old the objects in a perfect evenly spaced circle.
+These symmetries in general were approximate since there was an enormous amount of work move and old the objects in a perfect evenly spaced circle. \\ \\
+\textbf{Triangle inequality} Let $U,V,W$ be subsets of a group. There exists an injection:
+$$ \phi: U \times V^{-1}W \to UV \times UW $$
+In particular if $U,V,W$ are finite then $|U| \times |V^{-1}W| \leq |UV||UW|$. \\ \\ 
+We're left wondering why the theorem is formatted in this particular way.  The proof use basic notions of algebra like ``function" an  ``inverse" and ``injection".
+\begin{itemize}
+\item $v : V^{-1} W \to V$ and $w : V^{-1} W \to W$ under then constraint 
+that $x \in V^{-1}W$ leads to $x = v(x)^{-1} w(x)$.  
+\item set $\phi(u,x) = (uv(x), uw(x))$.
+\item check that $\phi$ is injective
+\begin{itemize}
+\item $(uv(x))^{-1} (uw(x)) = v(x)^{-1} w(x) = x $ so that $x$ is {\color{red}\textbf{uniquely}} determined by $\phi(u,x)$.  
+\item $(uv(x)) v(x)^{-1} = u $ so that $u$ is uniquely determined by $\phi(u,x)$ and $x$.
+\end{itemize}
+The triangle ineqality has a logarithmic form:
+$$ \log \frac{|V^{-1}W|}{|V|^{1/2}|W|^{1/2}} 
+\leq \log \frac{|U^{-1}V|}{|U|^{1/2}|V|^{1/2}} + \log \frac{|U^{-1}W|}{|U|^{1/2}|W|^{1/2}}$$
+\end{itemize}
+Rusza's triangle inequality was appliled with all three set's being identical $U = V = W = A$.  In fact, that's the entire argument.
 
 \vfill
 
