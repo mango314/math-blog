@@ -67,13 +67,25 @@ So are have not made any spacifications like $G = \mathbb{Z}^2$ or $G = SU(2)$ o
 \begin{itemize}
 \item $|A^2| \leq 3 |A|$ and yet
 \item $HxH \subseteq A^3$ and $|HxH| = |H|^2 \asymp |A|^2$ these sets have the same number of elements without being the same set.  Their definitions look similar too.
-\end{itemize}
+\end{itemize} 
+\textbf{08/02} Lemma (\textbf{approximate orbit-stabilizer lemma}) Suppose a group $G$ (not necessarily commutative) acts on a set $X$ and let $A$ be a $K$-approximate subgroup of $G$ for some $K \geq 1$.  For every integer $k \geq 2$ and $x \in X$ we have:
+$$ |A| \leq |A \cdot x| \; | \text{Stab}(x) \cap A^k| \leq K^{k+1}|A| $$
+\textbf{Example} Find examples of approximate groups in $\text{SL}_3(\mathbb{Z}/p\mathbb{Z})$ or $G = SU(2)$.  What happens when subsets don't have ``perfect" multiplicative structure (e.g. \textit{everything} ) or closure properties. \\ \\
+\textbf{Theorem} (Orbit-Stabilizer) Let $G$ be a finite group of permutations of the set $S$.  Then for any $i \in S$ $|G| = | \text{orb}(i)| \times |\text{stab}(i)|$.  \\ \\
+We have used the word {\color{red!80!black}\textbf{set}}, we  have a ``set" of permutations (I usually think of them as a \textbf{box} or a \textbf{bag}.  So there's varying levels of fluidity there.  Usually we resort to set theory when objects or collections of objects are hard to picture or describe.  We migtt try again later. \\ \\
+\textbf{Example} If I shuffle a deck of cards, I have chosen one of the $52! \approx 10^{68}$ possible arrangements of cards.  There's no way we are looking through each one of those.  If I stir a pot, the obects inside have been \textit{permuted}  yet this is close-but-not-quite to the mathematical definition.
 
 \vfill
 
 \begin{thebibliography}{}
 
-\item \dots 
+\item Matthew Tointon.  \textbf{Approximate Groups} (London Mathematical Society Student Texts \#94)
+
+\item Emmanuel Breuillard \textbf{A Brief Introduction to Approximate Groups} (MSRI \#61)
+
+\item Harald Helfgott \textbf{Growth and Generation in $\text{SL}_2 (\mathbb{Z}/p\mathbb{Z})$} Annals of Mathematics, 2008.
+
+\item Terence Tao, Van Vu \textbf{Additive Combinatorics}  (Cambridge Studies in Mathematics \#105) Cambridge University Press, 2006. \dots
 
 \end{thebibliography}
 }
