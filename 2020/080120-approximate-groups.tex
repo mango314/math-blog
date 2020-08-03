@@ -73,7 +73,71 @@ $$ |A| \leq |A \cdot x| \; | \text{Stab}(x) \cap A^k| \leq K^{k+1}|A| $$
 \textbf{Example} Find examples of approximate groups in $\text{SL}_3(\mathbb{Z}/p\mathbb{Z})$ or $G = SU(2)$.  What happens when subsets don't have ``perfect" multiplicative structure (e.g. \textit{everything} ) or closure properties. \\ \\
 \textbf{Theorem} (Orbit-Stabilizer) Let $G$ be a finite group of permutations of the set $S$.  Then for any $i \in S$ $|G| = | \text{orb}(i)| \times |\text{stab}(i)|$.  \\ \\
 We have used the word {\color{red!80!black}\textbf{set}}, we  have a ``set" of permutations (I usually think of them as a \textbf{box} or a \textbf{bag}.  So there's varying levels of fluidity there.  Usually we resort to set theory when objects or collections of objects are hard to picture or describe.  We migtt try again later. \\ \\
-\textbf{Example} If I shuffle a deck of cards, I have chosen one of the $52! \approx 10^{68}$ possible arrangements of cards.  There's no way we are looking through each one of those.  If I stir a pot, the obects inside have been \textit{permuted}  yet this is close-but-not-quite to the mathematical definition.
+\textbf{Example} If I shuffle a deck of cards, I have chosen one of the $52! \approx 10^{68}$ possible arrangements of cards.  There's no way we are looking through each one of those.  If I stir a pot, the obects inside have been \textit{permuted}  yet this is close-but-not-quite to the mathematical definition. \\ \\
+\begin{tikzpicture}[scale=8]
+\draw (0,0)--(1,0)--(1,1)--(0,1)--(0,0);
+
+\draw (0.25,0.18) circle (0.1);
+\fill[black!10!white] (0.25,0.18) circle (0.1);
+\draw (0.75,0.3) circle (0.15);
+\draw (0.65,0.8) circle (0.125);
+\draw (0.4,0.6) circle (0.15);
+\draw (0.2,0.85) circle (0.125);
+
+\fill[black!20!white, opacity=0.5] (0.25,0.18) circle (0.1);
+\fill[black!20!white, opacity=0.5] (0.75,0.3) circle (0.15);
+\fill[black!20!white, opacity=0.5] (0.65,0.8) circle (0.125);
+\fill[black!20!white, opacity=0.5] (0.4,0.6) circle (0.15);
+\fill[black!20!white, opacity=0.5] (0.2,0.85) circle (0.125);
+
+
+\draw[dashed] (0.75,0.3) circle (0.1);
+\draw[dashed] (0.65,0.7) circle (0.15);
+\draw[dashed] (0.25,0.15) circle (0.125);
+\draw[dashed] (0.5,0.4) circle (0.15);
+\draw[dashed] (0.15,0.5) circle (0.125);
+
+\fill[black!20!white, opacity=0.5] (0.75,0.3) circle (0.1);
+\fill[black!20!white, opacity=0.5] (0.65,0.7) circle (0.15);
+\fill[black!20!white, opacity=0.5] (0.25,0.15) circle (0.125);
+\fill[black!20!white, opacity=0.5] (0.5,0.4) circle (0.15);
+\fill[black!20!white, opacity=0.5] (0.15,0.5) circle (0.125);
+
+\end{tikzpicture}
+Once we draw this picture it's not possible to tell which object moved first, or what objecct moved to where, or how the objects were switched.    This is how much information we lose between the detail and the representation. As soon as we talk, we change the story around. \\ \\
+Here is the figure from a related \texttt{arXiv} page: \\
+\begin{tikzpicture}[scale=8]
+\draw (0,0)--(1,0)--(1,1)--(0,1)--cycle;
+\draw[dashed] (0   + 0.05,0 + 0.05)--(0.5 - 0.05,0 + 0.05)--(0.5 - 0.05,0.5 - 0.05)--(0   + 0.05,0.5 - 0.05)--cycle;
+\draw[dashed] (0.5 + 0.05,0 + 0.05)--(1   - 0.05,0 + 0.05)--(1   - 0.05,0.5 - 0.05)--(0.5 + 0.05,0.5 - 0.05)--cycle;
+\draw[dashed] (0 + 0.05 ,0.5 + 0.05)--(0.5 - 0.05,0.5 + 0.05)--(0.5 - 0.05,1.0 - 0.05)--(0 + 0.05,1.0 - 0.05)--cycle;
+\draw[dashed] (0.5 + 0.05,0.5 + 0.05)--(1 - 0.05,0.5 + 0.05)--(1 - 0.05,1.0 - 0.05)--(0.5 + 0.05,1.0 - 0.05)--cycle;
+
+\draw (0,0.5)--(1,0.5);
+\draw (0.5,0)--(0.5,1);
+
+\draw (0.25,0.25)--(0.75,0.25)--(0.75,0.75)--(0.25,0.75)--cycle;
+
+\node at (0.8, 0.20) {$B$};
+\node at (1.1,-0.1) {$B+B$};
+
+\end{tikzpicture} \\ 
+How do we take a real object with random highly complicated physical properties, and return a  perfect arithmetical object?
+
+\newpage
+
+\noindent Here are two properties that a subset of a group $G$ might enjoy.  
+\begin{itemize}
+\item $|A \cdot A^{-1}| \leq K |A|$
+\item $|A \cdot A | \leq K |A|$
+\item $\#\{ (a_1, a_2, a_3, a_4) \in A^4 : a_1 a_2^{-1} = a_3 a_4^{-1} \} $ is at least $|A|^3/K $.
+\item $\#\{ (a_1, a_2, a_3, a_4) \in A^4 : a_1 a_2 = a_3 a_4 \} $ is at least $|A|^3/K $.
+\item $\mathbb{P}(a_1 a_2 \in A : a_1, a_2 \in A) \geq \frac{1}{K} $ (``closure")
+\item $\mathbb{P}(a_1 a_2^{-1} \in A : a_1, a_2 \in A) \geq \frac{1}{K} $ (``subgroup")
+\end{itemize}
+Let's observe tehse relations:  $\geq$ or ``is at least" or $\mathbb{P}$ or $|A \cdot A|$ so we highlight different parts of our scratchwork page. \\ \\
+These problems are very large.  If our ambient group is of side $|G|$ the number of subsets is $2^{|G|}$, since either $x \in A$ or $x \notin A$.  Or if we wanted someting more fluid we could for the number of maps from $G \to \{ 0,1\}$, which is $G^{\{ 0,1 \}}$ and then replace with $G^{[0,1]}$ or $G^X$, which are objects similar to $L^2(G)$. \\ \\
+While our problems are succinct, comparing two different \textit{approaches} to a problem could be useful yet it could also lead to conflict or confusion, which we have to deal with myriad \textbf{theoretical} possiblities, most of which we will basically ignore.
 
 \vfill
 
@@ -86,6 +150,10 @@ We have used the word {\color{red!80!black}\textbf{set}}, we  have a ``set" of p
 \item Harald Helfgott \textbf{Growth and Generation in $\text{SL}_2 (\mathbb{Z}/p\mathbb{Z})$} Annals of Mathematics, 2008.
 
 \item Terence Tao, Van Vu \textbf{Additive Combinatorics}  (Cambridge Studies in Mathematics \#105) Cambridge University Press, 2006. \dots
+
+\item Ben Green \textbf{Approximate Groups and Their Applicatons: Work of Bourgain, Gamburd, Helfgott and Sarnak} \texttt{arXiv:0911.3354}
+
+\item \dots 
 
 \end{thebibliography}
 }
