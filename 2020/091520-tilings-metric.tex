@@ -1,0 +1,51 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\usepackage{fontspec}
+\usepackage{xcolor}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+%\setmainfont[Color=brown]{Linux Libertine}
+
+
+\title{Reading: Tilings and Metric Spaces}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+{\fontsize{16pt}{16pt}\selectfont 
+
+\noindent  The authors discuss \textit{metrics} and yet they also talk about \textit{distance} \\ \\
+\textbf{Def} The \textit{distance} between two tilings $R(T, T')$ to be the supremum of all radii $r$ where $T$ and $T'$ can be translated by less than $\frac{1}{2r}$ to agree on a ball of radius $r$ around the origin.\\ \\
+\textbf{Example} Rhombus tilings, Penrose tilings, cut-and-project tilings. \\ \\
+\textbf{Example} $\mathbb{R}$ with distance $d(x,y) = |x-y|$ is a metric space. \\ \\
+\textbf{Example} The space of $d$-planes (affine hyperplanes) in $\mathbb{R}^n$ with metric
+$$ d(E,F) = \text{max} \left\{ \sup_{\vec{x} \in E \cap S } \text{inf} \{ ||\vec{x}-\vec{y}||: \vec{y} \in F \} , 
+\sup_{\vec{x} \in E \cap S } \text{inf} \{ ||\vec{x}-\vec{y}||: \vec{y} \in E \}\right\} $$ 
+is metric space.  Here $S$ is the unit sphere in $\mathbb{R}^n$, $\{||x||=1\}$.\\ \\ 
+\textbf{Lemma} This space is \textit{compact}.  It's rational points are planes with rational entires. 
+
+% write original graphic to avoid copyright
+\includegraphics[width=\textwidth]{rhombus-grid.png}
+
+\vfill
+
+\begin{thebibliography}{}
+
+\item Thomas Fernique, Mathieu Sablik.  \textbf{Weak Colored Local Rules for Planar Tilings}
+
+\end{thebibliography}
+}
+\end{document}
