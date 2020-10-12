@@ -1,0 +1,76 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\usepackage{fontspec}
+\usepackage{xcolor}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+%\setmainfont[Color=brown]{Linux Libertine}
+
+
+\title{Reading: \dots}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+{\fontsize{16pt}{16pt}\selectfont 
+
+\noindent  The statement is a bit technical that the ``full [counting] measure" is close to the ``joint measure".  These terms don't mean anything until we at least provide a definition.  That doesn't mean we've looked at them \dots ever. \\ \\
+\textbf{Thm 1.1} [AES 16a] Let $d \geq 3$ and for any integer $D$ define
+$$ Q_D = 
+\left\{ 
+\left( \frac{v}{||v||} , [\Lambda_v]   \right) :
+v \in \hat{\mathbb{Z}}^d , ||v||^2 = D \right\} 
+\subset S^{d-1} \times \mathcal{X}_{d-1} $$
+Then the normalized counting measure $m_D$ on $\mathcal{Q}_D$ converges to $m_{S^{d-1}} \times m_{\chi_{d-1}} $ in the weak* topology as $D \to \infty$, provided that the set $\mathcal{Q}_D$ is non-empty and that in addition one has the following conditions on the number $D$ 
+\begin{itemize}
+\item $d=3$ \dots
+\item $d=4$ \dots
+\end{itemize}
+For $d \geq 4$ a stronger claim is given.  They remove a ``congruence condition" and instead of the ``shape of the lattice"  they look at a ``grid".  These terms might deserve enunciation. \\ \\ 
+\textbf{Thm 1.2} Let $d = 4$ or $d = 5$ for any positive integer $D$, let $m_{Q_D}$ denote the normalized counting measure  
+$$ |m_{Q_D}(f)  - m_S^{d-1} \times m_{\mathcal{X}}| < D^{-\kappa} S_\infty(f)$$
+(provided that $Q_D$ is non-empty). \\ \\
+How we can read this as an elementary problem?  Since $f \in C^\infty_c(S^{d-1} \times \mathcal{X}_{d-1})$ could be any \textbf{smooth} and \textbf{compactly supported} function on the space of $[\text{sphere}] \times [\text{space of lattices}]$.  \\ \\
+How do we decide about elements of $Q_D$ ? Maybe this set is empty?  Counting measure suggests we locate the object exactly at the point.  That's unlikely we might try to find equidistribution, we \\ \\
+The theorem clearly says that something ``nearly factors" and our solutions is ``nearly symmetric":
+$$[\text{counting measure]} \approx [\text{sphere measure}] \times [\text{lattice measure}] $$
+We are unlikely to solve these problem explicitly as $D \to \infty$.  How can we write $v^2 = v_1^2 + v_2^2 + v_3^2 + v_4^2 = D$ with $D \gg 10^{100}$?  Maybe there are appoximate algorithms for budgeting space and time resources? \\ \\
+Finally smooth functions can be really arbitrary, we could try to construct a smooth function that vanishes on a dense set of the sphere (as $D \to \infty$) or with other properties, and our equidistribution result should old.  Indeed, these are left as exercises. \\ \\
+Around 1959, there's interest in writing as an integer as sums of four squares.  First of all:
+\begin{itemize}
+\item $\widehat{\mathbb{Z}}^d$ is the set of ``primitive" vectors in $\mathbb{Z}^d$
+\item If we have any four numbers $\vec{v} = (v_1, v_2, v_3, v_4) \in \mathbb{Z}^4 $ the vector has a radius $v^2 = v_1^2 + v_2^2 + v_3^2 + v_4^2 = D = \text{radius}^2$.
+\item One more computation we can do is the orhogonal lattice: $$\Lambda_v =v^\perp \cap \mathbb{Z}^4 $$
+These exercises in 4-dimesional geomtry might be done formally using Linear Algebra (in fact module theory it's over $\mathbb{Z}$) yet \dots 
+\end{itemize}
+So we can study the joint equidistribution problem:
+$$ \frac{1}{\sqrt{D}} v \in  [\text{diretion}] \times [\text{shape of the lattice}] $$
+The very notion of \textbf{vector} took centuries to develop to describe quantities in geometry and physics.\footnote{Euclid's elements had a notion of ``line" or of ``rectangle" not a notion of ``physics".  Wikipedia credits the term ``vector" to dissions clarifying Electricity and Magnetism in 1860's.}
+\vfill
+
+\begin{thebibliography}{}
+
+\item \dots
+\item \dots 
+
+\end{thebibliography}
+
+\newpage
+
+\noindent abc
+
+}
+\end{document}
