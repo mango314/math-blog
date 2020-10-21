@@ -70,7 +70,25 @@ The very notion of \textbf{vector} took centuries to develop to describe quantit
 
 \newpage
 
-\noindent abc
-
+\noindent Actually \textit{using} these formulas is another story.  Let's try to read the instructions.  Set $d = 4$ so we are trying to solve:
+$$ v^2 = v_1^2 + v_2^2 + v_3^2 + v_4^2 = D \in \mathbb{Z} $$ 
+we are looking for integer solutions $(v_1, v_2, v_3, v_4) \in \mathbb{Z}$.  So that's the statement  ``Let $v \in S^3(D)$ be a primitive point."  This is the equation we would like to solve and we're assuming it's already there.\\ \\
+For each vector $v \in S^3(D)$ we can find a group orbit $v \mapsto \mathbb{H}_v(\mathbb{Q}_S) \mathbb{G}_1(\mathbb{Z}^S)$ dense in $\mathcal{Y}_1^S$ with $S \in \{ \infty, p\}$. There's a lot of notation.  If we rotate the sphere $\text{SO}_3(\mathbb{Z})$ has only 8 elements.  
+\begin{itemize}
+\item $\mathbb{Q}_S = \prod_v \mathbb{Q}_v = \mathbb{Q}_\infty \times \mathbb{Q}_p = \mathbb{R} \times \mathbb{Q}_p$ 
+\item $\mathbb{Z}_S = \mathbb{Z}[\frac{1}{p}] $ (we adjoined the fraction $\frac{1}{p}$ standard move in \textbf{commutative algebra}).
+\item $\mathbb{H}_v := \text{Stab}_{\mathbb{G}_1}(v)$ is the \textbf{stabilizer} of $v$ in the quaternion algebra $\mathbb{H}$.
+\item $\mathcal{Y}_S = \big(\text{ASL}_3(\mathbb{R})\times \text{SO}_3(\mathbb{R})\big) \times \big(\text{ASL}_3( \mathbb{Q}_p )\times \text{SO}_3(\mathbb{Q}_p)\big)$
+this is a rather complicated homogeneous space since it insolves both the real part $\mathbb{R}$ and the $p$-adic part $\mathbb{Q}_p$. \end{itemize}
+\textbf{Q} Do we understand how to compute stabilizers in this setting.  This object maps a vector to an entire group, and then we are letting $v \in S^3(D)$ vary over all the lattice points of the $3$-sphere. \\ \\
+We can try to solve for appoximate group \textit{orbits}.\\
+Given $g_\infty \in \text{SO}_3(\mathbb{R}) $ we can find some ``rotations" $(h_\infty, h_p) \in \mathbb{H}_v(\mathbb{Q}_p \times \mathbb{R})  $ (the subgroup that stabilizes the vector $v \in S^3(D)$).
+$$ [g_\infty \in \text{SO}_3(\mathbb{R})] \to [ (h_\infty, h_p) \in \mathbb{H}_v(\mathbb{Q}_p \times \mathbb{R}) ] $$
+A perfect equation is too much we need just approximate identity of group orbits:
+$$ (h_\infty, h_p) \,\text{SO}_3 ( \mathbb{Z}[\tfrac{1}{p}] ) \approx (g_\infty, e)\text{SO}_3 ( \mathbb{Z}[\tfrac{1}{p}] ) $$
+This might be difficult because the rotations 
+$(h_\infty, h_p)$ stabilize the previous solution $v \in S^3(D)$.  For group elemeents we get an approxiate identity of the $3 \times 3$ matrices:
+$$ (h_\infty, h_p) (\gamma, \gamma) \approx (g_\infty, e) $$
+We claim that with $\gamma \in \text{SO}_3[\frac{1}{p}]$ and we can solve $w = \gamma^{-1}v $ (observe $\gamma$ has an inverse rotation $\gamma^{-1}$, so that $\gamma^{-1}v \in \mathbb{Z}^4$, solves our sum-of-four-squares in the direction arbitrarily close to $v$. 
 }
 \end{document}
