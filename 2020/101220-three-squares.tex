@@ -97,5 +97,33 @@ Group theory exercise:
 \item over modular arithmetic $\gamma^{-1}v = \gamma^{-1} h_p^\infty v \approx v \in \mathbb{Q}_p^4$.
 \item conclude that $\gamma^{-1} v \in \mathbb{Z}^4$ .
 \end{itemize}
+\textbf{10/20} Here at least we just get told the answer to the exercise:
+\begin{eqnarray*} G_S = G_\infty \times G_p 
+&=& \mathbb{G}(\mathbb{R}) \times \mathbb{G}(\mathbb{Q}_p) \\
+&=& \big( \mathbb{G}_1(\mathbb{R}) \times \mathbb{G}_1(\mathbb{Q}_p) \big) \times 
+\big( \mathbb{G}_2(\mathbb{R}) \times \mathbb{G}_2(\mathbb{Q}_p) \big) \\ 
+&=& \big(\text{rotations} \times \text{lattices}\big)_\infty \times \big(\text{rotations} \times \text{lattices}\big)_p \\  
+&=& \big(\text{SO}_4(\mathbb{R}) \times \text{SL}_3(\mathbb{R})\big)
+\times 
+\big(\text{SO}_4(\mathbb{Q}_p) \times \text{SL}_3(\mathbb{Q}_p)\big)  \end{eqnarray*}
+So whatever problem we are trying to solve (in this case sum of four squares or sum of \text{five} squares) this is just our strategy of moving between solving the distance equations over congruences and with ``Euclidean" distances.
+$$ \Gamma = \mathbb{G}(\mathbb{Z}[1/p]) \text{ is a lattice in } \mathbb{G}(\mathbb{R}) \times \mathbb{G}(\mathbb{Q}_p) $$
+Abstractly this equation looks great even if our original question is getting further and further lost.   There is isomorphism
+$$ \Gamma \mathbb{G}(\mathbb{Q}_S) \simeq \mathbb{G}(\mathbb{Z}[1/p]) \backslash \mathbb{G}(\mathbb{Q}_S) $$
+There's a group action:
+$$ g \cdot x = xg^{-1} \text{ with }x \in \Gamma \backslash \mathbb{G}(\mathbb{Q}_S) \text{ and } g \in \mathbb{G}(\mathbb{Q}_S) $$
+At least theoretically we can write this freshman number theory problem as the comparison of two different Haar measures over algebraic groups. \\ \\  
+The symmetry group of this problem seems to be: 
+$$ \text{SO}_3(\mathbb{R}) \times \mathbb{H}_v(\mathbb{Q}_p) $$
+The second copy is also the rotation group (stabilizing $v$) over the finite place, $\mathbb{Q}_p$. \\ \\
+Just a reminder: 
+\begin{itemize}
+\item Fermat theorem $p = x^2 + y^2$
+\item Lagrange Theorem $n = a^2 + b^2 + c^2 + d^2$
+\item Legendre Theorem $n = a^2 + b^2 + c^2$
+\item Ratner Theorem 
+\end{itemize}
+$$ \left[ \begin{array}{cc} 1 & t \\ 0 & 1 \end{array} \right] $$
 }
+
 \end{document}
