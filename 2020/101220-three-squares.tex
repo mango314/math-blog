@@ -65,6 +65,8 @@ The very notion of \textbf{vector} took centuries to develop to describe quantit
 
 \item \dots
 \item \dots 
+\item \item Matthew Tointon.  \textbf{Approximate Groups} (London Mathematical Society Student Texts \#94)
+
 
 \end{thebibliography}
 
@@ -129,7 +131,37 @@ Example that the horocycle flow on $ \text{SL}(2, \mathbb{Z}) \backslash \text{S
 \textbf{10/24} Here's a result I found on \texttt{arXiv:1808:01584} involving the Brauer-Manin obstrution. \\ \\
 Let $X$ be a scheme over $\mathbb{Z}$ given by $x^2 + y^2 + z^2 - xyz = 4 + 2(lw)^2 $ where $w$ is an odd integer and $l$ is a prime with $l = \pm 3 \pmod 8$.  \\ \\
 If $lw = \pm 4 \pmod 9$ then $X(A_{\mathbb{Z}})^{Br} \neq \varnothing$. (There \textit{is} an obstruction.)\\ \\
-$X$ is an Affine scheme over $\mathbb{Z}$ and we write $X(A_{\mathbb{Z}}) = \prod_p X(\mathbb{Z}_p)$.
+$X$ is an Affine scheme over $\mathbb{Z}$ and we write $X(A_{\mathbb{Z}}) = \prod_p X(\mathbb{Z}_p)$. \\ \\
+\textbf{10/28} Let's do some ``unpacking" -- which menas just ``reading".  The theorem says $f \in C^\infty_c(\mathcal{Y})$ so there are two requisites:
+\begin{itemize}
+\item infinitely differentiable (e.g. no spikes like $f(x) = |x|$).
+\item ``compact support" on the space
+\item $S^3 \times \text{SL}_3(\mathbb{Z}) \backslash \text{SL}_3(\mathbb{R}) / \text{SO}_3(\mathbb{R}  = \{\texttt{spheres}\} \times \{\texttt{lattices}\}$ 
+\end{itemize}
+How do we define smooth functions on these points? We're saying that the ``average" of $f$ supportd on the solutions to $n = a^2 + b^2 + c^2 + d^2$.  Using Ratner theorem we might be able to traverse the entire space of lattices.  \\ \\
+The acting group is the rotation group $\times$ the group of symmetries of the grid\footnote{These were origially called the ``Wallpaper groups".  Certainly, the lawyer Pierre de Fermat didn't think of affine group symmetry in 1650.  Over the next two centuries, his result would checked by serious and recteational mathematics. 1750 for a proof, we don't get the term \textbf{ring} or \textbf{ideal} until 1850, by Richard Dedekind.  Emmy Noether and Emil Artin wouldn't revise algebra into an abstract subject until the turn of 20th century.}.
+$$ \big( \text{SO}_3(\mathbb{R}) \times \text{SL}_3(\mathbb{R}) \big) \times 
+\big( \text{SO}_3(\mathbb{Q}_p) \times \text{SL}_3(\mathbb{Q}_p) \big)  $$
+The lattice that we're setting to $\mathbf{1}$ is also larger.  It's not just based on $\mathbb{Z}$ it's based on $\mathbb{Z}[\frac{1}{p}]$.  This group will act on both the $\mathbb{R}$ component and the finite-place $\mathbb{Q}_p$.
+$$ \Gamma = \text{SO}_3(\mathbb{Z}[\tfrac{1}{p}]) \times \text{SL}_3(\mathbb{Z}[\tfrac{1}{p}]) $$
+They are writing $\Delta_H = \{ (h,h) : h \in H\}$ for the \textbf{diagonal embedding}, here it just means we're going to do the same thing to both copies of our group.
+$$ \big( \mathbb{G}_1(\mathbb{Z}[\tfrac{1}{p}]) \times
+\mathbb{G}_2(\mathbb{Z}[\tfrac{1}{p}]) \big) \cdot ((k_v, e), (\theta_v, e) \big) \cdot \Delta_{\text{SO}_3(\mathbb{R}) \times \mathbb{H}_v(\mathbb{Q}_p)}$$
+The diagonal action could mean .  Let's remind ourselves basic facts about matrix groups.
+\begin{itemize}
+\item $\text{SO}_3(\mathbb{R}) \subseteq \text{SL}_3(\mathbb{R}) $ 
+\item $\mathbb{H}_v(\mathbb{Q}_p) \simeq \text{SO}_3(\mathbb{Q}_p)$ 
+\item $k_v, \theta_v \in \text{SO}_3(\mathbb{R})$ 
+\end{itemize}
+(rotations are part of the special linear group, they preserve lattices) (quaternions are 3D rotations) (these are 3D rotations we found  in another computation)  Using this diagonal group action we could try to infer one solution from another.  We let the rotation vary and get a solution vector and lattice in random directions. \\ \\
+If we restruct to the rotation group the methods still work and get various sum-of-four-squares solutions:
+$$\overline{ \big(\mathbb{H}_v(\mathbb{R}) \times \mathbb{H}_v(\mathbb{Q}_p)\big) \text{SO}_3(\mathbb{Z}[\tfrac{1}{p}]) }  = \text{SO}_3(\mathbb{R}) \times \text{SO}_3(\mathbb{Q}_p) $$
+This leads to approximate equations (and approximate groups):
+$$  (h_\infty, h_p) \text{SO}_3(\mathbb{Z}[\tfrac{1}{p}]) \approx (g_\infty, e)\text{SO}_3(\mathbb{Z}[\tfrac{1}{p}]) \quad\text{ or }\quad
+(h_\infty, h_p) (\gamma, \gamma) \approx (g_\infty, e)$$
+If we solve the equation in the $\infty$ place (over $\mathbb{R})$ and over the $p$-place 
+(over $\mathbb{Q}_p$, e.g. using congruences or Hensel's Lemma) and it's a lattice point (in $\mathbb{Z}[\frac{1}{p}]$ then we have a solution over $\mathbb{Z}$. \\ \\
+OK.  As usual, reading the ``instruction manual" does little to help us reason about so-and-so's theoretical framework, or to help us ``solve" equations in practical setting.\footnote{Maybe we ``solve" the ``equation" who care?  Maybe solving is overrated.}
 }
 
 \end{document}
