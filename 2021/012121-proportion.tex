@@ -1,0 +1,50 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\usepackage{fontspec}
+\usepackage{xcolor}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+%\setmainfont[Color=brown]{Linux Libertine}
+
+\newcommand{\red}{\tikz{\fill[ color=red] (0,0) circle (0.25);}}
+\newcommand{\yellow}{\tikz{\fill [color=yellow] (0,0)--(0.5,0)--(0.5,0.5)--(0,0.5)--cycle;}}
+
+
+\title{Reading: Euclid's Elements}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+{\fontsize{16pt}{16pt}\selectfont 
+
+\noindent  \textbf{BK 5 Prop 15} Magnitudes have the same ratio to one another as their equimultipes have. \\ \\
+Let \red \;and \yellow \; be two magnitudes; \\ \\
+then,  $\red : \yellow :: M'\,\red : M'\,\yellow $. \\ \\
+For \begin{eqnarray*}
+\red : \yellow &=& \red : \yellow \\
+&=& \red : \yellow \\
+&=& \red : \yellow 
+\end{eqnarray*}
+$\therefore \red: \yellow :: 4 \, \red: 4 \, \yellow $ (Book 5 Proposition 12 ). \\ \\
+And as the same resoning is generaly applicable we have:
+$$ \red: \yellow :: M'\red : M'\yellow $$
+$\therefore$ Magnitudes have the same ratio, etc.
+}
+
+\newpage
+
+
+\end{document}
