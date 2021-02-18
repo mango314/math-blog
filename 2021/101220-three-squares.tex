@@ -1,0 +1,203 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\usepackage{fontspec}
+\usepackage{xcolor}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+%\setmainfont[Color=brown]{Linux Libertine}
+
+
+\title{Reading: \dots}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+{\fontsize{16pt}{16pt}\selectfont 
+
+\noindent  The statement is a bit technical that the ``full [counting] measure" is close to the ``joint measure".  These terms don't mean anything until we at least provide a definition.  That doesn't mean we've looked at them \dots ever. \\ \\
+\textbf{Thm 1.1} [AES 16a] Let $d \geq 3$ and for any integer $D$ define
+$$ Q_D = 
+\left\{ 
+\left( \frac{v}{||v||} , [\Lambda_v]   \right) :
+v \in \hat{\mathbb{Z}}^d , ||v||^2 = D \right\} 
+\subset S^{d-1} \times \mathcal{X}_{d-1} $$
+Then the normalized counting measure $m_D$ on $\mathcal{Q}_D$ converges to $m_{S^{d-1}} \times m_{\chi_{d-1}} $ in the weak* topology as $D \to \infty$, provided that the set $\mathcal{Q}_D$ is non-empty and that in addition one has the following conditions on the number $D$ 
+\begin{itemize}
+\item $d=3$ \dots
+\item $d=4$ \dots
+\end{itemize}
+For $d \geq 4$ a stronger claim is given.  They remove a ``congruence condition" and instead of the ``shape of the lattice"  they look at a ``grid".  These terms might deserve enunciation. \\ \\ 
+\textbf{Thm 1.2} Let $d = 4$ or $d = 5$ for any positive integer $D$, let $m_{Q_D}$ denote the normalized counting measure  
+$$ |m_{Q_D}(f)  - m_S^{d-1} \times m_{\mathcal{X}}| < D^{-\kappa} S_\infty(f)$$
+(provided that $Q_D$ is non-empty). \\ \\
+How we can read this as an elementary problem?  Since $f \in C^\infty_c(S^{d-1} \times \mathcal{X}_{d-1})$ could be any \textbf{smooth} and \textbf{compactly supported} function on the space of $[\text{sphere}] \times [\text{space of lattices}]$.  \\ \\
+How do we decide about elements of $Q_D$ ? Maybe this set is empty?  Counting measure suggests we locate the object exactly at the point.  That's unlikely we might try to find equidistribution, we \\ \\
+The theorem clearly says that something ``nearly factors" and our solutions is ``nearly symmetric":
+$$[\text{counting measure]} \approx [\text{sphere measure}] \times [\text{lattice measure}] $$
+We are unlikely to solve these problem explicitly as $D \to \infty$.  How can we write $v^2 = v_1^2 + v_2^2 + v_3^2 + v_4^2 = D$ with $D \gg 10^{100}$?  Maybe there are appoximate algorithms for budgeting space and time resources? \\ \\
+Finally smooth functions can be really arbitrary, we could try to construct a smooth function that vanishes on a dense set of the sphere (as $D \to \infty$) or with other properties, and our equidistribution result should old.  Indeed, these are left as exercises. \\ \\
+Around 1959, there's interest in writing as an integer as sums of four squares.  First of all:
+\begin{itemize}
+\item $\widehat{\mathbb{Z}}^d$ is the set of ``primitive" vectors in $\mathbb{Z}^d$
+\item If we have any four numbers $\vec{v} = (v_1, v_2, v_3, v_4) \in \mathbb{Z}^4 $ the vector has a radius $v^2 = v_1^2 + v_2^2 + v_3^2 + v_4^2 = D = \text{radius}^2$.
+\item One more computation we can do is the orhogonal lattice: $$\Lambda_v =v^\perp \cap \mathbb{Z}^4 $$
+These exercises in 4-dimesional geomtry might be done formally using Linear Algebra (in fact module theory it's over $\mathbb{Z}$) yet \dots 
+\end{itemize}
+So we can study the joint equidistribution problem:
+$$ \frac{1}{\sqrt{D}} v \in  [\text{diretion}] \times [\text{shape of the lattice}] $$
+The very notion of \textbf{vector} took centuries to develop to describe quantities in geometry and physics.\footnote{Euclid's elements had a notion of ``line" or of ``rectangle" not a notion of ``physics".  Wikipedia credits the term ``vector" to dissions clarifying Electricity and Magnetism in 1860's.}
+\vfill
+
+\begin{thebibliography}{}
+
+\item \dots
+\item \dots 
+\item \item Matthew Tointon.  \textbf{Approximate Groups} (London Mathematical Society Student Texts \#94)
+
+
+\end{thebibliography}
+
+\newpage
+
+\noindent Actually \textit{using} these formulas is another story.  Let's try to read the instructions.  Set $d = 4$ so we are trying to solve:
+$$ v^2 = v_1^2 + v_2^2 + v_3^2 + v_4^2 = D \in \mathbb{Z} $$ 
+we are looking for integer solutions $(v_1, v_2, v_3, v_4) \in \mathbb{Z}$.  So that's the statement  ``Let $v \in S^3(D)$ be a primitive point."  This is the equation we would like to solve and we're assuming it's already there.\\ \\
+For each vector $v \in S^3(D)$ we can find a group orbit $v \mapsto \mathbb{H}_v(\mathbb{Q}_S) \mathbb{G}_1(\mathbb{Z}^S)$ dense in $\mathcal{Y}_1^S$ with $S \in \{ \infty, p\}$. There's a lot of notation.  If we rotate the sphere $\text{SO}_3(\mathbb{Z})$ has only 8 elements.  
+\begin{itemize}
+\item $\mathbb{Q}_S = \prod_v \mathbb{Q}_v = \mathbb{Q}_\infty \times \mathbb{Q}_p = \mathbb{R} \times \mathbb{Q}_p$ 
+\item $\mathbb{Z}_S = \mathbb{Z}[\frac{1}{p}] $ (we adjoined the fraction $\frac{1}{p}$ standard move in \textbf{commutative algebra}).
+\item $\mathbb{H}_v := \text{Stab}_{\mathbb{G}_1}(v)$ is the \textbf{stabilizer} of $v$ in the quaternion algebra $\mathbb{H}$.
+\item $\mathcal{Y}_S = \big(\text{ASL}_3(\mathbb{R})\times \text{SO}_3(\mathbb{R})\big) \times \big(\text{ASL}_3( \mathbb{Q}_p )\times \text{SO}_3(\mathbb{Q}_p)\big)$
+this is a rather complicated homogeneous space since it insolves both the real part $\mathbb{R}$ and the $p$-adic part $\mathbb{Q}_p$. \end{itemize}
+\textbf{Q} Do we understand how to compute stabilizers in this setting.  This object maps a vector to an entire group, and then we are letting $v \in S^3(D)$ vary over all the lattice points of the $3$-sphere. \\ \\
+We can try to solve for appoximate group \textit{orbits}: \\ \\
+Given $g_\infty \in \text{SO}_3(\mathbb{R}) $ we can find some ``rotations" $(h_\infty, h_p) \in \mathbb{H}_v(\mathbb{Q}_p \times \mathbb{R})  $ (the subgroup that stabilizes the vector $v \in S^3(D)$).
+$$ [g_\infty \in \text{SO}_3(\mathbb{R})] \to [ (h_\infty, h_p) \in \mathbb{H}_v(\mathbb{Q}_p \times \mathbb{R}) ] $$
+A perfect equation is too much we need just approximate identity of group orbits:
+$$ (h_\infty, h_p) \,\text{SO}_3 ( \mathbb{Z}[\tfrac{1}{p}] ) \approx (g_\infty, e)\text{SO}_3 ( \mathbb{Z}[\tfrac{1}{p}] ) $$
+This might be difficult because the rotations 
+$(h_\infty, h_p)$ stabilize the previous solution $v \in S^3(D)$.  For group elemeents we get an approxiate identity of the $3 \times 3$ matrices:
+$$ (h_\infty, h_p) (\gamma, \gamma) \approx (g_\infty, e) $$
+We claim that with $\gamma \in \text{SO}_3[\frac{1}{p}]$ and we can solve $w = \gamma^{-1}v $ (observe $\gamma$ has an inverse rotation $\gamma^{-1}$, so that $\gamma^{-1}v \in \mathbb{Z}^4$, solves our sum-of-four-squares in the direction arbitrarily close to $v$. \\ \\
+We have both that $\mathbb{Z}[\frac{1}{p}] \subseteq \mathbb{R}$ and $\mathbb{Z}[\frac{1}{p}] \subseteq \mathbb{Q}_p$ (with two different nototions of topology ``closeness" either $|\frac{1}{p}| = \frac{1}{p} < 1$ or that $|\frac{1}{p}| = p$) so that maybe $\mathbb{Z}[\frac{1}{p}] \subseteq \mathbb{Q}_p \cap \mathbb{R} $. \\ \\
+Group theory exercise:
+\begin{itemize}
+\item over the real numbers $\gamma^{-1}v = \gamma^{-1} h_\infty^{-1}v \approx g_\infty^{-1} v \in \mathbb{R}^4$.
+\item over modular arithmetic $\gamma^{-1}v = \gamma^{-1} h_p^\infty v \approx v \in \mathbb{Q}_p^4$.
+\item conclude that $\gamma^{-1} v \in \mathbb{Z}^4$ .
+\end{itemize}
+\textbf{10/20} Here at least we just get told the answer to the exercise:
+\begin{eqnarray*} G_S = G_\infty \times G_p 
+&=& \mathbb{G}(\mathbb{R}) \times \mathbb{G}(\mathbb{Q}_p) \\
+&=& \big( \mathbb{G}_1(\mathbb{R}) \times \mathbb{G}_1(\mathbb{Q}_p) \big) \times 
+\big( \mathbb{G}_2(\mathbb{R}) \times \mathbb{G}_2(\mathbb{Q}_p) \big) \\ 
+&=& \big(\text{rotations} \times \text{lattices}\big)_\infty \times \big(\text{rotations} \times \text{lattices}\big)_p \\  
+&=& \big(\text{SO}_4(\mathbb{R}) \times \text{SL}_3(\mathbb{R})\big)
+\times 
+\big(\text{SO}_4(\mathbb{Q}_p) \times \text{SL}_3(\mathbb{Q}_p)\big)  \end{eqnarray*}
+So whatever problem we are trying to solve (in this case sum of four squares or sum of \text{five} squares) this is just our strategy of moving between solving the distance equations over congruences and with ``Euclidean" distances.
+$$ \Gamma = \mathbb{G}(\mathbb{Z}[1/p]) \text{ is a lattice in } \mathbb{G}(\mathbb{R}) \times \mathbb{G}(\mathbb{Q}_p) $$
+Abstractly this equation looks great even if our original question is getting further and further lost.   There is isomorphism
+$$ \Gamma \mathbb{G}(\mathbb{Q}_S) \simeq \mathbb{G}(\mathbb{Z}[1/p]) \backslash \mathbb{G}(\mathbb{Q}_S) $$
+There's a group action:
+$$ g \cdot x = xg^{-1} \text{ with }x \in \Gamma \backslash \mathbb{G}(\mathbb{Q}_S) \text{ and } g \in \mathbb{G}(\mathbb{Q}_S) $$
+At least theoretically we can write this freshman number theory problem as the comparison of two different Haar measures over algebraic groups. \\ \\  
+The symmetry group of this problem seems to be: 
+$$ \text{SO}_3(\mathbb{R}) \times \mathbb{H}_v(\mathbb{Q}_p) $$
+The second copy is also the rotation group (stabilizing $v$) over the finite place, $\mathbb{Q}_p$. 
+\newpage
+Just a reminder: 
+\begin{itemize}
+\item Fermat theorem $p = x^2 + y^2$
+\item Lagrange Theorem $n = a^2 + b^2 + c^2 + d^2$
+\item Legendre Theorem $n = a^2 + b^2 + c^2$
+\item Ratner Theorem 
+\end{itemize}
+$$ \left[ \begin{array}{cc} 1 & t \\ 0 & 1 \end{array} \right] $$
+Example that the horocycle flow on $ \text{SL}(2, \mathbb{Z}) \backslash \text{SL}(2, \mathbb{R}) $ is ergodic and mixing.  How do we illustrate the mixing here?  That a neighborhood is going to spread out over the entire space.\footnote{Scholars spent a lot of time trying to prove or disprove Euclid's fifth postulate.  Searching online, the term Hyperbolic geometry is coined around 1850 and discussions of special relativity around 1920.  The connection to number theory and fractions during the 1980s or earlier.}\\ \\
+\textbf{10/24} Here's a result I found on \texttt{arXiv:1808:01584} involving the Brauer-Manin obstrution. \\ \\
+Let $X$ be a scheme over $\mathbb{Z}$ given by $x^2 + y^2 + z^2 - xyz = 4 + 2(lw)^2 $ where $w$ is an odd integer and $l$ is a prime with $l = \pm 3 \pmod 8$.  \\ \\
+If $lw = \pm 4 \pmod 9$ then $X(A_{\mathbb{Z}})^{Br} \neq \varnothing$. (There \textit{is} an obstruction.)\\ \\
+$X$ is an Affine scheme over $\mathbb{Z}$ and we write $X(A_{\mathbb{Z}}) = \prod_p X(\mathbb{Z}_p)$. \\ \\
+\textbf{10/28} Let's do some ``unpacking" -- which menas just ``reading".  The theorem says $f \in C^\infty_c(\mathcal{Y})$ so there are two requisites:
+\begin{itemize}
+\item infinitely differentiable (e.g. no spikes like $f(x) = |x|$).
+\item ``compact support" on the space
+\item $S^3 \times \text{SL}_3(\mathbb{Z}) \backslash \text{SL}_3(\mathbb{R}) / \text{SO}_3(\mathbb{R}  = \{\texttt{spheres}\} \times \{\texttt{lattices}\}$ 
+\end{itemize}
+How do we define smooth functions on these points? We're saying that the ``average" of $f$ supportd on the solutions to $n = a^2 + b^2 + c^2 + d^2$.  Using Ratner theorem we might be able to traverse the entire space of lattices.  \\ \\
+The acting group is the rotation group $\times$ the group of symmetries of the grid\footnote{These were origially called the ``Wallpaper groups".  Certainly, the lawyer Pierre de Fermat didn't think of affine group symmetry in 1650.  Over the next two centuries, his result would checked by serious and recteational mathematics. 1750 for a proof, we don't get the term \textbf{ring} or \textbf{ideal} until 1850, by Richard Dedekind.  Emmy Noether and Emil Artin wouldn't revise algebra into an abstract subject until the turn of 20th century.}.
+$$ \big( \text{SO}_3(\mathbb{R}) \times \text{SL}_3(\mathbb{R}) \big) \times 
+\big( \text{SO}_3(\mathbb{Q}_p) \times \text{SL}_3(\mathbb{Q}_p) \big)  $$
+The lattice that we're setting to $\mathbf{1}$ is also larger.  It's not just based on $\mathbb{Z}$ it's based on $\mathbb{Z}[\frac{1}{p}]$.  This group will act on both the $\mathbb{R}$ component and the finite-place $\mathbb{Q}_p$.
+$$ \Gamma = \text{SO}_3(\mathbb{Z}[\tfrac{1}{p}]) \times \text{SL}_3(\mathbb{Z}[\tfrac{1}{p}]) $$
+They are writing $\Delta_H = \{ (h,h) : h \in H\}$ for the \textbf{diagonal embedding}, here it just means we're going to do the same thing to both copies of our group.
+$$ \big( \mathbb{G}_1(\mathbb{Z}[\tfrac{1}{p}]) \times
+\mathbb{G}_2(\mathbb{Z}[\tfrac{1}{p}]) \big) \cdot ((k_v, e), (\theta_v, e) \big) \cdot \Delta_{\text{SO}_3(\mathbb{R}) \times \mathbb{H}_v(\mathbb{Q}_p)}$$
+The diagonal action could mean .  Let's remind ourselves basic facts about matrix groups.
+\begin{itemize}
+\item $\text{SO}_3(\mathbb{R}) \subseteq \text{SL}_3(\mathbb{R}) $ 
+\item $\mathbb{H}_v(\mathbb{Q}_p) \simeq \text{SO}_3(\mathbb{Q}_p)$ 
+\item $k_v, \theta_v \in \text{SO}_4(\mathbb{R})$ 
+\end{itemize}
+(rotations are part of the special linear group, they preserve lattices) (quaternions are 3D rotations) (these are 3D rotations we found  in another computation)  Using this diagonal group action we could try to infer one solution from another.  We let the rotation vary and get a solution vector and lattice in random directions. \\ \\
+If we restruct to the rotation group the methods still work and get various sum-of-four-squares solutions:
+$$\overline{ \big(\mathbb{H}_v(\mathbb{R}) \times \mathbb{H}_v(\mathbb{Q}_p)\big) \text{SO}_3(\mathbb{Z}[\tfrac{1}{p}]) }  = \text{SO}_3(\mathbb{R}) \times \text{SO}_3(\mathbb{Q}_p) $$
+This leads to approximate equations (and approximate groups):
+$$  (h_\infty, h_p) \text{SO}_3(\mathbb{Z}[\tfrac{1}{p}]) \approx (g_\infty, e)\text{SO}_3(\mathbb{Z}[\tfrac{1}{p}]) \quad\text{ or }\quad
+(h_\infty, h_p) (\gamma, \gamma) \approx (g_\infty, e)$$
+If we solve the equation in the $\infty$ place (over $\mathbb{R})$ and over the $p$-place 
+(over $\mathbb{Q}_p$, e.g. using congruences or Hensel's Lemma) and it's a lattice point (in $\mathbb{Z}[\frac{1}{p}]$ then we have a solution over $\mathbb{Z}$. \\ \\
+OK.  As usual, reading the ``instruction manual" does little to help us reason about so-and-so's theoretical framework, or to help us ``solve" equations in practical setting.\footnote{Maybe we ``solve" the ``equation" who care?  Maybe solving is overrated.}
+}
+
+\newpage
+
+\noindent {\textbf{11/13}} The last point is worth repeating.  We have that $\text{SL}_2(\mathbb{Z}[\frac{1}{p}])$ is a lattice in $\text{SL}_2(\mathbb{R}) \times \text{SL}_2(\mathbb{Q}_p)$, as might be found in Wikipedia\footnote{\texttt{https://en.wikipedia.org/wiki/Arithmetic\_{}group} or \texttt{https://arxiv.org/abs/math/0106063}} Examples of how complex these objects are:
+\begin{itemize}
+\item expander graphs
+\item extremal graphs and surfaces
+\item isospectral manifolds
+\end{itemize}
+
+\newpage
+
+\noindent \textbf{02/18} Let $k$ be a number field, and $S$ be a number of ``places" in the field, we can define 
+$$ k_S = k_{s_1} \oplus \dots \oplus k_{s_n} $$
+as the direct sum of all the completions.  Then let $F$ be a quadratic form on $k_S^n$.  \\ \\
+\textbf{Ex} What is the dimension $\dim k_S^n$ ?  How many degrees of freedom? \\ \\
+$\mathfrak{o}_S$ is the ring of $S$-integers of $k$.  \\ \\
+\textbf{Ex}  What does this mean as topogical groups?
+\begin{itemize}
+\item $(k_S, +) $ is a locally compact group (with respect to product topology)
+\item $(\mathfrak{o}_S, +)$ is 
+\end{itemize}
+Since $F = x_1^2 + x_2^2 - x_3^2$  is a ``continuous" map, we can think about open sets $U = \{ |F(x) |< \epsilon\} $.
+\begin{itemize}
+\item if $F$ is irrational then $F(\mathfrak{o}_S$ is discrete in $k_S$
+\item if $F$ is irrational, isotropic and non-degenerate, then $F(\mathfrak{o}_S)$ is non-discrete.
+\end{itemize}
+These words ``discrete" and ``dense" exist for \textbf{topological spaces}, even if we are quite sure wha they could mean as arithmetic objects.  \\ \\
+\textbf{Open} is $F(\mathfrak{o}_S)$ dense.  These words ``open" have a disclaimer (e.g. as of 1992).  \\ \\
+We would like to see how the mathematical tools are use here
+\begin{itemize}
+\item homogeneous spaces $ \text{SL}_3(k_S)/ \text{SL}_3(\mathfrak{o}_S) $
+\item geometry of numbers
+\item strong approximation
+\end{itemize}
+This is a great problem.  ``Closures of unipotent orbits in homogeneous space" we can't even decide if two elements are ``nearby" or ``the same" yet we have an answer to this one.  Worse no matter how much of this we solve, we still do not get to the theoretical limit.  Or backwords, how to theoretical arguments afford us \textit{predictive} mathematical results? \\ \\
+How does this scratchwork give us an answer?
+\end{document}
