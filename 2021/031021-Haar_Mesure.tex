@@ -1,0 +1,54 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\usepackage{fontspec}
+\usepackage{xcolor}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+%\setmainfont[Color=brown]{Linux Libertine}
+
+
+\title{Reading: Integrals}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+{\fontsize{16pt}{16pt}\selectfont 
+
+\noindent  Since these are \texttt{arXiv} papers written between different groups of professors and graduate students, we get references to the existence of objects without much supporting details, just references to textbooks.  \\ \\
+Math papers phrase things as \textbf{existence} of objects, or objects that could exist.
+The paper says something like:
+$$  \left| \int_{A^\times} \Psi_A(x) \psi_s(x) \, d^\times_Ax \right| \ll_{n,e} \sqrt{UV} $$
+We're told that an integral \textit{exists} (theoretically) and then they proceed to discuss function spaces (such as Schwartz spaces, or Hilbert spaces or $L^p$ spaces). Maybe we could write:
+$$ \int_{k^\times} f(x) \, d^\times x $$ 
+where $k$ is a field.  In fact, the paper says that a ``self-dual" measure is defined over a local Field.
+\begin{itemize}
+\item $\int_{\mathcal{O}^\times_{K,w}} d^\times_K x = \text{disc}_w(K)^{-\frac{1}{2}} $
+\item $\int_{\mathcal{O}_{K,w}} d_K x = \text{disc}_w(K)^{-\frac{1}{2}} $
+\item $d^\times x := \zeta_{F,v}(1) \frac{dx}{|x|_v} $ (normalization)
+\end{itemize}
+We can also define measures on $(\mathbb{A},+)$, $(\mathbb{A}_K,+)$ or $\mathbb{A}^\times$ and $\mathbb{A}_K^\times$ or $\mathbf{T}(\mathbb{A}) = \mathbb{A}_K^\times/\mathbb{A}^\times$, which is a torus and an example of a ``group scheme".  So once we carefully define the measure once, we theoretically get a definition of $\int$ over a \textbf{category} of objects.  
+ 
+\vfill
+
+\begin{thebibliography}{}
+
+\item ELMV
+\item \dots 
+
+\end{thebibliography}
+
+
+\end{document}
