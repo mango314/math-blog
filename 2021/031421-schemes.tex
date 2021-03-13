@@ -1,0 +1,53 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\usepackage{fontspec}
+\usepackage{xcolor}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+%\setmainfont[Color=brown]{Linux Libertine}
+
+
+\title{Reading: Schemes}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+{\fontsize{16pt}{16pt}\selectfont 
+
+\noindent  If we grab the easier parts of the algebraic geometry textbook, we suggestions for some geometric constructions.\dots \\ \\
+\textbf{Ex}: This example has to do with \textbf{parabola} and the Affrine plane  (something like $\mathbb{Q}^2$:
+$$ \text{Spec} \, \mathbb{Q}[x,y]/(y^2 - x, x) \simeq \text{Spec}\, \mathbb{Q}[y]/(y^2) $$
+Look like we can get the ``pre-image of -1" and get the complex numbers:
+$$ \text{Spec}\mathbb{Q}[x,y]/(y^2 - x, x + 1) \simeq \text{Spec} \, \mathbb{Q}[y]/(y^2 + 1) \simeq \text{Spec}\mathbb{Q}[i] = \text{Spec} \, \mathbb{Q}(i) $$
+So we are still trying to identify specific ``points" in our geometric object (which we are describing with rings and equation).  The pre-image over the  ``\text{generic point}":
+$$ \text{Spec} \, \mathbb{Q}[x,y]/(y^2 - x)
+ \otimes_{\mathbb{Q}[x]} \mathbb{Q}(x) \simeq  \text{Spec} \mathbb{Q}[y] \otimes_{\mathbb{Q}[y^2]} \mathbb{Q}(y^2)$$
+ \textbf{Ex} ? What is th scheme-theoretic 
+ { \color{blue} \textbf{fiber} } of 
+ $ \text{Spec} \mathbb{Z}[i] \to \text{Spec} \mathbb{Z} $ over the prime $(p)$? \\ \\
+\textbf{Ex}  Consider $\text{Spec} k[\epsilon]/(\epsilon^2) \to \text{Spec}\, k[x] = \mathbb{A}^1_k$ given by $x \mapsto \epsilon$.  The image of the \textbf{fuzzy point}. \\ \\
+We'll consult with \texttt{math.Stackexchange} to see if these are correct.
+\vfill
+
+\begin{thebibliography}{}
+
+\item The Rising Sea: Foundations of Algebraic Geometry \texttt{http://math.stanford.edu/\~{}vakil/216blog/}
+\item \dots 
+
+\end{thebibliography}
+
+
+\end{document}
