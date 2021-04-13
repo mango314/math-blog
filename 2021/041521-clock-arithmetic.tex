@@ -1,0 +1,61 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{ amssymb }
+\usepackage{fontspec}
+\usepackage{xcolor}
+
+\usepackage{tikz-cd}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+%\setmainfont[Color=brown]{Linux Libertine}
+
+
+\title{Tune-Up: Clock Arithmetic}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+{\fontsize{16pt}{16pt}\selectfont 
+
+\noindent \textbf{Thm} (2010) ``Non-Conventional" ergodic theorem:
+\begin{itemize}
+\item $T: \mathbb{Z}^r \curvearrowright (X, \Sigma, \mu)$ commuting probability-preserving $\mathbb{Z}^r$ actions
+\item $(I_N)_{N \geq 1}$ F\o{}lner sequence of subsets of $\mathbb{Z}^r$.
+\item $(a_N)_{N \geq 1}$ sequence of points in $\mathbb{Z}^r$
+\item $f_1, f_2, \dots f_d \in L^\infty(\mu)$
+\end{itemize}
+The sequence of ``non-conventional" ergodic averages converges in $L^2(\mu)$.
+$$ \frac{1}{|I_N|} \sum_{n \in I_n + a_N} \prod_{i=1}^d f_i \circ T_i^n $$
+Let's try a re-phrasing of the theorem. \\ \\
+\textbf{Thm} (2010) The sequence $x_n$ converges.  $x_n \to x$.  \\ \\
+Let's try with a couple of more details.  We have the sequence of averages of other functions.\\ \\
+\textbf{Thm} (2010) The sequence of functions $\text{Avg}_1(f), \dots \text{Avg}_n(f)$ converges in the function space $L^2(\mu)$.  Here $Avg_n = \sum_{i = 0}^{n-1} T^i$ or ``shuffle $n$ times", we have separated the procedure from the thing it's acting on.\\ \\
+\textbf{Ex} $\mathbb{Q}^\times$ is a multiplicative group.  I am being sloppy we could write $\mathbb{Q}^\times \simeq \mathbb{Z}^\infty$.  This is a contradiction because we could write an equally true statement for any number field $F^\times \simeq \mathbb{Z}^\infty$.  The term seems to be ``loclly compact abelian group". \\ \\
+\textbf{Ex} $\times 2 \times 3$ these are commuting operations.  The arithmetic makes it instantly clear even though 
+\begin{itemize}
+\item ``divide by 2 parts and shuffle"
+\item ``divide by 3 parts and shuffle"
+\end{itemize}
+could be very different if we switch the operations. \\ \\
+\textbf{d=1} This is the \textbf{Von Neumann ergodic theorem} which is already in the textbook\footnote{it's new textbook as of 2011}.
+\vfill
+
+\begin{thebibliography}{}
+
+\item Tim Austin \textbf{On the Norm Convergence of non-conventional ergodic averges} \texttt{arXiv:0805.0320}
+
+\end{thebibliography}
+
+\end{document}
