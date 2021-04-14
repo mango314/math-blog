@@ -49,12 +49,34 @@ Let's try with a couple of more details.  We have the sequence of averages of ot
 \item ``divide by 3 parts and shuffle"
 \end{itemize}
 could be very different if we switch the operations. \\ \\
-\textbf{d=1} This is the \textbf{Von Neumann ergodic theorem} which is already in the textbook\footnote{it's new textbook as of 2011}.
+\textbf{d=1} This is the \textbf{Von Neumann ergodic theorem} which is already in the textbook\footnote{it's new textbook as of 2011}. \\ \\
+\textbf{Thm} (Mean Ergodic Theorem) Let $(X, \mathcal{B}, \mu, T)$ be a measure-preserving system.
+$$ \frac{1}{N} \sum_{n=0}^{N-1} f \circ T^n  $$ 
+converges to a limit for any function $f \in L^2(\mu)$. \\ \\
+Here $U_T: L^2(\mu) \to L^2(\mu)$ is the operator associated to the measure-preserving transformation. \\ \\ $U_T(f) = f \circ T$. \\ \\
+How do we use the ergodic theorem?
+\begin{itemize}
+\item mostly likely we will observe the dynamical system \textit{first}
+\item Then we can guess the limiting average behavior(s).
+\begin{itemize}
+	\item chaotic
+	\item various patterns
+\end{itemize}
+\item we can guess or prove that the behavior is ergodic or possiby mixing
+\end{itemize}
+\textbf{Example} A radio channel has an average sound that's just slightly over {\color{black!20!white} silent}. \\ \\
+\textbf{Example} A highway is 50\% occupied and half the cars are moving ``left" and half the cars are moving ``right". \\ \\ 
+\textbf{Example} The average color of a TV scrren is gray. \\ \\
+In colloquial speech we are comparing the two ways of averaging a dynamical system.
+$$ \text{[space average]} = \text{[time average]} $$
+so if we observe a dynamical system over time we compute the average we could have also computed the average over space.  Ergodicity is a spectral property so this really depends on the ``color" of the ``noise" that we are observing.\footnote{Hence they are called ``observables".}
 \vfill
 
 \begin{thebibliography}{}
 
 \item Tim Austin \textbf{On the Norm Convergence of non-conventional ergodic averges} \texttt{arXiv:0805.0320}
+\item Manfred Einsiedler, Thomas Ward \textbf{Ergodic Theorem with a View Towards Number Theory} GTM\#259.  Springer, 2011.
+\item solenoids \dots \textit{Ergodic Theory and Dynamical Systems} 
 
 \end{thebibliography}
 
