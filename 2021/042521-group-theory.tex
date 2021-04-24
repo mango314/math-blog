@@ -1,0 +1,66 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\usepackage{fontspec}
+\usepackage{xcolor}
+
+\usepackage{tikz-cd}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+%\setmainfont[Color=brown]{Linux Libertine}
+
+
+\title{Reminder: Group Theory}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+{\fontsize{16pt}{16pt}\selectfont 
+
+\noindent Let's get some help with computers.  What are the groups of order $|G| = 400$?  Here is the computer program.\footnote{\texttt{https://math.stackexchange.com/questions/4108993/the-221-groups-of-order-g-400}}
+
+\begin{verbatim}
+G := AllSmallGroups(400);;
+List(G, g -> StructureDescription(g));
+[ "C25 : C16", "C400", "C25 : C16", "C25 : Q16", "C8 x D50",
+  "C25 : (C8 : C2)", "C25 : QD16", "D400", "C2 x (C25 : C8)",
+  "C25 : (C8 : C2)", "C4 x (C25 : C4)", "C25 : (C4 : C4)",
+  "C25 : (C4 : C4)", "C25 : ((C4 x C2) : C2)", "C25 : QD16", "C25 : D16",
+  "C25 : Q16", "C25 : QD16", "C25 : ((C4 x C2) : C2)", "C100 x C4",
+  "C25 x ((C4 x C2) : C2)", "C25 x (C4 : C4)", "C200 x C2",
+  "C25 x (C8 : C2)", "C25 x D16", "C25 x QD16", "C25 x Q16",
+  "C25 : (C8 x C2)", "C25 : (C8 : C2)", "C4 x (C25 : C4)",
+  "C25 : (C4 : C4)", "C2 x (C25 : C8)", "C25 : (C8 : C2)",
+  "C25 : ((C4 x C2) : C2)", "C2 x (C25 : Q8)", "C2 x C4 x D50",
+  "C2 x D200", "C25 : ((C4 x C2) : C2)", "D8 x D50",
+  "C25 : ((C4 x C2) : C2)", "Q8 x D50", "C25 : ((C4 x C2) : C2)",
+  ...
+]
+\end{verbatim}
+In more commom notation we can write with the symbols $\times$ and $\ltimes$ :
+\begin{itemize}
+\item $G = (C_5 \ltimes Q_8 ) \times D_{10}$
+\item $G = (C_5 \ltimes C_5) \ltimes (C_4 \times C_4) $
+\item $G = C_2 \times ((C_5 \times C_5) \ltimes C_8)$
+\end{itemize}
+\vfill
+
+\begin{thebibliography}{}
+
+\item 
+
+\end{thebibliography}
+
+\end{document}
