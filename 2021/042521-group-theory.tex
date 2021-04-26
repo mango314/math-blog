@@ -29,7 +29,8 @@
 
 {\fontsize{16pt}{16pt}\selectfont 
 
-\noindent Let's get some help with computers.  What are the groups of order $|G| = 400$?  Here is the computer program.\footnote{\texttt{https://math.stackexchange.com/questions/4108993/the-221-groups-of-order-g-400}}
+\noindent Let's get some help with computers.  What are the groups of order $|G| = 400$?  Here is the computer program.\footnote{\texttt{https://math.stackexchange.com/questions/4108993/the-221-groups-of-order-g-400} \\
+\url{https://www.gap-system.org/}}
 
 \begin{verbatim}
 G := AllSmallGroups(400);;
@@ -49,12 +50,36 @@ List(G, g -> StructureDescription(g));
   ...
 ]
 \end{verbatim}
-In more commom notation we can write with the symbols $\times$ and $\ltimes$ :
+Notice there is is both $C_{25} \times QD_{16}$ and $C_{25}\ltimes QD_{16}$. \\ \\
+In more commom notation we can write with the symbols $\times$ (direct product) and $\ltimes$ (indirect product):
 \begin{itemize}
 \item $G = (C_5 \ltimes Q_8 ) \times D_{10}$
 \item $G = (C_5 \ltimes C_5) \ltimes (C_4 \times C_4) $
 \item $G = C_2 \times ((C_5 \times C_5) \ltimes C_8)$
+\item $G = D_8 \times ((C_5 \times C_5) \ltimes C_2)$
 \end{itemize}
+Once we have these explicit descriptions of groups, we  look at the representation theory of finite groups.  Example, the Peter-Weyl theorem:
+$$  $$
+
+\newpage
+
+\noindent \textbf{Approximate Groups} 
+Does "commutativity" matter? We've been studying the equation $ab = ba$.  It certainly works for numbers $2 \times 3 = 3 \times 2$  and we can describe when it fails:
+$$
+\left[ \begin{array}{cc} 1 & 1 \\ 0 & 1 \end{array} \right]
+\left[ \begin{array}{cc} 1 & 1 \\ 1 & 0 \end{array} \right] = \left[ \begin{array}{cc} 2 & 1 \\ 1 & 0 \end{array} \right] \neq \left[ \begin{array}{cc} 1 & 2 \\ 1 & 0 \end{array} \right] = 
+\left[ \begin{array}{cc} 1 & 1 \\ 1 & 0 \end{array} \right]
+\left[ \begin{array}{cc} 1 & 1 \\ 0 & 1 \end{array} \right] $$
+so we have lots of examples of non-commutativity.  \\ \\
+\textbf{Lemma} Let $G$ be an aribtary group.  Let $A \subset G$ be a subset with $|A^2| \leq K|A|$.  Then $|A^{-1}A| \leq K^2 |A|$ and $|AA^{-1}|\leq K^2 A$. \\ \\
+In my experience the proofs not very exciting.  Counting he possibilities on both sides and making sure both sides are equal.  Here's the counter-example the book has provided:
+Let $H$ be a finite group and $G = H \ast \langle x \rangle$, the free-product of $H$ and the {infinite cyclic group} one generatory (basically $\mathbb{Z}$).  Set $A = H \cup \{  x \}$.  Then 
+\[ |A^2 \leq 3 |A| \tag{$\ast$} \]
+but $HxH \subseteq A^3$ and yet $|HxH| = |H|^2 \asymp |A|^2$.  \\ \\
+This is their instance of \textbf{small tripling}.  We could imamgine $A \subseteq \mathbb{Z}$ then:
+$$ A = A + A + A  \text{ or } |3A| \leq 3|A| $$
+so once we throw away the exact relation $A + A = A$ (such as the arithmetic progression or a \textbf{subgroup} or \textbf{coset}  of $\mathbb{Z}$) we get to consider small-doubling or small-tripliing moves. \\ \\
+\textbf{Ex} $(A \cup \{  1\} \cup A^{-1})^2 $ is an $O(K^9)$-approximate group.  
 \vfill
 
 \begin{thebibliography}{}
