@@ -58,9 +58,11 @@ In more commom notation we can write with the symbols $\times$ (direct product) 
 \item $G = C_2 \times ((C_5 \times C_5) \ltimes C_8)$
 \item $G = D_8 \times ((C_5 \times C_5) \ltimes C_2)$
 \end{itemize}
-Once we have these explicit descriptions of groups, we  look at the representation theory of finite groups.  Example, the Peter-Weyl theorem:
-$$  $$
-
+Once we have these explicit descriptions of groups, we  look at the representation theory of finite groups.  Example, by linear algebra:
+$$ \text{dim} \;\text{Ind}^G_H(\mathbf{1}_H) = [G:H] = \text{dim}(V) $$
+At least theoretically we can relate the induced representation from the subgroups and the character theory of the subgroups.
+$$ \sum_\rho (\dim \rho)^2 = |G| $$
+This is called \textbf{Maschke's Theorem}.  We have 500 examples to check dimensions of representation and Harmonic analysis of finite groups.\footnote{The category is called $\text{Mod}_G$ so that functorial properties there could be related to character theoretic formulas here.}
 \newpage
 
 \noindent \textbf{Approximate Groups} 
@@ -79,7 +81,17 @@ but $HxH \subseteq A^3$ and yet $|HxH| = |H|^2 \asymp |A|^2$.  \\ \\
 This is their instance of \textbf{small tripling}.  We could imamgine $A \subseteq \mathbb{Z}$ then:
 $$ A = A + A + A  \text{ or } |3A| \leq 3|A| $$
 so once we throw away the exact relation $A + A = A$ (such as the arithmetic progression or a \textbf{subgroup} or \textbf{coset}  of $\mathbb{Z}$) we get to consider small-doubling or small-tripliing moves. \\ \\
-\textbf{Ex} $(A \cup \{  1\} \cup A^{-1})^2 $ is an $O(K^9)$-approximate group.  
+\textbf{Ex} $(A \cup \{  1\} \cup A^{-1})^2 $ is an $O(K^9)$-approximate group.   
+
+\newpage 
+\noindent \textbf{representation theory}\footnote{\url{https://people.math.ethz.ch/~kowalski/representation-theory.pdf}} Just a reminder that $\int$ is just a short-hand of $\sum$ which just means "$+$".
+$$ \int_G f(xg) \, d\mu(x) = \int_G f(x) d\mu(x) $$
+we need Haar measure on group of choice $G = \mathbb{R}/\mathbb{Z}$ or $G = \mathbb{R}^d$ or (non-abelian) $G = \text{SO}(3)$ (the space of rotations of the sphere). We could get the approximate-groups by setting $f = 1_A$ ! \\ \\
+\textbf{?} Where did we get these invariant measures and perfect lattices and spheres?   \\ \\
+\textbf{Thm} (Peter-Weyl) Let $G$ be a compact topological group with Haar measure $\mu$.  Then the regular representation of $G$ on the space $L^2(G, \mu)$ decomposes to Hilbert spae direct sum:
+$$ L^2(G, \mu) = \bigoplus_\rho M(\rho) $$
+of isotypic components of the finite dimensional unitary representations, each $M(\rho)$ being isomorphic to $\dim(\rho)$ copies of $\rho$. \\ \\
+\textbf{Q} What does it measn that $\text{SO}(3)$ is a \textbf{compact} topological group?
 \vfill
 
 \begin{thebibliography}{}
