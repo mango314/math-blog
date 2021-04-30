@@ -1,0 +1,67 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\usepackage{fontspec}
+\usepackage{xcolor}
+
+\usepackage{tikz-cd}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+
+
+\title{Lookup: Ring Theory}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+{\fontsize{16pt}{16pt}\selectfont 
+
+\noindent We're pretty sure we need the tensor product.  A \textit{tensor} is just a \textbf{box}.  We needed tensors to build the theory of General Relativity and described ``curved" 3- and 4-dimensional spaces.  They are used to describe the \textbf{curvature} of different types of ``shapes" or ``spaces".  By the 1920's academics realized tensors would play a role in topology (the most \textit{qualitative} study of shapes -- invariant under high levels of distortion).  \\ \\
+The na\"{i}ve way of constructing the tensor product would be merely to write $x \otimes y$ with $x, y \in R$ two elements of a ring.  We should have:
+$$ x \otimes y \neq y \otimes x $$
+Then we could have the basic properties of tensor produts:
+\begin{itemize}
+\item $x \otimes (y_1 + y_2) = (x \otimes y_1) + (x \otimes y_2)$
+\item $(x_1 + x_2) \otimes y = x_1 \otimes y + x_2 \otimes  y$
+\item $(r\, x ) \otimes y = x \otimes (r \, y)$
+\end{itemize}
+so we could have $x \in M$ and $y \in N$ elements of two $R$-modules (a generalization of matrices).  Then we continue the inspection of the properties of the ring.  Instead of building the tensor product element by element, there is a \textbf{bilinear map}:
+$$ \otimes : M \times N \to M \otimes N $$
+In our case, $x = \vec{x} \in M$ and $ y = \vec{y} \in N$ are vector spaces. \\ \\  
+\textbf{Ex} if $M = \mathbb{R}$ and $N = \mathbb{R}$ then $M \times N = R \otimes R$. \\ \\
+\textbf{Ex} $\mathbb{C} \otimes_{\mathbb{R}} \mathbb{C} = \mathbb{C}^2$. \\ \\
+\textbf{Ex} $\mathbb{R} \otimes \mathbb{Z}[i] = \mathbb{R}[i] = \mathbb{C}$. \\ \\
+\textbf{Ex} $\mathbb{Q}/\mathbb{Z} \otimes_\mathbb{Z} \mathbb{Q}/\mathbb{Z} = 0$. (This an example of \textbf{torsion}.)\\ \\
+\textbf{Ex} $\mathbb{Z}/p\mathbb{Z} \otimes \mathbb{Z}/q\mathbb{Z} = 0$. \\ \\
+\textbf{Ex} $\mathbb{Q} \otimes_{\mathbb{Z}} \mathbb{Q} = \mathbb{Q}$. \\ \\
+So there are well-behaved rules for generating entire number systems.  In a graduate-level textbook or reference book, the category is called $R$-\text{Mod}.
+
+\newpage
+
+\noindent Category theory could let us organize the many different number systems and ``geometric" objects that arise in our computations.  The inner product which is just $x\cdot y = x_1 y_1 + x_2 y_2 + x_3 y_3$.  It turns out to be more correctly written as:
+$$ x \cdot y = x_1 y^1 + x_2 y^2 + x_3 y^3 \in \mathbb{R} $$ could be thought us as a map from $\mathbb{R}^3 \times \mathbb{R}_3 \to \mathbb{R}$.   
+$$ (\mathbb{R} \oplus \mathbb{R} \oplus \mathbb{R}) \otimes
+( \mathbb{R} \oplus \mathbb{R} \oplus \mathbb{R})  = 9 (\mathbb{R} \otimes \mathbb{R}) = \mathbb{R}^9 $$ \\ \\
+
+\noindent $M \otimes_R -$ and $- \otimes_R N$ are \textbf{right-exact functors} so they have well-behaved properties. 
+\vfill
+
+\begin{thebibliography}{}
+
+\item 
+
+\end{thebibliography}
+
+\end{document}
