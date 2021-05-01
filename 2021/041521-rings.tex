@@ -27,7 +27,8 @@
 \maketitle
 
 {\fontsize{16pt}{16pt}\selectfont 
-
+ 
+\noindent Our prototypical example of a ring is the number line, abstractly written as $\mathbb{Z}$.  This didn't happen until the 20th century with Emmy Noether (or something like that). \\ \\
 \noindent We're pretty sure we need the tensor product.  A \textit{tensor} is just a \textbf{box}.  We needed tensors to build the theory of General Relativity and described ``curved" 3- and 4-dimensional spaces.  They are used to describe the \textbf{curvature} of different types of ``shapes" or ``spaces".  By the 1920's academics realized tensors would play a role in topology (the most \textit{qualitative} study of shapes -- invariant under high levels of distortion).  \\ \\
 The na\"{i}ve way of constructing the tensor product would be merely to write $x \otimes y$ with $x, y \in R$ two elements of a ring.  We should have:
 $$ x \otimes y \neq y \otimes x $$
@@ -55,7 +56,34 @@ $$ x \cdot y = x_1 y^1 + x_2 y^2 + x_3 y^3 \in \mathbb{R} $$ could be thought us
 $$ (\mathbb{R} \oplus \mathbb{R} \oplus \mathbb{R}) \otimes
 ( \mathbb{R} \oplus \mathbb{R} \oplus \mathbb{R})  = 9 (\mathbb{R} \otimes \mathbb{R}) = \mathbb{R}^9 $$ \\ \\
 
-\noindent $M \otimes_R -$ and $- \otimes_R N$ are \textbf{right-exact functors} so they have well-behaved properties. 
+\noindent $M \otimes_R -$ and $- \otimes_R N$ are \textbf{right-exact functors} so they have well-behaved properties.  \\ \\
+Let's do the following typing exercise, a \textbf{triangle}:
+\[  
+\begin{tikzcd}
+M \times N \arrow{r}{\otimes} \arrow[swap]{dr}{f} & M \otimes_R N \arrow{d}{\tilde{f}} \\
+ & G \end{tikzcd}
+\] 
+Here $\tilde{f} \circ \otimes = f$. \\ \\
+The danger of ``universality" is that we have to at some point recover the original object.  Yet it's a succinct way of dealing with \textbf{everything}  at one. \\ \\
+It would look funny to write the matrix object in terms of matrix objects:
+$$
+\left[\begin{array}{ccc} 
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \end{array} \right] 
+= (e_1 \otimes e^1) + (e_2 \otimes e^2) + (e_3 \otimes e^3 )$$
+There's confusion about the algebraic objects that we are dealing with.  Here it's called a ``balanced product" or a ``tensor product".
+\begin{itemize}
+	\item $M \times N$ is called a balance product even though ther are only two factors.
+	\item 
+\end{itemize}
+The category theory way is nice and clean, yet it might not be obvious to interpret.  Maybe we can be suspicious about the role of $\mathbb{Z}$ everywhere.
+\footnote{Example if $n \in \mathbb{Z}$ then $n+1 \in \mathbb{Z}$.  Our number line rarely runs to more than $n = 100$ or $n = 1000$ and what if $n = 10^{100}$ or something like that.  We can't use a pocket calculator which is limited to 8 decimal places.  So there's always a notion of \textbf{next}.  Worse than that the operations of $+$ and $\times$ might behave oddly with the spillover with the decimal places.  And ``decimal" here is just the map $T: n \mapsto 10 \times x$. Example $2048 = 2 \times 10^3 + 4 \times 10 + 8 = (2 \times T^3 + 4 \times T + 8 \times I) \times 1$ this is also $2^10 = (T_2)^{10} \times 1$.
+$$ 2 \times T^3 + 4 \times T + 8 \times I = (T_2)^{10} $$
+Here we try to make decimals look like another operation.} \\ \\
+The balanced products are written in terms of the $\text{Hom}$ functor.
+$$ \text{Hom}_\mathbb{Z} (M \otimes_R N, G) \simeq \text{Hom}_R(M, \text{Hom}_\mathbb{Z}(N, G)) $$
+So that our simple notations of $\sum v_iv^i = v^2$ had basic categorical content where our notions of ``number" had to be revised.
 \vfill
 
 \begin{thebibliography}{}
