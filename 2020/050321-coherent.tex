@@ -1,0 +1,81 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\usepackage{fontspec}
+\usepackage{xcolor}
+
+\usepackage{tikz-cd}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+%\setmainfont[Color=brown]{Linux Libertine}
+
+
+\title{Notes: Quasi-Coherent Sheaves}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+{\fontsize{16pt}{16pt}\selectfont 
+
+
+\noindent A quasi-coherent sheaf on a ringed space $(X, \mathcal{O}_X)$ is a sheaf $\mathcal{F}$ of $\mathcal{O}_X$-modules where every point in $X$ has an open neighborhood with an exact sequence:
+$$ \mathcal{O}_X^{\oplus I}|_U \to \mathcal{O}_X^{\oplus J}|_U \to \mathcal{F}|U \to 0 $$
+In order to be called a coherent sheaf there are two more restrictions:
+\begin{itemize}
+\item $\mathcal{F}$ is of finite type on $\mathcal{O}_X$; every point in $X$ has an open neighborhood $U$ in $X$ such there is a surjective morphism $\mathcal{O}^n_X|U \to \mathcal{F}|_U$ for some natural number $n \in \mathbb{N}$. 
+\item for any open set $U \subseteq X$ and any morhism $\phi: \mathcal{O}^n_X|_U \to \mathcal{F}_U$ of $\mathcal{O}_X$ modules, the kernel is of finite type.
+\end{itemize} 
+Notice we haven't consulted a textbook yet.  We could rewind and look at the definition of a vector bundle. \\ \\ 
+A real vector bundle consist of:
+\begin{itemize}
+	\item topological space $X$ (base space) and $E$ (total space)
+	\item continous surjection $\pi: E \to X$ (bundle projection)
+	\item for every $x \in X$ there is structure of finite dimenaional vector space on the fiber $\pi^{-1}(x)$.
+\end{itemize}
+Example, the M\"{o}bius band is a bundle over the circle $S^1$. \\ \\
+When we move to quasi-coherent sheaves, perhaps we are sacrificing the third item.  
+\begin{itemize}
+\item $\varphi_U: U \times \mathbb{R}^k \to \pi^{-1}(U) $
+\item $\varphi_V: V \times \mathbb{R}^k \to \pi^{-1}(V) $
+\item $\varphi^{-1}_U \circ \varphi_V: (U \cap V) \times \mathbb{R}^k \to (U \cap V) \times \mathbb{R}^k $ (composite function)
+\item The transition functions form a \v{C}ech cocyle:
+\begin{itemize}
+\item $g_{UV}: U \cap V \to \text{GL}(\mathbb{R}^k)$
+\item $g_{UU} \equiv I$ (the identity function)
+\item $g_{UV}g_{VW}g_{WU} = I$ (cocycle condition) whenver $U \cap V \cap W = \varnothing$.
+\end{itemize}
+\end{itemize}
+So there's a vague but not perfect way of moving information around.  At least we get the two Wikipedia pages to match.
+
+\newpage
+
+
+%\begin{tikzpicture}\end{tikzpicture}
+
+\includegraphics[width=0.5\textwidth]{wastebasket-01.png}
+
+
+
+\vfill
+
+\begin{thebibliography}{}
+
+\item Wikipedia ``Coherent Sheaf" \texttt{https://en.wikipedia.org/wiki/Coherent\_sheaf}
+\item Wikipedia ``Vector Bundle" \texttt{https://en.wikipedia.org/wiki/Vector\_bundle}
+\item . . .
+
+\end{thebibliography}
+
+\end{document}
