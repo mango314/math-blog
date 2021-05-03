@@ -92,11 +92,54 @@ we need Haar measure on group of choice $G = \mathbb{R}/\mathbb{Z}$ or $G = \mat
 $$ L^2(G, \mu) = \bigoplus_\rho M(\rho) $$
 of isotypic components of the finite dimensional unitary representations, each $M(\rho)$ being isomorphic to $\dim(\rho)$ copies of $\rho$. \\ \\
 \textbf{Q} What does it measn that $\text{SO}(3)$ is a \textbf{compact} topological group?
+
+\newpage
+
+\noindent \textbf{05/03} Here's the discussion of Group Theory in the Quantum Chemistry textbook.  Here the group is called $\mathcal{C}_{3v}$:
+$$ \begin{array}{c|cl} 
+R & \Gamma^1 & \Gamma^2 \\  \hline \hline \\
+E & 1 & \left[  \begin{array}{cc} 1 & 0 \\ 0 & 1 \end{array} \right]\\ \\
+C_2 & 1 & \left[  \begin{array}{cc} -\frac{1}{2} & -\frac{\sqrt{3}}{2} \\ \frac{\sqrt{3}}{2} & -\frac{1}{2} \end{array} \right]\\ \\
+C_2^2 & 1 & \left[  \begin{array}{cc} -\frac{1}{2} & \frac{\sqrt{3}}{2} \\ - \frac{\sqrt{3}}{2} & -\frac{1}{2} \end{array} \right] \\ \\
+\sigma & 1 & \left[  \begin{array}{cc} 1 & 0 \\ 0 & -1 \end{array} \right] \\
+\sigma'& 1 & \left[  \begin{array}{cc} -\frac{1}{2} & 
+- \frac{\sqrt{3}}{2} \\ - \frac{\sqrt{3}}{2} & \frac{1}{2} \end{array} \right] \\ \\
+\sigma''& 1 & 
+\left[ \begin{array}{cc} - \frac{1}{2} & \frac{\sqrt{3}}{2} \\ \frac{\sqrt{3}}{2} & \frac{1}{2} \end{array} \right] 
+
+\end{array} $$
+
+
+These ``representations" have to with ``function spaces" the $d$-orbital in Chemistry.  For example, the electron iron is written $\text{Fe} = [\text{Ar}]\,3d^6 \, 4s^2 $.  \\ \\
+``Reducible" representation means the matrix can be diagonalized in two parts:
+$$ D(R) = \left[ \begin{array}{cc}
+D^1(R)  & [0] \\ \\ \, [0] & D^2(R) \end{array} \right]  $$
+The representations $E$ and $\sigma$ are reducible and could be written as $1 \times 1$ matrices instead of $2 \times 2$ matries.  There are also \textbf{4} copies of the same representation. \\ \\
+The $d$ orbital wave functions exist as functions in 3D space and yet this is the symmetry group of a triangle.  $\Gamma = \Gamma^1 \oplus 2 \Gamma^2$ and $|G| = 6 = 1 \times 1 + 2 \times 2$. 
+That would be interesting if we cound the representation \textit{first} and decided which group it corresponded to.  Or we could imagine various representations of the same group and we have to decide if they're ``the same".  \\ \\
+\textbf{Notes on Hilbert Space} The wave functions are functions $f: S^2 \to \mathbb{R}$.  
+$$   (f_1, f_2) = \int_S^2 f_1^* f_2 \, d\tau = \delta_{ij}$$
+We can ``rotate" the integral, as well as the ``functions" of our atom:
+$$ (O_R f_i, O_R f_j) = \int (O_R f_i)^* (O_R f_j) d\tau = (f_i f_j) = \delta_{ij}$$
+These integral calculations all live in the Hilbert space $L^2(S^2)$:
+\begin{eqnarray*} \frac{4}{3} \pi a^3 \overline{z}
+&=& \int_0^r \int_{-1}^1 \int_0^{2\pi} r^3 \mu dr \mu d\theta \\ 
+&=& \frac{1}{4} \int_{-1}^1 \int_0^{2\pi} a^4 + 4^3 a^3 \alpha (\sum a_n Y_n) d\mu d\theta \\ 
+&=& 4a^3 \alpha a_1 \int_{-1}^1 \int_0^{2\pi} \mu Y_1 d\mu d\theta
+\end{eqnarray*}
+We might even recognize the  volume formula for the sphere  $V = \frac{4}{3} \pi a^3 $.  These are formulas for deducing the \textbf{center of gravity}  of a nearly spherical object.
+\begin{itemize}
+\item $\frac{4}{3} \pi a^3 \overline{x} = 4a^3 \alpha \cdot a_1 \int_{-1}^1 \int_0^{2\pi} \sqrt{1 - \mu^2}  \cos \theta Y_1 d\mu d\theta $
+\item $\frac{4}{3} \pi a^3 \overline{x} = 4a^3 \alpha \cdot a_1 \int_{-1}^1 \int_0^{2\pi} \sqrt{1 - \mu^2}  \cos \theta Y_1 d\mu d\theta $
+\end{itemize}
+It seems the spherical  harmonic are necessary for when the shape is not a perfect shere.  We still use elements that are symmetric under the varous groups.  
+
 \vfill
 
 \begin{thebibliography}{}
 
-\item 
+\item https://en.wikipedia.org/wiki/Iron \\ 
+https://en.wikipedia.org/wiki/Block\_(periodic\_table)\#d-block
 
 \end{thebibliography}
 
