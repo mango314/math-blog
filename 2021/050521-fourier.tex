@@ -1,0 +1,63 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\usepackage{fontspec}
+\usepackage{xcolor}
+
+\usepackage{tikz-cd}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+
+
+\title{Homework: Fourier Transform}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+{\fontsize{16pt}{16pt}\selectfont 
+ 
+\noindent Summability kernel on the real line is a family of continous functions $\{  k_\lambda\}$ on $\mathbb{R}$ (either discrete or continous parameter) $\lambda$ doing three things:
+\begin{itemize}
+\item $\int k_\lambda(x) \, dx = 1$ 
+\item $||k_\lambda||_{L^1(\mathbb{R})} = O(1)$ as $\lambda \to \infty$
+\item $\lim_{\lambda \to \infty} \int_{|x|> \delta} \, dx = 0$ for all $\delta > 0$
+\end{itemize}
+These are formal ways of writing Dirac's $\delta$ function.  \\ \\
+Fej\'{e}r Kernel: $\textbf{K}_\lambda(x) = \lambda \textbf{K}(\lambda x)$ (rescaling) for $\lambda > 0$. with:
+$$ \textbf{K}(x) = \frac{1}{2\pi}
+\left( \frac{\sin \frac{x}{2}}{\frac{x}{2}} \right) = \frac{1}{2\pi} \int_{-1}^1 (1 - |\xi|)e^{i \xi x } \, d\xi $$
+\textbf{Thm} Let $f \in L^1(\mathbb{R})$ and let $\{ k_\lambda\}$ be a summability kernel of $\mathbb{R}$ then:
+$$ \lim_{\lambda \to \infty} || f - k_\lambda * f ||_{L^1(\mathbb{R}} = 0 $$
+\textbf{\color{blue}Proof} [\textit{Repeats the proof of two previous arguments in Chapter I on summability kernels on $L^2(S^1)$ (Fourier analyss on the circle.).}] \\ \\
+\textbf{Thm} Let $f \in L^1(\mathbb{R})$ then
+$$ f = \lim_{\lambda \to \infty} \frac{1}{2\pi} \int_{-\lambda}^\lambda \left( 1 - \frac{|\xi|}{\lambda} \hat{f}(\xi) \, e^{i\xi x} \, d\xi \right)  $$
+in the $L^1(\mathbb{R})$ norm.  \\ \\
+\textbf{Corollary} (``uniqueness" theorem) Let $f \in L^1(\mathbb{R})$ and assume $\hat{f}(\xi)= 0$ for all $\xi \in \hat{\mathbb{R}}$ then $f \equiv 0$. \\ \\
+\textbf{Thm} The functions with compactly carried Fourier transform sform a dense subspace of $L^1(\mathbb{R})$.
+\newpage
+
+\noindent All of these theorems exist and are correct and yet they are also templates. \\ \\
+\textbf{Q} What were we adding to get the term ``summability kernel"? \\ \\
+Functions in $L^1(\mathbb{R})$ contain a lot of information (e.g. all MP3 music files could be modeled by such equations.   All TV shows could be modeled by elements of $L^2(\mathbb{R}^2)$.   We could have to explain how our model connects to the real world.
+
+\vfill
+
+\begin{thebibliography}{}
+
+\item Yithak Katznelson.  \textbf{Introduction of Harmonic Analysis}  Dover, 1968.
+
+\end{thebibliography}
+
+\end{document}
