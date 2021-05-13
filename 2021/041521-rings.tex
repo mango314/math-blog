@@ -84,6 +84,32 @@ Here we try to make decimals look like another operation.} \\ \\
 The balanced products are written in terms of the $\text{Hom}$ functor.
 $$ \text{Hom}_\mathbb{Z} (M \otimes_R N, G) \simeq \text{Hom}_R(M, \text{Hom}_\mathbb{Z}(N, G)) $$
 So that our simple notations of $\sum v_iv^i = v^2$ had basic categorical content where our notions of ``number" had to be revised.
+
+\newpage
+
+\noindent \text{05/13} Let's just parrot some of the definitions from Wikipedia. Once we have these giant boxes of numbers we can product others.  Our calculation is reduced to a single arrow and we went up with something categorical $A \to B$.  \\ \\ 
+Here is the way \textbf{engineers}  look at tensor product:
+$$ v \otimes w = \left[ \begin{array}{c} v_1 \\ v_2 \end{array} \right] \otimes \left[ \begin{array}{c} w_1 \\ w_2 \end{array} \right] = \left[ \begin{array}{cc} v_1 w_1 & v_1  w_2 \\ 
+v_2 w_1 & v_2 w_2 \end{array} \right] $$
+Then we get the abstract representation where these are two copies of any ring (e.g. $R = \mathbb{Z}$) and we get:
+$$ (\mathbb{R} \oplus \mathbb{R}) \oplus (\mathbb{R} \oplus \mathbb{R}) \simeq  (\mathbb{R} \otimes \mathbb{R})^4 \simeq \mathbb{R}^4 $$
+The symbol $\simeq$ is misleading because the space of possible maps from one vector space (or module, since ``scalars" or ``rescaling" doesns't necessarily have a reverse) is a space of matrices.  \\ \\
+Such a tensor product construction lifts to mappings.  If we have $S : V \to X$ and $T: W \to Y$ then we can have tensor of the two mappings:
+$$
+(S : V \to X) \otimes (T: W \to Y) = 
+(S \otimes T) : V \otimes W) \to (X \otimes Y) 
+ $$
+In math, describing the geometry of one ``shape" often leads to another geometry or another ``shape". \\ \\
+\textbf{Ex} The ``wedge product" of two vector spaces:
+$$ V \wedge V = (V \otimes V) / \{ v \otimes v : v \in V\}  
+\simeq V \otimes V / \{ v_1 \otimes v_2 + v_2 \otimes v_1 $$
+These are getting non-constructive proofs.  Here the instructions just say:
+\begin{itemize}
+\item Set $v \otimes v = 0$ for all vectors in the space $v \in V$.
+\item Set $v_1 \otimes v_2 + v_2 \otimes v_1$ for all $v_1, v_2 \in V$.
+\end{itemize}
+\textbf{Q} does this equivalent work for $\mathbb{Z}$-modules (instead of $\mathbb{R}$-vector space).  This wedge product could be how we represent \textbf{Area} (from Geometry) or \textbf{Determinant} (from Linear Algebra).
+
 \vfill
 
 \begin{thebibliography}{}
