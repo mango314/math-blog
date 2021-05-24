@@ -1,0 +1,80 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\usepackage{fontspec}
+\usepackage{xcolor}
+
+\usepackage{tikz-cd}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+%\setmainfont[Color=brown]{Linux Libertine}
+
+
+\title{Tune-Up: Categories}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+{\fontsize{16pt}{16pt}\selectfont 
+
+\noindent Let's read through this documentations. \\ \\
+\textbf{Def} Let $\mathcal{C}$ be a category.  There exists an object $\mathbf{1}$ with
+\begin{itemize}
+	\item There exists a functor $\otimes : \mathcal{C} \times \mathcal{C} \to \mathcal{C}$ with $(X,Y) \mapsto X \otimes Y$.
+	\item $X \otimes (Y \otimes Z) = (X \otimes Y) \otimes Z$ (\textbf{associative})
+	\item $X \otimes \mathbf{1} = X = \mathbf{1} \otimes X$
+\end{itemize}
+An infinite amount of sleight-of-hand follows.  \\ \\
+\textbf{Canonical isomorphisms}: \\
+\begin{tikzcd}
+\mathbf{1} \otimes (\mathbf{1} \otimes X) 
+\arrow{r}{} & (\mathbf{1} \otimes \mathbf{1}) \otimes X \arrow{r}{} & \mathbf{1} \otimes X
+\end{tikzcd} \\ \\
+\textbf{Left Unit Constraint}: \\
+\begin{tikzcd}
+ \mathbf{1} \otimes (\mathbf{1}  \otimes X) \arrow{r}{} \arrow{rd}{}& (\mathbf{1} \otimes  \mathbf{1}) \otimes X  \arrow{d}{} \\
+&  \mathbf{1} \otimes X 
+\end{tikzcd} \\
+\textbf{Right Unit Constraint}: \\
+\begin{tikzcd}
+X \otimes (\mathbf{1} \otimes \mathbf{1}) \arrow{r}{} \arrow{dr}{} & (X \otimes \mathbf{1}) \otimes \mathbf{1} \arrow{d}{} \\
+ & X \otimes \mathbf{1}
+\end{tikzcd} \\ 
+\textbf{Left and Right Unit Constraint} \\
+\begin{tikzcd}
+\mathbf{1} \otimes X \arrow{r}{} \arrow{d}{}& X \arrow{d}{f} & \arrow{l}{} X \otimes \mathbf{1} \arrow{d}{} \\
+\mathbf{1} \otimes Y \arrow{r}{} & Y & \arrow{l}{} Y \otimes \mathbf{1}
+\end{tikzcd}
+
+\newpage
+
+\noindent \textbf{Fact Check ?}
+\begin{itemize}
+\item $\textbf{Set}$ with {\color{blue} Cartestian product} is monoidal category with one-element set $\{ * \}$ as the unit.
+\item $R$-\textbf{Mod} the category of modules over commutative ring $R$ with tensor product $\otimes_R$ 
+\item $k$-\textbf{Vect} the category of abelian groups over a field $K$ has the one-dimensional vector space as the ``unit".
+\item $\textbf{Ab} \simeq \mathbb{Z}\textbf{-Mod}$ Abelian groups are the category of $\mathbb{Z}$-modules.  Here $\otimes$ is the product.
+\item $\mathbb{C}[G]\textbf{-Mod}\simeq \text{Rep}[G]$ is the category of representations of $G$ or of $\mathbb{C}[G]$ modules. 
+\end{itemize}
+
+\vfill
+
+\begin{thebibliography}{}
+
+\item 
+
+\end{thebibliography}
+
+\end{document}
