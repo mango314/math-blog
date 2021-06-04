@@ -1,0 +1,95 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\usepackage{fontspec}
+\usepackage{xcolor}
+
+\usepackage{tikz-cd}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+%\setmainfont[Color=brown]{Linux Libertine}
+
+
+\title{Reminder: Group Theory}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+{\fontsize{16pt}{16pt}\selectfont 
+
+\noindent Let's get some help with computers.  What are the groups of order $|G| = 400$?  Here is the computer program.\footnote{\texttt{https://math.stackexchange.com/questions/4108993/the-221-groups-of-order-g-400} \\
+\url{https://www.gap-system.org/}}
+
+\begin{verbatim}
+G := AllSmallGroups(400);;
+List(G, g -> StructureDescription(g));
+[ "C25 : C16", "C400", "C25 : C16", "C25 : Q16", "C8 x D50",
+  "C25 : (C8 : C2)", "C25 : QD16", "D400", "C2 x (C25 : C8)",
+  "C25 : (C8 : C2)", "C4 x (C25 : C4)", "C25 : (C4 : C4)",
+  "C25 : (C4 : C4)", "C25 : ((C4 x C2) : C2)", "C25 : QD16", "C25 : D16",
+  "C25 : Q16", "C25 : QD16", "C25 : ((C4 x C2) : C2)", "C100 x C4",
+  "C25 x ((C4 x C2) : C2)", "C25 x (C4 : C4)", "C200 x C2",
+  "C25 x (C8 : C2)", "C25 x D16", "C25 x QD16", "C25 x Q16",
+  "C25 : (C8 x C2)", "C25 : (C8 : C2)", "C4 x (C25 : C4)",
+  "C25 : (C4 : C4)", "C2 x (C25 : C8)", "C25 : (C8 : C2)",
+  "C25 : ((C4 x C2) : C2)", "C2 x (C25 : Q8)", "C2 x C4 x D50",
+  "C2 x D200", "C25 : ((C4 x C2) : C2)", "D8 x D50",
+  "C25 : ((C4 x C2) : C2)", "Q8 x D50", "C25 : ((C4 x C2) : C2)",
+  ...
+]
+\end{verbatim}
+Notice there is is both $C_{25} \times QD_{16}$ and $C_{25}\ltimes QD_{16}$. \\ \\
+In more commom notation we can write with the symbols $\times$ (direct product) and $\ltimes$ (indirect product):
+\begin{itemize}
+\item $G = (C_5 \ltimes Q_8 ) \times D_{10}$
+\item $G = (C_5 \ltimes C_5) \ltimes (C_4 \times C_4) $
+\item $G = C_2 \times ((C_5 \times C_5) \ltimes C_8)$
+\item $G = D_8 \times ((C_5 \times C_5) \ltimes C_2)$
+\end{itemize}
+
+\newpage
+
+\noindent {\color{green!80!black}\textbf{Induced Representations}}: \\ \\
+$\text{Ind}^G_H \pi = \mathbb{C}[G] \otimes_{\mathbb{C}[H]} \otimes V$
+\begin{itemize}
+\item $G$ finite group
+\item $H$ subgroup
+\item $(\pi , V)$ representation of $H$
+\end{itemize}
+\textbf{Ex} Right regular representation.
+$$ \textbf{reg} = \text{Ind}^G_1 1 = \mathbb{C}[G] \times_\mathbb{C} 1$$
+Frobenius Reciprocity:
+\begin{itemize}
+\item $\langle \text{Ind}^G_H \psi, \phi \rangle_G = \langle \psi, \text{Res}^G_H \phi \rangle_H $ (category theory)
+\item $\text{Hom}_{\mathbb{C}[G]} (\mathbb{C}[G] \otimes_{\mathbb{C}[H]}M, N) \simeq \text{Hom}_{\mathbb{C}[H]} (M, {}_{\mathbb{C}[H]} N ) $ (modules)
+\item $\text{Ind}^G_H \dashv \text{Res}^G_H$ (adjunction)
+\begin{itemize}
+\item[o] $\text{Res}^G_H : \text{Rep}_G \to \text{Rep}_H$
+\item[o] $\text{Ind}^G_H : \text{Rep}_H \to \text{Rep}_G$
+\end{itemize}
+\end{itemize}
+\textbf{Ex} Adjoint functors: which categories and functors were used here?
+$$ \text{hom}_\mathcal{C} (FY, X) \simeq \text{hom}_\mathcal{D} (Y, GX) $$
+Here $F = \text{Ind}^G_H$ (induction) and $G = \text{Res}^G_H$ (restriction).  $\mathcal{C} = \text{Rep}_G$ and $\mathcal{D} = \text{Rep}_H$.
+\vfill
+
+\begin{thebibliography}{}
+
+\item Wikipedia ``induced representation", ``"
+\item \dots 
+
+\end{thebibliography}
+
+\end{document}
