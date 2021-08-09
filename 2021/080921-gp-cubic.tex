@@ -1,0 +1,116 @@
+\documentclass[12pt]{article}
+%Gumm{\color{blue}i}|065|=)
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\usepackage{fontspec}
+\usepackage{xcolor}
+
+\usepackage{tikz-cd}
+
+\newcommand{\off}[1]{}
+\DeclareMathSizes{20}{30}{20}{18}
+\usepackage{tikz}
+
+%\setmainfont[Color=brown]{Linux Libertine}
+
+
+\title{Examples: Number Fields}
+\date{}
+\begin{document}
+
+\sffamily
+
+\maketitle
+
+{\fontsize{16pt}{16pt}\selectfont 
+
+\noindent Using the program \texttt{pari-gp}  the calcullator gives us 50-decimal places of roots of polynomial $f(x) = x^3 + 10x - 12$. \\ \\
+\textbf{Ex} if we solve $f(x) = 0$ accurate two $2$ or $5$ decimal places? \\ \\
+So here's the answer accurate to 50 decimal places.  The answer runs off the page.
+
+\begin{verbatim}
+? F = nfinit(x^3 +10*x - 12)
+%1 = [x^3 + 10*x - 12, [1, 1], -1972, 2, 
+[[1, 1.0755719270367992295362348940064398938, 3.5784274851148268827250805729183775583; 1, -0.53778596351839961476811744700321994690 + 3.2966105665777752469525083454134834459*I, -2.2892137425574134413625402864591887792 - 1.7728708898919661233343415969662209914*I], 
+ [1, 1.0755719270367992295362348940064398938, 3.5784274851148268827250805729183775583; 1, 2.7588246030593756321843908984102634990, -4.0620846324493795646968818834254097705; 1, -3.8343965300961748617206257924167033928, -0.51634285266544731802819868949296778780], 
+ [16, 17, 57; 16, 44, -65; 16, -61, -8], 
+ [3, 0, -1; 0, -20, 18; -1, 18, 17], 
+ [986, 588, 950; 0, 2, 1; 0, 0, 1], 
+ [332, 9, 10; 9, -25, 27; 10, 27, 30], 
+ [986, [329, -2070, 2082; 346, 327, -689; 1, 692, 330]], [2, 17, 29]],
+ [1.0755719270367992295362348940064398938, -0.53778596351839961476811744700321994690 + 3.2966105665777752469525083454134834459*I], [2, 2*x, x^2 + 6], [1, 0, -6; 0, 1, 0; 0, 0, 2], [1, 0, 0, 0, -6, 6, 0, 6, 6; 0, 1, 0, 1, 0, -2, 0, -2, 3; 0, 0, 1, 0, 2, 0, 1, 0, 1]
+]
+
+\end{verbatim}
+The number field database page returns the ``integral basis" (basis as a $\mathbb{Z}$-module) of the ring of integers $\mathcal{O}_F \simeq 1 \cdot \mathbb{Z} + a \cdot \mathbb{Z} + \frac{1}{2}a^2 \cdot \mathbb{Z}$ (e.g. this is an \textbf{integral domain}) ( \texttt{https://www.lmfdb.org/NumberField/3.1.1972.1} ) The ideal class group quotient of the \textbf{fractional ideals}  modulo the \textbf{principal fractional ideals}.  \\ \\
+The unit group is $\mathcal{O}_K^\times = \langle a - 1 \rangle \simeq \mathbb{Z}$.  \\ \\
+Let's try to get more answers from the computer. Notice the positive result on the first try:\\
+\begin{verbatim}
+? idealfactor(F,5)
+%2 = 
+[[5, [2, 1, 0]~, 1, 1, [-2, 24, 0; -2, -6, 10; 2, -4, 0]] 1]
+
+[  [5, [-2, -2, 2]~, 1, 2, [2, -6, 6; 1, 2, -2; 0, 2, 2]] 1]
+\end{verbatim}
+and keep looking.  The ideal $\mathfrak{p} = 7$ is ``prime" in $F$ \dots
+\begin{verbatim}
+? idealfactor(F,7)
+%3 = 
+[[7, [7, 0, 0]~, 1, 3, 1] 1]
+\end{verbatim}
+The next result $\mathfrak{p} = 11$ factors:
+\begin{verbatim}
+? idealfactor(F,11)
+%4 = 
+[[11, [5, 1, 0]~, 1, 1, [-4, 42, -18; -5, -8, 16; 2, -10, -2]] 1]
+
+[      [11, [-4, -5, 2]~, 1, 2, [5, -6, 6; 1, 5, -2; 0, 2, 5]] 1]
+\end{verbatim}
+and we continue to get more answers:
+\begin{verbatim}
+? idealfactor(F,13)
+%5 = 
+[[13, [13, 0, 0]~, 1, 3, 1] 1]
+
+? idealfactor(F,17)
+%6 = 
+[[17, [5, 1, 0]~, 2, 1, [-5, 42, -18; -5, -9, 16; 2, -10, -3]] 2]
+
+[  [17, [7, 1, 0]~, 1, 1, [2, 54, -30; -7, -2, 20; 2, -14, 4]] 1]
+\end{verbatim}
+Our result of the ``splitting of the primes" is successful, once we type up our result or $\mathfrak{p} = 19, 23, 29$.
+\begin{verbatim}
+? idealfactor(F,19)
+%7 = 
+[[19, [19, 0, 0]~, 1, 3, 1] 1]
+
+? idealfactor(F,23)
+%8 = 
+[  [23, [-4, 1, 0]~, 1, 1, [-3, -12, 36; 4, -7, -2; 2, 8, -1]] 1]
+
+[       [23, [1, 1, 0]~, 1, 1, [5, 18, 6; -1, 1, 8; 2, -2, 7]] 1]
+
+[[23, [3, 1, 0]~, 1, 1, [-10, 30, -6; -3, -14, 12; 2, -6, -8]] 1]
+
+? idealfactor(F,29)
+%9 = 
+[ [29, [-8, 1, 0]~, 1, 1, [10, -36, 60; 8, 6, -10; 2, 16, 12]] 1]
+
+[[29, [4, 1, 0]~, 2, 1, [-9, 36, -12; -4, -13, 14; 2, -8, -7]] 2]
+\end{verbatim}
+The Galois group is $S_3$ so the equation is ``solvable".  Litrally solvable has to do with the permutations of the variables in solving the cubic equation.  We would also like to see the ``box" implied by the Dirichlet unit theorem.
+
+\vfill
+
+\begin{thebibliography}{}
+
+\item 
+
+\end{thebibliography}
+
+\end{document}
