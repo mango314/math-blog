@@ -105,6 +105,70 @@ Our result of the ``splitting of the primes" is successful, once we type up our 
 \end{verbatim}
 The Galois group is $S_3$ so the equation is ``solvable".  Litrally solvable has to do with the permutations of the variables in solving the cubic equation.  We would also like to see the ``box" implied by the Dirichlet unit theorem.
 
+\newpage
+
+\noindent Here's a more straightforward example:
+
+\begin{verbatim}
+parisize = 8000000, primelimit = 500000
+? F = nfinit(x^3 + 5)
+%1 = [x^3 + 5, [1, 1], -675, 1, 
+[[ 1, -1.7099759466766969893531088725438601099, 2.9240177382128660655067873601379227785; 1, 0.85498797333834849467655443627193005493 + 1.4808826096823642385229974586352819797*I, -1.4620088691064330327533936800689613893 + 2.5322736424086583518423631373700012530*I], 
+ [ 1, -1.7099759466766969893531088725438601099, 2.9240177382128660655067873601379227785; 1, 2.3358705830207127331995518949072120346, 1.0702647733022253190889694573010398637; 1, -0.62589463634401574384644302236335192472, -3.9942825115150913845957568174389626423], [16, -27, 47; 16, 37, 17; 16, -10, -64], [3, 0, 0; 0, 0, -15; 0, -15, 0], [15, 0, 0; 0, 15, 0; 0, 0, 3], [5, 0, 0; 0, 0, -1; 0, -1, 0], [5, [0, 0, -5; 1, 0, 0; 0, 1, 0]], [3, 5]], 
+ [-1.7099759466766969893531088725438601099, 0.85498797333834849467655443627193005493 + 1.4808826096823642385229974586352819797*I], [1, x, x^2], [1, 0, 0; 0, 1, 0; 0, 0, 1], [1, 0, 0, 0, 0, -5, 0, -5, 0; 0, 1, 0, 1, 0, 0, 0, 0, -5; 0, 0, 1, 0, 1, 0, 1, 0, 0]]
+\end{verbatim}
+Let's try any prime $\mathfrak{p}$ with $N(\mathfrak{p}) < 5 \times 10^4$: \\ \\
+The prime $\mathfrak{p}= 7$ remains prime.  $7\mathcal{O}_F$ is ``prime".
+\begin{verbatim}
+? idealfactor(F,7)
+%3 = 
+[[7, [7, 0, 0]~, 1, 3, 1] 1]
+\end{verbatim}
+The prime $p = 11$ ``splits":
+$$ 11\mathcal{O}_F=\big(11\mathcal{O}_F + (3 + \sqrt[3]{-5})\mathcal{O}_F\big)\big(11\mathcal{O}_F  + (-1) \times (2 +3\sqrt[3]{-5})\mathcal{O}_F\big) $$
+\begin{verbatim}
+? idealfactor(F,11)
+%4 = 
+[[11, [3, 1, 0]~,   1, 1, [-2, -5, 15; -3, -2, -5; 1, -3, -2]] 1]
+
+[[11, [-2, -3, 1]~, 1, 2, [3, 0, -5; 1, 3, 0; 0, 1, 3]]        1]
+\end{verbatim}
+\begin{verbatim}
+? idealfactor(F,13)
+%5 = 
+[[13, [-6, 1, 0]~, 1, 1, [-3, -5, -30; 6, -3, -5; 1, 6, -3]] 1]
+
+[[13, [-5, 1, 0]~, 1, 1, [-1, -5, -25; 5, -1, -5; 1, 5, -1]] 1]
+
+[[13, [-2, 1, 0]~, 1, 1, [4, -5, -10 ; 2,  4, -5; 1, 2,  4]] 1]
+\end{verbatim}
+The ``splitting of the primes" looks somewhat controversial to me.  In a number field extension, $\text{Spec}(\mathbb{Z}) \to \text{Spec}(\mathbb{Z}[\sqrt[3]{-5}])$. These are specific number systems. We could find ``rings" or even ``schemes" with nice factorization properties if we ``commit" to certain arithmetic rules. \\ \\
+Here are some definitions from Ring Theory.  Here ``rings" were just collections of numbers or collections of formulas that behaved nicely together:
+\begin{itemize}
+\item $ A + B = \{ a + b : a \in A \text{ and } b \in \}$
+\item $ A \times B = \{ a \times b : a \in A \text{ and } b \in \}$
+\end{itemize}
+These formulas work as numbers or as ``formulas":
+\begin{itemize}
+\item $ 2 \mathbb{Z} + 3 \mathbb{Z} = \mathbb{Z}$ (written somewhat tersely as 
+\begin{itemize}
+\item[o] $(2)+(3) = (1)$ or 
+\item[o] $(3)+(5)=(1)$ or
+\item[o] $(5)+(7)=(1)$ 
+\item[o] too-good-to-be-true.
+\end{itemize}
+\end{itemize}
+The last formula $\mathfrak{p} = 13$ is a product of ideals:
+\begin{eqnarray*}
+13 \mathcal{O}_F &=& \big( 13 \mathcal{O}_F + (-6 + \sqrt[3]{-5})\mathcal{O}_F \big) \\ 
+&\times& \big( 13 \mathcal{O}_F + (-5 + \sqrt[3]{-5})\mathcal{O}_F \big) \\
+&\times& \big( 13 \mathcal{O}_F + (-2 + \sqrt[3]{-5})\mathcal{O}_F \big)
+\end{eqnarray*}
+The factorization differs is we consider $\mathcal{O}_F$ as a $\mathbb{Z}$-module or as a $\mathbb{Q}$-vector space.  
+$$ \mathcal{O}_F = \mathbb{Z}[\sqrt[3]{-5}] \simeq \mathbb{Z}[x]/(x^3 + 5) $$
+The encyclopedic entry (\texttt{https://www.lmfdb.org/NumberField/3.1.675.1}) has that:
+$$ \big( \mathbb{Z}[x]/(x^3 + 5) \big)^\times \simeq \langle 2x^2 - 4x + 1 \rangle  $$
+There is also ``trivial" class group, so there is still unique factorization here.  
 \vfill
 
 \begin{thebibliography}{}
