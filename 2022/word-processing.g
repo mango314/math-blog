@@ -27,3 +27,35 @@ gap> GQuotients(F4, Group((1,2,3,4,5),(1,2,3)));
   [ a, b, c ] -> [ (1,3)(2,4), (1,2)(4,5), (3,4,5) ],
   [ a, b, c ] -> [ (1,5,2,4,3), (2,3,4), (3,4,5) ] ]
 gap> 
+# random letters
+gap> GG := G / [ a^3 , b^3, c^3, a*b*c ];
+<fp group on the generators [ a, b, c ]>
+gap> Pseudorandom(GG, 5)
+Error, Variable: 'Pseudorandom' must have a value
+not in any function at *stdin*:106
+> ;
+gap> PseudoRandom(GG : radius: 10)
+Syntax error: ) expected
+PseudoRandom(GG : radius: 10)
+                        ^
+> PseudoRandom(GG : radius:= 10);
+gap> PseudoRandom(GG : radius:= 10);
+a^-1*c^-1*b^2*c*b^2*c^-1*b^-1*a^-1
+gap> PseudoRandom(GG : radius:= 10);
+a^2*b*a^-1*b^-1*(a*c^-1)^2*b
+gap> PseudoRandom(GG : radius:= 10);
+c*b^-1*c^-2*a^-1*b*a*b*a^-1*b^-1
+gap> PseudoRandom(GG : radius:= 10);
+b*a^2*(b*a^-1)^2*b*a^2
+gap> PseudoRandom(GG : radius:= 10);
+b*c*a*b^-2*a*c^-2
+gap> PseudoRandom(GG : radius:= 10);
+b*a*b*a^-1*b*c*a*b^2*a^-1
+gap> PseudoRandom(GG : radius:= 10);
+b^-1*c^-1*b^-1*a*b^-2*c^-1*a*c^-2
+gap> PseudoRandom(GG : radius:= 10);
+b^-1*(a^-1*b)^2*c*a^2*b*c^-1
+gap> PseudoRandom(GG : radius:= 10);
+b*c^-2*a^-1*b^-1*a^2*b^2*c^-1
+gap> PseudoRandom(GG : radius:= 10);
+b^-1*c*b*a^2*c^-1*b*c^-1*b^-2
