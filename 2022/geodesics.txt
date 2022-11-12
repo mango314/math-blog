@@ -1,0 +1,76 @@
+In[3]: M = Manifold("m095")
+
+In[4]: M.
+  File "<ipython-input-4-6afd9326dd46>", line 1
+    M.
+      ^
+SyntaxError: invalid syntax
+
+In[5]: M.homology()
+
+Out[5]: Z
+
+In[6]: M.fundamental_group()
+
+Out[6]: 
+Generators:
+   a,b
+Relators:
+   aabbbabbbaaBBBB
+
+In[7]: M.volume()
+
+Out[7]: 3.48987016803
+
+In[8]: M.length_spectrum()
+
+Out[8]: 
+mult length                           topology      parity
+1    0.113304256671284 + 1.840123514046849*I circle        orientation-preserving
+1    0.907555638530844 + 3.141002520403753*I circle        orientation-preserving
+
+In[9]: M.length_spectrum(3.0)
+
+Out[9]: 
+mult length                           topology      parity
+1    0.113304256671284 + 1.840123514046849*I circle        orientation-preserving
+1    0.907555638530844 + 3.141002520403753*I circle        orientation-preserving
+1    1.004452969733727 - 2.224458199270607*I circle        orientation-preserving
+1    1.020122778304096 - 3.140940044508131*I circle        orientation-preserving
+1    1.120581947352627 - 2.250524450333664*I circle        orientation-preserving
+1    1.746311321564737 + 2.502730148232523*I circle        orientation-preserving
+1    1.964628791229730 + 2.379380961898027*I circle        orientation-preserving
+1    2.083535647851473 + 1.878450938210326*I circle        orientation-preserving
+1    2.173852948682916 + 1.736412725307825*I circle        orientation-preserving
+1    2.276031000582222 - 2.625129803478997*I circle        orientation-preserving
+1    2.422345468697851 - 2.587692238090316*I circle        orientation-preserving
+1    2.489344374952217 - 2.602717724365863*I circle        orientation-preserving
+1    2.500270424570256 - 2.171056787985905*I circle        orientation-preserving
+1    2.525153401906319 - 1.429423866068828*I circle        orientation-preserving
+1    2.531916337461022 - 1.224740111301853*I circle        orientation-preserving
+1    2.564731854407712 + 0.492163194714996*I circle        orientation-preserving
+1    2.607306498959545 - 2.081344578400539*I circle        orientation-preserving
+1    2.613344684444736 - 3.091932676306594*I circle        orientation-preserving
+1    2.641286329085911 - 2.566473655248374*I circle        orientation-preserving
+1    2.665719422159922 - 2.109719053670148*I circle        orientation-preserving
+1    2.690135411127964 + 2.816160204838876*I circle        orientation-preserving
+1    2.759602018719663 + 1.714712042094913*I circle        orientation-preserving
+1    2.788961077894180 - 2.023329257384790*I circle        orientation-preserving
+1    2.813317169185179 - 1.033213224855291*I circle        orientation-preserving
+1    2.833949477396296 - 3.087995464745092*I circle        orientation-preserving
+1    2.858019185717674 - 0.860206424695867*I circle        orientation-preserving
+1    2.867737112062386 + 1.863917896755114*I circle        orientation-preserving
+1    2.886238282184344 + 0.606599572092918*I circle        orientation-preserving
+1    2.890887830187086 - 3.088718149351384*I circle        orientation-preserving
+1    2.892243077765511 - 1.046977701892574*I circle        orientation-preserving
+1    2.892311269970350 + 3.081832067039014*I circle        orientation-preserving
+1    2.898019989917688 + 0.347794082560799*I circle        orientation-preserving
+1    2.924600556730693 + 2.751403095241125*I circle        orientation-preserving
+1    2.936119935570238 - 0.291000452681196*I circle        orientation-preserving
+1    2.936370941155336 + 2.693520997677739*I circle        orientation-preserving
+1    2.947766905278832 + 3.083907356054167*I circle        orientation-preserving
+1    2.947896166482292 + 2.642951064347019*I circle        orientation-preserving
+1    2.956368473972058 + 1.481272332826832*I circle        orientation-preserving
+1    2.992836654152706 - 0.983268593120580*I circle        orientation-preserving
+
+In[10]: 
